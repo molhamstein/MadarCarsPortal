@@ -1,0 +1,122 @@
+<div id="contacts" class="page-layout simple left-sidenav inner-sidenav">
+
+  <div class="header mat-accent-bg p-16 customHeader" fxLayout="column" fxLayoutAlign="start start" fxLayout.gt-xs="row"
+    fxLayoutAlign.gt-xs="space-between center">
+
+    <!-- APP TITLE -->
+    <div fxLayout="row" fxLayoutAlign="start center">
+
+      <button mat-button class="mat-icon-button sidenav-toggle mr-12" fuseMatSidenavToggler="contacts-main-sidenav"
+        fxHide.gt-md>
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <div class="logo" fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon class="logo-icon mr-16">account_box</mat-icon>
+        <span class="logo-text h1">{{'LOCATION.TITLE' | translate}}</span>
+      </div>
+
+    </div>
+    <!-- / APP TITLE -->
+
+    <!-- SEARCH -->
+    <div class="search-input-wrapper mt-16 ml-8 m-sm-0" fxLayout="row" fxLayoutAlign="start center">
+      <label for="search" class="mr-8">
+        <mat-icon>search</mat-icon>
+      </label>
+      <mat-form-field mat-no-float class="m-0" floatPlaceholder="never">
+        <input matInput id="search" placeholder="Search for anything">
+      </mat-form-field>
+      <button mat-button class="customButtom" color="primary" type="button" (click)="addUser()">Add User</button>
+
+    </div>
+    <!-- / SEARCH -->
+
+
+  </div>
+
+  <ngx-datatable class="material vertical-scroll" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" [rowHeight]="50"
+    [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="true">
+    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="email">
+      <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+        <span>{{ 'User.USERS.EMAIL' | translate }}</span>
+      </ng-template>
+
+    </ngx-datatable-column>
+    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="type">
+      <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+        <span>{{ 'User.USERS.TYPE' | translate }}</span>
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="username">
+      <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+        <span>{{ 'User.USERS.USERNAME' | translate }}</span>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="Status">
+      <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+        <span>{{ 'Form.UNPROCESSED_FORMS.STATUS' | translate }}</span>
+      </ng-template>
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        <mat-chip-list *ngIf="row.status=='active'">
+          <mat-chip style="background-color:green" selected="true">{{row.status}}</mat-chip>
+        </mat-chip-list>
+        <mat-chip-list *ngIf="row.status=='deactive'">
+          <mat-chip style="background-color:#ff6363" selected="true">{{row.status}}</mat-chip>
+        </mat-chip-list>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="primarycolor">
+      <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+        <span>{{ 'User.USERS.PRIMARYCOLOR' | translate }}</span>
+      </ng-template>
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        <div class="circleColor" [ngStyle]="{'background-color':row.primarycolor}"></div>
+        <!--<mat-chip-list *ngIf="row.status=='contracts'">
+        <mat-chip style="background-color:green" selected="true">{{row.status}}</mat-chip>
+      </mat-chip-list>-->
+
+      </ng-template>
+    </ngx-datatable-column>
+
+
+    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="secondarycolor">
+      <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+        <span>{{ 'User.USERS.SECONDARYCOLOR' | translate }}</span>
+      </ng-template>
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        <div class="circleColor" [ngStyle]="{'background-color':row.secondarycolor}"></div>
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="">
+
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="goTo('edit',row.id)">
+            <mat-icon>edit</mat-icon>
+            <span>{{'User.USERS.EDIT' | translate}}</span>
+          </button>
+          <button mat-menu-item (click)="editPassword(row.id)">
+            <mat-icon>edit</mat-icon>
+            <span>{{'User.USERS.EDITPASSWORD' | translate}}</span>
+          </button>
+          <button mat-menu-item *ngIf="row.status!='active'" (click)="changeStatus('active',row.id,row.username)">
+            <mat-icon>check</mat-icon>
+            <span>{{'User.USERS.ACTIVE' | translate}}</span>
+          </button>
+          <button mat-menu-item *ngIf="row.status!='deactive'" (click)="changeStatus('deactive',row.id,row.username)">
+            <mat-icon>cancel</mat-icon>
+            <span>{{'User.USERS.DEACTIVE' | translate}}</span>
+          </button>
+        </mat-menu>
+
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+
+</div>

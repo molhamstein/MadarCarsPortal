@@ -1,0 +1,28 @@
+.divImage {
+  height: 220;
+  width: 100%;
+  text-align: center;
+
+  .imgCustim {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin: 10px auto;
+  }
+}
+
+.divButton {
+  height: 40px;
+  border-radius: 10px;
+  width: 150px;
+  margin: 5px auto;
+  text-align: center;
+  padding: 8px 0px;
+  background-color: #00897B;
+  color: white;
+
+  &:hover {
+      background-color: #00695C;
+      cursor: pointer;
+  }
+}

@@ -1,0 +1,14 @@
+// Import Fuse main library
+@import "app/core/scss/core";
+
+.customHeader {
+  min-height: 80px !important;
+  height: 80px !important;
+
+  .customButtom {
+    background-color: #2094c8;
+    color: white;
+    box-shadow: 0px 0px 4px rgba(101, 101, 101, 0.4);
+    margin-left: 15px;
+  }
+}

@@ -1,0 +1,108 @@
+<div id="ngx-datatable" class="page-layout simple fullwidth" fusePerfectScrollbar>
+
+  <!-- HEADER -->
+  <div class="header mat-accent-bg p-16 customHeader" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="row"
+    fxLayoutAlign.gt-xs="space-between center">
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="column" fxLayoutAlign.gt-xs="center start">
+      <span class="logo-text h1">{{'ADDLOCATION.TITLE' | translate}}</span>
+    </div>
+
+
+  </div>
+  <!-- / HEADER -->
+
+  <!-- CONTENT -->
+  <div class="content p-24">
+    <form [formGroup]="addLocationForm">
+      <div style="width: 100%;">
+        <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
+          fxFlex>
+          <mat-form-field fxFlex="96">
+            <textarea matInput placeholder="{{ 'ADDLOCATION.DESCRIPTIONEN' | translate }}" formControlName="descriptionEn"
+              required></textarea>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="96">
+            <textarea matInput placeholder="{{ 'ADDLOCATION.DESCRIPTIONAR' | translate }}" formControlName="descriptionAr"
+              required></textarea>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="96">
+            <textarea matInput placeholder="{{ 'ADDLOCATION.DESCRIPTIONTR' | translate }}" formControlName="descriptionTr"
+              required></textarea>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'ADDLOCATION.NAMEEN' | translate }}" formControlName="nameEn" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'ADDLOCATION.NAMEAR' | translate }}" formControlName="nameAr" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'ADDLOCATION.NAMETR' | translate }}" formControlName="nameTr" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <!-- </div> -->
+
+          <!-- <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
+          fxFlex> -->
+          <div fxFlex="40">
+            <div class="divImage">
+              <div>
+                <div  class="AddNewForm-imagescontainer-smallimage">
+                  <img class="imgCustim" src="{{imaageUrl}}" />
+                </div>
+                <div *ngFor="let image of imageOnLoad;let i = index" class="AddNewForm-imagescontainer-smallimage"
+                  style="    position: relative;">
+                  <img id="{{'uploadImage'+i}}" />
+                  <img src="assets/imgs/infinity_loader_by_volorf.gif" style="position:  absolute;opacity: 0.5;top: 0px;height: 100%;left:  0px;width: 100%;" />
+
+                </div>
+              </div>
+            </div>
+            <div class="divButton">
+              <span>
+                  {{ 'Global.UPLOADIMAGE' | translate }}
+              </span>
+            </div>
+          </div>
+          <div fxFlex="60">
+
+            <div>
+              <span style="float: left;font-size: 18px;"> {{ 'User.ADDEDITUSER.PRIMARYCOLOR' | translate }}</span>
+              <div style="width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;" [style.background-color]="primaryColor"
+                [cpPosition]="'bottom'" [cpPositionOffset]="'50%'" [cpPositionRelativeToArrow]="true" [(colorPicker)]="primaryColor"></div>
+            </div>
+
+            <div>
+              <span style="float: left;font-size: 18px;"> {{ 'User.ADDEDITUSER.SECONDARYCOLOR' | translate }}</span>
+              <div style="width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;" [style.background-color]="secondryColor"
+                [cpPosition]="'bottom'" [cpPositionOffset]="'50%'" [cpPositionRelativeToArrow]="true" [(colorPicker)]="secondryColor"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="float: right;">
+        <button mat-button (click)="add()" cdkFocusInitial [disabled]="addLocationForm.invalid">{{'User.ADDEDITUSER.ADD'
+          | translate}}</button>
+      </div>
+    </form>
+  </div>
+</div>
