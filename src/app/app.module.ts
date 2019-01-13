@@ -1,3 +1,4 @@
+import { ConfirmMessageComponent } from './main/dialogs/confirm-message/confirm-message.component';
 import { LoaderServicesService } from './core/services/loader-services.service';
 import { GlobalService } from './core/services/global.service';
 import { LoginService } from './core/services/login.service';
@@ -32,8 +33,89 @@ import { DialogService } from './core/services/dialog.service';
 import { MatDialogModule } from '@angular/material';
 import { locationsComponent } from './main/content/pages/location/locations/locations.component';
 import { addLocationComponent } from './main/content/pages/location/addLocation/addLocation.component';
+import { editLocationComponent } from './main/content/pages/location/editLocation/editLocation.component';
+import { addSubLocationComponent } from './main/content/pages/sublocation/addSubLocation/addSubLocation.component';
+import { editSubLocationComponent } from './main/content/pages/sublocation/editSubLocation/editSubLocation.component';
+import { driversComponent } from './main/content/pages/driver/drivers/drivers.component';
+import { addDriverComponent } from './main/content/pages/driver/addDriver/addDriver.component';
+import { editDriverComponent } from './main/content/pages/driver/editDriver/editDriver.component';
+import { brandsComponent } from './main/content/pages/brand/brands/brands.component';
+import { addBrandComponent } from './main/content/pages/brand/addBrand/addBrand.component';
+import { editBrandComponent } from './main/content/pages/brand/editBrand/editBrand.component';
+import { carsComponent } from './main/content/pages/car/cars/cars.component';
+import { addCarComponent } from './main/content/pages/car/addCar/addCar.component';
+import { editCarComponent } from './main/content/pages/car/editCar/editCar.component';
+import { usersComponent } from './main/content/pages/user/users/users.component';
+import { addUserComponent } from './main/content/pages/user/addUser/addUser.component';
+import { editUserComponent } from './main/content/pages/user/editUser/editUser.component';
+import { ErrorMessageComponent } from './main/dialogs/error-message/error-message.component';
+import { tripsComponent } from './main/content/pages/trip/trips/trips.component';
+import { addTripComponent } from './main/content/pages/trip/addTrip/addTrip.component';
+import { Angular5TimePickerModule } from 'angular5-time-picker';
+import { viewTripComponent } from './main/content/pages/trip/viewTrip/viewTrip.component';
 
 const appRoutes: Routes = [
+
+    {
+        path: 'trips',
+        component: tripsComponent
+    },
+    {
+        path: 'add-trip',
+        component: addTripComponent
+    },
+    {
+        path: 'view-trip/:id',
+        component: viewTripComponent
+    },
+    {
+        path: 'cars',
+        component: carsComponent
+    },
+    {
+        path: 'add-car',
+        component: addCarComponent
+    },
+    {
+        path: 'edit-car/:id',
+        component: editCarComponent
+    },
+    {
+        path: 'drivers',
+        component: driversComponent
+    },
+    {
+        path: 'add-driver',
+        component: addDriverComponent
+    },
+    {
+        path: 'edit-driver/:id',
+        component: editDriverComponent
+    },
+    {
+        path: 'brands',
+        component: brandsComponent
+    },
+    {
+        path: 'add-brand',
+        component: addBrandComponent
+    },
+    {
+        path: 'edit-brand/:id',
+        component: editBrandComponent
+    },
+    {
+        path: 'users',
+        component: usersComponent
+    },
+    {
+        path: 'add-user',
+        component: addUserComponent
+    },
+    {
+        path: 'edit-user/:id',
+        component: editUserComponent
+    },
     {
         path: 'locations',
         component: locationsComponent
@@ -42,6 +124,19 @@ const appRoutes: Routes = [
         path: 'add-location',
         component: addLocationComponent
     },
+    {
+        path: 'edit-location/:id',
+        component: editLocationComponent
+    },
+    {
+        path: 'add-sublocation/:id',
+        component: addSubLocationComponent
+    },
+    {
+        path: 'edit-sublocation/:id',
+        component: editSubLocationComponent
+    },
+
     {
         path: 'apps/mail',
         loadChildren: './main/content/apps/mail/mail.module#FuseMailModule'
@@ -82,13 +177,25 @@ const appRoutes: Routes = [
 
 @NgModule({
     declarations: [
-        AppComponent, 
+        AppComponent,
 
         // pages
         // // Location
-        locationsComponent,addLocationComponent,
+        locationsComponent, addLocationComponent, editLocationComponent,
+        // // Sub Location
+        addSubLocationComponent, editSubLocationComponent,
+        // // Drivers
+        driversComponent, addDriverComponent, editDriverComponent,
+        // // Brands
+        brandsComponent, addBrandComponent, editBrandComponent,
+        // // Cars
+        carsComponent, addCarComponent, editCarComponent,
+        // // Users
+        usersComponent, addUserComponent, editUserComponent,
+        // // Trips
+        tripsComponent, addTripComponent, viewTripComponent,
         // dialogs
-        SomeThingIsErrorComponent
+        SomeThingIsErrorComponent, ConfirmMessageComponent, ErrorMessageComponent
     ],
     imports: [
         BrowserModule,
@@ -98,6 +205,7 @@ const appRoutes: Routes = [
         RouterModule.forRoot(appRoutes),
         SharedModule,
         MarkdownModule.forRoot(),
+        Angular5TimePickerModule,
         InMemoryWebApiModule.forRoot(FuseFakeDbService, {
             delay: 0,
             passThruUnknownUrl: true
@@ -115,7 +223,7 @@ const appRoutes: Routes = [
 
 
     ],
-    entryComponents: [SomeThingIsErrorComponent],
+    entryComponents: [SomeThingIsErrorComponent, ConfirmMessageComponent, ErrorMessageComponent],
     providers: [
         FuseSplashScreenService,
         FuseConfigService,

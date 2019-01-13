@@ -1,0 +1,119 @@
+.divImage {
+  height: 220px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+
+  .imgCustim {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin: 10px auto;
+  }
+
+  .imgCustimLoader {
+    position: absolute;
+    opacity: 0.5;
+    top: 0px;
+    /* height: 100%; */
+    left: 0px;
+    /* width: 100%; */
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin: 10px auto;
+    margin-left: calc(50% - 100px);
+  }
+}
+
+.divButton {
+  height: 40px;
+  border-radius: 10px;
+  width: 150px;
+  margin: 5px auto;
+  text-align: center;
+  padding: 10px 0px;
+  background-color: #00897B;
+  color: white;
+
+  &:hover {
+    background-color: #00695C;
+    cursor: pointer;
+  }
+}
+
+
+.listOfImgs {
+  width: 1050px;
+  padding: 20px 0px;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  .listDiv {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin: 10px 10px;
+    position: relative;
+
+    .deleteImge {
+      background-color: rgba(204, 204, 204, 0.32941176470588235);
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      padding: 2px;
+
+      mat-icon {
+        font-size: 21px;
+        font-weight: bold;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgba(204, 204, 204, 0.72941176470588235);
+      }
+    }
+
+    .listImgCustim {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+    }
+
+    .listImgCustimLoader {
+      position: absolute;
+      opacity: 0.5;
+      top: 0px;
+      /* height: 100%; */
+      left: 0px;
+      /* width: 100%; */
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      margin-left: calc(50% - 100px);
+    }
+  }
+}
+
+ul.listOfImgs li {
+
+  display: inline-block;
+}
+
+.step4 {
+  .sublocationName {
+    font-size: 22px;
+    padding-top: 12px;
+  }
+
+  .sublocationPrice {
+
+    padding-top: 12px;
+    font-size: 22px;
+    color: #37abdf;
+  }
+}

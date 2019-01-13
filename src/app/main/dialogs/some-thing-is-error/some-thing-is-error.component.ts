@@ -3,7 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Component, Inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { locale as english } from '../../languageFiles/en';
-// import { MainService } from '../../../core/services/main.service';
+import { MainService } from '../../../core/services/main.service';
 
 @Component({
     selector: 'some-thing-is-error',
@@ -14,6 +14,7 @@ export class SomeThingIsErrorComponent {
     constructor(
         public dialogRef: MatDialogRef<SomeThingIsErrorComponent>,
         private translate: TranslateService,
+        private mainServ: MainService,
         private translationLoader: FuseTranslationLoaderService) {
         // ) {
         this.translationLoader.loadTranslations(english);
@@ -23,6 +24,7 @@ export class SomeThingIsErrorComponent {
 
 
     onNoClick(): void {
+        this.mainServ.APIServ.setErrorCode(0)
         this.dialogRef.close();
     }
     ngOnInit() {

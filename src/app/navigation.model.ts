@@ -5,9 +5,39 @@ export class NavigationModel {
         this.model = [
             {
                 'id': 'location',
-                'title': 'LOCATION.TITLE',
+                'title': 'LOCATION.ALLLOCATION.TITLE',
                 'type': 'item',
                 'url': '/locations'
+            },
+            {
+                'id': 'driver',
+                'title': 'DRIVER.ALLDRIVER.TITLE',
+                'type': 'item',
+                'url': '/drivers'
+            },
+            {
+                'id': 'brand',
+                'title': 'BRAND.ALLBRAND.TITLE',
+                'type': 'item',
+                'url': '/brands'
+            },
+            {
+                'id': 'car',
+                'title': 'CAR.ALLCAR.TITLE',
+                'type': 'item',
+                'url': '/cars'
+            },
+            {
+                'id': 'user',
+                'title': 'USER.ALLUSER.TITLE',
+                'type': 'item',
+                'url': '/users'
+            },
+            {
+                'id': 'trip',
+                'title': 'TRIP.ALLTRIP.TITLE',
+                'type': 'item',
+                'url': '/trips'
             },
             {
                 'id'      : 'applications',

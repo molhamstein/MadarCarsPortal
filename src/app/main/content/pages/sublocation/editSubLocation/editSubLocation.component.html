@@ -1,0 +1,96 @@
+<div id="ngx-datatable" class="page-layout simple fullwidth" fusePerfectScrollbar>
+
+  <!-- HEADER -->
+  <div class="header mat-accent-bg p-16 customHeader" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="row"
+    fxLayoutAlign.gt-xs="space-between center">
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="column" fxLayoutAlign.gt-xs="center start">
+      <!-- <button style="background-color: rgba(7, 112, 7, 0.849);" mat-mini-fab class="mr-16"> -->
+      <!-- </button> -->
+      <span class="logo-text h1">
+        <mat-icon style="color : white;" (click)="back()" class="back">arrow_back_ios</mat-icon>
+        {{'SUBLOCATION.EDITSUBLOCATION.TITLE' | translate}}
+      </span>
+    </div>
+
+
+  </div>
+  <!-- / HEADER -->
+
+  <!-- CONTENT -->
+  <div class="content p-24">
+    <form [formGroup]="editSubLocationForm">
+      <div style="width: 100%;">
+        <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
+          fxFlex>
+
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'SUBLOCATION.NAMEEN' | translate }}" formControlName="nameEn" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'SUBLOCATION.NAMEAR' | translate }}" formControlName="nameAr" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'SUBLOCATION.NAMETR' | translate }}" formControlName="nameTr" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <div fxFlex="40">
+            <div class="divImage">
+              <div>
+                <div *ngIf="images.length==0 && imageOnLoad.length==0" class="">
+                  <img class="imgCustim" src="{{imaageUrl}}" />
+                  <!-- <div class="imgCustimLoader" [style.background-image]="'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'"></div> -->
+                </div>
+
+                <div *ngFor="let value of images;let i=index" class="">
+                  <img class="imgCustim" src="{{value.url}}" />
+                  <div class="imgCustimLoader" [style.background-image]="'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'"></div>
+                </div>
+                <div *ngFor="let image of imageOnLoad;let i = index" class="AddNewForm-imagescontainer-smallimage"
+                  style="    position: relative;">
+                  <img class="imgCustim" id="{{'uploadImage'+i}}" />
+                  <img class="imgCustimLoader" src="assets/images/madar/infinity_loader_by_volorf.gif" />
+
+                </div>
+              </div>
+            </div>
+            <div class="divButton" (click)="openSelectImage()">
+              <input type="file" style="display:none" id="files" accept="image/*" (change)="onChange($event)" />
+
+              <span>
+                {{ 'Global.UPLOADIMAGE' | translate }}
+              </span>
+            </div>
+          </div>
+          <div fxFlex="60">
+
+            <div class="p-24">
+              <span style="float: left;font-size: 18px;"> {{ 'SUBLOCATION.FIRSTCOLOR' | translate }}</span>
+              <div style="width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;" [style.background-color]="primaryColor"
+                [cpPosition]="'bottom'" [cpPositionOffset]="'50%'" [cpPositionRelativeToArrow]="true" [(colorPicker)]="primaryColor"></div>
+            </div>
+
+            <div class="p-24">
+              <span style="float: left;font-size: 18px;"> {{ 'SUBLOCATION.SECONDCOLOR' | translate }}</span>
+              <div style="width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;" [style.background-color]="secondryColor"
+                [cpPosition]="'bottom'" [cpPositionOffset]="'50%'" [cpPositionRelativeToArrow]="true" [(colorPicker)]="secondryColor"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="float: right;">
+        <button mat-button (click)="edit()" cdkFocusInitial [disabled]="editSubLocationForm.invalid">{{'Global.EDIT'
+          | translate}}</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -10,7 +10,7 @@ export class MainService {
   // constructor(public APIServ:CallApiService,public loginServ:LoginService,public globalServ:GlobalService) { }
   constructor(public loaderSer: LoaderServicesService, public APIServ: CallApiService, public loginServ: LoginService, public globalServ: GlobalService) { }
   private backUrl = "";
-  private loader = false;
+  private loader = true;
   getBackUrl() {
     return this.backUrl;
   }

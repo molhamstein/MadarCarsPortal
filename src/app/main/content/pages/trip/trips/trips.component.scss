@@ -1,0 +1,23 @@
+.pagination {
+  display: inline-block;
+}
+
+.pagination button {
+  color: #525252;
+  float: left;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.disabled {
+    i {
+      color: #ababab
+    }
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+}

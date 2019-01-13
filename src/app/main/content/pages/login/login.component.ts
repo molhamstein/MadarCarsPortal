@@ -89,12 +89,10 @@ export class FuseLoginComponent implements OnInit {
                     });
 
                 }
-                this.mainServ.globalServ.somthingError();
-
                 this.mainServ.APIServ.setErrorCode(0);
             }
             else {
-                this.mainServ.globalServ.somthingError();
+                // this.mainServ.globalServ.somthingError();
             }
 
         });

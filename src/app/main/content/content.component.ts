@@ -16,7 +16,7 @@ import { MainService } from '../../core/services/main.service';
 export class FuseContentComponent implements OnInit, OnDestroy {
     onSettingsChanged: Subscription;
     fuseSettings: any;
-    showLoader: boolean;
+    showLoader: boolean = false;
 
     @HostBinding('@routerTransitionUp') routeAnimationUp = false;
     @HostBinding('@routerTransitionDown') routeAnimationDown = false;
@@ -28,7 +28,7 @@ export class FuseContentComponent implements OnInit, OnDestroy {
         private router: Router,
         private activatedRoute: ActivatedRoute,
         private fuseConfig: FuseConfigService,
-        private mainServ:MainService
+        private mainServ: MainService
     ) {
         this.router.events
             .filter((event) => event instanceof NavigationEnd)

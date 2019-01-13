@@ -1,0 +1,213 @@
+<div id="ngx-datatable" class="page-layout simple fullwidth" fusePerfectScrollbar>
+
+  <!-- HEADER -->
+  <div class="header mat-accent-bg p-16 customHeader" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="row"
+    fxLayoutAlign.gt-xs="space-between center">
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="column" fxLayoutAlign.gt-xs="center start">
+      <!-- <button style="background-color: rgba(7, 112, 7, 0.849);" mat-mini-fab class="mr-16"> -->
+      <!-- </button> -->
+      <span class="logo-text h1">
+        <mat-icon style="color : white;" (click)="back()" class="back">arrow_back_ios</mat-icon>
+        {{'CAR.ADDCAR.TITLE' | translate}}
+      </span>
+    </div>
+
+
+  </div>
+  <!-- / HEADER -->
+
+  <!-- CONTENT -->
+  <div class="content p-24">
+    <form [formGroup]="addCarForm">
+      <div style="width: 100%;">
+        <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
+          fxFlex>
+          <mat-form-field fxFlex="30">
+            <mat-select placeholder="{{ 'CAR.BRAND' | translate }}" formControlName="brandId">
+              <mat-option *ngFor="let oneBrand of brands" [value]="oneBrand.id">
+                {{oneBrand.nameEn}}
+              </mat-option>
+            </mat-select>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'CAR.NAME' | translate }}" formControlName="name" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field fxFlex="30">
+            <input matInput type="number" placeholder="{{ 'CAR.NUMBEROFSEAT' | translate }}" formControlName="numOfSeat"
+              required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="30">
+            <input matInput (focus)="picker.open()" [matDatepicker]="picker" formControlName="productionDate"
+              placeholder="{{ 'CAR.PRODUCTIONDATE' | translate }}">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field fxFlex="30">
+            <mat-select placeholder="{{ 'CAR.ENGINTYPE' | translate }}" formControlName="engineType">
+              <mat-option *ngFor="let oneEngineType of engineType" [value]="oneEngineType">
+                {{oneEngineType}}
+              </mat-option>
+            </mat-select>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="30">
+            <mat-select placeholder="{{ 'CAR.TYPE' | translate }}" formControlName="type">
+              <mat-option *ngFor="let oneType of type" [value]="oneType">
+                {{oneType}}
+              </mat-option>
+            </mat-select>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="30">
+            <input matInput type="number" placeholder="{{ 'CAR.PRICEPERDAY' | translate }}" formControlName="pricePerDay"
+              required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field fxFlex="30">
+            <input matInput type="number" placeholder="{{ 'CAR.PRICEONEWAY' | translate }}" formControlName="priceOneWay"
+              required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field fxFlex="30">
+            <input matInput type="number" placeholder="{{ 'CAR.PRICETOWWAY' | translate }}" formControlName="priceTowWay"
+              required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <section class="example-section" style="padding-bottom: 10px;" fxFlex="96">
+            <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" [(ngModel)]="isVip">{{
+              'CAR.ISVIP' | translate }}</mat-checkbox>
+            <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" style="padding-left: 12px;"
+              [(ngModel)]="isAirportCar">{{
+              'CAR.ISAIRPORTCAR' | translate }}</mat-checkbox>
+            <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" style="padding-left: 30px;"
+              [(ngModel)]="isCityCar">{{
+              'CAR.ISCITYCAR' | translate }}</mat-checkbox>
+          </section>
+
+          <mat-form-field fxFlex="30">
+            <mat-select placeholder="{{ 'CAR.DRIVER' | translate }}" formControlName="driverId">
+              <mat-option *ngFor="let onedriver of drivers" [value]="onedriver.id">
+                {{onedriver.firstName}} {{onedriver.lastName}}
+              </mat-option>
+            </mat-select>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="30">
+            <mat-select placeholder="{{ 'CAR.LOCATION' | translate }}" (selectionChange)="changeLocation($event)"
+              formControlName="locationId">
+              <mat-option *ngFor="let onelocation of locations" [value]="onelocation.id">
+                {{onelocation.nameEn}}
+              </mat-option>
+            </mat-select>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="30" *ngFor="let oneSublocation of carSublocations;let i=index">
+            <input matInput type="number" placeholder="{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}"
+              [(ngModel)]="carSublocations[i].cost" [ngModelOptions]="{standalone: true}" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+
+        </div>
+      </div>
+      <div style="width: 100%;">
+        <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
+          fxFlex>
+          <div fxFlex="40">
+            <div class="divImage">
+              <div>
+                <div *ngIf="images.length==0 && imageOnLoad.length==0" class="">
+                  <img class="imgCustim" src="{{imaageUrl}}" />
+                </div>
+
+                <div *ngFor="let value of images;let i=index" class="">
+                  <img class="imgCustim" src="{{value.url}}" />
+                  <div class="imgCustimLoader" [style.background-image]="'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'"></div>
+                </div>
+                <div *ngFor="let image of imageOnLoad;let i = index" class="AddNewForm-imagescontainer-smallimage"
+                  style="    position: relative;">
+                  <img class="imgCustim" id="{{'uploadImage'+i}}" />
+                  <img class="imgCustimLoader" src="assets/images/madar/infinity_loader_by_volorf.gif" />
+
+                </div>
+              </div>
+            </div>
+            <div class="divButton" (click)="openSelectImage()">
+              <input type="file" style="display:none" id="files" accept="image/*" (change)="onChange($event)" />
+
+              <span>
+                {{ 'Global.UPLOADIMAGE' | translate }}
+              </span>
+            </div>
+          </div>
+          <div fxFlex="60">
+
+            <div class="p-24">
+              <span style="float: left;font-size: 18px;"> {{ 'CAR.FIRSTCOLOR' | translate }}</span>
+              <div style="width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;" [style.background-color]="primaryColor"
+                [cpPosition]="'bottom'" [cpPositionOffset]="'50%'" [cpPositionRelativeToArrow]="true" [(colorPicker)]="primaryColor"></div>
+            </div>
+
+            <div class="p-24">
+              <span style="float: left;font-size: 18px;"> {{ 'CAR.SECONDCOLOR' | translate }}</span>
+              <div style="width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;" [style.background-color]="secondryColor"
+                [cpPosition]="'bottom'" [cpPositionOffset]="'50%'" [cpPositionRelativeToArrow]="true" [(colorPicker)]="secondryColor"></div>
+            </div>
+          </div>
+
+          <ul class="listOfImgs">
+            <li (click)="openSelectListImage()">
+              <div class="listDiv">
+                <img class="listImgCustim" src="{{imaageUrl}}" />
+                <input type="file" style="display:none" multiple id="listFiles" accept="image/*" (change)="onChangeList($event)" />
+              </div>
+            </li>
+            <li *ngFor="let value of listImages;let i=index" class="">
+              <div class="listDiv">
+                <div class="deleteImge" (click)="deleteImage(i)">
+                  <mat-icon style="color : white;">close</mat-icon>
+                </div>
+                <img class="listImgCustim" src="{{value.url}}" />
+              </div>
+            </li>
+            <li *ngFor="let image of listImageOnLoad;let i = index" class="AddNewForm-imagescontainer-smallimage">
+              <div class="listDiv">
+                <img class="listImgCustim" id="{{'uploadImage'+i}}" />
+                <img class="listImgCustimLoader" src="assets/images/madar/infinity_loader_by_volorf.gif" />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div style="float: right;">
+        <button mat-button (click)="add()" cdkFocusInitial [disabled]="addCarForm.invalid">{{'Global.ADD'
+          | translate}}</button>
+      </div>
+    </form>
+  </div>
+</div>

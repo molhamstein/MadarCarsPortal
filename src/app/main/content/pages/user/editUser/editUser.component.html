@@ -1,0 +1,57 @@
+<div id="ngx-datatable" class="page-layout simple fullwidth" fusePerfectScrollbar>
+
+  <!-- HEADER -->
+  <div class="header mat-accent-bg p-16 customHeader" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="row"
+    fxLayoutAlign.gt-xs="space-between center">
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="column" fxLayoutAlign.gt-xs="center start">
+      <!-- <button style="background-color: rgba(7, 112, 7, 0.849);" mat-mini-fab class="mr-16"> -->
+      <!-- </button> -->
+      <span class="logo-text h1">
+        <mat-icon style="color : white;" (click)="back()" class="back">arrow_back_ios</mat-icon>
+        {{'CAR.EDITCAR.TITLE' | translate}}
+      </span>
+    </div>
+
+
+  </div>
+  <!-- / HEADER -->
+
+  <!-- CONTENT -->
+  <div class="content p-24">
+    <form [formGroup]="editUserForm">
+      <div style="width: 100%;">
+        <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
+          fxFlex>
+
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'USER.USERNAME' | translate }}" formControlName="username" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'USER.PHONENUMBER' | translate }}" formControlName="phoneNumber" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field fxFlex="30">
+            <mat-select placeholder="{{ 'USER.ISOCODE' | translate }}" formControlName="ISOCode">
+              <mat-option *ngFor="let oneCode of isoCode" [value]="oneCode.isoCode">
+                {{oneCode.name}}
+              </mat-option>
+            </mat-select>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+        </div>
+      </div>
+
+      <div style="float: right;">
+        <button mat-button (click)="edit()" cdkFocusInitial [disabled]="editUserForm.invalid">{{'Global.EDIT'
+          | translate}}</button>
+      </div>
+    </form>
+  </div>
+</div>

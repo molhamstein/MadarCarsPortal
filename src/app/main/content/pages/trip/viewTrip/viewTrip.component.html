@@ -1,0 +1,33 @@
+<div id="contacts" class="page-layout simple left-sidenav inner-sidenav">
+
+  <div class="header mat-accent-bg p-16 customHeader" fxLayout="column" fxLayoutAlign="start start" fxLayout.gt-xs="row"
+    fxLayoutAlign.gt-xs="space-between center">
+
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="column" fxLayoutAlign.gt-xs="center start">
+      <span class="logo-text h1">
+        <mat-icon style="color : white;" (click)="back()" class="back">arrow_back_ios</mat-icon>
+        {{locationName}}
+      </span>
+    </div>
+    <div style="font-size: 20px">{{trip.status}}</div>
+
+
+  </div>
+  <div class="" style="padding: 5px">
+    <div class="typeAndPriceDiv" style="">
+      <div class="typeDiv">
+        <!-- <div class="cercil" [style.backgroundImage]="'url(../../../../../../assets/images/icons/FromAirport-01.png)'">
+          <img src="../../../../../../assets/images/icons/FromAirport-01.png">
+        </div>
+        <div class="cercil" [style.backgroundImage]="url('../../../../../../assets/images/icons/tour-01.png)'">
+          <img src="../../../../../../assets/images/icons/tour-01.png">
+        </div>
+        <div class="cercil" [style.backgroundImage]="url('../../../../../../assets/images/icons/ToAirport-01.png')">
+          <img src="../../../../../../assets/images/icons/ToAirport-01.png">
+        </div> -->
+      </div>
+      <div class="priceDiv"></div>
+    </div>
+  </div>
+
+</div>
