@@ -395,7 +395,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_8__angular_http__["d" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_9__angular_common_http__["c" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_10__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-                __WEBPACK_IMPORTED_MODULE_11__angular_router__["e" /* RouterModule */].forRoot(appRoutes),
+                __WEBPACK_IMPORTED_MODULE_11__angular_router__["e" /* RouterModule */].forRoot(appRoutes, { enableTracing: false, useHash: true }),
                 __WEBPACK_IMPORTED_MODULE_14__core_modules_shared_module__["a" /* SharedModule */],
                 __WEBPACK_IMPORTED_MODULE_28_angular2_markdown__["a" /* MarkdownModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_53_angular5_time_picker__["a" /* Angular5TimePickerModule */],
