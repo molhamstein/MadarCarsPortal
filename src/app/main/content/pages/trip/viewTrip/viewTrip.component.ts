@@ -41,33 +41,33 @@ export class viewTripComponent implements OnInit {
     return date
   }
 
-  // calcStartDateAndEnd() {
-  //   for (let index = 0; index < this.rows.length; index++) {
-  //     const element = this.rows[index];
-  //     if (element.type == "fromAirport") {
-  //       element.start = element.fromAirportDate;
-  //       element.end = this.addHours(2, element.fromAirportDate);
-  //     } else if (element.type == "city") {
-  //       element.start = element.startInCityDate;
-  //       element.end = element.endInCityDate;
-  //     } else if (element.type == "toAirport") {
-  //       element.start = element.toAirportDate;
-  //       element.end = this.addHours(2, element.toAirportDate);
-  //     } else if (element.type == "fromAirportAndCity") {
-  //       element.start = element.fromAirportDate;
-  //       element.end = element.endInCityDate;
-  //     } else if (element.type == "fromAirportAndToAirport") {
-  //       element.start = element.fromAirportDate;
-  //       element.end = element.toAirportDate;
-  //     } else if (element.type == "cityAndToAirport") {
-  //       element.start = element.startInCityDate;
-  //       element.end = this.addHours(2, element.toAirportDate);
-  //     } else if (element.type == "fromAirportAndCityAndToAirport") {
-  //       element.start = element.fromAirportDate;
-  //       element.end = this.addHours(2, element.toAirportDate);
-  //     }
-  //   }
-  // }
+  calcStartDateAndEnd() {
+    // for (let index = 0; index < this.rows.length; index++) {
+    // var this.trip = this.trip;
+    if (this.trip['type'] == "fromAirport") {
+      this.trip['start'] = this.trip['fromAirportDate'];
+      this.trip['end'] = this.addHours(2, this.trip['fromAirportDate']);
+    } else if (this.trip['type'] == "city") {
+      this.trip['start'] = this.trip['startInCityDate'];
+      this.trip['end'] = this.trip['endInCityDate'];
+    } else if (this.trip['type'] == "toAirport") {
+      this.trip['start'] = this.trip['toAirportDate'];
+      this.trip['end'] = this.addHours(2, this.trip['toAirportDate']);
+    } else if (this.trip['type'] == "fromAirportAndCity") {
+      this.trip['start'] = this.trip['fromAirportDate'];
+      this.trip['end'] = this.trip['endInCityDate'];
+    } else if (this.trip['type'] == "fromAirportAndToAirport") {
+      this.trip['start'] = this.trip['fromAirportDate'];
+      this.trip['end'] = this.trip['toAirportDate'];
+    } else if (this.trip['type'] == "cityAndToAirport") {
+      this.trip['start'] = this.trip['startInCityDate'];
+      this.trip['end'] = this.addHours(2, this.trip['toAirportDate']);
+    } else if (this.trip['type'] == "fromAirportAndCityAndToAirport") {
+      this.trip['start'] = this.trip['fromAirportDate'];
+      this.trip['end'] = this.addHours(2, this.trip['toAirportDate']);
+    }
+    // }
+  }
 
 
 
@@ -97,7 +97,7 @@ export class viewTripComponent implements OnInit {
         if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
           mainthis.trip = data;
           mainthis.locationName = data['location']['nameEn']
-
+          mainthis.calcStartDateAndEnd()
         }
         else {
           this.dialogServ.someThingIsError();

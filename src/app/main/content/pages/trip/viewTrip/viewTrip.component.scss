@@ -1,5 +1,6 @@
 .typeAndPriceDiv {
   width: 100%;
+  height: 50px;
 
   .typeDiv {
     width: 50%;
@@ -9,11 +10,18 @@
     .cercil {
       width: 50px;
       height: 50px;
-      border-radius: 50%;
+      border-radius: 25%;
       float: left;
       margin: 0px 10px;
-      background-color: rgba(184, 184, 184, 0.644);
+      background-color: rgba(55, 171, 223, 0.4);
       padding: 4px;
+      background-size: 75% 75%;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &.active {
+        background-color: #2094c8
+      }
 
       img {
         width: 35px;
@@ -22,10 +30,204 @@
   }
 
   .priceDiv {
-    width: 20%;
-
-    float: left;
+    padding-top: 10px;
+    float: right;
     height: 50px;
-    background-color: red;
+
+    label {
+      width: 100%;
+      font-size: 24px;
+      text-align: right;
+      display: block;
+      font-weight: bold;
+    }
+  }
+}
+
+.carCard {
+  width: calc(100% - 10px);
+  margin: 10px 0px;
+  margin: 30px 5px;
+  border-radius: 10px;
+  color: white;
+  height: 250px;
+  background-color: #31a5d9;
+  box-shadow: 0px 0px 10px 0px black;
+
+  .img {
+    width: 30%;
+    border-radius: 8px 0px 0px 8px;
+    height: 100%;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .cont {
+    width: calc(70% - 30px);
+    margin: 15px;
+    float: left;
+
+    .car {
+      width: 100%;
+      height: 100px;
+      margin-bottom: 20px;
+
+      .element {
+        width: 50%;
+        float: left;
+        text-align: center;
+
+        h1,
+        h4 {
+          font-size: 22px;
+          margin: 0px;
+        }
+
+        h1 {
+          opacity: 0.7;
+        }
+
+        h4 {
+          font-size: 26px;
+        }
+      }
+    }
+
+    .driver {
+      width: 100%;
+      height: 50%;
+
+      .element {
+        width: 33%;
+        float: left;
+        text-align: center;
+
+        h1,
+        h4 {
+          font-size: 22px;
+          margin: 0px;
+        }
+
+        h1 {
+          opacity: 0.7;
+        }
+
+        h4 {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+}
+
+
+.locationCard {
+  @extend .carCard;
+
+  .cont {
+    .car {
+      .element {
+        width: 100%;
+        text-align: left;
+      }
+    }
+
+    .desc {
+      .element {
+        width: 100%;
+        float: left;
+        text-align: left;
+
+        h1,
+        h4 {
+          font-size: 22px;
+          margin: 0px;
+        }
+
+        h1 {
+          opacity: 0.7;
+        }
+
+        h4 {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+}
+
+.ownerCard {
+  @extend .locationCard;
+
+  .cont {
+    width: calc(100% - 30px);
+
+    .details {
+      height: 124px;
+
+      .element {
+        width: 33%;
+        float: left;
+        text-align: center;
+
+        h1,
+        h4 {
+          font-size: 22px;
+          margin: 0px;
+        }
+
+        h1 {
+          opacity: 0.7;
+        }
+
+        h4 {
+          font-size: 26px;
+        }
+      }
+    }
+
+  }
+}
+
+
+.sublocationCard {
+  @extend .locationCard;
+
+  display: inline-grid;
+  height: auto;
+  margin-top: 0px;
+
+  .cont {
+    width: 100%;
+
+    .sublocation {
+      .element {
+        width: 50%;
+        float: left;
+        text-align: center;
+
+        h1,
+        h4 {
+          font-size: 22px;
+          margin: 0px;
+        }
+
+        h1 {
+          opacity: 0.7;
+        }
+
+        h4 {
+          font-size: 26px;
+        }
+      }
+    }
+
   }
 }

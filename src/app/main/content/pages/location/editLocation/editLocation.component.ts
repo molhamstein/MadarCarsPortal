@@ -158,8 +158,8 @@ export class editLocationComponent implements OnInit {
           mainthis.media = data.media;
           mainthis.images[0] = data.media
           mainthis.listImages = data.slideMedia;
-          mainthis.primaryColor = data.color1;
-          mainthis.secondryColor = data.color2;
+          mainthis.primaryColor = "#" + data.color1;
+          mainthis.secondryColor = "#" + data.color2;
           mainthis.editLocationForm = new FormGroup({
             descriptionEn: new FormControl(data.descriptionEn, Validators.required),
             descriptionAr: new FormControl(data.descriptionAr, Validators.required),
@@ -185,8 +185,8 @@ export class editLocationComponent implements OnInit {
         "mediaId": element.id
       })
     });
-    data['color1'] = this.primaryColor;
-    data['color2'] = this.secondryColor;
+    data['color1'] = this.primaryColor.substr(1);
+    data['color2'] = this.secondryColor.substr(1);
     this.mainServ.APIServ.put("locations/" + this.locationId, data).subscribe((data: any) => {
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.mainServ.globalServ.goTo('locations')

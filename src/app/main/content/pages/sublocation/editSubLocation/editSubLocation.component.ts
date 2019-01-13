@@ -116,8 +116,8 @@ export class editSubLocationComponent implements OnInit {
           console.log(data);
           mainthis.media = data.media;
           mainthis.images[0] = data.media
-          mainthis.primaryColor = data.color1;
-          mainthis.secondryColor = data.color2;
+          mainthis.primaryColor = "#" + data.color1;
+          mainthis.secondryColor = "#" + data.color2;
           mainthis.locationId = data.locationId
           mainthis.editSubLocationForm = new FormGroup({
             nameEn: new FormControl(data.nameEn, Validators.required),
@@ -135,9 +135,9 @@ export class editSubLocationComponent implements OnInit {
     var data = this.editSubLocationForm.value;
     data['mediaId'] = this.media.id;
     data['locationId'] = this.locationId;
-    data['color1'] = this.primaryColor;
-    data['color2'] = this.secondryColor;
-    this.mainServ.APIServ.put("subLocations/"+this.sublocationId, data).subscribe((data: any) => {
+    data['color1'] = this.primaryColor.substr(1);
+    data['color2'] = this.secondryColor.substr(1);
+    this.mainServ.APIServ.put("subLocations/" + this.sublocationId, data).subscribe((data: any) => {
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.back();
       }

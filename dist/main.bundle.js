@@ -20962,8 +20962,8 @@ var addCarComponent = (function () {
         data['isAirportCar'] = this.isAirportCar;
         data['isCityCar'] = this.isCityCar;
         data['isVip'] = this.isVip;
-        data['color1'] = this.primaryColor;
-        data['color2'] = this.secondryColor;
+        data['color1'] = this.primaryColor.substr(1);
+        data['color2'] = this.secondryColor.substr(1);
         console.log(data);
         this.mainServ.APIServ.post("cars", data).subscribe(function (data) {
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
@@ -21381,8 +21381,8 @@ var editCarComponent = (function () {
                                             mainthis.media = data.media;
                                             mainthis.images[0] = data.media;
                                             mainthis.listImages = data.carMedia;
-                                            mainthis.primaryColor = data.color1;
-                                            mainthis.secondryColor = data.color2;
+                                            mainthis.primaryColor = "#" + data.color1;
+                                            mainthis.secondryColor = "#" + data.color2;
                                             mainthis.subLocation = mainthis.locations.find(function (x) { return x.id === data.locationId; }).subLocations;
                                             data['carSublocations'].forEach(function (element) {
                                                 mainthis.carSublocations.push({
@@ -21437,8 +21437,8 @@ var editCarComponent = (function () {
         data['isAirportCar'] = this.isAirportCar;
         data['isCityCar'] = this.isCityCar;
         data['isVip'] = this.isVip;
-        data['color1'] = this.primaryColor;
-        data['color2'] = this.secondryColor;
+        data['color1'] = this.primaryColor.substr(1);
+        data['color2'] = this.secondryColor.substr(1);
         console.log(data);
         this.mainServ.APIServ.put("cars/" + this.carId, data).subscribe(function (data) {
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
@@ -23346,8 +23346,8 @@ var addLocationComponent = (function () {
                 "mediaId": element.id
             });
         });
-        data['color1'] = this.primaryColor;
-        data['color2'] = this.secondryColor;
+        data['color1'] = this.primaryColor.substr(1);
+        data['color2'] = this.secondryColor.substr(1);
         this.mainServ.APIServ.post("locations", data).subscribe(function (data) {
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.mainServ.globalServ.goTo('locations');
@@ -23562,8 +23562,8 @@ var editLocationComponent = (function () {
                     mainthis.media = data.media;
                     mainthis.images[0] = data.media;
                     mainthis.listImages = data.slideMedia;
-                    mainthis.primaryColor = data.color1;
-                    mainthis.secondryColor = data.color2;
+                    mainthis.primaryColor = "#" + data.color1;
+                    mainthis.secondryColor = "#" + data.color2;
                     mainthis.editLocationForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
                         descriptionEn: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.descriptionEn, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
                         descriptionAr: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.descriptionAr, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
@@ -23586,8 +23586,8 @@ var editLocationComponent = (function () {
                 "mediaId": element.id
             });
         });
-        data['color1'] = this.primaryColor;
-        data['color2'] = this.secondryColor;
+        data['color1'] = this.primaryColor.substr(1);
+        data['color2'] = this.secondryColor.substr(1);
         this.mainServ.APIServ.put("locations/" + this.locationId, data).subscribe(function (data) {
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.mainServ.globalServ.goTo('locations');
@@ -25440,8 +25440,8 @@ var addSubLocationComponent = (function () {
         var data = this.addSubLocationForm.value;
         data['mediaId'] = this.media.id;
         data['locationId'] = this.locationId;
-        data['color1'] = this.primaryColor;
-        data['color2'] = this.secondryColor;
+        data['color1'] = this.primaryColor.substr(1);
+        data['color2'] = this.secondryColor.substr(1);
         this.mainServ.APIServ.post("subLocations", data).subscribe(function (data) {
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.back();
@@ -25615,8 +25615,8 @@ var editSubLocationComponent = (function () {
                     console.log(data);
                     mainthis.media = data.media;
                     mainthis.images[0] = data.media;
-                    mainthis.primaryColor = data.color1;
-                    mainthis.secondryColor = data.color2;
+                    mainthis.primaryColor = "#" + data.color1;
+                    mainthis.secondryColor = "#" + data.color2;
                     mainthis.locationId = data.locationId;
                     mainthis.editSubLocationForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
                         nameEn: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.nameEn, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
@@ -25632,8 +25632,8 @@ var editSubLocationComponent = (function () {
         var data = this.editSubLocationForm.value;
         data['mediaId'] = this.media.id;
         data['locationId'] = this.locationId;
-        data['color1'] = this.primaryColor;
-        data['color2'] = this.secondryColor;
+        data['color1'] = this.primaryColor.substr(1);
+        data['color2'] = this.secondryColor.substr(1);
         this.mainServ.APIServ.put("subLocations/" + this.sublocationId, data).subscribe(function (data) {
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.back();
@@ -26066,7 +26066,7 @@ var addTripComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/trip/trips/trips.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n        <span class=\"logo-text h1\">{{'TRIP.ALLTRIP.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'TRIP.ALLTRIP.ADDTRIP'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"rows\" [columnMode]=\"'force'\" [headerHeight]=\"50\" [rowHeight]=\"50\"\r\n    [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\" [count]=\"count\" [offset]=\"offset\" [limit]=\"limit\">\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"owner.username\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.USER' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"location.nameEn\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.LOCATION' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"car.name\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.CAR' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"driver.username\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.DRIVER' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"cost\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.PRICE' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status!='deactive' && row.status!='active'\">\r\n          <mat-chip style=\"background-color:#3b6fff\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"start\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.START' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <span>\r\n          {{row[\"start\"] | date: 'dd-MM-yyyy hh:mm a'}}\r\n        </span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"end\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.END' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <span>\r\n          {{row[\"end\"] | date: 'dd-MM-yyyy hh:mm a'}}\r\n        </span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n\r\n\r\n    <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"goTo('view',row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-footer>\r\n      <ng-template ngx-datatable-footer-template let-rowCount=\"rowCount\" let-pageSize=\"pageSize\" let-selectedCount=\"selectedCount\"\r\n        , let-curPage=\"curPage\" let-offset=\"offset\">\r\n        <div style=\"padding: 5px 10px\">\r\n          <div class=\"pagination\">\r\n            <button [ngClass]=\"{'disabled':disableObject.first == true}\" [disabled]=\"disableObject['first']\" (click)=\"first()\">\r\n              <i class=\"material-icons\">\r\n                fast_rewind\r\n              </i>\r\n            </button>\r\n            <button [ngClass]=\"{'disabled':disableObject.prev == true}\" [disabled]=\"disableObject['prev']\" (click)=\"prev()\">\r\n\r\n              <i class=\"material-icons\" style=\"transform: rotate(180deg);\">\r\n                play_arrow\r\n              </i>\r\n            </button>\r\n            <button [ngClass]=\"{'disabled':disableObject.next == true}\" [disabled]=\"disableObject['next']\" (click)=\"next()\">\r\n\r\n              <i class=\"material-icons\">\r\n                play_arrow\r\n              </i>\r\n            </button>\r\n            <button [ngClass]=\"{'disabled':disableObject.end == true}\" [disabled]=\"disableObject['end']\" (click)=\"end()\">\r\n\r\n              <i class=\"material-icons\">\r\n                fast_forward\r\n              </i>\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </ng-template>\r\n    </ngx-datatable-footer>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
+module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n        <span class=\"logo-text h1\">{{'TRIP.ALLTRIP.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'TRIP.ALLTRIP.ADDTRIP'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"rows\" [columnMode]=\"'force'\" [headerHeight]=\"50\" [rowHeight]=\"50\"\r\n    [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\" [count]=\"count\" [offset]=\"offset\" [limit]=\"limit\">\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"owner.username\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.USER' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"location.nameEn\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.LOCATION' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"car.name\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.CAR' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"driver.username\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.DRIVER' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"cost\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.PRICE' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status!='deactive' && row.status!='active'\">\r\n          <mat-chip style=\"background-color:#3b6fff\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"start\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.START' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <span>\r\n          {{row[\"start\"] | date: 'dd-MM-yyyy hh:mm a'}}\r\n        </span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"end\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.END' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <span>\r\n          {{row[\"end\"] | date: 'dd-MM-yyyy hh:mm a'}}\r\n        </span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n\r\n\r\n    <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <!-- <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button> -->\r\n        <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"goTo('view',row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button>\r\n\r\n        <button mat-icon-button [matMenuTriggerFor]=\"menu\">\r\n          <mat-icon>more_vert</mat-icon>\r\n        </button>\r\n        <mat-menu #menu=\"matMenu\">\r\n          <button mat-menu-item *ngIf=\"row.status!='deactive'\" (click)=\"changeStatus('deactive',row.id)\">\r\n            <mat-icon>cancel</mat-icon>\r\n            <span>{{'TRIP.DEACTIVE' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='approved'\" (click)=\"changeStatus('approved',row.id)\">\r\n            <mat-icon>more_horiz</mat-icon>\r\n            <span>{{'TRIP.APPROVED' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='pending'\" (click)=\"changeStatus('pending',row.id)\">\r\n            <mat-icon>group</mat-icon>\r\n            <span>{{'TRIP.PENDING' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='active'\" (click)=\"changeStatus('active',row.id)\">\r\n            <mat-icon>check</mat-icon>\r\n            <span>{{'TRIP.ACTIVE' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='finished'\" (click)=\"changeStatus('finished',row.id)\">\r\n            <mat-icon>check</mat-icon>\r\n            <span>{{'TRIP.FINISHED' | translate}}</span>\r\n          </button>\r\n        </mat-menu>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n\r\n\r\n    <ngx-datatable-footer>\r\n      <ng-template ngx-datatable-footer-template let-rowCount=\"rowCount\" let-pageSize=\"pageSize\" let-selectedCount=\"selectedCount\"\r\n        , let-curPage=\"curPage\" let-offset=\"offset\">\r\n        <div style=\"padding: 5px 10px\">\r\n          <div class=\"pagination\">\r\n            <button [ngClass]=\"{'disabled':disableObject.first == true}\" [disabled]=\"disableObject['first']\" (click)=\"first()\">\r\n              <i class=\"material-icons\">\r\n                fast_rewind\r\n              </i>\r\n            </button>\r\n            <button [ngClass]=\"{'disabled':disableObject.prev == true}\" [disabled]=\"disableObject['prev']\" (click)=\"prev()\">\r\n\r\n              <i class=\"material-icons\" style=\"transform: rotate(180deg);\">\r\n                play_arrow\r\n              </i>\r\n            </button>\r\n            <button [ngClass]=\"{'disabled':disableObject.next == true}\" [disabled]=\"disableObject['next']\" (click)=\"next()\">\r\n\r\n              <i class=\"material-icons\">\r\n                play_arrow\r\n              </i>\r\n            </button>\r\n            <button [ngClass]=\"{'disabled':disableObject.end == true}\" [disabled]=\"disableObject['end']\" (click)=\"end()\">\r\n\r\n              <i class=\"material-icons\">\r\n                fast_forward\r\n              </i>\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </ng-template>\r\n    </ngx-datatable-footer>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -26282,20 +26282,11 @@ var tripsComponent = (function () {
     tripsComponent.prototype.addUser = function () {
         this.mainServ.globalServ.goTo("add-trip");
     };
-    tripsComponent.prototype.deactivate = function (id) {
+    tripsComponent.prototype.changeStatus = function (newStatus, id) {
         var _this = this;
         var mainThis = this;
-        this.translateService.get('MESSAGES.DEACTIVEUSER').subscribe(function (res) {
-            _this.dialogServ.confirmationMessage(res, "trips/deactivate/" + id, {}, false, function () {
-                mainThis.inisilaize();
-            }, "delete");
-        });
-    };
-    tripsComponent.prototype.activate = function (id, name) {
-        var _this = this;
-        var mainThis = this;
-        this.translateService.get('MESSAGES.ACTIVEUSER').subscribe(function (res) {
-            _this.dialogServ.confirmationMessage(res, "trips/activate/" + id, {}, false, function () {
+        this.translateService.get('MESSAGES.CHANGESTATUS').subscribe(function (res) {
+            _this.dialogServ.confirmationMessage(res, "trips/changeStatus/" + id, { "newStatus": newStatus }, false, function () {
                 mainThis.inisilaize();
             }, "put");
         });
@@ -26322,7 +26313,7 @@ var tripsComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/trip/viewTrip/viewTrip.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{locationName}}\r\n      </span>\r\n    </div>\r\n    <div style=\"font-size: 20px\">{{trip.status}}</div>\r\n\r\n\r\n  </div>\r\n  <div class=\"\" style=\"padding: 5px\">\r\n    <div class=\"typeAndPriceDiv\" style=\"\">\r\n      <div class=\"typeDiv\">\r\n        <!-- <div class=\"cercil\" [style.backgroundImage]=\"'url(../../../../../../assets/images/icons/FromAirport-01.png)'\">\r\n          <img src=\"../../../../../../assets/images/icons/FromAirport-01.png\">\r\n        </div>\r\n        <div class=\"cercil\" [style.backgroundImage]=\"url('../../../../../../assets/images/icons/tour-01.png)'\">\r\n          <img src=\"../../../../../../assets/images/icons/tour-01.png\">\r\n        </div>\r\n        <div class=\"cercil\" [style.backgroundImage]=\"url('../../../../../../assets/images/icons/ToAirport-01.png')\">\r\n          <img src=\"../../../../../../assets/images/icons/ToAirport-01.png\">\r\n        </div> -->\r\n      </div>\r\n      <div class=\"priceDiv\"></div>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{locationName}}\r\n      </span>\r\n    </div>\r\n    <div style=\"font-size: 20px\">{{trip.status}}</div>\r\n\r\n\r\n  </div>\r\n  <div class=\"\" style=\"padding: 5px\">\r\n    <div class=\"typeAndPriceDiv\" style=\"\">\r\n      <div class=\"typeDiv\">\r\n        <div class=\"cercil\" [ngClass]=\"{'active':trip.fromAirport}\" [style.backgroundImage]=\"'url('+'assets/images/icons/FromAirport-01.png'+')'\">\r\n          <!-- <img src=\"assets/images/icons/FromAirport-01.png\"> -->\r\n        </div>\r\n        <div class=\"cercil\" [ngClass]=\"{'active':trip.inCity}\" [style.backgroundImage]=\"'url('+'assets/images/icons/tour-01.png'+')'\">\r\n          <!-- <img src=\"assets/images/icons/tour-01.png\"> -->\r\n        </div>\r\n        <div class=\"cercil\" [ngClass]=\"{'active':trip.toAirport}\" [style.backgroundImage]=\"'url('+'assets/images/icons/ToAirport-01.png'+')'\">\r\n          <!-- <img src=\"assets/images/icons/ToAirport-01.png\"> -->\r\n        </div>\r\n      </div>\r\n      <div class=\"priceDiv\">\r\n        <label>{{'TRIP.PRICE' | translate}} : {{trip.cost}}</label>\r\n      </div>\r\n    </div>\r\n    <div class=\"ownerCard\" *ngIf=\"trip['owner']\">\r\n      <div class=\"cont\">\r\n        <div class=\"details\">\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.OWNERUSERNAME' | translate}}</h1>\r\n            <h4>{{trip['owner']['username']}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.OWNERPHONNUMBER' | translate}}</h1>\r\n            <h4>{{trip['owner']['phoneNumber']}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.OWNERCOUNTRY' | translate}}</h1>\r\n            <h4>{{trip['owner']['country']['name']}}</h4>\r\n          </div>\r\n        </div>\r\n        <div class=\"details\">\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.CREATEDAT' | translate}}</h1>\r\n            <h4>{{trip['createdAt'] | date: 'dd-MM-yyyy hh:mm a'}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.START' | translate}}</h1>\r\n            <h4>{{trip['start'] | date: 'dd-MM-yyyy hh:mm a'}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.END' | translate}}</h1>\r\n            <h4>{{trip['end'] | date: 'dd-MM-yyyy hh:mm a'}}</h4>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"carCard\" *ngIf=\"trip['owner']\">\r\n      <div class=\"img\" [style.backgroundImage]=\"'url('+trip['car']['media']['url']+')'\">\r\n      </div>\r\n      <div class=\"cont\">\r\n        <div class=\"car\">\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.CARNAME' | translate}}</h1>\r\n            <h4>{{trip['car']['name']}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.CARNUMBEROFSEAT' | translate}}</h1>\r\n            <h4>{{trip['car']['numOfSeat']}}</h4>\r\n          </div>\r\n        </div>\r\n        <div class=\"driver\">\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.DRIVERNAME' | translate}}</h1>\r\n            <h4>{{trip['driver']['username']}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.DRIVERGENDER' | translate}}</h1>\r\n            <h4>{{trip['driver']['gender']}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.DRIVERPHONE' | translate}}</h1>\r\n            <h4>{{trip['driver']['phoneNumber']}}</h4>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"locationCard\" *ngIf=\"trip['owner']\">\r\n      <div class=\"img\" [style.backgroundImage]=\"'url('+trip['location']['media']['url']+')'\">\r\n        <!-- <img src=\"{{trip['car']['media']['url']}}\"> -->\r\n      </div>\r\n      <div class=\"cont\">\r\n        <div class=\"car\">\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.LOCATIONNAME' | translate}}</h1>\r\n            <h4>{{trip['location']['nameEn']}}</h4>\r\n          </div>\r\n        </div>\r\n        <div class=\"desc\">\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.LOCATIONDESC' | translate}}</h1>\r\n            <h4>{{trip['location']['descriptionEn']}}</h4>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"sublocationCard\" *ngIf=\"trip['owner']\">\r\n      <div class=\"cont\">\r\n        <div class=\"sublocation\" *ngFor=\"let oneSublocation of trip['tripSublocations']\">\r\n          <div class=\"element\">\r\n            <h1>{{oneSublocation['subLocation']['nameEn']}}</h1>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h4>{{oneSublocation['duration']}}</h4>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -26334,7 +26325,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".typeAndPriceDiv {\n  width: 100%; }\n  .typeAndPriceDiv .typeDiv {\n    width: 50%;\n    height: 50px;\n    float: left; }\n    .typeAndPriceDiv .typeDiv .cercil {\n      width: 50px;\n      height: 50px;\n      border-radius: 50%;\n      float: left;\n      margin: 0px 10px;\n      background-color: rgba(184, 184, 184, 0.644);\n      padding: 4px; }\n      .typeAndPriceDiv .typeDiv .cercil img {\n        width: 35px; }\n  .typeAndPriceDiv .priceDiv {\n    width: 20%;\n    float: left;\n    height: 50px;\n    background-color: red; }\n", ""]);
+exports.push([module.i, ".typeAndPriceDiv {\n  width: 100%;\n  height: 50px; }\n  .typeAndPriceDiv .typeDiv {\n    width: 50%;\n    height: 50px;\n    float: left; }\n    .typeAndPriceDiv .typeDiv .cercil {\n      width: 50px;\n      height: 50px;\n      border-radius: 25%;\n      float: left;\n      margin: 0px 10px;\n      background-color: rgba(55, 171, 223, 0.4);\n      padding: 4px;\n      background-size: 75% 75%;\n      background-repeat: no-repeat;\n      background-position: center; }\n      .typeAndPriceDiv .typeDiv .cercil.active {\n        background-color: #2094c8; }\n      .typeAndPriceDiv .typeDiv .cercil img {\n        width: 35px; }\n  .typeAndPriceDiv .priceDiv {\n    padding-top: 10px;\n    float: right;\n    height: 50px; }\n    .typeAndPriceDiv .priceDiv label {\n      width: 100%;\n      font-size: 24px;\n      text-align: right;\n      display: block;\n      font-weight: bold; }\n\n.carCard, .locationCard, .ownerCard, .sublocationCard {\n  width: calc(100% - 10px);\n  margin: 10px 0px;\n  margin: 30px 5px;\n  border-radius: 10px;\n  color: white;\n  height: 250px;\n  background-color: #31a5d9;\n  box-shadow: 0px 0px 10px 0px black; }\n  .carCard .img, .locationCard .img, .ownerCard .img, .sublocationCard .img {\n    width: 30%;\n    border-radius: 8px 0px 0px 8px;\n    height: 100%;\n    float: left;\n    background-repeat: no-repeat;\n    background-position: center;\n    background-size: cover; }\n    .carCard .img img, .locationCard .img img, .ownerCard .img img, .sublocationCard .img img {\n      width: 100%;\n      height: 100%; }\n  .carCard .cont, .locationCard .cont, .ownerCard .cont, .sublocationCard .cont {\n    width: calc(70% - 30px);\n    margin: 15px;\n    float: left; }\n    .carCard .cont .car, .locationCard .cont .car, .ownerCard .cont .car, .sublocationCard .cont .car {\n      width: 100%;\n      height: 100px;\n      margin-bottom: 20px; }\n      .carCard .cont .car .element, .locationCard .cont .car .element, .ownerCard .cont .car .element, .sublocationCard .cont .car .element {\n        width: 50%;\n        float: left;\n        text-align: center; }\n        .carCard .cont .car .element h1, .locationCard .cont .car .element h1, .ownerCard .cont .car .element h1, .sublocationCard .cont .car .element h1,\n        .carCard .cont .car .element h4, .locationCard .cont .car .element h4, .ownerCard .cont .car .element h4, .sublocationCard .cont .car .element h4 {\n          font-size: 22px;\n          margin: 0px; }\n        .carCard .cont .car .element h1, .locationCard .cont .car .element h1, .ownerCard .cont .car .element h1, .sublocationCard .cont .car .element h1 {\n          opacity: 0.7; }\n        .carCard .cont .car .element h4, .locationCard .cont .car .element h4, .ownerCard .cont .car .element h4, .sublocationCard .cont .car .element h4 {\n          font-size: 26px; }\n    .carCard .cont .driver, .locationCard .cont .driver, .ownerCard .cont .driver, .sublocationCard .cont .driver {\n      width: 100%;\n      height: 50%; }\n      .carCard .cont .driver .element, .locationCard .cont .driver .element, .ownerCard .cont .driver .element, .sublocationCard .cont .driver .element {\n        width: 33%;\n        float: left;\n        text-align: center; }\n        .carCard .cont .driver .element h1, .locationCard .cont .driver .element h1, .ownerCard .cont .driver .element h1, .sublocationCard .cont .driver .element h1,\n        .carCard .cont .driver .element h4, .locationCard .cont .driver .element h4, .ownerCard .cont .driver .element h4, .sublocationCard .cont .driver .element h4 {\n          font-size: 22px;\n          margin: 0px; }\n        .carCard .cont .driver .element h1, .locationCard .cont .driver .element h1, .ownerCard .cont .driver .element h1, .sublocationCard .cont .driver .element h1 {\n          opacity: 0.7; }\n        .carCard .cont .driver .element h4, .locationCard .cont .driver .element h4, .ownerCard .cont .driver .element h4, .sublocationCard .cont .driver .element h4 {\n          font-size: 26px; }\n\n.locationCard .cont .car .element, .ownerCard .cont .car .element, .sublocationCard .cont .car .element {\n  width: 100%;\n  text-align: left; }\n\n.locationCard .cont .desc .element, .ownerCard .cont .desc .element, .sublocationCard .cont .desc .element {\n  width: 100%;\n  float: left;\n  text-align: left; }\n  .locationCard .cont .desc .element h1, .ownerCard .cont .desc .element h1, .sublocationCard .cont .desc .element h1,\n  .locationCard .cont .desc .element h4, .ownerCard .cont .desc .element h4, .sublocationCard .cont .desc .element h4 {\n    font-size: 22px;\n    margin: 0px; }\n  .locationCard .cont .desc .element h1, .ownerCard .cont .desc .element h1, .sublocationCard .cont .desc .element h1 {\n    opacity: 0.7; }\n  .locationCard .cont .desc .element h4, .ownerCard .cont .desc .element h4, .sublocationCard .cont .desc .element h4 {\n    font-size: 26px; }\n\n.ownerCard .cont {\n  width: calc(100% - 30px); }\n  .ownerCard .cont .details {\n    height: 124px; }\n    .ownerCard .cont .details .element {\n      width: 33%;\n      float: left;\n      text-align: center; }\n      .ownerCard .cont .details .element h1,\n      .ownerCard .cont .details .element h4 {\n        font-size: 22px;\n        margin: 0px; }\n      .ownerCard .cont .details .element h1 {\n        opacity: 0.7; }\n      .ownerCard .cont .details .element h4 {\n        font-size: 26px; }\n\n.sublocationCard {\n  display: -ms-inline-grid;\n  display: inline-grid;\n  height: auto;\n  margin-top: 0px; }\n  .sublocationCard .cont {\n    width: 100%; }\n    .sublocationCard .cont .sublocation .element {\n      width: 50%;\n      float: left;\n      text-align: center; }\n      .sublocationCard .cont .sublocation .element h1,\n      .sublocationCard .cont .sublocation .element h4 {\n        font-size: 22px;\n        margin: 0px; }\n      .sublocationCard .cont .sublocation .element h1 {\n        opacity: 0.7; }\n      .sublocationCard .cont .sublocation .element h4 {\n        font-size: 26px; }\n", ""]);
 
 // exports
 
@@ -26390,33 +26381,39 @@ var viewTripComponent = (function () {
         console.log(date);
         return date;
     };
-    // calcStartDateAndEnd() {
-    //   for (let index = 0; index < this.rows.length; index++) {
-    //     const element = this.rows[index];
-    //     if (element.type == "fromAirport") {
-    //       element.start = element.fromAirportDate;
-    //       element.end = this.addHours(2, element.fromAirportDate);
-    //     } else if (element.type == "city") {
-    //       element.start = element.startInCityDate;
-    //       element.end = element.endInCityDate;
-    //     } else if (element.type == "toAirport") {
-    //       element.start = element.toAirportDate;
-    //       element.end = this.addHours(2, element.toAirportDate);
-    //     } else if (element.type == "fromAirportAndCity") {
-    //       element.start = element.fromAirportDate;
-    //       element.end = element.endInCityDate;
-    //     } else if (element.type == "fromAirportAndToAirport") {
-    //       element.start = element.fromAirportDate;
-    //       element.end = element.toAirportDate;
-    //     } else if (element.type == "cityAndToAirport") {
-    //       element.start = element.startInCityDate;
-    //       element.end = this.addHours(2, element.toAirportDate);
-    //     } else if (element.type == "fromAirportAndCityAndToAirport") {
-    //       element.start = element.fromAirportDate;
-    //       element.end = this.addHours(2, element.toAirportDate);
-    //     }
-    //   }
-    // }
+    viewTripComponent.prototype.calcStartDateAndEnd = function () {
+        // for (let index = 0; index < this.rows.length; index++) {
+        // var this.trip = this.trip;
+        if (this.trip['type'] == "fromAirport") {
+            this.trip['start'] = this.trip['fromAirportDate'];
+            this.trip['end'] = this.addHours(2, this.trip['fromAirportDate']);
+        }
+        else if (this.trip['type'] == "city") {
+            this.trip['start'] = this.trip['startInCityDate'];
+            this.trip['end'] = this.trip['endInCityDate'];
+        }
+        else if (this.trip['type'] == "toAirport") {
+            this.trip['start'] = this.trip['toAirportDate'];
+            this.trip['end'] = this.addHours(2, this.trip['toAirportDate']);
+        }
+        else if (this.trip['type'] == "fromAirportAndCity") {
+            this.trip['start'] = this.trip['fromAirportDate'];
+            this.trip['end'] = this.trip['endInCityDate'];
+        }
+        else if (this.trip['type'] == "fromAirportAndToAirport") {
+            this.trip['start'] = this.trip['fromAirportDate'];
+            this.trip['end'] = this.trip['toAirportDate'];
+        }
+        else if (this.trip['type'] == "cityAndToAirport") {
+            this.trip['start'] = this.trip['startInCityDate'];
+            this.trip['end'] = this.addHours(2, this.trip['toAirportDate']);
+        }
+        else if (this.trip['type'] == "fromAirportAndCityAndToAirport") {
+            this.trip['start'] = this.trip['fromAirportDate'];
+            this.trip['end'] = this.addHours(2, this.trip['toAirportDate']);
+        }
+        // }
+    };
     viewTripComponent.prototype.back = function () {
         this.mainServ.globalServ.goTo('trips');
     };
@@ -26434,6 +26431,7 @@ var viewTripComponent = (function () {
                 if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
                     mainthis.trip = data;
                     mainthis.locationName = data['location']['nameEn'];
+                    mainthis.calcStartDateAndEnd();
                 }
                 else {
                     _this.dialogServ.someThingIsError();
@@ -29983,17 +29981,33 @@ var locale = {
             "STARTINCITYDATE": "Start In City Date",
             "ENDINCITYDATE": "End In City Date",
             "CAR": "Car",
+            "CARNAME": "Car Name",
+            "CARNUMBEROFSEAT": "Number Of Seat",
             "STATUS": "Status",
             "USER": "User",
             "LOCATION": "Location",
+            "LOCATIONNAME": "Location Name",
+            "LOCATIONDESC": "Location Description",
             "SUBLOCATIONS": "Sub Locations",
             "FROM": "From",
             "TO": "To",
             "DRIVER": "Driver",
+            "DRIVERNAME": "Driver Name",
+            "DRIVERGENDER": "Driver Gender",
+            "DRIVERPHONE": "Driver Phone",
             "TIME": "Time",
             "START": "Start",
             "END": "End",
+            "OWNERUSERNAME": "Username",
+            "OWNERPHONNUMBER": "User Phone",
+            "OWNERCOUNTRY": "User Country",
             "PRICE": "Price Estimation ",
+            "CREATEDAT": "Created At",
+            "PENDING": 'Pending',
+            "APPROVED": 'Approved',
+            "ACTIVE": 'Active',
+            "DEACTIVE": 'Deactive',
+            "FINISHED": 'Finished',
             "STEP1": {
                 "TITLE": "Step 1"
             },
@@ -30039,6 +30053,7 @@ var locale = {
             "ACTIVECAR": "Do you want to activate this car",
             "DEACTIVEUSER": "Do you want to deactivate this user",
             "ACTIVEUSER": "Do you want to activate this user",
+            "CHANGESTATUS": "Do you want to change status this trip"
         },
         "ERROR": {
             "LOGINFAILED": "Email or Password is wrong",
@@ -30954,854 +30969,854 @@ var NavigationModel = (function () {
                 'title': 'TRIP.ALLTRIP.TITLE',
                 'type': 'item',
                 'url': '/trips'
-            },
-            {
-                'id': 'applications',
-                'title': 'Applications',
-                'type': 'group',
-                'icon': 'apps',
-                'children': [
-                    {
-                        'id': 'dashboards',
-                        'title': 'Dashboards',
-                        'type': 'collapse',
-                        'icon': 'dashboard',
-                        'children': [
-                            {
-                                'id': 'project',
-                                'title': 'Project',
-                                'type': 'item',
-                                'url': '/apps/dashboards/project'
-                            }
-                        ]
-                    },
-                    {
-                        'id': 'calendar',
-                        'title': 'Calendar',
-                        'type': 'item',
-                        'icon': 'today',
-                        'url': '/apps/calendar'
-                    },
-                    {
-                        'id': 'e-commerce',
-                        'title': 'E-Commerce',
-                        'type': 'collapse',
-                        'icon': 'shopping_cart',
-                        'children': [
-                            {
-                                'id': 'dashboard',
-                                'title': 'Dashboard',
-                                'type': 'item',
-                                'url': '/apps/e-commerce/dashboard'
-                            },
-                            {
-                                'id': 'products',
-                                'title': 'Products',
-                                'type': 'item',
-                                'url': '/apps/e-commerce/products',
-                                'exactMatch': true
-                            },
-                            {
-                                'id': 'productDetail',
-                                'title': 'Product Detail',
-                                'type': 'item',
-                                'url': '/apps/e-commerce/products/1/printed-dress',
-                                'exactMatch': true
-                            },
-                            {
-                                'id': 'orders',
-                                'title': 'Orders',
-                                'type': 'item',
-                                'url': '/apps/e-commerce/orders',
-                                'exactMatch': true
-                            },
-                            {
-                                'id': 'orderDetail',
-                                'title': 'Order Detail',
-                                'type': 'item',
-                                'url': '/apps/e-commerce/orders/1',
-                                'exactMatch': true
-                            }
-                        ]
-                    },
-                    {
-                        'id': 'mail',
-                        'title': 'Mail',
-                        'type': 'item',
-                        'icon': 'email',
-                        'url': '/apps/mail',
-                        'badge': {
-                            'title': 25,
-                            'bg': '#F44336',
-                            'fg': '#FFFFFF'
-                        }
-                    },
-                    {
-                        'id': 'chat',
-                        'title': 'Chat',
-                        'type': 'item',
-                        'icon': 'chat',
-                        'url': '/apps/chat',
-                        'badge': {
-                            'title': 13,
-                            'bg': '#09d261',
-                            'fg': '#FFFFFF'
-                        }
-                    },
-                    {
-                        'id': 'file-manager',
-                        'title': 'File Manager',
-                        'type': 'item',
-                        'icon': 'folder',
-                        'url': '/apps/file-manager'
-                    },
-                    {
-                        'id': 'contacts',
-                        'title': 'Contacts',
-                        'type': 'item',
-                        'icon': 'account_box',
-                        'url': '/apps/contacts'
-                    },
-                    {
-                        'id': 'to-do',
-                        'title': 'To-Do',
-                        'type': 'item',
-                        'icon': 'check_box',
-                        'url': '/apps/todo',
-                        'badge': {
-                            'title': 3,
-                            'bg': '#FF6F00',
-                            'fg': '#FFFFFF'
-                        }
-                    },
-                    {
-                        'id': 'scrumboard',
-                        'title': 'Scrumboard',
-                        'type': 'item',
-                        'icon': 'assessment',
-                        'url': '/apps/scrumboard'
-                    }
-                ]
-            },
-            {
-                'id': 'pages',
-                'title': 'Pages',
-                'type': 'group',
-                'icon': 'pages',
-                'children': [
-                    {
-                        'id': 'authentication',
-                        'title': 'Authentication',
-                        'type': 'collapse',
-                        'icon': 'lock',
-                        'children': [
-                            {
-                                'id': 'login',
-                                'title': 'Login',
-                                'type': 'item',
-                                'url': '/pages/auth/login'
-                            },
-                            {
-                                'id': 'login-v2',
-                                'title': 'Login v2',
-                                'type': 'item',
-                                'url': '/pages/auth/login-2'
-                            },
-                            {
-                                'id': 'register',
-                                'title': 'Register',
-                                'type': 'item',
-                                'url': '/pages/auth/register'
-                            },
-                            {
-                                'id': 'register-v2',
-                                'title': 'Register v2',
-                                'type': 'item',
-                                'url': '/pages/auth/register-2'
-                            },
-                            {
-                                'id': 'forgot-password',
-                                'title': 'Forgot Password',
-                                'type': 'item',
-                                'url': '/pages/auth/forgot-password'
-                            },
-                            {
-                                'id': 'forgot-password-v2',
-                                'title': 'Forgot Password v2',
-                                'type': 'item',
-                                'url': '/pages/auth/forgot-password-2'
-                            },
-                            {
-                                'id': 'reset-password',
-                                'title': 'Reset Password',
-                                'type': 'item',
-                                'url': '/pages/auth/reset-password'
-                            },
-                            {
-                                'id': 'reset-password-v2',
-                                'title': 'Reset Password v2',
-                                'type': 'item',
-                                'url': '/pages/auth/reset-password-2'
-                            },
-                            {
-                                'id': 'lock-screen',
-                                'title': 'Lock Screen',
-                                'type': 'item',
-                                'url': '/pages/auth/lock'
-                            },
-                            {
-                                'id': 'mail-confirmation',
-                                'title': 'Mail Confirmation',
-                                'type': 'item',
-                                'url': '/pages/auth/mail-confirm'
-                            }
-                        ]
-                    },
-                    {
-                        'id': 'coming-soon',
-                        'title': 'Coming Soon',
-                        'type': 'item',
-                        'icon': 'alarm',
-                        'url': '/pages/coming-soon'
-                    },
-                    {
-                        'id': 'errors',
-                        'title': 'Errors',
-                        'type': 'collapse',
-                        'icon': 'error',
-                        'children': [
-                            {
-                                'id': '404',
-                                'title': '404',
-                                'type': 'item',
-                                'url': '/pages/errors/error-404'
-                            },
-                            {
-                                'id': '500',
-                                'title': '500',
-                                'type': 'item',
-                                'url': '/pages/errors/error-500'
-                            }
-                        ]
-                    },
-                    {
-                        'id': 'invoice',
-                        'title': 'Invoice',
-                        'type': 'collapse',
-                        'icon': 'receipt',
-                        'children': [
-                            {
-                                'id': 'modern',
-                                'title': 'Modern',
-                                'type': 'item',
-                                'url': '/pages/invoices/modern'
-                            },
-                            {
-                                'id': 'compact',
-                                'title': 'Compact',
-                                'type': 'item',
-                                'url': '/pages/invoices/compact'
-                            }
-                        ]
-                    },
-                    {
-                        'id': 'maintenance',
-                        'title': 'Maintenance',
-                        'type': 'item',
-                        'icon': 'build',
-                        'url': '/pages/maintenance'
-                    },
-                    {
-                        'id': 'pricing',
-                        'title': 'Pricing',
-                        'type': 'collapse',
-                        'icon': 'attach_money',
-                        'children': [
-                            {
-                                'id': 'style-1',
-                                'title': 'Style 1',
-                                'type': 'item',
-                                'url': '/pages/pricing/style-1'
-                            },
-                            {
-                                'id': 'style-2',
-                                'title': 'Style 2',
-                                'type': 'item',
-                                'url': '/pages/pricing/style-2'
-                            },
-                            {
-                                'id': 'style-3',
-                                'title': 'Style 3',
-                                'type': 'item',
-                                'url': '/pages/pricing/style-3'
-                            }
-                        ]
-                    },
-                    {
-                        'id': 'profile',
-                        'title': 'Profile',
-                        'type': 'item',
-                        'icon': 'person',
-                        'url': '/pages/profile'
-                    },
-                    {
-                        'id': 'search',
-                        'title': 'Search',
-                        'type': 'item',
-                        'icon': 'search',
-                        'url': '/pages/search'
-                    },
-                    {
-                        'title': 'Faq',
-                        'type': 'item',
-                        'icon': 'help',
-                        'url': '/pages/faq'
-                    },
-                    {
-                        'title': 'Knowledge Base',
-                        'type': 'item',
-                        'icon': 'import_contacts',
-                        'url': '/pages/knowledge-base'
-                    }
-                ]
-            },
-            {
-                'id': 'user-interface',
-                'title': 'User Interface',
-                'type': 'group',
-                'icon': 'web',
-                'children': [
-                    {
-                        'id': 'forms',
-                        'title': 'Forms',
-                        'type': 'item',
-                        'icon': 'web_asset',
-                        'url': '/ui/forms'
-                    },
-                    {
-                        'id': 'icons',
-                        'title': 'Icons',
-                        'type': 'item',
-                        'icon': 'photo',
-                        'url': '/ui/icons'
-                    },
-                    {
-                        'id': 'typography',
-                        'title': 'Typography',
-                        'type': 'item',
-                        'icon': 'text_fields',
-                        'url': '/ui/typography'
-                    },
-                    {
-                        'id': 'helper-classes',
-                        'title': 'Helper Classes',
-                        'type': 'item',
-                        'icon': 'help',
-                        'url': '/ui/helper-classes'
-                    },
-                    {
-                        'id': 'page-layouts',
-                        'title': 'Page Layouts',
-                        'type': 'collapse',
-                        'icon': 'view_quilt',
-                        'children': [
-                            {
-                                'id': 'carded',
-                                'title': 'Carded',
-                                'type': 'collapse',
-                                'children': [
-                                    {
-                                        'id': 'full-width',
-                                        'title': 'Full Width',
-                                        'type': 'item',
-                                        'url': '/ui/page-layouts/carded/full-width'
-                                    },
-                                    {
-                                        'id': 'full-width-2',
-                                        'title': 'Full Width 2',
-                                        'type': 'item',
-                                        'url': '/ui/page-layouts/carded/full-width-2'
-                                    },
-                                    {
-                                        'id': 'left-sidenav',
-                                        'title': 'Left Sidenav',
-                                        'type': 'item',
-                                        'url': '/ui/page-layouts/carded/left-sidenav'
-                                    },
-                                    {
-                                        'id': 'left-sidenav-tabbed',
-                                        'title': 'Left Sidenav Tabbed',
-                                        'type': 'item',
-                                        'url': '/ui/page-layouts/carded/left-sidenav-tabbed'
-                                    },
-                                    {
-                                        'id': 'left-sidenav-2',
-                                        'title': 'Left Sidenav 2',
-                                        'type': 'item',
-                                        'url': '/ui/page-layouts/carded/left-sidenav-2'
-                                    },
-                                    {
-                                        'id': 'left-sidenav-2-tabbed',
-                                        'title': 'Left Sidenav 2 Tabbed',
-                                        'type': 'item',
-                                        'url': '/ui/page-layouts/carded/left-sidenav-2-tabbed'
-                                    },
-                                    {
-                                        'id': 'right-sidenav',
-                                        'title': 'Right Sidenav',
-                                        'type': 'item',
-                                        'url': '/ui/page-layouts/carded/right-sidenav'
-                                    },
-                                    {
-                                        'id': 'right-sidenav-tabbed',
-                                        'title': 'Right Sidenav Tabbed',
-                                        'type': 'item',
-                                        'url': '/ui/page-layouts/carded/right-sidenav-tabbed'
-                                    },
-                                    {
-                                        'id': 'right-sidenav-2',
-                                        'title': 'Right Sidenav 2',
-                                        'type': 'item',
-                                        'url': '/ui/page-layouts/carded/right-sidenav-2'
-                                    },
-                                    {
-                                        'id': 'right-sidenav-2-tabbed',
-                                        'title': 'Right Sidenav 2 Tabbed',
-                                        'type': 'item',
-                                        'url': '/ui/page-layouts/carded/right-sidenav-2-tabbed'
-                                    }
-                                ]
-                            },
-                            {
-                                'id': 'simple',
-                                'title': 'Simple',
-                                'type': 'collapse',
-                                'children': [
-                                    {
-                                        'id': 'full-width',
-                                        'title': 'Full Width',
-                                        'type': 'item',
-                                        'url': '/ui/page-layouts/simple/full-width'
-                                    },
-                                    {
-                                        'id': 'left-sidenav',
-                                        'title': 'Left Sidenav',
-                                        'type': 'item',
-                                        'url': '/ui/page-layouts/simple/left-sidenav'
-                                    },
-                                    {
-                                        'id': 'left-sidenav-2',
-                                        'title': 'Left Sidenav 2',
-                                        'type': 'item',
-                                        'url': '/ui/page-layouts/simple/left-sidenav-2'
-                                    },
-                                    {
-                                        'id': 'left-sidenav-3',
-                                        'title': 'Left Sidenav 3',
-                                        'type': 'item',
-                                        'url': '/ui/page-layouts/simple/left-sidenav-3'
-                                    },
-                                    {
-                                        'id': 'right-sidenav',
-                                        'title': 'Right Sidenav',
-                                        'type': 'item',
-                                        'url': '/ui/page-layouts/simple/right-sidenav'
-                                    },
-                                    {
-                                        'id': 'right-sidenav-2',
-                                        'title': 'Right Sidenav 2',
-                                        'type': 'item',
-                                        'url': '/ui/page-layouts/simple/right-sidenav-2'
-                                    },
-                                    {
-                                        'id': 'right-sidenav-3',
-                                        'title': 'Right Sidenav 3',
-                                        'type': 'item',
-                                        'url': '/ui/page-layouts/simple/right-sidenav-3'
-                                    },
-                                    {
-                                        'id': 'tabbed',
-                                        'title': 'Tabbed',
-                                        'type': 'item',
-                                        'url': '/ui/page-layouts/simple/tabbed'
-                                    }
-                                ]
-                            },
-                            {
-                                'id': 'blank',
-                                'title': 'Blank',
-                                'type': 'item',
-                                'url': '/ui/page-layouts/blank'
-                            }
-                        ]
-                    },
-                    {
-                        'id': 'colors',
-                        'title': 'Colors',
-                        'type': 'item',
-                        'icon': 'color_lens',
-                        'url': '/ui/colors'
-                    }
-                ]
-            },
-            {
-                'id': 'services',
-                'title': 'Services',
-                'type': 'group',
-                'icon': 'settings',
-                'children': [
-                    {
-                        'id': 'config',
-                        'title': 'Config',
-                        'type': 'item',
-                        'icon': 'settings',
-                        'url': '/services/config'
-                    },
-                    {
-                        'id': 'splash-screen',
-                        'title': 'Splash Screen',
-                        'type': 'item',
-                        'icon': 'settings',
-                        'url': '/services/splash-screen'
-                    }
-                ]
-            },
-            {
-                'id': 'components',
-                'title': 'Components',
-                'type': 'group',
-                'icon': 'settings_input_component',
-                'children': [
-                    {
-                        'id': 'angular-material-elements',
-                        'title': 'Angular Material Elements',
-                        'type': 'collapse',
-                        'icon': 'layers',
-                        'children': [
-                            {
-                                'id': 'form-controls',
-                                'title': 'Form Controls',
-                                'type': 'group',
-                                'children': [
-                                    {
-                                        'id': 'autocomplete',
-                                        'title': 'Autocomplete',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/autocomplete'
-                                    },
-                                    {
-                                        'id': 'checkbox',
-                                        'title': 'Checkbox',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/checkbox'
-                                    },
-                                    {
-                                        'id': 'datepicker',
-                                        'title': 'Datepicker',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/datepicker'
-                                    },
-                                    {
-                                        'id': 'form-field',
-                                        'title': 'Form field',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/form-field'
-                                    },
-                                    {
-                                        'id': 'input',
-                                        'title': 'Input',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/input'
-                                    },
-                                    {
-                                        'id': 'radio-button',
-                                        'title': 'Radio button',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/radio-button'
-                                    },
-                                    {
-                                        'id': 'select',
-                                        'title': 'Select',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/select'
-                                    },
-                                    {
-                                        'id': 'slider',
-                                        'title': 'Slider',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/slider'
-                                    },
-                                    {
-                                        'id': 'slide-toggle',
-                                        'title': 'Slide toggle',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/slide-toggle'
-                                    }
-                                ]
-                            },
-                            {
-                                'id': 'navigation',
-                                'title': 'Navigation',
-                                'type': 'group',
-                                'children': [
-                                    {
-                                        'id': 'menu',
-                                        'title': 'Menu',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/menu'
-                                    },
-                                    {
-                                        'id': 'sidenav',
-                                        'title': 'Sidenav',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/sidenav'
-                                    },
-                                    {
-                                        'id': 'toolbar',
-                                        'title': 'Toolbar',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/toolbar'
-                                    }
-                                ]
-                            },
-                            {
-                                'id': 'layout',
-                                'title': 'Layout',
-                                'type': 'group',
-                                'children': [
-                                    {
-                                        'id': 'list',
-                                        'title': 'List',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/list'
-                                    },
-                                    {
-                                        'id': 'grid-list',
-                                        'title': 'Grid list',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/grid-list'
-                                    },
-                                    {
-                                        'id': 'card',
-                                        'title': 'Card',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/card'
-                                    },
-                                    {
-                                        'id': 'stepper',
-                                        'title': 'Stepper',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/stepper'
-                                    },
-                                    {
-                                        'id': 'tabs',
-                                        'title': 'Tabs',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/tabs'
-                                    },
-                                    {
-                                        'id': 'elevation',
-                                        'title': 'Elevation',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/elevation'
-                                    },
-                                    {
-                                        'id': 'expansion-panel',
-                                        'title': 'Expansion Panel',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/expansion-panel'
-                                    }
-                                ]
-                            },
-                            {
-                                'id': 'buttons-indicators',
-                                'title': 'Buttons & Indicators',
-                                'type': 'group',
-                                'children': [
-                                    {
-                                        'id': 'button',
-                                        'title': 'Button',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/button'
-                                    },
-                                    {
-                                        'id': 'button-toggle',
-                                        'title': 'Button toggle',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/button-toggle'
-                                    },
-                                    {
-                                        'id': 'chips',
-                                        'title': 'Chips',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/chips'
-                                    },
-                                    {
-                                        'id': 'icon',
-                                        'title': 'Icon',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/icon'
-                                    },
-                                    {
-                                        'id': 'progress-spinner',
-                                        'title': 'Progress spinner',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/progress-spinner'
-                                    },
-                                    {
-                                        'id': 'progress-bar',
-                                        'title': 'Progress bar',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/progress-bar'
-                                    }
-                                ]
-                            },
-                            {
-                                'id': 'popups-modals',
-                                'title': 'Popups & Modals',
-                                'type': 'group',
-                                'children': [
-                                    {
-                                        'id': 'dialog',
-                                        'title': 'Dialog',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/dialog'
-                                    },
-                                    {
-                                        'id': 'tooltip',
-                                        'title': 'Tooltip',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/tooltip'
-                                    },
-                                    {
-                                        'id': 'snackbar',
-                                        'title': 'Snackbar',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/snackbar'
-                                    }
-                                ]
-                            },
-                            {
-                                'id': 'data-table',
-                                'title': 'Data table',
-                                'type': 'group',
-                                'children': [
-                                    {
-                                        'id': 'table',
-                                        'title': 'Table',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/data-table'
-                                    },
-                                    {
-                                        'id': 'sort-header',
-                                        'title': 'Sort header',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/sort-header'
-                                    },
-                                    {
-                                        'id': 'paginator',
-                                        'title': 'Paginator',
-                                        'type': 'item',
-                                        'url': '/components/angular-material/paginator'
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        'id': 'cards',
-                        'title': 'Cards',
-                        'type': 'item',
-                        'icon': 'settings_input_component',
-                        'url': '/components/cards'
-                    },
-                    {
-                        'id': 'countdown',
-                        'title': 'Countdown',
-                        'type': 'item',
-                        'icon': 'settings_input_component',
-                        'url': '/components/countdown'
-                    },
-                    {
-                        'id': 'highlightjs',
-                        'title': 'Highlight.js',
-                        'type': 'item',
-                        'icon': 'settings_input_component',
-                        'url': '/components/highlightjs'
-                    },
-                    {
-                        'id': 'material-color-picker',
-                        'title': 'Material Color Picker',
-                        'type': 'item',
-                        'icon': 'settings_input_component',
-                        'url': '/components/material-color-picker'
-                    },
-                    {
-                        'id': 'multi-language',
-                        'title': 'Multi Language',
-                        'type': 'item',
-                        'icon': 'settings_input_component',
-                        'url': '/components/multi-language'
-                    },
-                    {
-                        'id': 'navigation',
-                        'title': 'Navigation',
-                        'type': 'item',
-                        'icon': 'settings_input_component',
-                        'url': '/components/navigation'
-                    },
-                    {
-                        'id': 'search-bar',
-                        'title': 'Search Bar',
-                        'type': 'item',
-                        'icon': 'settings_input_component',
-                        'url': '/components/search-bar'
-                    },
-                    {
-                        'id': 'shortcuts',
-                        'title': 'Shortcuts',
-                        'type': 'item',
-                        'icon': 'settings_input_component',
-                        'url': '/components/shortcuts'
-                    },
-                    {
-                        'id': 'widget',
-                        'title': 'Widget',
-                        'type': 'item',
-                        'icon': 'settings_input_component',
-                        'url': '/components/widget'
-                    }
-                ]
-            },
-            {
-                'id': '3rd-party-components',
-                'title': '3rd Party components',
-                'type': 'group',
-                'icon': 'settings_input_component',
-                'children': [
-                    {
-                        'id': 'datatables',
-                        'title': 'Datatables',
-                        'type': 'collapse',
-                        'icon': 'border_all',
-                        'children': [
-                            {
-                                'id': 'ngxdatatable',
-                                'title': 'ngx-datatable',
-                                'type': 'item',
-                                'url': '/components-third-party/datatables/ngx-datatable'
-                            }
-                        ]
-                    },
-                    {
-                        'id': 'google-maps',
-                        'title': 'Google Maps',
-                        'type': 'item',
-                        'icon': 'place',
-                        'url': '/components-third-party/google-maps'
-                    }
-                ]
             }
+            // {
+            //     'id'      : 'applications',
+            //     'title'   : 'Applications',
+            //     'type'    : 'group',
+            //     'icon'    : 'apps',
+            //     'children': [
+            //         {
+            //             'id'      : 'dashboards',
+            //             'title'   : 'Dashboards',
+            //             'type'    : 'collapse',
+            //             'icon'    : 'dashboard',
+            //             'children': [
+            //                 {
+            //                     'id'   : 'project',
+            //                     'title': 'Project',
+            //                     'type' : 'item',
+            //                     'url'  : '/apps/dashboards/project'
+            //                 }
+            //             ]
+            //         },
+            //         {
+            //             'id'   : 'calendar',
+            //             'title': 'Calendar',
+            //             'type' : 'item',
+            //             'icon' : 'today',
+            //             'url'  : '/apps/calendar'
+            //         },
+            //         {
+            //             'id'      : 'e-commerce',
+            //             'title'   : 'E-Commerce',
+            //             'type'    : 'collapse',
+            //             'icon'    : 'shopping_cart',
+            //             'children': [
+            //                 {
+            //                     'id'   : 'dashboard',
+            //                     'title': 'Dashboard',
+            //                     'type' : 'item',
+            //                     'url'  : '/apps/e-commerce/dashboard'
+            //                 },
+            //                 {
+            //                     'id'        : 'products',
+            //                     'title'     : 'Products',
+            //                     'type'      : 'item',
+            //                     'url'       : '/apps/e-commerce/products',
+            //                     'exactMatch': true
+            //                 },
+            //                 {
+            //                     'id'        : 'productDetail',
+            //                     'title'     : 'Product Detail',
+            //                     'type'      : 'item',
+            //                     'url'       : '/apps/e-commerce/products/1/printed-dress',
+            //                     'exactMatch': true
+            //                 },
+            //                 {
+            //                     'id'        : 'orders',
+            //                     'title'     : 'Orders',
+            //                     'type'      : 'item',
+            //                     'url'       : '/apps/e-commerce/orders',
+            //                     'exactMatch': true
+            //                 },
+            //                 {
+            //                     'id'        : 'orderDetail',
+            //                     'title'     : 'Order Detail',
+            //                     'type'      : 'item',
+            //                     'url'       : '/apps/e-commerce/orders/1',
+            //                     'exactMatch': true
+            //                 }
+            //             ]
+            //         },
+            //         {
+            //             'id'   : 'mail',
+            //             'title': 'Mail',
+            //             'type' : 'item',
+            //             'icon' : 'email',
+            //             'url'  : '/apps/mail',
+            //             'badge': {
+            //                 'title': 25,
+            //                 'bg'   : '#F44336',
+            //                 'fg'   : '#FFFFFF'
+            //             }
+            //         },
+            //         {
+            //             'id'   : 'chat',
+            //             'title': 'Chat',
+            //             'type' : 'item',
+            //             'icon' : 'chat',
+            //             'url'  : '/apps/chat',
+            //             'badge': {
+            //                 'title': 13,
+            //                 'bg'   : '#09d261',
+            //                 'fg'   : '#FFFFFF'
+            //             }
+            //         },
+            //         {
+            //             'id'   : 'file-manager',
+            //             'title': 'File Manager',
+            //             'type' : 'item',
+            //             'icon' : 'folder',
+            //             'url'  : '/apps/file-manager'
+            //         },
+            //         {
+            //             'id'   : 'contacts',
+            //             'title': 'Contacts',
+            //             'type' : 'item',
+            //             'icon' : 'account_box',
+            //             'url'  : '/apps/contacts'
+            //         },
+            //         {
+            //             'id'   : 'to-do',
+            //             'title': 'To-Do',
+            //             'type' : 'item',
+            //             'icon' : 'check_box',
+            //             'url'  : '/apps/todo',
+            //             'badge': {
+            //                 'title': 3,
+            //                 'bg'   : '#FF6F00',
+            //                 'fg'   : '#FFFFFF'
+            //             }
+            //         },
+            //         {
+            //             'id'   : 'scrumboard',
+            //             'title': 'Scrumboard',
+            //             'type' : 'item',
+            //             'icon' : 'assessment',
+            //             'url'  : '/apps/scrumboard'
+            //         }
+            //     ]
+            // },
+            // {
+            //     'id'      : 'pages',
+            //     'title'   : 'Pages',
+            //     'type'    : 'group',
+            //     'icon'    : 'pages',
+            //     'children': [
+            //         {
+            //             'id'      : 'authentication',
+            //             'title'   : 'Authentication',
+            //             'type'    : 'collapse',
+            //             'icon'    : 'lock',
+            //             'children': [
+            //                 {
+            //                     'id'   : 'login',
+            //                     'title': 'Login',
+            //                     'type' : 'item',
+            //                     'url'  : '/pages/auth/login'
+            //                 },
+            //                 {
+            //                     'id'   : 'login-v2',
+            //                     'title': 'Login v2',
+            //                     'type' : 'item',
+            //                     'url'  : '/pages/auth/login-2'
+            //                 },
+            //                 {
+            //                     'id'   : 'register',
+            //                     'title': 'Register',
+            //                     'type' : 'item',
+            //                     'url'  : '/pages/auth/register'
+            //                 },
+            //                 {
+            //                     'id'   : 'register-v2',
+            //                     'title': 'Register v2',
+            //                     'type' : 'item',
+            //                     'url'  : '/pages/auth/register-2'
+            //                 },
+            //                 {
+            //                     'id'   : 'forgot-password',
+            //                     'title': 'Forgot Password',
+            //                     'type' : 'item',
+            //                     'url'  : '/pages/auth/forgot-password'
+            //                 },
+            //                 {
+            //                     'id'   : 'forgot-password-v2',
+            //                     'title': 'Forgot Password v2',
+            //                     'type' : 'item',
+            //                     'url'  : '/pages/auth/forgot-password-2'
+            //                 },
+            //                 {
+            //                     'id'   : 'reset-password',
+            //                     'title': 'Reset Password',
+            //                     'type' : 'item',
+            //                     'url'  : '/pages/auth/reset-password'
+            //                 },
+            //                 {
+            //                     'id'   : 'reset-password-v2',
+            //                     'title': 'Reset Password v2',
+            //                     'type' : 'item',
+            //                     'url'  : '/pages/auth/reset-password-2'
+            //                 },
+            //                 {
+            //                     'id'   : 'lock-screen',
+            //                     'title': 'Lock Screen',
+            //                     'type' : 'item',
+            //                     'url'  : '/pages/auth/lock'
+            //                 },
+            //                 {
+            //                     'id'   : 'mail-confirmation',
+            //                     'title': 'Mail Confirmation',
+            //                     'type' : 'item',
+            //                     'url'  : '/pages/auth/mail-confirm'
+            //                 }
+            //             ]
+            //         },
+            //         {
+            //             'id'   : 'coming-soon',
+            //             'title': 'Coming Soon',
+            //             'type' : 'item',
+            //             'icon' : 'alarm',
+            //             'url'  : '/pages/coming-soon'
+            //         },
+            //         {
+            //             'id'      : 'errors',
+            //             'title'   : 'Errors',
+            //             'type'    : 'collapse',
+            //             'icon'    : 'error',
+            //             'children': [
+            //                 {
+            //                     'id'   : '404',
+            //                     'title': '404',
+            //                     'type' : 'item',
+            //                     'url'  : '/pages/errors/error-404'
+            //                 },
+            //                 {
+            //                     'id'   : '500',
+            //                     'title': '500',
+            //                     'type' : 'item',
+            //                     'url'  : '/pages/errors/error-500'
+            //                 }
+            //             ]
+            //         },
+            //         {
+            //             'id'      : 'invoice',
+            //             'title'   : 'Invoice',
+            //             'type'    : 'collapse',
+            //             'icon'    : 'receipt',
+            //             'children': [
+            //                 {
+            //                     'id'   : 'modern',
+            //                     'title': 'Modern',
+            //                     'type' : 'item',
+            //                     'url'  : '/pages/invoices/modern'
+            //                 },
+            //                 {
+            //                     'id'   : 'compact',
+            //                     'title': 'Compact',
+            //                     'type' : 'item',
+            //                     'url'  : '/pages/invoices/compact'
+            //                 }
+            //             ]
+            //         },
+            //         {
+            //             'id'   : 'maintenance',
+            //             'title': 'Maintenance',
+            //             'type' : 'item',
+            //             'icon' : 'build',
+            //             'url'  : '/pages/maintenance'
+            //         },
+            //         {
+            //             'id'      : 'pricing',
+            //             'title'   : 'Pricing',
+            //             'type'    : 'collapse',
+            //             'icon'    : 'attach_money',
+            //             'children': [
+            //                 {
+            //                     'id'   : 'style-1',
+            //                     'title': 'Style 1',
+            //                     'type' : 'item',
+            //                     'url'  : '/pages/pricing/style-1'
+            //                 },
+            //                 {
+            //                     'id'   : 'style-2',
+            //                     'title': 'Style 2',
+            //                     'type' : 'item',
+            //                     'url'  : '/pages/pricing/style-2'
+            //                 },
+            //                 {
+            //                     'id'   : 'style-3',
+            //                     'title': 'Style 3',
+            //                     'type' : 'item',
+            //                     'url'  : '/pages/pricing/style-3'
+            //                 }
+            //             ]
+            //         },
+            //         {
+            //             'id'   : 'profile',
+            //             'title': 'Profile',
+            //             'type' : 'item',
+            //             'icon' : 'person',
+            //             'url'  : '/pages/profile'
+            //         },
+            //         {
+            //             'id'   : 'search',
+            //             'title': 'Search',
+            //             'type' : 'item',
+            //             'icon' : 'search',
+            //             'url'  : '/pages/search'
+            //         },
+            //         {
+            //             'title': 'Faq',
+            //             'type' : 'item',
+            //             'icon' : 'help',
+            //             'url'  : '/pages/faq'
+            //         },
+            //         {
+            //             'title': 'Knowledge Base',
+            //             'type' : 'item',
+            //             'icon' : 'import_contacts',
+            //             'url'  : '/pages/knowledge-base'
+            //         }
+            //     ]
+            // },
+            // {
+            //     'id'      : 'user-interface',
+            //     'title'   : 'User Interface',
+            //     'type'    : 'group',
+            //     'icon'    : 'web',
+            //     'children': [
+            //         {
+            //             'id'   : 'forms',
+            //             'title': 'Forms',
+            //             'type' : 'item',
+            //             'icon' : 'web_asset',
+            //             'url'  : '/ui/forms'
+            //         },
+            //         {
+            //             'id'   : 'icons',
+            //             'title': 'Icons',
+            //             'type' : 'item',
+            //             'icon' : 'photo',
+            //             'url'  : '/ui/icons'
+            //         },
+            //         {
+            //             'id'   : 'typography',
+            //             'title': 'Typography',
+            //             'type' : 'item',
+            //             'icon' : 'text_fields',
+            //             'url'  : '/ui/typography'
+            //         },
+            //         {
+            //             'id'   : 'helper-classes',
+            //             'title': 'Helper Classes',
+            //             'type' : 'item',
+            //             'icon' : 'help',
+            //             'url'  : '/ui/helper-classes'
+            //         },
+            //         {
+            //             'id'      : 'page-layouts',
+            //             'title'   : 'Page Layouts',
+            //             'type'    : 'collapse',
+            //             'icon'    : 'view_quilt',
+            //             'children': [
+            //                 {
+            //                     'id'      : 'carded',
+            //                     'title'   : 'Carded',
+            //                     'type'    : 'collapse',
+            //                     'children': [
+            //                         {
+            //                             'id'   : 'full-width',
+            //                             'title': 'Full Width',
+            //                             'type' : 'item',
+            //                             'url'  : '/ui/page-layouts/carded/full-width'
+            //                         },
+            //                         {
+            //                             'id'   : 'full-width-2',
+            //                             'title': 'Full Width 2',
+            //                             'type' : 'item',
+            //                             'url'  : '/ui/page-layouts/carded/full-width-2'
+            //                         },
+            //                         {
+            //                             'id'   : 'left-sidenav',
+            //                             'title': 'Left Sidenav',
+            //                             'type' : 'item',
+            //                             'url'  : '/ui/page-layouts/carded/left-sidenav'
+            //                         },
+            //                         {
+            //                             'id'   : 'left-sidenav-tabbed',
+            //                             'title': 'Left Sidenav Tabbed',
+            //                             'type' : 'item',
+            //                             'url'  : '/ui/page-layouts/carded/left-sidenav-tabbed'
+            //                         },
+            //                         {
+            //                             'id'   : 'left-sidenav-2',
+            //                             'title': 'Left Sidenav 2',
+            //                             'type' : 'item',
+            //                             'url'  : '/ui/page-layouts/carded/left-sidenav-2'
+            //                         },
+            //                         {
+            //                             'id'   : 'left-sidenav-2-tabbed',
+            //                             'title': 'Left Sidenav 2 Tabbed',
+            //                             'type' : 'item',
+            //                             'url'  : '/ui/page-layouts/carded/left-sidenav-2-tabbed'
+            //                         },
+            //                         {
+            //                             'id'   : 'right-sidenav',
+            //                             'title': 'Right Sidenav',
+            //                             'type' : 'item',
+            //                             'url'  : '/ui/page-layouts/carded/right-sidenav'
+            //                         },
+            //                         {
+            //                             'id'   : 'right-sidenav-tabbed',
+            //                             'title': 'Right Sidenav Tabbed',
+            //                             'type' : 'item',
+            //                             'url'  : '/ui/page-layouts/carded/right-sidenav-tabbed'
+            //                         },
+            //                         {
+            //                             'id'   : 'right-sidenav-2',
+            //                             'title': 'Right Sidenav 2',
+            //                             'type' : 'item',
+            //                             'url'  : '/ui/page-layouts/carded/right-sidenav-2'
+            //                         },
+            //                         {
+            //                             'id'   : 'right-sidenav-2-tabbed',
+            //                             'title': 'Right Sidenav 2 Tabbed',
+            //                             'type' : 'item',
+            //                             'url'  : '/ui/page-layouts/carded/right-sidenav-2-tabbed'
+            //                         }
+            //                     ]
+            //                 },
+            //                 {
+            //                     'id'      : 'simple',
+            //                     'title'   : 'Simple',
+            //                     'type'    : 'collapse',
+            //                     'children': [
+            //                         {
+            //                             'id'   : 'full-width',
+            //                             'title': 'Full Width',
+            //                             'type' : 'item',
+            //                             'url'  : '/ui/page-layouts/simple/full-width'
+            //                         },
+            //                         {
+            //                             'id'   : 'left-sidenav',
+            //                             'title': 'Left Sidenav',
+            //                             'type' : 'item',
+            //                             'url'  : '/ui/page-layouts/simple/left-sidenav'
+            //                         },
+            //                         {
+            //                             'id'   : 'left-sidenav-2',
+            //                             'title': 'Left Sidenav 2',
+            //                             'type' : 'item',
+            //                             'url'  : '/ui/page-layouts/simple/left-sidenav-2'
+            //                         },
+            //                         {
+            //                             'id'   : 'left-sidenav-3',
+            //                             'title': 'Left Sidenav 3',
+            //                             'type' : 'item',
+            //                             'url'  : '/ui/page-layouts/simple/left-sidenav-3'
+            //                         },
+            //                         {
+            //                             'id'   : 'right-sidenav',
+            //                             'title': 'Right Sidenav',
+            //                             'type' : 'item',
+            //                             'url'  : '/ui/page-layouts/simple/right-sidenav'
+            //                         },
+            //                         {
+            //                             'id'   : 'right-sidenav-2',
+            //                             'title': 'Right Sidenav 2',
+            //                             'type' : 'item',
+            //                             'url'  : '/ui/page-layouts/simple/right-sidenav-2'
+            //                         },
+            //                         {
+            //                             'id'   : 'right-sidenav-3',
+            //                             'title': 'Right Sidenav 3',
+            //                             'type' : 'item',
+            //                             'url'  : '/ui/page-layouts/simple/right-sidenav-3'
+            //                         },
+            //                         {
+            //                             'id'   : 'tabbed',
+            //                             'title': 'Tabbed',
+            //                             'type' : 'item',
+            //                             'url'  : '/ui/page-layouts/simple/tabbed'
+            //                         }
+            //                     ]
+            //                 },
+            //                 {
+            //                     'id'   : 'blank',
+            //                     'title': 'Blank',
+            //                     'type' : 'item',
+            //                     'url'  : '/ui/page-layouts/blank'
+            //                 }
+            //             ]
+            //         },
+            //         {
+            //             'id'   : 'colors',
+            //             'title': 'Colors',
+            //             'type' : 'item',
+            //             'icon' : 'color_lens',
+            //             'url'  : '/ui/colors'
+            //         }
+            //     ]
+            // },
+            // {
+            //     'id'      : 'services',
+            //     'title'   : 'Services',
+            //     'type'    : 'group',
+            //     'icon'    : 'settings',
+            //     'children': [
+            //         {
+            //             'id'   : 'config',
+            //             'title': 'Config',
+            //             'type' : 'item',
+            //             'icon' : 'settings',
+            //             'url'  : '/services/config'
+            //         },
+            //         {
+            //             'id'   : 'splash-screen',
+            //             'title': 'Splash Screen',
+            //             'type' : 'item',
+            //             'icon' : 'settings',
+            //             'url'  : '/services/splash-screen'
+            //         }
+            //     ]
+            // },
+            // {
+            //     'id'      : 'components',
+            //     'title'   : 'Components',
+            //     'type'    : 'group',
+            //     'icon'    : 'settings_input_component',
+            //     'children': [
+            //         {
+            //             'id'      : 'angular-material-elements',
+            //             'title'   : 'Angular Material Elements',
+            //             'type'    : 'collapse',
+            //             'icon'    : 'layers',
+            //             'children': [
+            //                 {
+            //                     'id'      : 'form-controls',
+            //                     'title'   : 'Form Controls',
+            //                     'type'    : 'group',
+            //                     'children': [
+            //                         {
+            //                             'id'   : 'autocomplete',
+            //                             'title': 'Autocomplete',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/autocomplete'
+            //                         },
+            //                         {
+            //                             'id'   : 'checkbox',
+            //                             'title': 'Checkbox',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/checkbox'
+            //                         },
+            //                         {
+            //                             'id'   : 'datepicker',
+            //                             'title': 'Datepicker',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/datepicker'
+            //                         },
+            //                         {
+            //                             'id'   : 'form-field',
+            //                             'title': 'Form field',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/form-field'
+            //                         },
+            //                         {
+            //                             'id'   : 'input',
+            //                             'title': 'Input',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/input'
+            //                         },
+            //                         {
+            //                             'id'   : 'radio-button',
+            //                             'title': 'Radio button',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/radio-button'
+            //                         },
+            //                         {
+            //                             'id'   : 'select',
+            //                             'title': 'Select',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/select'
+            //                         },
+            //                         {
+            //                             'id'   : 'slider',
+            //                             'title': 'Slider',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/slider'
+            //                         },
+            //                         {
+            //                             'id'   : 'slide-toggle',
+            //                             'title': 'Slide toggle',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/slide-toggle'
+            //                         }
+            //                     ]
+            //                 },
+            //                 {
+            //                     'id'      : 'navigation',
+            //                     'title'   : 'Navigation',
+            //                     'type'    : 'group',
+            //                     'children': [
+            //                         {
+            //                             'id'   : 'menu',
+            //                             'title': 'Menu',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/menu'
+            //                         },
+            //                         {
+            //                             'id'   : 'sidenav',
+            //                             'title': 'Sidenav',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/sidenav'
+            //                         },
+            //                         {
+            //                             'id'   : 'toolbar',
+            //                             'title': 'Toolbar',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/toolbar'
+            //                         }
+            //                     ]
+            //                 },
+            //                 {
+            //                     'id'      : 'layout',
+            //                     'title'   : 'Layout',
+            //                     'type'    : 'group',
+            //                     'children': [
+            //                         {
+            //                             'id'   : 'list',
+            //                             'title': 'List',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/list'
+            //                         },
+            //                         {
+            //                             'id'   : 'grid-list',
+            //                             'title': 'Grid list',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/grid-list'
+            //                         },
+            //                         {
+            //                             'id'   : 'card',
+            //                             'title': 'Card',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/card'
+            //                         },
+            //                         {
+            //                             'id'   : 'stepper',
+            //                             'title': 'Stepper',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/stepper'
+            //                         },
+            //                         {
+            //                             'id'   : 'tabs',
+            //                             'title': 'Tabs',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/tabs'
+            //                         },
+            //                         {
+            //                             'id'   : 'elevation',
+            //                             'title': 'Elevation',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/elevation'
+            //                         },
+            //                         {
+            //                             'id'   : 'expansion-panel',
+            //                             'title': 'Expansion Panel',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/expansion-panel'
+            //                         }
+            //                     ]
+            //                 },
+            //                 {
+            //                     'id'      : 'buttons-indicators',
+            //                     'title'   : 'Buttons & Indicators',
+            //                     'type'    : 'group',
+            //                     'children': [
+            //                         {
+            //                             'id'   : 'button',
+            //                             'title': 'Button',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/button'
+            //                         },
+            //                         {
+            //                             'id'   : 'button-toggle',
+            //                             'title': 'Button toggle',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/button-toggle'
+            //                         },
+            //                         {
+            //                             'id'   : 'chips',
+            //                             'title': 'Chips',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/chips'
+            //                         },
+            //                         {
+            //                             'id'   : 'icon',
+            //                             'title': 'Icon',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/icon'
+            //                         },
+            //                         {
+            //                             'id'   : 'progress-spinner',
+            //                             'title': 'Progress spinner',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/progress-spinner'
+            //                         },
+            //                         {
+            //                             'id'   : 'progress-bar',
+            //                             'title': 'Progress bar',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/progress-bar'
+            //                         }
+            //                     ]
+            //                 },
+            //                 {
+            //                     'id'      : 'popups-modals',
+            //                     'title'   : 'Popups & Modals',
+            //                     'type'    : 'group',
+            //                     'children': [
+            //                         {
+            //                             'id'   : 'dialog',
+            //                             'title': 'Dialog',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/dialog'
+            //                         },
+            //                         {
+            //                             'id'   : 'tooltip',
+            //                             'title': 'Tooltip',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/tooltip'
+            //                         },
+            //                         {
+            //                             'id'   : 'snackbar',
+            //                             'title': 'Snackbar',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/snackbar'
+            //                         }
+            //                     ]
+            //                 },
+            //                 {
+            //                     'id'      : 'data-table',
+            //                     'title'   : 'Data table',
+            //                     'type'    : 'group',
+            //                     'children': [
+            //                         {
+            //                             'id'   : 'table',
+            //                             'title': 'Table',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/data-table'
+            //                         },
+            //                         {
+            //                             'id'   : 'sort-header',
+            //                             'title': 'Sort header',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/sort-header'
+            //                         },
+            //                         {
+            //                             'id'   : 'paginator',
+            //                             'title': 'Paginator',
+            //                             'type' : 'item',
+            //                             'url'  : '/components/angular-material/paginator'
+            //                         }
+            //                     ]
+            //                 }
+            //             ]
+            //         },
+            //         {
+            //             'id'   : 'cards',
+            //             'title': 'Cards',
+            //             'type' : 'item',
+            //             'icon' : 'settings_input_component',
+            //             'url'  : '/components/cards'
+            //         },
+            //         {
+            //             'id'   : 'countdown',
+            //             'title': 'Countdown',
+            //             'type' : 'item',
+            //             'icon' : 'settings_input_component',
+            //             'url'  : '/components/countdown'
+            //         },
+            //         {
+            //             'id'   : 'highlightjs',
+            //             'title': 'Highlight.js',
+            //             'type' : 'item',
+            //             'icon' : 'settings_input_component',
+            //             'url'  : '/components/highlightjs'
+            //         },
+            //         {
+            //             'id'   : 'material-color-picker',
+            //             'title': 'Material Color Picker',
+            //             'type' : 'item',
+            //             'icon' : 'settings_input_component',
+            //             'url'  : '/components/material-color-picker'
+            //         },
+            //         {
+            //             'id'   : 'multi-language',
+            //             'title': 'Multi Language',
+            //             'type' : 'item',
+            //             'icon' : 'settings_input_component',
+            //             'url'  : '/components/multi-language'
+            //         },
+            //         {
+            //             'id'   : 'navigation',
+            //             'title': 'Navigation',
+            //             'type' : 'item',
+            //             'icon' : 'settings_input_component',
+            //             'url'  : '/components/navigation'
+            //         },
+            //         {
+            //             'id'   : 'search-bar',
+            //             'title': 'Search Bar',
+            //             'type' : 'item',
+            //             'icon' : 'settings_input_component',
+            //             'url'  : '/components/search-bar'
+            //         },
+            //         {
+            //             'id'   : 'shortcuts',
+            //             'title': 'Shortcuts',
+            //             'type' : 'item',
+            //             'icon' : 'settings_input_component',
+            //             'url'  : '/components/shortcuts'
+            //         },
+            //         {
+            //             'id'   : 'widget',
+            //             'title': 'Widget',
+            //             'type' : 'item',
+            //             'icon' : 'settings_input_component',
+            //             'url'  : '/components/widget'
+            //         }
+            //     ]
+            // },
+            // {
+            //     'id'      : '3rd-party-components',
+            //     'title'   : '3rd Party components',
+            //     'type'    : 'group',
+            //     'icon'    : 'settings_input_component',
+            //     'children': [
+            //         {
+            //             'id'      : 'datatables',
+            //             'title'   : 'Datatables',
+            //             'type'    : 'collapse',
+            //             'icon'    : 'border_all',
+            //             'children': [
+            //                 {
+            //                     'id'   : 'ngxdatatable',
+            //                     'title': 'ngx-datatable',
+            //                     'type' : 'item',
+            //                     'url'  : '/components-third-party/datatables/ngx-datatable'
+            //                 }
+            //             ]
+            //         },
+            //         {
+            //             'id'   : 'google-maps',
+            //             'title': 'Google Maps',
+            //             'type' : 'item',
+            //             'icon' : 'place',
+            //             'url'  : '/components-third-party/google-maps'
+            //         }
+            //     ]
+            // }
         ];
     }
     return NavigationModel;

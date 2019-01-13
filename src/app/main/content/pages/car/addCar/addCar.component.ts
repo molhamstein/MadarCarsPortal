@@ -190,8 +190,8 @@ export class addCarComponent implements OnInit {
     data['isAirportCar'] = this.isAirportCar;
     data['isCityCar'] = this.isCityCar;
     data['isVip'] = this.isVip;
-    data['color1'] = this.primaryColor;
-    data['color2'] = this.secondryColor;
+    data['color1'] = this.primaryColor.substr(1);
+    data['color2'] = this.secondryColor.substr(1);
     console.log(data);
     this.mainServ.APIServ.post("cars", data).subscribe((data: any) => {
       if (this.mainServ.APIServ.getErrorCode() == 0) {

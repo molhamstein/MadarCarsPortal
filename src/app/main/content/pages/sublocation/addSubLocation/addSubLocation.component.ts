@@ -116,8 +116,8 @@ export class addSubLocationComponent implements OnInit {
     var data = this.addSubLocationForm.value;
     data['mediaId'] = this.media.id;
     data['locationId'] = this.locationId;
-    data['color1'] = this.primaryColor;
-    data['color2'] = this.secondryColor;
+    data['color1'] = this.primaryColor.substr(1);
+    data['color2'] = this.secondryColor.substr(1);
     this.mainServ.APIServ.post("subLocations", data).subscribe((data: any) => {
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.back();

@@ -188,8 +188,8 @@ export class editCarComponent implements OnInit {
                       mainthis.media = data.media;
                       mainthis.images[0] = data.media
                       mainthis.listImages = data.carMedia;
-                      mainthis.primaryColor = data.color1;
-                      mainthis.secondryColor = data.color2;
+                      mainthis.primaryColor = "#" + data.color1;
+                      mainthis.secondryColor = "#" + data.color2;
                       mainthis.subLocation = mainthis.locations.find(x => x.id === data.locationId).subLocations;
 
                       data['carSublocations'].forEach(element => {
@@ -251,8 +251,8 @@ export class editCarComponent implements OnInit {
     data['isAirportCar'] = this.isAirportCar;
     data['isCityCar'] = this.isCityCar;
     data['isVip'] = this.isVip;
-    data['color1'] = this.primaryColor;
-    data['color2'] = this.secondryColor;
+    data['color1'] = this.primaryColor.substr(1);
+    data['color2'] = this.secondryColor.substr(1);
     console.log(data);
     this.mainServ.APIServ.put("cars/" + this.carId, data).subscribe((data: any) => {
       if (this.mainServ.APIServ.getErrorCode() == 0) {

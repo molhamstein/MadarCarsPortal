@@ -121,18 +121,46 @@
         <button mat-mini-fab class="mr-16" (click)="goTo('edit',row['id'])" style="background-color: rgba(20, 160, 202, 0.911);">
           <mat-icon style="color : white;">edit</mat-icon>
         </button>
-        <button mat-mini-fab *ngIf="row.status=='active'" class="mr-16" (click)="deactivate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
+        <!-- <button mat-mini-fab *ngIf="row.status=='active'" class="mr-16" (click)="deactivate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
           <mat-icon style="color : white;">delete</mat-icon>
         </button>
         <button mat-mini-fab *ngIf="row.status=='deactive'" class="mr-16" (click)="activate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
           <mat-icon style="color : white;">replay</mat-icon>
-        </button>
+        </button> -->
         <button mat-mini-fab class="mr-16" style="background-color: rgba(7, 112, 7, 0.849);" (click)="goTo('view',row['id'])">
           <mat-icon style="color : white;">visibility</mat-icon>
         </button>
+
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item *ngIf="row.status!='deactive'" (click)="changeStatus('deactive',row.id)">
+            <mat-icon>cancel</mat-icon>
+            <span>{{'TRIP.DEACTIVE' | translate}}</span>
+          </button>
+          <button mat-menu-item *ngIf="row.status!='approved'" (click)="changeStatus('approved',row.id)">
+            <mat-icon>more_horiz</mat-icon>
+            <span>{{'TRIP.APPROVED' | translate}}</span>
+          </button>
+          <button mat-menu-item *ngIf="row.status!='pending'" (click)="changeStatus('pending',row.id)">
+            <mat-icon>group</mat-icon>
+            <span>{{'TRIP.PENDING' | translate}}</span>
+          </button>
+          <button mat-menu-item *ngIf="row.status!='active'" (click)="changeStatus('active',row.id)">
+            <mat-icon>check</mat-icon>
+            <span>{{'TRIP.ACTIVE' | translate}}</span>
+          </button>
+          <button mat-menu-item *ngIf="row.status!='finished'" (click)="changeStatus('finished',row.id)">
+            <mat-icon>check</mat-icon>
+            <span>{{'TRIP.FINISHED' | translate}}</span>
+          </button>
+        </mat-menu>
       </ng-template>
 
     </ngx-datatable-column>
+
+
 
     <ngx-datatable-footer>
       <ng-template ngx-datatable-footer-template let-rowCount="rowCount" let-pageSize="pageSize" let-selectedCount="selectedCount"

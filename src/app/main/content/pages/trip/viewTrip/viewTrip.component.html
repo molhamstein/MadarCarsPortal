@@ -16,18 +16,116 @@
   <div class="" style="padding: 5px">
     <div class="typeAndPriceDiv" style="">
       <div class="typeDiv">
-        <!-- <div class="cercil" [style.backgroundImage]="'url(../../../../../../assets/images/icons/FromAirport-01.png)'">
-          <img src="../../../../../../assets/images/icons/FromAirport-01.png">
+        <div class="cercil" [ngClass]="{'active':trip.fromAirport}" [style.backgroundImage]="'url('+'assets/images/icons/FromAirport-01.png'+')'">
+          <!-- <img src="assets/images/icons/FromAirport-01.png"> -->
         </div>
-        <div class="cercil" [style.backgroundImage]="url('../../../../../../assets/images/icons/tour-01.png)'">
-          <img src="../../../../../../assets/images/icons/tour-01.png">
+        <div class="cercil" [ngClass]="{'active':trip.inCity}" [style.backgroundImage]="'url('+'assets/images/icons/tour-01.png'+')'">
+          <!-- <img src="assets/images/icons/tour-01.png"> -->
         </div>
-        <div class="cercil" [style.backgroundImage]="url('../../../../../../assets/images/icons/ToAirport-01.png')">
-          <img src="../../../../../../assets/images/icons/ToAirport-01.png">
-        </div> -->
+        <div class="cercil" [ngClass]="{'active':trip.toAirport}" [style.backgroundImage]="'url('+'assets/images/icons/ToAirport-01.png'+')'">
+          <!-- <img src="assets/images/icons/ToAirport-01.png"> -->
+        </div>
       </div>
-      <div class="priceDiv"></div>
+      <div class="priceDiv">
+        <label>{{'TRIP.PRICE' | translate}} : {{trip.cost}}</label>
+      </div>
     </div>
+    <div class="ownerCard" *ngIf="trip['owner']">
+      <div class="cont">
+        <div class="details">
+          <div class="element">
+            <h1>{{'TRIP.OWNERUSERNAME' | translate}}</h1>
+            <h4>{{trip['owner']['username']}}</h4>
+          </div>
+          <div class="element">
+            <h1>{{'TRIP.OWNERPHONNUMBER' | translate}}</h1>
+            <h4>{{trip['owner']['phoneNumber']}}</h4>
+          </div>
+          <div class="element">
+            <h1>{{'TRIP.OWNERCOUNTRY' | translate}}</h1>
+            <h4>{{trip['owner']['country']['name']}}</h4>
+          </div>
+        </div>
+        <div class="details">
+          <div class="element">
+            <h1>{{'TRIP.CREATEDAT' | translate}}</h1>
+            <h4>{{trip['createdAt'] | date: 'dd-MM-yyyy hh:mm a'}}</h4>
+          </div>
+          <div class="element">
+            <h1>{{'TRIP.START' | translate}}</h1>
+            <h4>{{trip['start'] | date: 'dd-MM-yyyy hh:mm a'}}</h4>
+          </div>
+          <div class="element">
+            <h1>{{'TRIP.END' | translate}}</h1>
+            <h4>{{trip['end'] | date: 'dd-MM-yyyy hh:mm a'}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carCard" *ngIf="trip['owner']">
+      <div class="img" [style.backgroundImage]="'url('+trip['car']['media']['url']+')'">
+      </div>
+      <div class="cont">
+        <div class="car">
+          <div class="element">
+            <h1>{{'TRIP.CARNAME' | translate}}</h1>
+            <h4>{{trip['car']['name']}}</h4>
+          </div>
+          <div class="element">
+            <h1>{{'TRIP.CARNUMBEROFSEAT' | translate}}</h1>
+            <h4>{{trip['car']['numOfSeat']}}</h4>
+          </div>
+        </div>
+        <div class="driver">
+          <div class="element">
+            <h1>{{'TRIP.DRIVERNAME' | translate}}</h1>
+            <h4>{{trip['driver']['username']}}</h4>
+          </div>
+          <div class="element">
+            <h1>{{'TRIP.DRIVERGENDER' | translate}}</h1>
+            <h4>{{trip['driver']['gender']}}</h4>
+          </div>
+          <div class="element">
+            <h1>{{'TRIP.DRIVERPHONE' | translate}}</h1>
+            <h4>{{trip['driver']['phoneNumber']}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="locationCard" *ngIf="trip['owner']">
+      <div class="img" [style.backgroundImage]="'url('+trip['location']['media']['url']+')'">
+        <!-- <img src="{{trip['car']['media']['url']}}"> -->
+      </div>
+      <div class="cont">
+        <div class="car">
+          <div class="element">
+            <h1>{{'TRIP.LOCATIONNAME' | translate}}</h1>
+            <h4>{{trip['location']['nameEn']}}</h4>
+          </div>
+        </div>
+        <div class="desc">
+          <div class="element">
+            <h1>{{'TRIP.LOCATIONDESC' | translate}}</h1>
+            <h4>{{trip['location']['descriptionEn']}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sublocationCard" *ngIf="trip['owner']">
+      <div class="cont">
+        <div class="sublocation" *ngFor="let oneSublocation of trip['tripSublocations']">
+          <div class="element">
+            <h1>{{oneSublocation['subLocation']['nameEn']}}</h1>
+          </div>
+          <div class="element">
+            <h4>{{oneSublocation['duration']}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 
 </div>

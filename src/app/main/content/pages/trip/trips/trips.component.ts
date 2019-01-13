@@ -199,23 +199,15 @@ export class tripsComponent implements OnInit {
   }
 
 
-  deactivate(id) {
+  changeStatus(newStatus, id) {
     var mainThis = this;
-    this.translateService.get('MESSAGES.DEACTIVEUSER').subscribe((res: string) => {
-      this.dialogServ.confirmationMessage(res, "trips/deactivate/" + id, {}, false, function () {
-        mainThis.inisilaize()
-      }, "delete")
-    })
-  }
-
-  activate(id, name) {
-    var mainThis = this;
-    this.translateService.get('MESSAGES.ACTIVEUSER').subscribe((res: string) => {
-      this.dialogServ.confirmationMessage(res, "trips/activate/" + id, {}, false, function () {
+    this.translateService.get('MESSAGES.CHANGESTATUS').subscribe((res: string) => {
+      this.dialogServ.confirmationMessage(res, "trips/changeStatus/" + id, { "newStatus": newStatus }, false, function () {
         mainThis.inisilaize()
       }, "put")
     })
   }
+
 
 
 }

@@ -141,8 +141,8 @@ export class addLocationComponent implements OnInit {
         "mediaId": element.id
       })
     });
-    data['color1'] = this.primaryColor;
-    data['color2'] = this.secondryColor;
+    data['color1'] = this.primaryColor.substr(1);
+    data['color2'] = this.secondryColor.substr(1);
     this.mainServ.APIServ.post("locations", data).subscribe((data: any) => {
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.mainServ.globalServ.goTo('locations')
