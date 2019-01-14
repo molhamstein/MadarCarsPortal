@@ -77,6 +77,7 @@ export const locale = {
             "NAMETR": "Turkish Name",
             "FIRSTCOLOR": "First Color",
             "SECONDCOLOR": "Second Color",
+            "SUBLOCATIONCOUNT":"Nearby City Count",
             "STATUS": "Status",
             "ALLLOCATION": {
                 "TITLE": "Location",
@@ -114,9 +115,9 @@ export const locale = {
             "STATUS": "Status",
             "NUMBEROFSEAT": "Number Of Seat",
             "ISVIP": "Is Vip",
-            "PRICEPERDAY": "Price Per Day",
-            "PRICEONEWAY": "Price One Way",
-            "PRICETOWWAY": "Price Tow Way",
+            "PRICEPERDAY": "City Tour Per Day",
+            "PRICEONEWAY": "Airport Transportation One Way",
+            "PRICETOWWAY": "Airport Transportation Tow Way",
             "PRODUCTIONDATE": "Production Date",
             "ENGINTYPE": "Engine Type",
             "TYPE": "Type",
@@ -150,15 +151,15 @@ export const locale = {
             "SECONDCOLOR": "Second Color",
             "STATUS": "Status",
             "ALLSUBLOCATION": {
-                "TITLE": "Sub Location",
-                "ADDSUBLOCATION": "Add Sub Location",
-                "SEARCH": "Search for Sub location"
+                "TITLE": "Nearby City",
+                "ADDSUBLOCATION": "Add Nearby City",
+                "SEARCH": "Search for Nearby city"
             },
             "ADDSUBLOCATION": {
-                "TITLE": "Add Sub Location"
+                "TITLE": "Add Nearby City"
             },
             "EDITSUBLOCATION": {
-                "TITLE": "Edit Sub Location"
+                "TITLE": "Edit Nearby City"
             }
         },
         "USER": {
@@ -170,15 +171,15 @@ export const locale = {
             "REGISTRATIONDATE": "Registration Date",
             "TYPELOGIN": "Type LogIn",
             "ALLUSER": {
-                "TITLE": "User",
-                "ADDUSER": "Add User",
-                "SEARCH": "Search for User  "
+                "TITLE": "Customer",
+                "ADDUSER": "Add Customer",
+                "SEARCH": "Search for Customer  "
             },
             "ADDUSER": {
-                "TITLE": "Add User"
+                "TITLE": "Add Customer"
             },
             "EDITCAR": {
-                "TITLE": "Edit User"
+                "TITLE": "Edit Customer"
             }
         },
         "TRIP": {
@@ -193,11 +194,11 @@ export const locale = {
             "CARNAME": "Car Name",
             "CARNUMBEROFSEAT": "Number Of Seat",
             "STATUS": "Status",
-            "USER": "User",
+            "USER": "Customer",
             "LOCATION": "Location",
             "LOCATIONNAME": "Location Name",
             "LOCATIONDESC": "Location Description",
-            "SUBLOCATIONS": "Sub Locations",
+            "SUBLOCATIONS": "Nearby Citys",
             "FROM": "From",
             "TO": "To",
             "DRIVER": "Driver",
@@ -208,8 +209,8 @@ export const locale = {
             "START": "Start",
             "END": "End",
             "OWNERUSERNAME": "Username",
-            "OWNERPHONNUMBER": "User Phone",
-            "OWNERCOUNTRY": "User Country",
+            "OWNERPHONNUMBER": "Customer Phone",
+            "OWNERCOUNTRY": "Customer Country",
             "PRICE": "Price Estimation ",
             "CREATEDAT": "Created At",
             "PENDING": 'Pending',
@@ -256,8 +257,8 @@ export const locale = {
         "MESSAGES": {
             "DEACTIVELOCATION": "Do you want to deactivate this location",
             "ACTIVELOCATION": "Do you want to activate this location",
-            "DEACTIVESUBLOCATION": "Do you want to deactivate this sub location",
-            "ACTIVESUBLOCATION": "Do you want to activate this sub location",
+            "DEACTIVESUBLOCATION": "Do you want to deactivate this nearby city",
+            "ACTIVESUBLOCATION": "Do you want to activate this nearby city",
             "DEACTIVECAR": "Do you want to deactivate this car",
             "ACTIVECAR": "Do you want to activate this car",
             "DEACTIVEUSER": "Do you want to deactivate this user",

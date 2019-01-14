@@ -159,7 +159,7 @@
 
           <div fxFlex="90" class="step4" *ngFor="let element of tripSublocations;let i=index">
             <label fxFlex="30" class="sublocationName">{{carsSublocations[i].subLocation.nameEn}}</label>
-            <label fxFlex="30" class="sublocationPrice">{{carsSublocations[i].cost}}</label>
+            <label fxFlex="30" class="sublocationPrice">{{carsSublocations[i].cost}} $</label>
             <mat-form-field fxFlex="30">
               <input (input)="onSearchChange()" matInput type="number" min="0" max="100" placeholder="{{ 'CAR.NAME' | translate }}"
                 [ngModelOptions]="{standalone: true}" [(ngModel)]="tripSublocations[i].duration" required>

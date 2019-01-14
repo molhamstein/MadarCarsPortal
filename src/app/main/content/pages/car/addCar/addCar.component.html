@@ -39,7 +39,7 @@
 
 
           <mat-form-field fxFlex="30">
-            <input matInput type="number" placeholder="{{ 'CAR.NUMBEROFSEAT' | translate }}" formControlName="numOfSeat"
+            <input matInput type="number" min="0" placeholder="{{ 'CAR.NUMBEROFSEAT' | translate }}" formControlName="numOfSeat"
               required>
             <mat-icon matSuffix>people</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
@@ -126,7 +126,7 @@
           </mat-form-field>
 
           <mat-form-field fxFlex="30" *ngFor="let oneSublocation of carSublocations;let i=index">
-            <input matInput type="number" placeholder="{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}"
+            <input matInput type="number" min="0" placeholder="{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}"
               [(ngModel)]="carSublocations[i].cost" [ngModelOptions]="{standalone: true}" required>
             <mat-icon matSuffix>people</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>

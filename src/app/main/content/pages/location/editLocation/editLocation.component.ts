@@ -96,7 +96,6 @@ export class editLocationComponent implements OnInit {
   }
 
   onChange(event: any) {
-    alert("ssss");
     let files = [].slice.call(event.target.files);
     let allFilles = event.target.files;
     let images: any = [];

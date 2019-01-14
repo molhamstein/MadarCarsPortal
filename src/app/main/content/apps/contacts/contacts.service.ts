@@ -35,7 +35,6 @@ export class ContactsService implements Resolve<any>
      */
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any
     {
-        alert("SSSSS");
         return new Promise((resolve, reject) => {
 
             Promise.all([

@@ -561,7 +561,6 @@ var ContactsService = (function () {
      */
     ContactsService.prototype.resolve = function (route, state) {
         var _this = this;
-        alert("SSSSS");
         return new Promise(function (resolve, reject) {
             Promise.all([
                 _this.getContacts(),

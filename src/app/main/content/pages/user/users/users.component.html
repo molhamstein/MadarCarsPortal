@@ -40,7 +40,6 @@
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
           <span>{{ 'USER.USERNAME' | translate }}</span>
         </ng-template>
-
       </ngx-datatable-column>
       <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="phoneNumber">
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
@@ -53,6 +52,10 @@
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
           <span>{{ 'USER.ISOCODE' | translate }}</span>
         </ng-template>
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          <span *ngIf="row['country']">{{row['country']['name']}}</span>
+        </ng-template>
+
       </ngx-datatable-column>
 
 
