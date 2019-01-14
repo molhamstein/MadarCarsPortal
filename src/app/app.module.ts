@@ -171,7 +171,7 @@ const appRoutes: Routes = [
     },
     {
         path: '**',
-        redirectTo: 'apps/dashboards/project'
+        redirectTo: 'users'
     }
 ];
 
