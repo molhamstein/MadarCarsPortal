@@ -77,7 +77,7 @@ export const locale = {
             "NAMETR": "Turkish Name",
             "FIRSTCOLOR": "First Color",
             "SECONDCOLOR": "Second Color",
-            "SUBLOCATIONCOUNT":"Nearby City Count",
+            "SUBLOCATIONCOUNT": "Nearby City Count",
             "STATUS": "Status",
             "ALLLOCATION": {
                 "TITLE": "Location",
@@ -163,7 +163,7 @@ export const locale = {
             }
         },
         "USER": {
-            "USERNAME": "Username",
+            "NAME": "Name",
             "PHONENUMBER": "Phone Number",
             "STATUS": "Status",
             'PASSWORD': 'Password',
@@ -208,7 +208,8 @@ export const locale = {
             "TIME": "Time",
             "START": "Start",
             "END": "End",
-            "OWNERUSERNAME": "Username",
+            "DAYSINCITY": "Days In City",
+            "OWNERNAME": "Name",
             "OWNERPHONNUMBER": "Customer Phone",
             "OWNERCOUNTRY": "Customer Country",
             "PRICE": "Price Estimation ",
@@ -238,6 +239,31 @@ export const locale = {
                 "TITLE": "Add Trip",
             }
         },
+
+        "PREDEFINEDTRIP": {
+            "DURATION": "Duration",
+            "LOCATION": "Location",
+            "STATUS": "Status",
+            "TITLEEN": "English Title",
+            "TITLEAR": "Arabic Title",
+            "TITLETR": "Turkish Title",
+            "DESCRIPTIONEN": "English Description",
+            "DESCRIPTIONAR": "Arabic Description",
+            "DESCRIPTIONTR": "Turkish Description",
+            "FIRSTCOLOR": "First Color",
+            "SECONDCOLOR": "Second Color",
+            "ALLPREDEFINEDTRIP": {
+                "TITLE": "Predefined Trip",
+                "ADDPREDEFINEDTRIP": "Add Predefined Trip",
+                "SEARCH": "Search for Predefined"
+            },
+            "ADDPREDEFINEDTRIP": {
+                "TITLE": "Add Predefined Trip"
+            },
+            "EDITPREDEFINEDTRIP": {
+                "TITLE": "Edit Predefined Trip"
+            }
+        },
         'Nav': {
             'CALENDAR': 'Calender',
             'USERS': 'Users'
@@ -263,7 +289,7 @@ export const locale = {
             "ACTIVECAR": "Do you want to activate this car",
             "DEACTIVEUSER": "Do you want to deactivate this user",
             "ACTIVEUSER": "Do you want to activate this user",
-            "CHANGESTATUS":"Do you want to change status this trip"
+            "CHANGESTATUS": "Do you want to change status this trip"
         },
         "ERROR": {
             "LOGINFAILED": "Email or Password is wrong",

@@ -186,6 +186,9 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__main_content_pages_trip_addTrip_addTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/addTrip/addTrip.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_53_angular5_time_picker__ = __webpack_require__("../../../../angular5-time-picker/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__main_content_pages_trip_viewTrip_viewTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/viewTrip/viewTrip.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__main_content_pages_predefindTrip_predefindTrips_predefindTrips_component__ = __webpack_require__("../../../../../src/app/main/content/pages/predefindTrip/predefindTrips/predefindTrips.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__main_content_pages_predefindTrip_addPredefindTrip_addPredefindTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/predefindTrip/addPredefindTrip/addPredefindTrip.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__main_content_pages_predefindTrip_editPredefindTrip_editPredefindTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/predefindTrip/editPredefindTrip/editPredefindTrip.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -247,7 +250,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
 var appRoutes = [
+    {
+        path: 'predefined-trips',
+        component: __WEBPACK_IMPORTED_MODULE_55__main_content_pages_predefindTrip_predefindTrips_predefindTrips_component__["a" /* predefindTripsComponent */]
+    },
+    {
+        path: 'add-predefined-trip',
+        component: __WEBPACK_IMPORTED_MODULE_56__main_content_pages_predefindTrip_addPredefindTrip_addPredefindTrip_component__["a" /* addPredefindTripComponent */]
+    },
+    {
+        path: 'edit-predefined-trip/:id',
+        component: __WEBPACK_IMPORTED_MODULE_57__main_content_pages_predefindTrip_editPredefindTrip_editPredefindTrip_component__["a" /* editPredefindTripComponent */]
+    },
     {
         path: 'trips',
         component: __WEBPACK_IMPORTED_MODULE_51__main_content_pages_trip_trips_trips_component__["a" /* tripsComponent */]
@@ -387,6 +405,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_47__main_content_pages_user_users_users_component__["a" /* usersComponent */], __WEBPACK_IMPORTED_MODULE_48__main_content_pages_user_addUser_addUser_component__["a" /* addUserComponent */], __WEBPACK_IMPORTED_MODULE_49__main_content_pages_user_editUser_editUser_component__["a" /* editUserComponent */],
                 // // Trips
                 __WEBPACK_IMPORTED_MODULE_51__main_content_pages_trip_trips_trips_component__["a" /* tripsComponent */], __WEBPACK_IMPORTED_MODULE_52__main_content_pages_trip_addTrip_addTrip_component__["a" /* addTripComponent */], __WEBPACK_IMPORTED_MODULE_54__main_content_pages_trip_viewTrip_viewTrip_component__["a" /* viewTripComponent */],
+                // // Predefind Trips
+                __WEBPACK_IMPORTED_MODULE_55__main_content_pages_predefindTrip_predefindTrips_predefindTrips_component__["a" /* predefindTripsComponent */], __WEBPACK_IMPORTED_MODULE_56__main_content_pages_predefindTrip_addPredefindTrip_addPredefindTrip_component__["a" /* addPredefindTripComponent */], __WEBPACK_IMPORTED_MODULE_57__main_content_pages_predefindTrip_editPredefindTrip_editPredefindTrip_component__["a" /* editPredefindTripComponent */],
                 // dialogs
                 __WEBPACK_IMPORTED_MODULE_30__main_dialogs_some_thing_is_error_some_thing_is_error_component__["a" /* SomeThingIsErrorComponent */], __WEBPACK_IMPORTED_MODULE_0__main_dialogs_confirm_message_confirm_message_component__["a" /* ConfirmMessageComponent */], __WEBPACK_IMPORTED_MODULE_50__main_dialogs_error_message_error_message_component__["a" /* ErrorMessageComponent */]
             ],
@@ -20755,7 +20775,7 @@ var editBrandComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/car/addCar/addCar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'CAR.ADDCAR.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"addCarForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.BRAND' | translate }}\" formControlName=\"brandId\">\r\n              <mat-option *ngFor=\"let oneBrand of brands\" [value]=\"oneBrand.id\">\r\n                {{oneBrand.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'CAR.NAME' | translate }}\" formControlName=\"name\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.NUMBEROFSEAT' | translate }}\" formControlName=\"numOfSeat\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput (focus)=\"picker.open()\" [matDatepicker]=\"picker\" formControlName=\"productionDate\"\r\n              placeholder=\"{{ 'CAR.PRODUCTIONDATE' | translate }}\">\r\n            <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #picker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.ENGINTYPE' | translate }}\" formControlName=\"engineType\">\r\n              <mat-option *ngFor=\"let oneEngineType of engineType\" [value]=\"oneEngineType\">\r\n                {{oneEngineType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.TYPE' | translate }}\" formControlName=\"type\">\r\n              <mat-option *ngFor=\"let oneType of type\" [value]=\"oneType\">\r\n                {{oneType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEPERDAY' | translate }}\" formControlName=\"pricePerDay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEONEWAY' | translate }}\" formControlName=\"priceOneWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICETOWWAY' | translate }}\" formControlName=\"priceTowWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <section class=\"example-section\" style=\"padding-bottom: 10px;\" fxFlex=\"96\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isVip\">{{\r\n              'CAR.ISVIP' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isAirportCar\">{{\r\n              'CAR.ISAIRPORTCAR' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isCityCar\">{{\r\n              'CAR.ISCITYCAR' | translate }}</mat-checkbox>\r\n          </section>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.DRIVER' | translate }}\" formControlName=\"driverId\">\r\n              <mat-option *ngFor=\"let onedriver of drivers\" [value]=\"onedriver.id\">\r\n                {{onedriver.firstName}} {{onedriver.lastName}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.LOCATION' | translate }}\" (selectionChange)=\"changeLocation($event)\"\r\n              formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let onelocation of locations\" [value]=\"onelocation.id\">\r\n                {{onelocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\" *ngFor=\"let oneSublocation of carSublocations;let i=index\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}\"\r\n              [(ngModel)]=\"carSublocations[i].cost\" [ngModelOptions]=\"{standalone: true}\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <div fxFlex=\"40\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <div fxFlex=\"60\">\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'CAR.FIRSTCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"primaryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"primaryColor\"></div>\r\n            </div>\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'CAR.SECONDCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"secondryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"secondryColor\"></div>\r\n            </div>\r\n          </div>\r\n\r\n          <ul class=\"listOfImgs\">\r\n            <li (click)=\"openSelectListImage()\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" src=\"{{imaageUrl}}\" />\r\n                <input type=\"file\" style=\"display:none\" multiple id=\"listFiles\" accept=\"image/*\" (change)=\"onChangeList($event)\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let value of listImages;let i=index\" class=\"\">\r\n              <div class=\"listDiv\">\r\n                <div class=\"deleteImge\" (click)=\"deleteImage(i)\">\r\n                  <mat-icon style=\"color : white;\">close</mat-icon>\r\n                </div>\r\n                <img class=\"listImgCustim\" src=\"{{value.url}}\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let image of listImageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                <img class=\"listImgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n              </div>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"add()\" cdkFocusInitial [disabled]=\"addCarForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'CAR.ADDCAR.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"addCarForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.BRAND' | translate }}\" formControlName=\"brandId\">\r\n              <mat-option *ngFor=\"let oneBrand of brands\" [value]=\"oneBrand.id\">\r\n                {{oneBrand.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'CAR.NAME' | translate }}\" formControlName=\"name\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.NUMBEROFSEAT' | translate }}\" formControlName=\"numOfSeat\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.PRODUCTIONDATE' | translate }}\" formControlName=\"productionDate\">\r\n              <mat-option *ngFor=\"let oneYear of years\" [value]=\"oneYear\">\r\n                {{oneYear}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.ENGINTYPE' | translate }}\" formControlName=\"engineType\">\r\n              <mat-option *ngFor=\"let oneEngineType of engineType\" [value]=\"oneEngineType\">\r\n                {{oneEngineType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.TYPE' | translate }}\" formControlName=\"type\">\r\n              <mat-option *ngFor=\"let oneType of type\" [value]=\"oneType\">\r\n                {{oneType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEPERDAY' | translate }}\" formControlName=\"pricePerDay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEONEWAY' | translate }}\" formControlName=\"priceOneWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICETOWWAY' | translate }}\" formControlName=\"priceTowWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <section class=\"example-section\" style=\"padding-bottom: 10px;\" fxFlex=\"96\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isVip\">{{\r\n              'CAR.ISVIP' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isAirportCar\">{{\r\n              'CAR.ISAIRPORTCAR' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isCityCar\">{{\r\n              'CAR.ISCITYCAR' | translate }}</mat-checkbox>\r\n          </section>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.DRIVER' | translate }}\" formControlName=\"driverId\">\r\n              <mat-option *ngFor=\"let onedriver of drivers\" [value]=\"onedriver.id\">\r\n                {{onedriver.firstName}} {{onedriver.lastName}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.LOCATION' | translate }}\" (selectionChange)=\"changeLocation($event)\"\r\n              formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let onelocation of locations\" [value]=\"onelocation.id\">\r\n                {{onelocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\" *ngFor=\"let oneSublocation of carSublocations;let i=index\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}\"\r\n              [(ngModel)]=\"carSublocations[i].cost\" [ngModelOptions]=\"{standalone: true}\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <div fxFlex=\"40\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <div fxFlex=\"60\">\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'CAR.FIRSTCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"primaryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"primaryColor\"></div>\r\n            </div>\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'CAR.SECONDCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"secondryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"secondryColor\"></div>\r\n            </div>\r\n          </div>\r\n\r\n          <ul class=\"listOfImgs\">\r\n            <li (click)=\"openSelectListImage()\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" src=\"{{imaageUrl}}\" />\r\n                <input type=\"file\" style=\"display:none\" multiple id=\"listFiles\" accept=\"image/*\" (change)=\"onChangeList($event)\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let value of listImages;let i=index\" class=\"\">\r\n              <div class=\"listDiv\">\r\n                <div class=\"deleteImge\" (click)=\"deleteImage(i)\">\r\n                  <mat-icon style=\"color : white;\">close</mat-icon>\r\n                </div>\r\n                <img class=\"listImgCustim\" src=\"{{value.url}}\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let image of listImageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                <img class=\"listImgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n              </div>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"add()\" cdkFocusInitial [disabled]=\"addCarForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -20827,6 +20847,7 @@ var addCarComponent = (function () {
         this.isVip = false;
         this.isAirportCar = false;
         this.isCityCar = false;
+        this.years = [];
         this.primaryColor = "#127bdc";
         this.secondryColor = "#127bdc";
         this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_6__languageFiles_en__["a" /* locale */]);
@@ -20913,6 +20934,9 @@ var addCarComponent = (function () {
     };
     addCarComponent.prototype.ngOnInit = function () {
         var _this = this;
+        for (var index = 1900; index < 2021; index++) {
+            this.years.push(index);
+        }
         this.addCarForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormGroup */]({
             brandId: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
             name: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
@@ -20929,6 +20953,22 @@ var addCarComponent = (function () {
         this.mainServ.APIServ.get("brands").subscribe(function (data) {
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.brands = data;
+                var mercidesObject = _this.brands.find(function (element) {
+                    return element.isDefult == true;
+                });
+                _this.addCarForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormGroup */]({
+                    brandId: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */](mercidesObject.id, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+                    name: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+                    numOfSeat: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+                    productionDate: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+                    engineType: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+                    type: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+                    pricePerDay: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+                    priceOneWay: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+                    priceTowWay: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+                    locationId: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+                    driverId: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+                });
             }
         });
         this.mainServ.APIServ.get("drivers").subscribe(function (data) {
@@ -21177,7 +21217,7 @@ var carsComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/car/editCar/editCar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'CAR.EDITCAR.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editCarForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.BRAND' | translate }}\" formControlName=\"brandId\">\r\n              <mat-option *ngFor=\"let oneBrand of brands\" [value]=\"oneBrand.id\">\r\n                {{oneBrand.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'CAR.NAME' | translate }}\" formControlName=\"name\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.NUMBEROFSEAT' | translate }}\" formControlName=\"numOfSeat\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput (focus)=\"picker.open()\" [matDatepicker]=\"picker\" formControlName=\"productionDate\"\r\n              placeholder=\"{{ 'CAR.PRODUCTIONDATE' | translate }}\">\r\n            <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #picker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.ENGINTYPE' | translate }}\" formControlName=\"engineType\">\r\n              <mat-option *ngFor=\"let oneEngineType of engineType\" [value]=\"oneEngineType\">\r\n                {{oneEngineType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.TYPE' | translate }}\" formControlName=\"type\">\r\n              <mat-option *ngFor=\"let oneType of type\" [value]=\"oneType\">\r\n                {{oneType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEPERDAY' | translate }}\" formControlName=\"pricePerDay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEONEWAY' | translate }}\" formControlName=\"priceOneWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICETOWWAY' | translate }}\" formControlName=\"priceTowWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <section class=\"example-section\" fxFlex=\"96\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isVip\">{{\r\n              'CAR.ISVIP' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isAirportCar\">{{\r\n              'CAR.ISAIRPORTCAR' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isCityCar\">{{\r\n              'CAR.ISCITYCAR' | translate }}</mat-checkbox>\r\n          </section>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.DRIVER' | translate }}\" formControlName=\"driverId\">\r\n              <mat-option *ngFor=\"let onedriver of drivers\" [value]=\"onedriver.id\">\r\n                {{onedriver.firstName}} {{onedriver.lastName}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.LOCATION' | translate }}\" (selectionChange)=\"changeLocation($event)\"\r\n              formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let onelocation of locations\" [value]=\"onelocation.id\">\r\n                {{onelocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\" *ngFor=\"let oneSublocation of carSublocations;let i=index\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}\"\r\n              [(ngModel)]=\"carSublocations[i].cost\" [ngModelOptions]=\"{standalone: true}\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <div fxFlex=\"40\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <div fxFlex=\"60\">\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'CAR.FIRSTCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"primaryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"primaryColor\"></div>\r\n            </div>\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'CAR.SECONDCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"secondryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"secondryColor\"></div>\r\n            </div>\r\n          </div>\r\n\r\n          <ul class=\"listOfImgs\">\r\n            <li (click)=\"openSelectListImage()\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" src=\"{{imaageUrl}}\" />\r\n                <input type=\"file\" style=\"display:none\" multiple id=\"listFiles\" accept=\"image/*\" (change)=\"onChangeList($event)\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let value of listImages;let i=index\" class=\"\">\r\n              <div class=\"listDiv\">\r\n                <div class=\"deleteImge\" (click)=\"deleteImage(i)\">\r\n                  <mat-icon style=\"color : white;\">close</mat-icon>\r\n                </div>\r\n                <img class=\"listImgCustim\" src=\"{{value.url}}\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let image of listImageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                <img class=\"listImgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n              </div>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editCarForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'CAR.EDITCAR.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editCarForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.BRAND' | translate }}\" formControlName=\"brandId\">\r\n              <mat-option *ngFor=\"let oneBrand of brands\" [value]=\"oneBrand.id\">\r\n                {{oneBrand.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'CAR.NAME' | translate }}\" formControlName=\"name\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.NUMBEROFSEAT' | translate }}\" formControlName=\"numOfSeat\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.PRODUCTIONDATE' | translate }}\" formControlName=\"productionDate\">\r\n              <mat-option *ngFor=\"let oneYear of years\" [value]=\"oneYear\">\r\n                {{oneYear}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.ENGINTYPE' | translate }}\" formControlName=\"engineType\">\r\n              <mat-option *ngFor=\"let oneEngineType of engineType\" [value]=\"oneEngineType\">\r\n                {{oneEngineType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.TYPE' | translate }}\" formControlName=\"type\">\r\n              <mat-option *ngFor=\"let oneType of type\" [value]=\"oneType\">\r\n                {{oneType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEPERDAY' | translate }}\" formControlName=\"pricePerDay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEONEWAY' | translate }}\" formControlName=\"priceOneWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICETOWWAY' | translate }}\" formControlName=\"priceTowWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <section class=\"example-section\" fxFlex=\"96\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isVip\">{{\r\n              'CAR.ISVIP' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isAirportCar\">{{\r\n              'CAR.ISAIRPORTCAR' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isCityCar\">{{\r\n              'CAR.ISCITYCAR' | translate }}</mat-checkbox>\r\n          </section>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.DRIVER' | translate }}\" formControlName=\"driverId\">\r\n              <mat-option *ngFor=\"let onedriver of drivers\" [value]=\"onedriver.id\">\r\n                {{onedriver.firstName}} {{onedriver.lastName}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.LOCATION' | translate }}\" (selectionChange)=\"changeLocation($event)\"\r\n              formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let onelocation of locations\" [value]=\"onelocation.id\">\r\n                {{onelocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\" *ngFor=\"let oneSublocation of carSublocations;let i=index\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}\"\r\n              [(ngModel)]=\"carSublocations[i].cost\" [ngModelOptions]=\"{standalone: true}\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <div fxFlex=\"40\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <div fxFlex=\"60\">\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'CAR.FIRSTCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"primaryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"primaryColor\"></div>\r\n            </div>\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'CAR.SECONDCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"secondryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"secondryColor\"></div>\r\n            </div>\r\n          </div>\r\n\r\n          <ul class=\"listOfImgs\">\r\n            <li (click)=\"openSelectListImage()\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" src=\"{{imaageUrl}}\" />\r\n                <input type=\"file\" style=\"display:none\" multiple id=\"listFiles\" accept=\"image/*\" (change)=\"onChangeList($event)\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let value of listImages;let i=index\" class=\"\">\r\n              <div class=\"listDiv\">\r\n                <div class=\"deleteImge\" (click)=\"deleteImage(i)\">\r\n                  <mat-icon style=\"color : white;\">close</mat-icon>\r\n                </div>\r\n                <img class=\"listImgCustim\" src=\"{{value.url}}\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let image of listImageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                <img class=\"listImgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n              </div>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editCarForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -21252,6 +21292,7 @@ var editCarComponent = (function () {
         this.isVip = false;
         this.isAirportCar = false;
         this.isCityCar = false;
+        this.years = [];
         // subLocation
         this.filterValue = "";
         this.allRows = [];
@@ -21346,8 +21387,25 @@ var editCarComponent = (function () {
             callback(params.get(name));
         });
     };
+    editCarComponent.prototype.changeLocation = function (event) {
+        var _this = this;
+        console.log(event);
+        this.subLocation = this.locations.find(function (x) { return x.id === event.value; }).subLocations;
+        console.log(this.subLocation);
+        this.subLocation.forEach(function (element) {
+            _this.carSublocations.push({
+                "cost": 0,
+                "subLocationId": element.id,
+                "name": element.nameEn
+            });
+        });
+        console.log(this.carSublocations);
+    };
     editCarComponent.prototype.ngOnInit = function () {
         var _this = this;
+        for (var index = 1900; index < 2021; index++) {
+            this.years.push(index);
+        }
         this.editCarForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
             brandId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
             name: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
@@ -21384,11 +21442,15 @@ var editCarComponent = (function () {
                                             mainthis.primaryColor = "#" + data.color1;
                                             mainthis.secondryColor = "#" + data.color2;
                                             mainthis.subLocation = mainthis.locations.find(function (x) { return x.id === data.locationId; }).subLocations;
-                                            data['carSublocations'].forEach(function (element) {
+                                            mainthis.subLocation.forEach(function (element) {
+                                                var tempcarSub = data['carSublocations'].find(function (x) { return x.subLocationId === element.id; });
+                                                var tempCost = 0;
+                                                if (tempcarSub != null)
+                                                    tempCost = tempcarSub.cost;
                                                 mainthis.carSublocations.push({
-                                                    "cost": element.cost,
-                                                    "subLocationId": element.subLocationId,
-                                                    "name": mainthis.subLocation.find(function (x) { return x.id === element.subLocationId; }).nameEn
+                                                    "cost": tempCost,
+                                                    "subLocationId": element.id,
+                                                    "name": element.nameEn
                                                 });
                                             });
                                             mainthis.isAirportCar = data['isAirportCar'];
@@ -23689,7 +23751,7 @@ var editLocationComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/location/locations/locations.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n        <span class=\"logo-text h1\">{{'LOCATION.ALLLOCATION.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n      <label for=\"search\" class=\"mr-8\">\r\n        <mat-icon>search</mat-icon>\r\n      </label>\r\n      <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n        <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'LOCATION.ALLLOCATION.SEARCH'| translate}}\">\r\n      </mat-form-field>\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'LOCATION.ALLLOCATION.ADDLOCATION'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"filterRows\" [columnMode]=\"'force'\" [headerHeight]=\"50\" [rowHeight]=\"50\"\r\n    [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\">\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"nameAr\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.NAMEAR' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"nameEn\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.NAMEEN' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"nameTr\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.NAMETR' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>  \r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n          \r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button>\r\n        <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
+module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n        <span class=\"logo-text h1\">{{'LOCATION.ALLLOCATION.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n      <label for=\"search\" class=\"mr-8\">\r\n        <mat-icon>search</mat-icon>\r\n      </label>\r\n      <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n        <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'LOCATION.ALLLOCATION.SEARCH'| translate}}\">\r\n      </mat-form-field>\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'LOCATION.ALLLOCATION.ADDLOCATION'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"filterRows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n    [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\">\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"nameAr\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.NAMEAR' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"nameEn\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.NAMEEN' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"nameTr\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.NAMETR' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"sublocationCount\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.SUBLOCATIONCOUNT' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button>\r\n        <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -24244,6 +24306,722 @@ var PagesModule = (function () {
         })
     ], PagesModule);
     return PagesModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/predefindTrip/addPredefindTrip/addPredefindTrip.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'PREDEFINEDTRIP.ADDPREDEFINEDTRIP.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"addPredefindTripForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"96\">\r\n            <textarea matInput placeholder=\"{{ 'PREDEFINEDTRIP.DESCRIPTIONEN' | translate }}\" formControlName=\"descriptionEn\"\r\n              required></textarea>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"96\">\r\n            <textarea matInput placeholder=\"{{ 'PREDEFINEDTRIP.DESCRIPTIONAR' | translate }}\" formControlName=\"descriptionAr\"\r\n              required></textarea>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"96\">\r\n            <textarea matInput placeholder=\"{{ 'PREDEFINEDTRIP.DESCRIPTIONTR' | translate }}\" formControlName=\"descriptionTr\"\r\n              required></textarea>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'PREDEFINEDTRIP.TITLEEN' | translate }}\" formControlName=\"titleEn\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'PREDEFINEDTRIP.TITLEAR' | translate }}\" formControlName=\"titleAr\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'PREDEFINEDTRIP.TITLETR' | translate }}\" formControlName=\"titleTr\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'PREDEFINEDTRIP.DURATION' | translate }}\" formControlName=\"duration\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'PREDEFINEDTRIP.LOCATION' | translate }}\" (selectionChange)=\"changeLocation($event)\"\r\n              formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let oneLocation of locations\" [value]=\"oneLocation.id\">\r\n                {{oneLocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <div fxFlex=\"30\"></div>\r\n\r\n          <div fxFlex=\"96\" class=\"step4\" style=\"margin: 10px 0px;\" *ngIf=\"location != null\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{location.nameEn}}</label>\r\n            <div fxFlex=\"20\"></div>\r\n            <div fxFlex=\"50\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus disabled\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{addPredefindTripForm.value.duration - sublocationDuration}}</label>\r\n                <div class=\"circle add disabled\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n\r\n          <div fxFlex=\"96\" class=\"step4\" style=\"margin: 10px 0px;\" *ngFor=\"let element of predefinedTripsSublocations;let i=index\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{element.name}}</label>\r\n            <div fxFlex=\"20\"></div>\r\n            <div fxFlex=\"50\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus\" [ngClass]=\"{'disabled': predefinedTripsSublocations[i].duration==0}\" (click)=\"minDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{predefinedTripsSublocations[i].duration}}</label>\r\n                <div class=\"circle add\" (click)=\"addDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n          <div fxFlex=\"41\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                  <!-- <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div> -->\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <div fxFlex=\"59\">\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'PREDEFINEDTRIP.FIRSTCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"primaryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"primaryColor\"></div>\r\n            </div>\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'PREDEFINEDTRIP.SECONDCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"secondryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"secondryColor\"></div>\r\n            </div>\r\n          </div>\r\n\r\n          <!-- <ul class=\"listOfImgs\">\r\n            <li (click)=\"openSelectListImage()\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" src=\"{{imaageUrl}}\" />\r\n                <input type=\"file\" style=\"display:none\" multiple id=\"listFiles\" accept=\"image/*\" (change)=\"onChangeList($event)\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let value of listImages;let i=index\" class=\"\">\r\n              <div class=\"listDiv\">\r\n                <div class=\"deleteImge\" (click)=\"deleteImage(i)\">\r\n                  <mat-icon style=\"color : white;\">close</mat-icon>\r\n                </div>\r\n                <img class=\"listImgCustim\" src=\"{{value.url}}\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let image of listImageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                <img class=\"listImgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n              </div>\r\n            </li>\r\n          </ul> -->\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"add()\" cdkFocusInitial [disabled]=\"addPredefindTripForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/predefindTrip/addPredefindTrip/addPredefindTrip.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".divImage {\n  height: 220px;\n  position: relative;\n  width: 100%;\n  text-align: center; }\n  .divImage .imgCustim {\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px auto; }\n  .divImage .imgCustimLoader {\n    position: absolute;\n    opacity: 0.5;\n    top: 0px;\n    /* height: 100%; */\n    left: 0px;\n    /* width: 100%; */\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px auto;\n    margin-left: calc(50% - 100px); }\n\n.divButton {\n  height: 40px;\n  border-radius: 10px;\n  width: 150px;\n  margin: 5px auto;\n  text-align: center;\n  padding: 10px 0px;\n  background-color: #00897B;\n  color: white; }\n  .divButton:hover {\n    background-color: #00695C;\n    cursor: pointer; }\n\n.listOfImgs {\n  width: 1050px;\n  padding: 20px 0px;\n  white-space: nowrap;\n  overflow-x: auto;\n  overflow-y: hidden; }\n  .listOfImgs .listDiv {\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px 10px;\n    position: relative; }\n    .listOfImgs .listDiv .deleteImge {\n      background-color: rgba(204, 204, 204, 0.329412);\n      width: 25px;\n      height: 25px;\n      border-radius: 50%;\n      position: absolute;\n      right: 5px;\n      top: 5px;\n      padding: 2px; }\n      .listOfImgs .listDiv .deleteImge mat-icon {\n        font-size: 21px;\n        font-weight: bold; }\n      .listOfImgs .listDiv .deleteImge:hover {\n        cursor: pointer;\n        background-color: rgba(204, 204, 204, 0.729412); }\n    .listOfImgs .listDiv .listImgCustim {\n      width: 200px;\n      height: 200px;\n      border-radius: 10px; }\n    .listOfImgs .listDiv .listImgCustimLoader {\n      position: absolute;\n      opacity: 0.5;\n      top: 0px;\n      /* height: 100%; */\n      left: 0px;\n      /* width: 100%; */\n      width: 200px;\n      height: 200px;\n      border-radius: 10px;\n      margin-left: calc(50% - 100px); }\n\nul.listOfImgs li {\n  display: inline-block; }\n\n.step4 .sublocationName {\n  font-size: 22px;\n  padding-top: 0px;\n  font-weight: 400; }\n\n.step4 .durationDiv {\n  width: 200px;\n  display: inline-block;\n  float: right;\n  margin: 0px auto; }\n  .step4 .durationDiv .circle {\n    width: 30px;\n    border-radius: 50%;\n    float: left;\n    height: 30px; }\n    .step4 .durationDiv .circle i {\n      font-size: 22px;\n      font-weight: bold;\n      color: white;\n      padding: 4px;\n      text-align: center;\n      margin: 0px auto;\n      -webkit-user-select: none;\n         -moz-user-select: none;\n          -ms-user-select: none;\n              user-select: none; }\n    .step4 .durationDiv .circle:hover {\n      cursor: pointer; }\n  .step4 .durationDiv .minus {\n    background-color: #FF6F00; }\n  .step4 .durationDiv .add {\n    background-color: #1B5E20; }\n  .step4 .durationDiv .disabled:hover {\n    cursor: not-allowed; }\n  .step4 .durationDiv .duration {\n    padding: 0px 15px;\n    float: left;\n    font-size: 20px; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/predefindTrip/addPredefindTrip/addPredefindTrip.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return addPredefindTripComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__core_services_dialog_service__ = __webpack_require__("../../../../../src/app/core/services/dialog.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_services_translation_loader_service__ = __webpack_require__("../../../../../src/app/core/services/translation-loader.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_services_main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__languageFiles_en__ = __webpack_require__("../../../../../src/app/main/languageFiles/en.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var addPredefindTripComponent = (function () {
+    function addPredefindTripComponent(mainServ, _formBuilder, translate, dialogServ, translationLoader) {
+        this.mainServ = mainServ;
+        this._formBuilder = _formBuilder;
+        this.translate = translate;
+        this.dialogServ = dialogServ;
+        this.translationLoader = translationLoader;
+        this.imageOnLoad = [];
+        this.listImageOnLoad = [];
+        this.imaageUrl = this.mainServ.getDefultImage();
+        this.images = [];
+        this.listImages = [];
+        this.locations = [];
+        this.subLocation = [];
+        this.stillDays = 0;
+        this.predefinedTripsSublocations = [];
+        this.sublocationDuration = 0;
+        this.primaryColor = "#127bdc";
+        this.secondryColor = "#127bdc";
+        this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_6__languageFiles_en__["a" /* locale */]);
+    }
+    addPredefindTripComponent.prototype.openSelectImage = function () {
+        document.getElementById('files').click();
+    };
+    addPredefindTripComponent.prototype.openSelectListImage = function () {
+        document.getElementById('listFiles').click();
+    };
+    addPredefindTripComponent.prototype.releadImage = function (innerIndex, file) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var id = 'uploadImage' + innerIndex;
+            document.getElementById(id).setAttribute('src', reader.result);
+            // this.text = reader.result;
+        };
+        reader.readAsDataURL(file);
+    };
+    addPredefindTripComponent.prototype.onChangeList = function (event) {
+        var _this = this;
+        var files = [].slice.call(event.target.files);
+        var allFilles = event.target.files;
+        this.listImageOnLoad = Array(files.length);
+        var innerIndex = 0;
+        for (var i = 0; i < allFilles.length; i++) {
+            var file = allFilles[i];
+            var x;
+            console.log("fromOut");
+            console.log(i);
+            this.releadImage(i, file);
+        }
+        var files2 = Array.from(event.target.files);
+        files.forEach(function (fileElement, index) {
+            var countDelete = 0;
+            _this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).subscribe(function (data) {
+                _this.listImageOnLoad = [];
+                countDelete++;
+                if (_this.mainServ.APIServ.getErrorCode() == 0)
+                    data.forEach(function (element) {
+                        _this.listImages.push(element);
+                    });
+                else {
+                    _this.mainServ.APIServ.setErrorCode(0);
+                    _this.dialogServ.someThingIsError();
+                }
+            });
+        });
+    };
+    addPredefindTripComponent.prototype.onChange = function (event) {
+        var _this = this;
+        var files = [].slice.call(event.target.files);
+        var allFilles = event.target.files;
+        var images = [];
+        this.images = [];
+        this.imageOnLoad = Array(files.length);
+        var innerIndex = 0;
+        for (var i = 0; i < allFilles.length; i++) {
+            var file = allFilles[i];
+            var x;
+            console.log("fromOut");
+            console.log(i);
+            this.releadImage(i, file);
+        }
+        var files2 = Array.from(event.target.files);
+        files.forEach(function (fileElement, index) {
+            var countDelete = 0;
+            // this.ng2ImgMaxService.compress([fileElement], 0.5, true, true).subscribe((result) => {
+            _this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).subscribe(function (data) {
+                _this.imageOnLoad = [];
+                countDelete++;
+                if (_this.mainServ.APIServ.getErrorCode() == 0)
+                    data.forEach(function (element) {
+                        _this.images[0] = element;
+                        _this.media = element;
+                    });
+                else {
+                    _this.mainServ.APIServ.setErrorCode(0);
+                    _this.dialogServ.someThingIsError();
+                }
+            });
+        });
+        // });
+    };
+    addPredefindTripComponent.prototype.addDuration = function (index) {
+        if (this.sublocationDuration == this.addPredefindTripForm.value.duration) {
+            alert("Error");
+        }
+        else {
+            this.sublocationDuration++;
+            this.predefinedTripsSublocations[index].duration++;
+        }
+    };
+    addPredefindTripComponent.prototype.minDuration = function (index) {
+        if (this.predefinedTripsSublocations[index].duration == 0)
+            return;
+        this.sublocationDuration--;
+        this.predefinedTripsSublocations[index].duration--;
+    };
+    // onSearchChange() {
+    //   var sublocationDays = 0;
+    //   for (let index = 0; index < this.predefinedTripsSublocations.length; index++) {
+    //     const element = this.predefinedTripsSublocations[index];
+    //     if (element.duration != null)
+    //     sublocationDays += element.duration;
+    //     this.subLocaationPrice += element.duration * this.carsSublocations[index].cost
+    //     console.log(this.subLocationDays)
+    //     if (index == this.predefinedTripsSublocations.length - 1) {
+    //       this.tripdays = this.mainTripdays - this.subLocationDays;
+    //       this.totalPrice = this.tripdays * this.pricePerDay;
+    //     }
+    //   }
+    // }
+    addPredefindTripComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var locationFilter = { "where": { "status": "active" }, "include": ['subLocations'] };
+        this.mainServ.APIServ.get("locations?filter=" + JSON.stringify(locationFilter)).subscribe(function (data) {
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.locations = data;
+            }
+            else
+                _this.dialogServ.someThingIsError();
+        });
+        this.addPredefindTripForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormGroup */]({
+            duration: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */](0, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+            titleEn: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+            titleTr: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+            titleAr: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+            descriptionEn: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+            descriptionAr: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+            descriptionTr: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+            locationId: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required)
+        });
+    };
+    addPredefindTripComponent.prototype.add = function () {
+        var _this = this;
+        var data = this.addPredefindTripForm.value;
+        data['mediaId'] = this.media.id;
+        data['predefinedTripsMedias'] = [];
+        this.listImages.forEach(function (element) {
+            data['predefinedTripsMedias'].push({
+                "mediaId": element.id
+            });
+        });
+        data['predefinedTripsSublocations'] = this.predefinedTripsSublocations;
+        data['color1'] = this.primaryColor.substr(1);
+        data['color2'] = this.secondryColor.substr(1);
+        this.mainServ.APIServ.post("predefinedTrips", data).subscribe(function (data) {
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.mainServ.globalServ.goTo('predefined-trips');
+            }
+        });
+    };
+    addPredefindTripComponent.prototype.changeLocation = function (event) {
+        var _this = this;
+        console.log(event);
+        this.location = this.locations.find(function (x) { return x.id === event.value; });
+        this.subLocation = this.location.subLocations;
+        console.log(this.subLocation);
+        this.subLocation.forEach(function (element) {
+            _this.predefinedTripsSublocations.push({
+                "duration": 0,
+                "subLocationId": element.id,
+                "name": element.nameEn
+            });
+        });
+        console.log(this.predefinedTripsSublocations);
+    };
+    addPredefindTripComponent.prototype.back = function () {
+        this.mainServ.globalServ.goTo('predefined-trips');
+    };
+    addPredefindTripComponent.prototype.deleteImage = function (i) {
+        this.listImages.splice(i);
+    };
+    addPredefindTripComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
+            selector: 'app-addPredefindTrip',
+            template: __webpack_require__("../../../../../src/app/main/content/pages/predefindTrip/addPredefindTrip/addPredefindTrip.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/main/content/pages/predefindTrip/addPredefindTrip/addPredefindTrip.component.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__core_services_main_service__["a" /* MainService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["b" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_0__core_services_dialog_service__["a" /* DialogService */],
+            __WEBPACK_IMPORTED_MODULE_1__core_services_translation_loader_service__["a" /* FuseTranslationLoaderService */]])
+    ], addPredefindTripComponent);
+    return addPredefindTripComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/predefindTrip/editPredefindTrip/editPredefindTrip.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'PREDEFINEDTRIP.EDITPREDEFINEDTRIP.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editPredefindTripForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"96\">\r\n            <textarea matInput placeholder=\"{{ 'PREDEFINEDTRIP.DESCRIPTIONEN' | translate }}\" formControlName=\"descriptionEn\"\r\n              required></textarea>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"96\">\r\n            <textarea matInput placeholder=\"{{ 'PREDEFINEDTRIP.DESCRIPTIONAR' | translate }}\" formControlName=\"descriptionAr\"\r\n              required></textarea>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"96\">\r\n            <textarea matInput placeholder=\"{{ 'PREDEFINEDTRIP.DESCRIPTIONTR' | translate }}\" formControlName=\"descriptionTr\"\r\n              required></textarea>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'PREDEFINEDTRIP.TITLEEN' | translate }}\" formControlName=\"titleEn\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'PREDEFINEDTRIP.TITLEAR' | translate }}\" formControlName=\"titleAr\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'PREDEFINEDTRIP.TITLETR' | translate }}\" formControlName=\"titleTr\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'PREDEFINEDTRIP.DURATION' | translate }}\" formControlName=\"duration\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'PREDEFINEDTRIP.LOCATION' | translate }}\" (selectionChange)=\"changeLocation($event)\"\r\n              formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let oneLocation of locations\" [value]=\"oneLocation.id\">\r\n                {{oneLocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <div fxFlex=\"30\"></div>\r\n\r\n          <div fxFlex=\"96\" class=\"step4\" style=\"margin: 10px 0px;\" *ngIf=\"location != null\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{location.nameEn}}</label>\r\n            <div fxFlex=\"20\"></div>\r\n            <div fxFlex=\"50\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus disabled\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{editPredefindTripForm.value.duration - sublocationDuration}}</label>\r\n                <div class=\"circle add disabled\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n\r\n          <div fxFlex=\"96\" class=\"step4\" style=\"margin: 10px 0px;\" *ngFor=\"let element of predefinedTripsSublocations;let i=index\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{element.name}}</label>\r\n            <div fxFlex=\"20\"></div>\r\n            <div fxFlex=\"50\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus\" [ngClass]=\"{'disabled': predefinedTripsSublocations[i].duration==0}\" (click)=\"minDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{predefinedTripsSublocations[i].duration}}</label>\r\n                <div class=\"circle add\" (click)=\"addDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n          <div fxFlex=\"41\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                  <!-- <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div> -->\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <div fxFlex=\"59\">\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'PREDEFINEDTRIP.FIRSTCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"primaryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"primaryColor\"></div>\r\n            </div>\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'PREDEFINEDTRIP.SECONDCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"secondryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"secondryColor\"></div>\r\n            </div>\r\n          </div>\r\n\r\n          <!-- <ul class=\"listOfImgs\">\r\n                <li (click)=\"openSelectListImage()\">\r\n                  <div class=\"listDiv\">\r\n                    <img class=\"listImgCustim\" src=\"{{imaageUrl}}\" />\r\n                    <input type=\"file\" style=\"display:none\" multiple id=\"listFiles\" accept=\"image/*\" (change)=\"onChangeList($event)\" />\r\n                  </div>\r\n                </li>\r\n                <li *ngFor=\"let value of listImages;let i=index\" class=\"\">\r\n                  <div class=\"listDiv\">\r\n                    <div class=\"deleteImge\" (click)=\"deleteImage(i)\">\r\n                      <mat-icon style=\"color : white;\">close</mat-icon>\r\n                    </div>\r\n                    <img class=\"listImgCustim\" src=\"{{value.url}}\" />\r\n                  </div>\r\n                </li>\r\n                <li *ngFor=\"let image of listImageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\">\r\n                  <div class=\"listDiv\">\r\n                    <img class=\"listImgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                    <img class=\"listImgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n                  </div>\r\n                </li>\r\n              </ul> -->\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editPredefindTripForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n\r\n\r\n\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/predefindTrip/editPredefindTrip/editPredefindTrip.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".divImage {\n  height: 220px;\n  position: relative;\n  width: 100%;\n  text-align: center; }\n  .divImage .imgCustim {\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px auto; }\n  .divImage .imgCustimLoader {\n    position: absolute;\n    opacity: 0.5;\n    top: 0px;\n    /* height: 100%; */\n    left: 0px;\n    /* width: 100%; */\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px auto;\n    margin-left: calc(50% - 100px); }\n\n.divButton {\n  height: 40px;\n  border-radius: 10px;\n  width: 150px;\n  margin: 5px auto;\n  text-align: center;\n  padding: 10px 0px;\n  background-color: #00897B;\n  color: white; }\n  .divButton:hover {\n    background-color: #00695C;\n    cursor: pointer; }\n\n.listOfImgs {\n  width: 1050px;\n  padding: 20px 0px;\n  white-space: nowrap;\n  overflow-x: auto;\n  overflow-y: hidden; }\n  .listOfImgs .listDiv {\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px 10px;\n    position: relative; }\n    .listOfImgs .listDiv .deleteImge {\n      background-color: rgba(204, 204, 204, 0.329412);\n      width: 25px;\n      height: 25px;\n      border-radius: 50%;\n      position: absolute;\n      right: 5px;\n      top: 5px;\n      padding: 2px; }\n      .listOfImgs .listDiv .deleteImge mat-icon {\n        font-size: 21px;\n        font-weight: bold; }\n      .listOfImgs .listDiv .deleteImge:hover {\n        cursor: pointer;\n        background-color: rgba(204, 204, 204, 0.729412); }\n    .listOfImgs .listDiv .listImgCustim {\n      width: 200px;\n      height: 200px;\n      border-radius: 10px; }\n    .listOfImgs .listDiv .listImgCustimLoader {\n      position: absolute;\n      opacity: 0.5;\n      top: 0px;\n      /* height: 100%; */\n      left: 0px;\n      /* width: 100%; */\n      width: 200px;\n      height: 200px;\n      border-radius: 10px;\n      margin-left: calc(50% - 100px); }\n\nul.listOfImgs li {\n  display: inline-block; }\n\n.step4 .sublocationName {\n  font-size: 22px;\n  padding-top: 0px;\n  font-weight: 400; }\n\n.step4 .durationDiv {\n  width: 200px;\n  display: inline-block;\n  float: right;\n  margin: 0px auto; }\n  .step4 .durationDiv .circle {\n    width: 30px;\n    border-radius: 50%;\n    float: left;\n    height: 30px; }\n    .step4 .durationDiv .circle i {\n      font-size: 22px;\n      font-weight: bold;\n      color: white;\n      padding: 4px;\n      text-align: center;\n      margin: 0px auto;\n      -webkit-user-select: none;\n         -moz-user-select: none;\n          -ms-user-select: none;\n              user-select: none; }\n    .step4 .durationDiv .circle:hover {\n      cursor: pointer; }\n  .step4 .durationDiv .minus {\n    background-color: #FF6F00; }\n  .step4 .durationDiv .add {\n    background-color: #1B5E20; }\n  .step4 .durationDiv .disabled:hover {\n    cursor: not-allowed; }\n  .step4 .durationDiv .duration {\n    padding: 0px 15px;\n    float: left;\n    font-size: 20px; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/predefindTrip/editPredefindTrip/editPredefindTrip.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return editPredefindTripComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_services_dialog_service__ = __webpack_require__("../../../../../src/app/core/services/dialog.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_services_translation_loader_service__ = __webpack_require__("../../../../../src/app/core/services/translation-loader.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_services_main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__languageFiles_en__ = __webpack_require__("../../../../../src/app/main/languageFiles/en.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var editPredefindTripComponent = (function () {
+    function editPredefindTripComponent(mainServ, _formBuilder, translate, dialogServ, translationLoader, route) {
+        this.mainServ = mainServ;
+        this._formBuilder = _formBuilder;
+        this.translate = translate;
+        this.dialogServ = dialogServ;
+        this.translationLoader = translationLoader;
+        this.route = route;
+        this.imageOnLoad = [];
+        this.listImageOnLoad = [];
+        this.imaageUrl = this.mainServ.getDefultImage();
+        this.images = [];
+        this.listImages = [];
+        this.locations = [];
+        this.subLocation = [];
+        this.stillDays = 0;
+        this.predefinedTripsSublocations = [];
+        this.sublocationDuration = 0;
+        this.primaryColor = "#127bdc";
+        this.secondryColor = "#127bdc";
+        this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_7__languageFiles_en__["a" /* locale */]);
+    }
+    editPredefindTripComponent.prototype.openSelectImage = function () {
+        document.getElementById('files').click();
+    };
+    editPredefindTripComponent.prototype.openSelectListImage = function () {
+        document.getElementById('listFiles').click();
+    };
+    editPredefindTripComponent.prototype.releadImage = function (innerIndex, file) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var id = 'uploadImage' + innerIndex;
+            document.getElementById(id).setAttribute('src', reader.result);
+            // this.text = reader.result;
+        };
+        reader.readAsDataURL(file);
+    };
+    editPredefindTripComponent.prototype.onChangeList = function (event) {
+        var _this = this;
+        var files = [].slice.call(event.target.files);
+        var allFilles = event.target.files;
+        this.listImageOnLoad = Array(files.length);
+        var innerIndex = 0;
+        for (var i = 0; i < allFilles.length; i++) {
+            var file = allFilles[i];
+            var x;
+            console.log("fromOut");
+            console.log(i);
+            this.releadImage(i, file);
+        }
+        var files2 = Array.from(event.target.files);
+        files.forEach(function (fileElement, index) {
+            var countDelete = 0;
+            _this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).subscribe(function (data) {
+                _this.listImageOnLoad = [];
+                countDelete++;
+                if (_this.mainServ.APIServ.getErrorCode() == 0)
+                    data.forEach(function (element) {
+                        _this.listImages.push(element);
+                    });
+                else {
+                    _this.mainServ.APIServ.setErrorCode(0);
+                    _this.dialogServ.someThingIsError();
+                }
+            });
+        });
+    };
+    editPredefindTripComponent.prototype.onChange = function (event) {
+        var _this = this;
+        var files = [].slice.call(event.target.files);
+        var allFilles = event.target.files;
+        var images = [];
+        this.images = [];
+        this.imageOnLoad = Array(files.length);
+        var innerIndex = 0;
+        for (var i = 0; i < allFilles.length; i++) {
+            var file = allFilles[i];
+            var x;
+            console.log("fromOut");
+            console.log(i);
+            this.releadImage(i, file);
+        }
+        var files2 = Array.from(event.target.files);
+        files.forEach(function (fileElement, index) {
+            var countDelete = 0;
+            // this.ng2ImgMaxService.compress([fileElement], 0.5, true, true).subscribe((result) => {
+            _this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).subscribe(function (data) {
+                _this.imageOnLoad = [];
+                countDelete++;
+                if (_this.mainServ.APIServ.getErrorCode() == 0)
+                    data.forEach(function (element) {
+                        _this.images[0] = element;
+                        _this.media = element;
+                    });
+                else {
+                    _this.mainServ.APIServ.setErrorCode(0);
+                    _this.dialogServ.someThingIsError();
+                }
+            });
+        });
+        // });
+    };
+    editPredefindTripComponent.prototype.getParams = function (name, callback) {
+        this.route.paramMap.subscribe(function (params) {
+            callback(params.get(name));
+        });
+    };
+    editPredefindTripComponent.prototype.ngOnInit = function () {
+        this.editPredefindTripForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+            descriptionEn: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+            descriptionAr: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+            descriptionTr: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+            titleEn: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+            titleTr: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+            titleAr: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+            duration: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](0, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+            locationId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
+        });
+        var mainthis = this;
+        this.getParams("id", function (id) {
+            mainthis.predefindTripId = id;
+            var locationFilter = { "where": { "status": "active" }, "include": ['subLocations'] };
+            mainthis.mainServ.APIServ.get("locations?filter=" + JSON.stringify(locationFilter)).subscribe(function (data) {
+                if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
+                    mainthis.locations = data;
+                    mainthis.mainServ.APIServ.get("predefinedTrips/" + mainthis.predefindTripId).subscribe(function (data) {
+                        if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
+                            mainthis.predefindTrip = data;
+                            console.log(data);
+                            mainthis.media = data.media;
+                            mainthis.images[0] = data.media;
+                            mainthis.listImages = data.slideMedia;
+                            mainthis.primaryColor = "#" + data.color1;
+                            mainthis.secondryColor = "#" + data.color2;
+                            mainthis.editPredefindTripForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+                                descriptionEn: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.descriptionEn, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+                                descriptionAr: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.descriptionAr, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+                                descriptionTr: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.descriptionTr, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+                                titleEn: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.titleEn, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+                                titleTr: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.titleTr, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+                                titleAr: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.titleAr, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+                                duration: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.duration, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+                                locationId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.locationId, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
+                            });
+                            mainthis.location = mainthis.locations.find(function (x) { return x.id === data.locationId; });
+                            mainthis.subLocation = mainthis.location.subLocations;
+                            mainthis.subLocation.forEach(function (element) {
+                                var tempproSub = data['predefinedTripsSublocations'].find(function (x) { return x.subLocationId === element.id; });
+                                var tempDuration = 0;
+                                if (tempproSub != null)
+                                    tempDuration = tempproSub.duration;
+                                mainthis.sublocationDuration += tempDuration;
+                                mainthis.predefinedTripsSublocations.push({
+                                    "duration": tempDuration,
+                                    "subLocationId": element.id,
+                                    "name": element.nameEn
+                                });
+                            });
+                        }
+                    });
+                }
+                else
+                    mainthis.dialogServ.someThingIsError();
+            });
+        });
+    };
+    editPredefindTripComponent.prototype.addDuration = function (index) {
+        if (this.sublocationDuration == this.editPredefindTripForm.value.duration) {
+            alert("Error");
+        }
+        else {
+            this.sublocationDuration++;
+            this.predefinedTripsSublocations[index].duration++;
+        }
+    };
+    editPredefindTripComponent.prototype.minDuration = function (index) {
+        if (this.predefinedTripsSublocations[index].duration == 0)
+            return;
+        this.sublocationDuration--;
+        this.predefinedTripsSublocations[index].duration--;
+    };
+    editPredefindTripComponent.prototype.edit = function () {
+        var _this = this;
+        var data = this.editPredefindTripForm.value;
+        data['mediaId'] = this.media.id;
+        data['predefinedTripsMedias'] = [];
+        // this.listImages.forEach(element => {
+        //   data['predefinedTripsMedia'].push({
+        //     "mediaId": element.id
+        //   })
+        // });
+        data['predefinedTripsSublocations'] = this.predefinedTripsSublocations;
+        data['color1'] = this.primaryColor.substr(1);
+        data['color2'] = this.secondryColor.substr(1);
+        this.mainServ.APIServ.put("predefinedTrips/" + this.predefindTripId, data).subscribe(function (data) {
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.mainServ.globalServ.goTo('predefined-trips');
+            }
+        });
+    };
+    editPredefindTripComponent.prototype.changeLocation = function (event) {
+        var _this = this;
+        console.log(event);
+        this.location = this.locations.find(function (x) { return x.id === event.value; });
+        this.subLocation = this.location.subLocations;
+        console.log(this.subLocation);
+        this.subLocation.forEach(function (element) {
+            _this.predefinedTripsSublocations.push({
+                "duration": 0,
+                "subLocationId": element.id,
+                "name": element.nameEn
+            });
+        });
+        console.log(this.predefinedTripsSublocations);
+    };
+    editPredefindTripComponent.prototype.back = function () {
+        this.mainServ.globalServ.goTo('predefined-trips');
+    };
+    editPredefindTripComponent.prototype.deleteImage = function (i) {
+        this.listImages.splice(i);
+        console.log(this.listImages);
+    };
+    editPredefindTripComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
+            selector: 'app-editPredefindTrip',
+            template: __webpack_require__("../../../../../src/app/main/content/pages/predefindTrip/editPredefindTrip/editPredefindTrip.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/main/content/pages/predefindTrip/editPredefindTrip/editPredefindTrip.component.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6__core_services_main_service__["a" /* MainService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__["b" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_1__core_services_dialog_service__["a" /* DialogService */],
+            __WEBPACK_IMPORTED_MODULE_2__core_services_translation_loader_service__["a" /* FuseTranslationLoaderService */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* ActivatedRoute */]])
+    ], editPredefindTripComponent);
+    return editPredefindTripComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/predefindTrip/predefindTrips/predefindTrips.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n        <span class=\"logo-text h1\">{{'PREDEFINEDTRIP.ALLPREDEFINEDTRIP.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n      <label for=\"search\" class=\"mr-8\">\r\n        <mat-icon>search</mat-icon>\r\n      </label>\r\n      <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n        <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'PREDEFINEDTRIP.ALLPREDEFINEDTRIP.SEARCH'| translate}}\">\r\n      </mat-form-field>\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'PREDEFINEDTRIP.ALLPREDEFINEDTRIP.ADDPREDEFINEDTRIP'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"filterRows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n    [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\">\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"titleEn\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'PREDEFINEDTRIP.TITLEEN' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"duration\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'PREDEFINEDTRIP.DURATION' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"location.nameEn\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'PREDEFINEDTRIP.LOCATION' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'PREDEFINEDTRIP.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button>\r\n        <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/predefindTrip/predefindTrips/predefindTrips.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/predefindTrip/predefindTrips/predefindTrips.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return predefindTripsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__core_services_translation_loader_service__ = __webpack_require__("../../../../../src/app/core/services/translation-loader.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__languageFiles_en__ = __webpack_require__("../../../../../src/app/main/languageFiles/en.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_services_main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_services_dialog_service__ = __webpack_require__("../../../../../src/app/core/services/dialog.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var predefindTripsComponent = (function () {
+    function predefindTripsComponent(translationLoader, translateService, mainServ, dialogServ, dialog) {
+        this.translationLoader = translationLoader;
+        this.translateService = translateService;
+        this.mainServ = mainServ;
+        this.dialogServ = dialogServ;
+        this.dialog = dialog;
+        this.allRows = [];
+        this.filterRows = [];
+        this.filterValue = "";
+        this.columns = ["titleEn", "duration", "location.nameEn", "status"];
+        this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_4__languageFiles_en__["a" /* locale */]);
+        this.inisilaize();
+    }
+    predefindTripsComponent.prototype.inisilaize = function () {
+        var _this = this;
+        this.mainServ.loaderSer.display(true);
+        this.mainServ.APIServ.get("predefinedTrips").subscribe(function (data) {
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.mainServ.loaderSer.display(false);
+                _this.allRows = data;
+                _this.filterDatatable();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() == 400) {
+            }
+            else {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
+            }
+        });
+    };
+    predefindTripsComponent.prototype.ngOnInit = function () {
+    };
+    predefindTripsComponent.prototype.goTo = function (pageName, id) {
+        var url = "";
+        if (pageName == 'view') {
+            url = 'show-form/' + id;
+        }
+        else if (pageName == 'edit') {
+            url = 'edit-predefined-trip/' + id;
+        }
+        this.mainServ.globalServ.goTo(url);
+    };
+    predefindTripsComponent.prototype.addUser = function () {
+        this.mainServ.globalServ.goTo("add-predefined-trip");
+    };
+    predefindTripsComponent.prototype.deactivate = function (id) {
+        var _this = this;
+        var mainThis = this;
+        this.translateService.get('MESSAGES.DEACTIVELOCATION').subscribe(function (res) {
+            _this.dialogServ.confirmationMessage(res, "predefinedTrips/deactivate/" + id, {}, false, function () {
+                mainThis.inisilaize();
+            }, "delete");
+        });
+    };
+    predefindTripsComponent.prototype.activate = function (id, name) {
+        var _this = this;
+        var mainThis = this;
+        this.translateService.get('MESSAGES.ACTIVELOCATION').subscribe(function (res) {
+            _this.dialogServ.confirmationMessage(res, "predefinedTrips/activate/" + id, {}, false, function () {
+                mainThis.inisilaize();
+            }, "put");
+        });
+    };
+    predefindTripsComponent.prototype.filterDatatable = function () {
+        if (this.filterValue == null)
+            this.filterRows = this.allRows;
+        else {
+            var val_1 = this.filterValue.toLowerCase();
+            var keys_1 = this.columns;
+            var colsAmt_1 = this.columns.length;
+            this.filterRows = this.allRows.filter(function (item) {
+                for (var i = 0; i < colsAmt_1; i++) {
+                    if (keys_1[i] == "location.nameEn") {
+                        if (item["location"]["nameEn"].toString().toLowerCase().indexOf(val_1) !== -1 || !val_1)
+                            return true;
+                    }
+                    else if (item[keys_1[i]].toString().toLowerCase().indexOf(val_1) !== -1 || !val_1) {
+                        return true;
+                    }
+                }
+            });
+        }
+    };
+    predefindTripsComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+            selector: 'app-predefindTrips',
+            template: __webpack_require__("../../../../../src/app/main/content/pages/predefindTrip/predefindTrips/predefindTrips.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/main/content/pages/predefindTrip/predefindTrips/predefindTrips.component.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__core_services_translation_loader_service__["a" /* FuseTranslationLoaderService */],
+            __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_5__core_services_main_service__["a" /* MainService */],
+            __WEBPACK_IMPORTED_MODULE_6__core_services_dialog_service__["a" /* DialogService */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_material__["m" /* MatDialog */]])
+    ], predefindTripsComponent);
+    return predefindTripsComponent;
 }());
 
 
@@ -25665,7 +26443,7 @@ var editSubLocationComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/trip/addTrip/addTrip.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"backToTrips()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'TRIP.ADDTRIP.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n    <div style=\"font-size: 20px\">{{'TRIP.PRICE' | translate}} : {{totalPrice+subLocaationPrice}}</div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n\r\n    <nav mat-tab-nav-bar [backgroundColor]=\"background\">\r\n      <a mat-tab-link disabled *ngFor=\"let link of links\" [active]=\"activeLink == link.name\">\r\n        {{link.view | translate}}\r\n      </a>\r\n    </nav>\r\n    <form [formGroup]=\"stepOneForm\" *ngIf=\"activeLink=='step1'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.USER' | translate }}\" formControlName=\"ownerId\">\r\n              <mat-option *ngFor=\"let oneUser of users\" [value]=\"oneUser.id\">\r\n                {{oneUser.username}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.LOCATION' | translate }}\" formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let oneLocation of locations\" [value]=\"oneLocation.id\">\r\n                {{oneLocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <section class=\"example-section\" style=\"padding-bottom: 10px;\" fxFlex=\"95\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isFromAirport\">{{\r\n              'TRIP.FROMAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isToAirport\">{{\r\n              'TRIP.TOAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isInCity\">{{\r\n              'TRIP.INCITY' | translate }}</mat-checkbox>\r\n          </section>\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"next(2,null,null)\" cdkFocusInitial [disabled]=\"stepOneForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n    <!-- {{allData | json}} -->\r\n    <form [formGroup]=\"stepSecForm\" *ngIf=\"activeLink=='step2'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"40\">\r\n            <input matInput (focus)=\"firstpicker.open()\" [matDatepicker]=\"firstpicker\" formControlName=\"first\"\r\n              placeholder=\"{{ 'TRIP.FROM' | translate }}\">\r\n            <mat-datepicker-toggle matSuffix [for]=\"firstpicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #firstpicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='fromAirport' \r\n          && tripType!='fromAirportAndCity' \r\n          && tripType!='toAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput [matTimepicker]=\"startPicker\" placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #startPicker color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n          <!-- <mat-form-field fxFlex=\"50\">\r\n              <input matInput [matTimepicker]=\"startPicker\" placeholder=\"{{ 'Dialog.Add_Slotes.STARTTIME' | translate }}\">\r\n              <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n              <mat-timepicker #startPicker color=\"primary\"></mat-timepicker>\r\n            </mat-form-field> -->\r\n\r\n          <mat-form-field fxFlex=\"40\" *ngIf=\"tripType!='fromAirport' && tripType!='toAirport'\">\r\n            <input matInput (focus)=\"secondepicker.open()\" [matDatepicker]=\"secondepicker\" formControlName=\"seconde\"\r\n              placeholder=\"{{ 'TRIP.TO' | translate }}\">\r\n            <mat-datepicker-toggle matSuffix [for]=\"secondepicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #secondepicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='cityAndToAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput [matTimepicker]=\"endPicker\" placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #endPicker color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n          <div fxFlex=\"40\" *ngIf=\"tripType=='fromAirport' || tripType=='toAirport'\"></div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"next(3,startPicker,endPicker)\" cdkFocusInitial>{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(1)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n    <form [formGroup]=\"stepthreeForm\" *ngIf=\"activeLink=='step3'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"90\">\r\n            <mat-select placeholder=\"{{ 'TRIP.CAR' | translate }}\" (change)=\"doSomething($event)\" formControlName=\"carId\">\r\n              <mat-option *ngFor=\"let oneCar of carAvailable\" [value]=\"oneCar.id\">\r\n                {{oneCar.name}} - {{oneCar.driver.username}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button *ngIf=\"links[3]!=null\" (click)=\"next(4,null,null)\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button *ngIf=\"links[3]==null\" (click)=\"add()\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(2)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n\r\n    </form>\r\n\r\n\r\n    <form *ngIf=\"activeLink=='step4'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <div fxFlex=\"90\" class=\"step4\" *ngFor=\"let element of tripSublocations;let i=index\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{carsSublocations[i].subLocation.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{carsSublocations[i].cost}} $</label>\r\n            <mat-form-field fxFlex=\"30\">\r\n              <input (input)=\"onSearchChange()\" matInput type=\"number\" min=\"0\" max=\"100\" placeholder=\"{{ 'CAR.NAME' | translate }}\"\r\n                [ngModelOptions]=\"{standalone: true}\" [(ngModel)]=\"tripSublocations[i].duration\" required>\r\n              <mat-icon matSuffix>people</mat-icon>\r\n              <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"add()\" cdkFocusInitial>{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(3,null,null)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n\r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"backToTrips()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'TRIP.ADDTRIP.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n    <div style=\"font-size: 20px\">{{'TRIP.PRICE' | translate}} : {{totalPrice+subLocaationPrice+airportPrice}}</div>\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n\r\n    <nav mat-tab-nav-bar [backgroundColor]=\"background\">\r\n      <a mat-tab-link disabled *ngFor=\"let link of links\" [active]=\"activeLink == link.name\">\r\n        {{link.view | translate}}\r\n      </a>\r\n    </nav>\r\n    <form [formGroup]=\"stepOneForm\" *ngIf=\"activeLink=='step1'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.USER' | translate }}\" formControlName=\"ownerId\">\r\n              <mat-option *ngFor=\"let oneUser of users\" [value]=\"oneUser.id\">\r\n                {{oneUser.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.LOCATION' | translate }}\" formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let oneLocation of locations\" [value]=\"oneLocation.id\">\r\n                {{oneLocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <section class=\"example-section\" style=\"padding-bottom: 10px;\" fxFlex=\"95\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isFromAirport\">{{\r\n              'TRIP.FROMAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isToAirport\">{{\r\n              'TRIP.TOAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isInCity\">{{\r\n              'TRIP.INCITY' | translate }}</mat-checkbox>\r\n          </section>\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"next(2,null,null)\" cdkFocusInitial [disabled]=\"stepOneForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n    <!-- {{allData | json}} -->\r\n    <form [formGroup]=\"stepSecForm\" *ngIf=\"activeLink=='step2'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"40\">\r\n            <input matInput (focus)=\"firstpicker.open()\" [matDatepicker]=\"firstpicker\" formControlName=\"first\"\r\n              placeholder=\"{{ 'TRIP.FROM' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"firstpicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #firstpicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='fromAirport' \r\n          && tripType!='fromAirportAndCity' \r\n          && tripType!='toAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput [matTimepicker]=\"startPicker\" required placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #startPicker color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n          <!-- <mat-form-field fxFlex=\"50\">\r\n              <input matInput [matTimepicker]=\"startPicker\" placeholder=\"{{ 'Dialog.Add_Slotes.STARTTIME' | translate }}\">\r\n              <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n              <mat-timepicker #startPicker color=\"primary\"></mat-timepicker>\r\n            </mat-form-field> -->\r\n\r\n          <mat-form-field fxFlex=\"40\" *ngIf=\"tripType!='fromAirport' && tripType!='toAirport'\">\r\n            <input matInput (focus)=\"secondepicker.open()\" [matDatepicker]=\"secondepicker\" formControlName=\"seconde\"\r\n              placeholder=\"{{ 'TRIP.TO' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"secondepicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #secondepicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='cityAndToAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput [matTimepicker]=\"endPicker\" required placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #endPicker color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n          <div fxFlex=\"40\" *ngIf=\"tripType=='fromAirport' || tripType=='toAirport'\"></div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"next(3,startPicker,endPicker)\" cdkFocusInitial>{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(1)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n    <form [formGroup]=\"stepthreeForm\" *ngIf=\"activeLink=='step3'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"90\">\r\n            <mat-select placeholder=\"{{ 'TRIP.CAR' | translate }}\" (change)=\"doSomething($event)\" formControlName=\"carId\">\r\n              <mat-option *ngFor=\"let oneCar of carAvailable\" [value]=\"oneCar.id\">\r\n                {{oneCar.name}} - {{oneCar.driver.username}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button *ngIf=\"links[3]!=null\" (click)=\"next(4,null,null)\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button *ngIf=\"links[3]==null\" (click)=\"add()\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(2)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n\r\n    </form>\r\n\r\n\r\n    <form *ngIf=\"activeLink=='step4'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <div fxFlex=\"90\" class=\"step4\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{location.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{pricePerDay}} $</label>\r\n            <mat-form-field fxFlex=\"30\">\r\n              <input disabled matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                [(ngModel)]=\"tripdays\" required>\r\n              <mat-icon matSuffix>people</mat-icon>\r\n              <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n            </mat-form-field>\r\n          </div>\r\n\r\n\r\n          <div fxFlex=\"90\" class=\"step4\" *ngFor=\"let element of tripSublocations;let i=index\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{carsSublocations[i].subLocation.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{carsSublocations[i].cost}} $</label>\r\n            <mat-form-field fxFlex=\"30\">\r\n              <input (input)=\"onSearchChange()\" matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                [(ngModel)]=\"tripSublocations[i].duration\" required>\r\n              <mat-icon matSuffix>people</mat-icon>\r\n              <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"add()\" [disabled]=\"tripdays<0\" cdkFocusInitial>{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(3,null,null)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n\r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -25751,20 +26529,35 @@ var addTripComponent = (function () {
         this.carAvailable = [];
         this.tripSublocations = [];
         this.carsSublocations = [];
+        this.mainTripdays = 0;
+        this.tripdays = 0;
+        this.subLocationDays = 0;
+        this.pricePerDay = 0;
+        this.airportPrice = 0;
         this.config = { hour: 7, minute: 15, meriden: 'PM', format: 12 };
         this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_6__languageFiles_en__["a" /* locale */]);
     }
     addTripComponent.prototype.onSearchChange = function () {
         this.subLocaationPrice = 0;
+        this.subLocationDays = 0;
         for (var index = 0; index < this.tripSublocations.length; index++) {
             var element = this.tripSublocations[index];
+            if (element.duration != null)
+                this.subLocationDays += element.duration;
             this.subLocaationPrice += element.duration * this.carsSublocations[index].cost;
+            console.log(this.subLocationDays);
+            if (index == this.tripSublocations.length - 1) {
+                this.tripdays = this.mainTripdays - this.subLocationDays;
+                this.totalPrice = this.tripdays * this.pricePerDay;
+            }
         }
     };
     addTripComponent.prototype.differenceInHourse = function (firstDate, secDate) {
-        var timeDiff = Math.abs(secDate.getTime() - firstDate.getTime());
+        var timeDiff = secDate.getTime() - firstDate.getTime();
         var diffHourse = Math.ceil(timeDiff / (1000 * 3600));
         var daysNum = Math.ceil(diffHourse / 24);
+        this.mainTripdays = daysNum;
+        this.tripdays = daysNum;
         return (daysNum * 24);
     };
     addTripComponent.prototype.doSomething = function (event) {
@@ -25772,27 +26565,30 @@ var addTripComponent = (function () {
             return element.id.toString() == event.value.toString();
         });
         this.allData['driverId'] = selectedCar.driverId;
+        this.pricePerDay = selectedCar.pricePerDay;
         if (this.tripType == "fromAirport") {
-            this.totalPrice = selectedCar.priceOneWay;
+            this.airportPrice = selectedCar.priceOneWay;
         }
         else if (this.tripType == "city") {
             this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['startInCityDate'], this.allData['endInCityDate']) / 24);
         }
         else if (this.tripType == "toAirport") {
-            this.totalPrice = selectedCar.priceOneWay;
+            this.airportPrice = selectedCar.priceOneWay;
         }
         else if (this.tripType == "fromAirportAndCity") {
-            this.totalPrice = selectedCar.priceOneWay;
+            this.airportPrice = selectedCar.priceOneWay;
             this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['fromAirportDate'], this.allData['endInCityDate']) / 24);
         }
         else if (this.tripType == "fromAirportAndToAirport") {
-            this.totalPrice = selectedCar.priceTowWay;
+            this.airportPrice = selectedCar.priceTowWay;
         }
         else if (this.tripType == "cityAndToAirport") {
-            // this.totalPrice = selectedCar.priceOneWay;
+            this.airportPrice = selectedCar.priceOneWay;
+            this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['startInCityDate'], this.allData['toAirportDate']) / 24);
         }
         else if (this.tripType == "fromAirportAndCityAndToAirport") {
-            // this.totalPrice = selectedCar.priceOneWay;
+            this.airportPrice = selectedCar.priceTowWay;
+            this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['fromAirportDate'], this.allData['toAirportDate']) / 24);
         }
     };
     addTripComponent.prototype.addStep4 = function () {
@@ -25978,31 +26774,40 @@ var addTripComponent = (function () {
             this.allData['toAirport'] = this.isToAirport;
             this.allData['inCity'] = this.isInCity;
             var locationId = this.allData['locationId'];
-            var location = this.locations.find(function (element) {
+            this.location = this.locations.find(function (element) {
                 return element.id.toString() == locationId.toString();
             });
-            console.log(location);
+            console.log(this.location);
             this.subLocationId = [];
-            location.subLocations.forEach(function (element) {
+            this.location.subLocations.forEach(function (element) {
                 if (element.status == "active")
                     _this.subLocationId.push(element.id);
             });
             console.log(this.subLocationId);
         }
         else if (stepNum == 3) {
+            this.stepthreeForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormGroup */]({
+                carId: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required)
+            });
+            this.totalPrice = 0;
             var firstDate = this.stepSecForm.value['first'];
             var secDate = this.stepSecForm.value['seconde'];
             if (this.cheackValidateionSecStep(firstDate, secDate, startDate, endDate)) {
-                var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport };
-                this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId']).subscribe(function (data) {
-                    if (_this.mainServ.APIServ.getErrorCode() == 0) {
-                        _this.carAvailable = data;
-                        _this.activeLink = _this.links[stepNum - 1].name;
-                    }
-                    else {
-                        _this.dialogServ.someThingIsError();
-                    }
-                });
+                if (this.differenceInHourse(firstDate, secDate) > 0) {
+                    var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport };
+                    this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId']).subscribe(function (data) {
+                        if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                            _this.carAvailable = data;
+                            _this.activeLink = _this.links[stepNum - 1].name;
+                        }
+                        else {
+                            _this.dialogServ.someThingIsError();
+                        }
+                    });
+                }
+                else {
+                    alert("error");
+                }
             }
             else {
                 alert("error");
@@ -26065,7 +26870,7 @@ var addTripComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/trip/trips/trips.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n        <span class=\"logo-text h1\">{{'TRIP.ALLTRIP.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'TRIP.ALLTRIP.ADDTRIP'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"rows\" [columnMode]=\"'force'\" [headerHeight]=\"50\" [rowHeight]=\"50\"\r\n    [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\" [count]=\"count\" [offset]=\"offset\" [limit]=\"limit\">\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"owner.username\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.USER' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"location.nameEn\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.LOCATION' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"car.name\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.CAR' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"driver.username\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.DRIVER' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"cost\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.PRICE' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status!='deactive' && row.status!='active'\">\r\n          <mat-chip style=\"background-color:#3b6fff\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"start\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.START' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <span>\r\n          {{row[\"start\"] | date: 'dd-MM-yyyy hh:mm a'}}\r\n        </span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"end\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.END' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <span>\r\n          {{row[\"end\"] | date: 'dd-MM-yyyy hh:mm a'}}\r\n        </span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n\r\n\r\n    <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <!-- <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button> -->\r\n        <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"goTo('view',row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button>\r\n\r\n        <button mat-icon-button [matMenuTriggerFor]=\"menu\">\r\n          <mat-icon>more_vert</mat-icon>\r\n        </button>\r\n        <mat-menu #menu=\"matMenu\">\r\n          <button mat-menu-item *ngIf=\"row.status!='deactive'\" (click)=\"changeStatus('deactive',row.id)\">\r\n            <mat-icon>cancel</mat-icon>\r\n            <span>{{'TRIP.DEACTIVE' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='approved'\" (click)=\"changeStatus('approved',row.id)\">\r\n            <mat-icon>more_horiz</mat-icon>\r\n            <span>{{'TRIP.APPROVED' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='pending'\" (click)=\"changeStatus('pending',row.id)\">\r\n            <mat-icon>group</mat-icon>\r\n            <span>{{'TRIP.PENDING' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='active'\" (click)=\"changeStatus('active',row.id)\">\r\n            <mat-icon>check</mat-icon>\r\n            <span>{{'TRIP.ACTIVE' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='finished'\" (click)=\"changeStatus('finished',row.id)\">\r\n            <mat-icon>check</mat-icon>\r\n            <span>{{'TRIP.FINISHED' | translate}}</span>\r\n          </button>\r\n        </mat-menu>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n\r\n\r\n    <ngx-datatable-footer>\r\n      <ng-template ngx-datatable-footer-template let-rowCount=\"rowCount\" let-pageSize=\"pageSize\" let-selectedCount=\"selectedCount\"\r\n        , let-curPage=\"curPage\" let-offset=\"offset\">\r\n        <div style=\"padding: 5px 10px\">\r\n          <div class=\"pagination\">\r\n            <button [ngClass]=\"{'disabled':disableObject.first == true}\" [disabled]=\"disableObject['first']\" (click)=\"first()\">\r\n              <i class=\"material-icons\">\r\n                fast_rewind\r\n              </i>\r\n            </button>\r\n            <button [ngClass]=\"{'disabled':disableObject.prev == true}\" [disabled]=\"disableObject['prev']\" (click)=\"prev()\">\r\n\r\n              <i class=\"material-icons\" style=\"transform: rotate(180deg);\">\r\n                play_arrow\r\n              </i>\r\n            </button>\r\n            <button [ngClass]=\"{'disabled':disableObject.next == true}\" [disabled]=\"disableObject['next']\" (click)=\"next()\">\r\n\r\n              <i class=\"material-icons\">\r\n                play_arrow\r\n              </i>\r\n            </button>\r\n            <button [ngClass]=\"{'disabled':disableObject.end == true}\" [disabled]=\"disableObject['end']\" (click)=\"end()\">\r\n\r\n              <i class=\"material-icons\">\r\n                fast_forward\r\n              </i>\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </ng-template>\r\n    </ngx-datatable-footer>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
+module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n        <span class=\"logo-text h1\">{{'TRIP.ALLTRIP.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'TRIP.ALLTRIP.ADDTRIP'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"rows\" [columnMode]=\"'force'\" [headerHeight]=\"50\" [rowHeight]=\"50\"\r\n    [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\" [count]=\"count\" [offset]=\"offset\" [limit]=\"limit\">\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"owner.name\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.USER' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"location.nameEn\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.LOCATION' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"car.name\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.CAR' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"driver.username\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.DRIVER' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"cost\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.PRICE' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status!='deactive' && row.status!='active'\">\r\n          <mat-chip style=\"background-color:#3b6fff\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"start\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.START' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <span>\r\n          {{row[\"start\"] | date: 'dd-MM-yyyy hh:mm a'}}\r\n        </span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"end\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.END' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <span>\r\n          {{row[\"end\"] | date: 'dd-MM-yyyy hh:mm a'}}\r\n        </span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n\r\n\r\n    <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <!-- <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button> -->\r\n        <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"goTo('view',row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button>\r\n\r\n        <button mat-icon-button [matMenuTriggerFor]=\"menu\">\r\n          <mat-icon>more_vert</mat-icon>\r\n        </button>\r\n        <mat-menu #menu=\"matMenu\">\r\n          <button mat-menu-item *ngIf=\"row.status!='deactive'\" (click)=\"changeStatus('deactive',row.id)\">\r\n            <mat-icon>cancel</mat-icon>\r\n            <span>{{'TRIP.DEACTIVE' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='approved'\" (click)=\"changeStatus('approved',row.id)\">\r\n            <mat-icon>more_horiz</mat-icon>\r\n            <span>{{'TRIP.APPROVED' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='pending'\" (click)=\"changeStatus('pending',row.id)\">\r\n            <mat-icon>group</mat-icon>\r\n            <span>{{'TRIP.PENDING' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='active'\" (click)=\"changeStatus('active',row.id)\">\r\n            <mat-icon>check</mat-icon>\r\n            <span>{{'TRIP.ACTIVE' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='finished'\" (click)=\"changeStatus('finished',row.id)\">\r\n            <mat-icon>check</mat-icon>\r\n            <span>{{'TRIP.FINISHED' | translate}}</span>\r\n          </button>\r\n        </mat-menu>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n\r\n\r\n    <ngx-datatable-footer>\r\n      <ng-template ngx-datatable-footer-template let-rowCount=\"rowCount\" let-pageSize=\"pageSize\" let-selectedCount=\"selectedCount\"\r\n        , let-curPage=\"curPage\" let-offset=\"offset\">\r\n        <div style=\"padding: 5px 10px\">\r\n          <div class=\"pagination\">\r\n            <button [ngClass]=\"{'disabled':disableObject.first == true}\" [disabled]=\"disableObject['first']\" (click)=\"first()\">\r\n              <i class=\"material-icons\">\r\n                fast_rewind\r\n              </i>\r\n            </button>\r\n            <button [ngClass]=\"{'disabled':disableObject.prev == true}\" [disabled]=\"disableObject['prev']\" (click)=\"prev()\">\r\n\r\n              <i class=\"material-icons\" style=\"transform: rotate(180deg);\">\r\n                play_arrow\r\n              </i>\r\n            </button>\r\n            <button [ngClass]=\"{'disabled':disableObject.next == true}\" [disabled]=\"disableObject['next']\" (click)=\"next()\">\r\n\r\n              <i class=\"material-icons\">\r\n                play_arrow\r\n              </i>\r\n            </button>\r\n            <button [ngClass]=\"{'disabled':disableObject.end == true}\" [disabled]=\"disableObject['end']\" (click)=\"end()\">\r\n\r\n              <i class=\"material-icons\">\r\n                fast_forward\r\n              </i>\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </ng-template>\r\n    </ngx-datatable-footer>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -26312,7 +27117,7 @@ var tripsComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/trip/viewTrip/viewTrip.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{locationName}}\r\n      </span>\r\n    </div>\r\n    <div style=\"font-size: 20px\">{{trip.status}}</div>\r\n\r\n\r\n  </div>\r\n  <div class=\"\" style=\"padding: 5px\">\r\n    <div class=\"typeAndPriceDiv\" style=\"\">\r\n      <div class=\"typeDiv\">\r\n        <div class=\"cercil\" [ngClass]=\"{'active':trip.fromAirport}\" [style.backgroundImage]=\"'url('+'assets/images/icons/FromAirport-01.png'+')'\">\r\n          <!-- <img src=\"assets/images/icons/FromAirport-01.png\"> -->\r\n        </div>\r\n        <div class=\"cercil\" [ngClass]=\"{'active':trip.inCity}\" [style.backgroundImage]=\"'url('+'assets/images/icons/tour-01.png'+')'\">\r\n          <!-- <img src=\"assets/images/icons/tour-01.png\"> -->\r\n        </div>\r\n        <div class=\"cercil\" [ngClass]=\"{'active':trip.toAirport}\" [style.backgroundImage]=\"'url('+'assets/images/icons/ToAirport-01.png'+')'\">\r\n          <!-- <img src=\"assets/images/icons/ToAirport-01.png\"> -->\r\n        </div>\r\n      </div>\r\n      <div class=\"priceDiv\">\r\n        <label>{{'TRIP.PRICE' | translate}} : {{trip.cost}}</label>\r\n      </div>\r\n    </div>\r\n    <div class=\"ownerCard\" *ngIf=\"trip['owner']\">\r\n      <div class=\"cont\">\r\n        <div class=\"details\">\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.OWNERUSERNAME' | translate}}</h1>\r\n            <h4>{{trip['owner']['username']}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.OWNERPHONNUMBER' | translate}}</h1>\r\n            <h4>{{trip['owner']['phoneNumber']}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.OWNERCOUNTRY' | translate}}</h1>\r\n            <h4>{{trip['owner']['country']['name']}}</h4>\r\n          </div>\r\n        </div>\r\n        <div class=\"details\">\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.CREATEDAT' | translate}}</h1>\r\n            <h4>{{trip['createdAt'] | date: 'dd-MM-yyyy hh:mm a'}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.START' | translate}}</h1>\r\n            <h4>{{trip['start'] | date: 'dd-MM-yyyy hh:mm a'}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.END' | translate}}</h1>\r\n            <h4>{{trip['end'] | date: 'dd-MM-yyyy hh:mm a'}}</h4>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"carCard\" *ngIf=\"trip['owner']\">\r\n      <div class=\"img\" [style.backgroundImage]=\"'url('+trip['car']['media']['url']+')'\">\r\n      </div>\r\n      <div class=\"cont\">\r\n        <div class=\"car\">\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.CARNAME' | translate}}</h1>\r\n            <h4>{{trip['car']['name']}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.CARNUMBEROFSEAT' | translate}}</h1>\r\n            <h4>{{trip['car']['numOfSeat']}}</h4>\r\n          </div>\r\n        </div>\r\n        <div class=\"driver\">\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.DRIVERNAME' | translate}}</h1>\r\n            <h4>{{trip['driver']['username']}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.DRIVERGENDER' | translate}}</h1>\r\n            <h4>{{trip['driver']['gender']}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.DRIVERPHONE' | translate}}</h1>\r\n            <h4>{{trip['driver']['phoneNumber']}}</h4>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"locationCard\" *ngIf=\"trip['owner']\">\r\n      <div class=\"img\" [style.backgroundImage]=\"'url('+trip['location']['media']['url']+')'\">\r\n        <!-- <img src=\"{{trip['car']['media']['url']}}\"> -->\r\n      </div>\r\n      <div class=\"cont\">\r\n        <div class=\"car\">\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.LOCATIONNAME' | translate}}</h1>\r\n            <h4>{{trip['location']['nameEn']}}</h4>\r\n          </div>\r\n        </div>\r\n        <div class=\"desc\">\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.LOCATIONDESC' | translate}}</h1>\r\n            <h4>{{trip['location']['descriptionEn']}}</h4>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"sublocationCard\" *ngIf=\"trip['owner']\">\r\n      <div class=\"cont\">\r\n        <div class=\"sublocation\" *ngFor=\"let oneSublocation of trip['tripSublocations']\">\r\n          <div class=\"element\">\r\n            <h1>{{oneSublocation['subLocation']['nameEn']}}</h1>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h4>{{oneSublocation['duration']}}</h4>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{locationName}}\r\n      </span>\r\n    </div>\r\n    <div style=\"font-size: 20px\">{{trip.status}}</div>\r\n\r\n\r\n  </div>\r\n  <div class=\"\" style=\"padding: 5px\">\r\n    <div class=\"typeAndPriceDiv\" style=\"\">\r\n      <div class=\"typeDiv\">\r\n        <div class=\"cercil\" [ngClass]=\"{'active':trip.fromAirport}\" [style.backgroundImage]=\"'url('+'assets/images/icons/FromAirport-01.png'+')'\">\r\n          <!-- <img src=\"assets/images/icons/FromAirport-01.png\"> -->\r\n        </div>\r\n        <div class=\"cercil\" [ngClass]=\"{'active':trip.inCity}\" [style.backgroundImage]=\"'url('+'assets/images/icons/tour-01.png'+')'\">\r\n          <!-- <img src=\"assets/images/icons/tour-01.png\"> -->\r\n        </div>\r\n        <div class=\"cercil\" [ngClass]=\"{'active':trip.toAirport}\" [style.backgroundImage]=\"'url('+'assets/images/icons/ToAirport-01.png'+')'\">\r\n          <!-- <img src=\"assets/images/icons/ToAirport-01.png\"> -->\r\n        </div>\r\n      </div>\r\n      <div class=\"priceDiv\">\r\n        <label>{{'TRIP.PRICE' | translate}} : {{trip.cost}}</label>\r\n      </div>\r\n    </div>\r\n    <div class=\"ownerCard\" *ngIf=\"trip['owner']\">\r\n      <div class=\"cont\">\r\n        <div class=\"details\">\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.OWNERNAME' | translate}}</h1>\r\n            <h4>{{trip['owner']['name']}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.OWNERPHONNUMBER' | translate}}</h1>\r\n            <h4>{{trip['owner']['phoneNumber']}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.OWNERCOUNTRY' | translate}}</h1>\r\n            <h4>{{trip['owner']['country']['name']}}</h4>\r\n          </div>\r\n        </div>\r\n        <div class=\"details\">\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.CREATEDAT' | translate}}</h1>\r\n            <h4>{{trip['createdAt'] | date: 'dd-MM-yyyy hh:mm a'}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.START' | translate}}</h1>\r\n            <h4>{{trip['start'] | date: 'dd-MM-yyyy hh:mm a'}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.END' | translate}}</h1>\r\n            <h4>{{trip['end'] | date: 'dd-MM-yyyy hh:mm a'}}</h4>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"carCard\" *ngIf=\"trip['owner']\">\r\n      <div class=\"img\" [style.backgroundImage]=\"'url('+trip['car']['media']['url']+')'\">\r\n      </div>\r\n      <div class=\"cont\">\r\n        <div class=\"car\">\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.CARNAME' | translate}}</h1>\r\n            <h4>{{trip['car']['name']}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.CARNUMBEROFSEAT' | translate}}</h1>\r\n            <h4>{{trip['car']['numOfSeat']}}</h4>\r\n          </div>\r\n        </div>\r\n        <div class=\"driver\">\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.DRIVERNAME' | translate}}</h1>\r\n            <h4>{{trip['driver']['username']}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.DRIVERGENDER' | translate}}</h1>\r\n            <h4>{{trip['driver']['gender']}}</h4>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.DRIVERPHONE' | translate}}</h1>\r\n            <h4>{{trip['driver']['phoneNumber']}}</h4>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"locationCard\" *ngIf=\"trip['owner']\">\r\n      <div class=\"img\" [style.backgroundImage]=\"'url('+trip['location']['media']['url']+')'\">\r\n        <!-- <img src=\"{{trip['car']['media']['url']}}\"> -->\r\n      </div>\r\n      <div class=\"cont\">\r\n        <div class=\"car\">\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.LOCATIONNAME' | translate}}</h1>\r\n            <h4>{{trip['location']['nameEn']}}</h4>\r\n          </div>\r\n        </div>\r\n        <div class=\"desc\">\r\n          <div class=\"element\">\r\n            <h1>{{'TRIP.LOCATIONDESC' | translate}}</h1>\r\n            <h4>{{trip['location']['descriptionEn']}}</h4>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"sublocationCard\" *ngIf=\"trip['owner']\">\r\n      <div class=\"cont\">\r\n        <div class=\"sublocation\" *ngFor=\"let oneSublocation of trip['tripSublocations']\">\r\n          <div class=\"element\">\r\n            <h1>{{oneSublocation['subLocation']['nameEn']}}</h1>\r\n          </div>\r\n          <div class=\"element\">\r\n            <h4>{{oneSublocation['duration']}}</h4>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -26460,7 +27265,7 @@ var viewTripComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/user/addUser/addUser.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'USER.ADDUSER.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"addUserForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'USER.USERNAME' | translate }}\" formControlName=\"username\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'USER.PHONENUMBER' | translate }}\" formControlName=\"phoneNumber\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'USER.PASSWORD' | translate }}\" formControlName=\"password\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <mat-select placeholder=\"{{ 'USER.ISOCODE' | translate }}\" formControlName=\"ISOCode\">\r\n              <mat-option *ngFor=\"let oneCode of isoCode\" [value]=\"oneCode.isoCode\">\r\n                {{oneCode.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"add()\" cdkFocusInitial [disabled]=\"addUserForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'USER.ADDUSER.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"addUserForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'USER.NAME' | translate }}\" formControlName=\"name\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'USER.PHONENUMBER' | translate }}\" formControlName=\"phoneNumber\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'USER.PASSWORD' | translate }}\" formControlName=\"password\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <mat-select placeholder=\"{{ 'USER.ISOCODE' | translate }}\" formControlName=\"ISOCode\">\r\n              <mat-option *ngFor=\"let oneCode of isoCode\" [value]=\"oneCode.isoCode\">\r\n                {{oneCode.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"add()\" cdkFocusInitial [disabled]=\"addUserForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -26523,7 +27328,7 @@ var addUserComponent = (function () {
     addUserComponent.prototype.ngOnInit = function () {
         this.isoCode = this.mainServ.globalServ.getIsoCode();
         this.addUserForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormGroup */]({
-            username: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+            name: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
             phoneNumber: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
             ISOCode: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
             password: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required)
@@ -26569,7 +27374,7 @@ var addUserComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/user/editUser/editUser.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'CAR.EDITCAR.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editUserForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'USER.USERNAME' | translate }}\" formControlName=\"username\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'USER.PHONENUMBER' | translate }}\" formControlName=\"phoneNumber\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'USER.ISOCODE' | translate }}\" formControlName=\"ISOCode\">\r\n              <mat-option *ngFor=\"let oneCode of isoCode\" [value]=\"oneCode.isoCode\">\r\n                {{oneCode.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editUserForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'CAR.EDITCAR.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editUserForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'USER.NAME' | translate }}\" formControlName=\"name\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'USER.PHONENUMBER' | translate }}\" formControlName=\"phoneNumber\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'USER.ISOCODE' | translate }}\" formControlName=\"ISOCode\">\r\n              <mat-option *ngFor=\"let oneCode of isoCode\" [value]=\"oneCode.isoCode\">\r\n                {{oneCode.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editUserForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -26638,7 +27443,7 @@ var editUserComponent = (function () {
     };
     editUserComponent.prototype.ngOnInit = function () {
         this.editUserForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
-            username: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+            name: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
             phoneNumber: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
             ISOCode: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
         });
@@ -26651,7 +27456,7 @@ var editUserComponent = (function () {
                 if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
                     mainthis.user = data;
                     mainthis.editUserForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
-                        username: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.username, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+                        name: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.name, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
                         phoneNumber: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.phoneNumber, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
                         ISOCode: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.ISOCode, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
                     });
@@ -26703,7 +27508,7 @@ var editUserComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/user/users/users.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n        <span class=\"logo-text h1\">{{'USER.ALLUSER.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'USER.ALLUSER.ADDUSER'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n  <div class=\"content\">\r\n    <ngx-datatable class=\"material vertical-scroll\" [rows]=\"rows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n      [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\" [count]=\"count\" [offset]=\"offset\"\r\n      [limit]=\"limit\">\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"username\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.USERNAME' | translate }}</span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"phoneNumber\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.PHONENUMBER' | translate }}</span>\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"ISOCode\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.ISOCODE' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <span *ngIf=\"row['country']\">{{row['country']['name']}}</span>\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.STATUS' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <mat-chip-list *ngIf=\"row.status=='active'\">\r\n            <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n          </mat-chip-list>\r\n          <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n            <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n          </mat-chip-list>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"createdAt\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.REGISTRATIONDATE' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <span>\r\n            {{value | date: 'dd-MM-yyyy'}}\r\n          </span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n\r\n\r\n\r\n      <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n          <div class=\"table-header-font\">\r\n\r\n          </div>\r\n        </ng-template>\r\n\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n            <mat-icon style=\"color : white;\">edit</mat-icon>\r\n          </button>\r\n          <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n            <mat-icon style=\"color : white;\">delete</mat-icon>\r\n          </button>\r\n          <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n            <mat-icon style=\"color : white;\">replay</mat-icon>\r\n          </button>\r\n          <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n\r\n      <ngx-datatable-footer>\r\n        <ng-template ngx-datatable-footer-template let-rowCount=\"rowCount\" let-pageSize=\"pageSize\" let-selectedCount=\"selectedCount\"\r\n          , let-curPage=\"curPage\" let-offset=\"offset\">\r\n          <div style=\"padding: 5px 10px\">\r\n            <div class=\"pagination\">\r\n              <button [ngClass]=\"{'disabled':disableObject.first == true}\" [disabled]=\"disableObject['first']\" (click)=\"first()\">\r\n                <i class=\"material-icons\">\r\n                  fast_rewind\r\n                </i>\r\n              </button>\r\n              <button [ngClass]=\"{'disabled':disableObject.prev == true}\" [disabled]=\"disableObject['prev']\" (click)=\"prev()\">\r\n\r\n                <i class=\"material-icons\" style=\"transform: rotate(180deg);\">\r\n                  play_arrow\r\n                </i>\r\n              </button>\r\n              <button [ngClass]=\"{'disabled':disableObject.next == true}\" [disabled]=\"disableObject['next']\" (click)=\"next()\">\r\n\r\n                <i class=\"material-icons\">\r\n                  play_arrow\r\n                </i>\r\n              </button>\r\n              <button [ngClass]=\"{'disabled':disableObject.end == true}\" [disabled]=\"disableObject['end']\" (click)=\"end()\">\r\n\r\n                <i class=\"material-icons\">\r\n                  fast_forward\r\n                </i>\r\n              </button>\r\n            </div>\r\n          </div>\r\n        </ng-template>\r\n      </ngx-datatable-footer>\r\n\r\n    </ngx-datatable>\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n        <span class=\"logo-text h1\">{{'USER.ALLUSER.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'USER.ALLUSER.ADDUSER'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n  <div class=\"content\">\r\n    <ngx-datatable class=\"material vertical-scroll\" [rows]=\"rows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n      [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\" [count]=\"count\" [offset]=\"offset\"\r\n      [limit]=\"limit\">\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"name\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.NAME' | translate }}</span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"phoneNumber\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.PHONENUMBER' | translate }}</span>\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"ISOCode\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.ISOCODE' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <span *ngIf=\"row['country']\">{{row['country']['name']}}</span>\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.STATUS' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <mat-chip-list *ngIf=\"row.status=='active'\">\r\n            <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n          </mat-chip-list>\r\n          <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n            <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n          </mat-chip-list>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"createdAt\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.REGISTRATIONDATE' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <span>\r\n            {{value | date: 'dd-MM-yyyy'}}\r\n          </span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n\r\n\r\n\r\n      <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n          <div class=\"table-header-font\">\r\n\r\n          </div>\r\n        </ng-template>\r\n\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n            <mat-icon style=\"color : white;\">edit</mat-icon>\r\n          </button>\r\n          <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n            <mat-icon style=\"color : white;\">delete</mat-icon>\r\n          </button>\r\n          <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n            <mat-icon style=\"color : white;\">replay</mat-icon>\r\n          </button>\r\n          <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n\r\n      <ngx-datatable-footer>\r\n        <ng-template ngx-datatable-footer-template let-rowCount=\"rowCount\" let-pageSize=\"pageSize\" let-selectedCount=\"selectedCount\"\r\n          , let-curPage=\"curPage\" let-offset=\"offset\">\r\n          <div style=\"padding: 5px 10px\">\r\n            <div class=\"pagination\">\r\n              <button [ngClass]=\"{'disabled':disableObject.first == true}\" [disabled]=\"disableObject['first']\" (click)=\"first()\">\r\n                <i class=\"material-icons\">\r\n                  fast_rewind\r\n                </i>\r\n              </button>\r\n              <button [ngClass]=\"{'disabled':disableObject.prev == true}\" [disabled]=\"disableObject['prev']\" (click)=\"prev()\">\r\n\r\n                <i class=\"material-icons\" style=\"transform: rotate(180deg);\">\r\n                  play_arrow\r\n                </i>\r\n              </button>\r\n              <button [ngClass]=\"{'disabled':disableObject.next == true}\" [disabled]=\"disableObject['next']\" (click)=\"next()\">\r\n\r\n                <i class=\"material-icons\">\r\n                  play_arrow\r\n                </i>\r\n              </button>\r\n              <button [ngClass]=\"{'disabled':disableObject.end == true}\" [disabled]=\"disableObject['end']\" (click)=\"end()\">\r\n\r\n                <i class=\"material-icons\">\r\n                  fast_forward\r\n                </i>\r\n              </button>\r\n            </div>\r\n          </div>\r\n        </ng-template>\r\n      </ngx-datatable-footer>\r\n\r\n    </ngx-datatable>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -29953,7 +30758,7 @@ var locale = {
             }
         },
         "USER": {
-            "USERNAME": "Username",
+            "NAME": "Name",
             "PHONENUMBER": "Phone Number",
             "STATUS": "Status",
             'PASSWORD': 'Password',
@@ -29998,7 +30803,8 @@ var locale = {
             "TIME": "Time",
             "START": "Start",
             "END": "End",
-            "OWNERUSERNAME": "Username",
+            "DAYSINCITY": "Days In City",
+            "OWNERNAME": "Name",
             "OWNERPHONNUMBER": "Customer Phone",
             "OWNERCOUNTRY": "Customer Country",
             "PRICE": "Price Estimation ",
@@ -30026,6 +30832,30 @@ var locale = {
             },
             "ADDTRIP": {
                 "TITLE": "Add Trip",
+            }
+        },
+        "PREDEFINEDTRIP": {
+            "DURATION": "Duration",
+            "LOCATION": "Location",
+            "STATUS": "Status",
+            "TITLEEN": "English Title",
+            "TITLEAR": "Arabic Title",
+            "TITLETR": "Turkish Title",
+            "DESCRIPTIONEN": "English Description",
+            "DESCRIPTIONAR": "Arabic Description",
+            "DESCRIPTIONTR": "Turkish Description",
+            "FIRSTCOLOR": "First Color",
+            "SECONDCOLOR": "Second Color",
+            "ALLPREDEFINEDTRIP": {
+                "TITLE": "Predefined Trip",
+                "ADDPREDEFINEDTRIP": "Add Predefined Trip",
+                "SEARCH": "Search for Predefined"
+            },
+            "ADDPREDEFINEDTRIP": {
+                "TITLE": "Add Predefined Trip"
+            },
+            "EDITPREDEFINEDTRIP": {
+                "TITLE": "Edit Predefined Trip"
             }
         },
         'Nav': {
@@ -30972,6 +31802,12 @@ var NavigationModel = (function () {
                 'title': 'TRIP.ALLTRIP.TITLE',
                 'type': 'item',
                 'url': '/trips'
+            },
+            {
+                'id': 'predefined-trip',
+                'title': 'PREDEFINEDTRIP.ALLPREDEFINEDTRIP.TITLE',
+                'type': 'item',
+                'url': '/predefined-trips'
             }
             // {
             //     'id'      : 'applications',

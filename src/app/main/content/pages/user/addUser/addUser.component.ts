@@ -34,7 +34,7 @@ export class addUserComponent implements OnInit {
   ngOnInit() {
     this.isoCode = this.mainServ.globalServ.getIsoCode();
     this.addUserForm = new FormGroup({
-      username: new FormControl('', Validators.required),
+      name: new FormControl('', Validators.required),
       phoneNumber: new FormControl('', Validators.required),
       ISOCode: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required)

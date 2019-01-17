@@ -43,7 +43,7 @@ export class editUserComponent implements OnInit {
 
   ngOnInit() {
     this.editUserForm = new FormGroup({
-      username: new FormControl('', Validators.required),
+      name: new FormControl('', Validators.required),
       phoneNumber: new FormControl('', Validators.required),
       ISOCode: new FormControl('', Validators.required)
     });
@@ -55,7 +55,7 @@ export class editUserComponent implements OnInit {
         if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
           mainthis.user = data;
           mainthis.editUserForm = new FormGroup({
-            username: new FormControl(data.username, Validators.required),
+            name: new FormControl(data.name, Validators.required),
             phoneNumber: new FormControl(data.phoneNumber, Validators.required),
             ISOCode: new FormControl(data.ISOCode, Validators.required)
           });

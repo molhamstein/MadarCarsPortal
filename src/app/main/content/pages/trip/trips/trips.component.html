@@ -35,7 +35,7 @@
   <ngx-datatable class="material vertical-scroll" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" [rowHeight]="50"
     [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="true" [count]="count" [offset]="offset" [limit]="limit">
 
-    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="owner.username">
+    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="owner.name">
       <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
         <span>{{ 'TRIP.USER' | translate }}</span>
       </ng-template>

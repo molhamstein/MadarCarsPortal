@@ -36,9 +36,9 @@
       [rowHeight]="50" [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="true" [count]="count" [offset]="offset"
       [limit]="limit">
 
-      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="username">
+      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="name">
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-          <span>{{ 'USER.USERNAME' | translate }}</span>
+          <span>{{ 'USER.NAME' | translate }}</span>
         </ng-template>
       </ngx-datatable-column>
       <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="phoneNumber">

@@ -46,13 +46,13 @@
           </mat-form-field>
 
           <mat-form-field fxFlex="30">
-            <input matInput (focus)="picker.open()" [matDatepicker]="picker" formControlName="productionDate"
-              placeholder="{{ 'CAR.PRODUCTIONDATE' | translate }}">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <mat-select placeholder="{{ 'CAR.PRODUCTIONDATE' | translate }}" formControlName="productionDate">
+              <mat-option *ngFor="let oneYear of years" [value]="oneYear">
+                {{oneYear}}
+              </mat-option>
+            </mat-select>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
-
 
           <mat-form-field fxFlex="30">
             <mat-select placeholder="{{ 'CAR.ENGINTYPE' | translate }}" formControlName="engineType">

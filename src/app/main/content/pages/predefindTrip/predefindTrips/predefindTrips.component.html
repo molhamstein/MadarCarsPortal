@@ -13,7 +13,7 @@
 
       <div class="logo" fxLayout="row" fxLayoutAlign="start center">
         <mat-icon class="logo-icon mr-16">account_box</mat-icon>
-        <span class="logo-text h1">{{'LOCATION.ALLLOCATION.TITLE' | translate}}</span>
+        <span class="logo-text h1">{{'PREDEFINEDTRIP.ALLPREDEFINEDTRIP.TITLE' | translate}}</span>
       </div>
 
     </div>
@@ -25,9 +25,9 @@
         <mat-icon>search</mat-icon>
       </label>
       <mat-form-field mat-no-float class="m-0" floatPlaceholder="never">
-        <input matInput id="search" [(ngModel)]="filterValue" (ngModelChange)="filterDatatable()" placeholder="{{'LOCATION.ALLLOCATION.SEARCH'| translate}}">
+        <input matInput id="search" [(ngModel)]="filterValue" (ngModelChange)="filterDatatable()" placeholder="{{'PREDEFINEDTRIP.ALLPREDEFINEDTRIP.SEARCH'| translate}}">
       </mat-form-field>
-      <button mat-button class="customButtom" color="primary" type="button" (click)="addUser()">{{'LOCATION.ALLLOCATION.ADDLOCATION'
+      <button mat-button class="customButtom" color="primary" type="button" (click)="addUser()">{{'PREDEFINEDTRIP.ALLPREDEFINEDTRIP.ADDPREDEFINEDTRIP'
         | translate}}</button>
 
     </div>
@@ -39,37 +39,31 @@
   <ngx-datatable class="material vertical-scroll" [rows]="filterRows" [columnMode]="'force'" [headerHeight]="50"
     [rowHeight]="50" [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="true">
 
-    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="nameAr">
+    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="titleEn">
       <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-        <span>{{ 'LOCATION.NAMEAR' | translate }}</span>
+        <span>{{ 'PREDEFINEDTRIP.TITLEEN' | translate }}</span>
       </ng-template>
     </ngx-datatable-column>
 
-    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="nameEn">
+    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="duration">
       <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-        <span>{{ 'LOCATION.NAMEEN' | translate }}</span>
+        <span>{{ 'PREDEFINEDTRIP.DURATION' | translate }}</span>
       </ng-template>
 
     </ngx-datatable-column>
-    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="nameTr">
+    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="location.nameEn">
       <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-        <span>{{ 'LOCATION.NAMETR' | translate }}</span>
+        <span>{{ 'PREDEFINEDTRIP.LOCATION' | translate }}</span>
       </ng-template>
 
     </ngx-datatable-column>
 
 
-    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="sublocationCount">
-      <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-        <span>{{ 'LOCATION.SUBLOCATIONCOUNT' | translate }}</span>
-      </ng-template>
-
-    </ngx-datatable-column>
 
 
     <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="Status">
       <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-        <span>{{ 'LOCATION.STATUS' | translate }}</span>
+        <span>{{ 'PREDEFINEDTRIP.STATUS' | translate }}</span>
       </ng-template>
       <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
         <mat-chip-list *ngIf="row.status=='active'">

@@ -1,3 +1,4 @@
+import { duration } from 'moment';
 import { DialogService } from './../../../../../core/services/dialog.service';
 import { FuseTranslationLoaderService } from './../../../../../core/services/translation-loader.service';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
@@ -11,33 +12,24 @@ import { locale as english } from '../../../../languageFiles/en';
 
 
 @Component({
-  selector: 'app-addCar',
-  templateUrl: './addCar.component.html',
-  styleUrls: ['./addCar.component.scss']
+  selector: 'app-addPredefindTrip',
+  templateUrl: './addPredefindTrip.component.html',
+  styleUrls: ['./addPredefindTrip.component.scss']
 })
-export class addCarComponent implements OnInit {
-  addCarForm;
+export class addPredefindTripComponent implements OnInit {
+  addPredefindTripForm;
   imageOnLoad = []
   listImageOnLoad = []
   media;
   imaageUrl = this.mainServ.getDefultImage();
   images = [];
   listImages = [];
-  brands = [];
-  locations = []
-  drivers = []
-  engineType = ['manual', 'automatic']
-  type = ['sport', 'ceremony']
-
+  locations = [];
   subLocation = [];
-  carSublocations = [];
-  isVip = false
-  isAirportCar = false
-  isCityCar = false
-
-
-
-  years = [];
+  stillDays = 0;
+  predefinedTripsSublocations = [];
+  sublocationDuration = 0;
+  location;
   private primaryColor: string = "#127bdc";
   private secondryColor: string = "#127bdc";
   constructor(
@@ -49,6 +41,7 @@ export class addCarComponent implements OnInit {
   ) {
     this.translationLoader.loadTranslations(english);
   }
+
 
   openSelectImage() {
     document.getElementById('files').click();
@@ -98,7 +91,6 @@ export class addCarComponent implements OnInit {
     });
   }
 
-
   onChange(event: any) {
     let files = [].slice.call(event.target.files);
     let allFilles = event.target.files;
@@ -134,116 +126,101 @@ export class addCarComponent implements OnInit {
     });
     // });
   }
+  addDuration(index) {
+    if (this.sublocationDuration == this.addPredefindTripForm.value.duration) {
+      alert("Error")
+    }
+    else {
+      this.sublocationDuration++;
+      this.predefinedTripsSublocations[index].duration++;
 
+    }
+  }
+
+  minDuration(index) {
+    if (this.predefinedTripsSublocations[index].duration == 0)
+      return
+    this.sublocationDuration--;
+    this.predefinedTripsSublocations[index].duration--;
+
+  }
+
+
+  // onSearchChange() {
+  //   var sublocationDays = 0;
+  //   for (let index = 0; index < this.predefinedTripsSublocations.length; index++) {
+  //     const element = this.predefinedTripsSublocations[index];
+  //     if (element.duration != null)
+  //     sublocationDays += element.duration;
+  //     this.subLocaationPrice += element.duration * this.carsSublocations[index].cost
+  //     console.log(this.subLocationDays)
+  //     if (index == this.predefinedTripsSublocations.length - 1) {
+  //       this.tripdays = this.mainTripdays - this.subLocationDays;
+  //       this.totalPrice = this.tripdays * this.pricePerDay;
+  //     }
+  //   }
+  // }
 
   ngOnInit() {
-    for (let index = 1900; index < 2021; index++) {
-      this.years.push(index);
-    }
-    this.addCarForm = new FormGroup({
-      brandId: new FormControl('', Validators.required),
-      name: new FormControl('', Validators.required),
-      numOfSeat: new FormControl('', Validators.required),
+    var locationFilter = { "where": { "status": "active" }, "include": ['subLocations'] }
 
-      productionDate: new FormControl('', Validators.required),
-      engineType: new FormControl('', Validators.required),
-      type: new FormControl('', Validators.required),
-
-      pricePerDay: new FormControl('', Validators.required),
-      priceOneWay: new FormControl('', Validators.required),
-      priceTowWay: new FormControl('', Validators.required),
-
-      locationId: new FormControl('', Validators.required),
-      driverId: new FormControl('', Validators.required),
-
-
-    });
-    this.mainServ.APIServ.get("brands").subscribe((data: any) => {
-      if (this.mainServ.APIServ.getErrorCode() == 0) {
-        this.brands = data;
-        var mercidesObject = this.brands.find(function (element) {
-          return element.isDefult == true
-        });
-        this.addCarForm = new FormGroup({
-          brandId: new FormControl(mercidesObject.id, Validators.required),
-          name: new FormControl('', Validators.required),
-          numOfSeat: new FormControl('', Validators.required),
-
-          productionDate: new FormControl('', Validators.required),
-          engineType: new FormControl('', Validators.required),
-          type: new FormControl('', Validators.required),
-
-          pricePerDay: new FormControl('', Validators.required),
-          priceOneWay: new FormControl('', Validators.required),
-          priceTowWay: new FormControl('', Validators.required),
-
-          locationId: new FormControl('', Validators.required),
-          driverId: new FormControl('', Validators.required),
-
-
-        });
-      }
-    })
-
-    this.mainServ.APIServ.get("drivers").subscribe((data: any) => {
-      if (this.mainServ.APIServ.getErrorCode() == 0) {
-        this.drivers = data;
-      }
-    })
-    this.mainServ.APIServ.get("locations?filter[include]=subLocations&filter[where][status]=active").subscribe((data: any) => {
+    this.mainServ.APIServ.get("locations?filter=" + JSON.stringify(locationFilter)).subscribe((data: any) => {
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.locations = data;
       }
+      else
+        this.dialogServ.someThingIsError();
     })
+
+    this.addPredefindTripForm = new FormGroup({
+      duration: new FormControl(0, Validators.required),
+      titleEn: new FormControl('', Validators.required),
+      titleTr: new FormControl('', Validators.required),
+      titleAr: new FormControl('', Validators.required),
+      descriptionEn: new FormControl('', Validators.required),
+      descriptionAr: new FormControl('', Validators.required),
+      descriptionTr: new FormControl('', Validators.required),
+      locationId: new FormControl('', Validators.required)
+    });
   }
 
 
   add() {
-    var data = this.addCarForm.value;
+    var data = this.addPredefindTripForm.value;
     data['mediaId'] = this.media.id;
-    data['carMedia'] = [];
+    data['predefinedTripsMedias'] = [];
     this.listImages.forEach(element => {
-      data['carMedia'].push({
+      data['predefinedTripsMedias'].push({
         "mediaId": element.id
       })
     });
-    data['carSublocations'] = []
-    this.carSublocations.forEach(element => {
-      data['carSublocations'].push({
-        "cost": element.cost,
-        "subLocationId": element.subLocationId,
-      })
-    });
-    data['isAirportCar'] = this.isAirportCar;
-    data['isCityCar'] = this.isCityCar;
-    data['isVip'] = this.isVip;
+    data['predefinedTripsSublocations'] = this.predefinedTripsSublocations;
     data['color1'] = this.primaryColor.substr(1);
     data['color2'] = this.secondryColor.substr(1);
-    console.log(data);
-    this.mainServ.APIServ.post("cars", data).subscribe((data: any) => {
+    this.mainServ.APIServ.post("predefinedTrips", data).subscribe((data: any) => {
       if (this.mainServ.APIServ.getErrorCode() == 0) {
-        this.back()
+        this.mainServ.globalServ.goTo('predefined-trips')
       }
     })
   }
 
-
   changeLocation(event) {
     console.log(event);
-    this.subLocation = this.locations.find(x => x.id === event.value).subLocations;
+    this.location=this.locations.find(x => x.id === event.value);
+    this.subLocation = this.location.subLocations;
     console.log(this.subLocation);
     this.subLocation.forEach(element => {
-      this.carSublocations.push({
-        "cost": 0,
+      this.predefinedTripsSublocations.push({
+        "duration": 0,
         "subLocationId": element.id,
         "name": element.nameEn
       })
     });
-    console.log(this.carSublocations);
+    console.log(this.predefinedTripsSublocations);
   }
 
   back() {
-    this.mainServ.globalServ.goTo('cars')
+    this.mainServ.globalServ.goTo('predefined-trips')
   }
 
   deleteImage(i) {

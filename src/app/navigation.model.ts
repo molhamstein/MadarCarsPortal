@@ -38,6 +38,12 @@ export class NavigationModel {
                 'title': 'TRIP.ALLTRIP.TITLE',
                 'type': 'item',
                 'url': '/trips'
+            },
+            {
+                'id': 'predefined-trip',
+                'title': 'PREDEFINEDTRIP.ALLPREDEFINEDTRIP.TITLE',
+                'type': 'item',
+                'url': '/predefined-trips'
             }
             // {
             //     'id'      : 'applications',

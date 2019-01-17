@@ -1,0 +1,198 @@
+<div id="ngx-datatable" class="page-layout simple fullwidth" fusePerfectScrollbar>
+
+  <!-- HEADER -->
+  <div class="header mat-accent-bg p-16 customHeader" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="row"
+    fxLayoutAlign.gt-xs="space-between center">
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="column" fxLayoutAlign.gt-xs="center start">
+      <!-- <button style="background-color: rgba(7, 112, 7, 0.849);" mat-mini-fab class="mr-16"> -->
+      <!-- </button> -->
+      <span class="logo-text h1">
+        <mat-icon style="color : white;" (click)="back()" class="back">arrow_back_ios</mat-icon>
+        {{'PREDEFINEDTRIP.EDITPREDEFINEDTRIP.TITLE' | translate}}
+      </span>
+    </div>
+
+
+  </div>
+  <!-- / HEADER -->
+
+  <!-- CONTENT -->
+  <div class="content p-24">
+    <form [formGroup]="editPredefindTripForm">
+      <div style="width: 100%;">
+        <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
+          fxFlex>
+          <mat-form-field fxFlex="96">
+            <textarea matInput placeholder="{{ 'PREDEFINEDTRIP.DESCRIPTIONEN' | translate }}" formControlName="descriptionEn"
+              required></textarea>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field fxFlex="96">
+            <textarea matInput placeholder="{{ 'PREDEFINEDTRIP.DESCRIPTIONAR' | translate }}" formControlName="descriptionAr"
+              required></textarea>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field fxFlex="96">
+            <textarea matInput placeholder="{{ 'PREDEFINEDTRIP.DESCRIPTIONTR' | translate }}" formControlName="descriptionTr"
+              required></textarea>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'PREDEFINEDTRIP.TITLEEN' | translate }}" formControlName="titleEn" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'PREDEFINEDTRIP.TITLEAR' | translate }}" formControlName="titleAr" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'PREDEFINEDTRIP.TITLETR' | translate }}" formControlName="titleTr" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="30">
+            <input matInput type="number" placeholder="{{ 'PREDEFINEDTRIP.DURATION' | translate }}" formControlName="duration"
+              required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field fxFlex="30">
+            <mat-select placeholder="{{ 'PREDEFINEDTRIP.LOCATION' | translate }}" (selectionChange)="changeLocation($event)"
+              formControlName="locationId">
+              <mat-option *ngFor="let oneLocation of locations" [value]="oneLocation.id">
+                {{oneLocation.nameEn}}
+              </mat-option>
+            </mat-select>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+          <div fxFlex="30"></div>
+
+          <div fxFlex="96" class="step4" style="margin: 10px 0px;" *ngIf="location != null">
+            <label fxFlex="30" class="sublocationName">{{location.nameEn}}</label>
+            <div fxFlex="20"></div>
+            <div fxFlex="50">
+              <div class="durationDiv">
+                <div class="circle minus disabled">
+                  <i class="material-icons">
+                    remove
+                  </i>
+                </div>
+                <label class="duration">{{editPredefindTripForm.value.duration - sublocationDuration}}</label>
+                <div class="circle add disabled">
+                  <i class="material-icons">
+                    add
+                  </i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div fxFlex="96" class="step4" style="margin: 10px 0px;" *ngFor="let element of predefinedTripsSublocations;let i=index">
+            <label fxFlex="30" class="sublocationName">{{element.name}}</label>
+            <div fxFlex="20"></div>
+            <div fxFlex="50">
+              <div class="durationDiv">
+                <div class="circle minus" [ngClass]="{'disabled': predefinedTripsSublocations[i].duration==0}" (click)="minDuration(i)">
+                  <i class="material-icons">
+                    remove
+                  </i>
+                </div>
+                <label class="duration">{{predefinedTripsSublocations[i].duration}}</label>
+                <div class="circle add" (click)="addDuration(i)">
+                  <i class="material-icons">
+                    add
+                  </i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div fxFlex="41">
+            <div class="divImage">
+              <div>
+                <div *ngIf="images.length==0 && imageOnLoad.length==0" class="">
+                  <img class="imgCustim" src="{{imaageUrl}}" />
+                  <!-- <div class="imgCustimLoader" [style.background-image]="'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'"></div> -->
+                </div>
+
+                <div *ngFor="let value of images;let i=index" class="">
+                  <img class="imgCustim" src="{{value.url}}" />
+                  <div class="imgCustimLoader" [style.background-image]="'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'"></div>
+                </div>
+                <div *ngFor="let image of imageOnLoad;let i = index" class="AddNewForm-imagescontainer-smallimage"
+                  style="    position: relative;">
+                  <img class="imgCustim" id="{{'uploadImage'+i}}" />
+                  <img class="imgCustimLoader" src="assets/images/madar/infinity_loader_by_volorf.gif" />
+
+                </div>
+              </div>
+            </div>
+            <div class="divButton" (click)="openSelectImage()">
+              <input type="file" style="display:none" id="files" accept="image/*" (change)="onChange($event)" />
+
+              <span>
+                {{ 'Global.UPLOADIMAGE' | translate }}
+              </span>
+            </div>
+          </div>
+          <div fxFlex="59">
+
+            <div class="p-24">
+              <span style="float: left;font-size: 18px;"> {{ 'PREDEFINEDTRIP.FIRSTCOLOR' | translate }}</span>
+              <div style="width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;" [style.background-color]="primaryColor"
+                [cpPosition]="'bottom'" [cpPositionOffset]="'50%'" [cpPositionRelativeToArrow]="true" [(colorPicker)]="primaryColor"></div>
+            </div>
+
+            <div class="p-24">
+              <span style="float: left;font-size: 18px;"> {{ 'PREDEFINEDTRIP.SECONDCOLOR' | translate }}</span>
+              <div style="width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;" [style.background-color]="secondryColor"
+                [cpPosition]="'bottom'" [cpPositionOffset]="'50%'" [cpPositionRelativeToArrow]="true" [(colorPicker)]="secondryColor"></div>
+            </div>
+          </div>
+
+          <!-- <ul class="listOfImgs">
+                <li (click)="openSelectListImage()">
+                  <div class="listDiv">
+                    <img class="listImgCustim" src="{{imaageUrl}}" />
+                    <input type="file" style="display:none" multiple id="listFiles" accept="image/*" (change)="onChangeList($event)" />
+                  </div>
+                </li>
+                <li *ngFor="let value of listImages;let i=index" class="">
+                  <div class="listDiv">
+                    <div class="deleteImge" (click)="deleteImage(i)">
+                      <mat-icon style="color : white;">close</mat-icon>
+                    </div>
+                    <img class="listImgCustim" src="{{value.url}}" />
+                  </div>
+                </li>
+                <li *ngFor="let image of listImageOnLoad;let i = index" class="AddNewForm-imagescontainer-smallimage">
+                  <div class="listDiv">
+                    <img class="listImgCustim" id="{{'uploadImage'+i}}" />
+                    <img class="listImgCustimLoader" src="assets/images/madar/infinity_loader_by_volorf.gif" />
+                  </div>
+                </li>
+              </ul> -->
+        </div>
+      </div>
+
+      <div style="float: right;">
+        <button mat-button (click)="edit()" class="editButton" cdkFocusInitial [disabled]="editPredefindTripForm.invalid">{{'Global.EDIT'
+          | translate}}</button>
+      </div>
+    </form>
+  </div>
+
+
+
+</div>

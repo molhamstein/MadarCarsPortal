@@ -51,7 +51,14 @@ export class addTripComponent implements OnInit {
   carDate = {};
   carAvailable = [];
   tripSublocations = [];
-  carsSublocations = []
+  carsSublocations = [];
+
+  mainTripdays = 0;
+  tripdays = 0;
+  subLocationDays = 0;
+  pricePerDay = 0;
+  airportPrice = 0;
+  location;
   constructor(
     private mainServ: MainService,
     private _formBuilder: FormBuilder,
@@ -65,16 +72,26 @@ export class addTripComponent implements OnInit {
 
   onSearchChange() {
     this.subLocaationPrice = 0;
+    this.subLocationDays = 0;
     for (let index = 0; index < this.tripSublocations.length; index++) {
       const element = this.tripSublocations[index];
+      if (element.duration != null)
+        this.subLocationDays += element.duration;
       this.subLocaationPrice += element.duration * this.carsSublocations[index].cost
+      console.log(this.subLocationDays)
+      if (index == this.tripSublocations.length - 1) {
+        this.tripdays = this.mainTripdays - this.subLocationDays;
+        this.totalPrice = this.tripdays * this.pricePerDay;
+      }
     }
   }
 
   differenceInHourse(firstDate, secDate) {
-    var timeDiff = Math.abs(secDate.getTime() - firstDate.getTime());
+    var timeDiff = secDate.getTime() - firstDate.getTime();
     var diffHourse = Math.ceil(timeDiff / (1000 * 3600));
     var daysNum = Math.ceil(diffHourse / 24)
+    this.mainTripdays = daysNum;
+    this.tripdays = daysNum;
     return (daysNum * 24)
   }
 
@@ -84,27 +101,30 @@ export class addTripComponent implements OnInit {
       return element.id.toString() == event.value.toString();
     });
     this.allData['driverId'] = selectedCar.driverId
+    this.pricePerDay = selectedCar.pricePerDay;
     if (this.tripType == "fromAirport") {
-      this.totalPrice = selectedCar.priceOneWay;
+      this.airportPrice = selectedCar.priceOneWay;
     }
     else if (this.tripType == "city") {
       this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['startInCityDate'], this.allData['endInCityDate']) / 24);
     }
     else if (this.tripType == "toAirport") {
-      this.totalPrice = selectedCar.priceOneWay;
+      this.airportPrice = selectedCar.priceOneWay;
     }
     else if (this.tripType == "fromAirportAndCity") {
-      this.totalPrice = selectedCar.priceOneWay;
+      this.airportPrice = selectedCar.priceOneWay;
       this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['fromAirportDate'], this.allData['endInCityDate']) / 24);
     }
     else if (this.tripType == "fromAirportAndToAirport") {
-      this.totalPrice = selectedCar.priceTowWay;
+      this.airportPrice = selectedCar.priceTowWay;
     }
     else if (this.tripType == "cityAndToAirport") {
-      // this.totalPrice = selectedCar.priceOneWay;
+      this.airportPrice = selectedCar.priceOneWay;
+      this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['startInCityDate'], this.allData['toAirportDate']) / 24);
     }
     else if (this.tripType == "fromAirportAndCityAndToAirport") {
-      // this.totalPrice = selectedCar.priceOneWay;
+      this.airportPrice = selectedCar.priceTowWay;
+      this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['fromAirportDate'], this.allData['toAirportDate']) / 24);
     }
 
   }
@@ -314,32 +334,41 @@ export class addTripComponent implements OnInit {
       this.allData['toAirport'] = this.isToAirport;
       this.allData['inCity'] = this.isInCity;
       var locationId = this.allData['locationId']
-      var location = this.locations.find(function (element) {
+      this.location = this.locations.find(function (element) {
         return element.id.toString() == locationId.toString();
       });
-      console.log(location);
+      console.log(this.location);
       this.subLocationId = [];
-      location.subLocations.forEach(element => {
+      this.location.subLocations.forEach(element => {
         if (element.status == "active")
           this.subLocationId.push(element.id)
       });
       console.log(this.subLocationId);
     }
     else if (stepNum == 3) {
+      this.stepthreeForm = new FormGroup({
+        carId: new FormControl('', Validators.required)
+      });
+      this.totalPrice = 0;
       var firstDate = this.stepSecForm.value['first']
       var secDate = this.stepSecForm.value['seconde']
       if (this.cheackValidateionSecStep(firstDate, secDate, startDate, endDate)) {
-        var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport }
-        this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId']).subscribe((data: any) => {
-          if (this.mainServ.APIServ.getErrorCode() == 0) {
-            this.carAvailable = data;
-            this.activeLink = this.links[stepNum - 1].name;
-          }
-          else {
-            this.dialogServ.someThingIsError();
-          }
+        if (this.differenceInHourse(firstDate, secDate) > 0) {
+          var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport }
+          this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId']).subscribe((data: any) => {
+            if (this.mainServ.APIServ.getErrorCode() == 0) {
+              this.carAvailable = data;
+              this.activeLink = this.links[stepNum - 1].name;
+            }
+            else {
+              this.dialogServ.someThingIsError();
+            }
 
-        })
+          })
+        }
+        else {
+          alert("error")
+        }
       } else {
         alert("error")
       }

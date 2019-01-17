@@ -39,6 +39,7 @@ export class editCarComponent implements OnInit {
   isAirportCar = false
   isCityCar = false
 
+  years = [];
 
   // subLocation
   filterValue = ""
@@ -149,7 +150,25 @@ export class editCarComponent implements OnInit {
   }
 
 
+  changeLocation(event) {
+    console.log(event);
+    this.subLocation = this.locations.find(x => x.id === event.value).subLocations;
+    console.log(this.subLocation);
+    this.subLocation.forEach(element => {
+      this.carSublocations.push({
+        "cost": 0,
+        "subLocationId": element.id,
+        "name": element.nameEn
+      })
+    });
+    console.log(this.carSublocations);
+  }
+
+
   ngOnInit() {
+    for (let index = 1900; index < 2021; index++) {
+      this.years.push(index);
+    }
     this.editCarForm = new FormGroup({
       brandId: new FormControl('', Validators.required),
       name: new FormControl('', Validators.required),
@@ -192,11 +211,15 @@ export class editCarComponent implements OnInit {
                       mainthis.secondryColor = "#" + data.color2;
                       mainthis.subLocation = mainthis.locations.find(x => x.id === data.locationId).subLocations;
 
-                      data['carSublocations'].forEach(element => {
+                      mainthis.subLocation.forEach(element => {
+                        var tempcarSub = data['carSublocations'].find(x => x.subLocationId === element.id)
+                        var tempCost = 0
+                        if (tempcarSub != null)
+                          tempCost = tempcarSub.cost
                         mainthis.carSublocations.push({
-                          "cost": element.cost,
-                          "subLocationId": element.subLocationId,
-                          "name": mainthis.subLocation.find(x => x.id === element.subLocationId).nameEn
+                          "cost": tempCost,
+                          "subLocationId": element.id,
+                          "name": element.nameEn
                         })
                       });
                       mainthis.isAirportCar = data['isAirportCar'];

@@ -8,7 +8,7 @@
       <!-- </button> -->
       <span class="logo-text h1">
         <mat-icon style="color : white;" (click)="back()" class="back">arrow_back_ios</mat-icon>
-        {{'CAR.ADDCAR.TITLE' | translate}}
+        {{'PREDEFINEDTRIP.ADDPREDEFINEDTRIP.TITLE' | translate}}
       </span>
     </div>
 
@@ -18,63 +18,48 @@
 
   <!-- CONTENT -->
   <div class="content p-24">
-    <form [formGroup]="addCarForm">
+    <form [formGroup]="addPredefindTripForm">
       <div style="width: 100%;">
         <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
           fxFlex>
-          <mat-form-field fxFlex="30">
-            <mat-select placeholder="{{ 'CAR.BRAND' | translate }}" formControlName="brandId">
-              <mat-option *ngFor="let oneBrand of brands" [value]="oneBrand.id">
-                {{oneBrand.nameEn}}
-              </mat-option>
-            </mat-select>
+          <mat-form-field fxFlex="96">
+            <textarea matInput placeholder="{{ 'PREDEFINEDTRIP.DESCRIPTIONEN' | translate }}" formControlName="descriptionEn"
+              required></textarea>
+            <mat-icon matSuffix>people</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
-
-          <mat-form-field fxFlex="30">
-            <input matInput placeholder="{{ 'CAR.NAME' | translate }}" formControlName="name" required>
+          <mat-form-field fxFlex="96">
+            <textarea matInput placeholder="{{ 'PREDEFINEDTRIP.DESCRIPTIONAR' | translate }}" formControlName="descriptionAr"
+              required></textarea>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field fxFlex="96">
+            <textarea matInput placeholder="{{ 'PREDEFINEDTRIP.DESCRIPTIONTR' | translate }}" formControlName="descriptionTr"
+              required></textarea>
             <mat-icon matSuffix>people</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
 
           <mat-form-field fxFlex="30">
-            <input matInput type="number" min="0" placeholder="{{ 'CAR.NUMBEROFSEAT' | translate }}" formControlName="numOfSeat"
-              required>
+            <input matInput placeholder="{{ 'PREDEFINEDTRIP.TITLEEN' | translate }}" formControlName="titleEn" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'PREDEFINEDTRIP.TITLEAR' | translate }}" formControlName="titleAr" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'PREDEFINEDTRIP.TITLETR' | translate }}" formControlName="titleTr" required>
             <mat-icon matSuffix>people</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
           <mat-form-field fxFlex="30">
-            <mat-select placeholder="{{ 'CAR.PRODUCTIONDATE' | translate }}" formControlName="productionDate">
-              <mat-option *ngFor="let oneYear of years" [value]="oneYear">
-                {{oneYear}}
-              </mat-option>
-            </mat-select>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
-
-
-          <mat-form-field fxFlex="30">
-            <mat-select placeholder="{{ 'CAR.ENGINTYPE' | translate }}" formControlName="engineType">
-              <mat-option *ngFor="let oneEngineType of engineType" [value]="oneEngineType">
-                {{oneEngineType}}
-              </mat-option>
-            </mat-select>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
-
-          <mat-form-field fxFlex="30">
-            <mat-select placeholder="{{ 'CAR.TYPE' | translate }}" formControlName="type">
-              <mat-option *ngFor="let oneType of type" [value]="oneType">
-                {{oneType}}
-              </mat-option>
-            </mat-select>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
-
-          <mat-form-field fxFlex="30">
-            <input matInput type="number" placeholder="{{ 'CAR.PRICEPERDAY' | translate }}" formControlName="pricePerDay"
+            <input matInput type="number" placeholder="{{ 'PREDEFINEDTRIP.DURATION' | translate }}" formControlName="duration"
               required>
             <mat-icon matSuffix>people</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
@@ -82,68 +67,63 @@
 
 
           <mat-form-field fxFlex="30">
-            <input matInput type="number" placeholder="{{ 'CAR.PRICEONEWAY' | translate }}" formControlName="priceOneWay"
-              required>
-            <mat-icon matSuffix>people</mat-icon>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
-
-
-          <mat-form-field fxFlex="30">
-            <input matInput type="number" placeholder="{{ 'CAR.PRICETOWWAY' | translate }}" formControlName="priceTowWay"
-              required>
-            <mat-icon matSuffix>people</mat-icon>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
-
-          <section class="example-section" style="padding-bottom: 10px;" fxFlex="96">
-            <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" [(ngModel)]="isVip">{{
-              'CAR.ISVIP' | translate }}</mat-checkbox>
-            <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" style="padding-left: 12px;"
-              [(ngModel)]="isAirportCar">{{
-              'CAR.ISAIRPORTCAR' | translate }}</mat-checkbox>
-            <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" style="padding-left: 30px;"
-              [(ngModel)]="isCityCar">{{
-              'CAR.ISCITYCAR' | translate }}</mat-checkbox>
-          </section>
-
-          <mat-form-field fxFlex="30">
-            <mat-select placeholder="{{ 'CAR.DRIVER' | translate }}" formControlName="driverId">
-              <mat-option *ngFor="let onedriver of drivers" [value]="onedriver.id">
-                {{onedriver.firstName}} {{onedriver.lastName}}
-              </mat-option>
-            </mat-select>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
-
-          <mat-form-field fxFlex="30">
-            <mat-select placeholder="{{ 'CAR.LOCATION' | translate }}" (selectionChange)="changeLocation($event)"
+            <mat-select placeholder="{{ 'PREDEFINEDTRIP.LOCATION' | translate }}" (selectionChange)="changeLocation($event)"
               formControlName="locationId">
-              <mat-option *ngFor="let onelocation of locations" [value]="onelocation.id">
-                {{onelocation.nameEn}}
+              <mat-option *ngFor="let oneLocation of locations" [value]="oneLocation.id">
+                {{oneLocation.nameEn}}
               </mat-option>
             </mat-select>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
+          <div fxFlex="30"></div>
 
-          <mat-form-field fxFlex="30" *ngFor="let oneSublocation of carSublocations;let i=index">
-            <input matInput type="number" min="0" placeholder="{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}"
-              [(ngModel)]="carSublocations[i].cost" [ngModelOptions]="{standalone: true}" required>
-            <mat-icon matSuffix>people</mat-icon>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
+          <div fxFlex="96" class="step4" style="margin: 10px 0px;" *ngIf="location != null">
+            <label fxFlex="30" class="sublocationName">{{location.nameEn}}</label>
+            <div fxFlex="20"></div>
+            <div fxFlex="50">
+              <div class="durationDiv">
+                <div class="circle minus disabled">
+                  <i class="material-icons">
+                    remove
+                  </i>
+                </div>
+                <label class="duration">{{addPredefindTripForm.value.duration - sublocationDuration}}</label>
+                <div class="circle add disabled">
+                  <i class="material-icons">
+                    add
+                  </i>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
-        </div>
-      </div>
-      <div style="width: 100%;">
-        <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
-          fxFlex>
-          <div fxFlex="40">
+          <div fxFlex="96" class="step4" style="margin: 10px 0px;" *ngFor="let element of predefinedTripsSublocations;let i=index">
+            <label fxFlex="30" class="sublocationName">{{element.name}}</label>
+            <div fxFlex="20"></div>
+            <div fxFlex="50">
+              <div class="durationDiv">
+                <div class="circle minus" [ngClass]="{'disabled': predefinedTripsSublocations[i].duration==0}" (click)="minDuration(i)">
+                  <i class="material-icons">
+                    remove
+                  </i>
+                </div>
+                <label class="duration">{{predefinedTripsSublocations[i].duration}}</label>
+                <div class="circle add" (click)="addDuration(i)">
+                  <i class="material-icons">
+                    add
+                  </i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div fxFlex="41">
             <div class="divImage">
               <div>
                 <div *ngIf="images.length==0 && imageOnLoad.length==0" class="">
                   <img class="imgCustim" src="{{imaageUrl}}" />
+                  <!-- <div class="imgCustimLoader" [style.background-image]="'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'"></div> -->
                 </div>
 
                 <div *ngFor="let value of images;let i=index" class="">
@@ -166,22 +146,22 @@
               </span>
             </div>
           </div>
-          <div fxFlex="60">
+          <div fxFlex="59">
 
             <div class="p-24">
-              <span style="float: left;font-size: 18px;"> {{ 'CAR.FIRSTCOLOR' | translate }}</span>
+              <span style="float: left;font-size: 18px;"> {{ 'PREDEFINEDTRIP.FIRSTCOLOR' | translate }}</span>
               <div style="width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;" [style.background-color]="primaryColor"
                 [cpPosition]="'bottom'" [cpPositionOffset]="'50%'" [cpPositionRelativeToArrow]="true" [(colorPicker)]="primaryColor"></div>
             </div>
 
             <div class="p-24">
-              <span style="float: left;font-size: 18px;"> {{ 'CAR.SECONDCOLOR' | translate }}</span>
+              <span style="float: left;font-size: 18px;"> {{ 'PREDEFINEDTRIP.SECONDCOLOR' | translate }}</span>
               <div style="width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;" [style.background-color]="secondryColor"
                 [cpPosition]="'bottom'" [cpPositionOffset]="'50%'" [cpPositionRelativeToArrow]="true" [(colorPicker)]="secondryColor"></div>
             </div>
           </div>
 
-          <ul class="listOfImgs">
+          <!-- <ul class="listOfImgs">
             <li (click)="openSelectListImage()">
               <div class="listDiv">
                 <img class="listImgCustim" src="{{imaageUrl}}" />
@@ -202,11 +182,12 @@
                 <img class="listImgCustimLoader" src="assets/images/madar/infinity_loader_by_volorf.gif" />
               </div>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
+
       <div style="float: right;">
-        <button mat-button (click)="add()" cdkFocusInitial [disabled]="addCarForm.invalid">{{'Global.ADD'
+        <button mat-button (click)="add()" cdkFocusInitial [disabled]="addPredefindTripForm.invalid">{{'Global.ADD'
           | translate}}</button>
       </div>
     </form>

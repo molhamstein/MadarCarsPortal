@@ -53,9 +53,24 @@ import { tripsComponent } from './main/content/pages/trip/trips/trips.component'
 import { addTripComponent } from './main/content/pages/trip/addTrip/addTrip.component';
 import { Angular5TimePickerModule } from 'angular5-time-picker';
 import { viewTripComponent } from './main/content/pages/trip/viewTrip/viewTrip.component';
+import { predefindTripsComponent } from './main/content/pages/predefindTrip/predefindTrips/predefindTrips.component';
+import { addPredefindTripComponent } from './main/content/pages/predefindTrip/addPredefindTrip/addPredefindTrip.component';
+import { editPredefindTripComponent } from './main/content/pages/predefindTrip/editPredefindTrip/editPredefindTrip.component';
 
 const appRoutes: Routes = [
 
+    {
+        path: 'predefined-trips',
+        component: predefindTripsComponent
+    },
+    {
+        path: 'add-predefined-trip',
+        component: addPredefindTripComponent
+    },
+    {
+        path: 'edit-predefined-trip/:id',
+        component: editPredefindTripComponent
+    },
     {
         path: 'trips',
         component: tripsComponent
@@ -194,6 +209,8 @@ const appRoutes: Routes = [
         usersComponent, addUserComponent, editUserComponent,
         // // Trips
         tripsComponent, addTripComponent, viewTripComponent,
+        // // Predefind Trips
+        predefindTripsComponent, addPredefindTripComponent, editPredefindTripComponent,
         // dialogs
         SomeThingIsErrorComponent, ConfirmMessageComponent, ErrorMessageComponent
     ],
