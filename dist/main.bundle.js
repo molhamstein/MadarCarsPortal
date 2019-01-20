@@ -4620,9 +4620,9 @@ var CallApiService = (function () {
     function CallApiService(http, loginSer) {
         this.http = http;
         this.loginSer = loginSer;
-        // readonly baseUrl = "http://104.217.253.15:3006/api/"
+        this.baseUrl = "http://104.217.253.15:3006/api/";
         // readonly baseUrl = "http://178.62.233.91:3000/api/"
-        this.baseUrl = "http://localhost:3000/api/";
+        // readonly baseUrl = "http://localhost:3000/api/"
         this.errorCode = 0;
         this.code = "";
     }
