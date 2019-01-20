@@ -116,4 +116,54 @@ ul.listOfImgs li {
     font-size: 22px;
     color: #37abdf;
   }
+
+  .durationDiv {
+    width: 200px;
+    display: inline-block;
+    float: right;
+    margin: 0px auto;
+
+    .circle {
+      width: 30px;
+      border-radius: 50%;
+      float: left;
+      height: 30px;
+
+      i {
+        font-size: 22px;
+        font-weight: bold;
+        color: white;
+        padding: 4px;
+        text-align: center;
+        margin: 0px auto;
+        user-select: none;
+
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .minus {
+      background-color: #FF6F00;
+    }
+
+    .add {
+      background-color: #1B5E20;
+    }
+
+    .disabled {
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+
+    .duration {
+      padding: 0px 15px;
+      float: left;
+      font-size: 20px;
+    }
+  }
+
 }

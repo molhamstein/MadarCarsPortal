@@ -59,6 +59,11 @@ export class addTripComponent implements OnInit {
   pricePerDay = 0;
   airportPrice = 0;
   location;
+  private exportTime = { hour: 7, minute: 15, meriden: 'PM', format: 24 };
+
+
+  startPicker = { "userTimeChange": { "_isScalar": false, "observers": [], "closed": false, "isStopped": false, "hasError": false, "thrownError": null, "__isAsync": false }, "onRevert": { "_isScalar": false, "observers": [], "closed": false, "isStopped": false, "hasError": false, "thrownError": null, "__isAsync": false }, "onSubmit": { "_isScalar": false, "observers": [], "closed": false, "isStopped": false, "hasError": false, "thrownError": null, "__isAsync": false }, "VIEW_HOURS": 1, "VIEW_MINUTES": 2, "currentView": 1, "_inputSubscription": { "closed": true, "_parent": null, "_parents": null, "_subscriptions": null }, "color": "primary", "revertLabel": "Cancel", "submitLabel": "OK", "userTime": { "hour": 3, "minute": 15, "meriden": "PM", "format": 12 } }
+    ;
   constructor(
     private mainServ: MainService,
     private _formBuilder: FormBuilder,
@@ -70,21 +75,48 @@ export class addTripComponent implements OnInit {
 
   }
 
-  onSearchChange() {
-    this.subLocaationPrice = 0;
-    this.subLocationDays = 0;
-    for (let index = 0; index < this.tripSublocations.length; index++) {
-      const element = this.tripSublocations[index];
-      if (element.duration != null)
-        this.subLocationDays += element.duration;
-      this.subLocaationPrice += element.duration * this.carsSublocations[index].cost
-      console.log(this.subLocationDays)
-      if (index == this.tripSublocations.length - 1) {
-        this.tripdays = this.mainTripdays - this.subLocationDays;
-        this.totalPrice = this.tripdays * this.pricePerDay;
-      }
+  emituserTimeChange() {
+    alert("SSSS");
+  }
+
+  addDuration(index) {
+    if (this.subLocationDays == this.mainTripdays) {
+      alert("Error")
+    }
+    else {
+      this.subLocaationPrice += this.tripSublocations[index].cost
+      this.subLocationDays++;
+      this.tripSublocations[index].duration++;
+      this.totalPrice -= this.pricePerDay;
+      this.tripdays--;
     }
   }
+
+  minDuration(index) {
+    if (this.tripSublocations[index].duration == 0)
+      return
+    this.subLocaationPrice -= this.tripSublocations[index].cost
+    this.subLocationDays--;
+    this.tripSublocations[index].duration--;
+    this.totalPrice += this.pricePerDay;
+    this.tripdays++;
+  }
+
+  // onSearchChange() {
+  //   this.subLocaationPrice = 0;
+  //   this.subLocationDays = 0;
+  //   for (let index = 0; index < this.tripSublocations.length; index++) {
+  //     const element = this.tripSublocations[index];
+  //     if (element.duration != null)
+  //       this.subLocationDays += element.duration;
+  //     this.subLocaationPrice += element.duration * this.carsSublocations[index].cost
+  //     console.log(this.subLocationDays)
+  //     if (index == this.tripSublocations.length - 1) {
+  //       this.tripdays = this.mainTripdays - this.subLocationDays;
+  //       this.totalPrice = this.tripdays * this.pricePerDay;
+  //     }
+  //   }
+  // }
 
   differenceInHourse(firstDate, secDate) {
     var timeDiff = secDate.getTime() - firstDate.getTime();
@@ -101,6 +133,9 @@ export class addTripComponent implements OnInit {
       return element.id.toString() == event.value.toString();
     });
     this.allData['driverId'] = selectedCar.driverId
+    this.allData['pricePerDay'] = selectedCar.pricePerDay
+    this.allData['priceOneWay'] = selectedCar.priceOneWay
+    this.allData['priceTowWay'] = selectedCar.priceTowWay
     this.pricePerDay = selectedCar.pricePerDay;
     if (this.tripType == "fromAirport") {
       this.airportPrice = selectedCar.priceOneWay;
@@ -145,7 +180,8 @@ export class addTripComponent implements OnInit {
 
     this.stepOneForm = new FormGroup({
       locationId: new FormControl('', Validators.required),
-      ownerId: new FormControl('', Validators.required)
+      ownerId: new FormControl('', Validators.required),
+      testTime: new FormControl('')
     });
     this.stepSecForm = new FormGroup({
       first: new FormControl(''),
@@ -220,7 +256,6 @@ export class addTripComponent implements OnInit {
 
   converTo24(hours, meriden) {
     if (meriden == "PM" && hours < 12) hours = hours + 12;
-    console.log(hours);
     return hours;
   }
   mixDateTime(date, time) {
@@ -353,7 +388,25 @@ export class addTripComponent implements OnInit {
       var firstDate = this.stepSecForm.value['first']
       var secDate = this.stepSecForm.value['seconde']
       if (this.cheackValidateionSecStep(firstDate, secDate, startDate, endDate)) {
-        if (this.differenceInHourse(firstDate, secDate) > 0) {
+        if (secDate) {
+          if (this.differenceInHourse(firstDate, secDate) > 0) {
+            var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport }
+            this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId']).subscribe((data: any) => {
+              if (this.mainServ.APIServ.getErrorCode() == 0) {
+                this.carAvailable = data;
+                this.activeLink = this.links[stepNum - 1].name;
+              }
+              else {
+                this.dialogServ.someThingIsError();
+              }
+
+            })
+          }
+          else {
+            alert("error")
+          }
+        }
+        else {
           var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport }
           this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId']).subscribe((data: any) => {
             if (this.mainServ.APIServ.getErrorCode() == 0) {
@@ -365,9 +418,7 @@ export class addTripComponent implements OnInit {
             }
 
           })
-        }
-        else {
-          alert("error")
+
         }
       } else {
         alert("error")
@@ -382,7 +433,11 @@ export class addTripComponent implements OnInit {
           this.activeLink = this.links[stepNum - 1].name;
           this.carsSublocations = data;
           data.forEach(element => {
-            this.tripSublocations.push({ "sublocationId": element.subLocationId, "duration": 0 })
+            var tempCarSub = this.carsSublocations.find(x => x.subLocationId === element.subLocationId)
+            var tempCost = 0
+            if (tempCarSub != null)
+              tempCost = tempCarSub.cost
+            this.tripSublocations.push({ "sublocationId": element.subLocationId, "duration": 0, "cost": tempCost })
           });
         }
         else {
@@ -397,7 +452,9 @@ export class addTripComponent implements OnInit {
   add() {
     if (this.activeLink == "step4")
       this.allData['tripSublocations'] = this.tripSublocations
-    this.allData['cost'] = this.totalPrice + this.subLocaationPrice
+    this.allData['carId'] = this.stepthreeForm.value['carId']
+    this.allData['cost'] = this.totalPrice + this.subLocaationPrice + this.airportPrice
+    this.allData['daysInCity'] = this.tripdays;
     this.mainServ.APIServ.post("trips", this.allData).subscribe((data: any) => {
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.backToTrips();

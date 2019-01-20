@@ -237,6 +237,17 @@ export const locale = {
             },
             "ADDTRIP": {
                 "TITLE": "Add Trip",
+            },
+            "BILL": {
+                "TITLE": "Bill",
+                "OUTER": "Outer",
+                "TYPE": "Type",
+                "NAME": "Title",
+                "TITLEEN": "English Title",
+                "TITLEAR": "Arabic Title",
+                "TITLETR": "Turkish Title",
+                "QUENTITY":"qty",
+                "PRICEPERUNIT":"price"
             }
         },
 

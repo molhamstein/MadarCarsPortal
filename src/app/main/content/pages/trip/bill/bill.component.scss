@@ -1,0 +1,137 @@
+.Bill {
+  width: 100%;
+
+  .outerBill {
+    width: calc(50% - 40px);
+    height: 400px;
+    margin: 0px 20px;
+
+    .title {
+      width: 100%;
+      height: 25px;
+      font-size: 23px;
+    }
+
+    .card {
+      border: 2px solid #32a6da;
+      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+
+      .header {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px 5px 0px 0px;
+        background-color: #35a9dd;
+        color: white;
+
+        .name {
+          font-size: 20px;
+        }
+
+        .date {
+          float: right;
+          font-size: 20px;
+          padding-top: 20px;
+        }
+
+        .type {
+          width: 100%;
+          font-size: 17px;
+        }
+      }
+
+      .bills {
+        width: 100%;
+        padding: 10px;
+        height: 310px;
+        overflow-y: auto;
+
+        .oneBill {
+          width: 100%;
+          height: 100px;
+
+          .Bill15 {
+            width: 15%;
+          }
+
+          .Bill25 {
+            width: 25%;
+          }
+
+          .Bill20 {
+            width: 20%;
+          }
+
+          .totlalOneUnit {
+            display: inline-block;
+            padding-top: 11px;
+            width: 17%;
+            height: 40px;
+            background-color: gray;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0px 0px 3px 1px rgba(140, 140, 140, 0.43137254901960786);
+            border-radius: 3px;
+
+            label {
+              width: 100%;
+              display: block;
+              text-align: center;
+            }
+          }
+
+          .actionButton {
+            float: right;
+
+            .circle {
+              width: 30px;
+              border-radius: 50%;
+              float: left;
+              height: 30px;
+              margin: 0px 7px;
+
+              i {
+                font-size: 22px;
+                font-weight: bold;
+                color: white;
+                padding: 4px;
+                text-align: center;
+                margin: 0px auto;
+                user-select: none;
+
+              }
+
+              &:hover {
+                cursor: pointer;
+              }
+            }
+
+            .add {
+              background-color: #1B5E20;
+            }
+
+            .edit {
+              background-color: #35a9dd;
+
+              i {
+                font-size: 21px;
+              }
+            }
+
+            .delete {
+              background-color: rgb(163, 5, 0);
+            }
+
+
+            .disabled {
+              &:hover {
+                cursor: not-allowed;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

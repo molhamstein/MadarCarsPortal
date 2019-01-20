@@ -190,7 +190,10 @@ export class tripsComponent implements OnInit {
       url = 'view-trip/' + id
     } else if (pageName == 'edit') {
       url = 'edit-user/' + id
+    }else if (pageName == 'bills') {
+      url = 'bill/' + id
     }
+    
     this.mainServ.globalServ.goTo(url)
   }
 

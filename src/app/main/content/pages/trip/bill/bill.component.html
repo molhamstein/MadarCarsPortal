@@ -1,0 +1,118 @@
+<div id="ngx-datatable" class="page-layout simple fullwidth" fusePerfectScrollbar>
+
+  <!-- HEADER -->
+  <div class="header mat-accent-bg p-16 customHeader" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="row"
+    fxLayoutAlign.gt-xs="space-between center">
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="column" fxLayoutAlign.gt-xs="center start">
+      <span class="logo-text h1">
+        <mat-icon style="color : white;" (click)="backToTrips()" class="back">arrow_back_ios</mat-icon>
+        {{'TRIP.BILL.TITLE' | translate}}
+      </span>
+    </div>
+    <!-- <div style="font-size: 20px">{{'TRIP.PRICE' | translate}} : {{totalPrice+subLocaationPrice+airportPrice}}</div> -->
+
+  </div>
+  <!-- / HEADER -->
+
+  <!-- CONTENT -->
+  <div class="content p-24">
+    <div class="Bill">
+      <div class="outerBill">
+        <label class="title">
+          {{'TRIP.BILL.OUTER' | translate}}
+        </label>
+        <div class="card">
+          <div class="header">
+            <!-- <span class="name" *ngIf="trip">{{trip['owner'].name}}</span> -->
+            <span class="date">{{getCreatedDate('outer') |date : 'dd-MM-yyyy'}}</span>
+            <div class="type">
+              <!-- {{getType('outer')}} -->
+              <mat-form-field>
+                <mat-select [ngModelOptions]="{standalone: true}" (change)="changeStaus('outer')" [disabled]="outerDisabled" [(ngModel)]="outerBillStatus">
+                  <mat-option *ngFor="let oneStaus of statusBill" [value]="oneStaus.value">
+                    {{oneStaus.view}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+          </div>
+          <div class="bills">
+            <div class="oneBill" *ngFor="let oneOuterBill of outerBill;let i=index">
+              <mat-form-field class="Bill25">
+                <mat-select placeholder="{{ 'TRIP.BILL.TYPE' | translate }}" [ngModelOptions]="{standalone: true}"
+                  [(ngModel)]="outerBill[i].typeBillId" required>
+                  <mat-option *ngFor="let oneType of typeBills" [value]="oneType.id">
+                    {{oneType.titleEn}}
+                  </mat-option>
+                </mat-select>
+                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+              </mat-form-field>
+              <mat-form-field class="Bill25">
+                <input matInput placeholder="{{ 'TRIP.BILL.NAME' | translate }}" [ngModelOptions]="{standalone: true}"
+                  [(ngModel)]="outerBill[i].name" required>
+
+                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+              </mat-form-field>
+              <!-- <mat-form-field class="Bill30">
+                <input matInput placeholder="{{ 'TRIP.BILL.TITLEAR' | translate }}" [ngModelOptions]="{standalone: true}"
+                  [(ngModel)]="tripdays" required>
+                
+                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+              </mat-form-field>
+              <mat-form-field class="Bill30">
+                <input matInput placeholder="{{ 'TRIP.BILL.TITLETR' | translate }}" [ngModelOptions]="{standalone: true}"
+                  [(ngModel)]="tripdays" required>
+                
+                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+              </mat-form-field> -->
+
+              <mat-form-field class="Bill15">
+                <input matInput placeholder="{{ 'TRIP.BILL.QUENTITY' | translate }}" [ngModelOptions]="{standalone: true}"
+                  [(ngModel)]="outerBill[i].quantity" required>
+
+                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="Bill15">
+                <input matInput placeholder="{{ 'TRIP.BILL.PRICEPERUNIT' | translate }}" [ngModelOptions]="{standalone: true}"
+                  [(ngModel)]="outerBill[i].pricePerUnit" required>
+
+                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+              </mat-form-field>
+              <div class="totlalOneUnit">
+                <label class="">{{outerBill[i].quantity * outerBill[i].pricePerUnit}}</label>
+
+              </div>
+              <div class="actionButton">
+                <div class="circle add" *ngIf="outerBill[i].id==null" [ngClass]="{'disabled': outerBill[i].pricePerUnit=='' || outerBill[i].name=='' || outerBill[i].quantity==''}"
+                  (click)="addBill(i,'outer')">
+                  <i class="material-icons">
+                    add
+                  </i>
+                </div>
+                <div class="circle edit" *ngIf="outerBill[i].id!=null" [ngClass]="{'disabled': outerBill[i].pricePerUnit=='' || outerBill[i].name=='' || outerBill[i].quantity==''}"
+                  (click)="editBill(i,'outer')">
+                  <i class="material-icons">
+                    create
+                  </i>
+                </div>
+                <div class="circle delete" (click)="deleteBill(i,'outer')">
+                  <i class="material-icons">
+                    clear
+                  </i>
+                </div>
+              </div>
+            </div>
+            <div style="">
+              <button mat-button (click)="addNewBill('outer')" class="editButton" cdkFocusInitial>{{'Global.ADD'
+                | translate}}</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

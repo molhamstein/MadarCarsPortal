@@ -56,6 +56,11 @@ import { viewTripComponent } from './main/content/pages/trip/viewTrip/viewTrip.c
 import { predefindTripsComponent } from './main/content/pages/predefindTrip/predefindTrips/predefindTrips.component';
 import { addPredefindTripComponent } from './main/content/pages/predefindTrip/addPredefindTrip/addPredefindTrip.component';
 import { editPredefindTripComponent } from './main/content/pages/predefindTrip/editPredefindTrip/editPredefindTrip.component';
+import { billComponent } from './main/content/pages/trip/bill/bill.component';
+import {MaterialTimeControlModule} from '../../node_modules/material-time-control/src/material-time-control.module';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+
+
 
 const appRoutes: Routes = [
 
@@ -74,6 +79,10 @@ const appRoutes: Routes = [
     {
         path: 'trips',
         component: tripsComponent
+    },
+    {
+        path: 'bill/:id',
+        component: billComponent
     },
     {
         path: 'add-trip',
@@ -208,7 +217,7 @@ const appRoutes: Routes = [
         // // Users
         usersComponent, addUserComponent, editUserComponent,
         // // Trips
-        tripsComponent, addTripComponent, viewTripComponent,
+        tripsComponent, addTripComponent, viewTripComponent, billComponent,
         // // Predefind Trips
         predefindTripsComponent, addPredefindTripComponent, editPredefindTripComponent,
         // dialogs
@@ -221,7 +230,9 @@ const appRoutes: Routes = [
         BrowserAnimationsModule,
         RouterModule.forRoot(appRoutes, { enableTracing: false, useHash: true }),
         SharedModule,
+        MaterialTimeControlModule,
         MarkdownModule.forRoot(),
+        NgxMaterialTimepickerModule.forRoot(),
         Angular5TimePickerModule,
         InMemoryWebApiModule.forRoot(FuseFakeDbService, {
             delay: 0,
