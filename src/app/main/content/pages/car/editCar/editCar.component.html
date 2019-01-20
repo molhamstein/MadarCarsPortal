@@ -55,6 +55,34 @@
           </mat-form-field>
 
           <mat-form-field fxFlex="30">
+            <mat-select placeholder="{{ 'CAR.DRIVER' | translate }}" formControlName="driverId">
+              <mat-option *ngFor="let onedriver of drivers" [value]="onedriver.id">
+                {{onedriver.firstName}} {{onedriver.lastName}}
+              </mat-option>
+            </mat-select>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field fxFlex="30">
+            <mat-select placeholder="{{ 'CAR.LOCATION' | translate }}" (selectionChange)="changeLocation($event)"
+              formControlName="locationId">
+              <mat-option *ngFor="let onelocation of locations" [value]="onelocation.id">
+                {{onelocation.nameEn}}
+              </mat-option>
+            </mat-select>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="30" *ngFor="let oneSublocation of carSublocations;let i=index">
+            <input matInput type="number" min="0" placeholder="{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}"
+              [(ngModel)]="carSublocations[i].cost" [ngModelOptions]="{standalone: true}" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+
+          <!-- <mat-form-field fxFlex="30">
             <mat-select placeholder="{{ 'CAR.ENGINTYPE' | translate }}" formControlName="engineType">
               <mat-option *ngFor="let oneEngineType of engineType" [value]="oneEngineType">
                 {{oneEngineType}}
@@ -70,7 +98,7 @@
               </mat-option>
             </mat-select>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
+          </mat-form-field> -->
 
           <mat-form-field fxFlex="30">
             <input matInput type="number" placeholder="{{ 'CAR.PRICEPERDAY' | translate }}" formControlName="pricePerDay"
@@ -106,32 +134,6 @@
               'CAR.ISCITYCAR' | translate }}</mat-checkbox>
           </section>
 
-          <mat-form-field fxFlex="30">
-            <mat-select placeholder="{{ 'CAR.DRIVER' | translate }}" formControlName="driverId">
-              <mat-option *ngFor="let onedriver of drivers" [value]="onedriver.id">
-                {{onedriver.firstName}} {{onedriver.lastName}}
-              </mat-option>
-            </mat-select>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
-
-
-          <mat-form-field fxFlex="30">
-            <mat-select placeholder="{{ 'CAR.LOCATION' | translate }}" (selectionChange)="changeLocation($event)"
-              formControlName="locationId">
-              <mat-option *ngFor="let onelocation of locations" [value]="onelocation.id">
-                {{onelocation.nameEn}}
-              </mat-option>
-            </mat-select>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
-
-          <mat-form-field fxFlex="30" *ngFor="let oneSublocation of carSublocations;let i=index">
-            <input matInput type="number" min="0" placeholder="{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}"
-              [(ngModel)]="carSublocations[i].cost" [ngModelOptions]="{standalone: true}" required>
-            <mat-icon matSuffix>people</mat-icon>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
 
 
         </div>
@@ -181,7 +183,7 @@
             </div>
           </div>
 
-          <ul class="listOfImgs">
+          <!-- <ul class="listOfImgs">
             <li (click)="openSelectListImage()">
               <div class="listDiv">
                 <img class="listImgCustim" src="{{imaageUrl}}" />
@@ -202,7 +204,7 @@
                 <img class="listImgCustimLoader" src="assets/images/madar/infinity_loader_by_volorf.gif" />
               </div>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
       <div style="float: right;">

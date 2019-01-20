@@ -124,10 +124,10 @@ export class addLocationComponent implements OnInit {
     this.addLocationForm = new FormGroup({
       descriptionEn: new FormControl('', Validators.required),
       descriptionAr: new FormControl('', Validators.required),
-      descriptionTr: new FormControl('', Validators.required),
+      descriptionTr: new FormControl(''),
       nameEn: new FormControl('', Validators.required),
       nameAr: new FormControl('', Validators.required),
-      nameTr: new FormControl('', Validators.required),
+      nameTr: new FormControl(''),
     });
   }
 

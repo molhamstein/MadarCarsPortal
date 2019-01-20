@@ -19,7 +19,7 @@ export class brandsComponent implements OnInit {
   allRows = [];
   filterRows = [];
   filterValue = "";
-  columns = ["nameAr", "nameEn", "nameTr"]
+  columns = ["nameAr", "nameEn"]
 
   constructor(private translationLoader: FuseTranslationLoaderService
     , private translateService: TranslateService

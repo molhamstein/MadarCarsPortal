@@ -1,3 +1,4 @@
+import { AuthGuardService } from './core/services/auth-guard-service.service';
 import { ConfirmMessageComponent } from './main/dialogs/confirm-message/confirm-message.component';
 import { LoaderServicesService } from './core/services/loader-services.service';
 import { GlobalService } from './core/services/global.service';
@@ -66,99 +67,147 @@ const appRoutes: Routes = [
 
     {
         path: 'predefined-trips',
-        component: predefindTripsComponent
+        component: predefindTripsComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'add-predefined-trip',
-        component: addPredefindTripComponent
+        component: addPredefindTripComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'edit-predefined-trip/:id',
-        component: editPredefindTripComponent
+        component: editPredefindTripComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'trips',
-        component: tripsComponent
+        component: tripsComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'bill/:id',
-        component: billComponent
+        component: billComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'add-trip',
-        component: addTripComponent
+        component: addTripComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'view-trip/:id',
-        component: viewTripComponent
+        component: viewTripComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'cars',
-        component: carsComponent
+        component: carsComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'add-car',
-        component: addCarComponent
+        component: addCarComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'edit-car/:id',
-        component: editCarComponent
+        component: editCarComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'drivers',
-        component: driversComponent
+        component: driversComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'add-driver',
-        component: addDriverComponent
+        component: addDriverComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'edit-driver/:id',
-        component: editDriverComponent
+        component: editDriverComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'brands',
-        component: brandsComponent
+        component: brandsComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'add-brand',
-        component: addBrandComponent
+        component: addBrandComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'edit-brand/:id',
-        component: editBrandComponent
+        component: editBrandComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'users',
-        component: usersComponent
+        component: usersComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'add-user',
-        component: addUserComponent
+        component: addUserComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'edit-user/:id',
-        component: editUserComponent
+        component: editUserComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'locations',
-        component: locationsComponent
+        component: locationsComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'add-location',
-        component: addLocationComponent
+        component: addLocationComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'edit-location/:id',
-        component: editLocationComponent
+        component: editLocationComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'add-sublocation/:id',
-        component: addSubLocationComponent
+        component: addSubLocationComponent,
+        canActivate: [AuthGuardService]
+      
     },
     {
         path: 'edit-sublocation/:id',
-        component: editSubLocationComponent
+        component: editSubLocationComponent,
+        canActivate: [AuthGuardService]
+      
     },
 
     {
@@ -261,6 +310,7 @@ const appRoutes: Routes = [
         CallApiService,
         LoginService,
         GlobalService,
+        AuthGuardService,
         DialogService
     ],
     bootstrap: [

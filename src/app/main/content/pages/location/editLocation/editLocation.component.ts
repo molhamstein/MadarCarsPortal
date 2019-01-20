@@ -141,10 +141,10 @@ export class editLocationComponent implements OnInit {
     this.editLocationForm = new FormGroup({
       descriptionEn: new FormControl('', Validators.required),
       descriptionAr: new FormControl('', Validators.required),
-      descriptionTr: new FormControl('', Validators.required),
+      descriptionTr: new FormControl(''),
       nameEn: new FormControl('', Validators.required),
       nameAr: new FormControl('', Validators.required),
-      nameTr: new FormControl('', Validators.required),
+      nameTr: new FormControl('',),
     });
     var mainthis = this
     this.getParams("id", function (id) {
@@ -162,10 +162,10 @@ export class editLocationComponent implements OnInit {
           mainthis.editLocationForm = new FormGroup({
             descriptionEn: new FormControl(data.descriptionEn, Validators.required),
             descriptionAr: new FormControl(data.descriptionAr, Validators.required),
-            descriptionTr: new FormControl(data.descriptionTr, Validators.required),
+            descriptionTr: new FormControl(""),
             nameEn: new FormControl(data.nameEn, Validators.required),
             nameAr: new FormControl(data.nameAr, Validators.required),
-            nameTr: new FormControl(data.nameTr, Validators.required),
+            nameTr: new FormControl(""),
           });
         }
       })

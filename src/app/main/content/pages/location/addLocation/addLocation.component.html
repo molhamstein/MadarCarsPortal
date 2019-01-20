@@ -22,45 +22,48 @@
       <div style="width: 100%;">
         <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
           fxFlex>
-          <mat-form-field fxFlex="96">
+
+          <mat-form-field fxFlex="47">
+            <input matInput placeholder="{{ 'LOCATION.NAMEEN' | translate }}" formControlName="nameEn" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="47">
+            <input matInput placeholder="{{ 'LOCATION.NAMEAR' | translate }}" formControlName="nameAr" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <!-- <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'LOCATION.NAMETR' | translate }}" formControlName="nameTr" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field> -->
+
+
+          <mat-form-field fxFlex="97">
             <textarea matInput placeholder="{{ 'LOCATION.DESCRIPTIONEN' | translate }}" formControlName="descriptionEn"
               required></textarea>
             <mat-icon matSuffix>people</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
-          <mat-form-field fxFlex="96">
+          <mat-form-field fxFlex="97">
             <textarea matInput placeholder="{{ 'LOCATION.DESCRIPTIONAR' | translate }}" formControlName="descriptionAr"
               required></textarea>
             <mat-icon matSuffix>people</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
-          <mat-form-field fxFlex="96">
+          <!-- <mat-form-field fxFlex="97">
             <textarea matInput placeholder="{{ 'LOCATION.DESCRIPTIONTR' | translate }}" formControlName="descriptionTr"
               required></textarea>
             <mat-icon matSuffix>people</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
+          </mat-form-field> -->
 
 
-          <mat-form-field fxFlex="30">
-            <input matInput placeholder="{{ 'LOCATION.NAMEEN' | translate }}" formControlName="nameEn" required>
-            <mat-icon matSuffix>people</mat-icon>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
-
-          <mat-form-field fxFlex="30">
-            <input matInput placeholder="{{ 'LOCATION.NAMEAR' | translate }}" formControlName="nameAr" required>
-            <mat-icon matSuffix>people</mat-icon>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
-
-          <mat-form-field fxFlex="30">
-            <input matInput placeholder="{{ 'LOCATION.NAMETR' | translate }}" formControlName="nameTr" required>
-            <mat-icon matSuffix>people</mat-icon>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
 
           <div fxFlex="40">
             <div class="divImage">

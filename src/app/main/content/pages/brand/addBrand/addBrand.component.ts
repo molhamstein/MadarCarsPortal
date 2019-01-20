@@ -33,7 +33,7 @@ export class addBrandComponent implements OnInit {
     this.addBrandForm = new FormGroup({
       nameEn: new FormControl('', Validators.required),
       nameAr: new FormControl('', Validators.required),
-      nameTr: new FormControl('', Validators.required)
+      nameTr: new FormControl('')
     });
 
   }

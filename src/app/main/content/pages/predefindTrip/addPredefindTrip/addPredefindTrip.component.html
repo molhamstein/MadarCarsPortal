@@ -22,41 +22,43 @@
       <div style="width: 100%;">
         <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
           fxFlex>
-          <mat-form-field fxFlex="96">
+
+          <mat-form-field fxFlex="47">
+            <input matInput placeholder="{{ 'PREDEFINEDTRIP.TITLEEN' | translate }}" formControlName="titleEn" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field fxFlex="47">
+            <input matInput placeholder="{{ 'PREDEFINEDTRIP.TITLEAR' | translate }}" formControlName="titleAr" required>
+            <mat-icon matSuffix>people</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+          <!-- <mat-form-field fxFlex="47">
+              <input matInput placeholder="{{ 'PREDEFINEDTRIP.TITLETR' | translate }}" formControlName="titleTr" required>
+              <mat-icon matSuffix>people</mat-icon>
+              <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+            </mat-form-field> -->
+
+
+          <mat-form-field fxFlex="97">
             <textarea matInput placeholder="{{ 'PREDEFINEDTRIP.DESCRIPTIONEN' | translate }}" formControlName="descriptionEn"
               required></textarea>
             <mat-icon matSuffix>people</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
-          <mat-form-field fxFlex="96">
+          <mat-form-field fxFlex="97">
             <textarea matInput placeholder="{{ 'PREDEFINEDTRIP.DESCRIPTIONAR' | translate }}" formControlName="descriptionAr"
               required></textarea>
             <mat-icon matSuffix>people</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
-          <mat-form-field fxFlex="96">
+          <!-- <mat-form-field fxFlex="97">
             <textarea matInput placeholder="{{ 'PREDEFINEDTRIP.DESCRIPTIONTR' | translate }}" formControlName="descriptionTr"
               required></textarea>
             <mat-icon matSuffix>people</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
+          </mat-form-field> -->
 
-
-          <mat-form-field fxFlex="30">
-            <input matInput placeholder="{{ 'PREDEFINEDTRIP.TITLEEN' | translate }}" formControlName="titleEn" required>
-            <mat-icon matSuffix>people</mat-icon>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
-          <mat-form-field fxFlex="30">
-            <input matInput placeholder="{{ 'PREDEFINEDTRIP.TITLEAR' | translate }}" formControlName="titleAr" required>
-            <mat-icon matSuffix>people</mat-icon>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
-          <mat-form-field fxFlex="30">
-            <input matInput placeholder="{{ 'PREDEFINEDTRIP.TITLETR' | translate }}" formControlName="titleTr" required>
-            <mat-icon matSuffix>people</mat-icon>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
 
           <mat-form-field fxFlex="30">
             <input matInput type="number" placeholder="{{ 'PREDEFINEDTRIP.DURATION' | translate }}" formControlName="duration"

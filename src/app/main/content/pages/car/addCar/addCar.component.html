@@ -45,17 +45,8 @@
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
-          <mat-form-field fxFlex="30">
-            <mat-select placeholder="{{ 'CAR.PRODUCTIONDATE' | translate }}" formControlName="productionDate">
-              <mat-option *ngFor="let oneYear of years" [value]="oneYear">
-                {{oneYear}}
-              </mat-option>
-            </mat-select>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
 
-
-          <mat-form-field fxFlex="30">
+          <!-- <mat-form-field fxFlex="30">
             <mat-select placeholder="{{ 'CAR.ENGINTYPE' | translate }}" formControlName="engineType">
               <mat-option *ngFor="let oneEngineType of engineType" [value]="oneEngineType">
                 {{oneEngineType}}
@@ -71,7 +62,7 @@
               </mat-option>
             </mat-select>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
+          </mat-form-field> -->
 
           <mat-form-field fxFlex="30">
             <input matInput type="number" placeholder="{{ 'CAR.PRICEPERDAY' | translate }}" formControlName="pricePerDay"
@@ -96,16 +87,14 @@
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
-          <section class="example-section" style="padding-bottom: 10px;" fxFlex="96">
-            <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" [(ngModel)]="isVip">{{
-              'CAR.ISVIP' | translate }}</mat-checkbox>
-            <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" style="padding-left: 12px;"
-              [(ngModel)]="isAirportCar">{{
-              'CAR.ISAIRPORTCAR' | translate }}</mat-checkbox>
-            <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" style="padding-left: 30px;"
-              [(ngModel)]="isCityCar">{{
-              'CAR.ISCITYCAR' | translate }}</mat-checkbox>
-          </section>
+          <mat-form-field fxFlex="30">
+            <mat-select placeholder="{{ 'CAR.PRODUCTIONDATE' | translate }}" formControlName="productionDate">
+              <mat-option *ngFor="let oneYear of years" [value]="oneYear">
+                {{oneYear}}
+              </mat-option>
+            </mat-select>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
 
           <mat-form-field fxFlex="30">
             <mat-select placeholder="{{ 'CAR.DRIVER' | translate }}" formControlName="driverId">
@@ -132,6 +121,27 @@
             <mat-icon matSuffix>people</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
+
+          <section class="example-section" style="padding-bottom: 10px;" fxFlex="96">
+            <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" [(ngModel)]="isVip">{{
+              'CAR.ISVIP' | translate }}</mat-checkbox>
+            <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" style="padding-left: 12px;"
+              [(ngModel)]="isAirportCar">{{
+              'CAR.ISAIRPORTCAR' | translate }}</mat-checkbox>
+            <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" style="padding-left: 30px;"
+              [(ngModel)]="isCityCar">{{
+              'CAR.ISCITYCAR' | translate }}</mat-checkbox>
+          </section>
+
+          <!-- <mat-form-field fxFlex="30">
+            <mat-select placeholder="{{ 'CAR.DRIVER' | translate }}" formControlName="driverId">
+              <mat-option *ngFor="let onedriver of drivers" [value]="onedriver.id">
+                {{onedriver.firstName}} {{onedriver.lastName}}
+              </mat-option>
+            </mat-select>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field> -->
+
 
 
         </div>
@@ -181,7 +191,7 @@
             </div>
           </div>
 
-          <ul class="listOfImgs">
+          <!-- <ul class="listOfImgs">
             <li (click)="openSelectListImage()">
               <div class="listDiv">
                 <img class="listImgCustim" src="{{imaageUrl}}" />
@@ -202,7 +212,7 @@
                 <img class="listImgCustimLoader" src="assets/images/madar/infinity_loader_by_volorf.gif" />
               </div>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
       <div style="float: right;">

@@ -175,11 +175,11 @@ export class addPredefindTripComponent implements OnInit {
     this.addPredefindTripForm = new FormGroup({
       duration: new FormControl(0, Validators.required),
       titleEn: new FormControl('', Validators.required),
-      titleTr: new FormControl('', Validators.required),
+      titleTr: new FormControl(''),
       titleAr: new FormControl('', Validators.required),
       descriptionEn: new FormControl('', Validators.required),
       descriptionAr: new FormControl('', Validators.required),
-      descriptionTr: new FormControl('', Validators.required),
+      descriptionTr: new FormControl(''),
       locationId: new FormControl('', Validators.required)
     });
   }

@@ -144,9 +144,9 @@ export class editPredefindTripComponent implements OnInit {
     this.editPredefindTripForm = new FormGroup({
       descriptionEn: new FormControl('', Validators.required),
       descriptionAr: new FormControl('', Validators.required),
-      descriptionTr: new FormControl('', Validators.required),
+      descriptionTr: new FormControl(''),
       titleEn: new FormControl('', Validators.required),
-      titleTr: new FormControl('', Validators.required),
+      titleTr: new FormControl(''),
       titleAr: new FormControl('', Validators.required),
       duration: new FormControl(0, Validators.required),
       locationId: new FormControl('', Validators.required)
@@ -171,9 +171,9 @@ export class editPredefindTripComponent implements OnInit {
               mainthis.editPredefindTripForm = new FormGroup({
                 descriptionEn: new FormControl(data.descriptionEn, Validators.required),
                 descriptionAr: new FormControl(data.descriptionAr, Validators.required),
-                descriptionTr: new FormControl(data.descriptionTr, Validators.required),
+                descriptionTr: new FormControl(''),
                 titleEn: new FormControl(data.titleEn, Validators.required),
-                titleTr: new FormControl(data.titleTr, Validators.required),
+                titleTr: new FormControl(''),
                 titleAr: new FormControl(data.titleAr, Validators.required),
                 duration: new FormControl(data.duration, Validators.required),
                 locationId: new FormControl(data.locationId, Validators.required)

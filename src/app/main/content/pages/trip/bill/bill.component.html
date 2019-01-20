@@ -28,7 +28,8 @@
             <div class="type">
               <!-- {{getType('outer')}} -->
               <mat-form-field>
-                <mat-select [ngModelOptions]="{standalone: true}" (change)="changeStaus('outer')" [disabled]="outerDisabled" [(ngModel)]="outerBillStatus">
+                <mat-select [ngModelOptions]="{standalone: true}" (change)="changeStaus('outer')" [disabled]="outerDisabled"
+                  [(ngModel)]="outerBillStatus">
                   <mat-option *ngFor="let oneStaus of statusBill" [value]="oneStaus.value">
                     {{oneStaus.view}}
                   </mat-option>
@@ -38,6 +39,9 @@
 
           </div>
           <div class="bills">
+            <div style="margin-bottom: 18px;font-size: 20px;" class="title">
+              {{'TRIP.BILL.ITEMS' | translate}}
+          </div>
             <div class="oneBill" *ngFor="let oneOuterBill of outerBill;let i=index">
               <mat-form-field class="Bill25">
                 <mat-select placeholder="{{ 'TRIP.BILL.TYPE' | translate }}" [ngModelOptions]="{standalone: true}"

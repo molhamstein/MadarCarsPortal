@@ -112,7 +112,7 @@
       </div>
     </div>
 
-    <div class="sublocationCard" *ngIf="trip['owner']">
+    <div class="sublocationCard" *ngIf="trip['owner'] && trip['tripSublocations'].length!=0">
       <div class="cont">
         <div class="sublocation" *ngFor="let oneSublocation of trip['tripSublocations']">
           <div class="element">

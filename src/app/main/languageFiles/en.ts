@@ -240,7 +240,8 @@ export const locale = {
             },
             "BILL": {
                 "TITLE": "Bill",
-                "OUTER": "Outer",
+                "OUTER": "Client Bills",
+                "ITEMS":"Items",
                 "TYPE": "Type",
                 "NAME": "Title",
                 "TITLEEN": "English Title",

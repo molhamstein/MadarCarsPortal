@@ -19,7 +19,7 @@ export class locationsComponent implements OnInit {
   allRows = [];
   filterRows = [];
   filterValue = "";
-  columns = ["nameAr", "nameEn", "nameTr", "status"]
+  columns = ["nameAr", "nameEn", "status"]
 
   constructor(private translationLoader: FuseTranslationLoaderService
     , private translateService: TranslateService
