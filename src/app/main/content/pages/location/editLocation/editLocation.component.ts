@@ -32,7 +32,7 @@ export class editLocationComponent implements OnInit {
   filterValue = ""
   allRows = [];
   filterRows = [];
-  columns = ["nameAr", "nameEn", "nameTr", "status"]
+  columns = ["nameAr", "nameEn", "status"]
 
   private primaryColor: string = "#127bdc";
   private secondryColor: string = "#127bdc";
