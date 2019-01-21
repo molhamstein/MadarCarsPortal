@@ -31252,7 +31252,7 @@ var locale = {
             "PHONENUMBER": "Phone Number",
             "STATUS": "Status",
             'PASSWORD': 'Password',
-            "ISOCODE": "ISO Code",
+            "ISOCODE": "Nationality",
             "REGISTRATIONDATE": "Registration Date",
             "TYPELOGIN": "Type LogIn",
             "ALLUSER": {
