@@ -103,7 +103,7 @@ export class addSubLocationComponent implements OnInit {
     this.addSubLocationForm = new FormGroup({
       nameEn: new FormControl('', Validators.required),
       nameAr: new FormControl('', Validators.required),
-      nameTr: new FormControl('', Validators.required),
+      nameTr: new FormControl(''),
     });
     var mainthis = this
     this.getParams("id", function (id) {

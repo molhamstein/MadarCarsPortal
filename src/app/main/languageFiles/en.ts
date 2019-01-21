@@ -178,7 +178,7 @@ export const locale = {
             "ADDUSER": {
                 "TITLE": "Add Customer"
             },
-            "EDITCAR": {
+            "EDITUSER": {
                 "TITLE": "Edit Customer"
             }
         },

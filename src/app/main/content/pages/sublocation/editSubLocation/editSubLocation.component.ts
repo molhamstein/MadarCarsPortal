@@ -105,7 +105,7 @@ export class editSubLocationComponent implements OnInit {
     this.editSubLocationForm = new FormGroup({
       nameEn: new FormControl('', Validators.required),
       nameAr: new FormControl('', Validators.required),
-      nameTr: new FormControl('', Validators.required),
+      nameTr: new FormControl("")
     });
     var mainthis = this
     this.getParams("id", function (id) {
@@ -122,7 +122,7 @@ export class editSubLocationComponent implements OnInit {
           mainthis.editSubLocationForm = new FormGroup({
             nameEn: new FormControl(data.nameEn, Validators.required),
             nameAr: new FormControl(data.nameAr, Validators.required),
-            nameTr: new FormControl(data.nameTr, Validators.required),
+            nameTr: new FormControl(""),
           });
         }
       })

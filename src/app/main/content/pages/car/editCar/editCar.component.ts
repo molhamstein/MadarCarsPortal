@@ -175,8 +175,6 @@ export class editCarComponent implements OnInit {
       numOfSeat: new FormControl('', Validators.required),
 
       productionDate: new FormControl('', Validators.required),
-      engineType: new FormControl(''),
-      type: new FormControl(''),
 
       pricePerDay: new FormControl('', Validators.required),
       priceOneWay: new FormControl('', Validators.required),
@@ -232,8 +230,6 @@ export class editCarComponent implements OnInit {
                         numOfSeat: new FormControl(data.numOfSeat, Validators.required),
 
                         productionDate: new FormControl(data.productionDate, Validators.required),
-                        engineType: new FormControl(''),
-                        type: new FormControl(''),
                   
                         pricePerDay: new FormControl(data.pricePerDay, Validators.required),
                         priceOneWay: new FormControl(data.priceOneWay, Validators.required),
