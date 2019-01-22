@@ -1,3 +1,4 @@
+import { MyResetPasswordComponent } from './main/dialogs/my-reset-password/my-reset-password.component';
 import { AuthGuardService } from './core/services/auth-guard-service.service';
 import { ConfirmMessageComponent } from './main/dialogs/confirm-message/confirm-message.component';
 import { LoaderServicesService } from './core/services/loader-services.service';
@@ -270,7 +271,7 @@ const appRoutes: Routes = [
         // // Predefind Trips
         predefindTripsComponent, addPredefindTripComponent, editPredefindTripComponent,
         // dialogs
-        SomeThingIsErrorComponent, ConfirmMessageComponent, ErrorMessageComponent
+        SomeThingIsErrorComponent, ConfirmMessageComponent, ErrorMessageComponent,MyResetPasswordComponent
     ],
     imports: [
         BrowserModule,
@@ -300,7 +301,7 @@ const appRoutes: Routes = [
 
 
     ],
-    entryComponents: [SomeThingIsErrorComponent, ConfirmMessageComponent, ErrorMessageComponent],
+    entryComponents: [SomeThingIsErrorComponent, ConfirmMessageComponent, ErrorMessageComponent,MyResetPasswordComponent],
     providers: [
         FuseSplashScreenService,
         FuseConfigService,

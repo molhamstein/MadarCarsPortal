@@ -182,6 +182,11 @@ export const locale = {
                 "TITLE": "Edit Customer"
             }
         },
+        "RESET": {
+            "TITLE": "Reset Password",
+            "RESET": "Reset",
+            "NEWPASSWORD": "New Password"
+        },
         "TRIP": {
             "FROMAIRPORT": "From Airport",
             "FROMAIRPORTDATE": "From Airport Date",
@@ -241,14 +246,14 @@ export const locale = {
             "BILL": {
                 "TITLE": "Bill",
                 "OUTER": "Client Bills",
-                "ITEMS":"Items",
+                "ITEMS": "Items",
                 "TYPE": "Type",
                 "NAME": "Title",
                 "TITLEEN": "English Title",
                 "TITLEAR": "Arabic Title",
                 "TITLETR": "Turkish Title",
-                "QUENTITY":"qty",
-                "PRICEPERUNIT":"price"
+                "QUENTITY": "qty",
+                "PRICEPERUNIT": "price"
             }
         },
 
@@ -291,6 +296,7 @@ export const locale = {
             "EDIT": "Edit",
             "NEXT": "Next",
             "BACK": "Back",
+            "CANCEL": "Cancel"
         },
         "MESSAGES": {
             "DEACTIVELOCATION": "Do you want to deactivate this location",

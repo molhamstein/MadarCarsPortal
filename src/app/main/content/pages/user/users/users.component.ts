@@ -7,6 +7,7 @@ import { locale as english } from '../../../../languageFiles/en';
 
 import { MainService } from '../../../../../core/services/main.service';
 import { DialogService } from '../../../../../core/services/dialog.service';
+import { MyResetPasswordComponent } from '../../../../dialogs/my-reset-password/my-reset-password.component';
 
 
 
@@ -179,5 +180,16 @@ export class usersComponent implements OnInit {
     })
   }
 
+  reset(userId) {
+    let dialogRef = this.dialog.open(MyResetPasswordComponent, {
+      width: '350px',
+      data: { userId: userId}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+    });
+
+  }
 
 }
