@@ -455,7 +455,7 @@ export class GlobalService {
       else
         return false
     else
-      return false
+      return true
   }
 
 }

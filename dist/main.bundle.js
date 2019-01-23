@@ -5524,7 +5524,7 @@ var GlobalService = (function () {
             else
                 return false;
         else
-            return false;
+            return true;
     };
     GlobalService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Injectable"])(),
