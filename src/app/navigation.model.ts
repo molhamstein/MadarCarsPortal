@@ -1,6 +1,5 @@
 export class NavigationModel {
     public model: any[];
-    isSuperAdmin = "false";
     constructor() {
         this.model = [
             {
@@ -49,7 +48,8 @@ export class NavigationModel {
                 'id': 'admin',
                 'title': 'ADMIN.ALLADMIN.TITLE',
                 'type': 'item',
-                'url': '/admins'
+                'url': '/admins',
+                "data": { 'isSuperAdmin': true }
             }
             // {
             //     'id'      : 'applications',

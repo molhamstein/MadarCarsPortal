@@ -448,9 +448,12 @@ export class GlobalService {
 
   isAllowedPage(page) {
     // return true
-    var typeUser = this.logInSer.getType();    
-    if (this.pagesRole[typeUser][page] == null)
-      return true
+    var typeUser = this.logInSer.getType();
+    if (typeUser != undefined)
+      if (this.pagesRole[typeUser][page] == null)
+        return true
+      else
+        return false
     else
       return false
   }

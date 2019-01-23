@@ -2378,7 +2378,7 @@ var FuseNavVerticalItemComponent = (function () {
     };
     FuseNavVerticalItemComponent.prototype.cheack = function (item) {
         this.isSuperAdmin = this.mainServ.loginServ.getIsSuperAdmin();
-        if (item.data == null || (item.data != null && item.id == 'admin' && this.isSuperAdmin == "true"))
+        if (item.data == null || (item.data != null && item.data['isSuperAdmin'] == true && this.isSuperAdmin == "true"))
             return true;
     };
     __decorate([
@@ -5518,8 +5518,11 @@ var GlobalService = (function () {
     GlobalService.prototype.isAllowedPage = function (page) {
         // return true
         var typeUser = this.logInSer.getType();
-        if (this.pagesRole[typeUser][page] == null)
-            return true;
+        if (typeUser != undefined)
+            if (this.pagesRole[typeUser][page] == null)
+                return true;
+            else
+                return false;
         else
             return false;
     };
@@ -33289,7 +33292,6 @@ var FuseToolbarComponent = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavigationModel; });
 var NavigationModel = (function () {
     function NavigationModel() {
-        this.isSuperAdmin = "false";
         this.model = [
             {
                 'id': 'location',
@@ -33337,7 +33339,8 @@ var NavigationModel = (function () {
                 'id': 'admin',
                 'title': 'ADMIN.ALLADMIN.TITLE',
                 'type': 'item',
-                'url': '/admins'
+                'url': '/admins',
+                "data": { 'isSuperAdmin': true }
             }
             // {
             //     'id'      : 'applications',

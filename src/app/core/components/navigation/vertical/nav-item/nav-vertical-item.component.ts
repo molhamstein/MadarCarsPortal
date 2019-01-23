@@ -19,7 +19,7 @@ export class FuseNavVerticalItemComponent implements OnInit {
     cheack(item) {
         this.isSuperAdmin = this.mainServ.loginServ.getIsSuperAdmin()
 
-        if (item.data == null || (item.data != null && item.id == 'admin' && this.isSuperAdmin == "true"))
+        if (item.data == null || (item.data != null && item.data['isSuperAdmin'] == true && this.isSuperAdmin == "true"))
             return true
     }
 }
