@@ -1,6 +1,6 @@
 export class NavigationModel {
     public model: any[];
-
+    isSuperAdmin = "false";
     constructor() {
         this.model = [
             {
@@ -44,6 +44,12 @@ export class NavigationModel {
                 'title': 'PREDEFINEDTRIP.ALLPREDEFINEDTRIP.TITLE',
                 'type': 'item',
                 'url': '/predefined-trips'
+            },
+            {
+                'id': 'admin',
+                'title': 'ADMIN.ALLADMIN.TITLE',
+                'type': 'item',
+                'url': '/admins'
             }
             // {
             //     'id'      : 'applications',
@@ -893,6 +899,9 @@ export class NavigationModel {
             //     ]
             // }
         ];
+        // this.model.push()
+        // }
+
     }
 }
 

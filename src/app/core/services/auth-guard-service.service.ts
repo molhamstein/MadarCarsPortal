@@ -33,11 +33,11 @@ export class AuthGuardService implements CanLoad, CanActivate {
 
     let path = route.url[0]
     if (this.mainServ.loginServ.isLogin()) {
-      // if (this.mainServ.globalServ.isAllowedPage(path) == false) {
-      //   this.router.navigate(["/Permision"])
-      //   return false;
-      // } else {
-      return true;
+      if (this.mainServ.globalServ.isAllowedPage(path) == false) {
+        this.router.navigate(["/locations"])
+        return false;
+      } else
+        return true;
 
       // }
     }

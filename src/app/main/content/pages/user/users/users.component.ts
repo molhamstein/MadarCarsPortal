@@ -183,7 +183,7 @@ export class usersComponent implements OnInit {
   reset(userId) {
     let dialogRef = this.dialog.open(MyResetPasswordComponent, {
       width: '350px',
-      data: { userId: userId}
+      data: { userId: userId, type: "users" }
     });
 
     dialogRef.afterClosed().subscribe(result => {

@@ -12,15 +12,16 @@ import { locale as english } from '../../../../languageFiles/en';
 
 
 @Component({
-  selector: 'app-editUser',
-  templateUrl: './editUser.component.html',
-  styleUrls: ['./editUser.component.scss']
+  selector: 'app-editAdmin',
+  templateUrl: './editAdmin.component.html',
+  styleUrls: ['./editAdmin.component.scss']
 })
-export class editUserComponent implements OnInit {
-  editUserForm;
-  isoCode
-  userId;
-  user;
+export class editAdminComponent implements OnInit {
+  editAdminForm;
+  adminId;
+  admin;
+
+
   constructor(
     private mainServ: MainService,
     private _formBuilder: FormBuilder,
@@ -40,53 +41,43 @@ export class editUserComponent implements OnInit {
 
 
 
-
   ngOnInit() {
-    this.editUserForm = new FormGroup({
-      name: new FormControl('', Validators.required),
-      phoneNumber: new FormControl('', Validators.required),
-      ISOCode: new FormControl('', Validators.required)
+    this.editAdminForm = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      username: new FormControl('', Validators.required),
     });
-    this.isoCode = this.mainServ.globalServ.getIsoCode();
     var mainthis = this;
     this.getParams("id", function (id) {
-      mainthis.userId = id;
-      mainthis.mainServ.APIServ.get("users/" + mainthis.userId).subscribe((data: any) => {
+      mainthis.adminId = id;
+      mainthis.mainServ.APIServ.get("admins/" + mainthis.adminId).subscribe((data: any) => {
         if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
-          mainthis.user = data;
-          mainthis.editUserForm = new FormGroup({
-            name: new FormControl(data.name, Validators.required),
-            phoneNumber: new FormControl(data.phoneNumber, Validators.required),
-            ISOCode: new FormControl(data.ISOCode, Validators.required)
+          mainthis.admin = data;
+          mainthis.editAdminForm = new FormGroup({
+            email: new FormControl(data.email, [Validators.required, Validators.email]),
+            username: new FormControl(data.username, Validators.required),
           });
 
-        }
-        else {
-          this.dialogServ.someThingIsError();
         }
       })
     })
   }
 
 
+
+
   edit() {
-    var data = this.editUserForm.value;
-    this.mainServ.APIServ.put("users/" + this.userId, data).subscribe((data: any) => {
+    var data = this.editAdminForm.value;
+    this.mainServ.APIServ.put("admins/" + this.adminId, data).subscribe((data: any) => {
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.back();
-      }
-      else if (this.mainServ.APIServ.getErrorCode() == 451) {
-        this.dialogServ.errorMessage(451);
-      }
-      else {
-        this.dialogServ.someThingIsError();
       }
     })
   }
 
   back() {
-    this.mainServ.globalServ.goTo('users')
+    this.mainServ.globalServ.goTo('admins')
   }
+
 
 
 }

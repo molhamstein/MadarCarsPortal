@@ -48,10 +48,221 @@
         </div>
       </div>
 
+      <div style="width: 100%;">
+        <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
+          fxFlex>
+          <div fxFlex="40">
+            <div class="divImage">
+              <div>
+                <div *ngIf="images.length==0 && imageOnLoad.length==0" class="">
+                  <img class="imgCustim" src="{{imaageUrl}}" />
+                </div>
+
+                <div *ngFor="let value of images;let i=index" class="">
+                  <img class="imgCustim" src="{{value.url}}" />
+                  <div class="imgCustimLoader" [style.background-image]="'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'"></div>
+                </div>
+                <div *ngFor="let image of imageOnLoad;let i = index" class="AddNewForm-imagescontainer-smallimage"
+                  style="    position: relative;">
+                  <img class="imgCustim" id="{{'uploadImage'+i}}" />
+                  <img class="imgCustimLoader" src="assets/images/madar/infinity_loader_by_volorf.gif" />
+
+                </div>
+              </div>
+            </div>
+            <div class="divButton" (click)="openSelectImage()">
+              <input type="file" style="display:none" id="files" accept="image/*" (change)="onChange($event)" />
+
+              <span>
+                {{ 'Global.UPLOADIMAGE' | translate }}
+              </span>
+            </div>
+          </div>
+          <div fxFlex="60"></div>
+        </div>
+      </div>
       <div style="float: right;">
         <button mat-button (click)="edit()" class="editButton" cdkFocusInitial [disabled]="editUserForm.invalid">{{'Global.EDIT'
           | translate}}</button>
       </div>
     </form>
   </div>
+
+  <div id="contacts" class="page-layout simple left-sidenav inner-sidenav">
+
+    <div class="header mat-accent-bg p-16 whiteCustomHeader" fxLayout="column" fxLayoutAlign="start start"
+      fxLayout.gt-xs="row" fxLayoutAlign.gt-xs="space-between center">
+
+      <!-- APP TITLE -->
+      <div fxLayout="row" fxLayoutAlign="start center">
+
+        <button mat-button class="mat-icon-button sidenav-toggle mr-12" fuseMatSidenavToggler="contacts-main-sidenav"
+          fxHide.gt-md>
+          <mat-icon>menu</mat-icon>
+        </button>
+
+        <div class="logo" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon class="logo-icon mr-16">account_box</mat-icon>
+          <span class="logo-text h1">{{'TRIP.ALLTRIP.TITLE' | translate}}</span>
+
+        </div>
+
+      </div>
+      <!-- / APP TITLE -->
+
+      <!-- SEARCH -->
+      <div class="search-input-wrapper mt-16 ml-8 m-sm-0" fxLayout="row" fxLayoutAlign="start center">
+        <label for="search" class="mr-8">
+          <mat-icon>search</mat-icon>
+        </label>
+        <mat-form-field mat-no-float class="m-0" floatPlaceholder="never">
+          <input matInput id="search" [(ngModel)]="filterValue" (ngModelChange)="filterDatatable()" placeholder="{{'SUBLOCATION.ALLSUBLOCATION.SEARCH'| translate}}">
+        </mat-form-field>
+        <!-- <button mat-button class="customButtom" color="primary" type="button" (click)="addSublocation()">{{'SUBLOCATION.ALLSUBLOCATION.ADDSUBLOCATION'
+          | translate}}</button> -->
+
+      </div>
+      <!-- / SEARCH -->
+
+
+    </div>
+
+    <ngx-datatable class="material vertical-scroll" [rows]="filterRows" [columnMode]="'force'" [headerHeight]="50"
+      [rowHeight]="50" [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="true">
+      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="owner.name">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <span>{{ 'TRIP.USER' | translate }}</span>
+        </ng-template>
+
+      </ngx-datatable-column>
+      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="location.nameEn">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <span>{{ 'TRIP.LOCATION' | translate }}</span>
+        </ng-template>
+
+      </ngx-datatable-column>
+
+      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="car.name">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <span>{{ 'TRIP.CAR' | translate }}</span>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="driver.username">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <span>{{ 'TRIP.DRIVER' | translate }}</span>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="cost">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <span>{{ 'TRIP.PRICE' | translate }}</span>
+        </ng-template>
+      </ngx-datatable-column>
+
+
+      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="Status">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <span>{{ 'TRIP.STATUS' | translate }}</span>
+        </ng-template>
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          <mat-chip-list *ngIf="row.status=='active'">
+            <mat-chip style="background-color:green" selected="true">{{row.status}}</mat-chip>
+          </mat-chip-list>
+          <mat-chip-list *ngIf="row.status=='deactive'">
+            <mat-chip style="background-color:#ff6363" selected="true">{{row.status}}</mat-chip>
+          </mat-chip-list>
+          <mat-chip-list *ngIf="row.status!='deactive' && row.status!='active'">
+            <mat-chip style="background-color:#3b6fff" selected="true">{{row.status}}</mat-chip>
+          </mat-chip-list>
+        </ng-template>
+      </ngx-datatable-column>
+
+
+      <ngx-datatable-column [canAutoResize]="true" [width]="190" [flexGrow]="1" prop="start">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <span>{{ 'TRIP.START' | translate }}</span>
+        </ng-template>
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          <span>
+            {{row["start"] | date: 'dd-MM-yyyy hh:mm a'}}
+          </span>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column [canAutoResize]="true" [width]="190" [flexGrow]="1" prop="end">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <span>{{ 'TRIP.END' | translate }}</span>
+        </ng-template>
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          <span>
+            {{row["end"] | date: 'dd-MM-yyyy hh:mm a'}}
+          </span>
+        </ng-template>
+      </ngx-datatable-column>
+
+
+
+
+      <ngx-datatable-column [width]="260" name="id">
+        <ng-template let-column="column" ngx-datatable-header-template>
+          <div class="table-header-font">
+
+          </div>
+        </ng-template>
+
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          <button mat-mini-fab *ngIf="row.status=='finished'" class="mr-16" style="background-color: #8a8a8a;" (click)="goTo('bills',row['id'])">
+            <mat-icon style="color : white;">subtitles</mat-icon>
+          </button>
+
+          <button mat-mini-fab class="mr-16" (click)="goTo('edit',row['id'])" style="background-color: rgba(20, 160, 202, 0.911);">
+            <mat-icon style="color : white;">edit</mat-icon>
+          </button>
+          <!-- <button mat-mini-fab *ngIf="row.status=='active'" class="mr-16" (click)="deactivate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
+              <mat-icon style="color : white;">delete</mat-icon>
+            </button>
+            <button mat-mini-fab *ngIf="row.status=='deactive'" class="mr-16" (click)="activate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
+              <mat-icon style="color : white;">replay</mat-icon>
+            </button> -->
+          <button mat-mini-fab class="mr-16" style="background-color: rgba(7, 112, 7, 0.849);" (click)="goTo('view',row['id'])">
+            <mat-icon style="color : white;">visibility</mat-icon>
+          </button>
+
+
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item *ngIf="row.status!='deactive'" (click)="changeStatus('deactive',row.id)">
+              <mat-icon>cancel</mat-icon>
+              <span>{{'TRIP.DEACTIVE' | translate}}</span>
+            </button>
+            <button mat-menu-item *ngIf="row.status!='approved'" (click)="changeStatus('approved',row.id)">
+              <mat-icon>more_horiz</mat-icon>
+              <span>{{'TRIP.APPROVED' | translate}}</span>
+            </button>
+            <button mat-menu-item *ngIf="row.status!='pending'" (click)="changeStatus('pending',row.id)">
+              <mat-icon>group</mat-icon>
+              <span>{{'TRIP.PENDING' | translate}}</span>
+            </button>
+            <button mat-menu-item *ngIf="row.status!='active'" (click)="changeStatus('active',row.id)">
+              <mat-icon>check</mat-icon>
+              <span>{{'TRIP.ACTIVE' | translate}}</span>
+            </button>
+            <button mat-menu-item *ngIf="row.status!='finished'" (click)="changeStatus('finished',row.id)">
+              <mat-icon>check</mat-icon>
+              <span>{{'TRIP.FINISHED' | translate}}</span>
+            </button>
+          </mat-menu>
+        </ng-template>
+
+      </ngx-datatable-column>
+
+
+
+    </ngx-datatable>
+
+  </div>
+
 </div>

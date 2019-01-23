@@ -194,12 +194,20 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__main_content_pages_trip_bill_bill_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/bill/bill.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__node_modules_material_time_control_src_material_time_control_module__ = __webpack_require__("../../../../material-time-control/src/material-time-control.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_62_ngx_material_timepicker__ = __webpack_require__("../../../../ngx-material-timepicker/esm5/ngx-material-timepicker.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__main_content_pages_admin_admin_admins_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/admin/admins.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__main_content_pages_admin_addAdmin_addAdmin_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/addAdmin/addAdmin.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__main_content_pages_admin_editDriver_editAdmin_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/editDriver/editAdmin.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__main_content_pages_trip_editTrip_editTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/editTrip/editTrip.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
 
 
 
@@ -295,6 +303,11 @@ var appRoutes = [
         canActivate: [__WEBPACK_IMPORTED_MODULE_1__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
+        path: 'edit-trip/:id',
+        component: __WEBPACK_IMPORTED_MODULE_66__main_content_pages_trip_editTrip_editTrip_component__["a" /* editTripComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_1__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+    },
+    {
         path: 'view-trip/:id',
         component: __WEBPACK_IMPORTED_MODULE_56__main_content_pages_trip_viewTrip_viewTrip_component__["a" /* viewTripComponent */],
         canActivate: [__WEBPACK_IMPORTED_MODULE_1__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
@@ -312,6 +325,21 @@ var appRoutes = [
     {
         path: 'edit-car/:id',
         component: __WEBPACK_IMPORTED_MODULE_48__main_content_pages_car_editCar_editCar_component__["a" /* editCarComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_1__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+    },
+    {
+        path: 'admins',
+        component: __WEBPACK_IMPORTED_MODULE_63__main_content_pages_admin_admin_admins_component__["a" /* adminsComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_1__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+    },
+    {
+        path: 'add-admin',
+        component: __WEBPACK_IMPORTED_MODULE_64__main_content_pages_admin_addAdmin_addAdmin_component__["a" /* addAdminComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_1__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+    },
+    {
+        path: 'edit-admin/:id',
+        component: __WEBPACK_IMPORTED_MODULE_65__main_content_pages_admin_editDriver_editAdmin_component__["a" /* editAdminComponent */],
         canActivate: [__WEBPACK_IMPORTED_MODULE_1__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
@@ -442,9 +470,11 @@ var AppModule = (function () {
                 // // Users
                 __WEBPACK_IMPORTED_MODULE_49__main_content_pages_user_users_users_component__["a" /* usersComponent */], __WEBPACK_IMPORTED_MODULE_50__main_content_pages_user_addUser_addUser_component__["a" /* addUserComponent */], __WEBPACK_IMPORTED_MODULE_51__main_content_pages_user_editUser_editUser_component__["a" /* editUserComponent */],
                 // // Trips
-                __WEBPACK_IMPORTED_MODULE_53__main_content_pages_trip_trips_trips_component__["a" /* tripsComponent */], __WEBPACK_IMPORTED_MODULE_54__main_content_pages_trip_addTrip_addTrip_component__["a" /* addTripComponent */], __WEBPACK_IMPORTED_MODULE_56__main_content_pages_trip_viewTrip_viewTrip_component__["a" /* viewTripComponent */], __WEBPACK_IMPORTED_MODULE_60__main_content_pages_trip_bill_bill_component__["a" /* billComponent */],
+                __WEBPACK_IMPORTED_MODULE_53__main_content_pages_trip_trips_trips_component__["a" /* tripsComponent */], __WEBPACK_IMPORTED_MODULE_54__main_content_pages_trip_addTrip_addTrip_component__["a" /* addTripComponent */], __WEBPACK_IMPORTED_MODULE_56__main_content_pages_trip_viewTrip_viewTrip_component__["a" /* viewTripComponent */], __WEBPACK_IMPORTED_MODULE_60__main_content_pages_trip_bill_bill_component__["a" /* billComponent */], __WEBPACK_IMPORTED_MODULE_66__main_content_pages_trip_editTrip_editTrip_component__["a" /* editTripComponent */],
                 // // Predefind Trips
                 __WEBPACK_IMPORTED_MODULE_57__main_content_pages_predefindTrip_predefindTrips_predefindTrips_component__["a" /* predefindTripsComponent */], __WEBPACK_IMPORTED_MODULE_58__main_content_pages_predefindTrip_addPredefindTrip_addPredefindTrip_component__["a" /* addPredefindTripComponent */], __WEBPACK_IMPORTED_MODULE_59__main_content_pages_predefindTrip_editPredefindTrip_editPredefindTrip_component__["a" /* editPredefindTripComponent */],
+                // // Admins
+                __WEBPACK_IMPORTED_MODULE_63__main_content_pages_admin_admin_admins_component__["a" /* adminsComponent */], __WEBPACK_IMPORTED_MODULE_64__main_content_pages_admin_addAdmin_addAdmin_component__["a" /* addAdminComponent */], __WEBPACK_IMPORTED_MODULE_65__main_content_pages_admin_editDriver_editAdmin_component__["a" /* editAdminComponent */],
                 // dialogs
                 __WEBPACK_IMPORTED_MODULE_32__main_dialogs_some_thing_is_error_some_thing_is_error_component__["a" /* SomeThingIsErrorComponent */], __WEBPACK_IMPORTED_MODULE_2__main_dialogs_confirm_message_confirm_message_component__["a" /* ConfirmMessageComponent */], __WEBPACK_IMPORTED_MODULE_52__main_dialogs_error_message_error_message_component__["a" /* ErrorMessageComponent */], __WEBPACK_IMPORTED_MODULE_0__main_dialogs_my_reset_password_my_reset_password_component__["a" /* MyResetPasswordComponent */]
             ],
@@ -1667,7 +1697,7 @@ var FuseNavHorizontalCollapseComponent = (function () {
 /***/ "../../../../../src/app/core/components/navigation/horizontal/nav-item/nav-horizontal-item.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<a class=\"nav-link\" *ngIf=\"item.url\" [routerLink]=\"[item.url]\" routerLinkActive=\"active\"\n   [routerLinkActiveOptions]=\"{exact: item.exactMatch || false}\" matRipple>\n    <mat-icon class=\"nav-link-icon\" *ngIf=\"item.icon\">{{item.icon}}</mat-icon>\n    <span class=\"nav-link-title\">{{item.title}}</span>\n    <span class=\"nav-link-badge\" *ngIf=\"item.badge\"\n          [ngStyle]=\"{'background-color': item.badge.bg,'color': item.badge.fg}\">\n        {{item.badge.title}}\n    </span>\n</a>\n\n<span class=\"nav-link\" *ngIf=\"item.function\" (click)=\"item.function()\" matRipple>\n    <mat-icon class=\"nav-link-icon\" *ngIf=\"item.icon\">{{item.icon}}</mat-icon>\n    <span class=\"nav-link-title\">{{item.title}}</span>\n    <span class=\"nav-link-badge\" *ngIf=\"item.badge\"\n          [ngStyle]=\"{'background-color': item.badge.bg,'color': item.badge.fg}\">\n        {{item.badge.title}}\n    </span>\n</span>"
+module.exports = "<a class=\"nav-link\" *ngIf=\"item.url\" [routerLink]=\"[item.url]\" routerLinkActive=\"active\"\n   [routerLinkActiveOptions]=\"{exact: item.exactMatch || false}\" matRipple>\n    <mat-icon class=\"nav-link-icon\" *ngIf=\"item.icon\">{{item.icon}}</mat-icon>\n    <span class=\"nav-link-title\">{{item.title}}</span>\n    <span class=\"nav-link-badge\" *ngIf=\"item.badge\"\n          [ngStyle]=\"{'background-color': item.badge.bg,'color': item.badge.fg}\">\n        {{item.badge.title}}sssss\n    </span>\n</a>\n\n<span class=\"nav-link\" *ngIf=\"item.function\" (click)=\"item.function()\" matRipple>\n    <mat-icon class=\"nav-link-icon\" *ngIf=\"item.icon\">{{item.icon}}</mat-icon>\n    <span class=\"nav-link-title\">{{item.title}}</span>\n    <span class=\"nav-link-badge\" *ngIf=\"item.badge\"\n          [ngStyle]=\"{'background-color': item.badge.bg,'color': item.badge.fg}\">\n        {{item.badge.title}}\n    </span>\n</span>"
 
 /***/ }),
 
@@ -2299,7 +2329,7 @@ var FuseNavVerticalGroupComponent = (function () {
 /***/ "../../../../../src/app/core/components/navigation/vertical/nav-item/nav-vertical-item.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<a class=\"nav-link\" *ngIf=\"item.url\" [routerLink]=\"[item.url]\" routerLinkActive=\"active\"\n   [routerLinkActiveOptions]=\"{exact: item.exactMatch || false}\" matRipple>\n    <mat-icon class=\"nav-link-icon\" *ngIf=\"item.icon\">{{item.icon}}</mat-icon>\n    <span class=\"nav-link-title\">{{item.title | translate}}</span>\n    <span class=\"nav-link-badge\" *ngIf=\"item.badge\"\n          [ngStyle]=\"{'background-color': item.badge.bg,'color': item.badge.fg}\">\n        {{item.badge.title}}\n    </span>\n</a>\n\n<span class=\"nav-link\" *ngIf=\"item.function\" (click)=\"item.function()\" matRipple>\n    <mat-icon class=\"nav-link-icon\" *ngIf=\"item.icon\">{{item.icon}}</mat-icon>\n    <span class=\"nav-link-title\">{{item.title}}</span>\n    <span class=\"nav-link-badge\" *ngIf=\"item.badge\"\n          [ngStyle]=\"{'background-color': item.badge.bg,'color': item.badge.fg}\">\n        {{item.badge.title}}\n    </span>\n</span>\n"
+module.exports = "<a class=\"nav-link\" *ngIf=\"item.url && cheack(item)\" [routerLink]=\"[item.url]\" routerLinkActive=\"active\"\n   [routerLinkActiveOptions]=\"{exact: item.exactMatch || false}\" matRipple>\n    <mat-icon class=\"nav-link-icon\" *ngIf=\"item.icon\">{{item.icon}}</mat-icon>\n    <span class=\"nav-link-title\">{{item.title | translate}}</span>\n    <span class=\"nav-link-badge\" *ngIf=\"item.badge\"\n          [ngStyle]=\"{'background-color': item.badge.bg,'color': item.badge.fg}\">\n        {{item.badge.title}}\n    </span>\n</a>\n\n<span class=\"nav-link\" *ngIf=\"item.function\" (click)=\"item.function()\" matRipple>\n    <mat-icon class=\"nav-link-icon\" *ngIf=\"item.icon\">{{item.icon}}</mat-icon>\n    <span class=\"nav-link-title\">{{item.title}}</span>\n    <span class=\"nav-link-badge\" *ngIf=\"item.badge\"\n          [ngStyle]=\"{'background-color': item.badge.bg,'color': item.badge.fg}\">\n        {{item.badge.title}}\n    </span>\n</span>\n"
 
 /***/ }),
 
@@ -2326,7 +2356,8 @@ module.exports = module.exports.toString();
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FuseNavVerticalItemComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2337,27 +2368,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var FuseNavVerticalItemComponent = (function () {
-    function FuseNavVerticalItemComponent() {
+    function FuseNavVerticalItemComponent(mainServ) {
+        this.mainServ = mainServ;
         this.classes = 'nav-item';
     }
     FuseNavVerticalItemComponent.prototype.ngOnInit = function () {
     };
+    FuseNavVerticalItemComponent.prototype.cheack = function (item) {
+        this.isSuperAdmin = this.mainServ.loginServ.getIsSuperAdmin();
+        if (item.data == null || (item.data != null && item.id == 'admin' && this.isSuperAdmin == "true"))
+            return true;
+    };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostBinding"])('class'),
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["HostBinding"])('class'),
         __metadata("design:type", Object)
     ], FuseNavVerticalItemComponent.prototype, "classes", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
         __metadata("design:type", Object)
     ], FuseNavVerticalItemComponent.prototype, "item", void 0);
     FuseNavVerticalItemComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
             selector: 'fuse-nav-vertical-item',
             template: __webpack_require__("../../../../../src/app/core/components/navigation/vertical/nav-item/nav-vertical-item.component.html"),
             styles: [__webpack_require__("../../../../../src/app/core/components/navigation/vertical/nav-item/nav-vertical-item.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__services_main_service__["a" /* MainService */]])
     ], FuseNavVerticalItemComponent);
     return FuseNavVerticalItemComponent;
 }());
@@ -4662,11 +4700,12 @@ var AuthGuardService = (function () {
     AuthGuardService.prototype.canActivate = function (route, state) {
         var path = route.url[0];
         if (this.mainServ.loginServ.isLogin()) {
-            // if (this.mainServ.globalServ.isAllowedPage(path) == false) {
-            //   this.router.navigate(["/Permision"])
-            //   return false;
-            // } else {
-            return true;
+            if (this.mainServ.globalServ.isAllowedPage(path) == false) {
+                this.router.navigate(["/locations"]);
+                return false;
+            }
+            else
+                return true;
             // }
         }
         this.router.navigate(["/login"]);
@@ -5377,56 +5416,11 @@ var GlobalService = (function () {
         this.roles['reception']["WriteForms"] = false;
         this.roles['reception']["Open/BlockCalendar"] = false;
         this.roles['reception']["UserDefinition"] = false;
-        this.pagesRole['manager'] = [];
-        this.pagesRole['manager']['processed'] = true;
-        this.pagesRole['manager']['unprocessed'] = true;
-        this.pagesRole['manager']['contracted'] = true;
-        this.pagesRole['manager']['show-form'] = true;
-        this.pagesRole['manager']['edit-form'] = true;
-        this.pagesRole['manager']['users'] = true;
-        this.pagesRole['manager']['addUser'] = true;
-        this.pagesRole['manager']['editUser'] = true;
-        this.pagesRole['manager']['calendar'] = true;
-        this.pagesRole['adminstrator'] = [];
-        this.pagesRole['adminstrator']['processed'] = true;
-        this.pagesRole['adminstrator']['unprocessed'] = true;
-        this.pagesRole['adminstrator']['contracted'] = true;
-        this.pagesRole['adminstrator']['show-form'] = true;
-        this.pagesRole['adminstrator']['edit-form'] = true;
-        this.pagesRole['adminstrator']['users'] = false;
-        this.pagesRole['adminstrator']['addUser'] = false;
-        this.pagesRole['adminstrator']['editUser'] = false;
-        this.pagesRole['adminstrator']['calendar'] = true;
-        this.pagesRole['consultant'] = [];
-        this.pagesRole['consultant']['processed'] = true;
-        this.pagesRole['consultant']['unprocessed'] = true;
-        this.pagesRole['consultant']['contracted'] = true;
-        this.pagesRole['consultant']['show-form'] = true;
-        this.pagesRole['consultant']['edit-form'] = true;
-        this.pagesRole['consultant']['users'] = false;
-        this.pagesRole['consultant']['addUser'] = false;
-        this.pagesRole['consultant']['editUser'] = false;
-        this.pagesRole['consultant']['calendar'] = true;
-        this.pagesRole['reception'] = [];
-        this.pagesRole['reception']['processed'] = false;
-        this.pagesRole['reception']['unprocessed'] = false;
-        this.pagesRole['reception']['contracted'] = false;
-        this.pagesRole['reception']['show-form'] = false;
-        this.pagesRole['reception']['edit-form'] = false;
-        this.pagesRole['reception']['users'] = false;
-        this.pagesRole['reception']['addUser'] = false;
-        this.pagesRole['reception']['editUser'] = false;
-        this.pagesRole['reception']['calendar'] = true;
-        this.pagesRole['secretary'] = [];
-        this.pagesRole['secretary']['processed'] = true;
-        this.pagesRole['secretary']['unprocessed'] = true;
-        this.pagesRole['secretary']['contracted'] = true;
-        this.pagesRole['secretary']['show-form'] = true;
-        this.pagesRole['secretary']['edit-form'] = false;
-        this.pagesRole['secretary']['users'] = false;
-        this.pagesRole['secretary']['addUser'] = false;
-        this.pagesRole['secretary']['editUser'] = false;
-        this.pagesRole['secretary']['calendar'] = true;
+        this.pagesRole['superAdmin'] = [];
+        this.pagesRole['admin'] = [];
+        this.pagesRole['admin']['admins'] = false;
+        this.pagesRole['admin']['add-admin'] = false;
+        this.pagesRole['admin']['edit-admin'] = false;
     }
     GlobalService.prototype.getIsoCode = function () {
         return this.isoCode;
@@ -5515,6 +5509,20 @@ var GlobalService = (function () {
         console.log(number);
         return number;
     };
+    // isAllowed(role) {
+    //   let typeUser = this.logInSer.getType();
+    //   if (typeUser == null)
+    //     return false
+    //   return this.roles[typeUser][role];
+    // }
+    GlobalService.prototype.isAllowedPage = function (page) {
+        // return true
+        var typeUser = this.logInSer.getType();
+        if (this.pagesRole[typeUser][page] == null)
+            return true;
+        else
+            return false;
+    };
     GlobalService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__call_api_service__["a" /* CallApiService */], __WEBPACK_IMPORTED_MODULE_0__login_service__["a" /* LoginService */]])
@@ -5600,6 +5608,8 @@ var LoginService = (function () {
         this.userId = localStorage.getItem("userId");
         this.token = localStorage.getItem("token");
         this.userName = localStorage.getItem("userName");
+        this.isSuperAdmin = localStorage.getItem("isSuperAdmin");
+        this.type = localStorage.getItem("type");
     };
     LoginService.prototype.isLogin = function () {
         return this.isLogIn;
@@ -5613,6 +5623,9 @@ var LoginService = (function () {
     };
     LoginService.prototype.getuserName = function () {
         return this.userName;
+    };
+    LoginService.prototype.getIsSuperAdmin = function () {
+        return this.isSuperAdmin;
     };
     LoginService.prototype.getType = function () {
         return this.type;
@@ -5632,6 +5645,11 @@ var LoginService = (function () {
         localStorage.setItem('userId', data.userId);
         localStorage.setItem('token', data.id);
         localStorage.setItem('userName', data.user.username);
+        localStorage.setItem('isSuperAdmin', data.user.isSuperAdmin);
+        if (data.user.isSuperAdmin == true)
+            localStorage.setItem('type', "superAdmin");
+        else
+            localStorage.setItem('type', "admin");
         this.router.navigateByUrl('/').then(function () { return _this.router.navigateByUrl('/'); });
     };
     LoginService.prototype.logoutLocalStorage = function () {
@@ -19169,6 +19187,392 @@ var FuseContentComponent = (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/main/content/pages/admin/addAdmin/addAdmin.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'ADMIN.ADDADMIN.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"addAdminForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'ADMIN.EMAIL' | translate }}\" formControlName=\"email\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error *ngIf=\"addAdminForm.hasError('email','email') && !addAdminForm.hasError('required','email')\">{{'Global.ERRORVALIDEMAIL'\r\n              | translate }}</mat-error>\r\n            <mat-error *ngIf=\"addAdminForm.hasError('required','email')\">{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'ADMIN.USERNAME' | translate }}\" formControlName=\"username\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'ADMIN.PASSWORD' | translate }}\" formControlName=\"password\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"add()\" class=\"addButton\" cdkFocusInitial [disabled]=\"addAdminForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/admin/addAdmin/addAdmin.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".divImage {\n  height: 220px;\n  position: relative;\n  width: 100%;\n  text-align: center; }\n  .divImage .imgCustim {\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px auto; }\n  .divImage .imgCustimLoader {\n    position: absolute;\n    opacity: 0.5;\n    top: 0px;\n    /* height: 100%; */\n    left: 0px;\n    /* width: 100%; */\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px auto;\n    margin-left: calc(50% - 100px); }\n\n.divButton {\n  height: 40px;\n  border-radius: 10px;\n  width: 150px;\n  margin: 5px auto;\n  text-align: center;\n  padding: 10px 0px;\n  background-color: #00897B;\n  color: white; }\n  .divButton:hover {\n    background-color: #00695C;\n    cursor: pointer; }\n\n.listOfImgs {\n  width: 1050px;\n  padding: 20px 0px;\n  white-space: nowrap;\n  overflow-x: auto;\n  overflow-y: hidden; }\n  .listOfImgs .listDiv {\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px 10px;\n    position: relative; }\n    .listOfImgs .listDiv .deleteImge {\n      background-color: rgba(204, 204, 204, 0.329412);\n      width: 25px;\n      height: 25px;\n      border-radius: 50%;\n      position: absolute;\n      right: 5px;\n      top: 5px;\n      padding: 2px; }\n      .listOfImgs .listDiv .deleteImge mat-icon {\n        font-size: 21px;\n        font-weight: bold; }\n      .listOfImgs .listDiv .deleteImge:hover {\n        cursor: pointer;\n        background-color: rgba(204, 204, 204, 0.729412); }\n    .listOfImgs .listDiv .listImgCustim {\n      width: 200px;\n      height: 200px;\n      border-radius: 10px; }\n    .listOfImgs .listDiv .listImgCustimLoader {\n      position: absolute;\n      opacity: 0.5;\n      top: 0px;\n      /* height: 100%; */\n      left: 0px;\n      /* width: 100%; */\n      width: 200px;\n      height: 200px;\n      border-radius: 10px;\n      margin-left: calc(50% - 100px); }\n\nul.listOfImgs li {\n  display: inline-block; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/admin/addAdmin/addAdmin.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return addAdminComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__core_services_dialog_service__ = __webpack_require__("../../../../../src/app/core/services/dialog.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_services_translation_loader_service__ = __webpack_require__("../../../../../src/app/core/services/translation-loader.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_services_main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__languageFiles_en__ = __webpack_require__("../../../../../src/app/main/languageFiles/en.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var addAdminComponent = (function () {
+    function addAdminComponent(mainServ, _formBuilder, translate, dialogServ, translationLoader) {
+        this.mainServ = mainServ;
+        this._formBuilder = _formBuilder;
+        this.translate = translate;
+        this.dialogServ = dialogServ;
+        this.translationLoader = translationLoader;
+        this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_6__languageFiles_en__["a" /* locale */]);
+    }
+    addAdminComponent.prototype.ngOnInit = function () {
+        this.addAdminForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormGroup */]({
+            email: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].email]),
+            password: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+            username: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+        });
+    };
+    addAdminComponent.prototype.add = function () {
+        var _this = this;
+        var data = this.addAdminForm.value;
+        this.mainServ.APIServ.post("admins", data).subscribe(function (data) {
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.back();
+            }
+        });
+    };
+    addAdminComponent.prototype.back = function () {
+        this.mainServ.globalServ.goTo('admins');
+    };
+    addAdminComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
+            selector: 'app-addAdmin',
+            template: __webpack_require__("../../../../../src/app/main/content/pages/admin/addAdmin/addAdmin.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/main/content/pages/admin/addAdmin/addAdmin.component.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__core_services_main_service__["a" /* MainService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["b" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_0__core_services_dialog_service__["a" /* DialogService */],
+            __WEBPACK_IMPORTED_MODULE_1__core_services_translation_loader_service__["a" /* FuseTranslationLoaderService */]])
+    ], addAdminComponent);
+    return addAdminComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/admin/admin/admins.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n        <span class=\"logo-text h1\">{{'ADMIN.ALLADMIN.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n      <label for=\"search\" class=\"mr-8\">\r\n        <mat-icon>search</mat-icon>\r\n      </label>\r\n      <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n        <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'ADMIN.ALLADMIN.SEARCH'| translate}}\">\r\n      </mat-form-field>\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'ADMIN.ALLADMIN.ADDADMIN'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"filterRows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n    [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\">\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"email\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'ADMIN.EMAIL' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"username\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'ADMIN.USERNAME' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'ADMIN.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n\r\n    <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab class=\"mr-16\" *ngIf=\"isSuperAdmin()\" (click)=\"reset(row['id'])\" style=\"background-color: rgb(45, 50, 62)\">\r\n          <mat-icon style=\"color : white;\">lock</mat-icon>\r\n        </button>\r\n\r\n        <!-- <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button> -->\r\n        <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/admin/admin/admins.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/admin/admin/admins.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return adminsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dialogs_my_reset_password_my_reset_password_component__ = __webpack_require__("../../../../../src/app/main/dialogs/my-reset-password/my-reset-password.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_services_translation_loader_service__ = __webpack_require__("../../../../../src/app/core/services/translation-loader.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__languageFiles_en__ = __webpack_require__("../../../../../src/app/main/languageFiles/en.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_services_main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__core_services_dialog_service__ = __webpack_require__("../../../../../src/app/core/services/dialog.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var adminsComponent = (function () {
+    function adminsComponent(translationLoader, translateService, mainServ, dialogServ, dialog) {
+        this.translationLoader = translationLoader;
+        this.translateService = translateService;
+        this.mainServ = mainServ;
+        this.dialogServ = dialogServ;
+        this.dialog = dialog;
+        this.allRows = [];
+        this.filterRows = [];
+        this.filterValue = "";
+        this.columns = ["email", "phoneNumber", "gender", "username", 'status'];
+        this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_5__languageFiles_en__["a" /* locale */]);
+        this.inisilaize();
+    }
+    adminsComponent.prototype.inisilaize = function () {
+        var _this = this;
+        this.mainServ.loaderSer.display(true);
+        this.mainServ.APIServ.get("admins").subscribe(function (data) {
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.mainServ.loaderSer.display(false);
+                _this.allRows = data;
+                _this.filterDatatable();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() == 400) {
+            }
+            else {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
+            }
+        });
+    };
+    adminsComponent.prototype.ngOnInit = function () {
+    };
+    adminsComponent.prototype.goTo = function (pageName, id) {
+        var url = "";
+        if (pageName == 'view') {
+            url = 'show-form/' + id;
+        }
+        else if (pageName == 'edit') {
+            url = 'edit-admin/' + id;
+        }
+        this.mainServ.globalServ.goTo(url);
+    };
+    adminsComponent.prototype.addUser = function () {
+        this.mainServ.globalServ.goTo("add-admin");
+    };
+    adminsComponent.prototype.deactivate = function (id) {
+        var _this = this;
+        var mainThis = this;
+        this.translateService.get('MESSAGES.DEACTIVELOCATION').subscribe(function (res) {
+            _this.dialogServ.confirmationMessage(res, "admins/deactivate/" + id, {}, false, function () {
+                mainThis.inisilaize();
+            }, "delete");
+        });
+    };
+    adminsComponent.prototype.activate = function (id, name) {
+        var _this = this;
+        var mainThis = this;
+        this.translateService.get('MESSAGES.ACTIVELOCATION').subscribe(function (res) {
+            _this.dialogServ.confirmationMessage(res, "admins/activate/" + id, {}, false, function () {
+                mainThis.inisilaize();
+            }, "put");
+        });
+    };
+    adminsComponent.prototype.filterDatatable = function () {
+        if (this.filterValue == null)
+            this.filterRows = this.allRows;
+        else {
+            var val_1 = this.filterValue.toLowerCase();
+            var keys_1 = this.columns;
+            var colsAmt_1 = this.columns.length;
+            this.filterRows = this.allRows.filter(function (item) {
+                for (var i = 0; i < colsAmt_1; i++) {
+                    if (item[keys_1[i]].toString().toLowerCase().indexOf(val_1) !== -1 || !val_1) {
+                        return true;
+                    }
+                }
+            });
+        }
+    };
+    adminsComponent.prototype.isSuperAdmin = function () {
+        return this.mainServ.loginServ.getIsSuperAdmin();
+    };
+    adminsComponent.prototype.reset = function (userId) {
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_0__dialogs_my_reset_password_my_reset_password_component__["a" /* MyResetPasswordComponent */], {
+            width: '350px',
+            data: { userId: userId, type: "admins" }
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+        });
+    };
+    adminsComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
+            selector: 'app-admins',
+            template: __webpack_require__("../../../../../src/app/main/content/pages/admin/admin/admins.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/main/content/pages/admin/admin/admins.component.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__core_services_translation_loader_service__["a" /* FuseTranslationLoaderService */],
+            __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["b" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_6__core_services_main_service__["a" /* MainService */],
+            __WEBPACK_IMPORTED_MODULE_7__core_services_dialog_service__["a" /* DialogService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["m" /* MatDialog */]])
+    ], adminsComponent);
+    return adminsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/admin/editDriver/editAdmin.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'DRIVER.EDITDRIVER.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editAdminForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"45\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.EMAIL' | translate }}\" formControlName=\"email\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error *ngIf=\"editAdminForm.hasError('email','email') && !editAdminForm.hasError('required','email')\">{{'Global.ERRORVALIDEMAIL'\r\n              | translate }}</mat-error>\r\n            <mat-error *ngIf=\"editAdminForm.hasError('required','email')\">{{ 'Global.ERRORFIELDREQUIRED' | translate\r\n              }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"45\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.USERNAME' | translate }}\" formControlName=\"username\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editAdminForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/admin/editDriver/editAdmin.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".divImage {\n  height: 220px;\n  position: relative;\n  width: 100%;\n  text-align: center; }\n  .divImage .imgCustim {\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px auto; }\n  .divImage .imgCustimLoader {\n    position: absolute;\n    opacity: 0.5;\n    top: 0px;\n    /* height: 100%; */\n    left: 0px;\n    /* width: 100%; */\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px auto;\n    margin-left: calc(50% - 100px); }\n\n.divButton {\n  height: 40px;\n  border-radius: 10px;\n  width: 150px;\n  margin: 5px auto;\n  text-align: center;\n  padding: 10px 0px;\n  background-color: #00897B;\n  color: white; }\n  .divButton:hover {\n    background-color: #00695C;\n    cursor: pointer; }\n\n.listOfImgs {\n  width: 1050px;\n  padding: 20px 0px;\n  white-space: nowrap;\n  overflow-x: auto;\n  overflow-y: hidden; }\n  .listOfImgs .listDiv {\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px 10px;\n    position: relative; }\n    .listOfImgs .listDiv .deleteImge {\n      background-color: rgba(204, 204, 204, 0.329412);\n      width: 25px;\n      height: 25px;\n      border-radius: 50%;\n      position: absolute;\n      right: 5px;\n      top: 5px;\n      padding: 2px; }\n      .listOfImgs .listDiv .deleteImge mat-icon {\n        font-size: 21px;\n        font-weight: bold; }\n      .listOfImgs .listDiv .deleteImge:hover {\n        cursor: pointer;\n        background-color: rgba(204, 204, 204, 0.729412); }\n    .listOfImgs .listDiv .listImgCustim {\n      width: 200px;\n      height: 200px;\n      border-radius: 10px; }\n    .listOfImgs .listDiv .listImgCustimLoader {\n      position: absolute;\n      opacity: 0.5;\n      top: 0px;\n      /* height: 100%; */\n      left: 0px;\n      /* width: 100%; */\n      width: 200px;\n      height: 200px;\n      border-radius: 10px;\n      margin-left: calc(50% - 100px); }\n\nul.listOfImgs li {\n  display: inline-block; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/admin/editDriver/editAdmin.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return editAdminComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_services_dialog_service__ = __webpack_require__("../../../../../src/app/core/services/dialog.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_services_translation_loader_service__ = __webpack_require__("../../../../../src/app/core/services/translation-loader.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_services_main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__languageFiles_en__ = __webpack_require__("../../../../../src/app/main/languageFiles/en.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var editAdminComponent = (function () {
+    function editAdminComponent(mainServ, _formBuilder, translate, dialogServ, route, translationLoader) {
+        this.mainServ = mainServ;
+        this._formBuilder = _formBuilder;
+        this.translate = translate;
+        this.dialogServ = dialogServ;
+        this.route = route;
+        this.translationLoader = translationLoader;
+        this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_7__languageFiles_en__["a" /* locale */]);
+    }
+    editAdminComponent.prototype.getParams = function (name, callback) {
+        this.route.paramMap.subscribe(function (params) {
+            callback(params.get(name));
+        });
+    };
+    editAdminComponent.prototype.ngOnInit = function () {
+        this.editAdminForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+            email: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].email]),
+            username: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+        });
+        var mainthis = this;
+        this.getParams("id", function (id) {
+            mainthis.adminId = id;
+            mainthis.mainServ.APIServ.get("admins/" + mainthis.adminId).subscribe(function (data) {
+                if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
+                    mainthis.admin = data;
+                    mainthis.editAdminForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+                        email: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.email, [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].email]),
+                        username: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.username, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+                    });
+                }
+            });
+        });
+    };
+    editAdminComponent.prototype.edit = function () {
+        var _this = this;
+        var data = this.editAdminForm.value;
+        this.mainServ.APIServ.put("admins/" + this.adminId, data).subscribe(function (data) {
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.back();
+            }
+        });
+    };
+    editAdminComponent.prototype.back = function () {
+        this.mainServ.globalServ.goTo('admins');
+    };
+    editAdminComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
+            selector: 'app-editAdmin',
+            template: __webpack_require__("../../../../../src/app/main/content/pages/admin/editDriver/editAdmin.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/main/content/pages/admin/editDriver/editAdmin.component.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6__core_services_main_service__["a" /* MainService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__["b" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_1__core_services_dialog_service__["a" /* DialogService */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__core_services_translation_loader_service__["a" /* FuseTranslationLoaderService */]])
+    ], editAdminComponent);
+    return editAdminComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/main/content/pages/authentication/forgot-password-2/forgot-password-2.component.html":
 /***/ (function(module, exports) {
 
@@ -20879,7 +21283,7 @@ var editBrandComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/car/addCar/addCar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'CAR.ADDCAR.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"addCarForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.BRAND' | translate }}\" formControlName=\"brandId\">\r\n              <mat-option *ngFor=\"let oneBrand of brands\" [value]=\"oneBrand.id\">\r\n                {{oneBrand.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'CAR.NAME' | translate }}\" formControlName=\"name\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.NUMBEROFSEAT' | translate }}\" formControlName=\"numOfSeat\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <!-- <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.ENGINTYPE' | translate }}\" formControlName=\"engineType\">\r\n              <mat-option *ngFor=\"let oneEngineType of engineType\" [value]=\"oneEngineType\">\r\n                {{oneEngineType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.TYPE' | translate }}\" formControlName=\"type\">\r\n              <mat-option *ngFor=\"let oneType of type\" [value]=\"oneType\">\r\n                {{oneType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field> -->\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEPERDAY' | translate }}\" formControlName=\"pricePerDay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEONEWAY' | translate }}\" formControlName=\"priceOneWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICETOWWAY' | translate }}\" formControlName=\"priceTowWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.PRODUCTIONDATE' | translate }}\" formControlName=\"productionDate\">\r\n              <mat-option *ngFor=\"let oneYear of years\" [value]=\"oneYear\">\r\n                {{oneYear}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.DRIVER' | translate }}\" formControlName=\"driverId\">\r\n              <mat-option *ngFor=\"let onedriver of drivers\" [value]=\"onedriver.id\">\r\n                {{onedriver.firstName}} {{onedriver.lastName}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.LOCATION' | translate }}\" (selectionChange)=\"changeLocation($event)\"\r\n              formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let onelocation of locations\" [value]=\"onelocation.id\">\r\n                {{onelocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\" *ngFor=\"let oneSublocation of carSublocations;let i=index\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}\"\r\n              [(ngModel)]=\"carSublocations[i].cost\" [ngModelOptions]=\"{standalone: true}\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <section class=\"example-section\" style=\"padding-bottom: 10px;\" fxFlex=\"96\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isVip\">{{\r\n              'CAR.ISVIP' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isAirportCar\">{{\r\n              'CAR.ISAIRPORTCAR' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isCityCar\">{{\r\n              'CAR.ISCITYCAR' | translate }}</mat-checkbox>\r\n          </section>\r\n\r\n          <!-- <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.DRIVER' | translate }}\" formControlName=\"driverId\">\r\n              <mat-option *ngFor=\"let onedriver of drivers\" [value]=\"onedriver.id\">\r\n                {{onedriver.firstName}} {{onedriver.lastName}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field> -->\r\n\r\n\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <div fxFlex=\"40\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <div fxFlex=\"60\">\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'CAR.FIRSTCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"primaryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"primaryColor\"></div>\r\n            </div>\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'CAR.SECONDCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"secondryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"secondryColor\"></div>\r\n            </div>\r\n          </div>\r\n\r\n          <!-- <ul class=\"listOfImgs\">\r\n            <li (click)=\"openSelectListImage()\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" src=\"{{imaageUrl}}\" />\r\n                <input type=\"file\" style=\"display:none\" multiple id=\"listFiles\" accept=\"image/*\" (change)=\"onChangeList($event)\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let value of listImages;let i=index\" class=\"\">\r\n              <div class=\"listDiv\">\r\n                <div class=\"deleteImge\" (click)=\"deleteImage(i)\">\r\n                  <mat-icon style=\"color : white;\">close</mat-icon>\r\n                </div>\r\n                <img class=\"listImgCustim\" src=\"{{value.url}}\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let image of listImageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                <img class=\"listImgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n              </div>\r\n            </li>\r\n          </ul> -->\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"add()\" class=\"addButton\" cdkFocusInitial [disabled]=\"addCarForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'CAR.ADDCAR.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"addCarForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.BRAND' | translate }}\" formControlName=\"brandId\">\r\n              <mat-option *ngFor=\"let oneBrand of brands\" [value]=\"oneBrand.id\">\r\n                {{oneBrand.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'CAR.NAME' | translate }}\" formControlName=\"name\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.NUMBEROFSEAT' | translate }}\" formControlName=\"numOfSeat\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <!-- <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.ENGINTYPE' | translate }}\" formControlName=\"engineType\">\r\n              <mat-option *ngFor=\"let oneEngineType of engineType\" [value]=\"oneEngineType\">\r\n                {{oneEngineType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.TYPE' | translate }}\" formControlName=\"type\">\r\n              <mat-option *ngFor=\"let oneType of type\" [value]=\"oneType\">\r\n                {{oneType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field> -->\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEPERDAY' | translate }}\" formControlName=\"pricePerDay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEONEWAY' | translate }}\" formControlName=\"priceOneWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICETOWWAY' | translate }}\" formControlName=\"priceTowWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.PRODUCTIONDATE' | translate }}\" formControlName=\"productionDate\">\r\n              <mat-option *ngFor=\"let oneYear of years\" [value]=\"oneYear\">\r\n                {{oneYear}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.DRIVER' | translate }}\" formControlName=\"driverId\">\r\n              <mat-option *ngFor=\"let onedriver of drivers\" [value]=\"onedriver.id\">\r\n                {{onedriver.firstName}} {{onedriver.lastName}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.LOCATION' | translate }}\" (selectionChange)=\"changeLocation($event)\"\r\n              formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let onelocation of locations\" [value]=\"onelocation.id\">\r\n                {{onelocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <section class=\"example-section\" style=\"padding-bottom: 10px;\" fxFlex=\"96\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isVip\">{{\r\n              'CAR.ISVIP' | translate }}</mat-checkbox>\r\n            <!-- <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isAirportCar\">{{\r\n              'CAR.ISAIRPORTCAR' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isCityCar\">{{\r\n              'CAR.ISCITYCAR' | translate }}</mat-checkbox> -->\r\n          </section>\r\n\r\n          <!-- <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.DRIVER' | translate }}\" formControlName=\"driverId\">\r\n              <mat-option *ngFor=\"let onedriver of drivers\" [value]=\"onedriver.id\">\r\n                {{onedriver.firstName}} {{onedriver.lastName}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field> -->\r\n\r\n\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <div fxFlex=\"40\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <div fxFlex=\"60\">\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'CAR.FIRSTCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"primaryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"primaryColor\"></div>\r\n            </div>\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'CAR.SECONDCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"secondryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"secondryColor\"></div>\r\n            </div>\r\n          </div>\r\n\r\n          <!-- <ul class=\"listOfImgs\">\r\n            <li (click)=\"openSelectListImage()\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" src=\"{{imaageUrl}}\" />\r\n                <input type=\"file\" style=\"display:none\" multiple id=\"listFiles\" accept=\"image/*\" (change)=\"onChangeList($event)\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let value of listImages;let i=index\" class=\"\">\r\n              <div class=\"listDiv\">\r\n                <div class=\"deleteImge\" (click)=\"deleteImage(i)\">\r\n                  <mat-icon style=\"color : white;\">close</mat-icon>\r\n                </div>\r\n                <img class=\"listImgCustim\" src=\"{{value.url}}\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let image of listImageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                <img class=\"listImgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n              </div>\r\n            </li>\r\n          </ul> -->\r\n          <div fxFlex=\"100\" *ngIf=\"carSublocations.length!=0\">\r\n            <h2 fxFlex=\"100\" style=\"margin: 0px 1.5%;\">{{ 'CAR.SUBLOCATIONS' | translate }}</h2>\r\n          </div>\r\n          <div style=\"padding-top:10px;\" *ngIf=\"carSublocations.length!=0\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxFlex>\r\n            <mat-form-field style=\"margin: 0px 1.5%;\" fxFlex=\"30\" *ngFor=\"let oneSublocation of carSublocations;let i=index\">\r\n              <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}\"\r\n                [(ngModel)]=\"carSublocations[i].cost\" [ngModelOptions]=\"{standalone: true}\" required>\r\n              <mat-icon matSuffix>people</mat-icon>\r\n              <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"add()\" class=\"addButton\" cdkFocusInitial [disabled]=\"addCarForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -20949,8 +21353,8 @@ var addCarComponent = (function () {
         this.subLocation = [];
         this.carSublocations = [];
         this.isVip = false;
-        this.isAirportCar = false;
-        this.isCityCar = false;
+        this.isAirportCar = true;
+        this.isCityCar = true;
         this.years = [];
         this.primaryColor = "#127bdc";
         this.secondryColor = "#127bdc";
@@ -21317,7 +21721,7 @@ var carsComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/car/editCar/editCar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'CAR.EDITCAR.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editCarForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.BRAND' | translate }}\" formControlName=\"brandId\">\r\n              <mat-option *ngFor=\"let oneBrand of brands\" [value]=\"oneBrand.id\">\r\n                {{oneBrand.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'CAR.NAME' | translate }}\" formControlName=\"name\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.NUMBEROFSEAT' | translate }}\" formControlName=\"numOfSeat\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.PRODUCTIONDATE' | translate }}\" formControlName=\"productionDate\">\r\n              <mat-option *ngFor=\"let oneYear of years\" [value]=\"oneYear\">\r\n                {{oneYear}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.DRIVER' | translate }}\" formControlName=\"driverId\">\r\n              <mat-option *ngFor=\"let onedriver of drivers\" [value]=\"onedriver.id\">\r\n                {{onedriver.firstName}} {{onedriver.lastName}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.LOCATION' | translate }}\" (selectionChange)=\"changeLocation($event)\"\r\n              formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let onelocation of locations\" [value]=\"onelocation.id\">\r\n                {{onelocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\" *ngFor=\"let oneSublocation of carSublocations;let i=index\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}\"\r\n              [(ngModel)]=\"carSublocations[i].cost\" [ngModelOptions]=\"{standalone: true}\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <!-- <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.ENGINTYPE' | translate }}\" formControlName=\"engineType\">\r\n              <mat-option *ngFor=\"let oneEngineType of engineType\" [value]=\"oneEngineType\">\r\n                {{oneEngineType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.TYPE' | translate }}\" formControlName=\"type\">\r\n              <mat-option *ngFor=\"let oneType of type\" [value]=\"oneType\">\r\n                {{oneType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field> -->\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEPERDAY' | translate }}\" formControlName=\"pricePerDay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEONEWAY' | translate }}\" formControlName=\"priceOneWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICETOWWAY' | translate }}\" formControlName=\"priceTowWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <section class=\"example-section\" fxFlex=\"96\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isVip\">{{\r\n              'CAR.ISVIP' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isAirportCar\">{{\r\n              'CAR.ISAIRPORTCAR' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isCityCar\">{{\r\n              'CAR.ISCITYCAR' | translate }}</mat-checkbox>\r\n          </section>\r\n\r\n\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <div fxFlex=\"40\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <div fxFlex=\"60\">\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'CAR.FIRSTCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"primaryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"primaryColor\"></div>\r\n            </div>\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'CAR.SECONDCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"secondryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"secondryColor\"></div>\r\n            </div>\r\n          </div>\r\n\r\n          <!-- <ul class=\"listOfImgs\">\r\n            <li (click)=\"openSelectListImage()\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" src=\"{{imaageUrl}}\" />\r\n                <input type=\"file\" style=\"display:none\" multiple id=\"listFiles\" accept=\"image/*\" (change)=\"onChangeList($event)\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let value of listImages;let i=index\" class=\"\">\r\n              <div class=\"listDiv\">\r\n                <div class=\"deleteImge\" (click)=\"deleteImage(i)\">\r\n                  <mat-icon style=\"color : white;\">close</mat-icon>\r\n                </div>\r\n                <img class=\"listImgCustim\" src=\"{{value.url}}\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let image of listImageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                <img class=\"listImgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n              </div>\r\n            </li>\r\n          </ul> -->\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editCarForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'CAR.EDITCAR.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editCarForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.BRAND' | translate }}\" formControlName=\"brandId\">\r\n              <mat-option *ngFor=\"let oneBrand of brands\" [value]=\"oneBrand.id\">\r\n                {{oneBrand.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'CAR.NAME' | translate }}\" formControlName=\"name\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.NUMBEROFSEAT' | translate }}\" formControlName=\"numOfSeat\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.PRODUCTIONDATE' | translate }}\" formControlName=\"productionDate\">\r\n              <mat-option *ngFor=\"let oneYear of years\" [value]=\"oneYear\">\r\n                {{oneYear}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.DRIVER' | translate }}\" formControlName=\"driverId\">\r\n              <mat-option *ngFor=\"let onedriver of drivers\" [value]=\"onedriver.id\">\r\n                {{onedriver.firstName}} {{onedriver.lastName}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.LOCATION' | translate }}\" (selectionChange)=\"changeLocation($event)\"\r\n              formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let onelocation of locations\" [value]=\"onelocation.id\">\r\n                {{onelocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <!-- <mat-form-field fxFlex=\"30\" *ngFor=\"let oneSublocation of carSublocations;let i=index\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}\"\r\n              [(ngModel)]=\"carSublocations[i].cost\" [ngModelOptions]=\"{standalone: true}\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field> -->\r\n\r\n\r\n          <!-- <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.ENGINTYPE' | translate }}\" formControlName=\"engineType\">\r\n              <mat-option *ngFor=\"let oneEngineType of engineType\" [value]=\"oneEngineType\">\r\n                {{oneEngineType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.TYPE' | translate }}\" formControlName=\"type\">\r\n              <mat-option *ngFor=\"let oneType of type\" [value]=\"oneType\">\r\n                {{oneType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field> -->\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEPERDAY' | translate }}\" formControlName=\"pricePerDay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEONEWAY' | translate }}\" formControlName=\"priceOneWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICETOWWAY' | translate }}\" formControlName=\"priceTowWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <section class=\"example-section\" fxFlex=\"96\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isVip\">{{\r\n              'CAR.ISVIP' | translate }}</mat-checkbox>\r\n            <!-- <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isAirportCar\">{{\r\n              'CAR.ISAIRPORTCAR' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isCityCar\">{{\r\n              'CAR.ISCITYCAR' | translate }}</mat-checkbox> -->\r\n          </section>\r\n\r\n\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <div fxFlex=\"40\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <div fxFlex=\"60\">\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'CAR.FIRSTCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"primaryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"primaryColor\"></div>\r\n            </div>\r\n\r\n            <div class=\"p-24\">\r\n              <span style=\"float: left;font-size: 18px;\"> {{ 'CAR.SECONDCOLOR' | translate }}</span>\r\n              <div style=\"width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;\" [style.background-color]=\"secondryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"secondryColor\"></div>\r\n            </div>\r\n          </div>\r\n\r\n          <!-- <ul class=\"listOfImgs\">\r\n            <li (click)=\"openSelectListImage()\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" src=\"{{imaageUrl}}\" />\r\n                <input type=\"file\" style=\"display:none\" multiple id=\"listFiles\" accept=\"image/*\" (change)=\"onChangeList($event)\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let value of listImages;let i=index\" class=\"\">\r\n              <div class=\"listDiv\">\r\n                <div class=\"deleteImge\" (click)=\"deleteImage(i)\">\r\n                  <mat-icon style=\"color : white;\">close</mat-icon>\r\n                </div>\r\n                <img class=\"listImgCustim\" src=\"{{value.url}}\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let image of listImageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                <img class=\"listImgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n              </div>\r\n            </li>\r\n          </ul> -->\r\n\r\n          <div fxFlex=\"100\" *ngIf=\"carSublocations.length!=0\">\r\n            <h2 fxFlex=\"100\" style=\"margin: 0px 1.5%;\">{{ 'CAR.SUBLOCATIONS' | translate }}</h2>\r\n          </div>\r\n          <div style=\"padding-top:10px;\" *ngIf=\"carSublocations.length!=0\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\"\r\n            fxFlex>\r\n            <mat-form-field style=\"margin: 0px 1.5%;\" fxFlex=\"30\" *ngFor=\"let oneSublocation of carSublocations;let i=index\">\r\n              <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}\"\r\n                [(ngModel)]=\"carSublocations[i].cost\" [ngModelOptions]=\"{standalone: true}\" required>\r\n              <mat-icon matSuffix>people</mat-icon>\r\n              <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editCarForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -21782,7 +22186,7 @@ var ComingSoonModule = (function () {
 /***/ "../../../../../src/app/main/content/pages/driver/addDriver/addDriver.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'DRIVER.ADDDRIVER.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"addDriverForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.FIRSTNAME' | translate }}\" formControlName=\"firstName\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.LASTNAME' | translate }}\" formControlName=\"lastName\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.PHONENUMBER' | translate }}\" formControlName=\"phoneNumber\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.EMAIL' | translate }}\" formControlName=\"email\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error *ngIf=\"addDriverForm.hasError('email','email') && !addDriverForm.hasError('required','email')\">{{'Global.ERRORVALIDEMAIL'\r\n              | translate }}</mat-error>\r\n            <mat-error *ngIf=\"addDriverForm.hasError('required','email')\">{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.USERNAME' | translate }}\" formControlName=\"username\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.PASSWORD' | translate }}\" formControlName=\"password\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <mat-select formControlName=\"gender\" placeholder=\"{{ 'DRIVER.GENDER' | translate }}\">\r\n              <mat-option [value]=\"'male'\">\r\n                {{ 'DRIVER.MALE' | translate }}\r\n              </mat-option>\r\n              <mat-option [value]=\"'female'\">\r\n                {{ 'DRIVER.FEMALE' | translate }}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"24\">\r\n            <mat-select placeholder=\"{{ 'DRIVER.LANGUAGES' | translate }}\" formControlName=\"driverLangs\" multiple>\r\n              <mat-option *ngFor=\"let oneLang of listLanguages\" [value]=\"oneLang.id\">{{oneLang.name}}</mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <div fxFlex=\"30\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                  <!-- <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div> -->\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"add()\" class=\"addButton\" cdkFocusInitial [disabled]=\"addDriverForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'DRIVER.ADDDRIVER.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"addDriverForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.FIRSTNAME' | translate }}\" formControlName=\"firstName\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.LASTNAME' | translate }}\" formControlName=\"lastName\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.PHONENUMBER' | translate }}\" formControlName=\"phoneNumber\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.EMAIL' | translate }}\" formControlName=\"email\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error *ngIf=\"addDriverForm.hasError('email','email') && !addDriverForm.hasError('required','email')\">{{'Global.ERRORVALIDEMAIL'\r\n              | translate }}</mat-error>\r\n            <mat-error *ngIf=\"addDriverForm.hasError('required','email')\">{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.USERNAME' | translate }}\" formControlName=\"username\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.PASSWORD' | translate }}\" formControlName=\"password\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <mat-select formControlName=\"gender\" placeholder=\"{{ 'DRIVER.GENDER' | translate }}\">\r\n              <mat-option [value]=\"'male'\">\r\n                {{ 'DRIVER.MALE' | translate }}\r\n              </mat-option>\r\n              <mat-option [value]=\"'female'\">\r\n                {{ 'DRIVER.FEMALE' | translate }}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"24\">\r\n            <mat-select placeholder=\"{{ 'DRIVER.LANGUAGES' | translate }}\" formControlName=\"driverLangs\" multiple>\r\n              <mat-option *ngFor=\"let oneLang of listLanguages\" [value]=\"oneLang.id\">{{oneLang.name}}</mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <div fxFlex=\"40\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                  <!-- <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div> -->\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <div fxFlex=\"60\">\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"add()\" class=\"addButton\" cdkFocusInitial [disabled]=\"addDriverForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -22102,7 +22506,7 @@ var driversComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/driver/editDriver/editDriver.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'DRIVER.EDITDRIVER.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editDriverForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.FIRSTNAME' | translate }}\" formControlName=\"firstName\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.LASTNAME' | translate }}\" formControlName=\"lastName\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.PHONENUMBER' | translate }}\" formControlName=\"phoneNumber\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.EMAIL' | translate }}\" formControlName=\"email\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error *ngIf=\"editDriverForm.hasError('email','email') && !editDriverForm.hasError('required','email')\">{{'Global.ERRORVALIDEMAIL'\r\n              | translate }}</mat-error>\r\n            <mat-error *ngIf=\"editDriverForm.hasError('required','email')\">{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"32\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.USERNAME' | translate }}\" formControlName=\"username\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"32\">\r\n            <mat-select formControlName=\"gender\" placeholder=\"{{ 'DRIVER.GENDER' | translate }}\">\r\n              <mat-option [value]=\"'male'\">\r\n                {{ 'DRIVER.MALE' | translate }}\r\n              </mat-option>\r\n              <mat-option [value]=\"'female'\">\r\n                {{ 'DRIVER.FEMALE' | translate }}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"32\">\r\n            <mat-select placeholder=\"{{ 'DRIVER.LANGUAGES' | translate }}\" formControlName=\"driverLangs\" multiple>\r\n              <mat-option *ngFor=\"let oneLang of listLanguages\" [value]=\"oneLang.id\">{{oneLang.name}}</mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <div fxFlex=\"30\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                  <!-- <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div> -->\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editDriverForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'DRIVER.EDITDRIVER.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editDriverForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.FIRSTNAME' | translate }}\" formControlName=\"firstName\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.LASTNAME' | translate }}\" formControlName=\"lastName\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.PHONENUMBER' | translate }}\" formControlName=\"phoneNumber\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.EMAIL' | translate }}\" formControlName=\"email\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error *ngIf=\"editDriverForm.hasError('email','email') && !editDriverForm.hasError('required','email')\">{{'Global.ERRORVALIDEMAIL'\r\n              | translate }}</mat-error>\r\n            <mat-error *ngIf=\"editDriverForm.hasError('required','email')\">{{ 'Global.ERRORFIELDREQUIRED' | translate\r\n              }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"32\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.USERNAME' | translate }}\" formControlName=\"username\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"32\">\r\n            <mat-select formControlName=\"gender\" placeholder=\"{{ 'DRIVER.GENDER' | translate }}\">\r\n              <mat-option [value]=\"'male'\">\r\n                {{ 'DRIVER.MALE' | translate }}\r\n              </mat-option>\r\n              <mat-option [value]=\"'female'\">\r\n                {{ 'DRIVER.FEMALE' | translate }}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"32\">\r\n            <mat-select placeholder=\"{{ 'DRIVER.LANGUAGES' | translate }}\" formControlName=\"driverLangs\" multiple>\r\n              <mat-option *ngFor=\"let oneLang of listLanguages\" [value]=\"oneLang.id\">{{oneLang.name}}</mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <div fxFlex=\"40\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                  <!-- <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div> -->\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <div fxFlex=\"60\"></div>\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editDriverForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n\r\n  <div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n    <div class=\"header mat-accent-bg p-16 whiteCustomHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\"\r\n      fxLayout.gt-xs=\"row\" fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n      <!-- APP TITLE -->\r\n      <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n        <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n          fxHide.gt-md>\r\n          <mat-icon>menu</mat-icon>\r\n        </button>\r\n\r\n        <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n          <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n          <span class=\"logo-text h1\">{{'TRIP.ALLTRIP.TITLE' | translate}}</span>\r\n\r\n        </div>\r\n\r\n      </div>\r\n      <!-- / APP TITLE -->\r\n\r\n      <!-- SEARCH -->\r\n      <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <label for=\"search\" class=\"mr-8\">\r\n          <mat-icon>search</mat-icon>\r\n        </label>\r\n        <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n          <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'SUBLOCATION.ALLSUBLOCATION.SEARCH'| translate}}\">\r\n        </mat-form-field>\r\n        <!-- <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addSublocation()\">{{'SUBLOCATION.ALLSUBLOCATION.ADDSUBLOCATION'\r\n            | translate}}</button> -->\r\n\r\n      </div>\r\n      <!-- / SEARCH -->\r\n\r\n\r\n    </div>\r\n\r\n    <ngx-datatable class=\"material vertical-scroll\" [rows]=\"filterRows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n      [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\">\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"owner.name\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'TRIP.USER' | translate }}</span>\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"location.nameEn\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'TRIP.LOCATION' | translate }}</span>\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"car.name\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'TRIP.CAR' | translate }}</span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"driver.username\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'TRIP.DRIVER' | translate }}</span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"cost\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'TRIP.PRICE' | translate }}</span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'TRIP.STATUS' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <mat-chip-list *ngIf=\"row.status=='active'\">\r\n            <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n          </mat-chip-list>\r\n          <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n            <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n          </mat-chip-list>\r\n          <mat-chip-list *ngIf=\"row.status!='deactive' && row.status!='active'\">\r\n            <mat-chip style=\"background-color:#3b6fff\" selected=\"true\">{{row.status}}</mat-chip>\r\n          </mat-chip-list>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [width]=\"190\" [flexGrow]=\"1\" prop=\"start\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'TRIP.START' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <span>\r\n            {{row[\"start\"] | date: 'dd-MM-yyyy hh:mm a'}}\r\n          </span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [width]=\"190\" [flexGrow]=\"1\" prop=\"end\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'TRIP.END' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <span>\r\n            {{row[\"end\"] | date: 'dd-MM-yyyy hh:mm a'}}\r\n          </span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n\r\n\r\n\r\n      <ngx-datatable-column [width]=\"260\" name=\"id\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n          <div class=\"table-header-font\">\r\n\r\n          </div>\r\n        </ng-template>\r\n\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <button mat-mini-fab *ngIf=\"row.status=='finished'\" class=\"mr-16\" style=\"background-color: #8a8a8a;\" (click)=\"goTo('bills',row['id'])\">\r\n            <mat-icon style=\"color : white;\">subtitles</mat-icon>\r\n          </button>\r\n\r\n          <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n            <mat-icon style=\"color : white;\">edit</mat-icon>\r\n          </button>\r\n          <!-- <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n                <mat-icon style=\"color : white;\">delete</mat-icon>\r\n              </button>\r\n              <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n                <mat-icon style=\"color : white;\">replay</mat-icon>\r\n              </button> -->\r\n          <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"goTo('view',row['id'])\">\r\n            <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n          </button>\r\n\r\n\r\n          <button mat-icon-button [matMenuTriggerFor]=\"menu\">\r\n            <mat-icon>more_vert</mat-icon>\r\n          </button>\r\n          <mat-menu #menu=\"matMenu\">\r\n            <button mat-menu-item *ngIf=\"row.status!='deactive'\" (click)=\"changeStatus('deactive',row.id)\">\r\n              <mat-icon>cancel</mat-icon>\r\n              <span>{{'TRIP.DEACTIVE' | translate}}</span>\r\n            </button>\r\n            <button mat-menu-item *ngIf=\"row.status!='approved'\" (click)=\"changeStatus('approved',row.id)\">\r\n              <mat-icon>more_horiz</mat-icon>\r\n              <span>{{'TRIP.APPROVED' | translate}}</span>\r\n            </button>\r\n            <button mat-menu-item *ngIf=\"row.status!='pending'\" (click)=\"changeStatus('pending',row.id)\">\r\n              <mat-icon>group</mat-icon>\r\n              <span>{{'TRIP.PENDING' | translate}}</span>\r\n            </button>\r\n            <button mat-menu-item *ngIf=\"row.status!='active'\" (click)=\"changeStatus('active',row.id)\">\r\n              <mat-icon>check</mat-icon>\r\n              <span>{{'TRIP.ACTIVE' | translate}}</span>\r\n            </button>\r\n            <button mat-menu-item *ngIf=\"row.status!='finished'\" (click)=\"changeStatus('finished',row.id)\">\r\n              <mat-icon>check</mat-icon>\r\n              <span>{{'TRIP.FINISHED' | translate}}</span>\r\n            </button>\r\n          </mat-menu>\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n\r\n\r\n\r\n    </ngx-datatable>\r\n\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -22166,6 +22570,11 @@ var editDriverComponent = (function () {
         this.imaageUrl = this.mainServ.getDefultImage();
         this.images = [];
         this.listLanguages = [];
+        // trip
+        this.filterValue = "";
+        this.allRows = [];
+        this.filterRows = [];
+        this.columns = ["cost", "status", "driver.username", "location.nameEn", "car.name"];
         this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_7__languageFiles_en__["a" /* locale */]);
     }
     editDriverComponent.prototype.getParams = function (name, callback) {
@@ -22254,12 +22663,73 @@ var editDriverComponent = (function () {
                         driverLangs: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](langId, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
                         username: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.username, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
                     });
+                    mainthis.inisilaize();
                 }
             });
         });
         this.mainServ.APIServ.get("languages").subscribe(function (data) {
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.listLanguages = data;
+            }
+        });
+    };
+    editDriverComponent.prototype.addHours = function (h, start) {
+        console.log(start.toString());
+        var date = new Date(start.toString());
+        date.setHours(date.getHours() + h);
+        console.log(date);
+        return date;
+    };
+    editDriverComponent.prototype.calcStartDateAndEnd = function () {
+        for (var index = 0; index < this.allRows.length; index++) {
+            var element = this.allRows[index];
+            if (element.type == "fromAirport") {
+                element.start = element.fromAirportDate;
+                element.end = this.addHours(2, element.fromAirportDate);
+            }
+            else if (element.type == "city") {
+                element.start = element.startInCityDate;
+                element.end = element.endInCityDate;
+            }
+            else if (element.type == "toAirport") {
+                element.start = element.toAirportDate;
+                element.end = this.addHours(2, element.toAirportDate);
+            }
+            else if (element.type == "fromAirportAndCity") {
+                element.start = element.fromAirportDate;
+                element.end = element.endInCityDate;
+            }
+            else if (element.type == "fromAirportAndToAirport") {
+                element.start = element.fromAirportDate;
+                element.end = element.toAirportDate;
+            }
+            else if (element.type == "cityAndToAirport") {
+                element.start = element.startInCityDate;
+                element.end = this.addHours(2, element.toAirportDate);
+            }
+            else if (element.type == "fromAirportAndCityAndToAirport") {
+                element.start = element.fromAirportDate;
+                element.end = this.addHours(2, element.toAirportDate);
+            }
+        }
+    };
+    editDriverComponent.prototype.inisilaize = function () {
+        var _this = this;
+        this.mainServ.loaderSer.display(true);
+        var filter = { "where": { "ownerId": this.driverId } };
+        // var filter = {}
+        this.mainServ.APIServ.get("trips?filter=" + JSON.stringify(filter)).subscribe(function (data) {
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.mainServ.loaderSer.display(false);
+                _this.allRows = data;
+                _this.calcStartDateAndEnd();
+                _this.filterDatatable();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() == 400) {
+            }
+            else {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -22275,6 +22745,56 @@ var editDriverComponent = (function () {
     };
     editDriverComponent.prototype.back = function () {
         this.mainServ.globalServ.goTo('drivers');
+    };
+    editDriverComponent.prototype.filterDatatable = function () {
+        if (this.filterValue == null)
+            this.filterRows = this.allRows;
+        else {
+            var val_1 = this.filterValue.toLowerCase();
+            var keys_1 = this.columns;
+            var colsAmt_1 = this.columns.length;
+            this.filterRows = this.allRows.filter(function (item) {
+                for (var i = 0; i < colsAmt_1; i++) {
+                    if (keys_1[i] == "driver.username") {
+                        if (item["driver"]["username"].toString().toLowerCase().indexOf(val_1) !== -1 || !val_1)
+                            return true;
+                    }
+                    else if (keys_1[i] == "location.nameEn") {
+                        if (item["location"]["nameEn"].toString().toLowerCase().indexOf(val_1) !== -1 || !val_1)
+                            return true;
+                    }
+                    else if (keys_1[i] == "car.name") {
+                        if (item["car"]["name"].toString().toLowerCase().indexOf(val_1) !== -1 || !val_1)
+                            return true;
+                    }
+                    else if (item[keys_1[i]].toString().toLowerCase().indexOf(val_1) !== -1 || !val_1) {
+                        return true;
+                    }
+                }
+            });
+        }
+    };
+    editDriverComponent.prototype.goTo = function (pageName, id) {
+        var url = "";
+        if (pageName == 'view') {
+            url = 'view-trip/' + id;
+        }
+        else if (pageName == 'edit') {
+            url = 'edit-user/' + id;
+        }
+        else if (pageName == 'bills') {
+            url = 'bill/' + id;
+        }
+        this.mainServ.globalServ.goTo(url);
+    };
+    editDriverComponent.prototype.changeStatus = function (newStatus, id) {
+        var _this = this;
+        var mainThis = this;
+        this.translate.get('MESSAGES.CHANGESTATUS').subscribe(function (res) {
+            _this.dialogServ.confirmationMessage(res, "trips/changeStatus/" + id, { "newStatus": newStatus }, false, function () {
+                mainThis.inisilaize();
+            }, "put");
+        });
     };
     editDriverComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
@@ -27356,6 +27876,140 @@ var billComponent = (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/main/content/pages/trip/editTrip/editTrip.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'CAR.EDITCAR.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editUserForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'USER.NAME' | translate }}\" formControlName=\"name\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'USER.PHONENUMBER' | translate }}\" formControlName=\"phoneNumber\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'USER.ISOCODE' | translate }}\" formControlName=\"ISOCode\">\r\n              <mat-option *ngFor=\"let oneCode of isoCode\" [value]=\"oneCode.isoCode\">\r\n                {{oneCode.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editUserForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/trip/editTrip/editTrip.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".divImage {\n  height: 220px;\n  position: relative;\n  width: 100%;\n  text-align: center; }\n  .divImage .imgCustim {\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px auto; }\n  .divImage .imgCustimLoader {\n    position: absolute;\n    opacity: 0.5;\n    top: 0px;\n    /* height: 100%; */\n    left: 0px;\n    /* width: 100%; */\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px auto;\n    margin-left: calc(50% - 100px); }\n\n.divButton {\n  height: 40px;\n  border-radius: 10px;\n  width: 150px;\n  margin: 5px auto;\n  text-align: center;\n  padding: 10px 0px;\n  background-color: #00897B;\n  color: white; }\n  .divButton:hover {\n    background-color: #00695C;\n    cursor: pointer; }\n\n.listOfImgs {\n  width: 1050px;\n  padding: 20px 0px;\n  white-space: nowrap;\n  overflow-x: auto;\n  overflow-y: hidden; }\n  .listOfImgs .listDiv {\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px 10px;\n    position: relative; }\n    .listOfImgs .listDiv .deleteImge {\n      background-color: rgba(204, 204, 204, 0.329412);\n      width: 25px;\n      height: 25px;\n      border-radius: 50%;\n      position: absolute;\n      right: 5px;\n      top: 5px;\n      padding: 2px; }\n      .listOfImgs .listDiv .deleteImge mat-icon {\n        font-size: 21px;\n        font-weight: bold; }\n      .listOfImgs .listDiv .deleteImge:hover {\n        cursor: pointer;\n        background-color: rgba(204, 204, 204, 0.729412); }\n    .listOfImgs .listDiv .listImgCustim {\n      width: 200px;\n      height: 200px;\n      border-radius: 10px; }\n    .listOfImgs .listDiv .listImgCustimLoader {\n      position: absolute;\n      opacity: 0.5;\n      top: 0px;\n      /* height: 100%; */\n      left: 0px;\n      /* width: 100%; */\n      width: 200px;\n      height: 200px;\n      border-radius: 10px;\n      margin-left: calc(50% - 100px); }\n\nul.listOfImgs li {\n  display: inline-block; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/trip/editTrip/editTrip.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return editTripComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_services_dialog_service__ = __webpack_require__("../../../../../src/app/core/services/dialog.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_services_translation_loader_service__ = __webpack_require__("../../../../../src/app/core/services/translation-loader.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_services_main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__languageFiles_en__ = __webpack_require__("../../../../../src/app/main/languageFiles/en.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var editTripComponent = (function () {
+    function editTripComponent(mainServ, _formBuilder, translate, dialogServ, route, translationLoader) {
+        this.mainServ = mainServ;
+        this._formBuilder = _formBuilder;
+        this.translate = translate;
+        this.dialogServ = dialogServ;
+        this.route = route;
+        this.translationLoader = translationLoader;
+        this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_7__languageFiles_en__["a" /* locale */]);
+    }
+    editTripComponent.prototype.getParams = function (name, callback) {
+        this.route.paramMap.subscribe(function (params) {
+            callback(params.get(name));
+        });
+    };
+    editTripComponent.prototype.ngOnInit = function () {
+        this.editTripForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+            name: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+            phoneNumber: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+            ISOCode: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
+        });
+        this.isoCode = this.mainServ.globalServ.getIsoCode();
+        var mainthis = this;
+        this.getParams("id", function (id) {
+            var _this = this;
+            mainthis.userId = id;
+            mainthis.mainServ.APIServ.get("users/" + mainthis.userId).subscribe(function (data) {
+                if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
+                    mainthis.user = data;
+                    mainthis.editTripForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+                        name: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.name, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+                        phoneNumber: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.phoneNumber, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+                        ISOCode: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.ISOCode, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
+                    });
+                }
+                else {
+                    _this.dialogServ.someThingIsError();
+                }
+            });
+        });
+    };
+    editTripComponent.prototype.edit = function () {
+        var _this = this;
+        var data = this.editTripForm.value;
+        this.mainServ.APIServ.put("users/" + this.userId, data).subscribe(function (data) {
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.back();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() == 451) {
+                _this.dialogServ.errorMessage(451);
+            }
+            else {
+                _this.dialogServ.someThingIsError();
+            }
+        });
+    };
+    editTripComponent.prototype.back = function () {
+        this.mainServ.globalServ.goTo('users');
+    };
+    editTripComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
+            selector: 'app-editTrip',
+            template: __webpack_require__("../../../../../src/app/main/content/pages/trip/editTrip/editTrip.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/main/content/pages/trip/editTrip/editTrip.component.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6__core_services_main_service__["a" /* MainService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__["b" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_1__core_services_dialog_service__["a" /* DialogService */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__core_services_translation_loader_service__["a" /* FuseTranslationLoaderService */]])
+    ], editTripComponent);
+    return editTripComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/main/content/pages/trip/trips/trips.component.html":
 /***/ (function(module, exports) {
 
@@ -27568,7 +28222,7 @@ var tripsComponent = (function () {
             url = 'view-trip/' + id;
         }
         else if (pageName == 'edit') {
-            url = 'edit-user/' + id;
+            url = 'edit-trip/' + id;
         }
         else if (pageName == 'bills') {
             url = 'bill/' + id;
@@ -27757,7 +28411,7 @@ var viewTripComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/user/addUser/addUser.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'USER.ADDUSER.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"addUserForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'USER.NAME' | translate }}\" formControlName=\"name\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'USER.PHONENUMBER' | translate }}\" formControlName=\"phoneNumber\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'USER.PASSWORD' | translate }}\" formControlName=\"password\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <mat-select placeholder=\"{{ 'USER.ISOCODE' | translate }}\" formControlName=\"ISOCode\">\r\n              <mat-option *ngFor=\"let oneCode of isoCode\" [value]=\"oneCode.isoCode\">\r\n                {{oneCode.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"add()\" class=\"addButton\" cdkFocusInitial [disabled]=\"addUserForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'USER.ADDUSER.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"addUserForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'USER.NAME' | translate }}\" formControlName=\"name\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'USER.PHONENUMBER' | translate }}\" formControlName=\"phoneNumber\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <input matInput placeholder=\"{{ 'USER.PASSWORD' | translate }}\" formControlName=\"password\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"24\">\r\n            <mat-select placeholder=\"{{ 'USER.ISOCODE' | translate }}\" formControlName=\"ISOCode\">\r\n              <mat-option *ngFor=\"let oneCode of isoCode\" [value]=\"oneCode.isoCode\">\r\n                {{oneCode.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <div fxFlex=\"40\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <div fxFlex=\"60\"></div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"add()\" class=\"addButton\" cdkFocusInitial [disabled]=\"addUserForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -27815,6 +28469,9 @@ var addUserComponent = (function () {
         this.dialogServ = dialogServ;
         this.translationLoader = translationLoader;
         this.isoCode = [];
+        this.imageOnLoad = [];
+        this.images = [];
+        this.imaageUrl = this.mainServ.getDefultImage();
         this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_6__languageFiles_en__["a" /* locale */]);
     }
     addUserComponent.prototype.ngOnInit = function () {
@@ -27829,6 +28486,7 @@ var addUserComponent = (function () {
     addUserComponent.prototype.add = function () {
         var _this = this;
         var data = this.addUserForm.value;
+        data['mediaId'] = this.media.id;
         this.mainServ.APIServ.post("users", data).subscribe(function (data) {
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.back();
@@ -27843,6 +28501,53 @@ var addUserComponent = (function () {
     };
     addUserComponent.prototype.back = function () {
         this.mainServ.globalServ.goTo('users');
+    };
+    addUserComponent.prototype.onChange = function (event) {
+        var _this = this;
+        var files = [].slice.call(event.target.files);
+        var allFilles = event.target.files;
+        var images = [];
+        this.images = [];
+        this.imageOnLoad = Array(files.length);
+        var innerIndex = 0;
+        for (var i = 0; i < allFilles.length; i++) {
+            var file = allFilles[i];
+            var x;
+            console.log("fromOut");
+            console.log(i);
+            this.releadImage(i, file);
+        }
+        var files2 = Array.from(event.target.files);
+        files.forEach(function (fileElement, index) {
+            var countDelete = 0;
+            // this.ng2ImgMaxService.compress([fileElement], 0.5, true, true).subscribe((result) => {
+            _this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).subscribe(function (data) {
+                _this.imageOnLoad = [];
+                countDelete++;
+                if (_this.mainServ.APIServ.getErrorCode() == 0)
+                    data.forEach(function (element) {
+                        _this.images[0] = element;
+                        _this.media = element;
+                    });
+                else {
+                    _this.mainServ.APIServ.setErrorCode(0);
+                    _this.dialogServ.someThingIsError();
+                }
+            });
+        });
+        // });
+    };
+    addUserComponent.prototype.openSelectImage = function () {
+        document.getElementById('files').click();
+    };
+    addUserComponent.prototype.releadImage = function (innerIndex, file) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var id = 'uploadImage' + innerIndex;
+            document.getElementById(id).setAttribute('src', reader.result);
+            // this.text = reader.result;
+        };
+        reader.readAsDataURL(file);
     };
     addUserComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
@@ -27866,7 +28571,7 @@ var addUserComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/user/editUser/editUser.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'USER.EDITUSER.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editUserForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'USER.NAME' | translate }}\" formControlName=\"name\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'USER.PHONENUMBER' | translate }}\" formControlName=\"phoneNumber\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'USER.ISOCODE' | translate }}\" formControlName=\"ISOCode\">\r\n              <mat-option *ngFor=\"let oneCode of isoCode\" [value]=\"oneCode.isoCode\">\r\n                {{oneCode.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editUserForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'USER.EDITUSER.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editUserForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'USER.NAME' | translate }}\" formControlName=\"name\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'USER.PHONENUMBER' | translate }}\" formControlName=\"phoneNumber\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'USER.ISOCODE' | translate }}\" formControlName=\"ISOCode\">\r\n              <mat-option *ngFor=\"let oneCode of isoCode\" [value]=\"oneCode.isoCode\">\r\n                {{oneCode.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <div fxFlex=\"40\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <div fxFlex=\"60\"></div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editUserForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n\r\n  <div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n    <div class=\"header mat-accent-bg p-16 whiteCustomHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\"\r\n      fxLayout.gt-xs=\"row\" fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n      <!-- APP TITLE -->\r\n      <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n        <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n          fxHide.gt-md>\r\n          <mat-icon>menu</mat-icon>\r\n        </button>\r\n\r\n        <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n          <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n          <span class=\"logo-text h1\">{{'TRIP.ALLTRIP.TITLE' | translate}}</span>\r\n\r\n        </div>\r\n\r\n      </div>\r\n      <!-- / APP TITLE -->\r\n\r\n      <!-- SEARCH -->\r\n      <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <label for=\"search\" class=\"mr-8\">\r\n          <mat-icon>search</mat-icon>\r\n        </label>\r\n        <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n          <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'SUBLOCATION.ALLSUBLOCATION.SEARCH'| translate}}\">\r\n        </mat-form-field>\r\n        <!-- <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addSublocation()\">{{'SUBLOCATION.ALLSUBLOCATION.ADDSUBLOCATION'\r\n          | translate}}</button> -->\r\n\r\n      </div>\r\n      <!-- / SEARCH -->\r\n\r\n\r\n    </div>\r\n\r\n    <ngx-datatable class=\"material vertical-scroll\" [rows]=\"filterRows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n      [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\">\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"owner.name\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'TRIP.USER' | translate }}</span>\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"location.nameEn\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'TRIP.LOCATION' | translate }}</span>\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"car.name\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'TRIP.CAR' | translate }}</span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"driver.username\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'TRIP.DRIVER' | translate }}</span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"cost\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'TRIP.PRICE' | translate }}</span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'TRIP.STATUS' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <mat-chip-list *ngIf=\"row.status=='active'\">\r\n            <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n          </mat-chip-list>\r\n          <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n            <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n          </mat-chip-list>\r\n          <mat-chip-list *ngIf=\"row.status!='deactive' && row.status!='active'\">\r\n            <mat-chip style=\"background-color:#3b6fff\" selected=\"true\">{{row.status}}</mat-chip>\r\n          </mat-chip-list>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [width]=\"190\" [flexGrow]=\"1\" prop=\"start\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'TRIP.START' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <span>\r\n            {{row[\"start\"] | date: 'dd-MM-yyyy hh:mm a'}}\r\n          </span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [width]=\"190\" [flexGrow]=\"1\" prop=\"end\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'TRIP.END' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <span>\r\n            {{row[\"end\"] | date: 'dd-MM-yyyy hh:mm a'}}\r\n          </span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n\r\n\r\n\r\n      <ngx-datatable-column [width]=\"260\" name=\"id\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n          <div class=\"table-header-font\">\r\n\r\n          </div>\r\n        </ng-template>\r\n\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <button mat-mini-fab *ngIf=\"row.status=='finished'\" class=\"mr-16\" style=\"background-color: #8a8a8a;\" (click)=\"goTo('bills',row['id'])\">\r\n            <mat-icon style=\"color : white;\">subtitles</mat-icon>\r\n          </button>\r\n\r\n          <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n            <mat-icon style=\"color : white;\">edit</mat-icon>\r\n          </button>\r\n          <!-- <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n              <mat-icon style=\"color : white;\">delete</mat-icon>\r\n            </button>\r\n            <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n              <mat-icon style=\"color : white;\">replay</mat-icon>\r\n            </button> -->\r\n          <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"goTo('view',row['id'])\">\r\n            <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n          </button>\r\n\r\n\r\n          <button mat-icon-button [matMenuTriggerFor]=\"menu\">\r\n            <mat-icon>more_vert</mat-icon>\r\n          </button>\r\n          <mat-menu #menu=\"matMenu\">\r\n            <button mat-menu-item *ngIf=\"row.status!='deactive'\" (click)=\"changeStatus('deactive',row.id)\">\r\n              <mat-icon>cancel</mat-icon>\r\n              <span>{{'TRIP.DEACTIVE' | translate}}</span>\r\n            </button>\r\n            <button mat-menu-item *ngIf=\"row.status!='approved'\" (click)=\"changeStatus('approved',row.id)\">\r\n              <mat-icon>more_horiz</mat-icon>\r\n              <span>{{'TRIP.APPROVED' | translate}}</span>\r\n            </button>\r\n            <button mat-menu-item *ngIf=\"row.status!='pending'\" (click)=\"changeStatus('pending',row.id)\">\r\n              <mat-icon>group</mat-icon>\r\n              <span>{{'TRIP.PENDING' | translate}}</span>\r\n            </button>\r\n            <button mat-menu-item *ngIf=\"row.status!='active'\" (click)=\"changeStatus('active',row.id)\">\r\n              <mat-icon>check</mat-icon>\r\n              <span>{{'TRIP.ACTIVE' | translate}}</span>\r\n            </button>\r\n            <button mat-menu-item *ngIf=\"row.status!='finished'\" (click)=\"changeStatus('finished',row.id)\">\r\n              <mat-icon>check</mat-icon>\r\n              <span>{{'TRIP.FINISHED' | translate}}</span>\r\n            </button>\r\n          </mat-menu>\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n\r\n\r\n\r\n    </ngx-datatable>\r\n\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -27926,6 +28631,15 @@ var editUserComponent = (function () {
         this.dialogServ = dialogServ;
         this.route = route;
         this.translationLoader = translationLoader;
+        this.isoCode = [];
+        this.imageOnLoad = [];
+        this.images = [];
+        this.imaageUrl = this.mainServ.getDefultImage();
+        // trip
+        this.filterValue = "";
+        this.allRows = [];
+        this.filterRows = [];
+        this.columns = ["cost", "status", "driver.username", "location.nameEn", "car.name"];
         this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_7__languageFiles_en__["a" /* locale */]);
     }
     editUserComponent.prototype.getParams = function (name, callback) {
@@ -27947,11 +28661,16 @@ var editUserComponent = (function () {
             mainthis.mainServ.APIServ.get("users/" + mainthis.userId).subscribe(function (data) {
                 if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
                     mainthis.user = data;
+                    if (data.media) {
+                        mainthis.media = data.media;
+                        mainthis.images[0] = data.media;
+                    }
                     mainthis.editUserForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
                         name: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.name, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
                         phoneNumber: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.phoneNumber, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
                         ISOCode: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.ISOCode, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
                     });
+                    mainthis.inisilaize();
                 }
                 else {
                     _this.dialogServ.someThingIsError();
@@ -27959,9 +28678,70 @@ var editUserComponent = (function () {
             });
         });
     };
+    editUserComponent.prototype.addHours = function (h, start) {
+        console.log(start.toString());
+        var date = new Date(start.toString());
+        date.setHours(date.getHours() + h);
+        console.log(date);
+        return date;
+    };
+    editUserComponent.prototype.calcStartDateAndEnd = function () {
+        for (var index = 0; index < this.allRows.length; index++) {
+            var element = this.allRows[index];
+            if (element.type == "fromAirport") {
+                element.start = element.fromAirportDate;
+                element.end = this.addHours(2, element.fromAirportDate);
+            }
+            else if (element.type == "city") {
+                element.start = element.startInCityDate;
+                element.end = element.endInCityDate;
+            }
+            else if (element.type == "toAirport") {
+                element.start = element.toAirportDate;
+                element.end = this.addHours(2, element.toAirportDate);
+            }
+            else if (element.type == "fromAirportAndCity") {
+                element.start = element.fromAirportDate;
+                element.end = element.endInCityDate;
+            }
+            else if (element.type == "fromAirportAndToAirport") {
+                element.start = element.fromAirportDate;
+                element.end = element.toAirportDate;
+            }
+            else if (element.type == "cityAndToAirport") {
+                element.start = element.startInCityDate;
+                element.end = this.addHours(2, element.toAirportDate);
+            }
+            else if (element.type == "fromAirportAndCityAndToAirport") {
+                element.start = element.fromAirportDate;
+                element.end = this.addHours(2, element.toAirportDate);
+            }
+        }
+    };
+    editUserComponent.prototype.inisilaize = function () {
+        var _this = this;
+        this.mainServ.loaderSer.display(true);
+        var filter = { "where": { "ownerId": this.userId } };
+        // var filter = {}
+        this.mainServ.APIServ.get("trips?filter=" + JSON.stringify(filter)).subscribe(function (data) {
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.mainServ.loaderSer.display(false);
+                _this.allRows = data;
+                _this.calcStartDateAndEnd();
+                _this.filterDatatable();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() == 400) {
+            }
+            else {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
+            }
+        });
+    };
     editUserComponent.prototype.edit = function () {
         var _this = this;
         var data = this.editUserForm.value;
+        data['mediaId'] = this.media.id;
         this.mainServ.APIServ.put("users/" + this.userId, data).subscribe(function (data) {
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.back();
@@ -27976,6 +28756,103 @@ var editUserComponent = (function () {
     };
     editUserComponent.prototype.back = function () {
         this.mainServ.globalServ.goTo('users');
+    };
+    editUserComponent.prototype.onChange = function (event) {
+        var _this = this;
+        var files = [].slice.call(event.target.files);
+        var allFilles = event.target.files;
+        var images = [];
+        this.images = [];
+        this.imageOnLoad = Array(files.length);
+        var innerIndex = 0;
+        for (var i = 0; i < allFilles.length; i++) {
+            var file = allFilles[i];
+            var x;
+            console.log("fromOut");
+            console.log(i);
+            this.releadImage(i, file);
+        }
+        var files2 = Array.from(event.target.files);
+        files.forEach(function (fileElement, index) {
+            var countDelete = 0;
+            // this.ng2ImgMaxService.compress([fileElement], 0.5, true, true).subscribe((result) => {
+            _this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).subscribe(function (data) {
+                _this.imageOnLoad = [];
+                countDelete++;
+                if (_this.mainServ.APIServ.getErrorCode() == 0)
+                    data.forEach(function (element) {
+                        _this.images[0] = element;
+                        _this.media = element;
+                    });
+                else {
+                    _this.mainServ.APIServ.setErrorCode(0);
+                    _this.dialogServ.someThingIsError();
+                }
+            });
+        });
+        // });
+    };
+    editUserComponent.prototype.openSelectImage = function () {
+        document.getElementById('files').click();
+    };
+    editUserComponent.prototype.releadImage = function (innerIndex, file) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var id = 'uploadImage' + innerIndex;
+            document.getElementById(id).setAttribute('src', reader.result);
+            // this.text = reader.result;
+        };
+        reader.readAsDataURL(file);
+    };
+    editUserComponent.prototype.filterDatatable = function () {
+        if (this.filterValue == null)
+            this.filterRows = this.allRows;
+        else {
+            var val_1 = this.filterValue.toLowerCase();
+            var keys_1 = this.columns;
+            var colsAmt_1 = this.columns.length;
+            this.filterRows = this.allRows.filter(function (item) {
+                for (var i = 0; i < colsAmt_1; i++) {
+                    if (keys_1[i] == "driver.username") {
+                        if (item["driver"]["username"].toString().toLowerCase().indexOf(val_1) !== -1 || !val_1)
+                            return true;
+                    }
+                    else if (keys_1[i] == "location.nameEn") {
+                        if (item["location"]["nameEn"].toString().toLowerCase().indexOf(val_1) !== -1 || !val_1)
+                            return true;
+                    }
+                    else if (keys_1[i] == "car.name") {
+                        if (item["car"]["name"].toString().toLowerCase().indexOf(val_1) !== -1 || !val_1)
+                            return true;
+                    }
+                    else if (item[keys_1[i]].toString().toLowerCase().indexOf(val_1) !== -1 || !val_1) {
+                        return true;
+                    }
+                }
+            });
+        }
+    };
+    editUserComponent.prototype.goTo = function (pageName, id) {
+        var url = "";
+        if (pageName == 'view') {
+            url = 'view-trip/' + id;
+        }
+        else if (pageName == 'edit') {
+            url = 'edit-user/' + id;
+        }
+        else if (pageName == 'bills') {
+            url = 'bill/' + id;
+        }
+        this.mainServ.globalServ.goTo(url);
+    };
+    editUserComponent.prototype.changeStatus = function (newStatus, id) {
+        var _this = this;
+        var mainThis = this;
+        this.translate.get('MESSAGES.CHANGESTATUS').subscribe(function (res) {
+            _this.dialogServ.confirmationMessage(res, "trips/changeStatus/" + id, { "newStatus": newStatus }, false, function () {
+                mainThis.inisilaize();
+            }, "put");
+        });
     };
     editUserComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
@@ -28197,7 +29074,7 @@ var usersComponent = (function () {
     usersComponent.prototype.reset = function (userId) {
         var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_7__dialogs_my_reset_password_my_reset_password_component__["a" /* MyResetPasswordComponent */], {
             width: '350px',
-            data: { userId: userId }
+            data: { userId: userId, type: "users" }
         });
         dialogRef.afterClosed().subscribe(function (result) {
         });
@@ -31009,7 +31886,9 @@ var MyResetPasswordComponent = (function () {
         this.translationLoader = translationLoader;
         this.mainServ = mainServ;
         this.userId = "";
+        this.type = "";
         this.userId = data['userId'];
+        this.type = data['type'];
         this.resetPassForm = new __WEBPACK_IMPORTED_MODULE_0__angular_forms__["d" /* FormGroup */]({
             newPassword: new __WEBPACK_IMPORTED_MODULE_0__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_0__angular_forms__["l" /* Validators */].required),
         });
@@ -31021,7 +31900,7 @@ var MyResetPasswordComponent = (function () {
         var _this = this;
         var data = this.resetPassForm.value;
         data['userId'] = this.userId;
-        this.mainServ.APIServ.put("users/resetPassword", data).subscribe(function (data) {
+        this.mainServ.APIServ.put(this.type + "/resetPassword", data).subscribe(function (data) {
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.dialogRef.close();
             }
@@ -31273,6 +32152,23 @@ var locale = {
                 "TITLE": "Edit Driver"
             },
         },
+        "ADMIN": {
+            "EMAIL": "Email",
+            "STATUS": "Status",
+            "USERNAME": "Username",
+            "PASSWORD": "Password",
+            "ALLADMIN": {
+                "TITLE": "Admin",
+                "ADDADMIN": "Add Admin",
+                "SEARCH": "Search for Admin"
+            },
+            "ADDADMIN": {
+                "TITLE": "Add Admin"
+            },
+            "EDITADMIN": {
+                "TITLE": "Edit Admin"
+            },
+        },
         "LOCATION": {
             "DESCRIPTIONEN": "English Description",
             "DESCRIPTIONAR": "Arabic Description",
@@ -31334,6 +32230,7 @@ var locale = {
             "COSTIN": "Cost In ",
             "DRIVERPHONENUMBER": "Driver Phonenumber",
             "DRIVERUSERNAME": "Driver Username",
+            "SUBLOCATIONS": "Nearby Citys",
             "ALLCAR": {
                 "TITLE": "Car",
                 "ADDCAR": "Add Car",
@@ -32392,6 +33289,7 @@ var FuseToolbarComponent = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavigationModel; });
 var NavigationModel = (function () {
     function NavigationModel() {
+        this.isSuperAdmin = "false";
         this.model = [
             {
                 'id': 'location',
@@ -32434,6 +33332,12 @@ var NavigationModel = (function () {
                 'title': 'PREDEFINEDTRIP.ALLPREDEFINEDTRIP.TITLE',
                 'type': 'item',
                 'url': '/predefined-trips'
+            },
+            {
+                'id': 'admin',
+                'title': 'ADMIN.ALLADMIN.TITLE',
+                'type': 'item',
+                'url': '/admins'
             }
             // {
             //     'id'      : 'applications',
@@ -33283,6 +34187,8 @@ var NavigationModel = (function () {
             //     ]
             // }
         ];
+        // this.model.push()
+        // }
     }
     return NavigationModel;
 }());

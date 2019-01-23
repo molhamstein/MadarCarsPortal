@@ -32,8 +32,8 @@ export class addCarComponent implements OnInit {
   subLocation = [];
   carSublocations = [];
   isVip = false
-  isAirportCar = false
-  isCityCar = false
+  isAirportCar = true
+  isCityCar = true
 
 
 

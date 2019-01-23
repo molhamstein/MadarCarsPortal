@@ -68,66 +68,15 @@ export class GlobalService {
     this.roles['reception']["Open/BlockCalendar"] = false
     this.roles['reception']["UserDefinition"] = false
 
-    this.pagesRole['manager'] = []
-    this.pagesRole['manager']['processed'] = true
-    this.pagesRole['manager']['unprocessed'] = true
-    this.pagesRole['manager']['contracted'] = true
-    this.pagesRole['manager']['show-form'] = true
-    this.pagesRole['manager']['edit-form'] = true
-    this.pagesRole['manager']['users'] = true
-    this.pagesRole['manager']['addUser'] = true
-    this.pagesRole['manager']['editUser'] = true
-    this.pagesRole['manager']['calendar'] = true
+    this.pagesRole['superAdmin'] = []
 
 
-    this.pagesRole['adminstrator'] = []
-    this.pagesRole['adminstrator']['processed'] = true
-    this.pagesRole['adminstrator']['unprocessed'] = true
-    this.pagesRole['adminstrator']['contracted'] = true
-    this.pagesRole['adminstrator']['show-form'] = true
-    this.pagesRole['adminstrator']['edit-form'] = true
-    this.pagesRole['adminstrator']['users'] = false
-    this.pagesRole['adminstrator']['addUser'] = false
-    this.pagesRole['adminstrator']['editUser'] = false
-    this.pagesRole['adminstrator']['calendar'] = true
+    this.pagesRole['admin'] = []
+    this.pagesRole['admin']['admins'] = false
+    this.pagesRole['admin']['add-admin'] = false
+    this.pagesRole['admin']['edit-admin'] = false
 
 
-    this.pagesRole['consultant'] = []
-    this.pagesRole['consultant']['processed'] = true
-    this.pagesRole['consultant']['unprocessed'] = true
-    this.pagesRole['consultant']['contracted'] = true
-    this.pagesRole['consultant']['show-form'] = true
-    this.pagesRole['consultant']['edit-form'] = true
-    this.pagesRole['consultant']['users'] = false
-    this.pagesRole['consultant']['addUser'] = false
-    this.pagesRole['consultant']['editUser'] = false
-    this.pagesRole['consultant']['calendar'] = true
-
-
-
-    this.pagesRole['reception'] = []
-    this.pagesRole['reception']['processed'] = false
-    this.pagesRole['reception']['unprocessed'] = false
-    this.pagesRole['reception']['contracted'] = false
-    this.pagesRole['reception']['show-form'] = false
-    this.pagesRole['reception']['edit-form'] = false
-    this.pagesRole['reception']['users'] = false
-    this.pagesRole['reception']['addUser'] = false
-    this.pagesRole['reception']['editUser'] = false
-    this.pagesRole['reception']['calendar'] = true
-
-
-
-    this.pagesRole['secretary'] = []
-    this.pagesRole['secretary']['processed'] = true
-    this.pagesRole['secretary']['unprocessed'] = true
-    this.pagesRole['secretary']['contracted'] = true
-    this.pagesRole['secretary']['show-form'] = true
-    this.pagesRole['secretary']['edit-form'] = false
-    this.pagesRole['secretary']['users'] = false
-    this.pagesRole['secretary']['addUser'] = false
-    this.pagesRole['secretary']['editUser'] = false
-    this.pagesRole['secretary']['calendar'] = true
 
 
 
@@ -497,12 +446,13 @@ export class GlobalService {
   //   return this.roles[typeUser][role];
   // }
 
-  // isAllowedPage(page) {
-  //   // return true
-  //   let typeUser = this.logInSer.getType();
-  //   if (typeUser == null)
-  //     return false
-  //   return this.pagesRole[typeUser][page];
-  // }
+  isAllowedPage(page) {
+    // return true
+    var typeUser = this.logInSer.getType();    
+    if (this.pagesRole[typeUser][page] == null)
+      return true
+    else
+      return false
+  }
 
 }

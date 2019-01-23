@@ -14,6 +14,7 @@ export class LoginService {
   userId;
   token;
   userName
+  isSuperAdmin
   type
   constructor(private cookieService: CookieService, private router: Router) {
     if (localStorage.getItem('userId')) {
@@ -29,6 +30,9 @@ export class LoginService {
     this.userId = localStorage.getItem("userId");
     this.token = localStorage.getItem("token");
     this.userName = localStorage.getItem("userName");
+    this.isSuperAdmin = localStorage.getItem("isSuperAdmin");
+    this.type = localStorage.getItem("type");
+
   }
 
   isLogin() {
@@ -48,9 +52,14 @@ export class LoginService {
     return this.userName;
   }
 
+  getIsSuperAdmin() {
+    return this.isSuperAdmin;
+  }
+
   getType() {
     return this.type;
   }
+
 
   logIn(data, rememberPass: boolean = true) {
     this.isLogIn = true;
@@ -69,6 +78,11 @@ export class LoginService {
     localStorage.setItem('userId', data.userId);
     localStorage.setItem('token', data.id);
     localStorage.setItem('userName', data.user.username);
+    localStorage.setItem('isSuperAdmin', data.user.isSuperAdmin);
+    if (data.user.isSuperAdmin == true)
+      localStorage.setItem('type', "superAdmin");
+    else
+      localStorage.setItem('type', "admin");
     this.router.navigateByUrl('/').then(() => this.router.navigateByUrl('/'));
   }
 

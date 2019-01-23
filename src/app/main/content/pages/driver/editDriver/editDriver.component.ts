@@ -25,6 +25,13 @@ export class editDriverComponent implements OnInit {
   listLanguages = [];
   driverId;
   driver;
+
+  // trip
+  filterValue = ""
+  allRows = [];
+  filterRows = [];
+  columns = ["cost", "status", "driver.username", "location.nameEn", "car.name"]
+
   constructor(
     private mainServ: MainService,
     private _formBuilder: FormBuilder,
@@ -128,6 +135,7 @@ export class editDriverComponent implements OnInit {
             driverLangs: new FormControl(langId, Validators.required),
             username: new FormControl(data.username, Validators.required),
           });
+          mainthis.inisilaize();
 
         }
       })
@@ -143,6 +151,66 @@ export class editDriverComponent implements OnInit {
   }
 
 
+  addHours(h, start) {
+    console.log(start.toString())
+    var date = new Date(start.toString());
+    date.setHours(date.getHours() + h);
+    console.log(date)
+    return date
+  }
+
+  calcStartDateAndEnd() {
+    for (let index = 0; index < this.allRows.length; index++) {
+      const element = this.allRows[index];
+      if (element.type == "fromAirport") {
+        element.start = element.fromAirportDate;
+        element.end = this.addHours(2, element.fromAirportDate);
+      } else if (element.type == "city") {
+        element.start = element.startInCityDate;
+        element.end = element.endInCityDate;
+      } else if (element.type == "toAirport") {
+        element.start = element.toAirportDate;
+        element.end = this.addHours(2, element.toAirportDate);
+      } else if (element.type == "fromAirportAndCity") {
+        element.start = element.fromAirportDate;
+        element.end = element.endInCityDate;
+      } else if (element.type == "fromAirportAndToAirport") {
+        element.start = element.fromAirportDate;
+        element.end = element.toAirportDate;
+      } else if (element.type == "cityAndToAirport") {
+        element.start = element.startInCityDate;
+        element.end = this.addHours(2, element.toAirportDate);
+      } else if (element.type == "fromAirportAndCityAndToAirport") {
+        element.start = element.fromAirportDate;
+        element.end = this.addHours(2, element.toAirportDate);
+      }
+    }
+  }
+
+  inisilaize() {
+    this.mainServ.loaderSer.display(true);
+    var filter = { "where": { "ownerId": this.driverId } };
+    // var filter = {}
+    this.mainServ.APIServ.get("trips?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+      if (this.mainServ.APIServ.getErrorCode() == 0) {
+
+        this.mainServ.loaderSer.display(false);
+        this.allRows = data;
+        this.calcStartDateAndEnd();
+        this.filterDatatable();
+      }
+      else if (this.mainServ.APIServ.getErrorCode() == 400) {
+
+      }
+      else {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
+      }
+
+    });
+  }
+
+
   edit() {
     var data = this.editDriverForm.value;
     data['mediaId'] = this.media.id;
@@ -155,6 +223,59 @@ export class editDriverComponent implements OnInit {
 
   back() {
     this.mainServ.globalServ.goTo('drivers')
+  }
+
+
+  filterDatatable() {
+    if (this.filterValue == null)
+      this.filterRows = this.allRows
+    else {
+      let val = this.filterValue.toLowerCase();
+      let keys = this.columns;
+
+      let colsAmt = this.columns.length;
+      this.filterRows = this.allRows.filter(function (item) {
+        for (let i = 0; i < colsAmt; i++) {
+          if (keys[i] == "driver.username") {
+            if (item["driver"]["username"].toString().toLowerCase().indexOf(val) !== -1 || !val)
+              return true;
+          }
+          else if (keys[i] == "location.nameEn") {
+            if (item["location"]["nameEn"].toString().toLowerCase().indexOf(val) !== -1 || !val)
+              return true;
+          }
+          else if (keys[i] == "car.name") {
+            if (item["car"]["name"].toString().toLowerCase().indexOf(val) !== -1 || !val)
+              return true;
+          }
+          else if (item[keys[i]].toString().toLowerCase().indexOf(val) !== -1 || !val) {
+            return true;
+          }
+        }
+      });
+    }
+  }
+
+  goTo(pageName, id) {
+    let url = ""
+    if (pageName == 'view') {
+      url = 'view-trip/' + id
+    } else if (pageName == 'edit') {
+      url = 'edit-user/' + id
+    } else if (pageName == 'bills') {
+      url = 'bill/' + id
+    }
+    this.mainServ.globalServ.goTo(url)
+
+  }
+
+  changeStatus(newStatus, id) {
+    var mainThis = this;
+    this.translate.get('MESSAGES.CHANGESTATUS').subscribe((res: string) => {
+      this.dialogServ.confirmationMessage(res, "trips/changeStatus/" + id, { "newStatus": newStatus }, false, function () {
+        mainThis.inisilaize()
+      }, "put")
+    })
   }
 
 

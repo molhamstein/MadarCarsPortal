@@ -12,6 +12,7 @@ import { MainService } from '../../../core/services/main.service';
 })
 export class MyResetPasswordComponent {
     userId = "";
+    type = "";
     resetPassForm
     constructor(
         public dialogRef: MatDialogRef<MyResetPasswordComponent>,
@@ -20,6 +21,7 @@ export class MyResetPasswordComponent {
         private translationLoader: FuseTranslationLoaderService,
         private mainServ: MainService) {
         this.userId = data['userId']
+        this.type = data['type']
         this.resetPassForm = new FormGroup({
             newPassword: new FormControl('', Validators.required),
         })
@@ -34,7 +36,7 @@ export class MyResetPasswordComponent {
     reset() {
         var data = this.resetPassForm.value;
         data['userId'] = this.userId;
-        this.mainServ.APIServ.put("users/resetPassword", data).subscribe((data: any) => {
+        this.mainServ.APIServ.put(this.type + "/resetPassword", data).subscribe((data: any) => {
             if (this.mainServ.APIServ.getErrorCode() == 0) {
                 this.dialogRef.close();
             }

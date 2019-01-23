@@ -189,7 +189,7 @@ export class tripsComponent implements OnInit {
     if (pageName == 'view') {
       url = 'view-trip/' + id
     } else if (pageName == 'edit') {
-      url = 'edit-user/' + id
+      url = 'edit-trip/' + id
     }else if (pageName == 'bills') {
       url = 'bill/' + id
     }

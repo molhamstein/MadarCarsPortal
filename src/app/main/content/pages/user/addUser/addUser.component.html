@@ -52,6 +52,39 @@
         </div>
       </div>
 
+      <div style="width: 100%;">
+        <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
+          fxFlex>
+          <div fxFlex="40">
+            <div class="divImage">
+              <div>
+                <div *ngIf="images.length==0 && imageOnLoad.length==0" class="">
+                  <img class="imgCustim" src="{{imaageUrl}}" />
+                </div>
+
+                <div *ngFor="let value of images;let i=index" class="">
+                  <img class="imgCustim" src="{{value.url}}" />
+                  <div class="imgCustimLoader" [style.background-image]="'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'"></div>
+                </div>
+                <div *ngFor="let image of imageOnLoad;let i = index" class="AddNewForm-imagescontainer-smallimage"
+                  style="    position: relative;">
+                  <img class="imgCustim" id="{{'uploadImage'+i}}" />
+                  <img class="imgCustimLoader" src="assets/images/madar/infinity_loader_by_volorf.gif" />
+
+                </div>
+              </div>
+            </div>
+            <div class="divButton" (click)="openSelectImage()">
+              <input type="file" style="display:none" id="files" accept="image/*" (change)="onChange($event)" />
+
+              <span>
+                {{ 'Global.UPLOADIMAGE' | translate }}
+              </span>
+            </div>
+          </div>
+          <div fxFlex="60"></div>
+        </div>
+      </div>
       <div style="float: right;">
         <button mat-button (click)="add()" class="addButton" cdkFocusInitial [disabled]="addUserForm.invalid">{{'Global.ADD'
           | translate}}</button>

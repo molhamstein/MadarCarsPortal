@@ -68,6 +68,24 @@ export const locale = {
                 "TITLE": "Edit Driver"
             },
         },
+        "ADMIN": {
+            "EMAIL": "Email",
+            "STATUS": "Status",
+            "USERNAME": "Username",
+            "PASSWORD": "Password",
+            "ALLADMIN": {
+                "TITLE": "Admin",
+                "ADDADMIN": "Add Admin",
+                "SEARCH": "Search for Admin"
+
+            },
+            "ADDADMIN": {
+                "TITLE": "Add Admin"
+            },
+            "EDITADMIN": {
+                "TITLE": "Edit Admin"
+            },
+        },
         "LOCATION": {
             "DESCRIPTIONEN": "English Description",
             "DESCRIPTIONAR": "Arabic Description",
@@ -130,6 +148,7 @@ export const locale = {
             "COSTIN": "Cost In ",
             "DRIVERPHONENUMBER": "Driver Phonenumber",
             "DRIVERUSERNAME": "Driver Username",
+            "SUBLOCATIONS": "Nearby Citys",
             "ALLCAR": {
                 "TITLE": "Car",
                 "ADDCAR": "Add Car",

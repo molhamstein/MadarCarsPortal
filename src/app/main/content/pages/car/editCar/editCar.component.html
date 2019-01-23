@@ -74,12 +74,12 @@
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
-          <mat-form-field fxFlex="30" *ngFor="let oneSublocation of carSublocations;let i=index">
+          <!-- <mat-form-field fxFlex="30" *ngFor="let oneSublocation of carSublocations;let i=index">
             <input matInput type="number" min="0" placeholder="{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}"
               [(ngModel)]="carSublocations[i].cost" [ngModelOptions]="{standalone: true}" required>
             <mat-icon matSuffix>people</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
+          </mat-form-field> -->
 
 
           <!-- <mat-form-field fxFlex="30">
@@ -126,12 +126,12 @@
           <section class="example-section" fxFlex="96">
             <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" [(ngModel)]="isVip">{{
               'CAR.ISVIP' | translate }}</mat-checkbox>
-            <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" style="padding-left: 12px;"
+            <!-- <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" style="padding-left: 12px;"
               [(ngModel)]="isAirportCar">{{
               'CAR.ISAIRPORTCAR' | translate }}</mat-checkbox>
             <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" style="padding-left: 30px;"
               [(ngModel)]="isCityCar">{{
-              'CAR.ISCITYCAR' | translate }}</mat-checkbox>
+              'CAR.ISCITYCAR' | translate }}</mat-checkbox> -->
           </section>
 
 
@@ -205,6 +205,19 @@
               </div>
             </li>
           </ul> -->
+
+          <div fxFlex="100" *ngIf="carSublocations.length!=0">
+            <h2 fxFlex="100" style="margin: 0px 1.5%;">{{ 'CAR.SUBLOCATIONS' | translate }}</h2>
+          </div>
+          <div style="padding-top:10px;" *ngIf="carSublocations.length!=0" fxLayout="column" fxLayout.gt-md="row wrap"
+            fxFlex>
+            <mat-form-field style="margin: 0px 1.5%;" fxFlex="30" *ngFor="let oneSublocation of carSublocations;let i=index">
+              <input matInput type="number" min="0" placeholder="{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}"
+                [(ngModel)]="carSublocations[i].cost" [ngModelOptions]="{standalone: true}" required>
+              <mat-icon matSuffix>people</mat-icon>
+              <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+            </mat-form-field>
+          </div>
         </div>
       </div>
       <div style="float: right;">

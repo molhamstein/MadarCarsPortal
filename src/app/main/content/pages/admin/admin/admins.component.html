@@ -1,0 +1,101 @@
+<div id="contacts" class="page-layout simple left-sidenav inner-sidenav">
+
+  <div class="header mat-accent-bg p-16 customHeader" fxLayout="column" fxLayoutAlign="start start" fxLayout.gt-xs="row"
+    fxLayoutAlign.gt-xs="space-between center">
+
+    <!-- APP TITLE -->
+    <div fxLayout="row" fxLayoutAlign="start center">
+
+      <button mat-button class="mat-icon-button sidenav-toggle mr-12" fuseMatSidenavToggler="contacts-main-sidenav"
+        fxHide.gt-md>
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <div class="logo" fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon class="logo-icon mr-16">account_box</mat-icon>
+        <span class="logo-text h1">{{'ADMIN.ALLADMIN.TITLE' | translate}}</span>
+      </div>
+
+    </div>
+    <!-- / APP TITLE -->
+
+    <!-- SEARCH -->
+    <div class="search-input-wrapper mt-16 ml-8 m-sm-0" fxLayout="row" fxLayoutAlign="start center">
+      <label for="search" class="mr-8">
+        <mat-icon>search</mat-icon>
+      </label>
+      <mat-form-field mat-no-float class="m-0" floatPlaceholder="never">
+        <input matInput id="search" [(ngModel)]="filterValue" (ngModelChange)="filterDatatable()" placeholder="{{'ADMIN.ALLADMIN.SEARCH'| translate}}">
+      </mat-form-field>
+      <button mat-button class="customButtom" color="primary" type="button" (click)="addUser()">{{'ADMIN.ALLADMIN.ADDADMIN'
+        | translate}}</button>
+
+    </div>
+    <!-- / SEARCH -->
+
+
+  </div>
+
+  <ngx-datatable class="material vertical-scroll" [rows]="filterRows" [columnMode]="'force'" [headerHeight]="50"
+    [rowHeight]="50" [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="true">
+    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="email">
+      <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+        <span>{{ 'ADMIN.EMAIL' | translate }}</span>
+      </ng-template>
+
+    </ngx-datatable-column>
+    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="username">
+      <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+        <span>{{ 'ADMIN.USERNAME' | translate }}</span>
+      </ng-template>
+
+    </ngx-datatable-column>
+
+
+    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="Status">
+      <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+        <span>{{ 'ADMIN.STATUS' | translate }}</span>
+      </ng-template>
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        <mat-chip-list *ngIf="row.status=='active'">
+          <mat-chip style="background-color:green" selected="true">{{row.status}}</mat-chip>
+        </mat-chip-list>
+        <mat-chip-list *ngIf="row.status=='deactive'">
+          <mat-chip style="background-color:#ff6363" selected="true">{{row.status}}</mat-chip>
+        </mat-chip-list>
+      </ng-template>
+    </ngx-datatable-column>
+
+
+
+    <ngx-datatable-column [width]="200" name="id">
+      <ng-template let-column="column" ngx-datatable-header-template>
+        <div class="table-header-font">
+
+        </div>
+      </ng-template>
+
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        <button mat-mini-fab class="mr-16" (click)="goTo('edit',row['id'])" style="background-color: rgba(20, 160, 202, 0.911);">
+          <mat-icon style="color : white;">edit</mat-icon>
+        </button>
+        <button mat-mini-fab class="mr-16" *ngIf="isSuperAdmin()" (click)="reset(row['id'])" style="background-color: rgb(45, 50, 62)">
+          <mat-icon style="color : white;">lock</mat-icon>
+        </button>
+
+        <!-- <button mat-mini-fab *ngIf="row.status=='active'" class="mr-16" (click)="deactivate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
+          <mat-icon style="color : white;">delete</mat-icon>
+        </button>
+        <button mat-mini-fab *ngIf="row.status=='deactive'" class="mr-16" (click)="activate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
+          <mat-icon style="color : white;">replay</mat-icon>
+        </button> -->
+        <!-- <button mat-mini-fab class="mr-16" style="background-color: rgba(7, 112, 7, 0.849);" (click)="view(row['id'])">
+          <mat-icon style="color : white;">visibility</mat-icon>
+        </button> -->
+      </ng-template>
+
+    </ngx-datatable-column>
+
+  </ngx-datatable>
+
+</div>

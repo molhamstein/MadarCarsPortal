@@ -59,8 +59,12 @@ import { predefindTripsComponent } from './main/content/pages/predefindTrip/pred
 import { addPredefindTripComponent } from './main/content/pages/predefindTrip/addPredefindTrip/addPredefindTrip.component';
 import { editPredefindTripComponent } from './main/content/pages/predefindTrip/editPredefindTrip/editPredefindTrip.component';
 import { billComponent } from './main/content/pages/trip/bill/bill.component';
-import {MaterialTimeControlModule} from '../../node_modules/material-time-control/src/material-time-control.module';
-import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { MaterialTimeControlModule } from '../../node_modules/material-time-control/src/material-time-control.module';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { adminsComponent } from './main/content/pages/admin/admin/admins.component';
+import { addAdminComponent } from './main/content/pages/admin/addAdmin/addAdmin.component';
+import { editAdminComponent } from './main/content/pages/admin/editDriver/editAdmin.component';
+import { editTripComponent } from './main/content/pages/trip/editTrip/editTrip.component';
 
 
 
@@ -70,145 +74,170 @@ const appRoutes: Routes = [
         path: 'predefined-trips',
         component: predefindTripsComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'add-predefined-trip',
         component: addPredefindTripComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'edit-predefined-trip/:id',
         component: editPredefindTripComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'trips',
         component: tripsComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'bill/:id',
         component: billComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'add-trip',
         component: addTripComponent,
         canActivate: [AuthGuardService]
-      
+
+    },
+    {
+        path: 'edit-trip/:id',
+        component: editTripComponent,
+        canActivate: [AuthGuardService]
+
     },
     {
         path: 'view-trip/:id',
         component: viewTripComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'cars',
         component: carsComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'add-car',
         component: addCarComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'edit-car/:id',
         component: editCarComponent,
         canActivate: [AuthGuardService]
-      
+
+    },
+
+    {
+        path: 'admins',
+        component: adminsComponent,
+        canActivate: [AuthGuardService]
+
+    },
+    {
+        path: 'add-admin',
+        component: addAdminComponent,
+        canActivate: [AuthGuardService]
+
+    },
+    {
+        path: 'edit-admin/:id',
+        component: editAdminComponent,
+        canActivate: [AuthGuardService]
+
     },
     {
         path: 'drivers',
         component: driversComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'add-driver',
         component: addDriverComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'edit-driver/:id',
         component: editDriverComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'brands',
         component: brandsComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'add-brand',
         component: addBrandComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'edit-brand/:id',
         component: editBrandComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'users',
         component: usersComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'add-user',
         component: addUserComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'edit-user/:id',
         component: editUserComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'locations',
         component: locationsComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'add-location',
         component: addLocationComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'edit-location/:id',
         component: editLocationComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'add-sublocation/:id',
         component: addSubLocationComponent,
         canActivate: [AuthGuardService]
-      
+
     },
     {
         path: 'edit-sublocation/:id',
         component: editSubLocationComponent,
         canActivate: [AuthGuardService]
-      
+
     },
 
     {
@@ -267,11 +296,13 @@ const appRoutes: Routes = [
         // // Users
         usersComponent, addUserComponent, editUserComponent,
         // // Trips
-        tripsComponent, addTripComponent, viewTripComponent, billComponent,
+        tripsComponent, addTripComponent, viewTripComponent, billComponent,editTripComponent,
         // // Predefind Trips
         predefindTripsComponent, addPredefindTripComponent, editPredefindTripComponent,
+        // // Admins
+        adminsComponent,addAdminComponent,editAdminComponent,
         // dialogs
-        SomeThingIsErrorComponent, ConfirmMessageComponent, ErrorMessageComponent,MyResetPasswordComponent
+        SomeThingIsErrorComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent
     ],
     imports: [
         BrowserModule,
@@ -301,7 +332,7 @@ const appRoutes: Routes = [
 
 
     ],
-    entryComponents: [SomeThingIsErrorComponent, ConfirmMessageComponent, ErrorMessageComponent,MyResetPasswordComponent],
+    entryComponents: [SomeThingIsErrorComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent],
     providers: [
         FuseSplashScreenService,
         FuseConfigService,
