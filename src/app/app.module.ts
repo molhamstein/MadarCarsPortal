@@ -59,13 +59,11 @@ import { predefindTripsComponent } from './main/content/pages/predefindTrip/pred
 import { addPredefindTripComponent } from './main/content/pages/predefindTrip/addPredefindTrip/addPredefindTrip.component';
 import { editPredefindTripComponent } from './main/content/pages/predefindTrip/editPredefindTrip/editPredefindTrip.component';
 import { billComponent } from './main/content/pages/trip/bill/bill.component';
-import { MaterialTimeControlModule } from '../../node_modules/material-time-control/src/material-time-control.module';
-import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { adminsComponent } from './main/content/pages/admin/admin/admins.component';
 import { addAdminComponent } from './main/content/pages/admin/addAdmin/addAdmin.component';
 import { editAdminComponent } from './main/content/pages/admin/editDriver/editAdmin.component';
 import { editTripComponent } from './main/content/pages/trip/editTrip/editTrip.component';
-
+import { TimeComponent } from './main/dialogs/time/time.component';
 
 
 const appRoutes: Routes = [
@@ -296,13 +294,13 @@ const appRoutes: Routes = [
         // // Users
         usersComponent, addUserComponent, editUserComponent,
         // // Trips
-        tripsComponent, addTripComponent, viewTripComponent, billComponent,editTripComponent,
+        tripsComponent, addTripComponent, viewTripComponent, billComponent, editTripComponent,
         // // Predefind Trips
         predefindTripsComponent, addPredefindTripComponent, editPredefindTripComponent,
         // // Admins
-        adminsComponent,addAdminComponent,editAdminComponent,
+        adminsComponent, addAdminComponent, editAdminComponent,
         // dialogs
-        SomeThingIsErrorComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent
+        SomeThingIsErrorComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent, TimeComponent
     ],
     imports: [
         BrowserModule,
@@ -311,9 +309,7 @@ const appRoutes: Routes = [
         BrowserAnimationsModule,
         RouterModule.forRoot(appRoutes, { enableTracing: false, useHash: true }),
         SharedModule,
-        MaterialTimeControlModule,
         MarkdownModule.forRoot(),
-        NgxMaterialTimepickerModule.forRoot(),
         Angular5TimePickerModule,
         InMemoryWebApiModule.forRoot(FuseFakeDbService, {
             delay: 0,
@@ -332,7 +328,7 @@ const appRoutes: Routes = [
 
 
     ],
-    entryComponents: [SomeThingIsErrorComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent],
+    entryComponents: [SomeThingIsErrorComponent, TimeComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent],
     providers: [
         FuseSplashScreenService,
         FuseConfigService,

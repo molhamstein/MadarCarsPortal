@@ -45,6 +45,7 @@
     "intl": "1.2.5",
     "material-time-control": "github:SteveDunlap13/MaterialTimeControl",
     "moment": "2.19.2",
+    "ng-pick-datetime": "7.0.0",
     "ngx-color-picker": "5.0.4",
     "ngx-cookie-service": "1.0.9",
     "ngx-material-timepicker": "1.1.2",

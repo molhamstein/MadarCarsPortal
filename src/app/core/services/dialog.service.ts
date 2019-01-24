@@ -7,6 +7,7 @@ import { DatePipe } from '@angular/common';
 import { SomeThingIsErrorComponent } from '../../main/dialogs/some-thing-is-error/some-thing-is-error.component';
 import { ConfirmMessageComponent } from '../../main/dialogs/confirm-message/confirm-message.component';
 import { ErrorMessageComponent } from '../../main/dialogs/error-message/error-message.component';
+import { TimeComponent } from '../../main/dialogs/time/time.component';
 
 
 
@@ -56,6 +57,17 @@ export class DialogService {
     });
   }
 
+  openTimeDialog(callback) {
+    let dialogRef = this.dialog.open(TimeComponent, {
+      width: '350px',
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        callback();
+      } else
+        callback();
+    });
+  }
 
 }

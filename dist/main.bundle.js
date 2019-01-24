@@ -192,19 +192,17 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__main_content_pages_predefindTrip_addPredefindTrip_addPredefindTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/predefindTrip/addPredefindTrip/addPredefindTrip.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__main_content_pages_predefindTrip_editPredefindTrip_editPredefindTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/predefindTrip/editPredefindTrip/editPredefindTrip.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__main_content_pages_trip_bill_bill_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/bill/bill.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__node_modules_material_time_control_src_material_time_control_module__ = __webpack_require__("../../../../material-time-control/src/material-time-control.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62_ngx_material_timepicker__ = __webpack_require__("../../../../ngx-material-timepicker/esm5/ngx-material-timepicker.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__main_content_pages_admin_admin_admins_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/admin/admins.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__main_content_pages_admin_addAdmin_addAdmin_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/addAdmin/addAdmin.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__main_content_pages_admin_editDriver_editAdmin_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/editDriver/editAdmin.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__main_content_pages_trip_editTrip_editTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/editTrip/editTrip.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__main_content_pages_admin_admin_admins_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/admin/admins.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__main_content_pages_admin_addAdmin_addAdmin_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/addAdmin/addAdmin.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__main_content_pages_admin_editDriver_editAdmin_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/editDriver/editAdmin.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__main_content_pages_trip_editTrip_editTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/editTrip/editTrip.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__main_dialogs_time_time_component__ = __webpack_require__("../../../../../src/app/main/dialogs/time/time.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -304,7 +302,7 @@ var appRoutes = [
     },
     {
         path: 'edit-trip/:id',
-        component: __WEBPACK_IMPORTED_MODULE_66__main_content_pages_trip_editTrip_editTrip_component__["a" /* editTripComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_64__main_content_pages_trip_editTrip_editTrip_component__["a" /* editTripComponent */],
         canActivate: [__WEBPACK_IMPORTED_MODULE_1__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
@@ -329,17 +327,17 @@ var appRoutes = [
     },
     {
         path: 'admins',
-        component: __WEBPACK_IMPORTED_MODULE_63__main_content_pages_admin_admin_admins_component__["a" /* adminsComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_61__main_content_pages_admin_admin_admins_component__["a" /* adminsComponent */],
         canActivate: [__WEBPACK_IMPORTED_MODULE_1__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'add-admin',
-        component: __WEBPACK_IMPORTED_MODULE_64__main_content_pages_admin_addAdmin_addAdmin_component__["a" /* addAdminComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_62__main_content_pages_admin_addAdmin_addAdmin_component__["a" /* addAdminComponent */],
         canActivate: [__WEBPACK_IMPORTED_MODULE_1__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'edit-admin/:id',
-        component: __WEBPACK_IMPORTED_MODULE_65__main_content_pages_admin_editDriver_editAdmin_component__["a" /* editAdminComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_63__main_content_pages_admin_editDriver_editAdmin_component__["a" /* editAdminComponent */],
         canActivate: [__WEBPACK_IMPORTED_MODULE_1__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
@@ -470,13 +468,13 @@ var AppModule = (function () {
                 // // Users
                 __WEBPACK_IMPORTED_MODULE_49__main_content_pages_user_users_users_component__["a" /* usersComponent */], __WEBPACK_IMPORTED_MODULE_50__main_content_pages_user_addUser_addUser_component__["a" /* addUserComponent */], __WEBPACK_IMPORTED_MODULE_51__main_content_pages_user_editUser_editUser_component__["a" /* editUserComponent */],
                 // // Trips
-                __WEBPACK_IMPORTED_MODULE_53__main_content_pages_trip_trips_trips_component__["a" /* tripsComponent */], __WEBPACK_IMPORTED_MODULE_54__main_content_pages_trip_addTrip_addTrip_component__["a" /* addTripComponent */], __WEBPACK_IMPORTED_MODULE_56__main_content_pages_trip_viewTrip_viewTrip_component__["a" /* viewTripComponent */], __WEBPACK_IMPORTED_MODULE_60__main_content_pages_trip_bill_bill_component__["a" /* billComponent */], __WEBPACK_IMPORTED_MODULE_66__main_content_pages_trip_editTrip_editTrip_component__["a" /* editTripComponent */],
+                __WEBPACK_IMPORTED_MODULE_53__main_content_pages_trip_trips_trips_component__["a" /* tripsComponent */], __WEBPACK_IMPORTED_MODULE_54__main_content_pages_trip_addTrip_addTrip_component__["a" /* addTripComponent */], __WEBPACK_IMPORTED_MODULE_56__main_content_pages_trip_viewTrip_viewTrip_component__["a" /* viewTripComponent */], __WEBPACK_IMPORTED_MODULE_60__main_content_pages_trip_bill_bill_component__["a" /* billComponent */], __WEBPACK_IMPORTED_MODULE_64__main_content_pages_trip_editTrip_editTrip_component__["a" /* editTripComponent */],
                 // // Predefind Trips
                 __WEBPACK_IMPORTED_MODULE_57__main_content_pages_predefindTrip_predefindTrips_predefindTrips_component__["a" /* predefindTripsComponent */], __WEBPACK_IMPORTED_MODULE_58__main_content_pages_predefindTrip_addPredefindTrip_addPredefindTrip_component__["a" /* addPredefindTripComponent */], __WEBPACK_IMPORTED_MODULE_59__main_content_pages_predefindTrip_editPredefindTrip_editPredefindTrip_component__["a" /* editPredefindTripComponent */],
                 // // Admins
-                __WEBPACK_IMPORTED_MODULE_63__main_content_pages_admin_admin_admins_component__["a" /* adminsComponent */], __WEBPACK_IMPORTED_MODULE_64__main_content_pages_admin_addAdmin_addAdmin_component__["a" /* addAdminComponent */], __WEBPACK_IMPORTED_MODULE_65__main_content_pages_admin_editDriver_editAdmin_component__["a" /* editAdminComponent */],
+                __WEBPACK_IMPORTED_MODULE_61__main_content_pages_admin_admin_admins_component__["a" /* adminsComponent */], __WEBPACK_IMPORTED_MODULE_62__main_content_pages_admin_addAdmin_addAdmin_component__["a" /* addAdminComponent */], __WEBPACK_IMPORTED_MODULE_63__main_content_pages_admin_editDriver_editAdmin_component__["a" /* editAdminComponent */],
                 // dialogs
-                __WEBPACK_IMPORTED_MODULE_32__main_dialogs_some_thing_is_error_some_thing_is_error_component__["a" /* SomeThingIsErrorComponent */], __WEBPACK_IMPORTED_MODULE_2__main_dialogs_confirm_message_confirm_message_component__["a" /* ConfirmMessageComponent */], __WEBPACK_IMPORTED_MODULE_52__main_dialogs_error_message_error_message_component__["a" /* ErrorMessageComponent */], __WEBPACK_IMPORTED_MODULE_0__main_dialogs_my_reset_password_my_reset_password_component__["a" /* MyResetPasswordComponent */]
+                __WEBPACK_IMPORTED_MODULE_32__main_dialogs_some_thing_is_error_some_thing_is_error_component__["a" /* SomeThingIsErrorComponent */], __WEBPACK_IMPORTED_MODULE_2__main_dialogs_confirm_message_confirm_message_component__["a" /* ConfirmMessageComponent */], __WEBPACK_IMPORTED_MODULE_52__main_dialogs_error_message_error_message_component__["a" /* ErrorMessageComponent */], __WEBPACK_IMPORTED_MODULE_0__main_dialogs_my_reset_password_my_reset_password_component__["a" /* MyResetPasswordComponent */], __WEBPACK_IMPORTED_MODULE_65__main_dialogs_time_time_component__["a" /* TimeComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_9__angular_platform_browser__["BrowserModule"],
@@ -485,9 +483,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_12__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_13__angular_router__["e" /* RouterModule */].forRoot(appRoutes, { enableTracing: false, useHash: true }),
                 __WEBPACK_IMPORTED_MODULE_16__core_modules_shared_module__["a" /* SharedModule */],
-                __WEBPACK_IMPORTED_MODULE_61__node_modules_material_time_control_src_material_time_control_module__["a" /* MaterialTimeControlModule */],
                 __WEBPACK_IMPORTED_MODULE_30_angular2_markdown__["a" /* MarkdownModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_62_ngx_material_timepicker__["a" /* NgxMaterialTimepickerModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_55_angular5_time_picker__["a" /* Angular5TimePickerModule */],
                 __WEBPACK_IMPORTED_MODULE_14_angular_in_memory_web_api__["a" /* InMemoryWebApiModule */].forRoot(__WEBPACK_IMPORTED_MODULE_19__fuse_fake_db_fuse_fake_db_service__["a" /* FuseFakeDbService */], {
                     delay: 0,
@@ -504,7 +500,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_31__ngx_translate_core__["a" /* TranslateModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_34__angular_material__["n" /* MatDialogModule */]
             ],
-            entryComponents: [__WEBPACK_IMPORTED_MODULE_32__main_dialogs_some_thing_is_error_some_thing_is_error_component__["a" /* SomeThingIsErrorComponent */], __WEBPACK_IMPORTED_MODULE_2__main_dialogs_confirm_message_confirm_message_component__["a" /* ConfirmMessageComponent */], __WEBPACK_IMPORTED_MODULE_52__main_dialogs_error_message_error_message_component__["a" /* ErrorMessageComponent */], __WEBPACK_IMPORTED_MODULE_0__main_dialogs_my_reset_password_my_reset_password_component__["a" /* MyResetPasswordComponent */]],
+            entryComponents: [__WEBPACK_IMPORTED_MODULE_32__main_dialogs_some_thing_is_error_some_thing_is_error_component__["a" /* SomeThingIsErrorComponent */], __WEBPACK_IMPORTED_MODULE_65__main_dialogs_time_time_component__["a" /* TimeComponent */], __WEBPACK_IMPORTED_MODULE_2__main_dialogs_confirm_message_confirm_message_component__["a" /* ConfirmMessageComponent */], __WEBPACK_IMPORTED_MODULE_52__main_dialogs_error_message_error_message_component__["a" /* ErrorMessageComponent */], __WEBPACK_IMPORTED_MODULE_0__main_dialogs_my_reset_password_my_reset_password_component__["a" /* MyResetPasswordComponent */]],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_24__core_services_splash_screen_service__["a" /* FuseSplashScreenService */],
                 __WEBPACK_IMPORTED_MODULE_25__core_services_config_service__["a" /* FuseConfigService */],
@@ -5026,6 +5022,7 @@ var FuseConfigService = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_dialogs_some_thing_is_error_some_thing_is_error_component__ = __webpack_require__("../../../../../src/app/main/dialogs/some-thing-is-error/some-thing-is-error.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__main_dialogs_confirm_message_confirm_message_component__ = __webpack_require__("../../../../../src/app/main/dialogs/confirm-message/confirm-message.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__main_dialogs_error_message_error_message_component__ = __webpack_require__("../../../../../src/app/main/dialogs/error-message/error-message.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__main_dialogs_time_time_component__ = __webpack_require__("../../../../../src/app/main/dialogs/time/time.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5035,6 +5032,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -5079,6 +5077,18 @@ var DialogService = (function () {
         dialogRef.afterClosed().subscribe(function (result) {
             if (result) {
             }
+        });
+    };
+    DialogService.prototype.openTimeDialog = function (callback) {
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_5__main_dialogs_time_time_component__["a" /* TimeComponent */], {
+            width: '350px',
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+            if (result) {
+                callback();
+            }
+            else
+                callback();
         });
     };
     DialogService = __decorate([
@@ -27062,7 +27072,7 @@ var editSubLocationComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/trip/addTrip/addTrip.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"backToTrips()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'TRIP.ADDTRIP.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n    <div style=\"font-size: 20px\">{{'TRIP.PRICE' | translate}} : {{totalPrice+subLocaationPrice+airportPrice}}</div>\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n\r\n    <nav mat-tab-nav-bar [backgroundColor]=\"background\">\r\n      <a mat-tab-link disabled *ngFor=\"let link of links\" [active]=\"activeLink == link.name\">\r\n        {{link.view | translate}}\r\n      </a>\r\n    </nav>\r\n    <form [formGroup]=\"stepOneForm\" *ngIf=\"activeLink=='step1'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.USER' | translate }}\" formControlName=\"ownerId\">\r\n              <mat-option *ngFor=\"let oneUser of users\" [value]=\"oneUser.id\">\r\n                {{oneUser.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.LOCATION' | translate }}\" formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let oneLocation of locations\" [value]=\"oneLocation.id\">\r\n                {{oneLocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <section class=\"example-section\" style=\"padding-bottom: 10px;\" fxFlex=\"95\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isFromAirport\">{{\r\n              'TRIP.FROMAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isToAirport\">{{\r\n              'TRIP.TOAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isInCity\">{{\r\n              'TRIP.INCITY' | translate }}</mat-checkbox>\r\n          </section>\r\n\r\n          <!-- <mat-form-field fxFlex=\"40\">\r\n            <input matInput [matTimepicker]=\"startPicker\" (userTimeChange)=\"emituserTimeChange()\" placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #startPicker color=\"primary\"></mat-timepicker>\r\n          </mat-form-field> -->\r\n          <!-- <w-mat-timepicker color=\"primary\" [(userTime)]=\"exportTime\"></w-mat-timepicker> -->\r\n\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"next(2,null,null)\" cdkFocusInitial [disabled]=\"stepOneForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n    <form [formGroup]=\"stepSecForm\" *ngIf=\"activeLink=='step2'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"40\">\r\n            <input matInput (focus)=\"firstpicker.open()\" [matDatepicker]=\"firstpicker\" formControlName=\"first\"\r\n              placeholder=\"{{ 'TRIP.FROM' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"firstpicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #firstpicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='fromAirport' \r\n          && tripType!='fromAirportAndCity' \r\n          && tripType!='toAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput [matTimepicker]=\"startPicker\" placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #startPicker color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"40\" *ngIf=\"tripType!='fromAirport' && tripType!='toAirport'\">\r\n            <input matInput (focus)=\"secondepicker.open()\" [matDatepicker]=\"secondepicker\" formControlName=\"seconde\"\r\n              placeholder=\"{{ 'TRIP.TO' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"secondepicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #secondepicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='cityAndToAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput [matTimepicker]=\"endPicker\" required placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #endPicker color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n          <div fxFlex=\"40\" *ngIf=\"tripType=='fromAirport' || tripType=='toAirport'\"></div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"next(3,startPicker,endPicker)\" cdkFocusInitial>{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(1)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n    <form [formGroup]=\"stepthreeForm\" *ngIf=\"activeLink=='step3'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"90\">\r\n            <mat-select placeholder=\"{{ 'TRIP.CAR' | translate }}\" (change)=\"doSomething($event)\" formControlName=\"carId\">\r\n              <mat-option *ngFor=\"let oneCar of carAvailable\" [value]=\"oneCar.id\">\r\n                {{oneCar.name}} - {{oneCar.driver.username}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button *ngIf=\"links[3]!=null\" (click)=\"next(4,null,null)\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button *ngIf=\"links[3]==null\" (click)=\"add()\" class=\"addButton\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(2)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n\r\n    </form>\r\n\r\n\r\n    <form *ngIf=\"activeLink=='step4'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <div fxFlex=\"90\" class=\"step4\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{location.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{pricePerDay}} $</label>\r\n            <div fxFlex=\"40\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus disabled\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{tripdays}}</label>\r\n                <div class=\"circle add disabled\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <!-- <mat-form-field fxFlex=\"30\">\r\n              <input disabled matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                [(ngModel)]=\"tripdays\" required>\r\n              <mat-icon matSuffix>people</mat-icon>\r\n              <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n            </mat-form-field>\r\n          </div> -->\r\n\r\n\r\n          <div fxFlex=\"90\" class=\"step4\" *ngFor=\"let element of tripSublocations;let i=index\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{carsSublocations[i].subLocation.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{carsSublocations[i].cost}} $</label>\r\n            <div fxFlex=\"40\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus\" [ngClass]=\"{'disabled': tripSublocations[i].duration==0}\" (click)=\"minDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{tripSublocations[i].duration}}</label>\r\n                <div class=\"circle add\" (click)=\"addDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <!-- <mat-form-field fxFlex=\"30\">\r\n              <input (input)=\"onSearchChange()\" matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                [(ngModel)]=\"tripSublocations[i].duration\" required>\r\n              <mat-icon matSuffix>people</mat-icon>\r\n              <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n            </mat-form-field> -->\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"add()\" class=\"addButton\" [disabled]=\"tripdays<0\" cdkFocusInitial>{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(3,null,null)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"backToTrips()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'TRIP.ADDTRIP.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n    <div style=\"font-size: 20px\">{{'TRIP.PRICE' | translate}} : {{totalPrice+subLocaationPrice+airportPrice}}</div>\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n\r\n    <nav mat-tab-nav-bar [backgroundColor]=\"background\">\r\n      <a mat-tab-link disabled *ngFor=\"let link of links\" [active]=\"activeLink == link.name\">\r\n        {{link.view | translate}}\r\n      </a>\r\n    </nav>\r\n    <form [formGroup]=\"stepOneForm\" *ngIf=\"activeLink=='step1'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.USER' | translate }}\" formControlName=\"ownerId\">\r\n              <mat-option *ngFor=\"let oneUser of users\" [value]=\"oneUser.id\">\r\n                {{oneUser.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.LOCATION' | translate }}\" formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let oneLocation of locations\" [value]=\"oneLocation.id\">\r\n                {{oneLocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <section class=\"example-section\" style=\"padding-bottom: 10px;\" fxFlex=\"95\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isFromAirport\">{{\r\n              'TRIP.FROMAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isToAirport\">{{\r\n              'TRIP.TOAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isInCity\">{{\r\n              'TRIP.INCITY' | translate }}</mat-checkbox>\r\n          </section>\r\n\r\n          <!-- <mat-form-field fxFlex=\"40\">\r\n            <input matInput [matTimepicker]=\"startPicker\" (userTimeChange)=\"emituserTimeChange()\" placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #startPicker color=\"primary\"></mat-timepicker>\r\n          </mat-form-field> -->\r\n          <!-- <w-mat-timepicker color=\"primary\" [(userTime)]=\"exportTime\"></w-mat-timepicker> -->\r\n\r\n\r\n        </div>\r\n      </div>\r\n\r\n      \r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"next(2,null,null)\" cdkFocusInitial [disabled]=\"stepOneForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n    <form [formGroup]=\"stepSecForm\" *ngIf=\"activeLink=='step2'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"40\">\r\n            <input matInput (focus)=\"firstpicker.open()\" [matDatepicker]=\"firstpicker\" formControlName=\"first\"\r\n              placeholder=\"{{ 'TRIP.FROM' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"firstpicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #firstpicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"true\">\r\n              <input matInput [matTimepicker]=\"startPicker\" placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n              <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n              <mat-timepicker #startPicker id=\"startPickerId\" color=\"primary\"></mat-timepicker>\r\n            </mat-form-field>\r\n  \r\n  \r\n            <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='fromAirport' \r\n            && tripType!='fromAirportAndCity' \r\n            && tripType!='toAirport' \r\n            && tripType!='fromAirportAndToAirport' \r\n            && tripType!='fromAirportAndCityAndToAirport'\">\r\n              <input matInput readonly=\"readonly\" placeholder=\"{{ 'TRIP.TIME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                [ngModel]=\"formatStartTime(startPicker['userTime'])\">\r\n              <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n            </mat-form-field>\r\n  \r\n          <mat-form-field fxFlex=\"40\" *ngIf=\"tripType!='fromAirport' && tripType!='toAirport'\">\r\n            <input matInput (focus)=\"secondepicker.open()\" [matDatepicker]=\"secondepicker\" formControlName=\"seconde\"\r\n              placeholder=\"{{ 'TRIP.TO' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"secondepicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #secondepicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"true\">\r\n            <input matInput [matTimepicker]=\"endPicker\" required placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #endPicker color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='cityAndToAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput readonly=\"readonly\" placeholder=\"{{ 'TRIP.TIME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n              [ngModel]=\"formatEndTime(endPicker['userTime'])\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n          </mat-form-field>\r\n\r\n          <div fxFlex=\"40\" *ngIf=\"tripType=='fromAirport' || tripType=='toAirport'\"></div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"next(3,startPicker,endPicker)\" cdkFocusInitial>{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(1)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n    <form [formGroup]=\"stepthreeForm\" *ngIf=\"activeLink=='step3'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"90\">\r\n            <mat-select placeholder=\"{{ 'TRIP.CAR' | translate }}\" (change)=\"doSomething($event)\" formControlName=\"carId\">\r\n              <mat-option *ngFor=\"let oneCar of carAvailable\" [value]=\"oneCar.id\">\r\n                {{oneCar.name}} - {{oneCar.driver.username}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button *ngIf=\"links[3]!=null\" (click)=\"next(4,null,null)\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button *ngIf=\"links[3]==null\" (click)=\"add()\" class=\"addButton\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(2)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n\r\n    </form>\r\n\r\n\r\n    <form *ngIf=\"activeLink=='step4'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <div fxFlex=\"90\" class=\"step4\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{location.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{pricePerDay}} $</label>\r\n            <div fxFlex=\"40\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus disabled\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{tripdays}}</label>\r\n                <div class=\"circle add disabled\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <!-- <mat-form-field fxFlex=\"30\">\r\n              <input disabled matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                [(ngModel)]=\"tripdays\" required>\r\n              <mat-icon matSuffix>people</mat-icon>\r\n              <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n            </mat-form-field>\r\n          </div> -->\r\n\r\n\r\n          <div fxFlex=\"90\" class=\"step4\" *ngFor=\"let element of tripSublocations;let i=index\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{carsSublocations[i].subLocation.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{carsSublocations[i].cost}} $</label>\r\n            <div fxFlex=\"40\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus\" [ngClass]=\"{'disabled': tripSublocations[i].duration==0}\" (click)=\"minDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{tripSublocations[i].duration}}</label>\r\n                <div class=\"circle add\" (click)=\"addDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <!-- <mat-form-field fxFlex=\"30\">\r\n              <input (input)=\"onSearchChange()\" matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                [(ngModel)]=\"tripSublocations[i].duration\" required>\r\n              <mat-icon matSuffix>people</mat-icon>\r\n              <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n            </mat-form-field> -->\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"add()\" class=\"addButton\" [disabled]=\"tripdays<0\" cdkFocusInitial>{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(3,null,null)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -27158,9 +27168,6 @@ var addTripComponent = (function () {
         this.config = { hour: 7, minute: 15, meriden: 'PM', format: 12 };
         this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_6__languageFiles_en__["a" /* locale */]);
     }
-    addTripComponent.prototype.emituserTimeChange = function () {
-        alert("SSSS");
-    };
     addTripComponent.prototype.addDuration = function (index) {
         if (this.subLocationDays == this.mainTripdays) {
             alert("Error");
@@ -27182,21 +27189,6 @@ var addTripComponent = (function () {
         this.totalPrice += this.pricePerDay;
         this.tripdays++;
     };
-    // onSearchChange() {
-    //   this.subLocaationPrice = 0;
-    //   this.subLocationDays = 0;
-    //   for (let index = 0; index < this.tripSublocations.length; index++) {
-    //     const element = this.tripSublocations[index];
-    //     if (element.duration != null)
-    //       this.subLocationDays += element.duration;
-    //     this.subLocaationPrice += element.duration * this.carsSublocations[index].cost
-    //     console.log(this.subLocationDays)
-    //     if (index == this.tripSublocations.length - 1) {
-    //       this.tripdays = this.mainTripdays - this.subLocationDays;
-    //       this.totalPrice = this.tripdays * this.pricePerDay;
-    //     }
-    //   }
-    // }
     addTripComponent.prototype.differenceInHourse = function (firstDate, secDate) {
         var timeDiff = secDate.getTime() - firstDate.getTime();
         var diffHourse = Math.ceil(timeDiff / (1000 * 3600));
@@ -27339,8 +27331,8 @@ var addTripComponent = (function () {
         console.log("secTime");
         console.log(secTime);
         if (this.tripType == 'fromAirport') {
-            if (firstDate != "" && firstTime['userTime'] != null) {
-                this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime['userTime']);
+            if (firstDate != "" && firstTime != null) {
+                this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime);
                 this.carDate = { "fromAirportDate": this.allData['fromAirportDate'] };
                 return true;
             }
@@ -27358,8 +27350,8 @@ var addTripComponent = (function () {
                 return false;
         }
         if (this.tripType == 'toAirport') {
-            if (firstDate != "" && firstTime['userTime'] != null) {
-                this.allData['toAirportDate'] = this.mixDateTime(firstDate, firstTime['userTime']);
+            if (firstDate != "" && firstTime != null) {
+                this.allData['toAirportDate'] = this.mixDateTime(firstDate, firstTime);
                 this.carDate = { "toAirportDate": this.allData['toAirportDate'] };
                 return true;
             }
@@ -27367,8 +27359,8 @@ var addTripComponent = (function () {
                 return false;
         }
         if (this.tripType == 'fromAirportAndCity') {
-            if (firstDate != "" && firstTime['userTime'] != null && secDate != null) {
-                this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime['userTime']);
+            if (firstDate != "" && firstTime != null && secDate != null) {
+                this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime);
                 this.allData['endInCityDate'] = this.mixDateTime(secDate, { hour: 11, minute: 59, meriden: "PM", format: 12 });
                 this.carDate = { "fromAirportDate": this.allData['fromAirportDate'], "endInCityDate": this.allData['endInCityDate'] };
                 return true;
@@ -27378,9 +27370,9 @@ var addTripComponent = (function () {
         }
         // type = ['cityAndToAirport', 'fromAirportAndCityAndToAirport']
         if (this.tripType == 'fromAirportAndToAirport') {
-            if (firstDate != "" && firstTime['userTime'] != null && secDate != null && secTime['userTime'] != null) {
-                this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime['userTime']);
-                this.allData['toAirportDate'] = this.mixDateTime(secDate, secTime['userTime']);
+            if (firstDate != "" && firstTime != null && secDate != null && secTime != null) {
+                this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime);
+                this.allData['toAirportDate'] = this.mixDateTime(secDate, secTime);
                 this.carDate = { "fromAirportDate": this.allData['fromAirportDate'], "toAirportDate": this.allData['toAirportDate'] };
                 return true;
             }
@@ -27388,9 +27380,9 @@ var addTripComponent = (function () {
                 return false;
         }
         if (this.tripType == 'cityAndToAirport') {
-            if (firstDate != "" && secDate != null && secTime['userTime'] != null) {
+            if (firstDate != "" && secDate != null && secTime != null) {
                 this.allData['startInCityDate'] = this.mixDateTime(firstDate, { hour: 0, minute: 0, meriden: "AM", format: 12 });
-                this.allData['toAirportDate'] = this.mixDateTime(secDate, secTime['userTime']);
+                this.allData['toAirportDate'] = this.mixDateTime(secDate, secTime);
                 this.carDate = { "startInCityDate": this.allData['startInCityDate'], "toAirportDate": this.allData['toAirportDate'] };
                 return true;
             }
@@ -27398,9 +27390,9 @@ var addTripComponent = (function () {
                 return false;
         }
         if (this.tripType == 'fromAirportAndCityAndToAirport') {
-            if (firstDate != "" && firstTime['userTime'] != null && secDate != null && secTime['userTime'] != null) {
-                this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime['userTime']);
-                this.allData['toAirportDate'] = this.mixDateTime(secDate, secTime['userTime']);
+            if (firstDate != "" && firstTime != null && secDate != null && secTime != null) {
+                this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime);
+                this.allData['toAirportDate'] = this.mixDateTime(secDate, secTime);
                 this.carDate = { "fromAirportDate": this.allData['fromAirportDate'], "toAirportDate": this.allData['toAirportDate'] };
                 return true;
             }
@@ -27410,8 +27402,13 @@ var addTripComponent = (function () {
     };
     addTripComponent.prototype.back = function (stepNum) {
         this.activeLink = this.links[stepNum - 1].name;
+        if (stepNum == 2) {
+            this.totalPrice = 0;
+            this.airportPrice = 0;
+            this.subLocaationPrice = 0;
+        }
     };
-    addTripComponent.prototype.next = function (stepNum, startDate, endDate) {
+    addTripComponent.prototype.next = function (stepNum) {
         var _this = this;
         if (stepNum == 2) {
             this.tripType = this.getTypeTrip();
@@ -27440,7 +27437,7 @@ var addTripComponent = (function () {
             this.totalPrice = 0;
             var firstDate = this.stepSecForm.value['first'];
             var secDate = this.stepSecForm.value['seconde'];
-            if (this.cheackValidateionSecStep(firstDate, secDate, startDate, endDate)) {
+            if (this.cheackValidateionSecStep(firstDate, secDate, this.startTime, this.endTime)) {
                 if (secDate) {
                     if (this.differenceInHourse(firstDate, secDate) > 0) {
                         var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport };
@@ -27515,6 +27512,54 @@ var addTripComponent = (function () {
     };
     addTripComponent.prototype.backToTrips = function () {
         this.mainServ.globalServ.goTo('trips');
+    };
+    addTripComponent.prototype.formatStartTime = function (object) {
+        if (object == null) {
+            if (this.startTime == null) {
+                this.startTime = { "hour": 3, "minute": 15, "meriden": "PM", "format": 12 };
+            }
+            var minute = this.startTime.minute;
+            var hour = this.startTime.hour;
+            if (this.startTime.hour < 10)
+                hour = 0 + "" + this.startTime.hour;
+            if (this.startTime.minute < 10)
+                minute = 0 + "" + this.startTime.minute;
+            return hour + " : " + minute + " " + this.startTime.meriden;
+        }
+        else {
+            this.startTime = object;
+            var minute = object.minute;
+            var hour = object.hour;
+            if (object.hour < 10)
+                hour = 0 + "" + object.hour;
+            if (object.minute < 10)
+                minute = 0 + "" + object.minute;
+            return hour + " : " + minute + " " + object.meriden;
+        }
+    };
+    addTripComponent.prototype.formatEndTime = function (object) {
+        if (object == null) {
+            if (this.endTime == null) {
+                this.endTime = { "hour": 3, "minute": 15, "meriden": "PM", "format": 12 };
+            }
+            var minute = this.endTime.minute;
+            var hour = this.endTime.hour;
+            if (this.endTime.hour < 10)
+                hour = 0 + "" + this.endTime.hour;
+            if (this.endTime.minute < 10)
+                minute = 0 + "" + this.endTime.minute;
+            return hour + " : " + minute + " " + this.endTime.meriden;
+        }
+        else {
+            this.endTime = object;
+            var minute = object.minute;
+            var hour = object.hour;
+            if (object.hour < 10)
+                hour = 0 + "" + object.hour;
+            if (object.minute < 10)
+                minute = 0 + "" + object.minute;
+            return hour + " : " + minute + " " + object.meriden;
+        }
     };
     addTripComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
@@ -27882,7 +27927,7 @@ var billComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/trip/editTrip/editTrip.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'CAR.EDITCAR.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editUserForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'USER.NAME' | translate }}\" formControlName=\"name\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'USER.PHONENUMBER' | translate }}\" formControlName=\"phoneNumber\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'USER.ISOCODE' | translate }}\" formControlName=\"ISOCode\">\r\n              <mat-option *ngFor=\"let oneCode of isoCode\" [value]=\"oneCode.isoCode\">\r\n                {{oneCode.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editUserForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'CAR.EDITCAR.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n    <div style=\"font-size: 20px\">{{'TRIP.PRICE' | translate}} : {{totalPrice+subLocaationPrice+airportPrice}}</div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n\r\n    <nav mat-tab-nav-bar [backgroundColor]=\"background\">\r\n      <a mat-tab-link disabled *ngFor=\"let link of links\" [active]=\"activeLink == link.name\">\r\n        {{link.view | translate}}\r\n      </a>\r\n    </nav>\r\n    <form [formGroup]=\"stepOneForm\" *ngIf=\"activeLink=='step1'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.USER' | translate }}\" formControlName=\"ownerId\">\r\n              <mat-option *ngFor=\"let oneUser of users\" [value]=\"oneUser.id\">\r\n                {{oneUser.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.LOCATION' | translate }}\" formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let oneLocation of locations\" [value]=\"oneLocation.id\">\r\n                {{oneLocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <section class=\"example-section\" style=\"padding-bottom: 10px;\" fxFlex=\"95\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isFromAirport\">{{\r\n              'TRIP.FROMAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isToAirport\">{{\r\n              'TRIP.TOAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isInCity\">{{\r\n              'TRIP.INCITY' | translate }}</mat-checkbox>\r\n          </section>\r\n\r\n          <!-- <mat-form-field fxFlex=\"40\">\r\n              <input matInput [matTimepicker]=\"startPicker\" (userTimeChange)=\"emituserTimeChange()\" placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n              <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n              <mat-timepicker #startPicker color=\"primary\"></mat-timepicker>\r\n            </mat-form-field> -->\r\n          <!-- <w-mat-timepicker color=\"primary\" [(userTime)]=\"exportTime\"></w-mat-timepicker> -->\r\n\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"next(2,null,null)\" cdkFocusInitial [disabled]=\"stepOneForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n    <form [formGroup]=\"stepSecForm\" *ngIf=\"activeLink=='step2'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"40\">\r\n            <input matInput (focus)=\"firstpicker.open()\" [matDatepicker]=\"firstpicker\" formControlName=\"first\"\r\n              placeholder=\"{{ 'TRIP.FROM' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"firstpicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #firstpicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"true\">\r\n            <input matInput [matTimepicker]=\"startPicker\" placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #startPicker id=\"startPickerId\" color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='fromAirport' \r\n          && tripType!='fromAirportAndCity' \r\n          && tripType!='toAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput readonly=\"readonly\" placeholder=\"{{ 'TRIP.TIME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n              [ngModel]=\"formatStartTime(startPicker['userTime'])\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n          </mat-form-field>\r\n\r\n\r\n\r\n\r\n          <mat-form-field fxFlex=\"40\" *ngIf=\"tripType!='fromAirport' && tripType!='toAirport'\">\r\n            <input matInput (focus)=\"secondepicker.open()\" [matDatepicker]=\"secondepicker\" formControlName=\"seconde\"\r\n              placeholder=\"{{ 'TRIP.TO' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"secondepicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #secondepicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"true\">\r\n            <input matInput [matTimepicker]=\"endPicker\" required placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #endPicker color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='cityAndToAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput readonly=\"readonly\" placeholder=\"{{ 'TRIP.TIME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n              [ngModel]=\"formatEndTime(endPicker['userTime'])\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n          </mat-form-field>\r\n\r\n\r\n\r\n          <div fxFlex=\"40\" *ngIf=\"tripType=='fromAirport' || tripType=='toAirport'\"></div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"next(3,startPicker,endPicker)\" cdkFocusInitial>{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(1)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n    <form [formGroup]=\"stepthreeForm\" *ngIf=\"activeLink=='step3'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"90\">\r\n            <mat-select placeholder=\"{{ 'TRIP.CAR' | translate }}\" (change)=\"doSomething($event)\" formControlName=\"carId\">\r\n              <mat-option *ngFor=\"let oneCar of carAvailable\" [value]=\"oneCar.id\">\r\n                {{oneCar.name}} - {{oneCar.driver.username}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button *ngIf=\"links[3]!=null\" (click)=\"next(4,null,null)\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button *ngIf=\"links[3]==null\" (click)=\"add()\" class=\"addButton\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(2)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n\r\n    </form>\r\n\r\n\r\n    <form *ngIf=\"activeLink=='step4'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <div fxFlex=\"90\" class=\"step4\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{location.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{pricePerDay}} $</label>\r\n            <div fxFlex=\"40\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus disabled\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{tripdays}}</label>\r\n                <div class=\"circle add disabled\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <!-- <mat-form-field fxFlex=\"30\">\r\n                <input disabled matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"tripdays\" required>\r\n                <mat-icon matSuffix>people</mat-icon>\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n            </div> -->\r\n\r\n\r\n          <div fxFlex=\"90\" class=\"step4\" *ngFor=\"let element of tripSublocations;let i=index\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{carsSublocations[i].subLocation.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{carsSublocations[i].cost}} $</label>\r\n            <div fxFlex=\"40\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus\" [ngClass]=\"{'disabled': tripSublocations[i].duration==0}\" (click)=\"minDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{tripSublocations[i].duration}}</label>\r\n                <div class=\"circle add\" (click)=\"addDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <!-- <mat-form-field fxFlex=\"30\">\r\n                <input (input)=\"onSearchChange()\" matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"tripSublocations[i].duration\" required>\r\n                <mat-icon matSuffix>people</mat-icon>\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field> -->\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"add()\" class=\"addButton\" [disabled]=\"tripdays<0\" cdkFocusInitial>{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(3,null,null)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -27894,7 +27939,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".divImage {\n  height: 220px;\n  position: relative;\n  width: 100%;\n  text-align: center; }\n  .divImage .imgCustim {\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px auto; }\n  .divImage .imgCustimLoader {\n    position: absolute;\n    opacity: 0.5;\n    top: 0px;\n    /* height: 100%; */\n    left: 0px;\n    /* width: 100%; */\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px auto;\n    margin-left: calc(50% - 100px); }\n\n.divButton {\n  height: 40px;\n  border-radius: 10px;\n  width: 150px;\n  margin: 5px auto;\n  text-align: center;\n  padding: 10px 0px;\n  background-color: #00897B;\n  color: white; }\n  .divButton:hover {\n    background-color: #00695C;\n    cursor: pointer; }\n\n.listOfImgs {\n  width: 1050px;\n  padding: 20px 0px;\n  white-space: nowrap;\n  overflow-x: auto;\n  overflow-y: hidden; }\n  .listOfImgs .listDiv {\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px 10px;\n    position: relative; }\n    .listOfImgs .listDiv .deleteImge {\n      background-color: rgba(204, 204, 204, 0.329412);\n      width: 25px;\n      height: 25px;\n      border-radius: 50%;\n      position: absolute;\n      right: 5px;\n      top: 5px;\n      padding: 2px; }\n      .listOfImgs .listDiv .deleteImge mat-icon {\n        font-size: 21px;\n        font-weight: bold; }\n      .listOfImgs .listDiv .deleteImge:hover {\n        cursor: pointer;\n        background-color: rgba(204, 204, 204, 0.729412); }\n    .listOfImgs .listDiv .listImgCustim {\n      width: 200px;\n      height: 200px;\n      border-radius: 10px; }\n    .listOfImgs .listDiv .listImgCustimLoader {\n      position: absolute;\n      opacity: 0.5;\n      top: 0px;\n      /* height: 100%; */\n      left: 0px;\n      /* width: 100%; */\n      width: 200px;\n      height: 200px;\n      border-radius: 10px;\n      margin-left: calc(50% - 100px); }\n\nul.listOfImgs li {\n  display: inline-block; }\n", ""]);
+exports.push([module.i, ".divImage {\n  height: 220px;\n  position: relative;\n  width: 100%;\n  text-align: center; }\n  .divImage .imgCustim {\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px auto; }\n  .divImage .imgCustimLoader {\n    position: absolute;\n    opacity: 0.5;\n    top: 0px;\n    /* height: 100%; */\n    left: 0px;\n    /* width: 100%; */\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px auto;\n    margin-left: calc(50% - 100px); }\n\n.divButton {\n  height: 40px;\n  border-radius: 10px;\n  width: 150px;\n  margin: 5px auto;\n  text-align: center;\n  padding: 10px 0px;\n  background-color: #00897B;\n  color: white; }\n  .divButton:hover {\n    background-color: #00695C;\n    cursor: pointer; }\n\n.listOfImgs {\n  width: 1050px;\n  padding: 20px 0px;\n  white-space: nowrap;\n  overflow-x: auto;\n  overflow-y: hidden; }\n  .listOfImgs .listDiv {\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px 10px;\n    position: relative; }\n    .listOfImgs .listDiv .deleteImge {\n      background-color: rgba(204, 204, 204, 0.329412);\n      width: 25px;\n      height: 25px;\n      border-radius: 50%;\n      position: absolute;\n      right: 5px;\n      top: 5px;\n      padding: 2px; }\n      .listOfImgs .listDiv .deleteImge mat-icon {\n        font-size: 21px;\n        font-weight: bold; }\n      .listOfImgs .listDiv .deleteImge:hover {\n        cursor: pointer;\n        background-color: rgba(204, 204, 204, 0.729412); }\n    .listOfImgs .listDiv .listImgCustim {\n      width: 200px;\n      height: 200px;\n      border-radius: 10px; }\n    .listOfImgs .listDiv .listImgCustimLoader {\n      position: absolute;\n      opacity: 0.5;\n      top: 0px;\n      /* height: 100%; */\n      left: 0px;\n      /* width: 100%; */\n      width: 200px;\n      height: 200px;\n      border-radius: 10px;\n      margin-left: calc(50% - 100px); }\n\nul.listOfImgs li {\n  display: inline-block; }\n\n.step4 .sublocationName {\n  font-size: 22px;\n  padding-top: 12px; }\n\n.step4 .sublocationPrice {\n  padding-top: 12px;\n  font-size: 22px;\n  color: #37abdf; }\n\n.step4 .durationDiv {\n  width: 200px;\n  display: inline-block;\n  float: right;\n  margin: 0px auto; }\n  .step4 .durationDiv .circle {\n    width: 30px;\n    border-radius: 50%;\n    float: left;\n    height: 30px; }\n    .step4 .durationDiv .circle i {\n      font-size: 22px;\n      font-weight: bold;\n      color: white;\n      padding: 4px;\n      text-align: center;\n      margin: 0px auto;\n      -webkit-user-select: none;\n         -moz-user-select: none;\n          -ms-user-select: none;\n              user-select: none; }\n    .step4 .durationDiv .circle:hover {\n      cursor: pointer; }\n  .step4 .durationDiv .minus {\n    background-color: #FF6F00; }\n  .step4 .durationDiv .add {\n    background-color: #1B5E20; }\n  .step4 .durationDiv .disabled:hover {\n    cursor: not-allowed; }\n  .step4 .durationDiv .duration {\n    padding: 0px 15px;\n    float: left;\n    font-size: 20px; }\n", ""]);
 
 // exports
 
@@ -27942,56 +27987,675 @@ var editTripComponent = (function () {
         this.dialogServ = dialogServ;
         this.route = route;
         this.translationLoader = translationLoader;
+        this.locations = [];
+        this.allData = {};
+        this.users = [];
+        this.totalPrice = 0;
+        this.subLocaationPrice = 0;
+        this.links = [
+            {
+                "name": "step1",
+                "view": "TRIP.STEP1.TITLE"
+            },
+            {
+                "name": "step2",
+                "view": "TRIP.STEP2.TITLE"
+            },
+            {
+                "name": "step3",
+                "view": "TRIP.STEP3.TITLE"
+            },
+        ];
+        this.type = ['fromAirport', 'city', 'toAirport', 'fromAirportAndCity', 'fromAirportAndToAirport', 'cityAndToAirport', 'fromAirportAndCityAndToAirport'];
+        this.tripType = "";
+        this.activeLink = this.links[0].name;
+        this.isFromAirport = false;
+        this.isToAirport = false;
+        this.isInCity = false;
+        this.carDate = {};
+        this.carAvailable = [];
+        this.tripSublocations = [];
+        this.carsSublocations = [];
+        this.mainTripdays = 0;
+        this.tripdays = 0;
+        this.subLocationDays = 0;
+        this.pricePerDay = 0;
+        this.airportPrice = 0;
+        this.newData = false;
         this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_7__languageFiles_en__["a" /* locale */]);
     }
+    editTripComponent.prototype.addDuration = function (index) {
+        if (this.subLocationDays == this.mainTripdays) {
+            alert("Error");
+        }
+        else {
+            this.subLocaationPrice += this.tripSublocations[index].cost;
+            this.subLocationDays++;
+            this.tripSublocations[index].duration++;
+            this.totalPrice -= this.pricePerDay;
+            this.tripdays--;
+        }
+    };
+    editTripComponent.prototype.minDuration = function (index) {
+        if (this.tripSublocations[index].duration == 0)
+            return;
+        this.subLocaationPrice -= this.tripSublocations[index].cost;
+        this.subLocationDays--;
+        this.tripSublocations[index].duration--;
+        this.totalPrice += this.pricePerDay;
+        this.tripdays++;
+    };
+    editTripComponent.prototype.differenceInHourse = function (firstDate, secDate, isJustTime) {
+        if (isJustTime === void 0) { isJustTime = false; }
+        secDate = new Date(secDate);
+        firstDate = new Date(firstDate);
+        var timeDiff = secDate.getTime() - firstDate.getTime();
+        if (isJustTime)
+            return timeDiff;
+        var diffHourse = Math.ceil(timeDiff / (1000 * 3600));
+        var daysNum = Math.ceil(diffHourse / 24);
+        this.mainTripdays = daysNum;
+        this.tripdays = daysNum;
+        return (daysNum * 24);
+    };
     editTripComponent.prototype.getParams = function (name, callback) {
         this.route.paramMap.subscribe(function (params) {
             callback(params.get(name));
         });
     };
+    editTripComponent.prototype.addStep4 = function () {
+        if (this.links[3] == null)
+            this.links.push({
+                "name": "step4",
+                "view": "TRIP.STEP4.TITLE"
+            });
+    };
+    editTripComponent.prototype.removeStep4 = function () {
+        if (this.links[3] != null)
+            this.links.splice(3, 1);
+    };
     editTripComponent.prototype.ngOnInit = function () {
-        this.editTripForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
-            name: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
-            phoneNumber: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
-            ISOCode: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
+        var _this = this;
+        this.stepOneForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+            locationId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+            ownerId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
         });
-        this.isoCode = this.mainServ.globalServ.getIsoCode();
+        this.stepSecForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+            first: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](''),
+            seconde: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('')
+        });
+        this.stepthreeForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+            carId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
+        });
+        var locationFilter = { "where": { "status": "active" }, "include": ['subLocations'] };
+        this.mainServ.APIServ.get("locations?filter=" + JSON.stringify(locationFilter)).subscribe(function (data) {
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.locations = data;
+            }
+            else
+                _this.dialogServ.someThingIsError();
+        });
+        var filter = { "where": { "status": "active" } };
+        this.mainServ.APIServ.get("users?filter=" + JSON.stringify(filter)).subscribe(function (data) {
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.users = data;
+            }
+            else
+                _this.dialogServ.someThingIsError();
+        });
         var mainthis = this;
         this.getParams("id", function (id) {
-            var _this = this;
-            mainthis.userId = id;
-            mainthis.mainServ.APIServ.get("users/" + mainthis.userId).subscribe(function (data) {
+            mainthis.tripId = id;
+            mainthis.mainServ.APIServ.get("trips/" + mainthis.tripId).subscribe(function (data) {
                 if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
-                    mainthis.user = data;
-                    mainthis.editTripForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
-                        name: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.name, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
-                        phoneNumber: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.phoneNumber, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
-                        ISOCode: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.ISOCode, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
-                    });
+                    mainthis.trip = data;
+                    mainthis.prerperData(data);
                 }
                 else {
-                    _this.dialogServ.someThingIsError();
+                    mainthis.dialogServ.someThingIsError();
                 }
             });
         });
     };
-    editTripComponent.prototype.edit = function () {
+    editTripComponent.prototype.converdateToObject = function (date) {
+        console.log("date");
+        console.log(date);
+        var newDate = new Date(date);
+        console.log("newDate");
+        console.log(newDate.getHours());
+        var hour = newDate.getHours();
+        var minute = newDate.getMinutes();
+        var meriden = "AM";
+        if (hour > 12) {
+            hour -= 12;
+            meriden = "PM";
+        }
+        return { "hour": hour, "minute": minute, "meriden": meriden, "format": 12 };
+    };
+    editTripComponent.prototype.prerperData = function (data) {
         var _this = this;
-        var data = this.editTripForm.value;
-        this.mainServ.APIServ.put("users/" + this.userId, data).subscribe(function (data) {
-            if (_this.mainServ.APIServ.getErrorCode() == 0) {
-                _this.back();
+        // firstStep
+        this.stepOneForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+            locationId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.locationId, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+            ownerId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.ownerId, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
+        });
+        this.isFromAirport = data.fromAirport;
+        this.isInCity = data.inCity;
+        this.isToAirport = data.toAirport;
+        this.tripType = data.type;
+        this.carsSublocations = data.car.carSublocations;
+        this.tripSublocations = data.tripSublocations;
+        this.getTypeTrip();
+        this.allData['locationId'] = this.stepOneForm.value.locationId;
+        this.allData['ownerId'] = this.stepOneForm.value.ownerId;
+        this.allData['fromAirport'] = this.isFromAirport;
+        this.allData['toAirport'] = this.isToAirport;
+        this.allData['inCity'] = this.isInCity;
+        var locationId = this.allData['locationId'];
+        this.location = this.locations.find(function (element) {
+            return element.id.toString() == locationId.toString();
+        });
+        console.log(this.location);
+        this.subLocationId = [];
+        this.location.subLocations.forEach(function (element) {
+            if (element.status == "active")
+                _this.subLocationId.push(element.id);
+        });
+        //end firstStep
+        // secStep
+        if (this.tripType == this.type[0]) {
+            this.stepSecForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+                first: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.fromAirportDate)
+            });
+            this.startTime = this.converdateToObject(data.fromAirportDate);
+            console.log("startTime");
+            console.log(this.startTime);
+        }
+        else if (this.tripType == this.type[1]) {
+            this.stepSecForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+                first: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.startInCityDate),
+                seconde: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.endInCityDate)
+            });
+        }
+        else if (this.tripType == this.type[2]) {
+            this.stepSecForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+                first: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.toAirportDate)
+            });
+            this.startTime = this.converdateToObject(data.toAirportDate);
+        }
+        else if (this.tripType == this.type[3]) {
+            this.stepSecForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+                first: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.fromAirportDate),
+                seconde: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.endInCityDate)
+            });
+            this.startTime = this.converdateToObject(data.fromAirportDate);
+        }
+        else if (this.tripType == this.type[4]) {
+            this.stepSecForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+                first: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.fromAirportDate),
+                seconde: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.toAirportDate)
+            });
+            this.startTime = this.converdateToObject(data.fromAirportDate);
+            this.endTime = this.converdateToObject(data.toAirportDate);
+        }
+        else if (this.tripType == this.type[5]) {
+            this.stepSecForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+                first: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.startInCityDate),
+                seconde: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.toAirportDate)
+            });
+            this.endTime = this.converdateToObject(data.toAirportDate);
+        }
+        else if (this.tripType == this.type[6]) {
+            this.stepSecForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+                first: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.fromAirportDate),
+                seconde: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.toAirportDate)
+            });
+            this.startTime = this.converdateToObject(data.fromAirportDate);
+            this.endTime = this.converdateToObject(data.toAirportDate);
+        }
+        // end secStep
+        // thierdStep
+        this.stepthreeForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+            carId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.carId, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
+        });
+        // end thierdStep
+    };
+    editTripComponent.prototype.doSomething = function (event) {
+        var carId = "";
+        if (event.value == null)
+            carId = event;
+        else
+            carId = event.value;
+        var selectedCar = this.carAvailable.find(function (element) {
+            return element.id.toString() == carId.toString();
+        });
+        this.allData['driverId'] = selectedCar.driverId;
+        this.allData['pricePerDay'] = selectedCar.pricePerDay;
+        this.allData['priceOneWay'] = selectedCar.priceOneWay;
+        this.allData['priceTowWay'] = selectedCar.priceTowWay;
+        this.pricePerDay = selectedCar.pricePerDay;
+        if (this.tripType == "fromAirport") {
+            this.airportPrice = selectedCar.priceOneWay;
+        }
+        else if (this.tripType == "city") {
+            this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['startInCityDate'], this.allData['endInCityDate']) / 24);
+        }
+        else if (this.tripType == "toAirport") {
+            this.airportPrice = selectedCar.priceOneWay;
+        }
+        else if (this.tripType == "fromAirportAndCity") {
+            this.airportPrice = selectedCar.priceOneWay;
+            this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['fromAirportDate'], this.allData['endInCityDate']) / 24);
+        }
+        else if (this.tripType == "fromAirportAndToAirport") {
+            this.airportPrice = selectedCar.priceTowWay;
+        }
+        else if (this.tripType == "cityAndToAirport") {
+            this.airportPrice = selectedCar.priceOneWay;
+            this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['startInCityDate'], this.allData['toAirportDate']) / 24);
+        }
+        else if (this.tripType == "fromAirportAndCityAndToAirport") {
+            this.airportPrice = selectedCar.priceTowWay;
+            this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['fromAirportDate'], this.allData['toAirportDate']) / 24);
+        }
+    };
+    editTripComponent.prototype.getTypeTrip = function () {
+        if (!this.isFromAirport && !this.isToAirport && this.isInCity) {
+            console.log("inCity");
+            this.addStep4();
+            return this.type[1];
+        }
+        else if (!this.isFromAirport && this.isToAirport && !this.isInCity) {
+            console.log("toAirport");
+            this.removeStep4();
+            return this.type[2];
+        }
+        else if (!this.isFromAirport && this.isToAirport && this.isInCity) {
+            console.log("inCity && toAirport");
+            this.addStep4();
+            return this.type[5];
+        }
+        else if (this.isFromAirport && !this.isToAirport && !this.isInCity) {
+            console.log("fromAirport");
+            this.removeStep4();
+            return this.type[0];
+        }
+        else if (this.isFromAirport && !this.isToAirport && this.isInCity) {
+            console.log("isFromAirport&& inCity");
+            this.addStep4();
+            return this.type[3];
+        }
+        else if (this.isFromAirport && this.isToAirport && !this.isInCity) {
+            console.log("isFromAirport&& toAirport");
+            this.removeStep4();
+            return this.type[4];
+        }
+        else if (this.isFromAirport && this.isToAirport && this.isInCity) {
+            console.log("isFromAirport&& inCity && toAirport");
+            this.addStep4();
+            return this.type[6];
+        }
+    };
+    editTripComponent.prototype.converTo24 = function (hours, meriden) {
+        if (meriden == "PM" && hours < 12)
+            hours = hours + 12;
+        return hours;
+    };
+    editTripComponent.prototype.mixDateTime = function (date, time) {
+        date = new Date(date);
+        date.setHours(this.converTo24(time['hour'], time['meriden']));
+        date.setMinutes(time['minute']);
+        return date;
+    };
+    editTripComponent.prototype.cheackValidateionSecStep = function (firstDate, secDate, firstTime, secTime) {
+        this.carDate = {};
+        console.log("firstDate");
+        console.log(firstDate);
+        console.log("secDate");
+        console.log(secDate);
+        console.log("firstTime");
+        console.log(firstTime);
+        console.log("secTime");
+        console.log(secTime);
+        if (this.tripType == 'fromAirport') {
+            if (firstDate != "" && firstTime != null) {
+                this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime);
+                this.carDate = { "fromAirportDate": this.allData['fromAirportDate'] };
+                return true;
             }
-            else if (_this.mainServ.APIServ.getErrorCode() == 451) {
-                _this.dialogServ.errorMessage(451);
+            else
+                return false;
+        }
+        if (this.tripType == 'city') {
+            if (firstDate != "" && secDate != "") {
+                this.allData['startInCityDate'] = this.mixDateTime(firstDate, { hour: 0, minute: 0, meriden: "AM", format: 12 });
+                this.allData['endInCityDate'] = this.mixDateTime(secDate, { hour: 11, minute: 59, meriden: "PM", format: 12 });
+                this.carDate = { "startInCityDate": this.allData['startInCityDate'], "endInCityDate": this.allData['endInCityDate'] };
+                return true;
+            }
+            else
+                return false;
+        }
+        if (this.tripType == 'toAirport') {
+            if (firstDate != "" && firstTime != null) {
+                this.allData['toAirportDate'] = this.mixDateTime(firstDate, firstTime);
+                this.carDate = { "toAirportDate": this.allData['toAirportDate'] };
+                return true;
+            }
+            else
+                return false;
+        }
+        if (this.tripType == 'fromAirportAndCity') {
+            if (firstDate != "" && firstTime != null && secDate != null) {
+                this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime);
+                this.allData['endInCityDate'] = this.mixDateTime(secDate, { hour: 11, minute: 59, meriden: "PM", format: 12 });
+                this.carDate = { "fromAirportDate": this.allData['fromAirportDate'], "endInCityDate": this.allData['endInCityDate'] };
+                return true;
+            }
+            else
+                return false;
+        }
+        // type = ['cityAndToAirport', 'fromAirportAndCityAndToAirport']
+        if (this.tripType == 'fromAirportAndToAirport') {
+            if (firstDate != "" && firstTime != null && secDate != null && secTime != null) {
+                this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime);
+                this.allData['toAirportDate'] = this.mixDateTime(secDate, secTime);
+                this.carDate = { "fromAirportDate": this.allData['fromAirportDate'], "toAirportDate": this.allData['toAirportDate'] };
+                return true;
+            }
+            else
+                return false;
+        }
+        if (this.tripType == 'cityAndToAirport') {
+            if (firstDate != "" && secDate != null && secTime != null) {
+                this.allData['startInCityDate'] = this.mixDateTime(firstDate, { hour: 0, minute: 0, meriden: "AM", format: 12 });
+                this.allData['toAirportDate'] = this.mixDateTime(secDate, secTime);
+                this.carDate = { "startInCityDate": this.allData['startInCityDate'], "toAirportDate": this.allData['toAirportDate'] };
+                return true;
+            }
+            else
+                return false;
+        }
+        if (this.tripType == 'fromAirportAndCityAndToAirport') {
+            if (firstDate != "" && firstTime != null && secDate != null && secTime != null) {
+                this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime);
+                this.allData['toAirportDate'] = this.mixDateTime(secDate, secTime);
+                this.carDate = { "fromAirportDate": this.allData['fromAirportDate'], "toAirportDate": this.allData['toAirportDate'] };
+                return true;
+            }
+            else
+                return false;
+        }
+    };
+    editTripComponent.prototype.checkChangeDates = function (firstDate, secDate) {
+        if (this.tripType == this.type[0]) {
+            var from = this.mixDateTime(firstDate, this.startTime);
+            console.log("from");
+            console.log(from);
+            console.log("new Date(this.trip.fromAirportDate)");
+            console.log(new Date(this.trip.fromAirportDate));
+            console.log("diffffffffff");
+            console.log(this.differenceInHourse(from, new Date(this.trip.fromAirportDate), true));
+            if (this.differenceInHourse(from, new Date(this.trip.fromAirportDate), true) == 0) {
+                return false;
+            }
+            else
+                return true;
+        }
+        else if (this.tripType == this.type[1]) {
+            var from = this.mixDateTime(firstDate, { hour: 0, minute: 0, meriden: "AM", format: 12 });
+            var to = this.mixDateTime(secDate, { hour: 11, minute: 59, meriden: "PM", format: 12 });
+            if (this.differenceInHourse(from, new Date(this.trip.startInCityDate), true) == 0 && this.differenceInHourse(to, new Date(this.trip.endInCityDate), true) == 0) {
+                return false;
+            }
+            else
+                return true;
+        }
+        else if (this.tripType == this.type[2]) {
+            var from = this.mixDateTime(firstDate, this.startTime);
+            if (this.differenceInHourse(from, new Date(this.trip.toAirportDate), true) == 0) {
+                return false;
+            }
+            else
+                return true;
+        }
+        else if (this.tripType == this.type[3]) {
+            var from = this.mixDateTime(firstDate, this.startTime);
+            var to = this.mixDateTime(secDate, { hour: 11, minute: 59, meriden: "PM", format: 12 });
+            if (this.differenceInHourse(from, new Date(this.trip.fromAirportDate), true) == 0 && this.differenceInHourse(to, new Date(this.trip.endInCityDate), true) == 0) {
+                return false;
+            }
+            else
+                return true;
+        }
+        else if (this.tripType == this.type[4]) {
+            var from = this.mixDateTime(firstDate, this.startTime);
+            var to = this.mixDateTime(secDate, this.endTime);
+            if (this.differenceInHourse(from, new Date(this.trip.fromAirportDate), true) == 0 && this.differenceInHourse(to, new Date(this.trip.toAirportDate), true) == 0) {
+                return false;
+            }
+            else
+                return true;
+        }
+        else if (this.tripType == this.type[5]) {
+            var from = this.mixDateTime(firstDate, { hour: 0, minute: 0, meriden: "AM", format: 12 });
+            var to = this.mixDateTime(secDate, this.endTime);
+            if (this.differenceInHourse(from, new Date(this.trip.startInCityDate), true) == 0 && this.differenceInHourse(to, new Date(this.trip.toAirportDate), true) == 0) {
+                return false;
+            }
+            else
+                return true;
+        }
+        else if (this.tripType == this.type[6]) {
+            var from = this.mixDateTime(firstDate, this.startTime);
+            var to = this.mixDateTime(secDate, this.endTime);
+            if (this.differenceInHourse(from, new Date(this.trip.fromAirportDate), true) == 0 && this.differenceInHourse(to, new Date(this.trip.toAirportDate), true) == 0) {
+                return false;
+            }
+            else
+                return true;
+        }
+    };
+    editTripComponent.prototype.anyChange = function (stepNum) {
+        if (stepNum == 1) {
+            if (this.stepOneForm.value.locationId == this.trip['locationId'] &&
+                this.isFromAirport == this.trip['fromAirport'] &&
+                this.isToAirport == this.trip['toAirport'] &&
+                this.isInCity == this.trip['inCity']) {
+                return false;
             }
             else {
-                _this.dialogServ.someThingIsError();
+                return true;
             }
-        });
+        }
+        else if (stepNum == 2) {
+            console.log("Start AnyChange");
+            var firstDate = new Date(this.stepSecForm.value['first']);
+            var secDate = new Date(this.stepSecForm.value['seconde']);
+            return this.checkChangeDates(firstDate, secDate);
+        }
+        else if (stepNum == 3) {
+            if (this.stepthreeForm.value.carId == this.trip['carId'])
+                return false;
+            else
+                return true;
+        }
+    };
+    editTripComponent.prototype.next = function (stepNum) {
+        var _this = this;
+        if (stepNum == 2) {
+            if (this.anyChange(1) == true) {
+                this.newData = true;
+                this.tripType = this.getTypeTrip();
+                this.stepSecForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+                    first: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](""),
+                    seconde: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]("")
+                });
+                this.startTime = this.converdateToObject(new Date());
+                this.endTime = this.converdateToObject(new Date());
+                this.activeLink = this.links[stepNum - 1].name;
+                this.allData['locationId'] = this.stepOneForm.value.locationId;
+                this.allData['ownerId'] = this.stepOneForm.value.ownerId;
+                this.allData['fromAirport'] = this.isFromAirport;
+                this.allData['toAirport'] = this.isToAirport;
+                this.allData['inCity'] = this.isInCity;
+                var locationId = this.allData['locationId'];
+                this.location = this.locations.find(function (element) {
+                    return element.id.toString() == locationId.toString();
+                });
+                console.log(this.location);
+                this.subLocationId = [];
+                this.location.subLocations.forEach(function (element) {
+                    if (element.status == "active")
+                        _this.subLocationId.push(element.id);
+                });
+                console.log(this.subLocationId);
+            }
+            else {
+                this.activeLink = this.links[stepNum - 1].name;
+            }
+        }
+        else if (stepNum == 3) {
+            if (this.newData == true || this.anyChange(2) == true) {
+                this.stepthreeForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+                    carId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
+                });
+                this.newData == true;
+            }
+            this.totalPrice = 0;
+            var firstDate = this.stepSecForm.value['first'];
+            var secDate = this.stepSecForm.value['seconde'];
+            if (this.cheackValidateionSecStep(firstDate, secDate, this.startTime, this.endTime)) {
+                if (secDate) {
+                    if (this.differenceInHourse(firstDate, secDate) > 0) {
+                        var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport };
+                        this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId'] + "&tripId=" + this.tripId).subscribe(function (data) {
+                            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                                _this.carAvailable = data;
+                                _this.activeLink = _this.links[stepNum - 1].name;
+                            }
+                            else {
+                                _this.dialogServ.someThingIsError();
+                            }
+                        });
+                    }
+                    else {
+                        alert("error");
+                    }
+                }
+                else {
+                    var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport };
+                    this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId'] + "&tripId=" + this.tripId).subscribe(function (data) {
+                        if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                            _this.carAvailable = data;
+                            _this.activeLink = _this.links[stepNum - 1].name;
+                        }
+                        else {
+                            _this.dialogServ.someThingIsError();
+                        }
+                    });
+                }
+            }
+            else {
+                alert("error");
+            }
+        }
+        else if (stepNum == 4) {
+            if (this.newData == true || this.anyChange(3) == true) {
+                this.allData['carId'] = this.stepthreeForm.value['carId'];
+                var filter = { "where": { "and": [{ "carId": this.allData['carId'] }, { "subLocationId": { "inq": this.subLocationId } }] } };
+                console.log("carSublocations?filter=" + JSON.stringify(filter));
+                this.mainServ.APIServ.get("carSublocations?filter=" + JSON.stringify(filter)).subscribe(function (data) {
+                    if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                        _this.activeLink = _this.links[stepNum - 1].name;
+                        _this.carsSublocations = data;
+                        data.forEach(function (element) {
+                            var tempCarSub = _this.carsSublocations.find(function (x) { return x.subLocationId === element.subLocationId; });
+                            var tempCost = 0;
+                            if (tempCarSub != null)
+                                tempCost = tempCarSub.cost;
+                            _this.tripSublocations.push({ "sublocationId": element.subLocationId, "duration": 0, "cost": tempCost });
+                        });
+                    }
+                    else {
+                        _this.dialogServ.someThingIsError();
+                    }
+                });
+            }
+            else {
+                this.doSomething(this.trip['carId']);
+                var daysInSub = 0;
+                for (var index = 0; index < this.tripSublocations.length; index++) {
+                    var element = this.tripSublocations[index];
+                    this.subLocaationPrice += (element.duration * element.cost);
+                    this.subLocationDays += element.duration;
+                    this.totalPrice -= (this.pricePerDay * element.duration);
+                    this.tripdays -= element.duration;
+                }
+                this.activeLink = this.links[stepNum - 1].name;
+            }
+        }
+    };
+    editTripComponent.prototype.edit = function () {
+        // var data = this.editTripForm.value;
+        // this.mainServ.APIServ.put("users/" + this.userId, data).subscribe((data: any) => {
+        //   if (this.mainServ.APIServ.getErrorCode() == 0) {
+        //     this.back();
+        //   }
+        //   else if (this.mainServ.APIServ.getErrorCode() == 451) {
+        //     this.dialogServ.errorMessage(451);
+        //   }
+        //   else {
+        //     this.dialogServ.someThingIsError();
+        //   }
+        // })
     };
     editTripComponent.prototype.back = function () {
         this.mainServ.globalServ.goTo('users');
+    };
+    editTripComponent.prototype.formatStartTime = function (object) {
+        if (object == null) {
+            var minute = this.startTime.minute;
+            var hour = this.startTime.hour;
+            if (this.startTime.hour < 10)
+                hour = 0 + "" + this.startTime.hour;
+            if (this.startTime.minute < 10)
+                minute = 0 + "" + this.startTime.minute;
+            return hour + " : " + minute + " " + this.startTime.meriden;
+        }
+        else {
+            this.startTime = object;
+            var minute = object.minute;
+            var hour = object.hour;
+            if (object.hour < 10)
+                hour = 0 + "" + object.hour;
+            if (object.minute < 10)
+                minute = 0 + "" + object.minute;
+            return hour + " : " + minute + " " + object.meriden;
+        }
+    };
+    editTripComponent.prototype.formatEndTime = function (object) {
+        if (object == null) {
+            if (this.endTime == null)
+                return;
+            var minute = this.endTime.minute;
+            var hour = this.endTime.hour;
+            if (this.endTime.hour < 10)
+                hour = 0 + "" + this.endTime.hour;
+            if (this.endTime.minute < 10)
+                minute = 0 + "" + this.endTime.minute;
+            return hour + " : " + minute + " " + this.endTime.meriden;
+        }
+        else {
+            this.endTime = object;
+            var minute = object.minute;
+            var hour = object.hour;
+            if (object.hour < 10)
+                hour = 0 + "" + object.hour;
+            if (object.minute < 10)
+                minute = 0 + "" + object.minute;
+            return hour + " : " + minute + " " + object.meriden;
+        }
     };
     editTripComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
@@ -32014,6 +32678,91 @@ var SomeThingIsErrorComponent = (function () {
             __WEBPACK_IMPORTED_MODULE_0__core_services_translation_loader_service__["a" /* FuseTranslationLoaderService */]])
     ], SomeThingIsErrorComponent);
     return SomeThingIsErrorComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/dialogs/time/time.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!--component html goes here -->\n<h3 mat-dialog-title> {{'RESET.TITLE' | translate}}</h3>\n<div mat-dialog-content>\n  <!-- <form [formGroup]=\"resetPassForm\">\n    <div style=\"width: 100%;\">\n      <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\n        fxFlex>\n        <mat-form-field fxFlex=\"100\">\n          <input matInput placeholder=\"{{ 'RESET.NEWPASSWORD' | translate }}\" formControlName=\"newPassword\"\n            required>\n          <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\n        </mat-form-field>\n\n      </div>\n    </div>\n  </form> -->\n\n\n  \n</div>\n<div mat-dialog-actions>\n  <button mat-button (click)=\"cancel()\">{{'Global.CANCEL' | translate}}</button>\n  <button mat-button (click)=\"reset()\">{{'RESET.RESET' | translate}}</button>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/dialogs/time/time.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".w-clock-wrapper {\n  height: 100%;\n  padding: 0 24px; }\n  .w-clock-wrapper .w-clock {\n    width: 200px;\n    height: 200px;\n    border-radius: 50%;\n    cursor: pointer;\n    padding: 24px;\n    background: #ededed; }\n    .w-clock-wrapper .w-clock .w-clock-container {\n      width: 100%;\n      height: 100%;\n      position: relative;\n      display: block; }\n    .w-clock-wrapper .w-clock .w-clock-center {\n      height: 6px;\n      width: 6px;\n      position: absolute;\n      left: 0;\n      right: 0;\n      top: 0;\n      bottom: 0;\n      margin: auto;\n      border-radius: 50%; }\n    .w-clock-wrapper .w-clock .w-pointer {\n      box-shadow: none;\n      width: 1px;\n      height: 50%;\n      position: absolute;\n      left: 0;\n      right: 0;\n      bottom: 0;\n      margin: 0 auto;\n      padding: 0;\n      -webkit-transform-origin: top center;\n              transform-origin: top center;\n      transition: -webkit-transform 200ms;\n      transition: transform 200ms;\n      transition: transform 200ms, -webkit-transform 200ms;\n      z-index: 0;\n      pointer-events: none; }\n    .w-clock-wrapper .w-clock .w-clock-step {\n      display: block;\n      position: absolute;\n      -webkit-transform: translate(-50%, -50%);\n              transform: translate(-50%, -50%);\n      transition: -webkit-transform 200ms;\n      transition: transform 200ms;\n      transition: transform 200ms, -webkit-transform 200ms; }\n      .w-clock-wrapper .w-clock .w-clock-step .mat-mini-fab {\n        box-shadow: none;\n        background-color: transparent; }\n    .w-clock-wrapper .w-clock .w-clock-selected {\n      position: absolute;\n      bottom: -19px;\n      left: -19px;\n      min-width: 0;\n      min-height: 0;\n      pointer-events: none;\n      box-shadow: none;\n      cursor: none; }\n\n.w-clock-deg0 {\n  top: 0%;\n  left: 50%; }\n\n.w-clock-deg15 {\n  top: 1.70370869%;\n  left: 62.94095226%; }\n\n.w-clock-deg30 {\n  top: 6.69872981%;\n  left: 75%; }\n\n.w-clock-deg45 {\n  top: 14.64466094%;\n  left: 85.35533905%; }\n\n.w-clock-deg60 {\n  top: 25%;\n  left: 93.30127019%; }\n\n.w-clock-deg75 {\n  top: 37.05904774%;\n  left: 98.29629131%; }\n\n.w-clock-deg90 {\n  top: 50%;\n  left: 100%; }\n\n.w-clock-deg105 {\n  top: 62.94095226%;\n  left: 98.29629131%; }\n\n.w-clock-deg120 {\n  top: 75%;\n  left: 93.30127019%; }\n\n.w-clock-deg135 {\n  top: 85.35533906%;\n  left: 85.35533906%; }\n\n.w-clock-deg150 {\n  top: 93.30127019%;\n  left: 75%; }\n\n.w-clock-deg165 {\n  top: 98.29629131%;\n  left: 62.94095226%; }\n\n.w-clock-deg180 {\n  top: 100%;\n  left: 50%; }\n\n.w-clock-deg195 {\n  top: 98.29629131%;\n  left: 37.05904774%; }\n\n.w-clock-deg210 {\n  top: 93.30127019%;\n  left: 25%; }\n\n.w-clock-deg225 {\n  top: 85.35533906%;\n  left: 14.64466094%; }\n\n.w-clock-deg240 {\n  top: 75%;\n  left: 6.69872981%; }\n\n.w-clock-deg255 {\n  top: 62.94095226%;\n  left: 1.703708686%; }\n\n.w-clock-deg270 {\n  top: 50%;\n  left: 0%; }\n\n.w-clock-deg285 {\n  top: 37.05904774%;\n  left: 1.703708686%; }\n\n.w-clock-deg300 {\n  top: 25%;\n  left: 6.69872981%; }\n\n.w-clock-deg315 {\n  top: 14.64466094%;\n  left: 14.64466094%; }\n\n.w-clock-deg330 {\n  top: 6.69872981%;\n  left: 25%; }\n\n.w-clock-deg345 {\n  top: 1.703708686%;\n  left: 37.05904774%; }\n\n.w-clock-deg360 {\n  top: 0%;\n  left: 50%; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/dialogs/time/time.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TimeComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__core_services_translation_loader_service__ = __webpack_require__("../../../../../src/app/core/services/translation-loader.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__core_services_main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+
+var TimeComponent = (function () {
+    function TimeComponent(dialogRef, translate, data, translationLoader, mainServ) {
+        this.dialogRef = dialogRef;
+        this.translate = translate;
+        this.data = data;
+        this.translationLoader = translationLoader;
+        this.mainServ = mainServ;
+        this.exportTime = { hour: 7, minute: 15, meriden: 'PM', format: 12 };
+    }
+    TimeComponent.prototype.cancel = function () {
+        this.dialogRef.close();
+    };
+    TimeComponent.prototype.ngOnInit = function () {
+        // this.translate.use('en');
+    };
+    TimeComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+            selector: 'time',
+            template: __webpack_require__("../../../../../src/app/main/dialogs/time/time.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/main/dialogs/time/time.component.scss")]
+        }),
+        __param(2, Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Inject"])(__WEBPACK_IMPORTED_MODULE_1__angular_material__["e" /* MAT_DIALOG_DATA */])),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_material__["o" /* MatDialogRef */],
+            __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateService */], Object, __WEBPACK_IMPORTED_MODULE_0__core_services_translation_loader_service__["a" /* FuseTranslationLoaderService */],
+            __WEBPACK_IMPORTED_MODULE_4__core_services_main_service__["a" /* MainService */]])
+    ], TimeComponent);
+    return TimeComponent;
 }());
 
 
@@ -41990,277 +42739,6 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = "../../../../moment/locale recursive ^\\.\\/.*$";
-
-/***/ }),
-
-/***/ "../../../../ngx-material-timepicker/node_modules/moment/locale recursive ^\\.\\/.*$":
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./af": "../../../../ngx-material-timepicker/node_modules/moment/locale/af.js",
-	"./af.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/af.js",
-	"./ar": "../../../../ngx-material-timepicker/node_modules/moment/locale/ar.js",
-	"./ar-dz": "../../../../ngx-material-timepicker/node_modules/moment/locale/ar-dz.js",
-	"./ar-dz.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ar-dz.js",
-	"./ar-kw": "../../../../ngx-material-timepicker/node_modules/moment/locale/ar-kw.js",
-	"./ar-kw.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ar-kw.js",
-	"./ar-ly": "../../../../ngx-material-timepicker/node_modules/moment/locale/ar-ly.js",
-	"./ar-ly.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ar-ly.js",
-	"./ar-ma": "../../../../ngx-material-timepicker/node_modules/moment/locale/ar-ma.js",
-	"./ar-ma.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ar-ma.js",
-	"./ar-sa": "../../../../ngx-material-timepicker/node_modules/moment/locale/ar-sa.js",
-	"./ar-sa.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ar-sa.js",
-	"./ar-tn": "../../../../ngx-material-timepicker/node_modules/moment/locale/ar-tn.js",
-	"./ar-tn.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ar-tn.js",
-	"./ar.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ar.js",
-	"./az": "../../../../ngx-material-timepicker/node_modules/moment/locale/az.js",
-	"./az.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/az.js",
-	"./be": "../../../../ngx-material-timepicker/node_modules/moment/locale/be.js",
-	"./be.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/be.js",
-	"./bg": "../../../../ngx-material-timepicker/node_modules/moment/locale/bg.js",
-	"./bg.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/bg.js",
-	"./bm": "../../../../ngx-material-timepicker/node_modules/moment/locale/bm.js",
-	"./bm.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/bm.js",
-	"./bn": "../../../../ngx-material-timepicker/node_modules/moment/locale/bn.js",
-	"./bn.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/bn.js",
-	"./bo": "../../../../ngx-material-timepicker/node_modules/moment/locale/bo.js",
-	"./bo.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/bo.js",
-	"./br": "../../../../ngx-material-timepicker/node_modules/moment/locale/br.js",
-	"./br.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/br.js",
-	"./bs": "../../../../ngx-material-timepicker/node_modules/moment/locale/bs.js",
-	"./bs.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/bs.js",
-	"./ca": "../../../../ngx-material-timepicker/node_modules/moment/locale/ca.js",
-	"./ca.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ca.js",
-	"./cs": "../../../../ngx-material-timepicker/node_modules/moment/locale/cs.js",
-	"./cs.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/cs.js",
-	"./cv": "../../../../ngx-material-timepicker/node_modules/moment/locale/cv.js",
-	"./cv.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/cv.js",
-	"./cy": "../../../../ngx-material-timepicker/node_modules/moment/locale/cy.js",
-	"./cy.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/cy.js",
-	"./da": "../../../../ngx-material-timepicker/node_modules/moment/locale/da.js",
-	"./da.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/da.js",
-	"./de": "../../../../ngx-material-timepicker/node_modules/moment/locale/de.js",
-	"./de-at": "../../../../ngx-material-timepicker/node_modules/moment/locale/de-at.js",
-	"./de-at.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/de-at.js",
-	"./de-ch": "../../../../ngx-material-timepicker/node_modules/moment/locale/de-ch.js",
-	"./de-ch.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/de-ch.js",
-	"./de.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/de.js",
-	"./dv": "../../../../ngx-material-timepicker/node_modules/moment/locale/dv.js",
-	"./dv.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/dv.js",
-	"./el": "../../../../ngx-material-timepicker/node_modules/moment/locale/el.js",
-	"./el.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/el.js",
-	"./en-au": "../../../../ngx-material-timepicker/node_modules/moment/locale/en-au.js",
-	"./en-au.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/en-au.js",
-	"./en-ca": "../../../../ngx-material-timepicker/node_modules/moment/locale/en-ca.js",
-	"./en-ca.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/en-ca.js",
-	"./en-gb": "../../../../ngx-material-timepicker/node_modules/moment/locale/en-gb.js",
-	"./en-gb.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/en-gb.js",
-	"./en-ie": "../../../../ngx-material-timepicker/node_modules/moment/locale/en-ie.js",
-	"./en-ie.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/en-ie.js",
-	"./en-il": "../../../../ngx-material-timepicker/node_modules/moment/locale/en-il.js",
-	"./en-il.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/en-il.js",
-	"./en-nz": "../../../../ngx-material-timepicker/node_modules/moment/locale/en-nz.js",
-	"./en-nz.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/en-nz.js",
-	"./eo": "../../../../ngx-material-timepicker/node_modules/moment/locale/eo.js",
-	"./eo.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/eo.js",
-	"./es": "../../../../ngx-material-timepicker/node_modules/moment/locale/es.js",
-	"./es-do": "../../../../ngx-material-timepicker/node_modules/moment/locale/es-do.js",
-	"./es-do.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/es-do.js",
-	"./es-us": "../../../../ngx-material-timepicker/node_modules/moment/locale/es-us.js",
-	"./es-us.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/es-us.js",
-	"./es.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/es.js",
-	"./et": "../../../../ngx-material-timepicker/node_modules/moment/locale/et.js",
-	"./et.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/et.js",
-	"./eu": "../../../../ngx-material-timepicker/node_modules/moment/locale/eu.js",
-	"./eu.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/eu.js",
-	"./fa": "../../../../ngx-material-timepicker/node_modules/moment/locale/fa.js",
-	"./fa.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/fa.js",
-	"./fi": "../../../../ngx-material-timepicker/node_modules/moment/locale/fi.js",
-	"./fi.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/fi.js",
-	"./fo": "../../../../ngx-material-timepicker/node_modules/moment/locale/fo.js",
-	"./fo.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/fo.js",
-	"./fr": "../../../../ngx-material-timepicker/node_modules/moment/locale/fr.js",
-	"./fr-ca": "../../../../ngx-material-timepicker/node_modules/moment/locale/fr-ca.js",
-	"./fr-ca.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/fr-ca.js",
-	"./fr-ch": "../../../../ngx-material-timepicker/node_modules/moment/locale/fr-ch.js",
-	"./fr-ch.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/fr-ch.js",
-	"./fr.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/fr.js",
-	"./fy": "../../../../ngx-material-timepicker/node_modules/moment/locale/fy.js",
-	"./fy.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/fy.js",
-	"./gd": "../../../../ngx-material-timepicker/node_modules/moment/locale/gd.js",
-	"./gd.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/gd.js",
-	"./gl": "../../../../ngx-material-timepicker/node_modules/moment/locale/gl.js",
-	"./gl.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/gl.js",
-	"./gom-latn": "../../../../ngx-material-timepicker/node_modules/moment/locale/gom-latn.js",
-	"./gom-latn.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/gom-latn.js",
-	"./gu": "../../../../ngx-material-timepicker/node_modules/moment/locale/gu.js",
-	"./gu.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/gu.js",
-	"./he": "../../../../ngx-material-timepicker/node_modules/moment/locale/he.js",
-	"./he.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/he.js",
-	"./hi": "../../../../ngx-material-timepicker/node_modules/moment/locale/hi.js",
-	"./hi.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/hi.js",
-	"./hr": "../../../../ngx-material-timepicker/node_modules/moment/locale/hr.js",
-	"./hr.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/hr.js",
-	"./hu": "../../../../ngx-material-timepicker/node_modules/moment/locale/hu.js",
-	"./hu.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/hu.js",
-	"./hy-am": "../../../../ngx-material-timepicker/node_modules/moment/locale/hy-am.js",
-	"./hy-am.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/hy-am.js",
-	"./id": "../../../../ngx-material-timepicker/node_modules/moment/locale/id.js",
-	"./id.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/id.js",
-	"./is": "../../../../ngx-material-timepicker/node_modules/moment/locale/is.js",
-	"./is.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/is.js",
-	"./it": "../../../../ngx-material-timepicker/node_modules/moment/locale/it.js",
-	"./it.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/it.js",
-	"./ja": "../../../../ngx-material-timepicker/node_modules/moment/locale/ja.js",
-	"./ja.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ja.js",
-	"./jv": "../../../../ngx-material-timepicker/node_modules/moment/locale/jv.js",
-	"./jv.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/jv.js",
-	"./ka": "../../../../ngx-material-timepicker/node_modules/moment/locale/ka.js",
-	"./ka.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ka.js",
-	"./kk": "../../../../ngx-material-timepicker/node_modules/moment/locale/kk.js",
-	"./kk.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/kk.js",
-	"./km": "../../../../ngx-material-timepicker/node_modules/moment/locale/km.js",
-	"./km.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/km.js",
-	"./kn": "../../../../ngx-material-timepicker/node_modules/moment/locale/kn.js",
-	"./kn.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/kn.js",
-	"./ko": "../../../../ngx-material-timepicker/node_modules/moment/locale/ko.js",
-	"./ko.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ko.js",
-	"./ku": "../../../../ngx-material-timepicker/node_modules/moment/locale/ku.js",
-	"./ku.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ku.js",
-	"./ky": "../../../../ngx-material-timepicker/node_modules/moment/locale/ky.js",
-	"./ky.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ky.js",
-	"./lb": "../../../../ngx-material-timepicker/node_modules/moment/locale/lb.js",
-	"./lb.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/lb.js",
-	"./lo": "../../../../ngx-material-timepicker/node_modules/moment/locale/lo.js",
-	"./lo.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/lo.js",
-	"./lt": "../../../../ngx-material-timepicker/node_modules/moment/locale/lt.js",
-	"./lt.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/lt.js",
-	"./lv": "../../../../ngx-material-timepicker/node_modules/moment/locale/lv.js",
-	"./lv.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/lv.js",
-	"./me": "../../../../ngx-material-timepicker/node_modules/moment/locale/me.js",
-	"./me.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/me.js",
-	"./mi": "../../../../ngx-material-timepicker/node_modules/moment/locale/mi.js",
-	"./mi.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/mi.js",
-	"./mk": "../../../../ngx-material-timepicker/node_modules/moment/locale/mk.js",
-	"./mk.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/mk.js",
-	"./ml": "../../../../ngx-material-timepicker/node_modules/moment/locale/ml.js",
-	"./ml.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ml.js",
-	"./mn": "../../../../ngx-material-timepicker/node_modules/moment/locale/mn.js",
-	"./mn.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/mn.js",
-	"./mr": "../../../../ngx-material-timepicker/node_modules/moment/locale/mr.js",
-	"./mr.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/mr.js",
-	"./ms": "../../../../ngx-material-timepicker/node_modules/moment/locale/ms.js",
-	"./ms-my": "../../../../ngx-material-timepicker/node_modules/moment/locale/ms-my.js",
-	"./ms-my.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ms-my.js",
-	"./ms.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ms.js",
-	"./mt": "../../../../ngx-material-timepicker/node_modules/moment/locale/mt.js",
-	"./mt.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/mt.js",
-	"./my": "../../../../ngx-material-timepicker/node_modules/moment/locale/my.js",
-	"./my.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/my.js",
-	"./nb": "../../../../ngx-material-timepicker/node_modules/moment/locale/nb.js",
-	"./nb.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/nb.js",
-	"./ne": "../../../../ngx-material-timepicker/node_modules/moment/locale/ne.js",
-	"./ne.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ne.js",
-	"./nl": "../../../../ngx-material-timepicker/node_modules/moment/locale/nl.js",
-	"./nl-be": "../../../../ngx-material-timepicker/node_modules/moment/locale/nl-be.js",
-	"./nl-be.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/nl-be.js",
-	"./nl.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/nl.js",
-	"./nn": "../../../../ngx-material-timepicker/node_modules/moment/locale/nn.js",
-	"./nn.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/nn.js",
-	"./pa-in": "../../../../ngx-material-timepicker/node_modules/moment/locale/pa-in.js",
-	"./pa-in.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/pa-in.js",
-	"./pl": "../../../../ngx-material-timepicker/node_modules/moment/locale/pl.js",
-	"./pl.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/pl.js",
-	"./pt": "../../../../ngx-material-timepicker/node_modules/moment/locale/pt.js",
-	"./pt-br": "../../../../ngx-material-timepicker/node_modules/moment/locale/pt-br.js",
-	"./pt-br.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/pt-br.js",
-	"./pt.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/pt.js",
-	"./ro": "../../../../ngx-material-timepicker/node_modules/moment/locale/ro.js",
-	"./ro.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ro.js",
-	"./ru": "../../../../ngx-material-timepicker/node_modules/moment/locale/ru.js",
-	"./ru.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ru.js",
-	"./sd": "../../../../ngx-material-timepicker/node_modules/moment/locale/sd.js",
-	"./sd.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/sd.js",
-	"./se": "../../../../ngx-material-timepicker/node_modules/moment/locale/se.js",
-	"./se.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/se.js",
-	"./si": "../../../../ngx-material-timepicker/node_modules/moment/locale/si.js",
-	"./si.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/si.js",
-	"./sk": "../../../../ngx-material-timepicker/node_modules/moment/locale/sk.js",
-	"./sk.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/sk.js",
-	"./sl": "../../../../ngx-material-timepicker/node_modules/moment/locale/sl.js",
-	"./sl.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/sl.js",
-	"./sq": "../../../../ngx-material-timepicker/node_modules/moment/locale/sq.js",
-	"./sq.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/sq.js",
-	"./sr": "../../../../ngx-material-timepicker/node_modules/moment/locale/sr.js",
-	"./sr-cyrl": "../../../../ngx-material-timepicker/node_modules/moment/locale/sr-cyrl.js",
-	"./sr-cyrl.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/sr-cyrl.js",
-	"./sr.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/sr.js",
-	"./ss": "../../../../ngx-material-timepicker/node_modules/moment/locale/ss.js",
-	"./ss.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ss.js",
-	"./sv": "../../../../ngx-material-timepicker/node_modules/moment/locale/sv.js",
-	"./sv.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/sv.js",
-	"./sw": "../../../../ngx-material-timepicker/node_modules/moment/locale/sw.js",
-	"./sw.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/sw.js",
-	"./ta": "../../../../ngx-material-timepicker/node_modules/moment/locale/ta.js",
-	"./ta.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ta.js",
-	"./te": "../../../../ngx-material-timepicker/node_modules/moment/locale/te.js",
-	"./te.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/te.js",
-	"./tet": "../../../../ngx-material-timepicker/node_modules/moment/locale/tet.js",
-	"./tet.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/tet.js",
-	"./tg": "../../../../ngx-material-timepicker/node_modules/moment/locale/tg.js",
-	"./tg.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/tg.js",
-	"./th": "../../../../ngx-material-timepicker/node_modules/moment/locale/th.js",
-	"./th.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/th.js",
-	"./tl-ph": "../../../../ngx-material-timepicker/node_modules/moment/locale/tl-ph.js",
-	"./tl-ph.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/tl-ph.js",
-	"./tlh": "../../../../ngx-material-timepicker/node_modules/moment/locale/tlh.js",
-	"./tlh.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/tlh.js",
-	"./tr": "../../../../ngx-material-timepicker/node_modules/moment/locale/tr.js",
-	"./tr.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/tr.js",
-	"./tzl": "../../../../ngx-material-timepicker/node_modules/moment/locale/tzl.js",
-	"./tzl.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/tzl.js",
-	"./tzm": "../../../../ngx-material-timepicker/node_modules/moment/locale/tzm.js",
-	"./tzm-latn": "../../../../ngx-material-timepicker/node_modules/moment/locale/tzm-latn.js",
-	"./tzm-latn.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/tzm-latn.js",
-	"./tzm.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/tzm.js",
-	"./ug-cn": "../../../../ngx-material-timepicker/node_modules/moment/locale/ug-cn.js",
-	"./ug-cn.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ug-cn.js",
-	"./uk": "../../../../ngx-material-timepicker/node_modules/moment/locale/uk.js",
-	"./uk.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/uk.js",
-	"./ur": "../../../../ngx-material-timepicker/node_modules/moment/locale/ur.js",
-	"./ur.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/ur.js",
-	"./uz": "../../../../ngx-material-timepicker/node_modules/moment/locale/uz.js",
-	"./uz-latn": "../../../../ngx-material-timepicker/node_modules/moment/locale/uz-latn.js",
-	"./uz-latn.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/uz-latn.js",
-	"./uz.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/uz.js",
-	"./vi": "../../../../ngx-material-timepicker/node_modules/moment/locale/vi.js",
-	"./vi.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/vi.js",
-	"./x-pseudo": "../../../../ngx-material-timepicker/node_modules/moment/locale/x-pseudo.js",
-	"./x-pseudo.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/x-pseudo.js",
-	"./yo": "../../../../ngx-material-timepicker/node_modules/moment/locale/yo.js",
-	"./yo.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/yo.js",
-	"./zh-cn": "../../../../ngx-material-timepicker/node_modules/moment/locale/zh-cn.js",
-	"./zh-cn.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/zh-cn.js",
-	"./zh-hk": "../../../../ngx-material-timepicker/node_modules/moment/locale/zh-hk.js",
-	"./zh-hk.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/zh-hk.js",
-	"./zh-tw": "../../../../ngx-material-timepicker/node_modules/moment/locale/zh-tw.js",
-	"./zh-tw.js": "../../../../ngx-material-timepicker/node_modules/moment/locale/zh-tw.js"
-};
-function webpackContext(req) {
-	return __webpack_require__(webpackContextResolve(req));
-};
-function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) // check for number or string
-		throw new Error("Cannot find module '" + req + "'.");
-	return id;
-};
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = "../../../../ngx-material-timepicker/node_modules/moment/locale recursive ^\\.\\/.*$";
 
 /***/ }),
 

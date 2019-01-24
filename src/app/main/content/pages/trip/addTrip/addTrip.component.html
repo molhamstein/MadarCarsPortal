@@ -67,6 +67,7 @@
         </div>
       </div>
 
+      
       <div style="float: right;">
         <button mat-button (click)="next(2,null,null)" cdkFocusInitial [disabled]="stepOneForm.invalid">{{'Global.NEXT'
           | translate}}</button>
@@ -84,17 +85,24 @@
             <mat-datepicker #firstpicker></mat-datepicker>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
-          <mat-form-field fxFlex="40" [class.hide]="tripType!='fromAirport' 
-          && tripType!='fromAirportAndCity' 
-          && tripType!='toAirport' 
-          && tripType!='fromAirportAndToAirport' 
-          && tripType!='fromAirportAndCityAndToAirport'">
-            <input matInput [matTimepicker]="startPicker" placeholder="{{ 'TRIP.TIME' | translate }}">
-            <mat-timepicker-toggle matSuffix [for]="startPicker"></mat-timepicker-toggle>
-            <mat-timepicker #startPicker color="primary"></mat-timepicker>
-          </mat-form-field>
 
-
+          <mat-form-field fxFlex="40" [class.hide]="true">
+              <input matInput [matTimepicker]="startPicker" placeholder="{{ 'TRIP.TIME' | translate }}">
+              <mat-timepicker-toggle matSuffix [for]="startPicker"></mat-timepicker-toggle>
+              <mat-timepicker #startPicker id="startPickerId" color="primary"></mat-timepicker>
+            </mat-form-field>
+  
+  
+            <mat-form-field fxFlex="40" [class.hide]="tripType!='fromAirport' 
+            && tripType!='fromAirportAndCity' 
+            && tripType!='toAirport' 
+            && tripType!='fromAirportAndToAirport' 
+            && tripType!='fromAirportAndCityAndToAirport'">
+              <input matInput readonly="readonly" placeholder="{{ 'TRIP.TIME' | translate }}" [ngModelOptions]="{standalone: true}"
+                [ngModel]="formatStartTime(startPicker['userTime'])">
+              <mat-timepicker-toggle matSuffix [for]="startPicker"></mat-timepicker-toggle>
+            </mat-form-field>
+  
           <mat-form-field fxFlex="40" *ngIf="tripType!='fromAirport' && tripType!='toAirport'">
             <input matInput (focus)="secondepicker.open()" [matDatepicker]="secondepicker" formControlName="seconde"
               placeholder="{{ 'TRIP.TO' | translate }}" required>
@@ -102,13 +110,21 @@
             <mat-datepicker #secondepicker></mat-datepicker>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
-          <mat-form-field fxFlex="40" [class.hide]="tripType!='cityAndToAirport' 
-          && tripType!='fromAirportAndToAirport' 
-          && tripType!='fromAirportAndCityAndToAirport'">
+
+          <mat-form-field fxFlex="40" [class.hide]="true">
             <input matInput [matTimepicker]="endPicker" required placeholder="{{ 'TRIP.TIME' | translate }}">
             <mat-timepicker-toggle matSuffix [for]="endPicker"></mat-timepicker-toggle>
             <mat-timepicker #endPicker color="primary"></mat-timepicker>
           </mat-form-field>
+
+          <mat-form-field fxFlex="40" [class.hide]="tripType!='cityAndToAirport' 
+          && tripType!='fromAirportAndToAirport' 
+          && tripType!='fromAirportAndCityAndToAirport'">
+            <input matInput readonly="readonly" placeholder="{{ 'TRIP.TIME' | translate }}" [ngModelOptions]="{standalone: true}"
+              [ngModel]="formatEndTime(endPicker['userTime'])">
+            <mat-timepicker-toggle matSuffix [for]="endPicker"></mat-timepicker-toggle>
+          </mat-form-field>
+
           <div fxFlex="40" *ngIf="tripType=='fromAirport' || tripType=='toAirport'"></div>
         </div>
       </div>

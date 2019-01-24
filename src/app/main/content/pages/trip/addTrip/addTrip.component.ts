@@ -59,11 +59,12 @@ export class addTripComponent implements OnInit {
   pricePerDay = 0;
   airportPrice = 0;
   location;
+  subLocationId
+
   private exportTime = { hour: 7, minute: 15, meriden: 'PM', format: 24 };
 
 
-  startPicker = { "userTimeChange": { "_isScalar": false, "observers": [], "closed": false, "isStopped": false, "hasError": false, "thrownError": null, "__isAsync": false }, "onRevert": { "_isScalar": false, "observers": [], "closed": false, "isStopped": false, "hasError": false, "thrownError": null, "__isAsync": false }, "onSubmit": { "_isScalar": false, "observers": [], "closed": false, "isStopped": false, "hasError": false, "thrownError": null, "__isAsync": false }, "VIEW_HOURS": 1, "VIEW_MINUTES": 2, "currentView": 1, "_inputSubscription": { "closed": true, "_parent": null, "_parents": null, "_subscriptions": null }, "color": "primary", "revertLabel": "Cancel", "submitLabel": "OK", "userTime": { "hour": 3, "minute": 15, "meriden": "PM", "format": 12 } }
-    ;
+  startPicker = { "userTimeChange": { "_isScalar": false, "observers": [], "closed": false, "isStopped": false, "hasError": false, "thrownError": null, "__isAsync": false }, "onRevert": { "_isScalar": false, "observers": [], "closed": false, "isStopped": false, "hasError": false, "thrownError": null, "__isAsync": false }, "onSubmit": { "_isScalar": false, "observers": [], "closed": false, "isStopped": false, "hasError": false, "thrownError": null, "__isAsync": false }, "VIEW_HOURS": 1, "VIEW_MINUTES": 2, "currentView": 1, "_inputSubscription": { "closed": true, "_parent": null, "_parents": null, "_subscriptions": null }, "color": "primary", "revertLabel": "Cancel", "submitLabel": "OK", "userTime": { "hour": 3, "minute": 15, "meriden": "PM", "format": 12 } };
   constructor(
     private mainServ: MainService,
     private _formBuilder: FormBuilder,
@@ -73,10 +74,6 @@ export class addTripComponent implements OnInit {
   ) {
     this.translationLoader.loadTranslations(english);
 
-  }
-
-  emituserTimeChange() {
-    alert("SSSS");
   }
 
   addDuration(index) {
@@ -102,21 +99,6 @@ export class addTripComponent implements OnInit {
     this.tripdays++;
   }
 
-  // onSearchChange() {
-  //   this.subLocaationPrice = 0;
-  //   this.subLocationDays = 0;
-  //   for (let index = 0; index < this.tripSublocations.length; index++) {
-  //     const element = this.tripSublocations[index];
-  //     if (element.duration != null)
-  //       this.subLocationDays += element.duration;
-  //     this.subLocaationPrice += element.duration * this.carsSublocations[index].cost
-  //     console.log(this.subLocationDays)
-  //     if (index == this.tripSublocations.length - 1) {
-  //       this.tripdays = this.mainTripdays - this.subLocationDays;
-  //       this.totalPrice = this.tripdays * this.pricePerDay;
-  //     }
-  //   }
-  // }
 
   differenceInHourse(firstDate, secDate) {
     var timeDiff = secDate.getTime() - firstDate.getTime();
@@ -275,8 +257,8 @@ export class addTripComponent implements OnInit {
     console.log("secTime")
     console.log(secTime)
     if (this.tripType == 'fromAirport') {
-      if (firstDate != "" && firstTime['userTime'] != null) {
-        this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime['userTime']);
+      if (firstDate != "" && firstTime != null) {
+        this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime);
         this.carDate = { "fromAirportDate": this.allData['fromAirportDate'] }
         return true
       }
@@ -296,8 +278,8 @@ export class addTripComponent implements OnInit {
     }
 
     if (this.tripType == 'toAirport') {
-      if (firstDate != "" && firstTime['userTime'] != null) {
-        this.allData['toAirportDate'] = this.mixDateTime(firstDate, firstTime['userTime']);
+      if (firstDate != "" && firstTime != null) {
+        this.allData['toAirportDate'] = this.mixDateTime(firstDate, firstTime);
         this.carDate = { "toAirportDate": this.allData['toAirportDate'] }
         return true
       }
@@ -306,8 +288,8 @@ export class addTripComponent implements OnInit {
     }
 
     if (this.tripType == 'fromAirportAndCity') {
-      if (firstDate != "" && firstTime['userTime'] != null && secDate != null) {
-        this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime['userTime']);
+      if (firstDate != "" && firstTime != null && secDate != null) {
+        this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime);
         this.allData['endInCityDate'] = this.mixDateTime(secDate, { hour: 11, minute: 59, meriden: "PM", format: 12 });
         this.carDate = { "fromAirportDate": this.allData['fromAirportDate'], "endInCityDate": this.allData['endInCityDate'] }
         return true
@@ -318,9 +300,9 @@ export class addTripComponent implements OnInit {
     // type = ['cityAndToAirport', 'fromAirportAndCityAndToAirport']
 
     if (this.tripType == 'fromAirportAndToAirport') {
-      if (firstDate != "" && firstTime['userTime'] != null && secDate != null && secTime['userTime'] != null) {
-        this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime['userTime']);
-        this.allData['toAirportDate'] = this.mixDateTime(secDate, secTime['userTime']);
+      if (firstDate != "" && firstTime != null && secDate != null && secTime != null) {
+        this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime);
+        this.allData['toAirportDate'] = this.mixDateTime(secDate, secTime);
         this.carDate = { "fromAirportDate": this.allData['fromAirportDate'], "toAirportDate": this.allData['toAirportDate'] }
         return true
       }
@@ -329,9 +311,9 @@ export class addTripComponent implements OnInit {
     }
 
     if (this.tripType == 'cityAndToAirport') {
-      if (firstDate != "" && secDate != null && secTime['userTime'] != null) {
+      if (firstDate != "" && secDate != null && secTime != null) {
         this.allData['startInCityDate'] = this.mixDateTime(firstDate, { hour: 0, minute: 0, meriden: "AM", format: 12 });
-        this.allData['toAirportDate'] = this.mixDateTime(secDate, secTime['userTime']);
+        this.allData['toAirportDate'] = this.mixDateTime(secDate, secTime);
         this.carDate = { "startInCityDate": this.allData['startInCityDate'], "toAirportDate": this.allData['toAirportDate'] }
         return true
       }
@@ -340,9 +322,9 @@ export class addTripComponent implements OnInit {
     }
 
     if (this.tripType == 'fromAirportAndCityAndToAirport') {
-      if (firstDate != "" && firstTime['userTime'] != null && secDate != null && secTime['userTime'] != null) {
-        this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime['userTime']);
-        this.allData['toAirportDate'] = this.mixDateTime(secDate, secTime['userTime']);
+      if (firstDate != "" && firstTime != null && secDate != null && secTime != null) {
+        this.allData['fromAirportDate'] = this.mixDateTime(firstDate, firstTime);
+        this.allData['toAirportDate'] = this.mixDateTime(secDate, secTime);
         this.carDate = { "fromAirportDate": this.allData['fromAirportDate'], "toAirportDate": this.allData['toAirportDate'] }
         return true
       }
@@ -353,13 +335,17 @@ export class addTripComponent implements OnInit {
 
   }
 
-  subLocationId
   back(stepNum) {
     this.activeLink = this.links[stepNum - 1].name;
+    if (stepNum == 2) {
+      this.totalPrice = 0;
+      this.airportPrice = 0;
+      this.subLocaationPrice = 0
+    }
   }
   private config = { hour: 7, minute: 15, meriden: 'PM', format: 12 };
 
-  next(stepNum, startDate, endDate) {
+  next(stepNum) {
     if (stepNum == 2) {
       this.tripType = this.getTypeTrip()
       this.activeLink = this.links[stepNum - 1].name;
@@ -387,7 +373,7 @@ export class addTripComponent implements OnInit {
       this.totalPrice = 0;
       var firstDate = this.stepSecForm.value['first']
       var secDate = this.stepSecForm.value['seconde']
-      if (this.cheackValidateionSecStep(firstDate, secDate, startDate, endDate)) {
+      if (this.cheackValidateionSecStep(firstDate, secDate, this.startTime, this.endTime)) {
         if (secDate) {
           if (this.differenceInHourse(firstDate, secDate) > 0) {
             var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport }
@@ -468,6 +454,56 @@ export class addTripComponent implements OnInit {
 
   backToTrips() {
     this.mainServ.globalServ.goTo('trips')
+  }
+
+  startTime
+  endTime;
+  formatStartTime(object) {
+    if (object == null) {
+      if (this.startTime == null) {
+        this.startTime = { "hour": 3, "minute": 15, "meriden": "PM", "format": 12 };
+      }
+      var minute = this.startTime.minute;
+      var hour = this.startTime.hour;
+      if (this.startTime.hour < 10)
+        hour = 0 + "" + this.startTime.hour
+      if (this.startTime.minute < 10)
+        minute = 0 + "" + this.startTime.minute
+      return hour + " : " + minute + " " + this.startTime.meriden
+    } else {
+      this.startTime = object
+      var minute = object.minute;
+      var hour = object.hour;
+      if (object.hour < 10)
+        hour = 0 + "" + object.hour
+      if (object.minute < 10)
+        minute = 0 + "" + object.minute
+      return hour + " : " + minute + " " + object.meriden
+    }
+  }
+
+  formatEndTime(object) {
+    if (object == null) {
+      if (this.endTime == null) {
+        this.endTime = { "hour": 3, "minute": 15, "meriden": "PM", "format": 12 };
+      }
+      var minute = this.endTime.minute;
+      var hour = this.endTime.hour;
+      if (this.endTime.hour < 10)
+        hour = 0 + "" + this.endTime.hour
+      if (this.endTime.minute < 10)
+        minute = 0 + "" + this.endTime.minute
+      return hour + " : " + minute + " " + this.endTime.meriden
+    } else {
+      this.endTime = object
+      var minute = object.minute;
+      var hour = object.hour;
+      if (object.hour < 10)
+        hour = 0 + "" + object.hour
+      if (object.minute < 10)
+        minute = 0 + "" + object.minute
+      return hour + " : " + minute + " " + object.meriden
+    }
   }
 
 
