@@ -579,6 +579,14 @@ export class editTripComponent implements OnInit {
 
   newData = false;
 
+  back(stepNum) {
+    this.activeLink = this.links[stepNum - 1].name;
+    if (stepNum == 2) {
+      this.totalPrice = 0;
+      this.airportPrice = 0;
+      this.subLocaationPrice = 0
+    }
+  }
 
   next(stepNum) {
     if (stepNum == 2) {
@@ -716,14 +724,16 @@ export class editTripComponent implements OnInit {
     // })
   }
 
-  back() {
-    this.mainServ.globalServ.goTo('users')
+  backToTrips() {
+    this.mainServ.globalServ.goTo('trips')
   }
 
   startTime;
   endTime;
   formatStartTime(object) {
     if (object == null) {
+      if(this.startTime==null)
+        return "";
       var minute = this.startTime.minute;
       var hour = this.startTime.hour;
       if (this.startTime.hour < 10)
