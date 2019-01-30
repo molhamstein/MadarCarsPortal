@@ -15,8 +15,8 @@ export class CallApiService {
   constructor(public http: HttpClient, private loginSer: LoginService) {
   }
   // readonly baseUrl = "http://104.217.253.15:3006/api/"
-  readonly baseUrl = "https://jawlatcom.com:3000/api/"
-  // readonly baseUrl = "http://localhost:3000/api/"
+  // readonly baseUrl = "https://jawlatcom.com:3000/api/"
+  readonly baseUrl = "http://localhost:3000/api/"
   private errorCode = 0;
   private code = "";
 
@@ -50,11 +50,11 @@ export class CallApiService {
     return this.http.get(this.baseUrl + url, _options).map((Response: Response) => {
       return Response;
     }).catch((response: Response) => {
-      this.errorCode = response['error'].statusCode;
-      this.code = response['error'].code
-      // console.log(response);
-      if (this.errorCode == 401 && response['error'].code == "AUTHORIZATION_REQUIRED")
-        // this.loginSer.logout()
+      this.errorCode = response['error']['error'].statusCode;
+      this.code = response['error']['error'].code
+      if (this.errorCode == 401){
+        this.loginSer.logout()
+      }
         return "E";
     });
   }
@@ -84,8 +84,11 @@ export class CallApiService {
     return this.http.post(this.baseUrl + url, data, _options).map((Response: Response) => {
       return Response;
     }).catch((Response: Response) => {
-      this.errorCode = Response.status;
-      this.code = Response['error'].error.code;
+      this.errorCode = Response['error']['error'].statusCode;
+      this.code = Response['error']['error'].code
+      if (this.errorCode == 401){
+        this.loginSer.logout()
+      }
       return "E";
     });
   }
@@ -133,8 +136,11 @@ export class CallApiService {
     return this.http.put(this.baseUrl + url, data, _options).map((Response: Response) => {
       return Response;
     }).catch((Response: Response) => {
-      this.errorCode = Response.status;
-      this.code = Response['error'].error.code;
+      this.errorCode = Response['error']['error'].statusCode;
+      this.code = Response['error']['error'].code
+      if (this.errorCode == 401){
+        this.loginSer.logout()
+      }
 
       return "E";
     });

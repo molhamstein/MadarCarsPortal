@@ -41,9 +41,15 @@ export class addBrandComponent implements OnInit {
 
   add() {
     var data = this.addBrandForm.value;
+    this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.post("drivers", data).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.back();
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
       }
     })
   }

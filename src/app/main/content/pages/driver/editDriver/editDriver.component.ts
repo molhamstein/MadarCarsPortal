@@ -94,7 +94,7 @@ export class editDriverComponent implements OnInit {
             this.images[0] = element
             this.media = element;
           });
-        else {
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
           this.mainServ.APIServ.setErrorCode(0);
           this.dialogServ.someThingIsError();
         }
@@ -117,7 +117,11 @@ export class editDriverComponent implements OnInit {
     var mainthis = this;
     this.getParams("id", function (id) {
       mainthis.driverId = id;
+      mainthis.mainServ.loaderSer.display(true);
+
       mainthis.mainServ.APIServ.get("drivers/" + mainthis.driverId).subscribe((data: any) => {
+        mainthis.mainServ.loaderSer.display(false);
+
         if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
           mainthis.driver = data;
           var langId = [];
@@ -138,13 +142,23 @@ export class editDriverComponent implements OnInit {
           mainthis.inisilaize();
 
         }
+        else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+          mainthis.mainServ.APIServ.setErrorCode(0);
+          mainthis.dialogServ.someThingIsError();
+        }
       })
     })
 
+    this.mainServ.loaderSer.display(true);
 
     this.mainServ.APIServ.get("languages").subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.listLanguages = data
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
       }
     })
 
@@ -192,17 +206,14 @@ export class editDriverComponent implements OnInit {
     var filter = { "where": { "ownerId": this.driverId } };
     // var filter = {}
     this.mainServ.APIServ.get("trips?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
 
-        this.mainServ.loaderSer.display(false);
         this.allRows = data;
         this.calcStartDateAndEnd();
         this.filterDatatable();
       }
-      else if (this.mainServ.APIServ.getErrorCode() == 400) {
-
-      }
-      else {
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
         this.mainServ.APIServ.setErrorCode(0);
         this.dialogServ.someThingIsError();
       }
@@ -214,9 +225,15 @@ export class editDriverComponent implements OnInit {
   edit() {
     var data = this.editDriverForm.value;
     data['mediaId'] = this.media.id;
+    this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.put("drivers/" + this.driverId, data).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.back();
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
       }
     })
   }

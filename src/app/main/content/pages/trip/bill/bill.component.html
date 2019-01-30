@@ -41,7 +41,7 @@
           <div class="bills">
             <div style="margin-bottom: 18px;font-size: 20px;" class="title">
               {{'TRIP.BILL.ITEMS' | translate}}
-          </div>
+            </div>
             <div class="oneBill" *ngFor="let oneOuterBill of outerBill;let i=index">
               <mat-form-field class="Bill25">
                 <mat-select placeholder="{{ 'TRIP.BILL.TYPE' | translate }}" [ngModelOptions]="{standalone: true}"
@@ -116,6 +116,106 @@
           </div>
         </div>
       </div>
+      <div class="outerBill">
+        <label class="title">
+          {{'TRIP.BILL.INNER' | translate}}
+        </label>
+        <div class="card">
+          <div class="header">
+            <!-- <span class="name" *ngIf="trip">{{trip['owner'].name}}</span> -->
+            <span class="date">{{getCreatedDate('inner') |date : 'dd-MM-yyyy'}}</span>
+            <div class="type">
+              <!-- {{getType('outer')}} -->
+              <mat-form-field>
+                <mat-select [ngModelOptions]="{standalone: true}" (change)="changeStaus('inner')" [disabled]="innerDisabled"
+                  [(ngModel)]="innerBillStatus">
+                  <mat-option *ngFor="let oneStaus of statusBill" [value]="oneStaus.value">
+                    {{oneStaus.view}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+          </div>
+          <div class="bills">
+            <div style="margin-bottom: 18px;font-size: 20px;" class="title">
+              {{'TRIP.BILL.ITEMS' | translate}}
+            </div>
+            <div class="oneBill" *ngFor="let oneinnerBill of innerBill;let i=index">
+              <mat-form-field class="Bill25">
+                <mat-select placeholder="{{ 'TRIP.BILL.TYPE' | translate }}" [ngModelOptions]="{standalone: true}"
+                  [(ngModel)]="innerBill[i].typeBillId" required>
+                  <mat-option *ngFor="let oneType of typeBills" [value]="oneType.id">
+                    {{oneType.titleEn}}
+                  </mat-option>
+                </mat-select>
+                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+              </mat-form-field>
+              <mat-form-field class="Bill25">
+                <input matInput placeholder="{{ 'TRIP.BILL.NAME' | translate }}" [ngModelOptions]="{standalone: true}"
+                  [(ngModel)]="innerBill[i].name" required>
+
+                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+              </mat-form-field>
+              <!-- <mat-form-field class="Bill30">
+                  <input matInput placeholder="{{ 'TRIP.BILL.TITLEAR' | translate }}" [ngModelOptions]="{standalone: true}"
+                    [(ngModel)]="tripdays" required>
+                  
+                  <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="Bill30">
+                  <input matInput placeholder="{{ 'TRIP.BILL.TITLETR' | translate }}" [ngModelOptions]="{standalone: true}"
+                    [(ngModel)]="tripdays" required>
+                  
+                  <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+                </mat-form-field> -->
+
+              <mat-form-field class="Bill15">
+                <input matInput placeholder="{{ 'TRIP.BILL.QUENTITY' | translate }}" [ngModelOptions]="{standalone: true}"
+                  [(ngModel)]="innerBill[i].quantity" required>
+
+                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="Bill15">
+                <input matInput placeholder="{{ 'TRIP.BILL.PRICEPERUNIT' | translate }}" [ngModelOptions]="{standalone: true}"
+                  [(ngModel)]="innerBill[i].pricePerUnit" required>
+
+                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+              </mat-form-field>
+              <div class="totlalOneUnit">
+                <label class="">{{innerBill[i].quantity * innerBill[i].pricePerUnit}}</label>
+
+              </div>
+              <div class="actionButton">
+                <div class="circle add" *ngIf="innerBill[i].id==null" [ngClass]="{'disabled': innerBill[i].pricePerUnit=='' || innerBill[i].name=='' || innerBill[i].quantity==''}"
+                  (click)="addBill(i,'inner')">
+                  <i class="material-icons">
+                    add
+                  </i>
+                </div>
+                <div class="circle edit" *ngIf="innerBill[i].id!=null" [ngClass]="{'disabled': innerBill[i].pricePerUnit=='' || innerBill[i].name=='' || innerBill[i].quantity==''}"
+                  (click)="editBill(i,'inner')">
+                  <i class="material-icons">
+                    create
+                  </i>
+                </div>
+                <div class="circle delete" (click)="deleteBill(i,'inner')">
+                  <i class="material-icons">
+                    clear
+                  </i>
+                </div>
+              </div>
+            </div>
+            <div style="">
+              <button mat-button (click)="addNewBill('inner')" class="editButton" cdkFocusInitial>{{'Global.ADD'
+                | translate}}</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
 
   </div>

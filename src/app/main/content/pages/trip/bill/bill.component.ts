@@ -70,20 +70,29 @@ export class billComponent implements OnInit {
     var mainthis = this
     this.getParams("id", function (id) {
       mainthis.tripId = id;
+      mainthis.mainServ.loaderSer.display(true);
       mainthis.mainServ.APIServ.get("typeBills").subscribe((data: any) => {
+        mainthis.mainServ.loaderSer.display(false);
         if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
           mainthis.typeBills = data;
-
+          mainthis.mainServ.loaderSer.display(true);
           mainthis.mainServ.APIServ.get("trips/" + mainthis.tripId).subscribe((data: any) => {
+            mainthis.mainServ.loaderSer.display(false);
             if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
               mainthis.trip = data;
               mainthis.initOuterBill(mainthis.trip.hasOuterBill)
-            } else {
-
+              mainthis.initInnerBill(mainthis.trip.hasInnerBill)
             }
-          })
-        } else {
+            else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+              mainthis.mainServ.APIServ.setErrorCode(0);
+              mainthis.dialogServ.someThingIsError();
+            }
 
+          })
+        }
+        else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+          mainthis.mainServ.APIServ.setErrorCode(0);
+          mainthis.dialogServ.someThingIsError();
         }
       })
 
@@ -97,12 +106,120 @@ export class billComponent implements OnInit {
     if (type == "outer") {
       url = "outerBills/" + this.outerBillId;
       newStatus = this.outerBillStatus;
+    } else if (type == "inner") {
+      url = "innerBills/" + this.innerBillId;
+      newStatus = this.innerBillStatus;
     }
+    this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.put(url, { "status": newStatus }).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
       }
     })
 
+  }
+
+  initInnerBill(hasInnerBill) {
+    if (hasInnerBill == false) {
+      if (this.trip.inCity) {
+        var typeBill = this.typeBills.find(function (element) {
+          return element.type == "city"
+        });
+        this.innerBill.push(
+          {
+            "quantity": this.trip['daysInCity'],
+            "pricePerUnit": this.trip['pricePerDay'],
+            "typeBillId": typeBill.id,
+            "name": ""
+          }
+        )
+        var filter = { "where": { "tripId": this.tripId } }
+        this.mainServ.loaderSer.display(true);
+        this.mainServ.APIServ.get("tripSublocations?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+          this.mainServ.loaderSer.display(false);
+          if (this.mainServ.APIServ.getErrorCode() == 0) {
+            var typeBill = this.typeBills.find(function (element) {
+              return element.type == "nearbyCity"
+            });
+            data.forEach(element => {
+              this.innerBill.push(
+                {
+                  "quantity": element['duration'],
+                  "pricePerUnit": element['cost'],
+                  "typeBillId": typeBill.id,
+                  "name": ""
+                }
+              )
+            });
+          }
+          else if (this.mainServ.APIServ.getErrorCode() != 401) {
+            this.mainServ.APIServ.setErrorCode(0);
+            this.dialogServ.someThingIsError();
+          }
+        })
+      }
+      if (this.trip.toAirport && this.trip.fromAirport) {
+        var typeBill = this.typeBills.find(function (element) {
+          return element.type == "airport"
+        });
+        this.innerBill.push(
+          {
+            "quantity": 1,
+            "pricePerUnit": this.trip['priceTowWay'],
+            "typeBillId": typeBill.id,
+            "name": ""
+          }
+        )
+
+      } else if (this.trip.toAirport || this.trip.fromAirport) {
+        var typeBill = this.typeBills.find(function (element) {
+          return element.type == "airport"
+        });
+        this.innerBill.push(
+          {
+            "quantity": 1,
+            "pricePerUnit": this.trip['priceOneWay'],
+            "typeBillId": typeBill.id,
+            "name": ""
+          }
+        )
+
+      }
+    }
+    else {
+      this.innerDisabled = false;
+      this.mainServ.loaderSer.display(true);
+      this.mainServ.APIServ.get("innerBills/getinnerBill/" + this.tripId).subscribe((data: any) => {
+        this.mainServ.loaderSer.display(false);
+        if (this.mainServ.APIServ.getErrorCode() == 0) {
+          this.innerBillStatus = data['status']
+          this.innerBillId = data['id']
+          this.hasInnerBill = hasInnerBill;
+          data.bills.forEach(element => {
+            this.innerBill.push(
+              {
+                "quantity": element['quantity'],
+                "pricePerUnit": element['pricePerUnit'],
+                "typeBillId": element['typeBillId'],
+                "name": element['titleEn'],
+                "id": element['id']
+              }
+            )
+          });
+
+          this.inner = data;
+        }
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
+          this.mainServ.APIServ.setErrorCode(0);
+          this.dialogServ.someThingIsError();
+        }
+      })
+
+    }
   }
 
   initOuterBill(hasOuterTrip) {
@@ -120,7 +237,9 @@ export class billComponent implements OnInit {
           }
         )
         var filter = { "where": { "tripId": this.tripId } }
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("tripSublocations?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+          this.mainServ.loaderSer.display(false);
           if (this.mainServ.APIServ.getErrorCode() == 0) {
             var typeBill = this.typeBills.find(function (element) {
               return element.type == "nearbyCity"
@@ -135,8 +254,10 @@ export class billComponent implements OnInit {
                 }
               )
             });
-          } else {
-
+          }
+          else if (this.mainServ.APIServ.getErrorCode() != 401) {
+            this.mainServ.APIServ.setErrorCode(0);
+            this.dialogServ.someThingIsError();
           }
         })
       }
@@ -170,7 +291,9 @@ export class billComponent implements OnInit {
     }
     else {
       this.outerDisabled = false;
+      this.mainServ.loaderSer.display(true);
       this.mainServ.APIServ.get("outerBills/getouterBill/" + this.tripId).subscribe((data: any) => {
+        this.mainServ.loaderSer.display(false);
         if (this.mainServ.APIServ.getErrorCode() == 0) {
           this.outerBillStatus = data['status']
           this.outerBillId = data['id']
@@ -188,9 +311,12 @@ export class billComponent implements OnInit {
           });
 
           this.outer = data;
-        } else {
-
         }
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
+          this.mainServ.APIServ.setErrorCode(0);
+          this.dialogServ.someThingIsError();
+        }
+
       })
 
     }
@@ -202,6 +328,10 @@ export class billComponent implements OnInit {
     if (type == "outer") {
       bills = this.outerBill;
       type = "outer"
+    }
+    else if (type == "inner") {
+      bills = this.innerBill;
+      type = "inner"
     }
     bills.push({
       "quantity": 1,
@@ -221,6 +351,12 @@ export class billComponent implements OnInit {
       type = "outer"
       url = "bills"
     }
+    else if (type == "inner") {
+      bills = this.innerBill;
+      type = "inner"
+      url = "bills"
+    }
+
     var oneBill = bills[index];
     if (oneBill.pricePerUnit == '' || oneBill.quantity == '' || oneBill.name == '')
       return;
@@ -236,13 +372,23 @@ export class billComponent implements OnInit {
     tempObject['tripId'] = this.tripId;
     tempObject['type'] = type;
     console.log(tempObject);
+    this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.post(url, tempObject).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         bills[index]['id'] = data['id']
         if (type == "outer") {
           this.outerBillId = data['outerBillId'];
           this.outerDisabled = false;
         }
+        if (type == "inner") {
+          this.innerBillId = data['innerBillId'];
+          this.innerDisabled = false;
+        }
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
       }
     })
 
@@ -262,9 +408,15 @@ export class billComponent implements OnInit {
       bills.splice(index, 1)
     }
     else {
+      this.mainServ.loaderSer.display(true);
       this.mainServ.APIServ.delete(url + "/" + oneBill['id']).subscribe((data: any) => {
+        this.mainServ.loaderSer.display(false);
         if (this.mainServ.APIServ.getErrorCode() == 0) {
           bills.splice(index, 1)
+        }
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
+          this.mainServ.APIServ.setErrorCode(0);
+          this.dialogServ.someThingIsError();
         }
       })
     }
@@ -291,8 +443,14 @@ export class billComponent implements OnInit {
     tempObject['pricePerUnit'] = oneBill['pricePerUnit']
     tempObject['totalPrice'] = tempObject['pricePerUnit'] * tempObject['quantity']
     tempObject['typeBillId'] = oneBill['typeBillId']
+    this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.put(url + "/" + oneBill['id'], tempObject).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
       }
     })
 
@@ -312,6 +470,10 @@ export class billComponent implements OnInit {
         return
     }
     else if (type == "inner" && this.hasInnerBill) {
+      if (this.inner)
+        return this.inner['createdAt']
+      else
+        return
 
     }
     else {

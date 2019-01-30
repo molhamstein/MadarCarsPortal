@@ -262,9 +262,13 @@ export const locale = {
             "ADDTRIP": {
                 "TITLE": "Add Trip",
             },
+            "EDITTRIP": {
+                "TITLE": "Edit Trip",
+            },
             "BILL": {
                 "TITLE": "Bill",
                 "OUTER": "Client Bills",
+                "INNER": "Inner Bills",
                 "ITEMS": "Items",
                 "TYPE": "Type",
                 "NAME": "Title",
@@ -326,13 +330,21 @@ export const locale = {
             "ACTIVECAR": "Do you want to activate this car",
             "DEACTIVEUSER": "Do you want to deactivate this user",
             "ACTIVEUSER": "Do you want to activate this user",
-            "CHANGESTATUS": "Do you want to change status this trip"
+            "CHANGESTATUS": "Do you want to change status this trip",
+            "OVERFLOWDURATION":"sublocationdays more than holl duration",
+            "ERRORINDATE":"start date after end date",
+            "VALIDATIONDATE":"required field date",
+            "NOCARAVAILABLE":"No Car Available"
         },
         "ERROR": {
             "LOGINFAILED": "Email or Password is wrong",
             "451": "Username or Phonenumber is used",
+            "452": "Not Found",
             "453": "Already is deactive",
             "454": "Already is active",
+            "455": "Location Not Found",
+            "456": "Car Not Found",
+            "457": "Car Not Available"
         }
     }
 };

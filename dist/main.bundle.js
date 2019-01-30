@@ -194,9 +194,9 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__main_content_pages_trip_bill_bill_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/bill/bill.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__main_content_pages_admin_admin_admins_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/admin/admins.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__main_content_pages_admin_addAdmin_addAdmin_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/addAdmin/addAdmin.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__main_content_pages_admin_editDriver_editAdmin_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/editDriver/editAdmin.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__main_content_pages_trip_editTrip_editTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/editTrip/editTrip.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__main_dialogs_time_time_component__ = __webpack_require__("../../../../../src/app/main/dialogs/time/time.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__main_content_pages_trip_editTrip_editTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/editTrip/editTrip.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__main_dialogs_time_time_component__ = __webpack_require__("../../../../../src/app/main/dialogs/time/time.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__main_content_pages_admin_editAdmin_editAdmin_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/editAdmin/editAdmin.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -271,17 +271,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var appRoutes = [
     {
-        path: 'predefined-trips',
+        path: 'predefineds',
         component: __WEBPACK_IMPORTED_MODULE_57__main_content_pages_predefindTrip_predefindTrips_predefindTrips_component__["a" /* predefindTripsComponent */],
         canActivate: [__WEBPACK_IMPORTED_MODULE_1__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
-        path: 'add-predefined-trip',
+        path: 'add-predefined',
         component: __WEBPACK_IMPORTED_MODULE_58__main_content_pages_predefindTrip_addPredefindTrip_addPredefindTrip_component__["a" /* addPredefindTripComponent */],
         canActivate: [__WEBPACK_IMPORTED_MODULE_1__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
-        path: 'edit-predefined-trip/:id',
+        path: 'edit-predefined/:id',
         component: __WEBPACK_IMPORTED_MODULE_59__main_content_pages_predefindTrip_editPredefindTrip_editPredefindTrip_component__["a" /* editPredefindTripComponent */],
         canActivate: [__WEBPACK_IMPORTED_MODULE_1__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
@@ -302,7 +302,7 @@ var appRoutes = [
     },
     {
         path: 'edit-trip/:id',
-        component: __WEBPACK_IMPORTED_MODULE_64__main_content_pages_trip_editTrip_editTrip_component__["a" /* editTripComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_63__main_content_pages_trip_editTrip_editTrip_component__["a" /* editTripComponent */],
         canActivate: [__WEBPACK_IMPORTED_MODULE_1__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
@@ -337,7 +337,7 @@ var appRoutes = [
     },
     {
         path: 'edit-admin/:id',
-        component: __WEBPACK_IMPORTED_MODULE_63__main_content_pages_admin_editDriver_editAdmin_component__["a" /* editAdminComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_65__main_content_pages_admin_editAdmin_editAdmin_component__["a" /* editAdminComponent */],
         canActivate: [__WEBPACK_IMPORTED_MODULE_1__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
@@ -468,13 +468,13 @@ var AppModule = (function () {
                 // // Users
                 __WEBPACK_IMPORTED_MODULE_49__main_content_pages_user_users_users_component__["a" /* usersComponent */], __WEBPACK_IMPORTED_MODULE_50__main_content_pages_user_addUser_addUser_component__["a" /* addUserComponent */], __WEBPACK_IMPORTED_MODULE_51__main_content_pages_user_editUser_editUser_component__["a" /* editUserComponent */],
                 // // Trips
-                __WEBPACK_IMPORTED_MODULE_53__main_content_pages_trip_trips_trips_component__["a" /* tripsComponent */], __WEBPACK_IMPORTED_MODULE_54__main_content_pages_trip_addTrip_addTrip_component__["a" /* addTripComponent */], __WEBPACK_IMPORTED_MODULE_56__main_content_pages_trip_viewTrip_viewTrip_component__["a" /* viewTripComponent */], __WEBPACK_IMPORTED_MODULE_60__main_content_pages_trip_bill_bill_component__["a" /* billComponent */], __WEBPACK_IMPORTED_MODULE_64__main_content_pages_trip_editTrip_editTrip_component__["a" /* editTripComponent */],
+                __WEBPACK_IMPORTED_MODULE_53__main_content_pages_trip_trips_trips_component__["a" /* tripsComponent */], __WEBPACK_IMPORTED_MODULE_54__main_content_pages_trip_addTrip_addTrip_component__["a" /* addTripComponent */], __WEBPACK_IMPORTED_MODULE_56__main_content_pages_trip_viewTrip_viewTrip_component__["a" /* viewTripComponent */], __WEBPACK_IMPORTED_MODULE_60__main_content_pages_trip_bill_bill_component__["a" /* billComponent */], __WEBPACK_IMPORTED_MODULE_63__main_content_pages_trip_editTrip_editTrip_component__["a" /* editTripComponent */],
                 // // Predefind Trips
                 __WEBPACK_IMPORTED_MODULE_57__main_content_pages_predefindTrip_predefindTrips_predefindTrips_component__["a" /* predefindTripsComponent */], __WEBPACK_IMPORTED_MODULE_58__main_content_pages_predefindTrip_addPredefindTrip_addPredefindTrip_component__["a" /* addPredefindTripComponent */], __WEBPACK_IMPORTED_MODULE_59__main_content_pages_predefindTrip_editPredefindTrip_editPredefindTrip_component__["a" /* editPredefindTripComponent */],
                 // // Admins
-                __WEBPACK_IMPORTED_MODULE_61__main_content_pages_admin_admin_admins_component__["a" /* adminsComponent */], __WEBPACK_IMPORTED_MODULE_62__main_content_pages_admin_addAdmin_addAdmin_component__["a" /* addAdminComponent */], __WEBPACK_IMPORTED_MODULE_63__main_content_pages_admin_editDriver_editAdmin_component__["a" /* editAdminComponent */],
+                __WEBPACK_IMPORTED_MODULE_61__main_content_pages_admin_admin_admins_component__["a" /* adminsComponent */], __WEBPACK_IMPORTED_MODULE_62__main_content_pages_admin_addAdmin_addAdmin_component__["a" /* addAdminComponent */], __WEBPACK_IMPORTED_MODULE_65__main_content_pages_admin_editAdmin_editAdmin_component__["a" /* editAdminComponent */],
                 // dialogs
-                __WEBPACK_IMPORTED_MODULE_32__main_dialogs_some_thing_is_error_some_thing_is_error_component__["a" /* SomeThingIsErrorComponent */], __WEBPACK_IMPORTED_MODULE_2__main_dialogs_confirm_message_confirm_message_component__["a" /* ConfirmMessageComponent */], __WEBPACK_IMPORTED_MODULE_52__main_dialogs_error_message_error_message_component__["a" /* ErrorMessageComponent */], __WEBPACK_IMPORTED_MODULE_0__main_dialogs_my_reset_password_my_reset_password_component__["a" /* MyResetPasswordComponent */], __WEBPACK_IMPORTED_MODULE_65__main_dialogs_time_time_component__["a" /* TimeComponent */]
+                __WEBPACK_IMPORTED_MODULE_32__main_dialogs_some_thing_is_error_some_thing_is_error_component__["a" /* SomeThingIsErrorComponent */], __WEBPACK_IMPORTED_MODULE_2__main_dialogs_confirm_message_confirm_message_component__["a" /* ConfirmMessageComponent */], __WEBPACK_IMPORTED_MODULE_52__main_dialogs_error_message_error_message_component__["a" /* ErrorMessageComponent */], __WEBPACK_IMPORTED_MODULE_0__main_dialogs_my_reset_password_my_reset_password_component__["a" /* MyResetPasswordComponent */], __WEBPACK_IMPORTED_MODULE_64__main_dialogs_time_time_component__["a" /* TimeComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_9__angular_platform_browser__["BrowserModule"],
@@ -500,7 +500,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_31__ngx_translate_core__["a" /* TranslateModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_34__angular_material__["n" /* MatDialogModule */]
             ],
-            entryComponents: [__WEBPACK_IMPORTED_MODULE_32__main_dialogs_some_thing_is_error_some_thing_is_error_component__["a" /* SomeThingIsErrorComponent */], __WEBPACK_IMPORTED_MODULE_65__main_dialogs_time_time_component__["a" /* TimeComponent */], __WEBPACK_IMPORTED_MODULE_2__main_dialogs_confirm_message_confirm_message_component__["a" /* ConfirmMessageComponent */], __WEBPACK_IMPORTED_MODULE_52__main_dialogs_error_message_error_message_component__["a" /* ErrorMessageComponent */], __WEBPACK_IMPORTED_MODULE_0__main_dialogs_my_reset_password_my_reset_password_component__["a" /* MyResetPasswordComponent */]],
+            entryComponents: [__WEBPACK_IMPORTED_MODULE_32__main_dialogs_some_thing_is_error_some_thing_is_error_component__["a" /* SomeThingIsErrorComponent */], __WEBPACK_IMPORTED_MODULE_64__main_dialogs_time_time_component__["a" /* TimeComponent */], __WEBPACK_IMPORTED_MODULE_2__main_dialogs_confirm_message_confirm_message_component__["a" /* ConfirmMessageComponent */], __WEBPACK_IMPORTED_MODULE_52__main_dialogs_error_message_error_message_component__["a" /* ErrorMessageComponent */], __WEBPACK_IMPORTED_MODULE_0__main_dialogs_my_reset_password_my_reset_password_component__["a" /* MyResetPasswordComponent */]],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_24__core_services_splash_screen_service__["a" /* FuseSplashScreenService */],
                 __WEBPACK_IMPORTED_MODULE_25__core_services_config_service__["a" /* FuseConfigService */],
@@ -2325,7 +2325,7 @@ var FuseNavVerticalGroupComponent = (function () {
 /***/ "../../../../../src/app/core/components/navigation/vertical/nav-item/nav-vertical-item.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<a class=\"nav-link\" *ngIf=\"item.url && cheack(item)\" [routerLink]=\"[item.url]\" routerLinkActive=\"active\"\n   [routerLinkActiveOptions]=\"{exact: item.exactMatch || false}\" matRipple>\n    <mat-icon class=\"nav-link-icon\" *ngIf=\"item.icon\">{{item.icon}}</mat-icon>\n    <span class=\"nav-link-title\">{{item.title | translate}}</span>\n    <span class=\"nav-link-badge\" *ngIf=\"item.badge\"\n          [ngStyle]=\"{'background-color': item.badge.bg,'color': item.badge.fg}\">\n        {{item.badge.title}}\n    </span>\n</a>\n\n<span class=\"nav-link\" *ngIf=\"item.function\" (click)=\"item.function()\" matRipple>\n    <mat-icon class=\"nav-link-icon\" *ngIf=\"item.icon\">{{item.icon}}</mat-icon>\n    <span class=\"nav-link-title\">{{item.title}}</span>\n    <span class=\"nav-link-badge\" *ngIf=\"item.badge\"\n          [ngStyle]=\"{'background-color': item.badge.bg,'color': item.badge.fg}\">\n        {{item.badge.title}}\n    </span>\n</span>\n"
+module.exports = "<a class=\"nav-link\" *ngIf=\"item.url && cheack(item)\" [routerLink]=\"[item.url]\" \n   [ngClass]=\"{'active': isActive(item)}\" matRipple>\n    <mat-icon class=\"nav-link-icon\" *ngIf=\"item.icon\">{{item.icon}}</mat-icon>\n    <span class=\"nav-link-title\">{{item.title | translate}}</span>\n    <span class=\"nav-link-badge\" *ngIf=\"item.badge\"\n          [ngStyle]=\"{'background-color': item.badge.bg,'color': item.badge.fg}\">\n        {{item.badge.title}}\n    </span>\n</a>\n\n<span class=\"nav-link\" *ngIf=\"item.function\" (click)=\"item.function()\" matRipple>\n    <mat-icon class=\"nav-link-icon\" *ngIf=\"item.icon\">{{item.icon}}</mat-icon>\n    <span class=\"nav-link-title\">{{item.title}}</span>\n    <span class=\"nav-link-badge\" *ngIf=\"item.badge\"\n          [ngStyle]=\"{'background-color': item.badge.bg,'color': item.badge.fg}\">\n        {{item.badge.title}}\n    </span>\n</span>\n"
 
 /***/ }),
 
@@ -2376,6 +2376,9 @@ var FuseNavVerticalItemComponent = (function () {
         this.isSuperAdmin = this.mainServ.loginServ.getIsSuperAdmin();
         if (item.data == null || (item.data != null && item.data['isSuperAdmin'] == true && this.isSuperAdmin == "true"))
             return true;
+    };
+    FuseNavVerticalItemComponent.prototype.isActive = function (item) {
+        return this.mainServ.globalServ.isActive(item.id);
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["HostBinding"])('class'),
@@ -4748,8 +4751,8 @@ var CallApiService = (function () {
         this.http = http;
         this.loginSer = loginSer;
         // readonly baseUrl = "http://104.217.253.15:3006/api/"
-        this.baseUrl = "https://jawlatcom.com:3000/api/";
-        // readonly baseUrl = "http://localhost:3000/api/"
+        // readonly baseUrl = "https://jawlatcom.com:3000/api/"
+        this.baseUrl = "http://localhost:3000/api/";
         this.errorCode = 0;
         this.code = "";
     }
@@ -4778,12 +4781,12 @@ var CallApiService = (function () {
         return this.http.get(this.baseUrl + url, _options).map(function (Response) {
             return Response;
         }).catch(function (response) {
-            _this.errorCode = response['error'].statusCode;
-            _this.code = response['error'].code;
-            // console.log(response);
-            if (_this.errorCode == 401 && response['error'].code == "AUTHORIZATION_REQUIRED")
-                // this.loginSer.logout()
-                return "E";
+            _this.errorCode = response['error']['error'].statusCode;
+            _this.code = response['error']['error'].code;
+            if (_this.errorCode == 401) {
+                _this.loginSer.logout();
+            }
+            return "E";
         });
     };
     CallApiService.prototype.handleError = function (error) {
@@ -4811,8 +4814,11 @@ var CallApiService = (function () {
         return this.http.post(this.baseUrl + url, data, _options).map(function (Response) {
             return Response;
         }).catch(function (Response) {
-            _this.errorCode = Response.status;
-            _this.code = Response['error'].error.code;
+            _this.errorCode = Response['error']['error'].statusCode;
+            _this.code = Response['error']['error'].code;
+            if (_this.errorCode == 401) {
+                _this.loginSer.logout();
+            }
             return "E";
         });
     };
@@ -4851,8 +4857,11 @@ var CallApiService = (function () {
         return this.http.put(this.baseUrl + url, data, _options).map(function (Response) {
             return Response;
         }).catch(function (Response) {
-            _this.errorCode = Response.status;
-            _this.code = Response['error'].error.code;
+            _this.errorCode = Response['error']['error'].statusCode;
+            _this.code = Response['error']['error'].code;
+            if (_this.errorCode == 401) {
+                _this.loginSer.logout();
+            }
             return "E";
         });
     };
@@ -5109,10 +5118,12 @@ var DialogService = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GlobalService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__login_service__ = __webpack_require__("../../../../../src/app/core/services/login.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__call_api_service__ = __webpack_require__("../../../../../src/app/core/services/call-api.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_BehaviorSubject__ = __webpack_require__("../../../../rxjs/_esm5/BehaviorSubject.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__("../../../common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_BehaviorSubject__ = __webpack_require__("../../../../rxjs/_esm5/BehaviorSubject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_common__ = __webpack_require__("../../../common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5129,15 +5140,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var GlobalService = (function () {
-    function GlobalService(router, route, APIServe, logInSer) {
+    function GlobalService(router, translateService, snackBar, APIServe, logInSer) {
         this.router = router;
-        this.route = route;
+        this.translateService = translateService;
+        this.snackBar = snackBar;
         this.APIServe = APIServe;
         this.logInSer = logInSer;
-        this.unreadNotBeh = new __WEBPACK_IMPORTED_MODULE_4_rxjs_BehaviorSubject__["a" /* BehaviorSubject */](0);
-        this.notificationBeh = new __WEBPACK_IMPORTED_MODULE_4_rxjs_BehaviorSubject__["a" /* BehaviorSubject */]([]);
-        this.filteringBeh = new __WEBPACK_IMPORTED_MODULE_4_rxjs_BehaviorSubject__["a" /* BehaviorSubject */]({});
+        this.unreadNotBeh = new __WEBPACK_IMPORTED_MODULE_5_rxjs_BehaviorSubject__["a" /* BehaviorSubject */](0);
+        this.notificationBeh = new __WEBPACK_IMPORTED_MODULE_5_rxjs_BehaviorSubject__["a" /* BehaviorSubject */]([]);
+        this.filteringBeh = new __WEBPACK_IMPORTED_MODULE_5_rxjs_BehaviorSubject__["a" /* BehaviorSubject */]({});
         this.castUnreadNotBeh = this.unreadNotBeh.asObservable();
         this.castNotificationBeh = this.notificationBeh.asObservable();
         this.castFilteringBeh = this.filteringBeh.asObservable();
@@ -5452,7 +5465,7 @@ var GlobalService = (function () {
     };
     GlobalService.prototype.calculatDateAdv = function (date) {
         var time = this.diff_minutes(new Date(), new Date(date));
-        var pipe = new __WEBPACK_IMPORTED_MODULE_5__angular_common__["DatePipe"]('en-US'); // Use your own locale
+        var pipe = new __WEBPACK_IMPORTED_MODULE_6__angular_common__["DatePipe"]('en-US'); // Use your own locale
         if (time < 1)
             return "الأن";
         else if (time < 60)
@@ -5536,9 +5549,55 @@ var GlobalService = (function () {
         else
             return true;
     };
+    GlobalService.prototype.openSnackBar = function (type) {
+        var _this = this;
+        var duration = 3000;
+        this.translateService.get('Global.OK').subscribe(function (Ok) {
+            if (type == 0) {
+                // sublocationdays more than holl duration
+                _this.translateService.get('MESSAGES.OVERFLOWDURATION').subscribe(function (res) {
+                    _this.snackBar.open(res, Ok, {
+                        duration: duration
+                    });
+                });
+            }
+            else if (type == 1) {
+                // start date after end date
+                _this.translateService.get('MESSAGES.ERRORINDATE').subscribe(function (res) {
+                    _this.snackBar.open(res, Ok, {
+                        duration: duration
+                    });
+                });
+            }
+            else if (type == 2) {
+                // required field date
+                _this.translateService.get('MESSAGES.VALIDATIONDATE').subscribe(function (res) {
+                    _this.snackBar.open(res, Ok, {
+                        duration: duration
+                    });
+                });
+            }
+            else if (type == 3) {
+                // required field date
+                _this.translateService.get('MESSAGES.NOCARAVAILABLE').subscribe(function (res) {
+                    _this.snackBar.open(res, Ok, {
+                        duration: duration
+                    });
+                });
+            }
+        });
+    };
+    GlobalService.prototype.isActive = function (itemId) {
+        var path = window.location.href;
+        console.log(path.includes(itemId));
+        if (path.indexOf(itemId) == -1)
+            return false;
+        else
+            return true;
+    };
     GlobalService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__call_api_service__["a" /* CallApiService */], __WEBPACK_IMPORTED_MODULE_0__login_service__["a" /* LoginService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__angular_router__["d" /* Router */], __WEBPACK_IMPORTED_MODULE_7__ngx_translate_core__["b" /* TranslateService */], __WEBPACK_IMPORTED_MODULE_2__angular_material__["K" /* MatSnackBar */], __WEBPACK_IMPORTED_MODULE_1__call_api_service__["a" /* CallApiService */], __WEBPACK_IMPORTED_MODULE_0__login_service__["a" /* LoginService */]])
     ], GlobalService);
     return GlobalService;
 }());
@@ -5632,7 +5691,8 @@ var LoginService = (function () {
             return this.userId;
     };
     LoginService.prototype.getToken = function () {
-        return this.token;
+        // return this.token;
+        return localStorage.getItem("token");
     };
     LoginService.prototype.getuserName = function () {
         return this.userName;
@@ -19272,9 +19332,15 @@ var addAdminComponent = (function () {
     addAdminComponent.prototype.add = function () {
         var _this = this;
         var data = this.addAdminForm.value;
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.post("admins", data).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.back();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -19303,7 +19369,7 @@ var addAdminComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/admin/admin/admins.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n        <span class=\"logo-text h1\">{{'ADMIN.ALLADMIN.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n      <label for=\"search\" class=\"mr-8\">\r\n        <mat-icon>search</mat-icon>\r\n      </label>\r\n      <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n        <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'ADMIN.ALLADMIN.SEARCH'| translate}}\">\r\n      </mat-form-field>\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'ADMIN.ALLADMIN.ADDADMIN'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"filterRows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n    [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\">\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"email\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'ADMIN.EMAIL' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"username\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'ADMIN.USERNAME' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'ADMIN.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n\r\n    <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab class=\"mr-16\" *ngIf=\"isSuperAdmin()\" (click)=\"reset(row['id'])\" style=\"background-color: rgb(45, 50, 62)\">\r\n          <mat-icon style=\"color : white;\">lock</mat-icon>\r\n        </button>\r\n\r\n        <!-- <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button> -->\r\n        <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
+module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">supervised_user_circle</mat-icon>\r\n        <span class=\"logo-text h1\">{{'ADMIN.ALLADMIN.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n      <label for=\"search\" class=\"mr-8\">\r\n        <mat-icon>search</mat-icon>\r\n      </label>\r\n      <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n        <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'ADMIN.ALLADMIN.SEARCH'| translate}}\">\r\n      </mat-form-field>\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'ADMIN.ALLADMIN.ADDADMIN'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"filterRows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n    [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\">\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"email\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'ADMIN.EMAIL' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"username\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'ADMIN.USERNAME' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'ADMIN.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n\r\n    <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab class=\"mr-16\" *ngIf=\"isSuperAdmin()\" (click)=\"reset(row['id'])\" style=\"background-color: rgb(45, 50, 62)\">\r\n          <mat-icon style=\"color : white;\">lock</mat-icon>\r\n        </button>\r\n\r\n        <!-- <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button> -->\r\n        <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -19365,7 +19431,7 @@ var adminsComponent = (function () {
         this.allRows = [];
         this.filterRows = [];
         this.filterValue = "";
-        this.columns = ["email", "phoneNumber", "gender", "username", 'status'];
+        this.columns = ["email", "username", 'status'];
         this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_5__languageFiles_en__["a" /* locale */]);
         this.inisilaize();
     }
@@ -19373,14 +19439,12 @@ var adminsComponent = (function () {
         var _this = this;
         this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("admins").subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
-                _this.mainServ.loaderSer.display(false);
                 _this.allRows = data;
                 _this.filterDatatable();
             }
-            else if (_this.mainServ.APIServ.getErrorCode() == 400) {
-            }
-            else {
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                 _this.mainServ.APIServ.setErrorCode(0);
                 _this.dialogServ.someThingIsError();
             }
@@ -19465,14 +19529,14 @@ var adminsComponent = (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/main/content/pages/admin/editDriver/editAdmin.component.html":
+/***/ "../../../../../src/app/main/content/pages/admin/editAdmin/editAdmin.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'DRIVER.EDITDRIVER.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editAdminForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"45\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.EMAIL' | translate }}\" formControlName=\"email\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error *ngIf=\"editAdminForm.hasError('email','email') && !editAdminForm.hasError('required','email')\">{{'Global.ERRORVALIDEMAIL'\r\n              | translate }}</mat-error>\r\n            <mat-error *ngIf=\"editAdminForm.hasError('required','email')\">{{ 'Global.ERRORFIELDREQUIRED' | translate\r\n              }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"45\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.USERNAME' | translate }}\" formControlName=\"username\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editAdminForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'ADMIN.EDITADMIN.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editAdminForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"45\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.EMAIL' | translate }}\" formControlName=\"email\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error *ngIf=\"editAdminForm.hasError('email','email') && !editAdminForm.hasError('required','email')\">{{'Global.ERRORVALIDEMAIL'\r\n              | translate }}</mat-error>\r\n            <mat-error *ngIf=\"editAdminForm.hasError('required','email')\">{{ 'Global.ERRORFIELDREQUIRED' | translate\r\n              }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"45\">\r\n            <input matInput placeholder=\"{{ 'DRIVER.USERNAME' | translate }}\" formControlName=\"username\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editAdminForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/main/content/pages/admin/editDriver/editAdmin.component.scss":
+/***/ "../../../../../src/app/main/content/pages/admin/editAdmin/editAdmin.component.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -19490,7 +19554,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "../../../../../src/app/main/content/pages/admin/editDriver/editAdmin.component.ts":
+/***/ "../../../../../src/app/main/content/pages/admin/editAdmin/editAdmin.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19543,7 +19607,9 @@ var editAdminComponent = (function () {
         var mainthis = this;
         this.getParams("id", function (id) {
             mainthis.adminId = id;
+            mainthis.mainServ.loaderSer.display(true);
             mainthis.mainServ.APIServ.get("admins/" + mainthis.adminId).subscribe(function (data) {
+                mainthis.mainServ.loaderSer.display(false);
                 if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
                     mainthis.admin = data;
                     mainthis.editAdminForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
@@ -19551,15 +19617,25 @@ var editAdminComponent = (function () {
                         username: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.username, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
                     });
                 }
+                else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+                    mainthis.mainServ.APIServ.setErrorCode(0);
+                    mainthis.dialogServ.someThingIsError();
+                }
             });
         });
     };
     editAdminComponent.prototype.edit = function () {
         var _this = this;
         var data = this.editAdminForm.value;
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.put("admins/" + this.adminId, data).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.back();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -19569,8 +19645,8 @@ var editAdminComponent = (function () {
     editAdminComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
             selector: 'app-editAdmin',
-            template: __webpack_require__("../../../../../src/app/main/content/pages/admin/editDriver/editAdmin.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/main/content/pages/admin/editDriver/editAdmin.component.scss")]
+            template: __webpack_require__("../../../../../src/app/main/content/pages/admin/editAdmin/editAdmin.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/main/content/pages/admin/editAdmin/editAdmin.component.scss")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6__core_services_main_service__["a" /* MainService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormBuilder */],
@@ -20989,9 +21065,15 @@ var addBrandComponent = (function () {
     addBrandComponent.prototype.add = function () {
         var _this = this;
         var data = this.addBrandForm.value;
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.post("drivers", data).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.back();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -21088,14 +21170,12 @@ var brandsComponent = (function () {
         var _this = this;
         this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("brands").subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
-                _this.mainServ.loaderSer.display(false);
                 _this.allRows = data;
                 _this.filterDatatable();
             }
-            else if (_this.mainServ.APIServ.getErrorCode() == 400) {
-            }
-            else {
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                 _this.mainServ.APIServ.setErrorCode(0);
                 _this.dialogServ.someThingIsError();
             }
@@ -21249,7 +21329,9 @@ var editBrandComponent = (function () {
         var mainthis = this;
         this.getParams("id", function (id) {
             mainthis.brandId = id;
+            mainthis.mainServ.loaderSer.display(true);
             mainthis.mainServ.APIServ.get("brands/" + mainthis.brandId).subscribe(function (data) {
+                mainthis.mainServ.loaderSer.display(false);
                 if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
                     mainthis.brand = data;
                     mainthis.editBrandForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
@@ -21258,15 +21340,25 @@ var editBrandComponent = (function () {
                         nameTr: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](""),
                     });
                 }
+                else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+                    mainthis.mainServ.APIServ.setErrorCode(0);
+                    mainthis.dialogServ.someThingIsError();
+                }
             });
         });
     };
     editBrandComponent.prototype.edit = function () {
         var _this = this;
         var data = this.editBrandForm.value;
+        this.mainServ.loaderSer.display(false);
         this.mainServ.APIServ.put("brands/" + this.brandId, data).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.back();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -21411,7 +21503,7 @@ var addCarComponent = (function () {
                     data.forEach(function (element) {
                         _this.listImages.push(element);
                     });
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                     _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
@@ -21445,7 +21537,7 @@ var addCarComponent = (function () {
                         _this.images[0] = element;
                         _this.media = element;
                     });
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                     _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
@@ -21455,7 +21547,7 @@ var addCarComponent = (function () {
     };
     addCarComponent.prototype.ngOnInit = function () {
         var _this = this;
-        for (var index = 1900; index < 2021; index++) {
+        for (var index = 2010; index < 2021; index++) {
             this.years.push(index);
         }
         this.addCarForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormGroup */]({
@@ -21469,7 +21561,9 @@ var addCarComponent = (function () {
             locationId: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
             driverId: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
         });
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("brands").subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.brands = data;
                 var mercidesObject = _this.brands.find(function (element) {
@@ -21487,15 +21581,31 @@ var addCarComponent = (function () {
                     driverId: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
                 });
             }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
+            }
         });
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("drivers").subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.drivers = data;
             }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
+            }
         });
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("locations?filter[include]=subLocations&filter[where][status]=active").subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.locations = data;
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -21521,10 +21631,15 @@ var addCarComponent = (function () {
         data['isVip'] = this.isVip;
         data['color1'] = this.primaryColor.substr(1);
         data['color2'] = this.secondryColor.substr(1);
-        console.log(data);
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.post("cars", data).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.back();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -21570,7 +21685,7 @@ var addCarComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/car/cars/cars.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n        <span class=\"logo-text h1\">{{'CAR.ALLCAR.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n      <label for=\"search\" class=\"mr-8\">\r\n        <mat-icon>search</mat-icon>\r\n      </label>\r\n      <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n        <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'CAR.ALLCAR.SEARCH'| translate}}\">\r\n      </mat-form-field>\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'CAR.ALLCAR.ADDCAR'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"filterRows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n    [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\">\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"name\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'CAR.NAME' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"driver.phoneNumber\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'CAR.DRIVERPHONENUMBER' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"driver.username\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'CAR.DRIVERUSERNAME' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"rate\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'CAR.RATE' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"numOfSeat\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'CAR.NUMBEROFSEAT' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"brand.nameEn\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'CAR.BRAND' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n    <!-- <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"type\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'CAR.TYPE' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"engineType\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'CAR.ENGINTYPE' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column> -->\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'CAR.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button>\r\n        <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
+module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">directions_car</mat-icon>\r\n        <span class=\"logo-text h1\">{{'CAR.ALLCAR.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n      <label for=\"search\" class=\"mr-8\">\r\n        <mat-icon>search</mat-icon>\r\n      </label>\r\n      <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n        <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'CAR.ALLCAR.SEARCH'| translate}}\">\r\n      </mat-form-field>\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'CAR.ALLCAR.ADDCAR'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"filterRows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n    [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\">\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"name\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'CAR.NAME' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"driver.phoneNumber\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'CAR.DRIVERPHONENUMBER' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"driver.username\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'CAR.DRIVERUSERNAME' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"rate\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'CAR.RATE' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"numOfSeat\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'CAR.NUMBEROFSEAT' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"brand.nameEn\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'CAR.BRAND' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n    <!-- <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"type\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'CAR.TYPE' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"engineType\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'CAR.ENGINTYPE' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column> -->\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'CAR.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button>\r\n        <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -21638,14 +21753,14 @@ var carsComponent = (function () {
         var _this = this;
         this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("cars").subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
-                _this.mainServ.loaderSer.display(false);
                 _this.allRows = data;
                 _this.filterDatatable();
             }
             else if (_this.mainServ.APIServ.getErrorCode() == 400) {
             }
-            else {
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                 _this.mainServ.APIServ.setErrorCode(0);
                 _this.dialogServ.someThingIsError();
             }
@@ -21857,7 +21972,7 @@ var editCarComponent = (function () {
                     data.forEach(function (element) {
                         _this.listImages.push(element);
                     });
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                     _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
@@ -21891,7 +22006,7 @@ var editCarComponent = (function () {
                         _this.images[0] = element;
                         _this.media = element;
                     });
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                     _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
@@ -21920,7 +22035,7 @@ var editCarComponent = (function () {
     };
     editCarComponent.prototype.ngOnInit = function () {
         var _this = this;
-        for (var index = 1900; index < 2021; index++) {
+        for (var index = 2010; index < 2021; index++) {
             this.years.push(index);
         }
         this.editCarForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
@@ -21935,20 +22050,28 @@ var editCarComponent = (function () {
             driverId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
         });
         var mainthis = this;
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("brands").subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.brands = data;
+                _this.mainServ.loaderSer.display(true);
                 _this.mainServ.APIServ.get("drivers").subscribe(function (data) {
+                    _this.mainServ.loaderSer.display(false);
                     if (_this.mainServ.APIServ.getErrorCode() == 0) {
                         _this.drivers = data;
+                        _this.mainServ.loaderSer.display(true);
                         _this.mainServ.APIServ.get("locations?filter[include]=subLocations&filter[where][status]=active").subscribe(function (data) {
+                            _this.mainServ.loaderSer.display(false);
                             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                                 _this.locations = data;
                                 _this.getParams("id", function (id) {
+                                    var _this = this;
                                     mainthis.carId = id;
+                                    mainthis.mainServ.loaderSer.display(true);
                                     mainthis.mainServ.APIServ.get("cars/" + mainthis.carId).subscribe(function (data) {
+                                        mainthis.mainServ.loaderSer.display(false);
                                         if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
-                                            // mainthis.inisilaize();
                                             mainthis.car = data;
                                             console.log(data);
                                             mainthis.media = data.media;
@@ -21983,12 +22106,28 @@ var editCarComponent = (function () {
                                                 driverId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.driverId, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
                                             });
                                         }
+                                        else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                                            _this.mainServ.APIServ.setErrorCode(0);
+                                            _this.dialogServ.someThingIsError();
+                                        }
                                     });
                                 });
                             }
+                            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                                _this.mainServ.APIServ.setErrorCode(0);
+                                _this.dialogServ.someThingIsError();
+                            }
                         });
                     }
+                    else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                        _this.mainServ.APIServ.setErrorCode(0);
+                        _this.dialogServ.someThingIsError();
+                    }
                 });
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -22306,7 +22445,7 @@ var addDriverComponent = (function () {
                         _this.images[0] = element;
                         _this.media = element;
                     });
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                     _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
@@ -22326,9 +22465,15 @@ var addDriverComponent = (function () {
             driverLangs: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
             username: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
         });
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("languages").subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.listLanguages = data;
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -22336,9 +22481,15 @@ var addDriverComponent = (function () {
         var _this = this;
         var data = this.addDriverForm.value;
         data['mediaId'] = this.media.id;
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.post("drivers", data).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.back();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -22367,7 +22518,7 @@ var addDriverComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/driver/drivers/drivers.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n        <span class=\"logo-text h1\">{{'DRIVER.ALLDRIVER.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n      <label for=\"search\" class=\"mr-8\">\r\n        <mat-icon>search</mat-icon>\r\n      </label>\r\n      <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n        <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'DRIVER.ALLDRIVER.SEARCH'| translate}}\">\r\n      </mat-form-field>\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'DRIVER.ALLDRIVER.ADDDRIVER'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"filterRows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n    [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\">\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"phoneNumber\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'DRIVER.PHONENUMBER' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"email\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'DRIVER.EMAIL' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"username\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'DRIVER.USERNAME' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"gender\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'DRIVER.GENDER' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <!-- <mat-chip-list *ngIf=\"row.gender=='male'\"> -->\r\n          <!-- <mat-icon style=\"color: #0277bd\">sentiment_satisfied</mat-icon> -->\r\n          <!-- <mat-chip style=\"background-color:green\" selected=\"true\">{{row.gender}}</mat-chip> -->\r\n          <!-- </mat-chip-list> -->\r\n          <!-- <mat-chip-list *ngIf=\"row.gender=='female'\"> -->\r\n          <mat-icon style=\"color: #0277bd\" *ngIf=\"row.gender=='male'\">sentiment_satisfied</mat-icon>\r\n          <mat-icon style=\"color: #f06292\" *ngIf=\"row.gender=='female'\">face</mat-icon>\r\n\r\n          <!-- <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.gender}}</mat-chip> -->\r\n          <!-- </mat-chip-list> -->\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'DRIVER.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <!-- <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button> -->\r\n        <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
+module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">insert_emoticon</mat-icon>\r\n        <span class=\"logo-text h1\">{{'DRIVER.ALLDRIVER.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n      <label for=\"search\" class=\"mr-8\">\r\n        <mat-icon>search</mat-icon>\r\n      </label>\r\n      <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n        <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'DRIVER.ALLDRIVER.SEARCH'| translate}}\">\r\n      </mat-form-field>\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'DRIVER.ALLDRIVER.ADDDRIVER'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"filterRows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n    [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\">\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"phoneNumber\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'DRIVER.PHONENUMBER' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"email\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'DRIVER.EMAIL' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"username\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'DRIVER.USERNAME' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"gender\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'DRIVER.GENDER' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <!-- <mat-chip-list *ngIf=\"row.gender=='male'\"> -->\r\n          <!-- <mat-icon style=\"color: #0277bd\">sentiment_satisfied</mat-icon> -->\r\n          <!-- <mat-chip style=\"background-color:green\" selected=\"true\">{{row.gender}}</mat-chip> -->\r\n          <!-- </mat-chip-list> -->\r\n          <!-- <mat-chip-list *ngIf=\"row.gender=='female'\"> -->\r\n          <mat-icon style=\"color: #0277bd\" *ngIf=\"row.gender=='male'\">sentiment_satisfied</mat-icon>\r\n          <mat-icon style=\"color: #f06292\" *ngIf=\"row.gender=='female'\">face</mat-icon>\r\n\r\n          <!-- <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.gender}}</mat-chip> -->\r\n          <!-- </mat-chip-list> -->\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'DRIVER.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <!-- <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button> -->\r\n        <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -22435,14 +22586,14 @@ var driversComponent = (function () {
         var _this = this;
         this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("drivers").subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
-                _this.mainServ.loaderSer.display(false);
                 _this.allRows = data;
                 _this.filterDatatable();
             }
             else if (_this.mainServ.APIServ.getErrorCode() == 400) {
             }
-            else {
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                 _this.mainServ.APIServ.setErrorCode(0);
                 _this.dialogServ.someThingIsError();
             }
@@ -22636,7 +22787,7 @@ var editDriverComponent = (function () {
                         _this.images[0] = element;
                         _this.media = element;
                     });
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                     _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
@@ -22658,7 +22809,9 @@ var editDriverComponent = (function () {
         var mainthis = this;
         this.getParams("id", function (id) {
             mainthis.driverId = id;
+            mainthis.mainServ.loaderSer.display(true);
             mainthis.mainServ.APIServ.get("drivers/" + mainthis.driverId).subscribe(function (data) {
+                mainthis.mainServ.loaderSer.display(false);
                 if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
                     mainthis.driver = data;
                     var langId = [];
@@ -22678,11 +22831,21 @@ var editDriverComponent = (function () {
                     });
                     mainthis.inisilaize();
                 }
+                else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+                    mainthis.mainServ.APIServ.setErrorCode(0);
+                    mainthis.dialogServ.someThingIsError();
+                }
             });
         });
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("languages").subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.listLanguages = data;
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -22732,15 +22895,13 @@ var editDriverComponent = (function () {
         var filter = { "where": { "ownerId": this.driverId } };
         // var filter = {}
         this.mainServ.APIServ.get("trips?filter=" + JSON.stringify(filter)).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
-                _this.mainServ.loaderSer.display(false);
                 _this.allRows = data;
                 _this.calcStartDateAndEnd();
                 _this.filterDatatable();
             }
-            else if (_this.mainServ.APIServ.getErrorCode() == 400) {
-            }
-            else {
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                 _this.mainServ.APIServ.setErrorCode(0);
                 _this.dialogServ.someThingIsError();
             }
@@ -22750,9 +22911,15 @@ var editDriverComponent = (function () {
         var _this = this;
         var data = this.editDriverForm.value;
         data['mediaId'] = this.media.id;
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.put("drivers/" + this.driverId, data).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.back();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -23975,7 +24142,7 @@ var addLocationComponent = (function () {
                     data.forEach(function (element) {
                         _this.listImages.push(element);
                     });
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                     _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
@@ -24009,7 +24176,7 @@ var addLocationComponent = (function () {
                         _this.images[0] = element;
                         _this.media = element;
                     });
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                     _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
@@ -24037,11 +24204,17 @@ var addLocationComponent = (function () {
                 "mediaId": element.id
             });
         });
+        this.mainServ.loaderSer.display(true);
         data['color1'] = this.primaryColor.substr(1);
         data['color2'] = this.secondryColor.substr(1);
         this.mainServ.APIServ.post("locations", data).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.mainServ.globalServ.goTo('locations');
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -24185,7 +24358,7 @@ var editLocationComponent = (function () {
                     data.forEach(function (element) {
                         _this.listImages.push(element);
                     });
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                     _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
@@ -24219,7 +24392,7 @@ var editLocationComponent = (function () {
                         _this.images[0] = element;
                         _this.media = element;
                     });
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                     _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
@@ -24244,7 +24417,9 @@ var editLocationComponent = (function () {
         var mainthis = this;
         this.getParams("id", function (id) {
             mainthis.locationId = id;
+            mainthis.mainServ.loaderSer.display(true);
             mainthis.mainServ.APIServ.get("locations/" + mainthis.locationId).subscribe(function (data) {
+                mainthis.mainServ.loaderSer.display(false);
                 if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
                     mainthis.inisilaize();
                     mainthis.location = data;
@@ -24263,6 +24438,10 @@ var editLocationComponent = (function () {
                         nameTr: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](""),
                     });
                 }
+                else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+                    mainthis.mainServ.APIServ.setErrorCode(0);
+                    mainthis.dialogServ.someThingIsError();
+                }
             });
         });
     };
@@ -24278,9 +24457,15 @@ var editLocationComponent = (function () {
         });
         data['color1'] = this.primaryColor.substr(1);
         data['color2'] = this.secondryColor.substr(1);
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.put("locations/" + this.locationId, data).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.mainServ.globalServ.goTo('locations');
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -24297,14 +24482,14 @@ var editLocationComponent = (function () {
         this.mainServ.loaderSer.display(true);
         var filter = { "where": { "locationId": this.locationId } };
         this.mainServ.APIServ.get("subLocations?filter=" + JSON.stringify(filter)).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
-                _this.mainServ.loaderSer.display(false);
                 _this.allRows = data;
                 _this.filterDatatable();
             }
             else if (_this.mainServ.APIServ.getErrorCode() == 400) {
             }
-            else {
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                 _this.mainServ.APIServ.setErrorCode(0);
                 _this.dialogServ.someThingIsError();
             }
@@ -24380,7 +24565,7 @@ var editLocationComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/location/locations/locations.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n        <span class=\"logo-text h1\">{{'LOCATION.ALLLOCATION.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n      <label for=\"search\" class=\"mr-8\">\r\n        <mat-icon>search</mat-icon>\r\n      </label>\r\n      <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n        <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'LOCATION.ALLLOCATION.SEARCH'| translate}}\">\r\n      </mat-form-field>\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'LOCATION.ALLLOCATION.ADDLOCATION'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"filterRows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n    [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\">\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"nameAr\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.NAMEAR' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"nameEn\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.NAMEEN' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n    <!-- <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"nameTr\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.NAMETR' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column> -->\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"sublocationCount\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.SUBLOCATIONCOUNT' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button>\r\n        <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
+module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">location_on</mat-icon>\r\n        <span class=\"logo-text h1\">{{'LOCATION.ALLLOCATION.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n      <label for=\"search\" class=\"mr-8\">\r\n        <mat-icon>search</mat-icon>\r\n      </label>\r\n      <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n        <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'LOCATION.ALLLOCATION.SEARCH'| translate}}\">\r\n      </mat-form-field>\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'LOCATION.ALLLOCATION.ADDLOCATION'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"filterRows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n    [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\">\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"nameAr\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.NAMEAR' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"nameEn\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.NAMEEN' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n    <!-- <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"nameTr\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.NAMETR' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column> -->\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"sublocationCount\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.SUBLOCATIONCOUNT' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'LOCATION.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button>\r\n        <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -24448,14 +24633,12 @@ var locationsComponent = (function () {
         var _this = this;
         this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("locations").subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
-                _this.mainServ.loaderSer.display(false);
                 _this.allRows = data;
                 _this.filterDatatable();
             }
-            else if (_this.mainServ.APIServ.getErrorCode() == 400) {
-            }
-            else {
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                 _this.mainServ.APIServ.setErrorCode(0);
                 _this.dialogServ.someThingIsError();
             }
@@ -24593,6 +24776,7 @@ var FuseLoginComponent = (function () {
         this.translationLoader = translationLoader;
         this.loader = false;
         this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_5__languageFiles_en__["a" /* locale */]);
+        this.mainServ.APIServ.setErrorCode(0);
         this.fuseConfig.setSettings({
             layout: {
                 navigation: 'none',
@@ -25053,7 +25237,7 @@ var addPredefindTripComponent = (function () {
                     data.forEach(function (element) {
                         _this.listImages.push(element);
                     });
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                     _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
@@ -25087,7 +25271,7 @@ var addPredefindTripComponent = (function () {
                         _this.images[0] = element;
                         _this.media = element;
                     });
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                     _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
@@ -25097,7 +25281,7 @@ var addPredefindTripComponent = (function () {
     };
     addPredefindTripComponent.prototype.addDuration = function (index) {
         if (this.sublocationDuration == this.addPredefindTripForm.value.duration) {
-            alert("Error");
+            this.mainServ.globalServ.openSnackBar(0);
         }
         else {
             this.sublocationDuration++;
@@ -25127,12 +25311,16 @@ var addPredefindTripComponent = (function () {
     addPredefindTripComponent.prototype.ngOnInit = function () {
         var _this = this;
         var locationFilter = { "where": { "status": "active" }, "include": ['subLocations'] };
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("locations?filter=" + JSON.stringify(locationFilter)).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.locations = data;
             }
-            else
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
                 _this.dialogServ.someThingIsError();
+            }
         });
         this.addPredefindTripForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormGroup */]({
             duration: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */](0, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
@@ -25158,9 +25346,15 @@ var addPredefindTripComponent = (function () {
         data['predefinedTripsSublocations'] = this.predefinedTripsSublocations;
         data['color1'] = this.primaryColor.substr(1);
         data['color2'] = this.secondryColor.substr(1);
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.post("predefinedTrips", data).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.mainServ.globalServ.goTo('predefined-trips');
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -25180,7 +25374,7 @@ var addPredefindTripComponent = (function () {
         console.log(this.predefinedTripsSublocations);
     };
     addPredefindTripComponent.prototype.back = function () {
-        this.mainServ.globalServ.goTo('predefined-trips');
+        this.mainServ.globalServ.goTo('predefineds');
     };
     addPredefindTripComponent.prototype.deleteImage = function (i) {
         this.listImages.splice(i);
@@ -25319,7 +25513,7 @@ var editPredefindTripComponent = (function () {
                     data.forEach(function (element) {
                         _this.listImages.push(element);
                     });
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                     _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
@@ -25353,7 +25547,7 @@ var editPredefindTripComponent = (function () {
                         _this.images[0] = element;
                         _this.media = element;
                     });
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                     _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
@@ -25379,12 +25573,17 @@ var editPredefindTripComponent = (function () {
         });
         var mainthis = this;
         this.getParams("id", function (id) {
+            var _this = this;
             mainthis.predefindTripId = id;
             var locationFilter = { "where": { "status": "active" }, "include": ['subLocations'] };
+            mainthis.mainServ.loaderSer.display(true);
             mainthis.mainServ.APIServ.get("locations?filter=" + JSON.stringify(locationFilter)).subscribe(function (data) {
+                mainthis.mainServ.loaderSer.display(false);
                 if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
                     mainthis.locations = data;
+                    mainthis.mainServ.loaderSer.display(true);
                     mainthis.mainServ.APIServ.get("predefinedTrips/" + mainthis.predefindTripId).subscribe(function (data) {
+                        mainthis.mainServ.loaderSer.display(false);
                         if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
                             mainthis.predefindTrip = data;
                             console.log(data);
@@ -25418,16 +25617,22 @@ var editPredefindTripComponent = (function () {
                                 });
                             });
                         }
+                        else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                            _this.mainServ.APIServ.setErrorCode(0);
+                            _this.dialogServ.someThingIsError();
+                        }
                     });
                 }
-                else
+                else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+                    mainthis.mainServ.APIServ.setErrorCode(0);
                     mainthis.dialogServ.someThingIsError();
+                }
             });
         });
     };
     editPredefindTripComponent.prototype.addDuration = function (index) {
         if (this.sublocationDuration == this.editPredefindTripForm.value.duration) {
-            alert("Error");
+            this.mainServ.globalServ.openSnackBar(0);
         }
         else {
             this.sublocationDuration++;
@@ -25453,9 +25658,15 @@ var editPredefindTripComponent = (function () {
         data['predefinedTripsSublocations'] = this.predefinedTripsSublocations;
         data['color1'] = this.primaryColor.substr(1);
         data['color2'] = this.secondryColor.substr(1);
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.put("predefinedTrips/" + this.predefindTripId, data).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.mainServ.globalServ.goTo('predefined-trips');
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -25475,7 +25686,7 @@ var editPredefindTripComponent = (function () {
         console.log(this.predefinedTripsSublocations);
     };
     editPredefindTripComponent.prototype.back = function () {
-        this.mainServ.globalServ.goTo('predefined-trips');
+        this.mainServ.globalServ.goTo('predefineds');
     };
     editPredefindTripComponent.prototype.deleteImage = function (i) {
         this.listImages.splice(i);
@@ -25504,7 +25715,7 @@ var editPredefindTripComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/predefindTrip/predefindTrips/predefindTrips.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n        <span class=\"logo-text h1\">{{'PREDEFINEDTRIP.ALLPREDEFINEDTRIP.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n      <label for=\"search\" class=\"mr-8\">\r\n        <mat-icon>search</mat-icon>\r\n      </label>\r\n      <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n        <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'PREDEFINEDTRIP.ALLPREDEFINEDTRIP.SEARCH'| translate}}\">\r\n      </mat-form-field>\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'PREDEFINEDTRIP.ALLPREDEFINEDTRIP.ADDPREDEFINEDTRIP'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"filterRows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n    [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\">\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"titleEn\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'PREDEFINEDTRIP.TITLEEN' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"duration\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'PREDEFINEDTRIP.DURATION' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"location.nameEn\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'PREDEFINEDTRIP.LOCATION' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'PREDEFINEDTRIP.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button>\r\n        <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
+module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">assistant_photo</mat-icon>\r\n        <span class=\"logo-text h1\">{{'PREDEFINEDTRIP.ALLPREDEFINEDTRIP.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n      <label for=\"search\" class=\"mr-8\">\r\n        <mat-icon>search</mat-icon>\r\n      </label>\r\n      <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n        <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'PREDEFINEDTRIP.ALLPREDEFINEDTRIP.SEARCH'| translate}}\">\r\n      </mat-form-field>\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'PREDEFINEDTRIP.ALLPREDEFINEDTRIP.ADDPREDEFINEDTRIP'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"filterRows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n    [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\">\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"titleEn\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'PREDEFINEDTRIP.TITLEEN' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"duration\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'PREDEFINEDTRIP.DURATION' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"location.nameEn\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'PREDEFINEDTRIP.LOCATION' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'PREDEFINEDTRIP.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button>\r\n        <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -25572,14 +25783,12 @@ var predefindTripsComponent = (function () {
         var _this = this;
         this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("predefinedTrips").subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
-                _this.mainServ.loaderSer.display(false);
                 _this.allRows = data;
                 _this.filterDatatable();
             }
-            else if (_this.mainServ.APIServ.getErrorCode() == 400) {
-            }
-            else {
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                 _this.mainServ.APIServ.setErrorCode(0);
                 _this.dialogServ.someThingIsError();
             }
@@ -25593,12 +25802,12 @@ var predefindTripsComponent = (function () {
             url = 'show-form/' + id;
         }
         else if (pageName == 'edit') {
-            url = 'edit-predefined-trip/' + id;
+            url = 'edit-predefined/' + id;
         }
         this.mainServ.globalServ.goTo(url);
     };
     predefindTripsComponent.prototype.addUser = function () {
-        this.mainServ.globalServ.goTo("add-predefined-trip");
+        this.mainServ.globalServ.goTo("add-predefined");
     };
     predefindTripsComponent.prototype.deactivate = function (id) {
         var _this = this;
@@ -26822,7 +27031,7 @@ var addSubLocationComponent = (function () {
                         _this.images[0] = element;
                         _this.media = element;
                     });
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                     _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
@@ -26848,9 +27057,15 @@ var addSubLocationComponent = (function () {
         data['locationId'] = this.locationId;
         data['color1'] = this.primaryColor.substr(1);
         data['color2'] = this.secondryColor.substr(1);
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.post("subLocations", data).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.back();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -26998,7 +27213,7 @@ var editSubLocationComponent = (function () {
                         _this.images[0] = element;
                         _this.media = element;
                     });
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                     _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
@@ -27015,7 +27230,9 @@ var editSubLocationComponent = (function () {
         var mainthis = this;
         this.getParams("id", function (id) {
             mainthis.sublocationId = id;
+            mainthis.mainServ.loaderSer.display(true);
             mainthis.mainServ.APIServ.get("subLocations/" + mainthis.sublocationId).subscribe(function (data) {
+                mainthis.mainServ.loaderSer.display(false);
                 if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
                     mainthis.sublocation = data;
                     console.log(data);
@@ -27030,6 +27247,10 @@ var editSubLocationComponent = (function () {
                         nameTr: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](""),
                     });
                 }
+                else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+                    mainthis.mainServ.APIServ.setErrorCode(0);
+                    mainthis.dialogServ.someThingIsError();
+                }
             });
         });
     };
@@ -27040,9 +27261,15 @@ var editSubLocationComponent = (function () {
         data['locationId'] = this.locationId;
         data['color1'] = this.primaryColor.substr(1);
         data['color2'] = this.secondryColor.substr(1);
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.put("subLocations/" + this.sublocationId, data).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.back();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -27170,7 +27397,7 @@ var addTripComponent = (function () {
     }
     addTripComponent.prototype.addDuration = function (index) {
         if (this.subLocationDays == this.mainTripdays) {
-            alert("Error");
+            this.mainServ.globalServ.openSnackBar(0);
         }
         else {
             this.subLocaationPrice += this.tripSublocations[index].cost;
@@ -27257,20 +27484,28 @@ var addTripComponent = (function () {
             carId: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required)
         });
         var locationFilter = { "where": { "status": "active" }, "include": ['subLocations'] };
-        this.mainServ.APIServ.get("locations?filter=" + JSON.stringify(locationFilter)).subscribe(function (data) {
-            if (_this.mainServ.APIServ.getErrorCode() == 0) {
-                _this.locations = data;
-            }
-            else
-                _this.dialogServ.someThingIsError();
-        });
         var filter = { "where": { "status": "active" } };
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("users?filter=" + JSON.stringify(filter)).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.users = data;
+                _this.mainServ.loaderSer.display(true);
+                _this.mainServ.APIServ.get("locations?filter=" + JSON.stringify(locationFilter)).subscribe(function (data) {
+                    _this.mainServ.loaderSer.display(false);
+                    if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                        _this.locations = data;
+                    }
+                    else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                        _this.mainServ.APIServ.setErrorCode(0);
+                        _this.dialogServ.someThingIsError();
+                    }
+                });
             }
-            else
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
                 _this.dialogServ.someThingIsError();
+            }
         });
     };
     addTripComponent.prototype.getTypeTrip = function () {
@@ -27441,42 +27676,50 @@ var addTripComponent = (function () {
                 if (secDate) {
                     if (this.differenceInHourse(firstDate, secDate) > 0) {
                         var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport };
+                        this.mainServ.loaderSer.display(true);
                         this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId']).subscribe(function (data) {
+                            _this.mainServ.loaderSer.display(false);
                             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                                 _this.carAvailable = data;
                                 _this.activeLink = _this.links[stepNum - 1].name;
                             }
-                            else {
+                            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                                _this.mainServ.APIServ.setErrorCode(0);
                                 _this.dialogServ.someThingIsError();
                             }
                         });
                     }
                     else {
-                        alert("error");
+                        this.mainServ.globalServ.openSnackBar(1);
                     }
                 }
                 else {
+                    this.mainServ.loaderSer.display(true);
                     var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport };
                     this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId']).subscribe(function (data) {
+                        _this.mainServ.loaderSer.display(false);
                         if (_this.mainServ.APIServ.getErrorCode() == 0) {
                             _this.carAvailable = data;
                             _this.activeLink = _this.links[stepNum - 1].name;
                         }
-                        else {
+                        else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                            _this.mainServ.APIServ.setErrorCode(0);
                             _this.dialogServ.someThingIsError();
                         }
                     });
                 }
             }
             else {
-                alert("error");
+                this.mainServ.globalServ.openSnackBar(2);
             }
         }
         else if (stepNum == 4) {
             this.allData['carId'] = this.stepthreeForm.value['carId'];
             var filter = { "where": { "and": [{ "carId": this.allData['carId'] }, { "subLocationId": { "inq": this.subLocationId } }] } };
             console.log("carSublocations?filter=" + JSON.stringify(filter));
+            this.mainServ.loaderSer.display(true);
             this.mainServ.APIServ.get("carSublocations?filter=" + JSON.stringify(filter)).subscribe(function (data) {
+                _this.mainServ.loaderSer.display(false);
                 if (_this.mainServ.APIServ.getErrorCode() == 0) {
                     _this.activeLink = _this.links[stepNum - 1].name;
                     _this.carsSublocations = data;
@@ -27488,7 +27731,8 @@ var addTripComponent = (function () {
                         _this.tripSublocations.push({ "sublocationId": element.subLocationId, "duration": 0, "cost": tempCost });
                     });
                 }
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                    _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
             });
@@ -27501,11 +27745,23 @@ var addTripComponent = (function () {
         this.allData['carId'] = this.stepthreeForm.value['carId'];
         this.allData['cost'] = this.totalPrice + this.subLocaationPrice + this.airportPrice;
         this.allData['daysInCity'] = this.tripdays;
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.post("trips", this.allData).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.backToTrips();
             }
-            else {
+            else if (_this.mainServ.APIServ.getErrorCode() != 455) {
+                _this.dialogServ.errorMessage(455);
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 456) {
+                _this.dialogServ.errorMessage(456);
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 457) {
+                _this.dialogServ.errorMessage(457);
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
                 _this.dialogServ.someThingIsError();
             }
         });
@@ -27583,7 +27839,7 @@ var addTripComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/trip/bill/bill.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"backToTrips()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'TRIP.BILL.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n    <!-- <div style=\"font-size: 20px\">{{'TRIP.PRICE' | translate}} : {{totalPrice+subLocaationPrice+airportPrice}}</div> -->\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <div class=\"Bill\">\r\n      <div class=\"outerBill\">\r\n        <label class=\"title\">\r\n          {{'TRIP.BILL.OUTER' | translate}}\r\n        </label>\r\n        <div class=\"card\">\r\n          <div class=\"header\">\r\n            <!-- <span class=\"name\" *ngIf=\"trip\">{{trip['owner'].name}}</span> -->\r\n            <span class=\"date\">{{getCreatedDate('outer') |date : 'dd-MM-yyyy'}}</span>\r\n            <div class=\"type\">\r\n              <!-- {{getType('outer')}} -->\r\n              <mat-form-field>\r\n                <mat-select [ngModelOptions]=\"{standalone: true}\" (change)=\"changeStaus('outer')\" [disabled]=\"outerDisabled\"\r\n                  [(ngModel)]=\"outerBillStatus\">\r\n                  <mat-option *ngFor=\"let oneStaus of statusBill\" [value]=\"oneStaus.value\">\r\n                    {{oneStaus.view}}\r\n                  </mat-option>\r\n                </mat-select>\r\n              </mat-form-field>\r\n            </div>\r\n\r\n          </div>\r\n          <div class=\"bills\">\r\n            <div style=\"margin-bottom: 18px;font-size: 20px;\" class=\"title\">\r\n              {{'TRIP.BILL.ITEMS' | translate}}\r\n          </div>\r\n            <div class=\"oneBill\" *ngFor=\"let oneOuterBill of outerBill;let i=index\">\r\n              <mat-form-field class=\"Bill25\">\r\n                <mat-select placeholder=\"{{ 'TRIP.BILL.TYPE' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"outerBill[i].typeBillId\" required>\r\n                  <mat-option *ngFor=\"let oneType of typeBills\" [value]=\"oneType.id\">\r\n                    {{oneType.titleEn}}\r\n                  </mat-option>\r\n                </mat-select>\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n              <mat-form-field class=\"Bill25\">\r\n                <input matInput placeholder=\"{{ 'TRIP.BILL.NAME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"outerBill[i].name\" required>\r\n\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n              <!-- <mat-form-field class=\"Bill30\">\r\n                <input matInput placeholder=\"{{ 'TRIP.BILL.TITLEAR' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"tripdays\" required>\r\n                \r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n              <mat-form-field class=\"Bill30\">\r\n                <input matInput placeholder=\"{{ 'TRIP.BILL.TITLETR' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"tripdays\" required>\r\n                \r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field> -->\r\n\r\n              <mat-form-field class=\"Bill15\">\r\n                <input matInput placeholder=\"{{ 'TRIP.BILL.QUENTITY' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"outerBill[i].quantity\" required>\r\n\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n\r\n              <mat-form-field class=\"Bill15\">\r\n                <input matInput placeholder=\"{{ 'TRIP.BILL.PRICEPERUNIT' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"outerBill[i].pricePerUnit\" required>\r\n\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n              <div class=\"totlalOneUnit\">\r\n                <label class=\"\">{{outerBill[i].quantity * outerBill[i].pricePerUnit}}</label>\r\n\r\n              </div>\r\n              <div class=\"actionButton\">\r\n                <div class=\"circle add\" *ngIf=\"outerBill[i].id==null\" [ngClass]=\"{'disabled': outerBill[i].pricePerUnit=='' || outerBill[i].name=='' || outerBill[i].quantity==''}\"\r\n                  (click)=\"addBill(i,'outer')\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n                <div class=\"circle edit\" *ngIf=\"outerBill[i].id!=null\" [ngClass]=\"{'disabled': outerBill[i].pricePerUnit=='' || outerBill[i].name=='' || outerBill[i].quantity==''}\"\r\n                  (click)=\"editBill(i,'outer')\">\r\n                  <i class=\"material-icons\">\r\n                    create\r\n                  </i>\r\n                </div>\r\n                <div class=\"circle delete\" (click)=\"deleteBill(i,'outer')\">\r\n                  <i class=\"material-icons\">\r\n                    clear\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div style=\"\">\r\n              <button mat-button (click)=\"addNewBill('outer')\" class=\"editButton\" cdkFocusInitial>{{'Global.ADD'\r\n                | translate}}</button>\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"backToTrips()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'TRIP.BILL.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n    <!-- <div style=\"font-size: 20px\">{{'TRIP.PRICE' | translate}} : {{totalPrice+subLocaationPrice+airportPrice}}</div> -->\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <div class=\"Bill\">\r\n      <div class=\"outerBill\">\r\n        <label class=\"title\">\r\n          {{'TRIP.BILL.OUTER' | translate}}\r\n        </label>\r\n        <div class=\"card\">\r\n          <div class=\"header\">\r\n            <!-- <span class=\"name\" *ngIf=\"trip\">{{trip['owner'].name}}</span> -->\r\n            <span class=\"date\">{{getCreatedDate('outer') |date : 'dd-MM-yyyy'}}</span>\r\n            <div class=\"type\">\r\n              <!-- {{getType('outer')}} -->\r\n              <mat-form-field>\r\n                <mat-select [ngModelOptions]=\"{standalone: true}\" (change)=\"changeStaus('outer')\" [disabled]=\"outerDisabled\"\r\n                  [(ngModel)]=\"outerBillStatus\">\r\n                  <mat-option *ngFor=\"let oneStaus of statusBill\" [value]=\"oneStaus.value\">\r\n                    {{oneStaus.view}}\r\n                  </mat-option>\r\n                </mat-select>\r\n              </mat-form-field>\r\n            </div>\r\n\r\n          </div>\r\n          <div class=\"bills\">\r\n            <div style=\"margin-bottom: 18px;font-size: 20px;\" class=\"title\">\r\n              {{'TRIP.BILL.ITEMS' | translate}}\r\n            </div>\r\n            <div class=\"oneBill\" *ngFor=\"let oneOuterBill of outerBill;let i=index\">\r\n              <mat-form-field class=\"Bill25\">\r\n                <mat-select placeholder=\"{{ 'TRIP.BILL.TYPE' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"outerBill[i].typeBillId\" required>\r\n                  <mat-option *ngFor=\"let oneType of typeBills\" [value]=\"oneType.id\">\r\n                    {{oneType.titleEn}}\r\n                  </mat-option>\r\n                </mat-select>\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n              <mat-form-field class=\"Bill25\">\r\n                <input matInput placeholder=\"{{ 'TRIP.BILL.NAME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"outerBill[i].name\" required>\r\n\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n              <!-- <mat-form-field class=\"Bill30\">\r\n                <input matInput placeholder=\"{{ 'TRIP.BILL.TITLEAR' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"tripdays\" required>\r\n                \r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n              <mat-form-field class=\"Bill30\">\r\n                <input matInput placeholder=\"{{ 'TRIP.BILL.TITLETR' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"tripdays\" required>\r\n                \r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field> -->\r\n\r\n              <mat-form-field class=\"Bill15\">\r\n                <input matInput placeholder=\"{{ 'TRIP.BILL.QUENTITY' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"outerBill[i].quantity\" required>\r\n\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n\r\n              <mat-form-field class=\"Bill15\">\r\n                <input matInput placeholder=\"{{ 'TRIP.BILL.PRICEPERUNIT' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"outerBill[i].pricePerUnit\" required>\r\n\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n              <div class=\"totlalOneUnit\">\r\n                <label class=\"\">{{outerBill[i].quantity * outerBill[i].pricePerUnit}}</label>\r\n\r\n              </div>\r\n              <div class=\"actionButton\">\r\n                <div class=\"circle add\" *ngIf=\"outerBill[i].id==null\" [ngClass]=\"{'disabled': outerBill[i].pricePerUnit=='' || outerBill[i].name=='' || outerBill[i].quantity==''}\"\r\n                  (click)=\"addBill(i,'outer')\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n                <div class=\"circle edit\" *ngIf=\"outerBill[i].id!=null\" [ngClass]=\"{'disabled': outerBill[i].pricePerUnit=='' || outerBill[i].name=='' || outerBill[i].quantity==''}\"\r\n                  (click)=\"editBill(i,'outer')\">\r\n                  <i class=\"material-icons\">\r\n                    create\r\n                  </i>\r\n                </div>\r\n                <div class=\"circle delete\" (click)=\"deleteBill(i,'outer')\">\r\n                  <i class=\"material-icons\">\r\n                    clear\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div style=\"\">\r\n              <button mat-button (click)=\"addNewBill('outer')\" class=\"editButton\" cdkFocusInitial>{{'Global.ADD'\r\n                | translate}}</button>\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"outerBill\">\r\n        <label class=\"title\">\r\n          {{'TRIP.BILL.INNER' | translate}}\r\n        </label>\r\n        <div class=\"card\">\r\n          <div class=\"header\">\r\n            <!-- <span class=\"name\" *ngIf=\"trip\">{{trip['owner'].name}}</span> -->\r\n            <span class=\"date\">{{getCreatedDate('inner') |date : 'dd-MM-yyyy'}}</span>\r\n            <div class=\"type\">\r\n              <!-- {{getType('outer')}} -->\r\n              <mat-form-field>\r\n                <mat-select [ngModelOptions]=\"{standalone: true}\" (change)=\"changeStaus('inner')\" [disabled]=\"innerDisabled\"\r\n                  [(ngModel)]=\"innerBillStatus\">\r\n                  <mat-option *ngFor=\"let oneStaus of statusBill\" [value]=\"oneStaus.value\">\r\n                    {{oneStaus.view}}\r\n                  </mat-option>\r\n                </mat-select>\r\n              </mat-form-field>\r\n            </div>\r\n\r\n          </div>\r\n          <div class=\"bills\">\r\n            <div style=\"margin-bottom: 18px;font-size: 20px;\" class=\"title\">\r\n              {{'TRIP.BILL.ITEMS' | translate}}\r\n            </div>\r\n            <div class=\"oneBill\" *ngFor=\"let oneinnerBill of innerBill;let i=index\">\r\n              <mat-form-field class=\"Bill25\">\r\n                <mat-select placeholder=\"{{ 'TRIP.BILL.TYPE' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"innerBill[i].typeBillId\" required>\r\n                  <mat-option *ngFor=\"let oneType of typeBills\" [value]=\"oneType.id\">\r\n                    {{oneType.titleEn}}\r\n                  </mat-option>\r\n                </mat-select>\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n              <mat-form-field class=\"Bill25\">\r\n                <input matInput placeholder=\"{{ 'TRIP.BILL.NAME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"innerBill[i].name\" required>\r\n\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n              <!-- <mat-form-field class=\"Bill30\">\r\n                  <input matInput placeholder=\"{{ 'TRIP.BILL.TITLEAR' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                    [(ngModel)]=\"tripdays\" required>\r\n                  \r\n                  <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n                </mat-form-field>\r\n                <mat-form-field class=\"Bill30\">\r\n                  <input matInput placeholder=\"{{ 'TRIP.BILL.TITLETR' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                    [(ngModel)]=\"tripdays\" required>\r\n                  \r\n                  <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n                </mat-form-field> -->\r\n\r\n              <mat-form-field class=\"Bill15\">\r\n                <input matInput placeholder=\"{{ 'TRIP.BILL.QUENTITY' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"innerBill[i].quantity\" required>\r\n\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n\r\n              <mat-form-field class=\"Bill15\">\r\n                <input matInput placeholder=\"{{ 'TRIP.BILL.PRICEPERUNIT' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"innerBill[i].pricePerUnit\" required>\r\n\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n              <div class=\"totlalOneUnit\">\r\n                <label class=\"\">{{innerBill[i].quantity * innerBill[i].pricePerUnit}}</label>\r\n\r\n              </div>\r\n              <div class=\"actionButton\">\r\n                <div class=\"circle add\" *ngIf=\"innerBill[i].id==null\" [ngClass]=\"{'disabled': innerBill[i].pricePerUnit=='' || innerBill[i].name=='' || innerBill[i].quantity==''}\"\r\n                  (click)=\"addBill(i,'inner')\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n                <div class=\"circle edit\" *ngIf=\"innerBill[i].id!=null\" [ngClass]=\"{'disabled': innerBill[i].pricePerUnit=='' || innerBill[i].name=='' || innerBill[i].quantity==''}\"\r\n                  (click)=\"editBill(i,'inner')\">\r\n                  <i class=\"material-icons\">\r\n                    create\r\n                  </i>\r\n                </div>\r\n                <div class=\"circle delete\" (click)=\"deleteBill(i,'inner')\">\r\n                  <i class=\"material-icons\">\r\n                    clear\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div style=\"\">\r\n              <button mat-button (click)=\"addNewBill('inner')\" class=\"editButton\" cdkFocusInitial>{{'Global.ADD'\r\n                | translate}}</button>\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -27595,7 +27851,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".Bill {\n  width: 100%; }\n  .Bill .outerBill {\n    width: calc(50% - 40px);\n    height: 400px;\n    margin: 0px 20px; }\n    .Bill .outerBill .title {\n      width: 100%;\n      height: 25px;\n      font-size: 23px; }\n    .Bill .outerBill .card {\n      border: 2px solid #32a6da;\n      border-radius: 10px;\n      width: 100%;\n      height: 100%; }\n      .Bill .outerBill .card .header {\n        width: 100%;\n        padding: 10px;\n        border-radius: 5px 5px 0px 0px;\n        background-color: #35a9dd;\n        color: white; }\n        .Bill .outerBill .card .header .name {\n          font-size: 20px; }\n        .Bill .outerBill .card .header .date {\n          float: right;\n          font-size: 20px;\n          padding-top: 20px; }\n        .Bill .outerBill .card .header .type {\n          width: 100%;\n          font-size: 17px; }\n      .Bill .outerBill .card .bills {\n        width: 100%;\n        padding: 10px;\n        height: 310px;\n        overflow-y: auto; }\n        .Bill .outerBill .card .bills .oneBill {\n          width: 100%;\n          height: 100px; }\n          .Bill .outerBill .card .bills .oneBill .Bill15 {\n            width: 15%; }\n          .Bill .outerBill .card .bills .oneBill .Bill25 {\n            width: 25%; }\n          .Bill .outerBill .card .bills .oneBill .Bill20 {\n            width: 20%; }\n          .Bill .outerBill .card .bills .oneBill .totlalOneUnit {\n            display: inline-block;\n            padding-top: 11px;\n            width: 17%;\n            height: 40px;\n            background-color: gray;\n            font-weight: bold;\n            color: white;\n            box-shadow: 0px 0px 3px 1px rgba(140, 140, 140, 0.431373);\n            border-radius: 3px; }\n            .Bill .outerBill .card .bills .oneBill .totlalOneUnit label {\n              width: 100%;\n              display: block;\n              text-align: center; }\n          .Bill .outerBill .card .bills .oneBill .actionButton {\n            float: right; }\n            .Bill .outerBill .card .bills .oneBill .actionButton .circle {\n              width: 25px;\n              border-radius: 50%;\n              float: left;\n              height: 25px;\n              margin: 0px 7px; }\n              .Bill .outerBill .card .bills .oneBill .actionButton .circle i {\n                font-size: 18px;\n                font-weight: bold;\n                color: white;\n                padding: 4px;\n                text-align: center;\n                margin: 0px auto;\n                -webkit-user-select: none;\n                   -moz-user-select: none;\n                    -ms-user-select: none;\n                        user-select: none; }\n              .Bill .outerBill .card .bills .oneBill .actionButton .circle:hover {\n                cursor: pointer; }\n            .Bill .outerBill .card .bills .oneBill .actionButton .add {\n              background-color: #1B5E20; }\n            .Bill .outerBill .card .bills .oneBill .actionButton .edit {\n              background-color: #35a9dd; }\n              .Bill .outerBill .card .bills .oneBill .actionButton .edit i {\n                font-size: 17px; }\n            .Bill .outerBill .card .bills .oneBill .actionButton .delete {\n              background-color: #a30500; }\n            .Bill .outerBill .card .bills .oneBill .actionButton .disabled:hover {\n              cursor: not-allowed; }\n", ""]);
+exports.push([module.i, ".Bill {\n  width: 100%; }\n  .Bill .outerBill {\n    width: calc(50% - 40px);\n    height: 400px;\n    margin: 0px 20px;\n    float: left; }\n    .Bill .outerBill .title {\n      width: 100%;\n      height: 25px;\n      font-size: 23px; }\n    .Bill .outerBill .card {\n      border: 2px solid #32a6da;\n      border-radius: 5px;\n      width: 100%;\n      height: 100%; }\n      .Bill .outerBill .card .header {\n        width: 100%;\n        padding: 10px;\n        border-radius: 2px 2px 0px 0px;\n        background-color: #35a9dd;\n        color: white; }\n        .Bill .outerBill .card .header .name {\n          font-size: 20px; }\n        .Bill .outerBill .card .header .date {\n          float: right;\n          font-size: 20px;\n          padding-top: 20px; }\n        .Bill .outerBill .card .header .type {\n          width: 100%;\n          font-size: 17px; }\n      .Bill .outerBill .card .bills {\n        width: 100%;\n        padding: 10px;\n        height: 310px;\n        overflow-y: auto; }\n        .Bill .outerBill .card .bills .oneBill {\n          width: 100%;\n          height: 100px; }\n          .Bill .outerBill .card .bills .oneBill .Bill15 {\n            width: 15%; }\n          .Bill .outerBill .card .bills .oneBill .Bill25 {\n            width: 25%; }\n          .Bill .outerBill .card .bills .oneBill .Bill20 {\n            width: 20%; }\n          .Bill .outerBill .card .bills .oneBill .totlalOneUnit {\n            display: inline-block;\n            padding-top: 11px;\n            width: 17%;\n            height: 40px;\n            background-color: gray;\n            font-weight: bold;\n            color: white;\n            box-shadow: 0px 0px 3px 1px rgba(140, 140, 140, 0.431373);\n            border-radius: 3px; }\n            .Bill .outerBill .card .bills .oneBill .totlalOneUnit label {\n              width: 100%;\n              display: block;\n              text-align: center; }\n          .Bill .outerBill .card .bills .oneBill .actionButton {\n            float: right; }\n            .Bill .outerBill .card .bills .oneBill .actionButton .circle {\n              width: 25px;\n              border-radius: 50%;\n              float: left;\n              height: 25px;\n              margin: 0px 7px; }\n              .Bill .outerBill .card .bills .oneBill .actionButton .circle i {\n                font-size: 18px;\n                font-weight: bold;\n                color: white;\n                padding: 4px;\n                text-align: center;\n                margin: 0px auto;\n                -webkit-user-select: none;\n                   -moz-user-select: none;\n                    -ms-user-select: none;\n                        user-select: none; }\n              .Bill .outerBill .card .bills .oneBill .actionButton .circle:hover {\n                cursor: pointer; }\n            .Bill .outerBill .card .bills .oneBill .actionButton .add {\n              background-color: #1B5E20; }\n            .Bill .outerBill .card .bills .oneBill .actionButton .edit {\n              background-color: #35a9dd; }\n              .Bill .outerBill .card .bills .oneBill .actionButton .edit i {\n                font-size: 17px; }\n            .Bill .outerBill .card .bills .oneBill .actionButton .delete {\n              background-color: #a30500; }\n            .Bill .outerBill .card .bills .oneBill .actionButton .disabled:hover {\n              cursor: not-allowed; }\n", ""]);
 
 // exports
 
@@ -27668,19 +27924,28 @@ var billComponent = (function () {
         var mainthis = this;
         this.getParams("id", function (id) {
             mainthis.tripId = id;
+            mainthis.mainServ.loaderSer.display(true);
             mainthis.mainServ.APIServ.get("typeBills").subscribe(function (data) {
+                mainthis.mainServ.loaderSer.display(false);
                 if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
                     mainthis.typeBills = data;
+                    mainthis.mainServ.loaderSer.display(true);
                     mainthis.mainServ.APIServ.get("trips/" + mainthis.tripId).subscribe(function (data) {
+                        mainthis.mainServ.loaderSer.display(false);
                         if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
                             mainthis.trip = data;
                             mainthis.initOuterBill(mainthis.trip.hasOuterBill);
+                            mainthis.initInnerBill(mainthis.trip.hasInnerBill);
                         }
-                        else {
+                        else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+                            mainthis.mainServ.APIServ.setErrorCode(0);
+                            mainthis.dialogServ.someThingIsError();
                         }
                     });
                 }
-                else {
+                else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+                    mainthis.mainServ.APIServ.setErrorCode(0);
+                    mainthis.dialogServ.someThingIsError();
                 }
             });
         });
@@ -27693,10 +27958,106 @@ var billComponent = (function () {
             url = "outerBills/" + this.outerBillId;
             newStatus = this.outerBillStatus;
         }
+        else if (type == "inner") {
+            url = "innerBills/" + this.innerBillId;
+            newStatus = this.innerBillStatus;
+        }
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.put(url, { "status": newStatus }).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
             }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
+            }
         });
+    };
+    billComponent.prototype.initInnerBill = function (hasInnerBill) {
+        var _this = this;
+        if (hasInnerBill == false) {
+            if (this.trip.inCity) {
+                var typeBill = this.typeBills.find(function (element) {
+                    return element.type == "city";
+                });
+                this.innerBill.push({
+                    "quantity": this.trip['daysInCity'],
+                    "pricePerUnit": this.trip['pricePerDay'],
+                    "typeBillId": typeBill.id,
+                    "name": ""
+                });
+                var filter = { "where": { "tripId": this.tripId } };
+                this.mainServ.loaderSer.display(true);
+                this.mainServ.APIServ.get("tripSublocations?filter=" + JSON.stringify(filter)).subscribe(function (data) {
+                    _this.mainServ.loaderSer.display(false);
+                    if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                        var typeBill = _this.typeBills.find(function (element) {
+                            return element.type == "nearbyCity";
+                        });
+                        data.forEach(function (element) {
+                            _this.innerBill.push({
+                                "quantity": element['duration'],
+                                "pricePerUnit": element['cost'],
+                                "typeBillId": typeBill.id,
+                                "name": ""
+                            });
+                        });
+                    }
+                    else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                        _this.mainServ.APIServ.setErrorCode(0);
+                        _this.dialogServ.someThingIsError();
+                    }
+                });
+            }
+            if (this.trip.toAirport && this.trip.fromAirport) {
+                var typeBill = this.typeBills.find(function (element) {
+                    return element.type == "airport";
+                });
+                this.innerBill.push({
+                    "quantity": 1,
+                    "pricePerUnit": this.trip['priceTowWay'],
+                    "typeBillId": typeBill.id,
+                    "name": ""
+                });
+            }
+            else if (this.trip.toAirport || this.trip.fromAirport) {
+                var typeBill = this.typeBills.find(function (element) {
+                    return element.type == "airport";
+                });
+                this.innerBill.push({
+                    "quantity": 1,
+                    "pricePerUnit": this.trip['priceOneWay'],
+                    "typeBillId": typeBill.id,
+                    "name": ""
+                });
+            }
+        }
+        else {
+            this.innerDisabled = false;
+            this.mainServ.loaderSer.display(true);
+            this.mainServ.APIServ.get("innerBills/getinnerBill/" + this.tripId).subscribe(function (data) {
+                _this.mainServ.loaderSer.display(false);
+                if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                    _this.innerBillStatus = data['status'];
+                    _this.innerBillId = data['id'];
+                    _this.hasInnerBill = hasInnerBill;
+                    data.bills.forEach(function (element) {
+                        _this.innerBill.push({
+                            "quantity": element['quantity'],
+                            "pricePerUnit": element['pricePerUnit'],
+                            "typeBillId": element['typeBillId'],
+                            "name": element['titleEn'],
+                            "id": element['id']
+                        });
+                    });
+                    _this.inner = data;
+                }
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                    _this.mainServ.APIServ.setErrorCode(0);
+                    _this.dialogServ.someThingIsError();
+                }
+            });
+        }
     };
     billComponent.prototype.initOuterBill = function (hasOuterTrip) {
         var _this = this;
@@ -27712,7 +28073,9 @@ var billComponent = (function () {
                     "name": ""
                 });
                 var filter = { "where": { "tripId": this.tripId } };
+                this.mainServ.loaderSer.display(true);
                 this.mainServ.APIServ.get("tripSublocations?filter=" + JSON.stringify(filter)).subscribe(function (data) {
+                    _this.mainServ.loaderSer.display(false);
                     if (_this.mainServ.APIServ.getErrorCode() == 0) {
                         var typeBill = _this.typeBills.find(function (element) {
                             return element.type == "nearbyCity";
@@ -27726,7 +28089,9 @@ var billComponent = (function () {
                             });
                         });
                     }
-                    else {
+                    else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                        _this.mainServ.APIServ.setErrorCode(0);
+                        _this.dialogServ.someThingIsError();
                     }
                 });
             }
@@ -27755,7 +28120,9 @@ var billComponent = (function () {
         }
         else {
             this.outerDisabled = false;
+            this.mainServ.loaderSer.display(true);
             this.mainServ.APIServ.get("outerBills/getouterBill/" + this.tripId).subscribe(function (data) {
+                _this.mainServ.loaderSer.display(false);
                 if (_this.mainServ.APIServ.getErrorCode() == 0) {
                     _this.outerBillStatus = data['status'];
                     _this.outerBillId = data['id'];
@@ -27771,7 +28138,9 @@ var billComponent = (function () {
                     });
                     _this.outer = data;
                 }
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                    _this.mainServ.APIServ.setErrorCode(0);
+                    _this.dialogServ.someThingIsError();
                 }
             });
         }
@@ -27782,6 +28151,10 @@ var billComponent = (function () {
         if (type == "outer") {
             bills = this.outerBill;
             type = "outer";
+        }
+        else if (type == "inner") {
+            bills = this.innerBill;
+            type = "inner";
         }
         bills.push({
             "quantity": 1,
@@ -27800,6 +28173,11 @@ var billComponent = (function () {
             type = "outer";
             url = "bills";
         }
+        else if (type == "inner") {
+            bills = this.innerBill;
+            type = "inner";
+            url = "bills";
+        }
         var oneBill = bills[index];
         if (oneBill.pricePerUnit == '' || oneBill.quantity == '' || oneBill.name == '')
             return;
@@ -27815,13 +28193,23 @@ var billComponent = (function () {
         tempObject['tripId'] = this.tripId;
         tempObject['type'] = type;
         console.log(tempObject);
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.post(url, tempObject).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 bills[index]['id'] = data['id'];
                 if (type == "outer") {
                     _this.outerBillId = data['outerBillId'];
                     _this.outerDisabled = false;
                 }
+                if (type == "inner") {
+                    _this.innerBillId = data['innerBillId'];
+                    _this.innerDisabled = false;
+                }
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -27840,9 +28228,15 @@ var billComponent = (function () {
             bills.splice(index, 1);
         }
         else {
+            this.mainServ.loaderSer.display(true);
             this.mainServ.APIServ.delete(url + "/" + oneBill['id']).subscribe(function (data) {
+                _this.mainServ.loaderSer.display(false);
                 if (_this.mainServ.APIServ.getErrorCode() == 0) {
                     bills.splice(index, 1);
+                }
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                    _this.mainServ.APIServ.setErrorCode(0);
+                    _this.dialogServ.someThingIsError();
                 }
             });
         }
@@ -27868,8 +28262,14 @@ var billComponent = (function () {
         tempObject['pricePerUnit'] = oneBill['pricePerUnit'];
         tempObject['totalPrice'] = tempObject['pricePerUnit'] * tempObject['quantity'];
         tempObject['typeBillId'] = oneBill['typeBillId'];
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.put(url + "/" + oneBill['id'], tempObject).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
             }
         });
     };
@@ -27886,6 +28286,10 @@ var billComponent = (function () {
                 return;
         }
         else if (type == "inner" && this.hasInnerBill) {
+            if (this.inner)
+                return this.inner['createdAt'];
+            else
+                return;
         }
         else {
             return new Date();
@@ -27927,7 +28331,7 @@ var billComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/trip/editTrip/editTrip.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"backToTrips()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'CAR.EDITCAR.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n    <div style=\"font-size: 20px\">{{'TRIP.PRICE' | translate}} : {{totalPrice+subLocaationPrice+airportPrice}}</div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n\r\n    <nav mat-tab-nav-bar [backgroundColor]=\"background\">\r\n      <a mat-tab-link disabled *ngFor=\"let link of links\" [active]=\"activeLink == link.name\">\r\n        {{link.view | translate}}\r\n      </a>\r\n    </nav>\r\n    <form [formGroup]=\"stepOneForm\" *ngIf=\"activeLink=='step1'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.USER' | translate }}\" formControlName=\"ownerId\">\r\n              <mat-option *ngFor=\"let oneUser of users\" [value]=\"oneUser.id\">\r\n                {{oneUser.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.LOCATION' | translate }}\" formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let oneLocation of locations\" [value]=\"oneLocation.id\">\r\n                {{oneLocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <section class=\"example-section\" style=\"padding-bottom: 10px;\" fxFlex=\"95\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isFromAirport\">{{\r\n              'TRIP.FROMAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isToAirport\">{{\r\n              'TRIP.TOAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isInCity\">{{\r\n              'TRIP.INCITY' | translate }}</mat-checkbox>\r\n          </section>\r\n\r\n          <!-- <mat-form-field fxFlex=\"40\">\r\n              <input matInput [matTimepicker]=\"startPicker\" (userTimeChange)=\"emituserTimeChange()\" placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n              <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n              <mat-timepicker #startPicker color=\"primary\"></mat-timepicker>\r\n            </mat-form-field> -->\r\n          <!-- <w-mat-timepicker color=\"primary\" [(userTime)]=\"exportTime\"></w-mat-timepicker> -->\r\n\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"next(2,null,null)\" cdkFocusInitial [disabled]=\"stepOneForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n    <form [formGroup]=\"stepSecForm\" *ngIf=\"activeLink=='step2'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"40\">\r\n            <input matInput (focus)=\"firstpicker.open()\" [matDatepicker]=\"firstpicker\" formControlName=\"first\"\r\n              placeholder=\"{{ 'TRIP.FROM' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"firstpicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #firstpicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"true\">\r\n            <input matInput [matTimepicker]=\"startPicker\" placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #startPicker id=\"startPickerId\" color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='fromAirport' \r\n          && tripType!='fromAirportAndCity' \r\n          && tripType!='toAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput readonly=\"readonly\" placeholder=\"{{ 'TRIP.TIME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n              [ngModel]=\"formatStartTime(startPicker['userTime'])\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n          </mat-form-field>\r\n\r\n\r\n\r\n\r\n          <mat-form-field fxFlex=\"40\" *ngIf=\"tripType!='fromAirport' && tripType!='toAirport'\">\r\n            <input matInput (focus)=\"secondepicker.open()\" [matDatepicker]=\"secondepicker\" formControlName=\"seconde\"\r\n              placeholder=\"{{ 'TRIP.TO' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"secondepicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #secondepicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"true\">\r\n            <input matInput [matTimepicker]=\"endPicker\" required placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #endPicker color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='cityAndToAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput readonly=\"readonly\" placeholder=\"{{ 'TRIP.TIME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n              [ngModel]=\"formatEndTime(endPicker['userTime'])\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n          </mat-form-field>\r\n\r\n\r\n\r\n          <div fxFlex=\"40\" *ngIf=\"tripType=='fromAirport' || tripType=='toAirport'\"></div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"next(3,startPicker,endPicker)\" cdkFocusInitial>{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(1)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n    <form [formGroup]=\"stepthreeForm\" *ngIf=\"activeLink=='step3'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"90\">\r\n            <mat-select placeholder=\"{{ 'TRIP.CAR' | translate }}\" (change)=\"doSomething($event)\" formControlName=\"carId\">\r\n              <mat-option *ngFor=\"let oneCar of carAvailable\" [value]=\"oneCar.id\">\r\n                {{oneCar.name}} - {{oneCar.driver.username}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button *ngIf=\"links[3]!=null\" (click)=\"next(4,null,null)\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button *ngIf=\"links[3]==null\" (click)=\"add()\" class=\"addButton\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(2)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n\r\n    </form>\r\n\r\n\r\n    <form *ngIf=\"activeLink=='step4'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <div fxFlex=\"90\" class=\"step4\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{location.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{pricePerDay}} $</label>\r\n            <div fxFlex=\"40\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus disabled\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{tripdays}}</label>\r\n                <div class=\"circle add disabled\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <!-- <mat-form-field fxFlex=\"30\">\r\n                <input disabled matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"tripdays\" required>\r\n                <mat-icon matSuffix>people</mat-icon>\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n            </div> -->\r\n\r\n\r\n          <div fxFlex=\"90\" class=\"step4\" *ngFor=\"let element of tripSublocations;let i=index\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{carsSublocations[i].subLocation.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{carsSublocations[i].cost}} $</label>\r\n            <div fxFlex=\"40\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus\" [ngClass]=\"{'disabled': tripSublocations[i].duration==0}\" (click)=\"minDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{tripSublocations[i].duration}}</label>\r\n                <div class=\"circle add\" (click)=\"addDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <!-- <mat-form-field fxFlex=\"30\">\r\n                <input (input)=\"onSearchChange()\" matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"tripSublocations[i].duration\" required>\r\n                <mat-icon matSuffix>people</mat-icon>\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field> -->\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"add()\" class=\"addButton\" [disabled]=\"tripdays<0\" cdkFocusInitial>{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(3,null,null)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"backToTrips()\" class=\"back\">arrow_back_ios</mat-icon>\r\n        {{'TRIP.EDITTRIP.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n    <div style=\"font-size: 20px\">{{'TRIP.PRICE' | translate}} : {{totalPrice+subLocaationPrice+airportPrice}}</div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n\r\n    <nav mat-tab-nav-bar [backgroundColor]=\"background\">\r\n      <a mat-tab-link disabled *ngFor=\"let link of links\" [active]=\"activeLink == link.name\">\r\n        {{link.view | translate}}\r\n      </a>\r\n    </nav>\r\n    <form [formGroup]=\"stepOneForm\" *ngIf=\"activeLink=='step1'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.USER' | translate }}\" formControlName=\"ownerId\">\r\n              <mat-option *ngFor=\"let oneUser of users\" [value]=\"oneUser.id\">\r\n                {{oneUser.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.LOCATION' | translate }}\" formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let oneLocation of locations\" [value]=\"oneLocation.id\">\r\n                {{oneLocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <section class=\"example-section\" style=\"padding-bottom: 10px;\" fxFlex=\"95\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isFromAirport\">{{\r\n              'TRIP.FROMAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isToAirport\">{{\r\n              'TRIP.TOAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isInCity\">{{\r\n              'TRIP.INCITY' | translate }}</mat-checkbox>\r\n          </section>\r\n\r\n          <!-- <mat-form-field fxFlex=\"40\">\r\n              <input matInput [matTimepicker]=\"startPicker\" (userTimeChange)=\"emituserTimeChange()\" placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n              <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n              <mat-timepicker #startPicker color=\"primary\"></mat-timepicker>\r\n            </mat-form-field> -->\r\n          <!-- <w-mat-timepicker color=\"primary\" [(userTime)]=\"exportTime\"></w-mat-timepicker> -->\r\n\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"next(2,null,null)\" cdkFocusInitial [disabled]=\"stepOneForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n    <form [formGroup]=\"stepSecForm\" *ngIf=\"activeLink=='step2'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"40\">\r\n            <input matInput (focus)=\"firstpicker.open()\" [matDatepicker]=\"firstpicker\" formControlName=\"first\"\r\n              placeholder=\"{{ 'TRIP.FROM' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"firstpicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #firstpicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"true\">\r\n            <input matInput [matTimepicker]=\"startPicker\" placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #startPicker id=\"startPickerId\" color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='fromAirport' \r\n          && tripType!='fromAirportAndCity' \r\n          && tripType!='toAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput readonly=\"readonly\" placeholder=\"{{ 'TRIP.TIME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n              [ngModel]=\"formatStartTime(startPicker['userTime'])\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n          </mat-form-field>\r\n\r\n\r\n\r\n\r\n          <mat-form-field fxFlex=\"40\" *ngIf=\"tripType!='fromAirport' && tripType!='toAirport'\">\r\n            <input matInput (focus)=\"secondepicker.open()\" [matDatepicker]=\"secondepicker\" formControlName=\"seconde\"\r\n              placeholder=\"{{ 'TRIP.TO' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"secondepicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #secondepicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"true\">\r\n            <input matInput [matTimepicker]=\"endPicker\" required placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #endPicker color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='cityAndToAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput readonly=\"readonly\" placeholder=\"{{ 'TRIP.TIME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n              [ngModel]=\"formatEndTime(endPicker['userTime'])\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n          </mat-form-field>\r\n\r\n\r\n\r\n          <div fxFlex=\"40\" *ngIf=\"tripType=='fromAirport' || tripType=='toAirport'\"></div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"next(3,startPicker,endPicker)\" cdkFocusInitial>{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(1)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n    <form [formGroup]=\"stepthreeForm\" *ngIf=\"activeLink=='step3'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"90\">\r\n            <mat-select placeholder=\"{{ 'TRIP.CAR' | translate }}\" (change)=\"doSomething($event)\" formControlName=\"carId\">\r\n              <mat-option *ngFor=\"let oneCar of carAvailable\" [value]=\"oneCar.id\">\r\n                {{oneCar.name}} - {{oneCar.driver.username}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button *ngIf=\"links[3]!=null\" (click)=\"next(4,null,null)\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button *ngIf=\"links[3]==null\" (click)=\"edit()\" class=\"addButton\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(2)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n\r\n    </form>\r\n\r\n\r\n    <form *ngIf=\"activeLink=='step4'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <div fxFlex=\"90\" class=\"step4\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{location.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{pricePerDay}} $</label>\r\n            <div fxFlex=\"40\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus disabled\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{tripdays}}</label>\r\n                <div class=\"circle add disabled\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <!-- <mat-form-field fxFlex=\"30\">\r\n                <input disabled matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"tripdays\" required>\r\n                <mat-icon matSuffix>people</mat-icon>\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n            </div> -->\r\n\r\n\r\n          <div fxFlex=\"90\" class=\"step4\" *ngFor=\"let element of tripSublocations;let i=index\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{carsSublocations[i].subLocation.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{carsSublocations[i].cost}} $</label>\r\n            <div fxFlex=\"40\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus\" [ngClass]=\"{'disabled': tripSublocations[i].duration==0}\" (click)=\"minDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{tripSublocations[i].duration}}</label>\r\n                <div class=\"circle add\" (click)=\"addDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <!-- <mat-form-field fxFlex=\"30\">\r\n                <input (input)=\"onSearchChange()\" matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"tripSublocations[i].duration\" required>\r\n                <mat-icon matSuffix>people</mat-icon>\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field> -->\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: right;\">\r\n        <button mat-button (click)=\"edit()\" class=\"addButton\" [disabled]=\"tripdays<0\" cdkFocusInitial>{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: left;\">\r\n        <button mat-button (click)=\"back(3,null,null)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -28026,7 +28430,7 @@ var editTripComponent = (function () {
     }
     editTripComponent.prototype.addDuration = function (index) {
         if (this.subLocationDays == this.mainTripdays) {
-            alert("Error");
+            this.mainServ.globalServ.openSnackBar(0);
         }
         else {
             this.subLocaationPrice += this.tripSublocations[index].cost;
@@ -28088,30 +28492,41 @@ var editTripComponent = (function () {
             carId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
         });
         var locationFilter = { "where": { "status": "active" }, "include": ['subLocations'] };
-        this.mainServ.APIServ.get("locations?filter=" + JSON.stringify(locationFilter)).subscribe(function (data) {
-            if (_this.mainServ.APIServ.getErrorCode() == 0) {
-                _this.locations = data;
-            }
-            else
-                _this.dialogServ.someThingIsError();
-        });
         var filter = { "where": { "status": "active" } };
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("users?filter=" + JSON.stringify(filter)).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.users = data;
+                _this.mainServ.loaderSer.display(true);
+                _this.mainServ.APIServ.get("locations?filter=" + JSON.stringify(locationFilter)).subscribe(function (data) {
+                    _this.mainServ.loaderSer.display(false);
+                    if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                        _this.locations = data;
+                    }
+                    else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                        _this.mainServ.APIServ.setErrorCode(0);
+                        _this.dialogServ.someThingIsError();
+                    }
+                });
             }
-            else
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
                 _this.dialogServ.someThingIsError();
+            }
         });
         var mainthis = this;
         this.getParams("id", function (id) {
             mainthis.tripId = id;
+            mainthis.mainServ.loaderSer.display(true);
             mainthis.mainServ.APIServ.get("trips/" + mainthis.tripId).subscribe(function (data) {
+                mainthis.mainServ.loaderSer.display(false);
                 if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
                     mainthis.trip = data;
                     mainthis.prerperData(data);
                 }
-                else {
+                else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+                    mainthis.mainServ.APIServ.setErrorCode(0);
                     mainthis.dialogServ.someThingIsError();
                 }
             });
@@ -28536,36 +28951,44 @@ var editTripComponent = (function () {
             if (this.cheackValidateionSecStep(firstDate, secDate, this.startTime, this.endTime)) {
                 if (secDate) {
                     if (this.differenceInHourse(firstDate, secDate) > 0) {
+                        this.mainServ.loaderSer.display(true);
                         var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport };
+                        this.mainServ.loaderSer.display(false);
                         this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId'] + "&tripId=" + this.tripId).subscribe(function (data) {
                             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                                 _this.carAvailable = data;
                                 _this.activeLink = _this.links[stepNum - 1].name;
+                                if (data.length == 0)
+                                    _this.mainServ.globalServ.openSnackBar(3);
                             }
-                            else {
+                            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                                _this.mainServ.APIServ.setErrorCode(0);
                                 _this.dialogServ.someThingIsError();
                             }
                         });
                     }
                     else {
-                        alert("error");
+                        this.mainServ.globalServ.openSnackBar(1);
                     }
                 }
                 else {
+                    this.mainServ.loaderSer.display(true);
                     var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport };
                     this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId'] + "&tripId=" + this.tripId).subscribe(function (data) {
+                        _this.mainServ.loaderSer.display(false);
                         if (_this.mainServ.APIServ.getErrorCode() == 0) {
                             _this.carAvailable = data;
                             _this.activeLink = _this.links[stepNum - 1].name;
                         }
-                        else {
+                        else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                            _this.mainServ.APIServ.setErrorCode(0);
                             _this.dialogServ.someThingIsError();
                         }
                     });
                 }
             }
             else {
-                alert("error");
+                this.mainServ.globalServ.openSnackBar(2);
             }
         }
         else if (stepNum == 4) {
@@ -28573,7 +28996,9 @@ var editTripComponent = (function () {
                 this.allData['carId'] = this.stepthreeForm.value['carId'];
                 var filter = { "where": { "and": [{ "carId": this.allData['carId'] }, { "subLocationId": { "inq": this.subLocationId } }] } };
                 console.log("carSublocations?filter=" + JSON.stringify(filter));
+                this.mainServ.loaderSer.display(true);
                 this.mainServ.APIServ.get("carSublocations?filter=" + JSON.stringify(filter)).subscribe(function (data) {
+                    _this.mainServ.loaderSer.display(false);
                     if (_this.mainServ.APIServ.getErrorCode() == 0) {
                         _this.activeLink = _this.links[stepNum - 1].name;
                         _this.carsSublocations = data;
@@ -28585,7 +29010,8 @@ var editTripComponent = (function () {
                             _this.tripSublocations.push({ "sublocationId": element.subLocationId, "duration": 0, "cost": tempCost });
                         });
                     }
-                    else {
+                    else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                        _this.mainServ.APIServ.setErrorCode(0);
                         _this.dialogServ.someThingIsError();
                     }
                 });
@@ -28605,18 +29031,32 @@ var editTripComponent = (function () {
         }
     };
     editTripComponent.prototype.edit = function () {
-        // var data = this.editTripForm.value;
-        // this.mainServ.APIServ.put("users/" + this.userId, data).subscribe((data: any) => {
-        //   if (this.mainServ.APIServ.getErrorCode() == 0) {
-        //     this.back();
-        //   }
-        //   else if (this.mainServ.APIServ.getErrorCode() == 451) {
-        //     this.dialogServ.errorMessage(451);
-        //   }
-        //   else {
-        //     this.dialogServ.someThingIsError();
-        //   }
-        // })
+        var _this = this;
+        if (this.activeLink == "step4")
+            this.allData['tripSublocations'] = this.tripSublocations;
+        this.allData['carId'] = this.stepthreeForm.value['carId'];
+        this.allData['cost'] = this.totalPrice + this.subLocaationPrice + this.airportPrice;
+        this.allData['daysInCity'] = this.tripdays;
+        this.mainServ.loaderSer.display(true);
+        this.mainServ.APIServ.put("trips/editMethod/" + this.tripId, { "data": this.allData }).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.backToTrips();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 455) {
+                _this.dialogServ.errorMessage(455);
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 456) {
+                _this.dialogServ.errorMessage(456);
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 457) {
+                _this.dialogServ.errorMessage(457);
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
+            }
+        });
     };
     editTripComponent.prototype.backToTrips = function () {
         this.mainServ.globalServ.goTo('trips');
@@ -28690,7 +29130,7 @@ var editTripComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/trip/trips/trips.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n        <span class=\"logo-text h1\">{{'TRIP.ALLTRIP.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'TRIP.ALLTRIP.ADDTRIP'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"rows\" [columnMode]=\"'force'\" [headerHeight]=\"50\" [rowHeight]=\"50\"\r\n    [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\" [count]=\"count\" [offset]=\"offset\" [limit]=\"limit\">\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"owner.name\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.USER' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"location.nameEn\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.LOCATION' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"car.name\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.CAR' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"driver.username\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.DRIVER' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"cost\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.PRICE' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status!='deactive' && row.status!='active'\">\r\n          <mat-chip style=\"background-color:#3b6fff\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [width]=\"190\" [flexGrow]=\"1\" prop=\"start\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.START' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <span>\r\n          {{row[\"start\"] | date: 'dd-MM-yyyy hh:mm a'}}\r\n        </span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [width]=\"190\" [flexGrow]=\"1\" prop=\"end\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.END' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <span>\r\n          {{row[\"end\"] | date: 'dd-MM-yyyy hh:mm a'}}\r\n        </span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n\r\n\r\n    <ngx-datatable-column [width]=\"260\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab *ngIf=\"row.status=='finished'\" class=\"mr-16\" style=\"background-color: #8a8a8a;\" (click)=\"goTo('bills',row['id'])\">\r\n          <mat-icon style=\"color : white;\">subtitles</mat-icon>\r\n        </button>\r\n\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <!-- <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button> -->\r\n        <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"goTo('view',row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button>\r\n\r\n\r\n        <button mat-icon-button [matMenuTriggerFor]=\"menu\">\r\n          <mat-icon>more_vert</mat-icon>\r\n        </button>\r\n        <mat-menu #menu=\"matMenu\">\r\n          <button mat-menu-item *ngIf=\"row.status!='deactive'\" (click)=\"changeStatus('deactive',row.id)\">\r\n            <mat-icon>cancel</mat-icon>\r\n            <span>{{'TRIP.DEACTIVE' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='approved'\" (click)=\"changeStatus('approved',row.id)\">\r\n            <mat-icon>more_horiz</mat-icon>\r\n            <span>{{'TRIP.APPROVED' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='pending'\" (click)=\"changeStatus('pending',row.id)\">\r\n            <mat-icon>group</mat-icon>\r\n            <span>{{'TRIP.PENDING' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='active'\" (click)=\"changeStatus('active',row.id)\">\r\n            <mat-icon>check</mat-icon>\r\n            <span>{{'TRIP.ACTIVE' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='finished'\" (click)=\"changeStatus('finished',row.id)\">\r\n            <mat-icon>check</mat-icon>\r\n            <span>{{'TRIP.FINISHED' | translate}}</span>\r\n          </button>\r\n        </mat-menu>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n\r\n\r\n    <ngx-datatable-footer>\r\n      <ng-template ngx-datatable-footer-template let-rowCount=\"rowCount\" let-pageSize=\"pageSize\" let-selectedCount=\"selectedCount\"\r\n        , let-curPage=\"curPage\" let-offset=\"offset\">\r\n        <div style=\"padding: 5px 10px\">\r\n          <div class=\"pagination\">\r\n            <button [ngClass]=\"{'disabled':disableObject.first == true}\" [disabled]=\"disableObject['first']\" (click)=\"first()\">\r\n              <i class=\"material-icons\">\r\n                fast_rewind\r\n              </i>\r\n            </button>\r\n            <button [ngClass]=\"{'disabled':disableObject.prev == true}\" [disabled]=\"disableObject['prev']\" (click)=\"prev()\">\r\n\r\n              <i class=\"material-icons\" style=\"transform: rotate(180deg);\">\r\n                play_arrow\r\n              </i>\r\n            </button>\r\n            <button [ngClass]=\"{'disabled':disableObject.next == true}\" [disabled]=\"disableObject['next']\" (click)=\"next()\">\r\n\r\n              <i class=\"material-icons\">\r\n                play_arrow\r\n              </i>\r\n            </button>\r\n            <button [ngClass]=\"{'disabled':disableObject.end == true}\" [disabled]=\"disableObject['end']\" (click)=\"end()\">\r\n\r\n              <i class=\"material-icons\">\r\n                fast_forward\r\n              </i>\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </ng-template>\r\n    </ngx-datatable-footer>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
+module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">airplanemode_active</mat-icon>\r\n        <span class=\"logo-text h1\">{{'TRIP.ALLTRIP.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'TRIP.ALLTRIP.ADDTRIP'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n\r\n  <ngx-datatable class=\"material vertical-scroll\" [rows]=\"rows\" [columnMode]=\"'force'\" [headerHeight]=\"50\" [rowHeight]=\"50\"\r\n    [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\" [count]=\"count\" [offset]=\"offset\" [limit]=\"limit\">\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"owner.name\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.USER' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"location.nameEn\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.LOCATION' | translate }}</span>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"car.name\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.CAR' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"driver.username\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.DRIVER' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"cost\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.PRICE' | translate }}</span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.STATUS' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <mat-chip-list *ngIf=\"row.status=='active'\">\r\n          <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n          <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n        <mat-chip-list *ngIf=\"row.status!='deactive' && row.status!='active'\">\r\n          <mat-chip style=\"background-color:#3b6fff\" selected=\"true\">{{row.status}}</mat-chip>\r\n        </mat-chip-list>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [width]=\"190\" [flexGrow]=\"1\" prop=\"start\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.START' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <span>\r\n          {{row[\"start\"] | date: 'dd-MM-yyyy hh:mm a'}}\r\n        </span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n    <ngx-datatable-column [canAutoResize]=\"true\" [width]=\"190\" [flexGrow]=\"1\" prop=\"end\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n        <span>{{ 'TRIP.END' | translate }}</span>\r\n      </ng-template>\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <span>\r\n          {{row[\"end\"] | date: 'dd-MM-yyyy hh:mm a'}}\r\n        </span>\r\n      </ng-template>\r\n    </ngx-datatable-column>\r\n\r\n\r\n\r\n\r\n    <ngx-datatable-column [width]=\"260\" name=\"id\">\r\n      <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n        <div class=\"table-header-font\">\r\n\r\n        </div>\r\n      </ng-template>\r\n\r\n      <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n        <button mat-mini-fab *ngIf=\"row.status=='finished'\" class=\"mr-16\" style=\"background-color: #8a8a8a;\" (click)=\"goTo('bills',row['id'])\">\r\n          <mat-icon style=\"color : white;\">subtitles</mat-icon>\r\n        </button>\r\n\r\n        <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n          <mat-icon style=\"color : white;\">edit</mat-icon>\r\n        </button>\r\n        <!-- <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button> -->\r\n        <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"goTo('view',row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button>\r\n\r\n\r\n        <button mat-icon-button [matMenuTriggerFor]=\"menu\">\r\n          <mat-icon>more_vert</mat-icon>\r\n        </button>\r\n        <mat-menu #menu=\"matMenu\">\r\n          <button mat-menu-item *ngIf=\"row.status!='deactive'\" (click)=\"changeStatus('deactive',row.id)\">\r\n            <mat-icon>cancel</mat-icon>\r\n            <span>{{'TRIP.DEACTIVE' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='approved'\" (click)=\"changeStatus('approved',row.id)\">\r\n            <mat-icon>more_horiz</mat-icon>\r\n            <span>{{'TRIP.APPROVED' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='pending'\" (click)=\"changeStatus('pending',row.id)\">\r\n            <mat-icon>group</mat-icon>\r\n            <span>{{'TRIP.PENDING' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='active'\" (click)=\"changeStatus('active',row.id)\">\r\n            <mat-icon>check</mat-icon>\r\n            <span>{{'TRIP.ACTIVE' | translate}}</span>\r\n          </button>\r\n          <button mat-menu-item *ngIf=\"row.status!='finished'\" (click)=\"changeStatus('finished',row.id)\">\r\n            <mat-icon>check</mat-icon>\r\n            <span>{{'TRIP.FINISHED' | translate}}</span>\r\n          </button>\r\n        </mat-menu>\r\n      </ng-template>\r\n\r\n    </ngx-datatable-column>\r\n\r\n\r\n\r\n    <ngx-datatable-footer>\r\n      <ng-template ngx-datatable-footer-template let-rowCount=\"rowCount\" let-pageSize=\"pageSize\" let-selectedCount=\"selectedCount\"\r\n        , let-curPage=\"curPage\" let-offset=\"offset\">\r\n        <div style=\"padding: 5px 10px\">\r\n          <div class=\"pagination\">\r\n            <button [ngClass]=\"{'disabled':disableObject.first == true}\" [disabled]=\"disableObject['first']\" (click)=\"first()\">\r\n              <i class=\"material-icons\">\r\n                fast_rewind\r\n              </i>\r\n            </button>\r\n            <button [ngClass]=\"{'disabled':disableObject.prev == true}\" [disabled]=\"disableObject['prev']\" (click)=\"prev()\">\r\n\r\n              <i class=\"material-icons\" style=\"transform: rotate(180deg);\">\r\n                play_arrow\r\n              </i>\r\n            </button>\r\n            <button [ngClass]=\"{'disabled':disableObject.next == true}\" [disabled]=\"disableObject['next']\" (click)=\"next()\">\r\n\r\n              <i class=\"material-icons\">\r\n                play_arrow\r\n              </i>\r\n            </button>\r\n            <button [ngClass]=\"{'disabled':disableObject.end == true}\" [disabled]=\"disableObject['end']\" (click)=\"end()\">\r\n\r\n              <i class=\"material-icons\">\r\n                fast_forward\r\n              </i>\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </ng-template>\r\n    </ngx-datatable-footer>\r\n\r\n  </ngx-datatable>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -28815,8 +29255,8 @@ var tripsComponent = (function () {
         console.log("end");
         this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("trips/getEnd?limit=" + this.limit).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
-                _this.mainServ.loaderSer.display(false);
                 _this.rows = data.data;
                 _this.calcStartDateAndEnd();
                 console.log(_this.rows);
@@ -28838,8 +29278,8 @@ var tripsComponent = (function () {
         this.mainServ.loaderSer.display(true);
         var filter = { "limit": limit, "skip": offset };
         this.mainServ.APIServ.get("trips?filter=" + JSON.stringify(filter)).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
-                _this.mainServ.loaderSer.display(false);
                 if (data.length > 0)
                     _this.rows = data;
                 console.log(_this.rows);
@@ -28974,6 +29414,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__languageFiles_en__ = __webpack_require__("../../../../../src/app/main/languageFiles/en.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_services_main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__core_services_dialog_service__ = __webpack_require__("../../../../../src/app/core/services/dialog.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -28990,13 +29431,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var viewTripComponent = (function () {
-    function viewTripComponent(translationLoader, translateService, mainServ, route, dialog) {
+    function viewTripComponent(translationLoader, translateService, mainServ, route, dialog, dialogServ) {
         this.translationLoader = translationLoader;
         this.translateService = translateService;
         this.mainServ = mainServ;
         this.route = route;
         this.dialog = dialog;
+        this.dialogServ = dialogServ;
         this.tripId = "";
         this.trip = {};
         this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_5__languageFiles_en__["a" /* locale */]);
@@ -29052,7 +29495,6 @@ var viewTripComponent = (function () {
     viewTripComponent.prototype.ngOnInit = function () {
         var mainthis = this;
         this.getParams("id", function (id) {
-            var _this = this;
             mainthis.tripId = id;
             mainthis.mainServ.APIServ.get("trips/" + mainthis.tripId).subscribe(function (data) {
                 if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
@@ -29060,8 +29502,9 @@ var viewTripComponent = (function () {
                     mainthis.locationName = data['location']['nameEn'];
                     mainthis.calcStartDateAndEnd();
                 }
-                else {
-                    _this.dialogServ.someThingIsError();
+                else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+                    mainthis.mainServ.APIServ.setErrorCode(0);
+                    mainthis.dialogServ.someThingIsError();
                 }
             });
         });
@@ -29076,7 +29519,8 @@ var viewTripComponent = (function () {
             __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["b" /* TranslateService */],
             __WEBPACK_IMPORTED_MODULE_6__core_services_main_service__["a" /* MainService */],
             __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["m" /* MatDialog */]])
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["m" /* MatDialog */],
+            __WEBPACK_IMPORTED_MODULE_7__core_services_dialog_service__["a" /* DialogService */]])
     ], viewTripComponent);
     return viewTripComponent;
 }());
@@ -29171,7 +29615,8 @@ var addUserComponent = (function () {
             else if (_this.mainServ.APIServ.getErrorCode() == 451) {
                 _this.dialogServ.errorMessage(451);
             }
-            else {
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
                 _this.dialogServ.someThingIsError();
             }
         });
@@ -29206,7 +29651,7 @@ var addUserComponent = (function () {
                         _this.images[0] = element;
                         _this.media = element;
                     });
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                     _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
@@ -29333,7 +29778,6 @@ var editUserComponent = (function () {
         this.isoCode = this.mainServ.globalServ.getIsoCode();
         var mainthis = this;
         this.getParams("id", function (id) {
-            var _this = this;
             mainthis.userId = id;
             mainthis.mainServ.APIServ.get("users/" + mainthis.userId).subscribe(function (data) {
                 if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
@@ -29349,8 +29793,9 @@ var editUserComponent = (function () {
                     });
                     mainthis.inisilaize();
                 }
-                else {
-                    _this.dialogServ.someThingIsError();
+                else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+                    mainthis.mainServ.APIServ.setErrorCode(0);
+                    mainthis.dialogServ.someThingIsError();
                 }
             });
         });
@@ -29401,15 +29846,15 @@ var editUserComponent = (function () {
         var filter = { "where": { "ownerId": this.userId } };
         // var filter = {}
         this.mainServ.APIServ.get("trips?filter=" + JSON.stringify(filter)).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
-                _this.mainServ.loaderSer.display(false);
                 _this.allRows = data;
                 _this.calcStartDateAndEnd();
                 _this.filterDatatable();
             }
             else if (_this.mainServ.APIServ.getErrorCode() == 400) {
             }
-            else {
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                 _this.mainServ.APIServ.setErrorCode(0);
                 _this.dialogServ.someThingIsError();
             }
@@ -29426,7 +29871,8 @@ var editUserComponent = (function () {
             else if (_this.mainServ.APIServ.getErrorCode() == 451) {
                 _this.dialogServ.errorMessage(451);
             }
-            else {
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
                 _this.dialogServ.someThingIsError();
             }
         });
@@ -29461,7 +29907,7 @@ var editUserComponent = (function () {
                         _this.images[0] = element;
                         _this.media = element;
                     });
-                else {
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                     _this.mainServ.APIServ.setErrorCode(0);
                     _this.dialogServ.someThingIsError();
                 }
@@ -29554,7 +30000,7 @@ var editUserComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/user/users/users.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n        <span class=\"logo-text h1\">{{'USER.ALLUSER.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'USER.ALLUSER.ADDUSER'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n  <div class=\"content\">\r\n    <ngx-datatable class=\"material vertical-scroll\" [rows]=\"rows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n      [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\" [count]=\"count\" [offset]=\"offset\"\r\n      [limit]=\"limit\">\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"name\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.NAME' | translate }}</span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"phoneNumber\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.PHONENUMBER' | translate }}</span>\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"ISOCode\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.ISOCODE' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <span *ngIf=\"row['country']\">{{row['country']['name']}}</span>\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.STATUS' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <mat-chip-list *ngIf=\"row.status=='active'\">\r\n            <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n          </mat-chip-list>\r\n          <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n            <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n          </mat-chip-list>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"createdAt\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.REGISTRATIONDATE' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <span>\r\n            {{value | date: 'dd-MM-yyyy'}}\r\n          </span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n\r\n\r\n\r\n      <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n          <div class=\"table-header-font\">\r\n\r\n          </div>\r\n        </ng-template>\r\n\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n            <mat-icon style=\"color : white;\">edit</mat-icon>\r\n          </button>\r\n          <button mat-mini-fab class=\"mr-16\" (click)=\"reset(row['id'])\" style=\"background-color: rgb(45, 50, 62)\">\r\n            <mat-icon style=\"color : white;\">lock</mat-icon>\r\n          </button>\r\n          <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n            <mat-icon style=\"color : white;\">delete</mat-icon>\r\n          </button>\r\n          <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n            <mat-icon style=\"color : white;\">replay</mat-icon>\r\n          </button>\r\n          <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n\r\n      <ngx-datatable-footer>\r\n        <ng-template ngx-datatable-footer-template let-rowCount=\"rowCount\" let-pageSize=\"pageSize\" let-selectedCount=\"selectedCount\"\r\n          , let-curPage=\"curPage\" let-offset=\"offset\">\r\n          <div style=\"padding: 5px 10px\">\r\n            <div class=\"pagination\">\r\n              <button [ngClass]=\"{'disabled':disableObject.first == true}\" [disabled]=\"disableObject['first']\" (click)=\"first()\">\r\n                <i class=\"material-icons\">\r\n                  fast_rewind\r\n                </i>\r\n              </button>\r\n              <button [ngClass]=\"{'disabled':disableObject.prev == true}\" [disabled]=\"disableObject['prev']\" (click)=\"prev()\">\r\n\r\n                <i class=\"material-icons\" style=\"transform: rotate(180deg);\">\r\n                  play_arrow\r\n                </i>\r\n              </button>\r\n              <button [ngClass]=\"{'disabled':disableObject.next == true}\" [disabled]=\"disableObject['next']\" (click)=\"next()\">\r\n\r\n                <i class=\"material-icons\">\r\n                  play_arrow\r\n                </i>\r\n              </button>\r\n              <button [ngClass]=\"{'disabled':disableObject.end == true}\" [disabled]=\"disableObject['end']\" (click)=\"end()\">\r\n\r\n                <i class=\"material-icons\">\r\n                  fast_forward\r\n                </i>\r\n              </button>\r\n            </div>\r\n          </div>\r\n        </ng-template>\r\n      </ngx-datatable-footer>\r\n\r\n    </ngx-datatable>\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">account_circle</mat-icon>\r\n        <span class=\"logo-text h1\">{{'USER.ALLUSER.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'USER.ALLUSER.ADDUSER'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n\r\n  <div class=\"content\">\r\n    <ngx-datatable class=\"material vertical-scroll\" [rows]=\"rows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n      [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\" [count]=\"count\" [offset]=\"offset\"\r\n      [limit]=\"limit\">\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"name\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.NAME' | translate }}</span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"phoneNumber\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.PHONENUMBER' | translate }}</span>\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"ISOCode\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.ISOCODE' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <span *ngIf=\"row['country']\">{{row['country']['name']}}</span>\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.STATUS' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <mat-chip-list *ngIf=\"row.status=='active'\">\r\n            <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n          </mat-chip-list>\r\n          <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n            <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n          </mat-chip-list>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"createdAt\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'USER.REGISTRATIONDATE' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <span>\r\n            {{value | date: 'dd-MM-yyyy'}}\r\n          </span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n\r\n\r\n\r\n      <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n          <div class=\"table-header-font\">\r\n\r\n          </div>\r\n        </ng-template>\r\n\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n            <mat-icon style=\"color : white;\">edit</mat-icon>\r\n          </button>\r\n          <button mat-mini-fab class=\"mr-16\" (click)=\"reset(row['id'])\" style=\"background-color: rgb(45, 50, 62)\">\r\n            <mat-icon style=\"color : white;\">lock</mat-icon>\r\n          </button>\r\n          <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n            <mat-icon style=\"color : white;\">delete</mat-icon>\r\n          </button>\r\n          <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n            <mat-icon style=\"color : white;\">replay</mat-icon>\r\n          </button>\r\n          <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n\r\n      <ngx-datatable-footer>\r\n        <ng-template ngx-datatable-footer-template let-rowCount=\"rowCount\" let-pageSize=\"pageSize\" let-selectedCount=\"selectedCount\"\r\n          , let-curPage=\"curPage\" let-offset=\"offset\">\r\n          <div style=\"padding: 5px 10px\">\r\n            <div class=\"pagination\">\r\n              <button [ngClass]=\"{'disabled':disableObject.first == true}\" [disabled]=\"disableObject['first']\" (click)=\"first()\">\r\n                <i class=\"material-icons\">\r\n                  fast_rewind\r\n                </i>\r\n              </button>\r\n              <button [ngClass]=\"{'disabled':disableObject.prev == true}\" [disabled]=\"disableObject['prev']\" (click)=\"prev()\">\r\n\r\n                <i class=\"material-icons\" style=\"transform: rotate(180deg);\">\r\n                  play_arrow\r\n                </i>\r\n              </button>\r\n              <button [ngClass]=\"{'disabled':disableObject.next == true}\" [disabled]=\"disableObject['next']\" (click)=\"next()\">\r\n\r\n                <i class=\"material-icons\">\r\n                  play_arrow\r\n                </i>\r\n              </button>\r\n              <button [ngClass]=\"{'disabled':disableObject.end == true}\" [disabled]=\"disableObject['end']\" (click)=\"end()\">\r\n\r\n                <i class=\"material-icons\">\r\n                  fast_forward\r\n                </i>\r\n              </button>\r\n            </div>\r\n          </div>\r\n        </ng-template>\r\n      </ngx-datatable-footer>\r\n\r\n    </ngx-datatable>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -29641,8 +30087,8 @@ var usersComponent = (function () {
         console.log("end");
         this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("users/getEnd?limit=" + this.limit).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
-                _this.mainServ.loaderSer.display(false);
                 _this.rows = data.data;
                 console.log(_this.rows);
                 _this.offset = data.count;
@@ -29663,8 +30109,8 @@ var usersComponent = (function () {
         this.mainServ.loaderSer.display(true);
         var filter = { "limit": limit, "skip": offset };
         this.mainServ.APIServ.get("users?filter=" + JSON.stringify(filter)).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
-                _this.mainServ.loaderSer.display(false);
                 if (data.length > 0)
                     _this.rows = data;
                 console.log(_this.rows);
@@ -33105,9 +33551,13 @@ var locale = {
             "ADDTRIP": {
                 "TITLE": "Add Trip",
             },
+            "EDITTRIP": {
+                "TITLE": "Edit Trip",
+            },
             "BILL": {
                 "TITLE": "Bill",
                 "OUTER": "Client Bills",
+                "INNER": "Inner Bills",
                 "ITEMS": "Items",
                 "TYPE": "Type",
                 "NAME": "Title",
@@ -33168,13 +33618,21 @@ var locale = {
             "ACTIVECAR": "Do you want to activate this car",
             "DEACTIVEUSER": "Do you want to deactivate this user",
             "ACTIVEUSER": "Do you want to activate this user",
-            "CHANGESTATUS": "Do you want to change status this trip"
+            "CHANGESTATUS": "Do you want to change status this trip",
+            "OVERFLOWDURATION": "sublocationdays more than holl duration",
+            "ERRORINDATE": "start date after end date",
+            "VALIDATIONDATE": "required field date",
+            "NOCARAVAILABLE": "No Car Available"
         },
         "ERROR": {
             "LOGINFAILED": "Email or Password is wrong",
             "451": "Username or Phonenumber is used",
+            "452": "Not Found",
             "453": "Already is deactive",
             "454": "Already is active",
+            "455": "Location Not Found",
+            "456": "Car Not Found",
+            "457": "Car Not Available"
         }
     }
 };
@@ -34056,11 +34514,13 @@ var NavigationModel = (function () {
                 'id': 'location',
                 'title': 'LOCATION.ALLLOCATION.TITLE',
                 'type': 'item',
+                'icon': 'location_on',
                 'url': '/locations'
             },
             {
                 'id': 'driver',
                 'title': 'DRIVER.ALLDRIVER.TITLE',
+                'icon': 'insert_emoticon',
                 'type': 'item',
                 'url': '/drivers'
             },
@@ -34073,31 +34533,36 @@ var NavigationModel = (function () {
             {
                 'id': 'car',
                 'title': 'CAR.ALLCAR.TITLE',
+                'icon': 'directions_car',
                 'type': 'item',
                 'url': '/cars'
             },
             {
                 'id': 'user',
                 'title': 'USER.ALLUSER.TITLE',
+                'icon': 'account_circle',
                 'type': 'item',
                 'url': '/users'
             },
             {
                 'id': 'trip',
                 'title': 'TRIP.ALLTRIP.TITLE',
+                'icon': 'airplanemode_active',
                 'type': 'item',
                 'url': '/trips'
             },
             {
-                'id': 'predefined-trip',
+                'id': 'predefined',
                 'title': 'PREDEFINEDTRIP.ALLPREDEFINEDTRIP.TITLE',
                 'type': 'item',
-                'url': '/predefined-trips'
+                'icon': 'assistant_photo',
+                'url': '/predefineds'
             },
             {
                 'id': 'admin',
                 'title': 'ADMIN.ALLADMIN.TITLE',
                 'type': 'item',
+                'icon': 'supervised_user_circle',
                 'url': '/admins',
                 "data": { 'isSuperAdmin': true }
             }

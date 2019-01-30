@@ -8,7 +8,7 @@
       <!-- </button> -->
       <span class="logo-text h1">
         <mat-icon style="color : white;" (click)="backToTrips()" class="back">arrow_back_ios</mat-icon>
-        {{'CAR.EDITCAR.TITLE' | translate}}
+        {{'TRIP.EDITTRIP.TITLE' | translate}}
       </span>
     </div>
     <div style="font-size: 20px">{{'TRIP.PRICE' | translate}} : {{totalPrice+subLocaationPrice+airportPrice}}</div>
@@ -164,7 +164,7 @@
           | translate}}</button>
       </div>
       <div style="float: right;">
-        <button mat-button *ngIf="links[3]==null" (click)="add()" class="addButton" cdkFocusInitial [disabled]="stepthreeForm.invalid">{{'Global.ADD'
+        <button mat-button *ngIf="links[3]==null" (click)="edit()" class="addButton" cdkFocusInitial [disabled]="stepthreeForm.invalid">{{'Global.EDIT'
           | translate}}</button>
       </div>
       <div style="float: left;">
@@ -238,7 +238,7 @@
         </div>
       </div>
       <div style="float: right;">
-        <button mat-button (click)="add()" class="addButton" [disabled]="tripdays<0" cdkFocusInitial>{{'Global.ADD'
+        <button mat-button (click)="edit()" class="addButton" [disabled]="tripdays<0" cdkFocusInitial>{{'Global.EDIT'
           | translate}}</button>
       </div>
       <div style="float: left;">

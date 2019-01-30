@@ -19,7 +19,7 @@ export class driversComponent implements OnInit {
   allRows = [];
   filterRows = [];
   filterValue = "";
-  columns = ["email", "phoneNumber", "gender", "username",'status']
+  columns = ["email", "phoneNumber", "gender", "username", 'status']
 
   constructor(private translationLoader: FuseTranslationLoaderService
     , private translateService: TranslateService
@@ -37,15 +37,15 @@ export class driversComponent implements OnInit {
   inisilaize() {
     this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.get("drivers").subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
-        this.mainServ.loaderSer.display(false);
         this.allRows = data;
         this.filterDatatable();
       }
       else if (this.mainServ.APIServ.getErrorCode() == 400) {
 
       }
-      else {
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
         this.mainServ.APIServ.setErrorCode(0);
         this.dialogServ.someThingIsError();
       }

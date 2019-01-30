@@ -37,15 +37,12 @@ export class brandsComponent implements OnInit {
   inisilaize() {
     this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.get("brands").subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
-        this.mainServ.loaderSer.display(false);
         this.allRows = data;
         this.filterDatatable();
       }
-      else if (this.mainServ.APIServ.getErrorCode() == 400) {
-
-      }
-      else {
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
         this.mainServ.APIServ.setErrorCode(0);
         this.dialogServ.someThingIsError();
       }

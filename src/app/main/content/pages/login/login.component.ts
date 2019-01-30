@@ -30,6 +30,7 @@ export class FuseLoginComponent implements OnInit {
 
     ) {
         this.translationLoader.loadTranslations(english);
+        this.mainServ.APIServ.setErrorCode(0)
         this.fuseConfig.setSettings({
             layout: {
                 navigation: 'none',

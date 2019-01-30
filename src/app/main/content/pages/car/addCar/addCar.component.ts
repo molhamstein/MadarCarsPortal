@@ -89,7 +89,7 @@ export class addCarComponent implements OnInit {
           data.forEach(element => {
             this.listImages.push(element);
           });
-        else {
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
           this.mainServ.APIServ.setErrorCode(0);
           this.dialogServ.someThingIsError();
         }
@@ -126,7 +126,7 @@ export class addCarComponent implements OnInit {
             this.images[0] = element
             this.media = element;
           });
-        else {
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
           this.mainServ.APIServ.setErrorCode(0);
           this.dialogServ.someThingIsError();
         }
@@ -137,7 +137,7 @@ export class addCarComponent implements OnInit {
 
 
   ngOnInit() {
-    for (let index = 1900; index < 2021; index++) {
+    for (let index = 2010; index < 2021; index++) {
       this.years.push(index);
     }
     this.addCarForm = new FormGroup({
@@ -156,7 +156,9 @@ export class addCarComponent implements OnInit {
 
 
     });
+    this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.get("brands").subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.brands = data;
         var mercidesObject = this.brands.find(function (element) {
@@ -179,16 +181,33 @@ export class addCarComponent implements OnInit {
 
         });
       }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
+      }
     })
 
+    this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.get("drivers").subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.drivers = data;
       }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
+      }
     })
+
+    this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.get("locations?filter[include]=subLocations&filter[where][status]=active").subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.locations = data;
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
       }
     })
   }
@@ -215,10 +234,15 @@ export class addCarComponent implements OnInit {
     data['isVip'] = this.isVip;
     data['color1'] = this.primaryColor.substr(1);
     data['color2'] = this.secondryColor.substr(1);
-    console.log(data);
+    this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.post("cars", data).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.back()
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
       }
     })
   }

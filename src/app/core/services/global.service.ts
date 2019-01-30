@@ -1,11 +1,13 @@
+import { duration } from 'moment';
 import { LoginService } from './login.service';
 import { CallApiService } from './call-api.service';
-import { MatDialog } from '@angular/material';
-import { ActivatedRoute } from '@angular/router';
+import { MatDialog, MatSnackBar } from '@angular/material';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { DatePipe } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Injectable()
@@ -21,7 +23,9 @@ export class GlobalService {
   castUnreadNotBeh = this.unreadNotBeh.asObservable();
   castNotificationBeh = this.notificationBeh.asObservable();
   castFilteringBeh = this.filteringBeh.asObservable();
-  constructor(private router: Router, private route: ActivatedRoute, public APIServe: CallApiService, public logInSer: LoginService) {
+
+
+  constructor(private router: Router, private translateService: TranslateService, public snackBar: MatSnackBar, public APIServe: CallApiService, public logInSer: LoginService) {
     this.notification = [];
     this.unreadNot = 0;
 
@@ -456,6 +460,60 @@ export class GlobalService {
         return false
     else
       return true
+  }
+
+  openSnackBar(type: number) {
+    var duration = 3000
+    this.translateService.get('Global.OK').subscribe((Ok: string) => {
+
+      if (type == 0) {
+        // sublocationdays more than holl duration
+        this.translateService.get('MESSAGES.OVERFLOWDURATION').subscribe((res: string) => {
+
+          this.snackBar.open(res, Ok, {
+            duration: duration
+          });
+        });
+      } else if (type == 1) {
+        // start date after end date
+        this.translateService.get('MESSAGES.ERRORINDATE').subscribe((res: string) => {
+
+          this.snackBar.open(res, Ok, {
+            duration: duration
+          });
+        });
+      }
+
+      else if (type == 2) {
+        // required field date
+        this.translateService.get('MESSAGES.VALIDATIONDATE').subscribe((res: string) => {
+
+          this.snackBar.open(res, Ok, {
+            duration: duration
+          });
+        });
+      }
+      else if (type == 3) {
+        // required field date
+        this.translateService.get('MESSAGES.NOCARAVAILABLE').subscribe((res: string) => {
+
+          this.snackBar.open(res, Ok, {
+            duration: duration
+          });
+        });
+      }
+
+    })
+  }
+
+  isActive(itemId) {
+    let path = window.location.href
+    console.log(path.includes(itemId));
+    if (path.indexOf(itemId) == -1)
+      return false
+    else
+      return true
+
   }
 
 }

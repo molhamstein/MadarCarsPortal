@@ -79,7 +79,7 @@ export class editTripComponent implements OnInit {
 
   addDuration(index) {
     if (this.subLocationDays == this.mainTripdays) {
-      alert("Error")
+      this.mainServ.globalServ.openSnackBar(0);
     }
     else {
       this.subLocaationPrice += this.tripSublocations[index].cost
@@ -101,11 +101,11 @@ export class editTripComponent implements OnInit {
   }
 
 
-  differenceInHourse(firstDate, secDate,isJustTime:boolean=false) {
-    secDate=new Date(secDate);
-    firstDate=new Date(firstDate);
+  differenceInHourse(firstDate, secDate, isJustTime: boolean = false) {
+    secDate = new Date(secDate);
+    firstDate = new Date(firstDate);
     var timeDiff = secDate.getTime() - firstDate.getTime();
-    if(isJustTime)
+    if (isJustTime)
       return timeDiff
     var diffHourse = Math.ceil(timeDiff / (1000 * 3600));
     var daysNum = Math.ceil(diffHourse / 24)
@@ -150,32 +150,44 @@ export class editTripComponent implements OnInit {
     });
     var locationFilter = { "where": { "status": "active" }, "include": ['subLocations'] }
 
-    this.mainServ.APIServ.get("locations?filter=" + JSON.stringify(locationFilter)).subscribe((data: any) => {
-      if (this.mainServ.APIServ.getErrorCode() == 0) {
-        this.locations = data;
-      }
-      else
-        this.dialogServ.someThingIsError();
-    })
+
     var filter = { "where": { "status": "active" } }
+    this.mainServ.loaderSer.display(true);
 
     this.mainServ.APIServ.get("users?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.users = data;
+        this.mainServ.loaderSer.display(true);
+        this.mainServ.APIServ.get("locations?filter=" + JSON.stringify(locationFilter)).subscribe((data: any) => {
+          this.mainServ.loaderSer.display(false);
+          if (this.mainServ.APIServ.getErrorCode() == 0) {
+            this.locations = data;
+          }
+          else if (this.mainServ.APIServ.getErrorCode() != 401) {
+            this.mainServ.APIServ.setErrorCode(0);
+            this.dialogServ.someThingIsError();
+          }
+        })
       }
-      else
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
         this.dialogServ.someThingIsError();
+      }
     })
 
     var mainthis = this;
     this.getParams("id", function (id) {
       mainthis.tripId = id;
+      mainthis.mainServ.loaderSer.display(true);
       mainthis.mainServ.APIServ.get("trips/" + mainthis.tripId).subscribe((data: any) => {
+        mainthis.mainServ.loaderSer.display(false);
         if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
           mainthis.trip = data;
           mainthis.prerperData(data);
         }
-        else {
+        else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+          mainthis.mainServ.APIServ.setErrorCode(0);
           mainthis.dialogServ.someThingIsError();
         }
       })
@@ -210,8 +222,8 @@ export class editTripComponent implements OnInit {
     this.isInCity = data.inCity;
     this.isToAirport = data.toAirport;
     this.tripType = data.type
-    this.carsSublocations=data.car.carSublocations;
-    this.tripSublocations=data.tripSublocations;
+    this.carsSublocations = data.car.carSublocations;
+    this.tripSublocations = data.tripSublocations;
     this.getTypeTrip()
 
     this.allData['locationId'] = this.stepOneForm.value.locationId
@@ -298,11 +310,11 @@ export class editTripComponent implements OnInit {
   }
 
   doSomething(event) {
-    var carId="";
-    if(event.value==null)
-      carId=event
+    var carId = "";
+    if (event.value == null)
+      carId = event
     else
-      carId=event.value
+      carId = event.value
     var selectedCar = this.carAvailable.find(function (element) {
       return element.id.toString() == carId.toString();
     });
@@ -385,7 +397,7 @@ export class editTripComponent implements OnInit {
 
 
   mixDateTime(date, time) {
-    date=new Date(date);
+    date = new Date(date);
     date.setHours(this.converTo24(time['hour'], time['meriden']))
     date.setMinutes(time['minute'])
     return date;
@@ -478,74 +490,74 @@ export class editTripComponent implements OnInit {
     }
   }
 
-  checkChangeDates(firstDate,secDate) {
+  checkChangeDates(firstDate, secDate) {
 
-    if (this.tripType == this.type[0]){
-        var from =this.mixDateTime(firstDate, this.startTime);
-        console.log("from")
-        console.log(from)
-        console.log("new Date(this.trip.fromAirportDate)")
-        console.log(new Date(this.trip.fromAirportDate))
-        console.log("diffffffffff")
-        console.log(this.differenceInHourse(from,new Date(this.trip.fromAirportDate),true))
-        if(this.differenceInHourse(from,new Date(this.trip.fromAirportDate),true)==0){
-          return false;
-        }
-        else
-         return true
+    if (this.tripType == this.type[0]) {
+      var from = this.mixDateTime(firstDate, this.startTime);
+      console.log("from")
+      console.log(from)
+      console.log("new Date(this.trip.fromAirportDate)")
+      console.log(new Date(this.trip.fromAirportDate))
+      console.log("diffffffffff")
+      console.log(this.differenceInHourse(from, new Date(this.trip.fromAirportDate), true))
+      if (this.differenceInHourse(from, new Date(this.trip.fromAirportDate), true) == 0) {
+        return false;
+      }
+      else
+        return true
     }
-    else if (this.tripType == this.type[1]){
+    else if (this.tripType == this.type[1]) {
       var from = this.mixDateTime(firstDate, { hour: 0, minute: 0, meriden: "AM", format: 12 });
       var to = this.mixDateTime(secDate, { hour: 11, minute: 59, meriden: "PM", format: 12 });
-      if(this.differenceInHourse(from,new Date(this.trip.startInCityDate),true)==0 && this.differenceInHourse(to,new Date(this.trip.endInCityDate),true)==0){
+      if (this.differenceInHourse(from, new Date(this.trip.startInCityDate), true) == 0 && this.differenceInHourse(to, new Date(this.trip.endInCityDate), true) == 0) {
         return false;
       }
       else
-       return true
+        return true
     }
-    else if (this.tripType == this.type[2]){
+    else if (this.tripType == this.type[2]) {
       var from = this.mixDateTime(firstDate, this.startTime);
-      if(this.differenceInHourse(from,new Date(this.trip.toAirportDate),true)==0){
+      if (this.differenceInHourse(from, new Date(this.trip.toAirportDate), true) == 0) {
         return false;
       }
       else
-       return true
+        return true
     }
-    else if (this.tripType == this.type[3]){
+    else if (this.tripType == this.type[3]) {
       var from = this.mixDateTime(firstDate, this.startTime);
       var to = this.mixDateTime(secDate, { hour: 11, minute: 59, meriden: "PM", format: 12 });
-      if(this.differenceInHourse(from,new Date(this.trip.fromAirportDate),true)==0 && this.differenceInHourse(to,new Date(this.trip.endInCityDate),true)==0){
+      if (this.differenceInHourse(from, new Date(this.trip.fromAirportDate), true) == 0 && this.differenceInHourse(to, new Date(this.trip.endInCityDate), true) == 0) {
         return false;
       }
       else
-       return true
+        return true
     }
-    else if (this.tripType == this.type[4]){
+    else if (this.tripType == this.type[4]) {
       var from = this.mixDateTime(firstDate, this.startTime);
       var to = this.mixDateTime(secDate, this.endTime);
-      if(this.differenceInHourse(from,new Date(this.trip.fromAirportDate),true)==0 && this.differenceInHourse(to,new Date(this.trip.toAirportDate),true)==0){
+      if (this.differenceInHourse(from, new Date(this.trip.fromAirportDate), true) == 0 && this.differenceInHourse(to, new Date(this.trip.toAirportDate), true) == 0) {
         return false;
       }
       else
-       return true
+        return true
     }
-    else if (this.tripType == this.type[5]){
-      var from = this.mixDateTime(firstDate,  { hour: 0, minute: 0, meriden: "AM", format: 12 });
+    else if (this.tripType == this.type[5]) {
+      var from = this.mixDateTime(firstDate, { hour: 0, minute: 0, meriden: "AM", format: 12 });
       var to = this.mixDateTime(secDate, this.endTime);
-      if(this.differenceInHourse(from,new Date(this.trip.startInCityDate),true)==0 && this.differenceInHourse(to,new Date(this.trip.toAirportDate),true)==0){
+      if (this.differenceInHourse(from, new Date(this.trip.startInCityDate), true) == 0 && this.differenceInHourse(to, new Date(this.trip.toAirportDate), true) == 0) {
         return false;
       }
       else
-       return true
+        return true
     }
-    else if (this.tripType == this.type[6]){
+    else if (this.tripType == this.type[6]) {
       var from = this.mixDateTime(firstDate, this.startTime);
       var to = this.mixDateTime(secDate, this.endTime);
-      if(this.differenceInHourse(from,new Date(this.trip.fromAirportDate),true)==0 && this.differenceInHourse(to,new Date(this.trip.toAirportDate),true)==0){
+      if (this.differenceInHourse(from, new Date(this.trip.fromAirportDate), true) == 0 && this.differenceInHourse(to, new Date(this.trip.toAirportDate), true) == 0) {
         return false;
       }
       else
-       return true
+        return true
     }
 
   }
@@ -567,12 +579,12 @@ export class editTripComponent implements OnInit {
       var firstDate = new Date(this.stepSecForm.value['first'])
       var secDate = new Date(this.stepSecForm.value['seconde'])
 
-      return this.checkChangeDates(firstDate,secDate) 
+      return this.checkChangeDates(firstDate, secDate)
     }
     else if (stepNum == 3) {
-      if(this.stepthreeForm.value.carId == this.trip['carId'])
+      if (this.stepthreeForm.value.carId == this.trip['carId'])
         return false;
-      else 
+      else
         return true
     }
   }
@@ -628,54 +640,63 @@ export class editTripComponent implements OnInit {
         });
         this.newData == true
       }
-        this.totalPrice = 0;
-        var firstDate = this.stepSecForm.value['first']
-        var secDate = this.stepSecForm.value['seconde']
-        if (this.cheackValidateionSecStep(firstDate, secDate, this.startTime,this.endTime)) {
-          if (secDate) {
-            if (this.differenceInHourse(firstDate, secDate) > 0) {
-              var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport }
-              this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId']+"&tripId="+this.tripId).subscribe((data: any) => {
-                if (this.mainServ.APIServ.getErrorCode() == 0) {
-                  this.carAvailable = data;
-                  this.activeLink = this.links[stepNum - 1].name;
-                }
-                else {
-                  this.dialogServ.someThingIsError();
-                }
-
-              })
-            }
-            else {
-              alert("error")
-            }
-          }
-          else {
+      this.totalPrice = 0;
+      var firstDate = this.stepSecForm.value['first']
+      var secDate = this.stepSecForm.value['seconde']
+      if (this.cheackValidateionSecStep(firstDate, secDate, this.startTime, this.endTime)) {
+        if (secDate) {
+          if (this.differenceInHourse(firstDate, secDate) > 0) {
+            this.mainServ.loaderSer.display(true);
             var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport }
-            this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId']+"&tripId="+this.tripId).subscribe((data: any) => {
+            this.mainServ.loaderSer.display(false);
+            this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId'] + "&tripId=" + this.tripId).subscribe((data: any) => {
               if (this.mainServ.APIServ.getErrorCode() == 0) {
                 this.carAvailable = data;
                 this.activeLink = this.links[stepNum - 1].name;
+                if (data.length == 0)
+                  this.mainServ.globalServ.openSnackBar(3);
               }
-              else {
+              else if (this.mainServ.APIServ.getErrorCode() != 401) {
+                this.mainServ.APIServ.setErrorCode(0);
                 this.dialogServ.someThingIsError();
               }
-
             })
-
           }
-        } else {
-          alert("error")
+          else {
+            this.mainServ.globalServ.openSnackBar(1);
+          }
+        }
+        else {
+          this.mainServ.loaderSer.display(true);
+          var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport }
+          this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId'] + "&tripId=" + this.tripId).subscribe((data: any) => {
+            this.mainServ.loaderSer.display(false);
+            if (this.mainServ.APIServ.getErrorCode() == 0) {
+              this.carAvailable = data;
+              this.activeLink = this.links[stepNum - 1].name;
+            }
+            else if (this.mainServ.APIServ.getErrorCode() != 401) {
+              this.mainServ.APIServ.setErrorCode(0);
+              this.dialogServ.someThingIsError();
+            }
+
+          })
 
         }
-      
+      } else {
+        this.mainServ.globalServ.openSnackBar(2);
+
+      }
+
     }
     else if (stepNum == 4) {
       if (this.newData == true || this.anyChange(3) == true) {
         this.allData['carId'] = this.stepthreeForm.value['carId']
         var filter = { "where": { "and": [{ "carId": this.allData['carId'] }, { "subLocationId": { "inq": this.subLocationId } }] } }
         console.log("carSublocations?filter=" + JSON.stringify(filter))
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("carSublocations?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+          this.mainServ.loaderSer.display(false);
           if (this.mainServ.APIServ.getErrorCode() == 0) {
             this.activeLink = this.links[stepNum - 1].name;
             this.carsSublocations = data;
@@ -687,21 +708,22 @@ export class editTripComponent implements OnInit {
               this.tripSublocations.push({ "sublocationId": element.subLocationId, "duration": 0, "cost": tempCost })
             });
           }
-          else {
+          else if (this.mainServ.APIServ.getErrorCode() != 401) {
+            this.mainServ.APIServ.setErrorCode(0);
             this.dialogServ.someThingIsError();
           }
 
         })
-      }else{
+      } else {
         this.doSomething(this.trip['carId']);
-        var daysInSub=0;
+        var daysInSub = 0;
         for (let index = 0; index < this.tripSublocations.length; index++) {
           const element = this.tripSublocations[index];
-          this.subLocaationPrice+=(element.duration*element.cost)
-          this.subLocationDays+=element.duration;
-          this.totalPrice -= (this.pricePerDay*element.duration);
-          this.tripdays-=element.duration;
-    
+          this.subLocaationPrice += (element.duration * element.cost)
+          this.subLocationDays += element.duration;
+          this.totalPrice -= (this.pricePerDay * element.duration);
+          this.tripdays -= element.duration;
+
         }
         this.activeLink = this.links[stepNum - 1].name;
       }
@@ -710,18 +732,32 @@ export class editTripComponent implements OnInit {
 
 
   edit() {
-    // var data = this.editTripForm.value;
-    // this.mainServ.APIServ.put("users/" + this.userId, data).subscribe((data: any) => {
-    //   if (this.mainServ.APIServ.getErrorCode() == 0) {
-    //     this.back();
-    //   }
-    //   else if (this.mainServ.APIServ.getErrorCode() == 451) {
-    //     this.dialogServ.errorMessage(451);
-    //   }
-    //   else {
-    //     this.dialogServ.someThingIsError();
-    //   }
-    // })
+    if (this.activeLink == "step4")
+      this.allData['tripSublocations'] = this.tripSublocations
+    this.allData['carId'] = this.stepthreeForm.value['carId']
+    this.allData['cost'] = this.totalPrice + this.subLocaationPrice + this.airportPrice
+    this.allData['daysInCity'] = this.tripdays;
+    this.mainServ.loaderSer.display(true);
+    this.mainServ.APIServ.put("trips/editMethod/" + this.tripId, { "data": this.allData }).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
+      if (this.mainServ.APIServ.getErrorCode() == 0) {
+        this.backToTrips();
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 455) {
+        this.dialogServ.errorMessage(455);
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 456) {
+        this.dialogServ.errorMessage(456);
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 457) {
+        this.dialogServ.errorMessage(457);
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
+      }
+
+    })
   }
 
   backToTrips() {
@@ -732,7 +768,7 @@ export class editTripComponent implements OnInit {
   endTime;
   formatStartTime(object) {
     if (object == null) {
-      if(this.startTime==null)
+      if (this.startTime == null)
         return "";
       var minute = this.startTime.minute;
       var hour = this.startTime.hour;

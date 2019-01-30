@@ -78,7 +78,7 @@ export class addTripComponent implements OnInit {
 
   addDuration(index) {
     if (this.subLocationDays == this.mainTripdays) {
-      alert("Error")
+      this.mainServ.globalServ.openSnackBar(0);
     }
     else {
       this.subLocaationPrice += this.tripSublocations[index].cost
@@ -177,21 +177,29 @@ export class addTripComponent implements OnInit {
 
     var locationFilter = { "where": { "status": "active" }, "include": ['subLocations'] }
 
-    this.mainServ.APIServ.get("locations?filter=" + JSON.stringify(locationFilter)).subscribe((data: any) => {
-      if (this.mainServ.APIServ.getErrorCode() == 0) {
-        this.locations = data;
-      }
-      else
-        this.dialogServ.someThingIsError();
-    })
     var filter = { "where": { "status": "active" } }
 
+    this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.get("users?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.users = data;
+        this.mainServ.loaderSer.display(true);
+        this.mainServ.APIServ.get("locations?filter=" + JSON.stringify(locationFilter)).subscribe((data: any) => {
+          this.mainServ.loaderSer.display(false);
+          if (this.mainServ.APIServ.getErrorCode() == 0) {
+            this.locations = data;
+          }
+          else if (this.mainServ.APIServ.getErrorCode() != 401) {
+            this.mainServ.APIServ.setErrorCode(0);
+            this.dialogServ.someThingIsError();
+          }
+        })
       }
-      else
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
         this.dialogServ.someThingIsError();
+      }
     })
 
   }
@@ -376,30 +384,37 @@ export class addTripComponent implements OnInit {
       if (this.cheackValidateionSecStep(firstDate, secDate, this.startTime, this.endTime)) {
         if (secDate) {
           if (this.differenceInHourse(firstDate, secDate) > 0) {
+
             var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport }
+            this.mainServ.loaderSer.display(true);
             this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId']).subscribe((data: any) => {
+              this.mainServ.loaderSer.display(false);
               if (this.mainServ.APIServ.getErrorCode() == 0) {
                 this.carAvailable = data;
                 this.activeLink = this.links[stepNum - 1].name;
               }
-              else {
+              else if (this.mainServ.APIServ.getErrorCode() != 401) {
+                this.mainServ.APIServ.setErrorCode(0);
                 this.dialogServ.someThingIsError();
               }
 
             })
           }
           else {
-            alert("error")
+            this.mainServ.globalServ.openSnackBar(1);
           }
         }
         else {
+          this.mainServ.loaderSer.display(true);
           var flags = { "fromAirport": this.isFromAirport, "inCity": this.isInCity, "toAirport": this.isToAirport }
           this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId']).subscribe((data: any) => {
+            this.mainServ.loaderSer.display(false);
             if (this.mainServ.APIServ.getErrorCode() == 0) {
               this.carAvailable = data;
               this.activeLink = this.links[stepNum - 1].name;
             }
-            else {
+            else if (this.mainServ.APIServ.getErrorCode() != 401) {
+              this.mainServ.APIServ.setErrorCode(0);
               this.dialogServ.someThingIsError();
             }
 
@@ -407,14 +422,16 @@ export class addTripComponent implements OnInit {
 
         }
       } else {
-        alert("error")
+        this.mainServ.globalServ.openSnackBar(2);
       }
     }
     else if (stepNum == 4) {
       this.allData['carId'] = this.stepthreeForm.value['carId']
       var filter = { "where": { "and": [{ "carId": this.allData['carId'] }, { "subLocationId": { "inq": this.subLocationId } }] } }
       console.log("carSublocations?filter=" + JSON.stringify(filter))
+      this.mainServ.loaderSer.display(true);
       this.mainServ.APIServ.get("carSublocations?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+        this.mainServ.loaderSer.display(false);
         if (this.mainServ.APIServ.getErrorCode() == 0) {
           this.activeLink = this.links[stepNum - 1].name;
           this.carsSublocations = data;
@@ -426,7 +443,8 @@ export class addTripComponent implements OnInit {
             this.tripSublocations.push({ "sublocationId": element.subLocationId, "duration": 0, "cost": tempCost })
           });
         }
-        else {
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
+          this.mainServ.APIServ.setErrorCode(0);
           this.dialogServ.someThingIsError();
         }
 
@@ -441,11 +459,23 @@ export class addTripComponent implements OnInit {
     this.allData['carId'] = this.stepthreeForm.value['carId']
     this.allData['cost'] = this.totalPrice + this.subLocaationPrice + this.airportPrice
     this.allData['daysInCity'] = this.tripdays;
+    this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.post("trips", this.allData).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.backToTrips();
       }
-      else {
+      else if (this.mainServ.APIServ.getErrorCode() != 455) {
+        this.dialogServ.errorMessage(455);
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 456) {
+        this.dialogServ.errorMessage(456);
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 457) {
+        this.dialogServ.errorMessage(457);
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
         this.dialogServ.someThingIsError();
       }
 

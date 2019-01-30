@@ -45,7 +45,8 @@ export class LoginService {
   }
 
   getToken() {
-    return this.token;
+    // return this.token;
+    return localStorage.getItem("token");
   }
 
   getuserName() {

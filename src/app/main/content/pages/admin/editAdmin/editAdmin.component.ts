@@ -49,14 +49,19 @@ export class editAdminComponent implements OnInit {
     var mainthis = this;
     this.getParams("id", function (id) {
       mainthis.adminId = id;
+      mainthis.mainServ.loaderSer.display(true);
       mainthis.mainServ.APIServ.get("admins/" + mainthis.adminId).subscribe((data: any) => {
+        mainthis.mainServ.loaderSer.display(false);
         if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
           mainthis.admin = data;
           mainthis.editAdminForm = new FormGroup({
             email: new FormControl(data.email, [Validators.required, Validators.email]),
             username: new FormControl(data.username, Validators.required),
           });
-
+        }
+        else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+          mainthis.mainServ.APIServ.setErrorCode(0);
+          mainthis.dialogServ.someThingIsError();
         }
       })
     })
@@ -67,9 +72,15 @@ export class editAdminComponent implements OnInit {
 
   edit() {
     var data = this.editAdminForm.value;
+    this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.put("admins/" + this.adminId, data).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.back();
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
       }
     })
   }

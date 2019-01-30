@@ -27,7 +27,8 @@ export class viewTripComponent implements OnInit {
     , private translateService: TranslateService
     , private mainServ: MainService,
     private route: ActivatedRoute,
-    public dialog: MatDialog) {
+    public dialog: MatDialog,
+    private dialogServ: DialogService) {
     this.translationLoader.loadTranslations(english);
   }
 
@@ -99,8 +100,9 @@ export class viewTripComponent implements OnInit {
           mainthis.locationName = data['location']['nameEn']
           mainthis.calcStartDateAndEnd()
         }
-        else {
-          this.dialogServ.someThingIsError();
+        else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+          mainthis.mainServ.APIServ.setErrorCode(0);
+          mainthis.dialogServ.someThingIsError();
         }
       })
     })

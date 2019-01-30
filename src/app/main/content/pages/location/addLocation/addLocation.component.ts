@@ -74,7 +74,7 @@ export class addLocationComponent implements OnInit {
           data.forEach(element => {
             this.listImages.push(element);
           });
-        else {
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
           this.mainServ.APIServ.setErrorCode(0);
           this.dialogServ.someThingIsError();
         }
@@ -110,7 +110,7 @@ export class addLocationComponent implements OnInit {
             this.images[0] = element
             this.media = element;
           });
-        else {
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
           this.mainServ.APIServ.setErrorCode(0);
           this.dialogServ.someThingIsError();
         }
@@ -141,11 +141,17 @@ export class addLocationComponent implements OnInit {
         "mediaId": element.id
       })
     });
+    this.mainServ.loaderSer.display(true);
     data['color1'] = this.primaryColor.substr(1);
     data['color2'] = this.secondryColor.substr(1);
     this.mainServ.APIServ.post("locations", data).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.mainServ.globalServ.goTo('locations')
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
       }
     })
   }

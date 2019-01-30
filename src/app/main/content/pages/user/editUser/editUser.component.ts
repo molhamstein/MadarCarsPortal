@@ -79,8 +79,9 @@ export class editUserComponent implements OnInit {
           });
           mainthis.inisilaize();
         }
-        else {
-          this.dialogServ.someThingIsError();
+        else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+          mainthis.mainServ.APIServ.setErrorCode(0);
+          mainthis.dialogServ.someThingIsError();
         }
       })
     })
@@ -127,9 +128,8 @@ export class editUserComponent implements OnInit {
     var filter = { "where": { "ownerId": this.userId } };
     // var filter = {}
     this.mainServ.APIServ.get("trips?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
-
-        this.mainServ.loaderSer.display(false);
         this.allRows = data;
         this.calcStartDateAndEnd();
         this.filterDatatable();
@@ -137,7 +137,7 @@ export class editUserComponent implements OnInit {
       else if (this.mainServ.APIServ.getErrorCode() == 400) {
 
       }
-      else {
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
         this.mainServ.APIServ.setErrorCode(0);
         this.dialogServ.someThingIsError();
       }
@@ -156,7 +156,8 @@ export class editUserComponent implements OnInit {
       else if (this.mainServ.APIServ.getErrorCode() == 451) {
         this.dialogServ.errorMessage(451);
       }
-      else {
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
         this.dialogServ.someThingIsError();
       }
     })
@@ -194,7 +195,7 @@ export class editUserComponent implements OnInit {
             this.images[0] = element
             this.media = element;
           });
-        else {
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
           this.mainServ.APIServ.setErrorCode(0);
           this.dialogServ.someThingIsError();
         }

@@ -61,27 +61,27 @@ import { editPredefindTripComponent } from './main/content/pages/predefindTrip/e
 import { billComponent } from './main/content/pages/trip/bill/bill.component';
 import { adminsComponent } from './main/content/pages/admin/admin/admins.component';
 import { addAdminComponent } from './main/content/pages/admin/addAdmin/addAdmin.component';
-import { editAdminComponent } from './main/content/pages/admin/editDriver/editAdmin.component';
 import { editTripComponent } from './main/content/pages/trip/editTrip/editTrip.component';
 import { TimeComponent } from './main/dialogs/time/time.component';
+import { editAdminComponent } from './main/content/pages/admin/editAdmin/editAdmin.component';
 
 
 const appRoutes: Routes = [
 
     {
-        path: 'predefined-trips',
+        path: 'predefineds',
         component: predefindTripsComponent,
         canActivate: [AuthGuardService]
 
     },
     {
-        path: 'add-predefined-trip',
+        path: 'add-predefined',
         component: addPredefindTripComponent,
         canActivate: [AuthGuardService]
 
     },
     {
-        path: 'edit-predefined-trip/:id',
+        path: 'edit-predefined/:id',
         component: editPredefindTripComponent,
         canActivate: [AuthGuardService]
 

@@ -91,7 +91,7 @@ export class editSubLocationComponent implements OnInit {
             this.images[0] = element
             this.media = element;
           });
-        else {
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
           this.mainServ.APIServ.setErrorCode(0);
           this.dialogServ.someThingIsError();
         }
@@ -110,7 +110,10 @@ export class editSubLocationComponent implements OnInit {
     var mainthis = this
     this.getParams("id", function (id) {
       mainthis.sublocationId = id;
+      mainthis.mainServ.loaderSer.display(true);
+
       mainthis.mainServ.APIServ.get("subLocations/" + mainthis.sublocationId).subscribe((data: any) => {
+        mainthis.mainServ.loaderSer.display(false);
         if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
           mainthis.sublocation = data;
           console.log(data);
@@ -125,6 +128,11 @@ export class editSubLocationComponent implements OnInit {
             nameTr: new FormControl(""),
           });
         }
+        else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+          mainthis.mainServ.APIServ.setErrorCode(0);
+          mainthis.dialogServ.someThingIsError();
+        }
+
       })
 
     })
@@ -137,9 +145,15 @@ export class editSubLocationComponent implements OnInit {
     data['locationId'] = this.locationId;
     data['color1'] = this.primaryColor.substr(1);
     data['color2'] = this.secondryColor.substr(1);
+    this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.put("subLocations/" + this.sublocationId, data).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.back();
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
       }
     })
   }

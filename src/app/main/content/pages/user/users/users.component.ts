@@ -58,8 +58,8 @@ export class usersComponent implements OnInit {
     console.log("end")
     this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.get("users/getEnd?limit=" + this.limit).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
-        this.mainServ.loaderSer.display(false);
         this.rows = data.data;
         console.log(this.rows);
         this.offset = data.count
@@ -82,8 +82,8 @@ export class usersComponent implements OnInit {
     this.mainServ.loaderSer.display(true);
     var filter = { "limit": limit, "skip": offset }
     this.mainServ.APIServ.get("users?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
-        this.mainServ.loaderSer.display(false);
         if (data.length > 0)
           this.rows = data;
         console.log(this.rows);

@@ -86,7 +86,7 @@ export class editLocationComponent implements OnInit {
           data.forEach(element => {
             this.listImages.push(element);
           });
-        else {
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
           this.mainServ.APIServ.setErrorCode(0);
           this.dialogServ.someThingIsError();
         }
@@ -121,7 +121,7 @@ export class editLocationComponent implements OnInit {
             this.images[0] = element;
             this.media = element;
           });
-        else {
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
           this.mainServ.APIServ.setErrorCode(0);
           this.dialogServ.someThingIsError();
         }
@@ -144,12 +144,16 @@ export class editLocationComponent implements OnInit {
       descriptionTr: new FormControl(''),
       nameEn: new FormControl('', Validators.required),
       nameAr: new FormControl('', Validators.required),
-      nameTr: new FormControl('',),
+      nameTr: new FormControl(''),
     });
     var mainthis = this
     this.getParams("id", function (id) {
       mainthis.locationId = id;
+      mainthis.mainServ.loaderSer.display(true);
+
       mainthis.mainServ.APIServ.get("locations/" + mainthis.locationId).subscribe((data: any) => {
+        mainthis.mainServ.loaderSer.display(false);
+
         if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
           mainthis.inisilaize();
           mainthis.location = data;
@@ -167,6 +171,10 @@ export class editLocationComponent implements OnInit {
             nameAr: new FormControl(data.nameAr, Validators.required),
             nameTr: new FormControl(""),
           });
+        }
+        else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+          mainthis.mainServ.APIServ.setErrorCode(0);
+          mainthis.dialogServ.someThingIsError();
         }
       })
     });
@@ -186,10 +194,17 @@ export class editLocationComponent implements OnInit {
     });
     data['color1'] = this.primaryColor.substr(1);
     data['color2'] = this.secondryColor.substr(1);
+    this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.put("locations/" + this.locationId, data).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.mainServ.globalServ.goTo('locations')
       }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
+      }
+
     })
   }
 
@@ -208,16 +223,16 @@ export class editLocationComponent implements OnInit {
     this.mainServ.loaderSer.display(true);
     var filter = { "where": { "locationId": this.locationId } }
     this.mainServ.APIServ.get("subLocations?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
 
-        this.mainServ.loaderSer.display(false);
         this.allRows = data;
         this.filterDatatable();
       }
       else if (this.mainServ.APIServ.getErrorCode() == 400) {
 
       }
-      else {
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
         this.mainServ.APIServ.setErrorCode(0);
         this.dialogServ.someThingIsError();
       }

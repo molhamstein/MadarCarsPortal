@@ -49,7 +49,9 @@ export class editBrandComponent implements OnInit {
     var mainthis = this;
     this.getParams("id", function (id) {
       mainthis.brandId = id;
+      mainthis.mainServ.loaderSer.display(true);
       mainthis.mainServ.APIServ.get("brands/" + mainthis.brandId).subscribe((data: any) => {
+        mainthis.mainServ.loaderSer.display(false);
         if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
           mainthis.brand = data;
           mainthis.editBrandForm = new FormGroup({
@@ -59,6 +61,10 @@ export class editBrandComponent implements OnInit {
           });
 
         }
+        else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+          mainthis.mainServ.APIServ.setErrorCode(0);
+          mainthis.dialogServ.someThingIsError();
+        }
       })
     })
   }
@@ -66,9 +72,15 @@ export class editBrandComponent implements OnInit {
 
   edit() {
     var data = this.editBrandForm.value;
+    this.mainServ.loaderSer.display(false);
     this.mainServ.APIServ.put("brands/" + this.brandId, data).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.back();
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
       }
     })
   }

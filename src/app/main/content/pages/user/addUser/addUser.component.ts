@@ -58,7 +58,8 @@ export class addUserComponent implements OnInit {
       else if (this.mainServ.APIServ.getErrorCode() == 451) {
         this.dialogServ.errorMessage(451);
       }
-      else {
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
         this.dialogServ.someThingIsError();
       }
 
@@ -96,7 +97,7 @@ export class addUserComponent implements OnInit {
             this.images[0] = element
             this.media = element;
           });
-        else {
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
           this.mainServ.APIServ.setErrorCode(0);
           this.dialogServ.someThingIsError();
         }

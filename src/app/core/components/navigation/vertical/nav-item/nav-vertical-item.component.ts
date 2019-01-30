@@ -22,4 +22,8 @@ export class FuseNavVerticalItemComponent implements OnInit {
         if (item.data == null || (item.data != null && item.data['isSuperAdmin'] == true && this.isSuperAdmin == "true"))
             return true
     }
+
+    isActive(item) {
+        return this.mainServ.globalServ.isActive(item.id)
+    }
 }

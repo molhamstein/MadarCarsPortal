@@ -79,7 +79,7 @@ export class addDriverComponent implements OnInit {
             this.images[0] = element
             this.media = element;
           });
-        else {
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
           this.mainServ.APIServ.setErrorCode(0);
           this.dialogServ.someThingIsError();
         }
@@ -99,11 +99,18 @@ export class addDriverComponent implements OnInit {
       password: new FormControl('', Validators.required),
       driverLangs: new FormControl('', Validators.required),
       username: new FormControl('', Validators.required),
-      
+
     });
+    this.mainServ.loaderSer.display(true);
+
     this.mainServ.APIServ.get("languages").subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.listLanguages = data
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
       }
     })
 
@@ -113,9 +120,16 @@ export class addDriverComponent implements OnInit {
   add() {
     var data = this.addDriverForm.value;
     data['mediaId'] = this.media.id;
+    this.mainServ.loaderSer.display(true);
+
     this.mainServ.APIServ.post("drivers", data).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.back();
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
       }
     })
   }

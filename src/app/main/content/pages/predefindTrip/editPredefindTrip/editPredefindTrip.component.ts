@@ -89,7 +89,7 @@ export class editPredefindTripComponent implements OnInit {
           data.forEach(element => {
             this.listImages.push(element);
           });
-        else {
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
           this.mainServ.APIServ.setErrorCode(0);
           this.dialogServ.someThingIsError();
         }
@@ -124,7 +124,7 @@ export class editPredefindTripComponent implements OnInit {
             this.images[0] = element;
             this.media = element;
           });
-        else {
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
           this.mainServ.APIServ.setErrorCode(0);
           this.dialogServ.someThingIsError();
         }
@@ -155,11 +155,15 @@ export class editPredefindTripComponent implements OnInit {
     this.getParams("id", function (id) {
       mainthis.predefindTripId = id;
       var locationFilter = { "where": { "status": "active" }, "include": ['subLocations'] }
+      mainthis.mainServ.loaderSer.display(true);
 
       mainthis.mainServ.APIServ.get("locations?filter=" + JSON.stringify(locationFilter)).subscribe((data: any) => {
+        mainthis.mainServ.loaderSer.display(false);
         if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
           mainthis.locations = data;
+          mainthis.mainServ.loaderSer.display(true);
           mainthis.mainServ.APIServ.get("predefinedTrips/" + mainthis.predefindTripId).subscribe((data: any) => {
+            mainthis.mainServ.loaderSer.display(false);
             if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
               mainthis.predefindTrip = data;
               console.log(data);
@@ -194,10 +198,17 @@ export class editPredefindTripComponent implements OnInit {
               });
 
             }
+            else if (this.mainServ.APIServ.getErrorCode() != 401) {
+              this.mainServ.APIServ.setErrorCode(0);
+              this.dialogServ.someThingIsError();
+            }
           })
         }
-        else
+
+        else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+          mainthis.mainServ.APIServ.setErrorCode(0);
           mainthis.dialogServ.someThingIsError();
+        }
       })
 
     });
@@ -208,7 +219,7 @@ export class editPredefindTripComponent implements OnInit {
 
   addDuration(index) {
     if (this.sublocationDuration == this.editPredefindTripForm.value.duration) {
-      alert("Error")
+      this.mainServ.globalServ.openSnackBar(0);
     }
     else {
       this.sublocationDuration++;
@@ -238,10 +249,18 @@ export class editPredefindTripComponent implements OnInit {
     data['predefinedTripsSublocations'] = this.predefinedTripsSublocations;
     data['color1'] = this.primaryColor.substr(1);
     data['color2'] = this.secondryColor.substr(1);
+    this.mainServ.loaderSer.display(true);
+
     this.mainServ.APIServ.put("predefinedTrips/" + this.predefindTripId, data).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.mainServ.globalServ.goTo('predefined-trips')
       }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
+      }
+
     })
 
   }
@@ -263,7 +282,7 @@ export class editPredefindTripComponent implements OnInit {
 
 
   back() {
-    this.mainServ.globalServ.goTo('predefined-trips')
+    this.mainServ.globalServ.goTo('predefineds')
   }
 
   deleteImage(i) {

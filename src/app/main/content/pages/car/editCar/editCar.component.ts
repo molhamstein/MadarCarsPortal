@@ -99,7 +99,7 @@ export class editCarComponent implements OnInit {
           data.forEach(element => {
             this.listImages.push(element);
           });
-        else {
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
           this.mainServ.APIServ.setErrorCode(0);
           this.dialogServ.someThingIsError();
         }
@@ -134,7 +134,7 @@ export class editCarComponent implements OnInit {
             this.images[0] = element;
             this.media = element;
           });
-        else {
+        else if (this.mainServ.APIServ.getErrorCode() != 401) {
           this.mainServ.APIServ.setErrorCode(0);
           this.dialogServ.someThingIsError();
         }
@@ -166,7 +166,7 @@ export class editCarComponent implements OnInit {
 
 
   ngOnInit() {
-    for (let index = 1900; index < 2021; index++) {
+    for (let index = 2010; index < 2021; index++) {
       this.years.push(index);
     }
     this.editCarForm = new FormGroup({
@@ -186,20 +186,28 @@ export class editCarComponent implements OnInit {
 
     });
     var mainthis = this
+
+    this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.get("brands").subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.brands = data;
+        this.mainServ.loaderSer.display(true);
         this.mainServ.APIServ.get("drivers").subscribe((data: any) => {
+          this.mainServ.loaderSer.display(false);
           if (this.mainServ.APIServ.getErrorCode() == 0) {
             this.drivers = data;
+            this.mainServ.loaderSer.display(true);
             this.mainServ.APIServ.get("locations?filter[include]=subLocations&filter[where][status]=active").subscribe((data: any) => {
+              this.mainServ.loaderSer.display(false);
               if (this.mainServ.APIServ.getErrorCode() == 0) {
                 this.locations = data;
                 this.getParams("id", function (id) {
                   mainthis.carId = id;
+                  mainthis.mainServ.loaderSer.display(true);
                   mainthis.mainServ.APIServ.get("cars/" + mainthis.carId).subscribe((data: any) => {
+                    mainthis.mainServ.loaderSer.display(false);
                     if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
-                      // mainthis.inisilaize();
                       mainthis.car = data;
                       console.log(data);
                       mainthis.media = data.media;
@@ -230,7 +238,7 @@ export class editCarComponent implements OnInit {
                         numOfSeat: new FormControl(data.numOfSeat, Validators.required),
 
                         productionDate: new FormControl(data.productionDate, Validators.required),
-                  
+
                         pricePerDay: new FormControl(data.pricePerDay, Validators.required),
                         priceOneWay: new FormControl(data.priceOneWay, Validators.required),
                         priceTowWay: new FormControl(data.priceTowWay, Validators.required),
@@ -239,12 +247,28 @@ export class editCarComponent implements OnInit {
                         driverId: new FormControl(data.driverId, Validators.required),
                       });
                     }
+                    else if (this.mainServ.APIServ.getErrorCode() != 401) {
+                      this.mainServ.APIServ.setErrorCode(0);
+                      this.dialogServ.someThingIsError();
+                    }
                   })
                 });
               }
+              else if (this.mainServ.APIServ.getErrorCode() != 401) {
+                this.mainServ.APIServ.setErrorCode(0);
+                this.dialogServ.someThingIsError();
+              }
             })
           }
+          else if (this.mainServ.APIServ.getErrorCode() != 401) {
+            this.mainServ.APIServ.setErrorCode(0);
+            this.dialogServ.someThingIsError();
+          }
         })
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
       }
     })
 

@@ -6,11 +6,13 @@ export class NavigationModel {
                 'id': 'location',
                 'title': 'LOCATION.ALLLOCATION.TITLE',
                 'type': 'item',
+                'icon': 'location_on',
                 'url': '/locations'
             },
             {
                 'id': 'driver',
                 'title': 'DRIVER.ALLDRIVER.TITLE',
+                'icon': 'insert_emoticon',
                 'type': 'item',
                 'url': '/drivers'
             },
@@ -23,31 +25,36 @@ export class NavigationModel {
             {
                 'id': 'car',
                 'title': 'CAR.ALLCAR.TITLE',
+                'icon': 'directions_car',
                 'type': 'item',
                 'url': '/cars'
             },
             {
                 'id': 'user',
                 'title': 'USER.ALLUSER.TITLE',
+                'icon': 'account_circle',
                 'type': 'item',
                 'url': '/users'
             },
             {
                 'id': 'trip',
                 'title': 'TRIP.ALLTRIP.TITLE',
+                'icon': 'airplanemode_active',
                 'type': 'item',
                 'url': '/trips'
             },
             {
-                'id': 'predefined-trip',
+                'id': 'predefined',
                 'title': 'PREDEFINEDTRIP.ALLPREDEFINEDTRIP.TITLE',
                 'type': 'item',
-                'url': '/predefined-trips'
+                'icon': 'assistant_photo',
+                'url': '/predefineds'
             },
             {
                 'id': 'admin',
                 'title': 'ADMIN.ALLADMIN.TITLE',
                 'type': 'item',
+                'icon': 'supervised_user_circle',
                 'url': '/admins',
                 "data": { 'isSuperAdmin': true }
             }

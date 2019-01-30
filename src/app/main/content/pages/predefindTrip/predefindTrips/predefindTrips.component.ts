@@ -37,15 +37,12 @@ export class predefindTripsComponent implements OnInit {
   inisilaize() {
     this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.get("predefinedTrips").subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
-        this.mainServ.loaderSer.display(false);
         this.allRows = data;
         this.filterDatatable();
       }
-      else if (this.mainServ.APIServ.getErrorCode() == 400) {
-
-      }
-      else {
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
         this.mainServ.APIServ.setErrorCode(0);
         this.dialogServ.someThingIsError();
       }
@@ -62,13 +59,13 @@ export class predefindTripsComponent implements OnInit {
     if (pageName == 'view') {
       url = 'show-form/' + id
     } else if (pageName == 'edit') {
-      url = 'edit-predefined-trip/' + id
+      url = 'edit-predefined/' + id
     }
     this.mainServ.globalServ.goTo(url)
   }
 
   addUser() {
-    this.mainServ.globalServ.goTo("add-predefined-trip")
+    this.mainServ.globalServ.goTo("add-predefined")
   }
 
   deactivate(id) {

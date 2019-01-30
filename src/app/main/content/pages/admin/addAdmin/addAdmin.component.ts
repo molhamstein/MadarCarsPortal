@@ -27,9 +27,9 @@ export class addAdminComponent implements OnInit {
     this.translationLoader.loadTranslations(english);
   }
 
- 
- 
- 
+
+
+
 
 
   ngOnInit() {
@@ -37,7 +37,7 @@ export class addAdminComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', Validators.required),
       username: new FormControl('', Validators.required),
-      
+
     });
 
   }
@@ -45,9 +45,15 @@ export class addAdminComponent implements OnInit {
 
   add() {
     var data = this.addAdminForm.value;
+    this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.post("admins", data).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.back();
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
       }
     })
   }
