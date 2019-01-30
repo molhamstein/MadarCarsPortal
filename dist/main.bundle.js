@@ -4751,8 +4751,8 @@ var CallApiService = (function () {
         this.http = http;
         this.loginSer = loginSer;
         // readonly baseUrl = "http://104.217.253.15:3006/api/"
-        // readonly baseUrl = "https://jawlatcom.com:3000/api/"
-        this.baseUrl = "http://localhost:3000/api/";
+        this.baseUrl = "https://jawlatcom.com:3000/api/";
+        // readonly baseUrl = "http://localhost:3000/api/"
         this.errorCode = 0;
         this.code = "";
     }
@@ -4783,6 +4783,8 @@ var CallApiService = (function () {
         }).catch(function (response) {
             _this.errorCode = response['error']['error'].statusCode;
             _this.code = response['error']['error'].code;
+            console.log("response");
+            console.log(response);
             if (_this.errorCode == 401) {
                 _this.loginSer.logout();
             }
@@ -4814,11 +4816,8 @@ var CallApiService = (function () {
         return this.http.post(this.baseUrl + url, data, _options).map(function (Response) {
             return Response;
         }).catch(function (Response) {
-            _this.errorCode = Response['error']['error'].statusCode;
-            _this.code = Response['error']['error'].code;
-            if (_this.errorCode == 401) {
-                _this.loginSer.logout();
-            }
+            _this.errorCode = Response.status;
+            _this.code = Response['error'].error.code;
             return "E";
         });
     };
@@ -4857,11 +4856,8 @@ var CallApiService = (function () {
         return this.http.put(this.baseUrl + url, data, _options).map(function (Response) {
             return Response;
         }).catch(function (Response) {
-            _this.errorCode = Response['error']['error'].statusCode;
-            _this.code = Response['error']['error'].code;
-            if (_this.errorCode == 401) {
-                _this.loginSer.logout();
-            }
+            _this.errorCode = Response.status;
+            _this.code = Response['error'].error.code;
             return "E";
         });
     };
