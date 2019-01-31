@@ -66,6 +66,7 @@ import { TimeComponent } from './main/dialogs/time/time.component';
 import { editAdminComponent } from './main/content/pages/admin/editAdmin/editAdmin.component';
 
 
+
 const appRoutes: Routes = [
 
     {

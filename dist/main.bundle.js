@@ -33629,6 +33629,9 @@ var locale = {
             "455": "Location Not Found",
             "456": "Car Not Found",
             "457": "Car Not Available"
+        },
+        "TEXTNOTIFICATION": {
+            "HELP": "need help to choose trip"
         }
     }
 };
@@ -34361,7 +34364,7 @@ var FuseQuickPanelComponent = (function () {
 /***/ "../../../../../src/app/main/toolbar/toolbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar class=\"p-0 mat-elevation-z1\">\n\n    <mat-progress-bar *ngIf=\"showLoadingBar\" class=\"loading-bar\" color=\"accent\" mode=\"indeterminate\"></mat-progress-bar>\n\n    <div fxFlex fxFill fxLayout=\"row\" fxLayoutAlign=\"start center\">\n\n        <div fxFlex=\"1 0 auto\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n\n            <button mat-button class=\"toggle-button-navbar mat-icon-button\"\n                    fuseNavbarVertical=\"toggleBar\" fxHide.gt-md>\n                <mat-icon>menu</mat-icon>\n            </button>\n\n            <div class=\"toolbar-separator\" fxHide.gt-md></div>\n\n            <div fxLayout=\"row\" fxLayoutAlign=\"start center\" *ngIf=\"horizontalNav\">\n                <div class=\"logo ml-16\">\n                    <img class=\"logo-icon\" src=\"assets/images/logos/unnamed.png\">\n                </div>\n            </div>\n\n            <div class=\"px-8 px-mat-16\">\n                <!-- <fuse-shortcuts></fuse-shortcuts> -->\n            </div>\n\n        </div>\n\n        <div class=\"\" fxFlex=\"0 1 auto\" fxLayout=\"row\"  fxLayoutAlign=\"start center\">\n\n            <button *ngIf=\"userName!=null\" mat-button [matMenuTriggerFor]=\"userMenu\"\n                    class=\"user-button\">\n                <div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n                    <img class=\"avatar\" src=\"assets/images/avatars/profile.jpg\">\n                    <span class=\"username mr-12\" fxHide fxShow.gt-sm>{{userName}}</span>\n                    <mat-icon class=\"s-16\" fxHide.xs>keyboard_arrow_down</mat-icon>\n                </div>\n            </button>\n\n            <mat-menu #userMenu=\"matMenu\">\n\n                <!-- <button mat-menu-item>\n                    <mat-icon>account_circle</mat-icon>\n                    <span>My Profile</span>\n                </button>\n\n                <button mat-menu-item class=\"\">\n                    <mat-icon>mail</mat-icon>\n                    <span>Inbox</span>\n                </button> -->\n\n                <button mat-menu-item class=\"\" (click)=\"logout()\">\n                    <mat-icon>exit_to_app</mat-icon>\n                    <span>Logout</span>\n                </button>\n\n            </mat-menu>\n\n            <div class=\"toolbar-separator\"></div>\n\n            <!-- <fuse-search-bar (onInput)=\"search($event)\"></fuse-search-bar> -->\n\n            <div class=\"toolbar-separator\"></div>\n\n            <!-- <button mat-button fxHide fxShow.gt-xs\n                    class=\"language-button\"\n                    [matMenuTriggerFor]=\"languageMenu\">\n                <div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n                    <img class=\"flag mr-8\" [src]=\"'assets/images/flags/'+selectedLanguage.flag+'.png'\">\n                    <span class=\"iso text-uppercase\">{{selectedLanguage.id}}</span>\n                </div>\n            </button> -->\n\n            <!-- <mat-menu #languageMenu=\"matMenu\">\n\n                <button mat-menu-item *ngFor=\"let lang of languages\" (click)=\"setLanguage(lang)\">\n                    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\n                        <img class=\"flag mr-16\" [src]=\"'assets/images/flags/'+lang.flag+'.png'\">\n                        <span class=\"iso\">{{lang.title}}</span>\n                    </div>\n                </button>\n\n            </mat-menu> -->\n\n            <div class=\"toolbar-separator\" fxHide fxShow.gt-xs></div>\n        </div>\n    </div>\n</mat-toolbar>\n"
+module.exports = "<mat-toolbar class=\"p-0 mat-elevation-z1\">\n\n  <mat-progress-bar *ngIf=\"showLoadingBar\" class=\"loading-bar\" color=\"accent\" mode=\"indeterminate\"></mat-progress-bar>\n\n  <div fxFlex fxFill fxLayout=\"row\" fxLayoutAlign=\"start center\">\n\n    <div fxFlex=\"1 0 auto\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n\n      <button mat-button class=\"toggle-button-navbar mat-icon-button\" fuseNavbarVertical=\"toggleBar\" fxHide.gt-md>\n        <mat-icon>menu</mat-icon>\n      </button>\n\n      <div class=\"toolbar-separator\" fxHide.gt-md></div>\n\n      <div fxLayout=\"row\" fxLayoutAlign=\"start center\" *ngIf=\"horizontalNav\">\n        <div class=\"logo ml-16\">\n          <img class=\"logo-icon\" src=\"assets/images/logos/unnamed.png\">\n        </div>\n      </div>\n\n      <div class=\"px-8 px-mat-16\">\n        <!-- <fuse-shortcuts></fuse-shortcuts> -->\n      </div>\n\n    </div>\n\n    <div class=\"\" fxFlex=\"0 1 auto\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n\n      <!-- <button mat-button> -->\n      <div fxLayout=\"row\" fxLayoutAlign=\"center center\" (click)=\"toggleNotification()\" style=\"position: relative;margin-right: 16px;\">\n        <mat-icon class=\"s-20 notIcon\" style=\"font-size: 25px !important;\" fxHide.xs>notifications_active</mat-icon>\n        <span class=\"badge\" *ngIf=\"unreadNot>0\">{{unreadNot}}</span>\n      </div>\n      <!-- </button> -->\n      <div class=\"listNotification hide\" id=\"listNotification\">\n        <div class=\"oneNotification\" (click)=\"goToNotification(oneNot)\" *ngFor=\"let oneNot of notitfications\" [ngClass]=\"{'notSeen':oneNot.isSeen === false}\">\n          <div class=\"img\">\n            <img src=\"{{oneNot['user']['media']['url']}}\">\n          </div>\n          <div class=\"containt\">\n            <p class=\"text\">{{oneNot['text']}}</p>\n            <span class=\"date\">{{calculatDateAdv(oneNot['createdAt'])}}</span>\n          </div>\n        </div>\n      </div>\n\n\n      <div class=\"toolbar-separator\"></div>\n\n      <!-- <fuse-search-bar (onInput)=\"search($event)\"></fuse-search-bar> -->\n\n      <div class=\"toolbar-separator\"></div>\n\n      <button *ngIf=\"userName!=null\" mat-button [matMenuTriggerFor]=\"userMenu\" class=\"user-button\">\n        <div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n          <img class=\"avatar\" src=\"assets/images/avatars/profile.jpg\">\n          <span class=\"username mr-12\" fxHide fxShow.gt-sm>{{userName}}</span>\n          <mat-icon class=\"s-16\" fxHide.xs>keyboard_arrow_down</mat-icon>\n        </div>\n      </button>\n\n      <mat-menu #userMenu=\"matMenu\">\n\n        <button mat-menu-item class=\"\" (click)=\"logout()\">\n          <mat-icon>exit_to_app</mat-icon>\n          <span>Logout</span>\n        </button>\n\n      </mat-menu>\n\n      <div class=\"toolbar-separator\" fxHide fxShow.gt-xs></div>\n    </div>\n  </div>\n</mat-toolbar>\n"
 
 /***/ }),
 
@@ -34373,7 +34376,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n */\n/* Theme for the ripple elements.*/\n/** The mixins below are shared between mat-menu and mat-select */\n/**\n * This mixin adds the correct panel transform styles based\n * on the direction that the menu panel opens.\n */\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\n/**\n * This mixin contains shared option styles between the select and\n * autocomplete components.\n */\n:host {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 auto;\n          flex: 0 0 auto;\n  z-index: 4; }\n  :host.below {\n    z-index: 2; }\n  :host .mat-toolbar {\n    background: inherit;\n    color: inherit;\n    position: relative; }\n    :host .mat-toolbar .loading-bar {\n      position: absolute;\n      top: 0;\n      left: 0;\n      right: 0;\n      width: 100%; }\n  :host .logo {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    :host .logo .logo-icon {\n      width: 38px; }\n  :host .user-button,\n  :host fuse-search-bar,\n  :host .language-button,\n  :host .quick-panel-toggle-button {\n    min-width: 64px;\n    height: 64px; }\n    @media (max-width: 599px) {\n      :host .user-button,\n      :host fuse-search-bar,\n      :host .language-button,\n      :host .quick-panel-toggle-button {\n        height: 56px; } }\n  :host .toggle-button-navbar {\n    min-width: 56px;\n    height: 56px; }\n  :host .toolbar-separator {\n    height: 64px;\n    width: 1px;\n    background: rgba(0, 0, 0, 0.12); }\n    @media (max-width: 599px) {\n      :host .toolbar-separator {\n        height: 56px; } }\n", ""]);
+exports.push([module.i, "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n */\n/* Theme for the ripple elements.*/\n/** The mixins below are shared between mat-menu and mat-select */\n/**\n * This mixin adds the correct panel transform styles based\n * on the direction that the menu panel opens.\n */\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\n/**\n * This mixin contains shared option styles between the select and\n * autocomplete components.\n */\n:host {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 auto;\n          flex: 0 0 auto;\n  z-index: 4; }\n  :host.below {\n    z-index: 2; }\n  :host .mat-toolbar {\n    background: inherit;\n    color: inherit;\n    position: relative; }\n    :host .mat-toolbar .loading-bar {\n      position: absolute;\n      top: 0;\n      left: 0;\n      right: 0;\n      width: 100%; }\n  :host .logo {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    :host .logo .logo-icon {\n      width: 38px; }\n  :host .user-button,\n  :host fuse-search-bar,\n  :host .language-button,\n  :host .quick-panel-toggle-button {\n    min-width: 64px;\n    height: 64px; }\n    @media (max-width: 599px) {\n      :host .user-button,\n      :host fuse-search-bar,\n      :host .language-button,\n      :host .quick-panel-toggle-button {\n        height: 56px; } }\n  :host .toggle-button-navbar {\n    min-width: 56px;\n    height: 56px; }\n  :host .toolbar-separator {\n    height: 64px;\n    width: 1px;\n    background: rgba(0, 0, 0, 0.12); }\n    @media (max-width: 599px) {\n      :host .toolbar-separator {\n        height: 56px; } }\n\n.listNotification {\n  width: 300px;\n  max-height: 400px;\n  overflow-y: auto;\n  position: absolute;\n  top: 50px;\n  right: 12%;\n  background-color: white;\n  border-radius: 3px;\n  box-shadow: 0px 0px 5px 0px #2d323e; }\n  .listNotification .oneNotification {\n    width: 100%;\n    height: 60px;\n    padding: 5px; }\n    .listNotification .oneNotification .img {\n      width: 50px;\n      height: 50px;\n      float: left; }\n      .listNotification .oneNotification .img img {\n        border-radius: 50%;\n        width: 100%;\n        height: 100%; }\n    .listNotification .oneNotification .containt {\n      width: calc(100% - 55px);\n      float: right;\n      position: relative;\n      height: 50px; }\n      .listNotification .oneNotification .containt .text {\n        width: 100%;\n        font-size: 15px;\n        white-space: initial;\n        font-weight: 400;\n        line-height: 17px;\n        padding: 0px;\n        margin: 0px; }\n      .listNotification .oneNotification .containt .date {\n        width: 100%;\n        font-size: 11px;\n        color: #292929;\n        opacity: 0.5;\n        float: left;\n        line-height: 15px;\n        position: absolute;\n        bottom: 0px; }\n    .listNotification .oneNotification:hover {\n      cursor: pointer;\n      background-color: #bdbdbd !important; }\n    .listNotification .oneNotification.notSeen {\n      background-color: #dedddd; }\n  .listNotification.hide {\n    opacity: 0; }\n\n.notIcon:hover {\n  cursor: pointer; }\n\n.badge {\n  text-align: center;\n  display: block;\n  position: absolute;\n  top: 6px;\n  right: 12px;\n  width: 20px;\n  height: 20px;\n  line-height: 14px;\n  /* height: 16px; */\n  padding: 2px;\n  font-family: Arial, sans-serif;\n  color: white;\n  text-shadow: 0 1px rgba(0, 0, 0, 0.25);\n  border: 1px solid;\n  border-radius: 10px;\n  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 1px 1px rgba(0, 0, 0, 0.08);\n  background: #f5821f;\n  border-color: #ce650b;\n  /* background-image: -webkit-linear-gradient(top, #fc9f8a, #fa623f); */\n  background-image: -o-linear-gradient(top, #fc9f8a, #fa623f);\n  /* background-image: linear-gradient(to bottom, #fc9f8a, #fa623f); */\n  font-size: 11px;\n  font-weight: bold; }\n", ""]);
 
 // exports
 
@@ -34388,11 +34391,13 @@ module.exports = module.exports.toString();
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FuseToolbarComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_services_config_service__ = __webpack_require__("../../../../../src/app/core/services/config.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__core_services_main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__core_services_dialog_service__ = __webpack_require__("../../../../../src/app/core/services/dialog.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__("../../../../rxjs/_esm5/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__core_services_config_service__ = __webpack_require__("../../../../../src/app/core/services/config.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_services_main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -34404,17 +34409,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+ // Angular 5
 
 
 
+
+// import * as $ from "jquery";
 var FuseToolbarComponent = (function () {
-    function FuseToolbarComponent(router, fuseConfig, translate, mainServ) {
+    function FuseToolbarComponent(router, fuseConfig, translate, mainServ, dialogServ) {
         var _this = this;
         this.router = router;
         this.fuseConfig = fuseConfig;
         this.translate = translate;
         this.mainServ = mainServ;
+        this.dialogServ = dialogServ;
+        this.notitfications = [];
+        this.unreadNot = 0;
         this.userName = this.mainServ.loginServ.getuserName();
+        this.getNotifications(true);
+        __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__["a" /* Observable */].interval(0.5 * 60000).subscribe(function (x) {
+            _this.getNotifications();
+        });
         this.userStatusOptions = [
             {
                 'title': 'Online',
@@ -34456,10 +34471,10 @@ var FuseToolbarComponent = (function () {
         ];
         this.selectedLanguage = this.languages[0];
         router.events.subscribe(function (event) {
-            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* NavigationStart */]) {
+            if (event instanceof __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* NavigationStart */]) {
                 _this.showLoadingBar = true;
             }
-            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* NavigationEnd */]) {
+            if (event instanceof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* NavigationEnd */]) {
                 _this.showLoadingBar = false;
             }
         });
@@ -34480,16 +34495,86 @@ var FuseToolbarComponent = (function () {
     FuseToolbarComponent.prototype.logout = function () {
         this.mainServ.loginServ.logout();
     };
+    FuseToolbarComponent.prototype.getNotifications = function (isFirstTime) {
+        var _this = this;
+        if (isFirstTime === void 0) { isFirstTime = false; }
+        var prevunreadNot = this.unreadNot;
+        this.unreadNot = 0;
+        var filter = { order: 'createdAt DESC' };
+        this.mainServ.APIServ.get("adminNotifications?filter=" + JSON.stringify(filter)).subscribe(function (data) {
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.notitfications = [];
+                var _loop_1 = function (index) {
+                    var element = data[index];
+                    if (element.type == "help") {
+                        _this.translate.get('TEXTNOTIFICATION.HELP').subscribe(function (res) {
+                            element['text'] = element['user']['name'] + " " + res;
+                        });
+                    }
+                    if (element.isSeen == false) {
+                        _this.unreadNot++;
+                        if (isFirstTime == false && prevunreadNot < _this.unreadNot) {
+                            audio = new Audio('https://facebook.design/public/sounds/Notification%201.mp3');
+                            audio.play();
+                        }
+                    }
+                    _this.notitfications.unshift(element);
+                };
+                var audio;
+                for (var index = data.length - 1; index >= 0; index--) {
+                    _loop_1(index);
+                }
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
+            }
+        });
+    };
+    FuseToolbarComponent.prototype.calculatDateAdv = function (date) {
+        return this.mainServ.globalServ.calculatDateAdv(date);
+    };
+    FuseToolbarComponent.prototype.goToNotification = function (not) {
+        var _this = this;
+        if (not.isSeen == false) {
+            this.unreadNot--;
+            not.isSeen = true;
+            this.mainServ.APIServ.patch("adminNotifications/" + not.id, { "isSeen": true }).subscribe(function (data) {
+                if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                }
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                    _this.unreadNot++;
+                    not.isSeen = false;
+                    _this.mainServ.APIServ.setErrorCode(0);
+                    _this.dialogServ.someThingIsError();
+                }
+            });
+        }
+        // else {
+        if (not.type == "help") {
+            this.mainServ.globalServ.goTo("edit-user/" + not.userId);
+        }
+        this.toggleNotification();
+        // }
+    };
+    FuseToolbarComponent.prototype.toggleNotification = function (duration) {
+        if (duration === void 0) { duration = 1000; }
+        var mainduratio = duration;
+        console.log();
+        var element = document.getElementById('listNotification');
+        element.classList.toggle("hide");
+    };
     FuseToolbarComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
             selector: 'fuse-toolbar',
             template: __webpack_require__("../../../../../src/app/main/toolbar/toolbar.component.html"),
             styles: [__webpack_require__("../../../../../src/app/main/toolbar/toolbar.component.scss")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_2__core_services_config_service__["a" /* FuseConfigService */],
-            __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateService */],
-            __WEBPACK_IMPORTED_MODULE_4__core_services_main_service__["a" /* MainService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_router__["d" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__core_services_config_service__["a" /* FuseConfigService */],
+            __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__["b" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_6__core_services_main_service__["a" /* MainService */],
+            __WEBPACK_IMPORTED_MODULE_0__core_services_dialog_service__["a" /* DialogService */]])
     ], FuseToolbarComponent);
     return FuseToolbarComponent;
 }());

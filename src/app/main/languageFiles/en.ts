@@ -345,6 +345,9 @@ export const locale = {
             "455": "Location Not Found",
             "456": "Car Not Found",
             "457": "Car Not Available"
+        },
+        "TEXTNOTIFICATION":{
+            "HELP":"need help to choose trip"
         }
     }
 };
