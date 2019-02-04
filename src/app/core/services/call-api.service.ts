@@ -15,8 +15,8 @@ export class CallApiService {
   constructor(public http: HttpClient, private loginSer: LoginService) {
   }
   // readonly baseUrl = "http://104.217.253.15:3006/api/"
-  readonly baseUrl = "https://jawlatcom.com:3000/api/"
-  // readonly baseUrl = "http://localhost:3000/api/"
+  // readonly baseUrl = "https://jawlatcom.com:3000/api/"
+  readonly baseUrl = "http://localhost:3000/api/"
   private errorCode = 0;
   private code = "";
 

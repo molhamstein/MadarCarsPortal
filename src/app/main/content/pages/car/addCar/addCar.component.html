@@ -185,7 +185,7 @@
             </div>
           </div>
 
-          <!-- <ul class="listOfImgs">
+          <ul class="listOfImgs">
             <li (click)="openSelectListImage()">
               <div class="listDiv">
                 <img class="listImgCustim" src="{{imaageUrl}}" />
@@ -206,11 +206,12 @@
                 <img class="listImgCustimLoader" src="assets/images/madar/infinity_loader_by_volorf.gif" />
               </div>
             </li>
-          </ul> -->
+          </ul>
           <div fxFlex="100" *ngIf="carSublocations.length!=0">
             <h2 fxFlex="100" style="margin: 0px 1.5%;">{{ 'CAR.SUBLOCATIONS' | translate }}</h2>
           </div>
-          <div style="padding-top:10px;" *ngIf="carSublocations.length!=0" fxLayout="column" fxLayout.gt-md="row wrap" fxFlex>
+          <div style="padding-top:10px;" *ngIf="carSublocations.length!=0" fxLayout="column" fxLayout.gt-md="row wrap"
+            fxFlex>
             <mat-form-field style="margin: 0px 1.5%;" fxFlex="30" *ngFor="let oneSublocation of carSublocations;let i=index">
               <input matInput type="number" min="0" placeholder="{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}"
                 [(ngModel)]="carSublocations[i].cost" [ngModelOptions]="{standalone: true}" required>
