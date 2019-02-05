@@ -30,7 +30,7 @@ export class editDriverComponent implements OnInit {
   filterValue = ""
   allRows = [];
   filterRows = [];
-  columns = ["cost", "status", "driver.username", "location.nameEn", "car.name"]
+  columns = ["cost", "status", "owner.name", "location.nameEn", "car.name"]
 
   constructor(
     private mainServ: MainService,
@@ -113,6 +113,7 @@ export class editDriverComponent implements OnInit {
       gender: new FormControl('', Validators.required),
       driverLangs: new FormControl('', Validators.required),
       username: new FormControl('', Validators.required),
+      birthdate: new FormControl('', Validators.required),
     });
     var mainthis = this;
     this.getParams("id", function (id) {
@@ -138,6 +139,7 @@ export class editDriverComponent implements OnInit {
             gender: new FormControl(data.gender, Validators.required),
             driverLangs: new FormControl(langId, Validators.required),
             username: new FormControl(data.username, Validators.required),
+            birthdate: new FormControl(data.birthdate, Validators.required),
           });
           mainthis.inisilaize();
 
@@ -203,7 +205,7 @@ export class editDriverComponent implements OnInit {
 
   inisilaize() {
     this.mainServ.loaderSer.display(true);
-    var filter = { "where": { "ownerId": this.driverId } };
+    var filter = { "where": { "driverId": this.driverId } };
     // var filter = {}
     this.mainServ.APIServ.get("trips?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
       this.mainServ.loaderSer.display(false);
@@ -253,8 +255,8 @@ export class editDriverComponent implements OnInit {
       let colsAmt = this.columns.length;
       this.filterRows = this.allRows.filter(function (item) {
         for (let i = 0; i < colsAmt; i++) {
-          if (keys[i] == "driver.username") {
-            if (item["driver"]["username"].toString().toLowerCase().indexOf(val) !== -1 || !val)
+          if (keys[i] == "owner.name") {
+            if (item["owner"]["name"].toString().toLowerCase().indexOf(val) !== -1 || !val)
               return true;
           }
           else if (keys[i] == "location.nameEn") {

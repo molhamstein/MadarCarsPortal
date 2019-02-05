@@ -115,37 +115,38 @@ export class FuseToolbarComponent {
     }
 
     getNotifications(isFirstTime: boolean = false) {
-        var prevunreadNot = this.unreadNot;
-        this.unreadNot = 0;
-        var filter = { order: 'createdAt DESC' }
-        this.mainServ.APIServ.get("adminNotifications?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
-            if (this.mainServ.APIServ.getErrorCode() == 0) {
-                this.notitfications = [];
-                for (let index = data.length - 1; index >= 0; index--) {
-                    const element = data[index];
-                    if (element.type == "help") {
-                        this.translate.get('TEXTNOTIFICATION.HELP').subscribe((res: string) => {
-                            element['text'] = element['user']['name'] + " " + res
-                        })
-                    }
-                    if (element.isSeen == false) {
-                        this.unreadNot++
-                        if (isFirstTime == false && prevunreadNot < this.unreadNot) {
-                            var audio = new Audio('https://facebook.design/public/sounds/Notification%201.mp3');
-                            audio.play();
+        if (this.mainServ.loginServ.isLogIn) {
+            var prevunreadNot = this.unreadNot;
+            this.unreadNot = 0;
+            var filter = { order: 'createdAt DESC' }
+            this.mainServ.APIServ.get("adminNotifications?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+                if (this.mainServ.APIServ.getErrorCode() == 0) {
+                    this.notitfications = [];
+                    for (let index = data.length - 1; index >= 0; index--) {
+                        const element = data[index];
+                        if (element.type == "help") {
+                            this.translate.get('TEXTNOTIFICATION.HELP').subscribe((res: string) => {
+                                element['text'] = element['user']['name'] + " " + res
+                            })
                         }
+                        if (element.isSeen == false) {
+                            this.unreadNot++
+                            if (isFirstTime == false && prevunreadNot < this.unreadNot) {
+                                var audio = new Audio('https://facebook.design/public/sounds/Notification%201.mp3');
+                                audio.play();
+                            }
+                        }
+                        this.notitfications.unshift(element);
                     }
-                    this.notitfications.unshift(element);
+
+                }
+                else if (this.mainServ.APIServ.getErrorCode() != 401) {
+                    this.mainServ.APIServ.setErrorCode(0);
+                    this.dialogServ.someThingIsError();
                 }
 
-            }
-            else if (this.mainServ.APIServ.getErrorCode() != 401) {
-                this.mainServ.APIServ.setErrorCode(0);
-                this.dialogServ.someThingIsError();
-            }
-
-        })
-
+            })
+        }
     }
     calculatDateAdv(date) {
         return this.mainServ.globalServ.calculatDateAdv(date);

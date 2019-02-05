@@ -35,33 +35,34 @@
 
 
   </div>
+  <div class="content">
 
-  <ngx-datatable class="material vertical-scroll" [rows]="filterRows" [columnMode]="'force'" [headerHeight]="50"
-    [rowHeight]="50" [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="true">
-    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="phoneNumber">
-      <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-        <span>{{ 'DRIVER.PHONENUMBER' | translate }}</span>
-      </ng-template>
-    </ngx-datatable-column>
+    <ngx-datatable class="material vertical-scroll" [rows]="filterRows" [columnMode]="'force'" [headerHeight]="50"
+      [rowHeight]="50" [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="true">
+      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="phoneNumber">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <span>{{ 'DRIVER.PHONENUMBER' | translate }}</span>
+        </ng-template>
+      </ngx-datatable-column>
 
-    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="email">
-      <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-        <span>{{ 'DRIVER.EMAIL' | translate }}</span>
-      </ng-template>
+      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="email">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <span>{{ 'DRIVER.EMAIL' | translate }}</span>
+        </ng-template>
 
-    </ngx-datatable-column>
-    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="username">
-      <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-        <span>{{ 'DRIVER.USERNAME' | translate }}</span>
-      </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="username">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <span>{{ 'DRIVER.USERNAME' | translate }}</span>
+        </ng-template>
 
-    </ngx-datatable-column>
-    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="gender">
-      <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-        <span>{{ 'DRIVER.GENDER' | translate }}</span>
-      </ng-template>
-      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-        <!-- <mat-chip-list *ngIf="row.gender=='male'"> -->
+      </ngx-datatable-column>
+      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="gender">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <span>{{ 'DRIVER.GENDER' | translate }}</span>
+        </ng-template>
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          <!-- <mat-chip-list *ngIf="row.gender=='male'"> -->
           <!-- <mat-icon style="color: #0277bd">sentiment_satisfied</mat-icon> -->
           <!-- <mat-chip style="background-color:green" selected="true">{{row.gender}}</mat-chip> -->
           <!-- </mat-chip-list> -->
@@ -71,48 +72,48 @@
 
           <!-- <mat-chip style="background-color:#ff6363" selected="true">{{row.gender}}</mat-chip> -->
           <!-- </mat-chip-list> -->
-      </ng-template>
-    </ngx-datatable-column>
+        </ng-template>
+      </ngx-datatable-column>
 
 
-    <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="Status">
-      <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-        <span>{{ 'DRIVER.STATUS' | translate }}</span>
-      </ng-template>
-      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-        <mat-chip-list *ngIf="row.status=='active'">
-          <mat-chip style="background-color:green" selected="true">{{row.status}}</mat-chip>
-        </mat-chip-list>
-        <mat-chip-list *ngIf="row.status=='deactive'">
-          <mat-chip style="background-color:#ff6363" selected="true">{{row.status}}</mat-chip>
-        </mat-chip-list>
-      </ng-template>
-    </ngx-datatable-column>
+      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="Status">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <span>{{ 'DRIVER.STATUS' | translate }}</span>
+        </ng-template>
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          <mat-chip-list *ngIf="row.status=='active'">
+            <mat-chip style="background-color:green" selected="true">{{row.status}}</mat-chip>
+          </mat-chip-list>
+          <mat-chip-list *ngIf="row.status=='deactive'">
+            <mat-chip style="background-color:#ff6363" selected="true">{{row.status}}</mat-chip>
+          </mat-chip-list>
+        </ng-template>
+      </ngx-datatable-column>
 
-    <ngx-datatable-column [width]="200" name="id">
-      <ng-template let-column="column" ngx-datatable-header-template>
-        <div class="table-header-font">
+      <ngx-datatable-column [width]="200" name="id">
+        <ng-template let-column="column" ngx-datatable-header-template>
+          <div class="table-header-font">
 
-        </div>
-      </ng-template>
+          </div>
+        </ng-template>
 
-      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-        <button mat-mini-fab class="mr-16" (click)="goTo('edit',row['id'])" style="background-color: rgba(20, 160, 202, 0.911);">
-          <mat-icon style="color : white;">edit</mat-icon>
-        </button>
-        <!-- <button mat-mini-fab *ngIf="row.status=='active'" class="mr-16" (click)="deactivate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          <button mat-mini-fab class="mr-16" (click)="goTo('edit',row['id'])" style="background-color: rgba(20, 160, 202, 0.911);">
+            <mat-icon style="color : white;">edit</mat-icon>
+          </button>
+          <!-- <button mat-mini-fab *ngIf="row.status=='active'" class="mr-16" (click)="deactivate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
           <mat-icon style="color : white;">delete</mat-icon>
         </button>
         <button mat-mini-fab *ngIf="row.status=='deactive'" class="mr-16" (click)="activate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
           <mat-icon style="color : white;">replay</mat-icon>
         </button> -->
-        <!-- <button mat-mini-fab class="mr-16" style="background-color: rgba(7, 112, 7, 0.849);" (click)="view(row['id'])">
+          <!-- <button mat-mini-fab class="mr-16" style="background-color: rgba(7, 112, 7, 0.849);" (click)="view(row['id'])">
           <mat-icon style="color : white;">visibility</mat-icon>
         </button> -->
-      </ng-template>
+        </ng-template>
 
-    </ngx-datatable-column>
+      </ngx-datatable-column>
 
-  </ngx-datatable>
-
+    </ngx-datatable>
+  </div>
 </div>

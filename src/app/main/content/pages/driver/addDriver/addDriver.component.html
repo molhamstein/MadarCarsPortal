@@ -80,6 +80,17 @@
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
+          <mat-form-field fxFlex="24">
+            <input matInput (focus)="firstpicker.open()" [matDatepicker]="firstpicker" formControlName="birthdate"
+              placeholder="{{ 'DRIVER.BIRTHDATE' | translate }}" required>
+            <mat-datepicker-toggle matSuffix [for]="firstpicker"></mat-datepicker-toggle>
+            <mat-datepicker #firstpicker></mat-datepicker>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+          <div fxFlex="24"></div>
+          <div fxFlex="24"></div>
+          <div fxFlex="24"></div>
+
           <div fxFlex="40">
             <div class="divImage">
               <div>

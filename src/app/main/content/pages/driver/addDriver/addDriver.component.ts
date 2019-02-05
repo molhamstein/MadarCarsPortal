@@ -99,6 +99,7 @@ export class addDriverComponent implements OnInit {
       password: new FormControl('', Validators.required),
       driverLangs: new FormControl('', Validators.required),
       username: new FormControl('', Validators.required),
+      birthdate: new FormControl('', Validators.required),
 
     });
     this.mainServ.loaderSer.display(true);

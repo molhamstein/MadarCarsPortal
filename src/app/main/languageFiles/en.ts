@@ -55,6 +55,7 @@ export const locale = {
             "MALE": "Male",
             "FEMALE": "Female",
             "LANGUAGES": "languages",
+            "BIRTHDATE":"Birthdate",
             "ALLDRIVER": {
                 "TITLE": "Driver",
                 "ADDDRIVER": "Add Driver",
@@ -316,7 +317,7 @@ export const locale = {
             "CONFIRM": 'Confirm Message',
             "UPLOADIMAGE": "Upload Image",
             "ADD": "Add",
-            "EDIT": "Edit",
+            "EDIT": "Save",
             "NEXT": "Next",
             "BACK": "Back",
             "CANCEL": "Cancel"

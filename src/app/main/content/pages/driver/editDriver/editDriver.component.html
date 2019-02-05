@@ -50,13 +50,13 @@
               }}</mat-error>
           </mat-form-field>
 
-          <mat-form-field fxFlex="32">
+          <mat-form-field fxFlex="24">
             <input matInput placeholder="{{ 'DRIVER.USERNAME' | translate }}" formControlName="username" required>
             <mat-icon matSuffix>people</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
-          <mat-form-field fxFlex="32">
+          <mat-form-field fxFlex="24">
             <mat-select formControlName="gender" placeholder="{{ 'DRIVER.GENDER' | translate }}">
               <mat-option [value]="'male'">
                 {{ 'DRIVER.MALE' | translate }}
@@ -68,10 +68,18 @@
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
 
           </mat-form-field>
-          <mat-form-field fxFlex="32">
+          <mat-form-field fxFlex="24">
             <mat-select placeholder="{{ 'DRIVER.LANGUAGES' | translate }}" formControlName="driverLangs" multiple>
               <mat-option *ngFor="let oneLang of listLanguages" [value]="oneLang.id">{{oneLang.name}}</mat-option>
             </mat-select>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="24">
+            <input matInput (focus)="firstpicker.open()" [matDatepicker]="firstpicker" formControlName="birthdate"
+              placeholder="{{ 'DRIVER.BIRTHDATE' | translate }}" required>
+            <mat-datepicker-toggle matSuffix [for]="firstpicker"></mat-datepicker-toggle>
+            <mat-datepicker #firstpicker></mat-datepicker>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
@@ -172,12 +180,6 @@
       <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="car.name">
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
           <span>{{ 'TRIP.CAR' | translate }}</span>
-        </ng-template>
-      </ngx-datatable-column>
-
-      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="driver.username">
-        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-          <span>{{ 'TRIP.DRIVER' | translate }}</span>
         </ng-template>
       </ngx-datatable-column>
 
