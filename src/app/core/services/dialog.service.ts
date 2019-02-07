@@ -1,3 +1,5 @@
+import { MakeRateComponent } from './../../main/dialogs/make-rate/make-rate.component';
+import { MainService } from './main.service';
 import { MatDialog } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { Injectable } from '@angular/core';
@@ -13,7 +15,7 @@ import { TimeComponent } from '../../main/dialogs/time/time.component';
 
 @Injectable()
 export class DialogService {
-  constructor(private dialog: MatDialog) {
+  constructor(private dialog: MatDialog, private mainServ: MainService) {
   }
 
   confirmationMessage(message, url, data, withReload, callback, type: string = "patch", token: string = "patch") {
@@ -42,6 +44,29 @@ export class DialogService {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
       }
+    });
+  }
+
+  makeRate(tripId, callback) {
+    this.mainServ.loaderSer.display(true);
+    var filter = { "include": ['rate'] }
+    this.mainServ.APIServ.get("trips/" + tripId + "?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
+      if (this.mainServ.APIServ.getErrorCode() == 0) {
+        let dialogRef = this.dialog.open(MakeRateComponent, {
+          width: '350px',
+          data: { "trip": data }
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+          if (result) {
+            callback();
+          }
+        });
+      }
+      else {
+      }
+
     });
   }
 

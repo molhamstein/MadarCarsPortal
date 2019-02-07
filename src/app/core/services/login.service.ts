@@ -16,6 +16,7 @@ export class LoginService {
   userName
   isSuperAdmin
   type
+  lang
   constructor(private cookieService: CookieService, private router: Router) {
     if (localStorage.getItem('userId')) {
       this.isLogIn = true
@@ -32,6 +33,7 @@ export class LoginService {
     this.userName = localStorage.getItem("userName");
     this.isSuperAdmin = localStorage.getItem("isSuperAdmin");
     this.type = localStorage.getItem("type");
+    this.lang = localStorage.getItem("lang");
 
   }
 
@@ -45,8 +47,8 @@ export class LoginService {
   }
 
   getToken() {
-    // return this.token;
-    return localStorage.getItem("token");
+    return this.token;
+    // return localStorage.getItem("token");
   }
 
   getuserName() {
@@ -61,6 +63,18 @@ export class LoginService {
     return this.type;
   }
 
+  getLang() {
+    return this.lang;
+  }
+
+  setLang(lang) {
+    this.lang = lang;
+    localStorage.setItem('lang', lang);
+
+  }
+
+
+
 
   logIn(data, rememberPass: boolean = true) {
     this.isLogIn = true;
@@ -72,6 +86,7 @@ export class LoginService {
 
     this.logoutLocalStorage();
     this.router.navigateByUrl('/login')
+
   }
 
 

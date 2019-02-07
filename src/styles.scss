@@ -1,6 +1,105 @@
 // Import Fuse main library
 @import "app/core/scss/core";
 
+.colorDiv {
+  span {
+    float: left;
+    font-size: 18px;
+  }
+
+  div {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-left: 120px;
+  }
+}
+
+.backButton {
+  background-color: rgba(45, 50, 62, 0.2882352941176471) !important;
+  color: white !important;
+
+  &:hover {
+    background-color: #2d323e !important;
+  }
+
+}
+
+.editButton {
+  background-color: rgba(45, 50, 62, 0.5882352941176471) !important;
+  color: white !important;
+  float: right;
+
+  &:hover {
+    background-color: #2d323e !important;
+  }
+}
+
+.addButton {
+  background-color: rgba(45, 50, 62, 0.5882352941176471) !important;
+  color: white !important;
+  float: right;
+
+  &:hover {
+    background-color: #2d323e !important;
+  }
+}
+
+[dir=rtl] .nav .nav-item .nav-link .nav-link-icon {
+  margin-left: 16px;
+  margin-right: 0;
+}
+
+[dir=rtl] .mr-16 {
+  margin-left: 16px !important;
+  margin-right: 0 !important;
+}
+
+[dir=rtl] .mr-8 {
+  margin-left: 8px !important;
+  margin-right: 0 !important;
+}
+
+[dir=rtl] .navbar-header {
+  direction: initial;
+}
+
+[dir=rtl] .colorDiv {
+  span {
+    float: right;
+    font-size: 18px;
+  }
+
+  div {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 120px;
+  }
+}
+
+[dir=rtl] .mirror {
+  transform: rotate(180deg);
+}
+
+[dir=rtl] .editButton {
+  float: left;
+}
+
+[dir=rtl] .addButton {
+  float: left;
+}
+
+
+[dir=rtl] .contentAr {
+  overflow-x: scroll;
+  height: 100%;
+
+  ngx-datatable {
+    width: fit-content;
+  }
+}
+
 .customHeader {
   min-height: 80px !important;
   height: 80px !important;

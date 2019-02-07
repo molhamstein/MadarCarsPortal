@@ -51,6 +51,13 @@ export class NavigationModel {
                 'url': '/predefineds'
             },
             {
+                'id': 'rate',
+                'title': 'RATE.TITLE',
+                'type': 'item',
+                'icon': 'star',
+                'url': '/rate'
+            },
+            {
                 'id': 'admin',
                 'title': 'ADMIN.ALLADMIN.TITLE',
                 'type': 'item',

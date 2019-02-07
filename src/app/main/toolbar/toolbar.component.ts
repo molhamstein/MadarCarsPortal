@@ -1,3 +1,4 @@
+import { AppDirectionService } from './../../app-direction.service';
 import { DialogService } from './../../core/services/dialog.service';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Rx'; // Angular 5
@@ -29,6 +30,7 @@ export class FuseToolbarComponent {
         private translate: TranslateService,
         private mainServ: MainService,
         private dialogServ: DialogService,
+        private appDirection: AppDirectionService,
 
 
     ) {
@@ -69,16 +71,24 @@ export class FuseToolbarComponent {
             {
                 'id': 'en',
                 'title': 'English',
-                'flag': 'us'
+                'flag': 'us',
+                'dir': 'ltr'
             },
             {
-                'id': 'tr',
-                'title': 'Turkish',
-                'flag': 'tr'
+                'id': 'ar',
+                'title': 'العربية',
+                'flag': 'ar',
+                'dir': 'rtl'
             }
         ];
+        if (this.mainServ.loginServ.getLang() == "ar") {
+            this.selectedLanguage = this.languages[1];
+            this.appDirection.switchDir(this.selectedLanguage.dir);
 
-        this.selectedLanguage = this.languages[0];
+        }
+        else
+            this.selectedLanguage = this.languages[0];
+
 
         router.events.subscribe(
             (event) => {
@@ -108,6 +118,11 @@ export class FuseToolbarComponent {
 
         // Use the selected language for translations
         this.translate.use(lang.id);
+
+        this.appDirection.switchDir(lang.dir);
+
+        this.mainServ.loginServ.setLang(lang.id);
+
     }
 
     logout() {

@@ -13,36 +13,6 @@ export const locale = {
         'SomeThingIsError': {
             'MESSAGE': 'some thing is error'
         },
-        'User': {
-            'USERS': {
-                'TITLE': 'Users',
-                'EMAIL': 'Email',
-                'TYPE': 'Type',
-                'USERNAME': 'User Name',
-                'PRIMARYCOLOR': 'Primary Color',
-                'SECONDARYCOLOR': 'Secondary Color',
-                'EDIT': 'Edit',
-                'ACTIVE': 'Active',
-                'DEACTIVE': 'Deactive',
-                'EDITPASSWORD': 'Edit Password'
-            },
-            'ADDEDITUSER': {
-                'TITLE': 'Add Users',
-                'EMAIL': 'Email',
-                'TYPE': 'Type',
-                'USERNAME': 'User Name',
-                'CONSUTANT': 'Consultant',
-                'MANAGER': 'Manager',
-                'SECRETARY': 'Secretary',
-                'ADMINSTRATOR': 'Adminstrator',
-                'RECEPTION': 'Reception',
-                'PRIMARYCOLOR': 'Primary Color',
-                'SECONDARYCOLOR': 'Secondary Color',
-                'ADD': 'Add',
-                'EDIT': 'Edit',
-                'PASSWORD': 'Password'
-            }
-        },
         "DRIVER": {
             "FIRSTNAME": "First Name",
             "LASTNAME": "Last Name",
@@ -55,7 +25,7 @@ export const locale = {
             "MALE": "Male",
             "FEMALE": "Female",
             "LANGUAGES": "languages",
-            "BIRTHDATE":"Birthdate",
+            "BIRTHDATE": "Birthdate",
             "ALLDRIVER": {
                 "TITLE": "Driver",
                 "ADDDRIVER": "Add Driver",
@@ -132,7 +102,7 @@ export const locale = {
             "NAME": "Name",
             "RATE": "Rate",
             "STATUS": "Status",
-            "NUMBEROFSEAT": "Number Of Seat",
+            "NUMBEROFSEAT": "Number Of Seats",
             "ISVIP": "Is Vip",
             "PRICEPERDAY": "City Tour Per Day",
             "PRICEONEWAY": "Airport Transportation One Way",
@@ -231,6 +201,7 @@ export const locale = {
             "DRIVERGENDER": "Driver Gender",
             "DRIVERPHONE": "Driver Phone",
             "TIME": "Time",
+            "RATE": "Rate",
             "START": "Start",
             "END": "End",
             "DAYSINCITY": "Days In City",
@@ -305,6 +276,21 @@ export const locale = {
                 "TITLE": "Edit Predefined Trip"
             }
         },
+        "RATE": {
+            "TITLE": "Rate",
+            "USER": "User",
+            "LOCATION": "Location",
+            "CAR": "Car",
+            "DRIVER": "Driver",
+            "STATUS": "Status",
+            "VALUE": "Value",
+            "RATEDATE": "Rate Date"
+        },
+        "MAKERATE": {
+            "RATE": "Rate",
+            "VALUE": "Value",
+            "TITLE": "Make Rate"
+        },
         'Nav': {
             'CALENDAR': 'Calender',
             'USERS': 'Users'
@@ -332,10 +318,10 @@ export const locale = {
             "DEACTIVEUSER": "Do you want to deactivate this user",
             "ACTIVEUSER": "Do you want to activate this user",
             "CHANGESTATUS": "Do you want to change status this trip",
-            "OVERFLOWDURATION":"sublocationdays more than holl duration",
-            "ERRORINDATE":"start date after end date",
-            "VALIDATIONDATE":"required field date",
-            "NOCARAVAILABLE":"No Car Available"
+            "OVERFLOWDURATION": "sublocationdays more than holl duration",
+            "ERRORINDATE": "start date after end date",
+            "VALIDATIONDATE": "required field date",
+            "NOCARAVAILABLE": "No Car Available"
         },
         "ERROR": {
             "LOGINFAILED": "Email or Password is wrong",
@@ -347,8 +333,8 @@ export const locale = {
             "456": "Car Not Found",
             "457": "Car Not Available"
         },
-        "TEXTNOTIFICATION":{
-            "HELP":"need help to choose trip"
+        "TEXTNOTIFICATION": {
+            "HELP": "need help to choose trip"
         }
     }
 };

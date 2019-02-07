@@ -205,7 +205,7 @@ export class editDriverComponent implements OnInit {
 
   inisilaize() {
     this.mainServ.loaderSer.display(true);
-    var filter = { "where": { "driverId": this.driverId } };
+    var filter = { "where": { "driverId": this.driverId }, "include": ['rate'] };
     // var filter = {}
     this.mainServ.APIServ.get("trips?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
       this.mainServ.loaderSer.display(false);
@@ -221,6 +221,22 @@ export class editDriverComponent implements OnInit {
       }
 
     });
+  }
+
+  isEnLang() {
+    if (this.mainServ.loginServ.getLang() == "ar")
+      return false
+    else
+      return true
+  }
+
+
+  rate(tripId) {
+    var mainThis = this
+    this.dialogServ.makeRate(tripId, function () {
+      mainThis.inisilaize()
+    });
+
   }
 
 

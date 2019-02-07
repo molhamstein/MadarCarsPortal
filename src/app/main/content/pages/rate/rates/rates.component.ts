@@ -11,11 +11,11 @@ import { DialogService } from '../../../../../core/services/dialog.service';
 
 
 @Component({
-  selector: 'app-trips',
-  templateUrl: './trips.component.html',
-  styleUrls: ['./trips.component.scss']
+  selector: 'app-rates',
+  templateUrl: './rates.component.html',
+  styleUrls: ['./rates.component.scss']
 })
-export class tripsComponent implements OnInit {
+export class ratesComponent implements OnInit {
   rows = [];
   count: number = 0;
   offset: number = 0;
@@ -96,23 +96,14 @@ export class tripsComponent implements OnInit {
     else
       return true
   }
-
-
-  rate(tripId) {
-    var mainThis = this
-    this.dialogServ.makeRate(tripId, function () {
-      mainThis.setPage(mainThis.offset - mainThis.rows.length, mainThis.limit, "refresh", mainThis.rows.length);
-    });
-
-  }
   end() {
     console.log("end")
     this.mainServ.loaderSer.display(true);
-    this.mainServ.APIServ.get("trips/getEnd?limit=" + this.limit).subscribe((data: any) => {
+    this.mainServ.APIServ.get("rates/getEnd?limit=" + this.limit).subscribe((data: any) => {
       this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.rows = data.data;
-        this.calcStartDateAndEnd();
+        // this.calcStartDateAndEnd();
         console.log(this.rows);
         this.offset = data.count
         // if (data.length < limit) {
@@ -130,10 +121,18 @@ export class tripsComponent implements OnInit {
   }
 
 
+  rate(tripId) {
+    var mainThis = this
+    this.dialogServ.makeRate(tripId, function () {
+      mainThis.setPage(mainThis.offset - mainThis.rows.length, mainThis.limit, "refresh", mainThis.rows.length);
+    });
+
+  }
+
   setPage(offset, limit, type: string = "defult", numRows: number = 0) {
     this.mainServ.loaderSer.display(true);
-    var filter = { "limit": limit, "skip": offset , "include": ['rate']}
-    this.mainServ.APIServ.get("trips?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+    var filter = { "limit": limit, "skip": offset }
+    this.mainServ.APIServ.get("rates?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
       this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         if (data.length > 0)
@@ -201,32 +200,7 @@ export class tripsComponent implements OnInit {
   }
 
 
-  goTo(pageName, id) {
-    let url = ""
-    if (pageName == 'view') {
-      url = 'view-trip/' + id
-    } else if (pageName == 'edit') {
-      url = 'edit-trip/' + id
-    } else if (pageName == 'bills') {
-      url = 'bill/' + id
-    }
 
-    this.mainServ.globalServ.goTo(url)
-  }
-
-  addUser() {
-    this.mainServ.globalServ.goTo("add-trip")
-  }
-
-
-  changeStatus(newStatus, id) {
-    var mainThis = this;
-    this.translateService.get('MESSAGES.CHANGESTATUS').subscribe((res: string) => {
-      this.dialogServ.confirmationMessage(res, "trips/changeStatus/" + id, { "newStatus": newStatus }, false, function () {
-        mainThis.inisilaize()
-      }, "put")
-    })
-  }
 
 
 

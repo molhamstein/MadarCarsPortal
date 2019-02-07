@@ -7,7 +7,7 @@
       <!-- <button style="background-color: rgba(7, 112, 7, 0.849);" mat-mini-fab class="mr-16"> -->
       <!-- </button> -->
       <span class="logo-text h1">
-        <mat-icon style="color : white;" (click)="back()" class="back">arrow_back_ios</mat-icon>
+        <mat-icon style="color : white;" (click)="back()" class="back mirror">arrow_back_ios</mat-icon>
         {{'USER.EDITUSER.TITLE' | translate}}
       </span>
     </div>
@@ -81,7 +81,7 @@
           <div fxFlex="60"></div>
         </div>
       </div>
-      <div style="float: right;">
+      <div style="float: rightt;">
         <button mat-button (click)="edit()" class="editButton" cdkFocusInitial [disabled]="editUserForm.invalid">{{'Global.EDIT'
           | translate}}</button>
       </div>
@@ -126,143 +126,198 @@
 
 
     </div>
+    <div class="contentAr">
 
-    <ngx-datatable class="material vertical-scroll" [rows]="filterRows" [columnMode]="'force'" [headerHeight]="50"
-      [rowHeight]="50" [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="true">
-      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="owner.name">
-        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-          <span>{{ 'TRIP.USER' | translate }}</span>
-        </ng-template>
+      <ngx-datatable class="material vertical-scroll" [rows]="filterRows" [headerHeight]="50"
+        [rowHeight]="50" [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="isEnLang()">
+        <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="owner.name">
+          <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+            <span>{{ 'TRIP.USER' | translate }}</span>
+          </ng-template>
 
-      </ngx-datatable-column>
-      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="location.nameEn">
-        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-          <span>{{ 'TRIP.LOCATION' | translate }}</span>
-        </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="location.nameEn">
+          <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+            <span>{{ 'TRIP.LOCATION' | translate }}</span>
+          </ng-template>
 
-      </ngx-datatable-column>
+        </ngx-datatable-column>
 
-      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="car.name">
-        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-          <span>{{ 'TRIP.CAR' | translate }}</span>
-        </ng-template>
-      </ngx-datatable-column>
+        <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="car.name">
+          <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+            <span>{{ 'TRIP.CAR' | translate }}</span>
+          </ng-template>
+        </ngx-datatable-column>
 
-      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="driver.username">
-        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-          <span>{{ 'TRIP.DRIVER' | translate }}</span>
-        </ng-template>
-      </ngx-datatable-column>
+        <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="driver.username">
+          <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+            <span>{{ 'TRIP.DRIVER' | translate }}</span>
+          </ng-template>
+        </ngx-datatable-column>
 
-      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="cost">
-        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-          <span>{{ 'TRIP.PRICE' | translate }}</span>
-        </ng-template>
-      </ngx-datatable-column>
+        <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="cost">
+          <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+            <span>{{ 'TRIP.PRICE' | translate }}</span>
+          </ng-template>
+        </ngx-datatable-column>
 
-
-      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="Status">
-        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-          <span>{{ 'TRIP.STATUS' | translate }}</span>
-        </ng-template>
-        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-          <mat-chip-list *ngIf="row.status=='active'">
-            <mat-chip style="background-color:green" selected="true">{{row.status}}</mat-chip>
-          </mat-chip-list>
-          <mat-chip-list *ngIf="row.status=='deactive'">
-            <mat-chip style="background-color:#ff6363" selected="true">{{row.status}}</mat-chip>
-          </mat-chip-list>
-          <mat-chip-list *ngIf="row.status!='deactive' && row.status!='active'">
-            <mat-chip style="background-color:#3b6fff" selected="true">{{row.status}}</mat-chip>
-          </mat-chip-list>
-        </ng-template>
-      </ngx-datatable-column>
+        <ngx-datatable-column [canAutoResize]="true" [width]="20" [flexGrow]="1" prop="">
+          <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+            <!-- <span>{{ 'DRIVER.GENDER' | translate }}</span> -->
+            <mat-icon style="color: rgba(66, 66, 66, 0.51)">flight_land</mat-icon>
 
 
-      <ngx-datatable-column [canAutoResize]="true" [width]="190" [flexGrow]="1" prop="start">
-        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-          <span>{{ 'TRIP.START' | translate }}</span>
-        </ng-template>
-        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-          <span>
-            {{row["start"] | date: 'dd-MM-yyyy hh:mm a'}}
-          </span>
-        </ng-template>
-      </ngx-datatable-column>
-
-      <ngx-datatable-column [canAutoResize]="true" [width]="190" [flexGrow]="1" prop="end">
-        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-          <span>{{ 'TRIP.END' | translate }}</span>
-        </ng-template>
-        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-          <span>
-            {{row["end"] | date: 'dd-MM-yyyy hh:mm a'}}
-          </span>
-        </ng-template>
-      </ngx-datatable-column>
+          </ng-template>
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            <mat-icon style="color: #13c43f" *ngIf="row.fromAirport==true">check_circle_outline</mat-icon>
+            <mat-icon style="color: #c22048" *ngIf="row.fromAirport==false">highlight_off</mat-icon>
+          </ng-template>
+        </ngx-datatable-column>
 
 
+        <ngx-datatable-column [canAutoResize]="true" [width]="20" [flexGrow]="1" prop="">
+          <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+            <!-- <span>{{ 'DRIVER.GENDER' | translate }}</span> -->
+            <mat-icon style="color: rgba(66, 66, 66, 0.51)">directions_car</mat-icon>
 
 
-      <ngx-datatable-column [width]="260" name="id">
-        <ng-template let-column="column" ngx-datatable-header-template>
-          <div class="table-header-font">
+          </ng-template>
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            <mat-icon style="color: #13c43f" *ngIf="row.inCity==true">check_circle_outline</mat-icon>
+            <mat-icon style="color: #c22048" *ngIf="row.inCity==false">highlight_off</mat-icon>
+          </ng-template>
+        </ngx-datatable-column>
 
-          </div>
-        </ng-template>
 
-        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-          <button mat-mini-fab *ngIf="row.status=='finished'" class="mr-16" style="background-color: #8a8a8a;" (click)="goTo('bills',row['id'])">
-            <mat-icon style="color : white;">subtitles</mat-icon>
-          </button>
+        <ngx-datatable-column [canAutoResize]="true" [width]="20" [flexGrow]="1" prop="">
+          <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+            <!-- <span>{{ 'DRIVER.GENDER' | translate }}</span> -->
+            <mat-icon style="color: rgba(66, 66, 66, 0.51)">flight_takeoff</mat-icon>
 
-          <button mat-mini-fab class="mr-16" (click)="goTo('edit',row['id'])" style="background-color: rgba(20, 160, 202, 0.911);">
-            <mat-icon style="color : white;">edit</mat-icon>
-          </button>
-          <!-- <button mat-mini-fab *ngIf="row.status=='active'" class="mr-16" (click)="deactivate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
+
+          </ng-template>
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            <mat-icon style="color: #13c43f" *ngIf="row.toAirport==true">check_circle_outline</mat-icon>
+            <mat-icon style="color: #c22048" *ngIf="row.toAirport==false">highlight_off</mat-icon>
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column [canAutoResize]="false" [flexGrow]="1" prop="rate">
+          <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+            <span>{{ 'TRIP.RATE' | translate }}</span>
+          </ng-template>
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            <span>{{row['rate']!=null ? row['rate']['value'] : '-'}}</span>
+          </ng-template>
+        </ngx-datatable-column>
+
+
+        <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="Status">
+          <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+            <span>{{ 'TRIP.STATUS' | translate }}</span>
+          </ng-template>
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            <mat-chip-list *ngIf="row.status=='active'">
+              <mat-chip style="background-color:green" selected="true">{{row.status}}</mat-chip>
+            </mat-chip-list>
+            <mat-chip-list *ngIf="row.status=='deactive'">
+              <mat-chip style="background-color:#ff6363" selected="true">{{row.status}}</mat-chip>
+            </mat-chip-list>
+            <mat-chip-list *ngIf="row.status!='deactive' && row.status!='active'">
+              <mat-chip style="background-color:#3b6fff" selected="true">{{row.status}}</mat-chip>
+            </mat-chip-list>
+          </ng-template>
+        </ngx-datatable-column>
+
+
+        <ngx-datatable-column [canAutoResize]="true" [width]="190" [flexGrow]="1" prop="start">
+          <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+            <span>{{ 'TRIP.START' | translate }}</span>
+          </ng-template>
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            <span>
+              {{row["start"] | date: 'dd-MM-yyyy HH:mm'}}
+            </span>
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column [canAutoResize]="true" [width]="190" [flexGrow]="1" prop="end">
+          <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+            <span>{{ 'TRIP.END' | translate }}</span>
+          </ng-template>
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            <span>
+              {{row["end"] | date: 'dd-MM-yyyy HH:mm'}}
+            </span>
+          </ng-template>
+        </ngx-datatable-column>
+
+
+
+
+        <ngx-datatable-column [width]="260" name="id">
+          <ng-template let-column="column" ngx-datatable-header-template>
+            <div class="table-header-font">
+
+            </div>
+          </ng-template>
+
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            <button mat-mini-fab *ngIf="row.status=='finished'" class="mr-16" style="background-color: #8a8a8a;"
+              (click)="goTo('bills',row['id'])">
+              <mat-icon style="color : white;">subtitles</mat-icon>
+            </button>
+
+            <button mat-mini-fab class="mr-16" (click)="goTo('edit',row['id'])" style="background-color: rgba(20, 160, 202, 0.911);">
+              <mat-icon style="color : white;">edit</mat-icon>
+            </button>
+            <!-- <button mat-mini-fab *ngIf="row.status=='active'" class="mr-16" (click)="deactivate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
               <mat-icon style="color : white;">delete</mat-icon>
             </button>
             <button mat-mini-fab *ngIf="row.status=='deactive'" class="mr-16" (click)="activate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
               <mat-icon style="color : white;">replay</mat-icon>
             </button> -->
-          <button mat-mini-fab class="mr-16" style="background-color: rgba(7, 112, 7, 0.849);" (click)="goTo('view',row['id'])">
-            <mat-icon style="color : white;">visibility</mat-icon>
-          </button>
-
-
-          <button mat-icon-button [matMenuTriggerFor]="menu">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item *ngIf="row.status!='deactive'" (click)="changeStatus('deactive',row.id)">
-              <mat-icon>cancel</mat-icon>
-              <span>{{'TRIP.DEACTIVE' | translate}}</span>
+            <button mat-mini-fab class="mr-16" style="background-color: rgba(7, 112, 7, 0.849);" (click)="goTo('view',row['id'])">
+              <mat-icon style="color : white;">visibility</mat-icon>
             </button>
-            <button mat-menu-item *ngIf="row.status!='approved'" (click)="changeStatus('approved',row.id)">
-              <mat-icon>more_horiz</mat-icon>
-              <span>{{'TRIP.APPROVED' | translate}}</span>
+
+            <button mat-mini-fab class="mr-16" style="background-color: darkgoldenrod;" (click)="rate(row['id'])">
+              <mat-icon style="color : white;">star</mat-icon>
             </button>
-            <button mat-menu-item *ngIf="row.status!='pending'" (click)="changeStatus('pending',row.id)">
-              <mat-icon>group</mat-icon>
-              <span>{{'TRIP.PENDING' | translate}}</span>
+
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>more_vert</mat-icon>
             </button>
-            <button mat-menu-item *ngIf="row.status!='active'" (click)="changeStatus('active',row.id)">
-              <mat-icon>check</mat-icon>
-              <span>{{'TRIP.ACTIVE' | translate}}</span>
-            </button>
-            <button mat-menu-item *ngIf="row.status!='finished'" (click)="changeStatus('finished',row.id)">
-              <mat-icon>check</mat-icon>
-              <span>{{'TRIP.FINISHED' | translate}}</span>
-            </button>
-          </mat-menu>
-        </ng-template>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item *ngIf="row.status!='deactive'" (click)="changeStatus('deactive',row.id)">
+                <mat-icon>cancel</mat-icon>
+                <span>{{'TRIP.DEACTIVE' | translate}}</span>
+              </button>
+              <button mat-menu-item *ngIf="row.status!='approved'" (click)="changeStatus('approved',row.id)">
+                <mat-icon>more_horiz</mat-icon>
+                <span>{{'TRIP.APPROVED' | translate}}</span>
+              </button>
+              <button mat-menu-item *ngIf="row.status!='pending'" (click)="changeStatus('pending',row.id)">
+                <mat-icon>group</mat-icon>
+                <span>{{'TRIP.PENDING' | translate}}</span>
+              </button>
+              <button mat-menu-item *ngIf="row.status!='active'" (click)="changeStatus('active',row.id)">
+                <mat-icon>check</mat-icon>
+                <span>{{'TRIP.ACTIVE' | translate}}</span>
+              </button>
+              <button mat-menu-item *ngIf="row.status!='finished'" (click)="changeStatus('finished',row.id)">
+                <mat-icon>check</mat-icon>
+                <span>{{'TRIP.FINISHED' | translate}}</span>
+              </button>
+            </mat-menu>
+          </ng-template>
 
-      </ngx-datatable-column>
+        </ngx-datatable-column>
 
 
 
-    </ngx-datatable>
-
+      </ngx-datatable>
+    </div>
   </div>
 
 </div>

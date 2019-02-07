@@ -5,7 +5,7 @@
 
     <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="column" fxLayoutAlign.gt-xs="center start">
       <span class="logo-text h1">
-        <mat-icon style="color : white;" (click)="back()" class="back">arrow_back_ios</mat-icon>
+        <mat-icon style="color : white;" (click)="back()" class="back mirror">arrow_back_ios</mat-icon>
         {{locationName}}
       </span>
     </div>
@@ -49,15 +49,15 @@
         <div class="details">
           <div class="element">
             <h1>{{'TRIP.CREATEDAT' | translate}}</h1>
-            <h4>{{trip['createdAt'] | date: 'dd-MM-yyyy hh:mm a'}}</h4>
+            <h4>{{trip['createdAt'] | date: 'dd-MM-yyyy HH:mm'}}</h4>
           </div>
           <div class="element">
             <h1>{{'TRIP.START' | translate}}</h1>
-            <h4>{{trip['start'] | date: 'dd-MM-yyyy hh:mm a'}}</h4>
+            <h4>{{trip['start'] | date: 'dd-MM-yyyy HH:mm'}}</h4>
           </div>
           <div class="element">
             <h1>{{'TRIP.END' | translate}}</h1>
-            <h4>{{trip['end'] | date: 'dd-MM-yyyy hh:mm a'}}</h4>
+            <h4>{{trip['end'] | date: 'dd-MM-yyyy HH:mm'}}</h4>
           </div>
         </div>
       </div>

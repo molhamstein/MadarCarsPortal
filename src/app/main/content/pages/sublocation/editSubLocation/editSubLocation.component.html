@@ -7,7 +7,7 @@
       <!-- <button style="background-color: rgba(7, 112, 7, 0.849);" mat-mini-fab class="mr-16"> -->
       <!-- </button> -->
       <span class="logo-text h1">
-        <mat-icon style="color : white;" (click)="back()" class="back">arrow_back_ios</mat-icon>
+        <mat-icon style="color : white;" (click)="back()" class="back mirror">arrow_back_ios</mat-icon>
         {{'SUBLOCATION.EDITSUBLOCATION.TITLE' | translate}}
       </span>
     </div>
@@ -71,23 +71,23 @@
           </div>
           <div fxFlex="60">
 
-            <div class="p-24">
-              <span style="float: left;font-size: 18px;"> {{ 'SUBLOCATION.FIRSTCOLOR' | translate }}</span>
-              <div style="width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;" [style.background-color]="primaryColor"
-                [cpPosition]="'bottom'" [cpPositionOffset]="'50%'" [cpPositionRelativeToArrow]="true" [(colorPicker)]="primaryColor"></div>
+            <div class="p-24 colorDiv">
+              <span> {{ 'SUBLOCATION.FIRSTCOLOR' | translate }}</span>
+              <div [style.background-color]="primaryColor" [cpPosition]="'bottom'" [cpPositionOffset]="'50%'"
+                [cpPositionRelativeToArrow]="true" [(colorPicker)]="primaryColor"></div>
             </div>
 
-            <div class="p-24">
-              <span style="float: left;font-size: 18px;"> {{ 'SUBLOCATION.SECONDCOLOR' | translate }}</span>
-              <div style="width: 25px;height: 25px;border-radius: 50%;margin-left: 120px;" [style.background-color]="secondryColor"
-                [cpPosition]="'bottom'" [cpPositionOffset]="'50%'" [cpPositionRelativeToArrow]="true" [(colorPicker)]="secondryColor"></div>
+            <div class="p-24 colorDiv">
+              <span> {{ 'SUBLOCATION.SECONDCOLOR' | translate }}</span>
+              <div [style.background-color]="secondryColor" [cpPosition]="'bottom'" [cpPositionOffset]="'50%'"
+                [cpPositionRelativeToArrow]="true" [(colorPicker)]="secondryColor"></div>
             </div>
           </div>
 
         </div>
       </div>
 
-      <div style="float: right;">
+      <div style="float: rightt;">
         <button mat-button (click)="edit()" class="editButton" cdkFocusInitial [disabled]="editSubLocationForm.invalid">{{'Global.EDIT'
           | translate}}</button>
       </div>

@@ -5,6 +5,7 @@ import { FuseConfigService } from '../core/services/config.service';
 import { Platform } from '@angular/cdk/platform';
 import { DOCUMENT } from '@angular/common';
 import { locale as english } from './languageFiles/en';
+import { locale as arabic } from './languageFiles/ar';
 
 @Component({
     selector: 'fuse-main',
@@ -38,7 +39,7 @@ export class FuseMainComponent implements OnInit, OnDestroy {
         if (this.platform.ANDROID || this.platform.IOS) {
             this.document.body.className += ' is-mobile';
         }
-        this.translationLoader.loadTranslations(english);
+        this.translationLoader.loadTranslations(english,arabic);
     }
 
     ngOnInit() {

@@ -1,3 +1,4 @@
+import { AppDirectionService } from './app-direction.service';
 import { MyResetPasswordComponent } from './main/dialogs/my-reset-password/my-reset-password.component';
 import { AuthGuardService } from './core/services/auth-guard-service.service';
 import { ConfirmMessageComponent } from './main/dialogs/confirm-message/confirm-message.component';
@@ -64,11 +65,19 @@ import { addAdminComponent } from './main/content/pages/admin/addAdmin/addAdmin.
 import { editTripComponent } from './main/content/pages/trip/editTrip/editTrip.component';
 import { TimeComponent } from './main/dialogs/time/time.component';
 import { editAdminComponent } from './main/content/pages/admin/editAdmin/editAdmin.component';
+import { ratesComponent } from './main/content/pages/rate/rates/rates.component';
+import { MakeRateComponent } from './main/dialogs/make-rate/make-rate.component';
 
 
 
 const appRoutes: Routes = [
 
+    {
+        path: 'rate',
+        component: ratesComponent,
+        canActivate: [AuthGuardService]
+
+    },
     {
         path: 'predefineds',
         component: predefindTripsComponent,
@@ -300,8 +309,11 @@ const appRoutes: Routes = [
         predefindTripsComponent, addPredefindTripComponent, editPredefindTripComponent,
         // // Admins
         adminsComponent, addAdminComponent, editAdminComponent,
+        // // Rates
+        ratesComponent,
+
         // dialogs
-        SomeThingIsErrorComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent, TimeComponent
+        SomeThingIsErrorComponent, MakeRateComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent, TimeComponent
     ],
     imports: [
         BrowserModule,
@@ -329,12 +341,13 @@ const appRoutes: Routes = [
 
 
     ],
-    entryComponents: [SomeThingIsErrorComponent, TimeComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent],
+    entryComponents: [SomeThingIsErrorComponent, MakeRateComponent, TimeComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent],
     providers: [
         FuseSplashScreenService,
         FuseConfigService,
         FuseNavigationService,
         MainService,
+        AppDirectionService,
         LoaderServicesService,
         CallApiService,
         LoginService,

@@ -60,13 +60,13 @@
       </ngx-datatable-column>
 
 
-      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="rate">
+      <ngx-datatable-column [canAutoResize]="true" [width]="70" [flexGrow]="1" prop="rate">
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
           <span>{{ 'CAR.RATE' | translate }}</span>
         </ng-template>
 
       </ngx-datatable-column>
-      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="numOfSeat">
+      <ngx-datatable-column [canAutoResize]="true" [width]="120" [flexGrow]="1" prop="numOfSeat">
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
           <span>{{ 'CAR.NUMBEROFSEAT' | translate }}</span>
         </ng-template>
@@ -93,7 +93,7 @@
     </ngx-datatable-column> -->
 
 
-      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="Status">
+      <ngx-datatable-column [canAutoResize]="true" [width]="120" [flexGrow]="1" prop="Status">
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
           <span>{{ 'CAR.STATUS' | translate }}</span>
         </ng-template>
@@ -107,7 +107,7 @@
         </ng-template>
       </ngx-datatable-column>
 
-      <ngx-datatable-column [width]="200" name="id">
+      <ngx-datatable-column [width]="140" name="id">
         <ng-template let-column="column" ngx-datatable-header-template>
           <div class="table-header-font">
 

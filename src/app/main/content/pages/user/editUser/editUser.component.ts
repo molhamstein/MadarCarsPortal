@@ -53,6 +53,13 @@ export class editUserComponent implements OnInit {
   }
 
 
+  rate(tripId) {
+    var mainThis = this
+    this.dialogServ.makeRate(tripId, function () {
+      mainThis.inisilaize()
+    });
+
+  }
 
 
   ngOnInit() {
@@ -123,9 +130,16 @@ export class editUserComponent implements OnInit {
     }
   }
 
+  isEnLang() {
+    if (this.mainServ.loginServ.getLang() == "ar")
+      return false
+    else
+      return true
+  }
+
   inisilaize() {
     this.mainServ.loaderSer.display(true);
-    var filter = { "where": { "ownerId": this.userId } };
+    var filter = { "where": { "ownerId": this.userId }, "include": ['rate'] };
     // var filter = {}
     this.mainServ.APIServ.get("trips?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
       this.mainServ.loaderSer.display(false);
