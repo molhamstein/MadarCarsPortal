@@ -1,3 +1,4 @@
+import { AddVacationComponent } from './main/dialogs/add-vacation/add-vacation.component';
 import { AppDirectionService } from './app-direction.service';
 import { MyResetPasswordComponent } from './main/dialogs/my-reset-password/my-reset-password.component';
 import { AuthGuardService } from './core/services/auth-guard-service.service';
@@ -67,10 +68,33 @@ import { TimeComponent } from './main/dialogs/time/time.component';
 import { editAdminComponent } from './main/content/pages/admin/editAdmin/editAdmin.component';
 import { ratesComponent } from './main/content/pages/rate/rates/rates.component';
 import { MakeRateComponent } from './main/dialogs/make-rate/make-rate.component';
+import { agenciesComponent } from './main/content/pages/agency/agency/agencies.component';
+import { addAgencyComponent } from './main/content/pages/agency/addAgency/addAgency.component';
+import { editAgencyComponent } from './main/content/pages/agency/editAgency/editAgency.component';
 
 
 
 const appRoutes: Routes = [
+
+    {
+        path: 'agency',
+        component: agenciesComponent,
+        canActivate: [AuthGuardService]
+
+    },
+    {
+        path: 'add-agency',
+        component: addAgencyComponent,
+        canActivate: [AuthGuardService]
+
+    },
+    {
+        path: 'edit-agency/:id',
+        component: editAgencyComponent,
+        canActivate: [AuthGuardService]
+
+    },
+
 
     {
         path: 'rate',
@@ -311,9 +335,11 @@ const appRoutes: Routes = [
         adminsComponent, addAdminComponent, editAdminComponent,
         // // Rates
         ratesComponent,
+        // // Agency
+        agenciesComponent, addAgencyComponent, editAgencyComponent,
 
         // dialogs
-        SomeThingIsErrorComponent, MakeRateComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent, TimeComponent
+        SomeThingIsErrorComponent, AddVacationComponent, MakeRateComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent, TimeComponent
     ],
     imports: [
         BrowserModule,
@@ -341,7 +367,7 @@ const appRoutes: Routes = [
 
 
     ],
-    entryComponents: [SomeThingIsErrorComponent, MakeRateComponent, TimeComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent],
+    entryComponents: [SomeThingIsErrorComponent, AddVacationComponent, MakeRateComponent, TimeComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent],
     providers: [
         FuseSplashScreenService,
         FuseConfigService,

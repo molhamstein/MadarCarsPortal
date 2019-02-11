@@ -1,3 +1,4 @@
+import { AddVacationComponent } from './../../main/dialogs/add-vacation/add-vacation.component';
 import { MakeRateComponent } from './../../main/dialogs/make-rate/make-rate.component';
 import { MainService } from './main.service';
 import { MatDialog } from '@angular/material';
@@ -67,6 +68,19 @@ export class DialogService {
       else {
       }
 
+    });
+  }
+
+  addVacation(carId, callback) {
+    let dialogRef = this.dialog.open(AddVacationComponent, {
+      width: '550px',
+      data: { "carId": carId }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        callback()
+      }
     });
   }
 

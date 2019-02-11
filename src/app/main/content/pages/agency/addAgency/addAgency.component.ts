@@ -11,13 +11,14 @@ import { locale as english } from '../../../../languageFiles/en';
 
 
 @Component({
-  selector: 'app-addDriver',
-  templateUrl: './addDriver.component.html',
-  styleUrls: ['./addDriver.component.scss']
+  selector: 'app-addAgency',
+  templateUrl: './addAgency.component.html',
+  styleUrls: ['./addAgency.component.scss']
 })
-export class addDriverComponent implements OnInit {
-  addDriverForm;
+export class addAgencyComponent implements OnInit {
+  addAgencyForm;
   imageOnLoad = []
+  isoCode = []
   media;
   imaageUrl = this.mainServ.getDefultImage();
   images = [];
@@ -90,40 +91,25 @@ export class addDriverComponent implements OnInit {
 
 
   ngOnInit() {
-    this.addDriverForm = new FormGroup({
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
+    this.isoCode = this.mainServ.globalServ.getIsoCode();
+    this.addAgencyForm = new FormGroup({
+      nameEn: new FormControl('', Validators.required),
+      nameAr: new FormControl('', Validators.required),
+      nameTr: new FormControl(''),
       phoneNumber: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
-      gender: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
-      driverLangs: new FormControl('', Validators.required),
-      username: new FormControl('', Validators.required),
-      birthdate: new FormControl('', Validators.required),
-
+      ISOCode: new FormControl('', Validators.required)
     });
-    this.mainServ.loaderSer.display(true);
-
-    this.mainServ.APIServ.get("languages").subscribe((data: any) => {
-      this.mainServ.loaderSer.display(false);
-      if (this.mainServ.APIServ.getErrorCode() == 0) {
-        this.listLanguages = data
-      }
-      else if (this.mainServ.APIServ.getErrorCode() != 401) {
-        this.mainServ.APIServ.setErrorCode(0);
-        this.dialogServ.someThingIsError();
-      }
-    })
-
   }
 
 
   add() {
-    var data = this.addDriverForm.value;
+    var data = this.addAgencyForm.value;
     data['mediaId'] = this.media.id;
     this.mainServ.loaderSer.display(true);
 
-    this.mainServ.APIServ.post("drivers", data).subscribe((data: any) => {
+    this.mainServ.APIServ.post("agencies", data).subscribe((data: any) => {
       this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.back();
@@ -139,7 +125,7 @@ export class addDriverComponent implements OnInit {
   }
 
   back() {
-    this.mainServ.globalServ.goTo('drivers')
+    this.mainServ.globalServ.goTo('agency')
   }
 
 

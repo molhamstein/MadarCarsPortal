@@ -97,11 +97,19 @@ export const locale = {
                 "TITLE": "Edit Brand"
             }
         },
+        "ADDVACATION":{
+            "STARTDATE":"Start Date",
+            "ENDDATE":"End Date",
+            "STARTTIME":"Start Time",
+            "ENDTIME":"End Time",
+            "TITLE":"Add Vacation"
+        },
         "CAR": {
             "BRAND": "Brand",
             "NAME": "Name",
             "RATE": "Rate",
             "STATUS": "Status",
+            "ADDVACATION":"Add Vacation",
             "NUMBEROFSEAT": "Number Of Seats",
             "ISVIP": "Is Vip",
             "PRICEPERDAY": "City Tour Per Day",
@@ -131,6 +139,27 @@ export const locale = {
             },
             "EDITCAR": {
                 "TITLE": "Edit Car"
+            }
+        },
+        "AGENCY": {
+            "STATUS": "Status",
+            "NAMEEN": "English Name",
+            "NAMEAR": "Arabic Name",
+            "NAMETR": "Turkish Name",
+            "EMAIL": "Email",
+            "PHONENUMBER": "Phone Number",
+            "ISOCODE": "Nationality",
+            'PASSWORD': 'Password',
+            "ALLAGENCY": {
+                "TITLE": "Agency",
+                "ADDAGENCY": "Add Agency",
+                "SEARCH": "Search for Agency"
+            },
+            "ADDAGENCY": {
+                "TITLE": "Add Agency",
+            },
+            "EDITAGENCY": {
+                "TITLE": "Edit Agency"
             }
         },
         "SUBLOCATION": {
@@ -196,6 +225,7 @@ export const locale = {
             "SUBLOCATIONS": "Nearby Citys",
             "FROM": "From",
             "TO": "To",
+            "NOTE": "Note",
             "DRIVER": "Driver",
             "DRIVERNAME": "Driver Name",
             "DRIVERGENDER": "Driver Gender",
@@ -299,6 +329,7 @@ export const locale = {
             'ERRORFIELDREQUIRED': 'this field is required',
             'ERRORVALIDEMAIL': 'Please enter a valid email address',
             'OK': "Ok",
+            "CREATEDAT":"Create At",
             "ERROR": 'Error Message',
             "CONFIRM": 'Confirm Message',
             "UPLOADIMAGE": "Upload Image",
@@ -325,6 +356,7 @@ export const locale = {
         },
         "ERROR": {
             "LOGINFAILED": "Email or Password is wrong",
+            "422": "Email is used",
             "451": "Username or Phonenumber is used",
             "452": "Not Found",
             "453": "Already is deactive",

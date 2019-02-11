@@ -1,0 +1,54 @@
+<div class="dialog-content-wrapper">
+  <mat-toolbar matDialogTitle class="mat-accent m-0">
+    <div style="padding-top: 7px;" fxFlex fxLayout="row" fxLayoutAlign="space-between center">
+      <span class="title dialog-title">{{ 'ADDVACATION.TITLE' | translate }}</span>
+      <button style="float: right;" mat-button class="mat-icon-button" (click)="dialogRef.close()" aria-label="Close dialog">
+                <mat-icon>close</mat-icon>
+            </button>
+    </div>
+  </mat-toolbar>
+
+  <div mat-dialog-content class="p-24 m-0" fusePerfectScrollbar>
+    <form name="eventForm" [formGroup]="eventForm" class="event-form">
+
+      <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center" fxFlex>
+        <mat-form-field fxFlex="45">
+          <input matInput [matDatepicker]="startDatePicker" (focus)="startDatePicker.open()" placeholder="{{ 'ADDVACATION.STARTDATE' | translate }}" name="end" formControlName="start">
+          <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #startDatePicker ></mat-datepicker>
+          <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+        </mat-form-field>
+        <mat-form-field fxFlex="45">
+          <input matInput [matTimepicker]="startPicker" placeholder="{{ 'ADDVACATION.STARTTIME' | translate }}">
+          <mat-timepicker-toggle matSuffix [for]="startPicker"></mat-timepicker-toggle>
+          <mat-timepicker #startPicker color="primary"></mat-timepicker>
+        </mat-form-field>
+        <mat-form-field fxFlex="45">
+          <input matInput [matDatepicker]="endDatePicker" (focus)="endDatePicker.open()" placeholder="{{ 'ADDVACATION.ENDDATE' | translate }}" name="end" formControlName="end">
+          <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #endDatePicker ></mat-datepicker>
+          <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="45">
+          <input matInput [matTimepicker]="endPicker" placeholder="{{ 'ADDVACATION.ENDTIME' | translate }}">
+          <mat-timepicker-toggle  matSuffix [for]="endPicker"></mat-timepicker-toggle>
+          <mat-timepicker #endPicker color="primary"></mat-timepicker>
+        </mat-form-field>
+
+      </div>
+    </form>
+
+  </div>
+
+  <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="space-between center">
+
+    <button mat-raised-button class="save-button mat-accent" (click)="save(startPicker,endPicker)" [disabled]="eventForm.invalid" aria-label="SAVE">
+            {{ 'Global.ADD' | translate }}
+        </button>
+    <!-- <button mat-raised-button class="save-button mat-accent" (click)="save(false,startPicker,endPicker)" [disabled]="eventForm.invalid" aria-label="SAVE">
+            {{ 'Dialog.Add_Slotes.SAVE' | translate }}
+        </button> -->
+
+  </div>
+</div>

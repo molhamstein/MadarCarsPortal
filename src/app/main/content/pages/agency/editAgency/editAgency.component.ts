@@ -12,20 +12,19 @@ import { locale as english } from '../../../../languageFiles/en';
 
 
 @Component({
-  selector: 'app-editDriver',
-  templateUrl: './editDriver.component.html',
-  styleUrls: ['./editDriver.component.scss']
+  selector: 'app-editAgency',
+  templateUrl: './editAgency.component.html',
+  styleUrls: ['./editAgency.component.scss']
 })
-export class editDriverComponent implements OnInit {
-  editDriverForm;
+export class editAgencyComponent implements OnInit {
+  editAgencyForm;
   imageOnLoad = []
   media;
   imaageUrl = this.mainServ.getDefultImage();
   images = [];
-  listLanguages = [];
-  driverId;
-  driver;
-
+  agencyId;
+  agency;
+  isoCode = [];
   // trip
   filterValue = ""
   allRows = [];
@@ -105,43 +104,37 @@ export class editDriverComponent implements OnInit {
 
 
   ngOnInit() {
-    this.editDriverForm = new FormGroup({
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
+    this.isoCode = this.mainServ.globalServ.getIsoCode();
+    this.editAgencyForm = new FormGroup({
+      nameEn: new FormControl('', Validators.required),
+      nameAr: new FormControl('', Validators.required),
+      nameTr: new FormControl(''),
       phoneNumber: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
-      gender: new FormControl('', Validators.required),
-      driverLangs: new FormControl('', Validators.required),
-      username: new FormControl('', Validators.required),
-      birthdate: new FormControl('', Validators.required),
+      ISOCode: new FormControl('', Validators.required)
     });
     var mainthis = this;
     this.getParams("id", function (id) {
-      mainthis.driverId = id;
+      mainthis.agencyId = id;
       mainthis.mainServ.loaderSer.display(true);
 
-      mainthis.mainServ.APIServ.get("drivers/" + mainthis.driverId).subscribe((data: any) => {
+      mainthis.mainServ.APIServ.get("agencies/" + mainthis.agencyId).subscribe((data: any) => {
         mainthis.mainServ.loaderSer.display(false);
 
         if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
-          mainthis.driver = data;
+          mainthis.agency = data;
           var langId = [];
-          data.driverLangs.forEach(element => {
-            langId.push(element.landuageId)
-          });
           mainthis.media = data.media;
           mainthis.images[0] = data.media
-          mainthis.editDriverForm = new FormGroup({
-            firstName: new FormControl(data.firstName, Validators.required),
-            lastName: new FormControl(data.lastName, Validators.required),
+          mainthis.editAgencyForm = new FormGroup({
+            nameEn: new FormControl(data.nameEn, Validators.required),
+            nameAr: new FormControl(data.nameAr, Validators.required),
+            nameTr: new FormControl(data.nameTr),
             phoneNumber: new FormControl(data.phoneNumber, Validators.required),
             email: new FormControl(data.email, [Validators.required, Validators.email]),
-            gender: new FormControl(data.gender, Validators.required),
-            driverLangs: new FormControl(langId, Validators.required),
-            username: new FormControl(data.username, Validators.required),
-            birthdate: new FormControl(data.birthdate, Validators.required),
+            ISOCode: new FormControl(data.ISOCode, Validators.required)
           });
-          mainthis.inisilaize();
+          // mainthis.inisilaize();
 
         }
         else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
@@ -149,19 +142,6 @@ export class editDriverComponent implements OnInit {
           mainthis.dialogServ.someThingIsError();
         }
       })
-    })
-
-    this.mainServ.loaderSer.display(true);
-
-    this.mainServ.APIServ.get("languages").subscribe((data: any) => {
-      this.mainServ.loaderSer.display(false);
-      if (this.mainServ.APIServ.getErrorCode() == 0) {
-        this.listLanguages = data
-      }
-      else if (this.mainServ.APIServ.getErrorCode() != 401) {
-        this.mainServ.APIServ.setErrorCode(0);
-        this.dialogServ.someThingIsError();
-      }
     })
 
   }
@@ -203,48 +183,48 @@ export class editDriverComponent implements OnInit {
     }
   }
 
-  inisilaize() {
-    this.mainServ.loaderSer.display(true);
-    var filter = { "where": { "driverId": this.driverId }, "include": ['rate'] };
-    // var filter = {}
-    this.mainServ.APIServ.get("trips?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
-      this.mainServ.loaderSer.display(false);
-      if (this.mainServ.APIServ.getErrorCode() == 0) {
+  // inisilaize() {
+  //   this.mainServ.loaderSer.display(true);
+  //   var filter = { "where": { "driverId": this.driverId }, "include": ['rate'] };
+  //   // var filter = {}
+  //   this.mainServ.APIServ.get("trips?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+  //     this.mainServ.loaderSer.display(false);
+  //     if (this.mainServ.APIServ.getErrorCode() == 0) {
 
-        this.allRows = data;
-        this.calcStartDateAndEnd();
-        this.filterDatatable();
-      }
-      else if (this.mainServ.APIServ.getErrorCode() != 401) {
-        this.mainServ.APIServ.setErrorCode(0);
-        this.dialogServ.someThingIsError();
-      }
+  //       this.allRows = data;
+  //       this.calcStartDateAndEnd();
+  //       this.filterDatatable();
+  //     }
+  //     else if (this.mainServ.APIServ.getErrorCode() != 401) {
+  //       this.mainServ.APIServ.setErrorCode(0);
+  //       this.dialogServ.someThingIsError();
+  //     }
 
-    });
-  }
+  //   });
+  // }
 
-  isEnLang() {
-    if (this.mainServ.loginServ.getLang() == "ar")
-      return false
-    else
-      return true
-  }
+  // isEnLang() {
+  //   if (this.mainServ.loginServ.getLang() == "ar")
+  //     return false
+  //   else
+  //     return true
+  // }
 
 
-  rate(tripId) {
-    var mainThis = this
-    this.dialogServ.makeRate(tripId, function () {
-      mainThis.inisilaize()
-    });
+  // rate(tripId) {
+  //   var mainThis = this
+  //   this.dialogServ.makeRate(tripId, function () {
+  //     mainThis.inisilaize()
+  //   });
 
-  }
+  // }
 
 
   edit() {
-    var data = this.editDriverForm.value;
+    var data = this.editAgencyForm.value;
     data['mediaId'] = this.media.id;
     this.mainServ.loaderSer.display(true);
-    this.mainServ.APIServ.put("drivers/" + this.driverId, data).subscribe((data: any) => {
+    this.mainServ.APIServ.put("agencies/" + this.agencyId, data).subscribe((data: any) => {
       this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.back();
@@ -260,61 +240,61 @@ export class editDriverComponent implements OnInit {
   }
 
   back() {
-    this.mainServ.globalServ.goTo('drivers')
+    this.mainServ.globalServ.goTo('agency')
   }
 
 
-  filterDatatable() {
-    if (this.filterValue == null)
-      this.filterRows = this.allRows
-    else {
-      let val = this.filterValue.toLowerCase();
-      let keys = this.columns;
+  // filterDatatable() {
+  //   if (this.filterValue == null)
+  //     this.filterRows = this.allRows
+  //   else {
+  //     let val = this.filterValue.toLowerCase();
+  //     let keys = this.columns;
 
-      let colsAmt = this.columns.length;
-      this.filterRows = this.allRows.filter(function (item) {
-        for (let i = 0; i < colsAmt; i++) {
-          if (keys[i] == "owner.name") {
-            if (item["owner"]["name"].toString().toLowerCase().indexOf(val) !== -1 || !val)
-              return true;
-          }
-          else if (keys[i] == "location.nameEn") {
-            if (item["location"]["nameEn"].toString().toLowerCase().indexOf(val) !== -1 || !val)
-              return true;
-          }
-          else if (keys[i] == "car.name") {
-            if (item["car"]["name"].toString().toLowerCase().indexOf(val) !== -1 || !val)
-              return true;
-          }
-          else if (item[keys[i]].toString().toLowerCase().indexOf(val) !== -1 || !val) {
-            return true;
-          }
-        }
-      });
-    }
-  }
+  //     let colsAmt = this.columns.length;
+  //     this.filterRows = this.allRows.filter(function (item) {
+  //       for (let i = 0; i < colsAmt; i++) {
+  //         if (keys[i] == "owner.name") {
+  //           if (item["owner"]["name"].toString().toLowerCase().indexOf(val) !== -1 || !val)
+  //             return true;
+  //         }
+  //         else if (keys[i] == "location.nameEn") {
+  //           if (item["location"]["nameEn"].toString().toLowerCase().indexOf(val) !== -1 || !val)
+  //             return true;
+  //         }
+  //         else if (keys[i] == "car.name") {
+  //           if (item["car"]["name"].toString().toLowerCase().indexOf(val) !== -1 || !val)
+  //             return true;
+  //         }
+  //         else if (item[keys[i]].toString().toLowerCase().indexOf(val) !== -1 || !val) {
+  //           return true;
+  //         }
+  //       }
+  //     });
+  //   }
+  // }
 
-  goTo(pageName, id) {
-    let url = ""
-    if (pageName == 'view') {
-      url = 'view-trip/' + id
-    } else if (pageName == 'edit') {
-      url = 'edit-user/' + id
-    } else if (pageName == 'bills') {
-      url = 'bill/' + id
-    }
-    this.mainServ.globalServ.goTo(url)
+  // goTo(pageName, id) {
+  //   let url = ""
+  //   if (pageName == 'view') {
+  //     url = 'view-trip/' + id
+  //   } else if (pageName == 'edit') {
+  //     url = 'edit-user/' + id
+  //   } else if (pageName == 'bills') {
+  //     url = 'bill/' + id
+  //   }
+  //   this.mainServ.globalServ.goTo(url)
 
-  }
+  // }
 
-  changeStatus(newStatus, id) {
-    var mainThis = this;
-    this.translate.get('MESSAGES.CHANGESTATUS').subscribe((res: string) => {
-      this.dialogServ.confirmationMessage(res, "trips/changeStatus/" + id, { "newStatus": newStatus }, false, function () {
-        mainThis.inisilaize()
-      }, "put")
-    })
-  }
+  // changeStatus(newStatus, id) {
+  //   var mainThis = this;
+  //   this.translate.get('MESSAGES.CHANGESTATUS').subscribe((res: string) => {
+  //     this.dialogServ.confirmationMessage(res, "trips/changeStatus/" + id, { "newStatus": newStatus }, false, function () {
+  //       mainThis.inisilaize()
+  //     }, "put")
+  //   })
+  // }
 
 
 }

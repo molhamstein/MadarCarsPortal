@@ -250,6 +250,7 @@ export class addCarComponent implements OnInit {
 
   changeLocation(event) {
     console.log(event);
+    this.carSublocations = []
     this.subLocation = this.locations.find(x => x.id === event.value).subLocations;
     console.log(this.subLocation);
     this.subLocation.forEach(element => {

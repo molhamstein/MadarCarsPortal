@@ -1,3 +1,4 @@
+import { transition } from '@angular/animations';
 import { ActivatedRoute } from '@angular/router';
 import { DialogService } from './../../../../../core/services/dialog.service';
 import { FuseTranslationLoaderService } from './../../../../../core/services/translation-loader.service';
@@ -151,6 +152,7 @@ export class editCarComponent implements OnInit {
 
 
   changeLocation(event) {
+    this.carSublocations = []
     console.log(event);
     this.subLocation = this.locations.find(x => x.id === event.value).subLocations;
     console.log(this.subLocation);
@@ -231,7 +233,7 @@ export class editCarComponent implements OnInit {
                       mainthis.isAirportCar = data['isAirportCar'];
                       mainthis.isCityCar = data['isCityCar'];
                       mainthis.isVip = data['isVip'];
-
+                      mainthis.inisilaize();
                       mainthis.editCarForm = new FormGroup({
                         brandId: new FormControl(data.brandId, Validators.required),
                         name: new FormControl(data.name, Validators.required),
@@ -273,7 +275,21 @@ export class editCarComponent implements OnInit {
     })
 
   }
+  addVacation() {
+    var mainthis = this;
+    this.dialogServ.addVacation(this.carId, function () {
+      mainthis.inisilaize();
+    })
+  }
 
+  deactivate(id) {
+    var mainThis = this;
+    this.translate.get('MESSAGES.DEACTIVECAR').subscribe((res: string) => {
+      this.dialogServ.confirmationMessage(res, "bookingCars/" + id, {}, false, function () {
+        mainThis.inisilaize()
+      }, "delete")
+    })
+  }
 
   edit() {
     var data = this.editCarForm.value;
@@ -311,6 +327,24 @@ export class editCarComponent implements OnInit {
   deleteImage(i) {
     this.listImages.splice(i);
     console.log(this.listImages);
+  }
+
+  inisilaize() {
+    this.mainServ.loaderSer.display(true);
+    var filter = { "where": { "carId": this.carId, "type": "vacation" } };
+    // var filter = {}
+    this.mainServ.APIServ.get("/bookingCars?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
+      if (this.mainServ.APIServ.getErrorCode() == 0) {
+
+        this.allRows = data;
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
+      }
+
+    });
   }
 
 

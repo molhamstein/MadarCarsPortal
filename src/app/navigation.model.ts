@@ -58,6 +58,13 @@ export class NavigationModel {
                 'url': '/rate'
             },
             {
+                'id': 'agency',
+                'title': 'AGENCY.ALLAGENCY.TITLE',
+                'type': 'item',
+                'icon': 'domain',
+                'url': '/agency'
+            },
+            {
                 'id': 'admin',
                 'title': 'ADMIN.ALLADMIN.TITLE',
                 'type': 'item',

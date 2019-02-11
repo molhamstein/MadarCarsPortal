@@ -163,7 +163,8 @@ export class addTripComponent implements OnInit {
     this.stepOneForm = new FormGroup({
       locationId: new FormControl('', Validators.required),
       ownerId: new FormControl('', Validators.required),
-      testTime: new FormControl('')
+      testTime: new FormControl(''),
+      note: new FormControl('')
     });
     this.stepSecForm = new FormGroup({
       first: new FormControl(''),
@@ -349,6 +350,10 @@ export class addTripComponent implements OnInit {
       this.totalPrice = 0;
       this.airportPrice = 0;
       this.subLocaationPrice = 0
+    } if (stepNum == 3) {
+      this.carsSublocations = [];
+      this.tripSublocations = [];
+
     }
   }
   private config = { hour: 7, minute: 15, meriden: 'PM', format: 12 };
@@ -359,6 +364,7 @@ export class addTripComponent implements OnInit {
       this.activeLink = this.links[stepNum - 1].name;
       this.allData['locationId'] = this.stepOneForm.value.locationId
       this.allData['ownerId'] = this.stepOneForm.value.ownerId;
+      this.allData['note'] = this.stepOneForm.value.note;
       this.allData['fromAirport'] = this.isFromAirport;
       this.allData['toAirport'] = this.isToAirport;
       this.allData['inCity'] = this.isInCity;
@@ -426,6 +432,7 @@ export class addTripComponent implements OnInit {
       }
     }
     else if (stepNum == 4) {
+
       this.allData['carId'] = this.stepthreeForm.value['carId']
       var filter = { "where": { "and": [{ "carId": this.allData['carId'] }, { "subLocationId": { "inq": this.subLocationId } }] } }
       console.log("carSublocations?filter=" + JSON.stringify(filter))
@@ -465,13 +472,13 @@ export class addTripComponent implements OnInit {
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.backToTrips();
       }
-      else if (this.mainServ.APIServ.getErrorCode() != 455) {
+      else if (this.mainServ.APIServ.getErrorCode() == 455) {
         this.dialogServ.errorMessage(455);
       }
-      else if (this.mainServ.APIServ.getErrorCode() != 456) {
+      else if (this.mainServ.APIServ.getErrorCode() == 456) {
         this.dialogServ.errorMessage(456);
       }
-      else if (this.mainServ.APIServ.getErrorCode() != 457) {
+      else if (this.mainServ.APIServ.getErrorCode() == 457) {
         this.dialogServ.errorMessage(457);
       }
       else if (this.mainServ.APIServ.getErrorCode() != 401) {

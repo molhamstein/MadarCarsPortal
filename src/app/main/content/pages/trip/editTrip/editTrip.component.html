@@ -59,12 +59,11 @@
               'TRIP.INCITY' | translate }}</mat-checkbox>
           </section>
 
-          <!-- <mat-form-field fxFlex="40">
-              <input matInput [matTimepicker]="startPicker" (userTimeChange)="emituserTimeChange()" placeholder="{{ 'TRIP.TIME' | translate }}">
-              <mat-timepicker-toggle matSuffix [for]="startPicker"></mat-timepicker-toggle>
-              <mat-timepicker #startPicker color="primary"></mat-timepicker>
-            </mat-form-field> -->
-          <!-- <w-mat-timepicker color="primary" [(userTime)]="exportTime"></w-mat-timepicker> -->
+          <mat-form-field fxFlex="95">
+            <textarea matInput placeholder="{{ 'TRIP.NOTE' | translate }}" formControlName="note"></textarea>
+            <mat-icon matSuffix>map</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
 
 
         </div>

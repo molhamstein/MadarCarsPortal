@@ -51,6 +51,9 @@ export class addAdminComponent implements OnInit {
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.back();
       }
+      else if (this.mainServ.APIServ.getErrorCode() == 422) {
+        this.dialogServ.errorMessage(422);
+      }
       else if (this.mainServ.APIServ.getErrorCode() != 401) {
         this.mainServ.APIServ.setErrorCode(0);
         this.dialogServ.someThingIsError();

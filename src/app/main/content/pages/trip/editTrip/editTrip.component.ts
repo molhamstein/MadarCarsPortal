@@ -138,7 +138,8 @@ export class editTripComponent implements OnInit {
   ngOnInit() {
     this.stepOneForm = new FormGroup({
       locationId: new FormControl('', Validators.required),
-      ownerId: new FormControl('', Validators.required)
+      ownerId: new FormControl('', Validators.required),
+      note: new FormControl('')
     });
     this.stepSecForm = new FormGroup({
       first: new FormControl(''),
@@ -215,7 +216,8 @@ export class editTripComponent implements OnInit {
     // firstStep
     this.stepOneForm = new FormGroup({
       locationId: new FormControl(data.locationId, Validators.required),
-      ownerId: new FormControl(data.ownerId, Validators.required)
+      ownerId: new FormControl(data.ownerId, Validators.required),
+      note: new FormControl(data.note)
     });
 
     this.isFromAirport = data.fromAirport;
@@ -228,6 +230,7 @@ export class editTripComponent implements OnInit {
 
     this.allData['locationId'] = this.stepOneForm.value.locationId
     this.allData['ownerId'] = this.stepOneForm.value.ownerId;
+    this.allData['note'] = this.stepOneForm.value.note;
     this.allData['fromAirport'] = this.isFromAirport;
     this.allData['toAirport'] = this.isToAirport;
     this.allData['inCity'] = this.isInCity;
@@ -598,6 +601,12 @@ export class editTripComponent implements OnInit {
       this.airportPrice = 0;
       this.subLocaationPrice = 0
     }
+    if (stepNum == 3) {
+      this.carsSublocations = [];
+      this.tripSublocations = [];
+
+    }
+
   }
 
   next(stepNum) {
@@ -615,6 +624,7 @@ export class editTripComponent implements OnInit {
         this.activeLink = this.links[stepNum - 1].name;
         this.allData['locationId'] = this.stepOneForm.value.locationId
         this.allData['ownerId'] = this.stepOneForm.value.ownerId;
+        this.allData['note'] = this.stepOneForm.value.note;
         this.allData['fromAirport'] = this.isFromAirport;
         this.allData['toAirport'] = this.isToAirport;
         this.allData['inCity'] = this.isInCity;
@@ -743,13 +753,13 @@ export class editTripComponent implements OnInit {
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.backToTrips();
       }
-      else if (this.mainServ.APIServ.getErrorCode() != 455) {
+      else if (this.mainServ.APIServ.getErrorCode() == 455) {
         this.dialogServ.errorMessage(455);
       }
-      else if (this.mainServ.APIServ.getErrorCode() != 456) {
+      else if (this.mainServ.APIServ.getErrorCode() == 456) {
         this.dialogServ.errorMessage(456);
       }
-      else if (this.mainServ.APIServ.getErrorCode() != 457) {
+      else if (this.mainServ.APIServ.getErrorCode() == 457) {
         this.dialogServ.errorMessage(457);
       }
       else if (this.mainServ.APIServ.getErrorCode() != 401) {

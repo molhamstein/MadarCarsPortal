@@ -22,6 +22,7 @@
         {{link.view | translate}}
       </a>
     </nav>
+
     <form [formGroup]="stepOneForm" *ngIf="activeLink=='step1'">
 
       <div style="width: 100%;">
@@ -56,18 +57,17 @@
               'TRIP.INCITY' | translate }}</mat-checkbox>
           </section>
 
-          <!-- <mat-form-field fxFlex="40">
-            <input matInput [matTimepicker]="startPicker" (userTimeChange)="emituserTimeChange()" placeholder="{{ 'TRIP.TIME' | translate }}">
-            <mat-timepicker-toggle matSuffix [for]="startPicker"></mat-timepicker-toggle>
-            <mat-timepicker #startPicker color="primary"></mat-timepicker>
-          </mat-form-field> -->
-          <!-- <w-mat-timepicker color="primary" [(userTime)]="exportTime"></w-mat-timepicker> -->
+          <mat-form-field fxFlex="95">
+            <textarea matInput placeholder="{{ 'TRIP.NOTE' | translate }}" formControlName="note"></textarea>
+            <mat-icon matSuffix>map</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
 
 
         </div>
       </div>
 
-      
+
       <div style="float: rightt;">
         <button mat-button class="addButton" (click)="next(2,null,null)" cdkFocusInitial [disabled]="stepOneForm.invalid">{{'Global.NEXT'
           | translate}}</button>
@@ -87,22 +87,22 @@
           </mat-form-field>
 
           <mat-form-field fxFlex="40" [class.hide]="true">
-              <input matInput [matTimepicker]="startPicker" placeholder="{{ 'TRIP.TIME' | translate }}">
-              <mat-timepicker-toggle matSuffix [for]="startPicker"></mat-timepicker-toggle>
-              <mat-timepicker #startPicker id="startPickerId" color="primary"></mat-timepicker>
-            </mat-form-field>
-  
-  
-            <mat-form-field fxFlex="40" [class.hide]="tripType!='fromAirport' 
+            <input matInput [matTimepicker]="startPicker" placeholder="{{ 'TRIP.TIME' | translate }}">
+            <mat-timepicker-toggle matSuffix [for]="startPicker"></mat-timepicker-toggle>
+            <mat-timepicker #startPicker id="startPickerId" color="primary"></mat-timepicker>
+          </mat-form-field>
+
+
+          <mat-form-field fxFlex="40" [class.hide]="tripType!='fromAirport' 
             && tripType!='fromAirportAndCity' 
             && tripType!='toAirport' 
             && tripType!='fromAirportAndToAirport' 
             && tripType!='fromAirportAndCityAndToAirport'">
-              <input matInput readonly="readonly" placeholder="{{ 'TRIP.TIME' | translate }}" [ngModelOptions]="{standalone: true}"
-                [ngModel]="formatStartTime(startPicker['userTime'])">
-              <mat-timepicker-toggle matSuffix [for]="startPicker"></mat-timepicker-toggle>
-            </mat-form-field>
-  
+            <input matInput readonly="readonly" placeholder="{{ 'TRIP.TIME' | translate }}" [ngModelOptions]="{standalone: true}"
+              [ngModel]="formatStartTime(startPicker['userTime'])">
+            <mat-timepicker-toggle matSuffix [for]="startPicker"></mat-timepicker-toggle>
+          </mat-form-field>
+
           <mat-form-field fxFlex="40" *ngIf="tripType!='fromAirport' && tripType!='toAirport'">
             <input matInput (focus)="secondepicker.open()" [matDatepicker]="secondepicker" formControlName="seconde"
               placeholder="{{ 'TRIP.TO' | translate }}" required>
@@ -155,7 +155,8 @@
         </div>
       </div>
       <div style="float: rightt;">
-        <button mat-button *ngIf="links[3]!=null" class="addButton" (click)="next(4,null,null)" cdkFocusInitial [disabled]="stepthreeForm.invalid">{{'Global.NEXT'
+        <button mat-button *ngIf="links[3]!=null" class="addButton" (click)="next(4,null,null)" cdkFocusInitial
+          [disabled]="stepthreeForm.invalid">{{'Global.NEXT'
           | translate}}</button>
       </div>
       <div style="float: rightt;">
@@ -203,7 +204,6 @@
             </mat-form-field>
           </div> -->
 
-
           <div fxFlex="90" class="step4" *ngFor="let element of tripSublocations;let i=index">
             <label fxFlex="30" class="sublocationName">{{carsSublocations[i].subLocation.nameEn}}</label>
             <label fxFlex="30" class="sublocationPrice">{{carsSublocations[i].cost}} $</label>
@@ -222,13 +222,6 @@
                 </div>
               </div>
             </div>
-
-            <!-- <mat-form-field fxFlex="30">
-              <input (input)="onSearchChange()" matInput type="number" min="0" max="100" [ngModelOptions]="{standalone: true}"
-                [(ngModel)]="tripSublocations[i].duration" required>
-              <mat-icon matSuffix>people</mat-icon>
-              <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-            </mat-form-field> -->
           </div>
         </div>
       </div>

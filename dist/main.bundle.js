@@ -202,76 +202,80 @@ var AppComponent = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_direction_service__ = __webpack_require__("../../../../../src/app/app-direction.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__main_dialogs_my_reset_password_my_reset_password_component__ = __webpack_require__("../../../../../src/app/main/dialogs/my-reset-password/my-reset-password.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__ = __webpack_require__("../../../../../src/app/core/services/auth-guard-service.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__main_dialogs_confirm_message_confirm_message_component__ = __webpack_require__("../../../../../src/app/main/dialogs/confirm-message/confirm-message.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__core_services_loader_services_service__ = __webpack_require__("../../../../../src/app/core/services/loader-services.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_services_global_service__ = __webpack_require__("../../../../../src/app/core/services/global.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_services_login_service__ = __webpack_require__("../../../../../src/app/core/services/login.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__core_services_call_api_service__ = __webpack_require__("../../../../../src/app/core/services/call-api.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__core_services_main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/esm5/animations.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_angular_in_memory_web_api__ = __webpack_require__("../../../../angular-in-memory-web-api/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_hammerjs__ = __webpack_require__("../../../../hammerjs/hammer.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_hammerjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__core_modules_shared_module__ = __webpack_require__("../../../../../src/app/core/modules/shared.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__main_content_apps_dashboards_project_project_module__ = __webpack_require__("../../../../../src/app/main/content/apps/dashboards/project/project.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__fuse_fake_db_fuse_fake_db_service__ = __webpack_require__("../../../../../src/app/fuse-fake-db/fuse-fake-db.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__main_main_module__ = __webpack_require__("../../../../../src/app/main/main.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__main_content_pages_pages_module__ = __webpack_require__("../../../../../src/app/main/content/pages/pages.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__main_content_ui_ui_module__ = __webpack_require__("../../../../../src/app/main/content/ui/ui.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__main_content_components_components_module__ = __webpack_require__("../../../../../src/app/main/content/components/components.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__core_services_splash_screen_service__ = __webpack_require__("../../../../../src/app/core/services/splash-screen.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__core_services_config_service__ = __webpack_require__("../../../../../src/app/core/services/config.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__core_components_navigation_navigation_service__ = __webpack_require__("../../../../../src/app/core/components/navigation/navigation.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__main_content_components_third_party_components_third_party_module__ = __webpack_require__("../../../../../src/app/main/content/components-third-party/components-third-party.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__main_content_services_services_module__ = __webpack_require__("../../../../../src/app/main/content/services/services.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__main_content_components_angular_material_angular_material_module__ = __webpack_require__("../../../../../src/app/main/content/components/angular-material/angular-material.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31_angular2_markdown__ = __webpack_require__("../../../../angular2-markdown/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__main_dialogs_some_thing_is_error_some_thing_is_error_component__ = __webpack_require__("../../../../../src/app/main/dialogs/some-thing-is-error/some-thing-is-error.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__core_services_dialog_service__ = __webpack_require__("../../../../../src/app/core/services/dialog.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__main_content_pages_location_locations_locations_component__ = __webpack_require__("../../../../../src/app/main/content/pages/location/locations/locations.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__main_content_pages_location_addLocation_addLocation_component__ = __webpack_require__("../../../../../src/app/main/content/pages/location/addLocation/addLocation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__main_content_pages_location_editLocation_editLocation_component__ = __webpack_require__("../../../../../src/app/main/content/pages/location/editLocation/editLocation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__main_content_pages_sublocation_addSubLocation_addSubLocation_component__ = __webpack_require__("../../../../../src/app/main/content/pages/sublocation/addSubLocation/addSubLocation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__main_content_pages_sublocation_editSubLocation_editSubLocation_component__ = __webpack_require__("../../../../../src/app/main/content/pages/sublocation/editSubLocation/editSubLocation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__main_content_pages_driver_drivers_drivers_component__ = __webpack_require__("../../../../../src/app/main/content/pages/driver/drivers/drivers.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__main_content_pages_driver_addDriver_addDriver_component__ = __webpack_require__("../../../../../src/app/main/content/pages/driver/addDriver/addDriver.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__main_content_pages_driver_editDriver_editDriver_component__ = __webpack_require__("../../../../../src/app/main/content/pages/driver/editDriver/editDriver.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__main_content_pages_brand_brands_brands_component__ = __webpack_require__("../../../../../src/app/main/content/pages/brand/brands/brands.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__main_content_pages_brand_addBrand_addBrand_component__ = __webpack_require__("../../../../../src/app/main/content/pages/brand/addBrand/addBrand.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__main_content_pages_brand_editBrand_editBrand_component__ = __webpack_require__("../../../../../src/app/main/content/pages/brand/editBrand/editBrand.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__main_content_pages_car_cars_cars_component__ = __webpack_require__("../../../../../src/app/main/content/pages/car/cars/cars.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__main_content_pages_car_addCar_addCar_component__ = __webpack_require__("../../../../../src/app/main/content/pages/car/addCar/addCar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__main_content_pages_car_editCar_editCar_component__ = __webpack_require__("../../../../../src/app/main/content/pages/car/editCar/editCar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__main_content_pages_user_users_users_component__ = __webpack_require__("../../../../../src/app/main/content/pages/user/users/users.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__main_content_pages_user_addUser_addUser_component__ = __webpack_require__("../../../../../src/app/main/content/pages/user/addUser/addUser.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__main_content_pages_user_editUser_editUser_component__ = __webpack_require__("../../../../../src/app/main/content/pages/user/editUser/editUser.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__main_dialogs_error_message_error_message_component__ = __webpack_require__("../../../../../src/app/main/dialogs/error-message/error-message.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__main_content_pages_trip_trips_trips_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/trips/trips.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__main_content_pages_trip_addTrip_addTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/addTrip/addTrip.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56_angular5_time_picker__ = __webpack_require__("../../../../angular5-time-picker/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__main_content_pages_trip_viewTrip_viewTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/viewTrip/viewTrip.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__main_content_pages_predefindTrip_predefindTrips_predefindTrips_component__ = __webpack_require__("../../../../../src/app/main/content/pages/predefindTrip/predefindTrips/predefindTrips.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__main_content_pages_predefindTrip_addPredefindTrip_addPredefindTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/predefindTrip/addPredefindTrip/addPredefindTrip.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__main_content_pages_predefindTrip_editPredefindTrip_editPredefindTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/predefindTrip/editPredefindTrip/editPredefindTrip.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__main_content_pages_trip_bill_bill_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/bill/bill.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__main_content_pages_admin_admin_admins_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/admin/admins.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__main_content_pages_admin_addAdmin_addAdmin_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/addAdmin/addAdmin.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__main_content_pages_trip_editTrip_editTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/editTrip/editTrip.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__main_dialogs_time_time_component__ = __webpack_require__("../../../../../src/app/main/dialogs/time/time.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__main_content_pages_admin_editAdmin_editAdmin_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/editAdmin/editAdmin.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__main_content_pages_rate_rates_rates_component__ = __webpack_require__("../../../../../src/app/main/content/pages/rate/rates/rates.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__main_dialogs_make_rate_make_rate_component__ = __webpack_require__("../../../../../src/app/main/dialogs/make-rate/make-rate.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_dialogs_add_vacation_add_vacation_component__ = __webpack_require__("../../../../../src/app/main/dialogs/add-vacation/add-vacation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_direction_service__ = __webpack_require__("../../../../../src/app/app-direction.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_dialogs_my_reset_password_my_reset_password_component__ = __webpack_require__("../../../../../src/app/main/dialogs/my-reset-password/my-reset-password.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__ = __webpack_require__("../../../../../src/app/core/services/auth-guard-service.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__main_dialogs_confirm_message_confirm_message_component__ = __webpack_require__("../../../../../src/app/main/dialogs/confirm-message/confirm-message.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_services_loader_services_service__ = __webpack_require__("../../../../../src/app/core/services/loader-services.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_services_global_service__ = __webpack_require__("../../../../../src/app/core/services/global.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__core_services_login_service__ = __webpack_require__("../../../../../src/app/core/services/login.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__core_services_call_api_service__ = __webpack_require__("../../../../../src/app/core/services/call-api.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__core_services_main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angular_in_memory_web_api__ = __webpack_require__("../../../../angular-in-memory-web-api/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_hammerjs__ = __webpack_require__("../../../../hammerjs/hammer.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_hammerjs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__core_modules_shared_module__ = __webpack_require__("../../../../../src/app/core/modules/shared.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__main_content_apps_dashboards_project_project_module__ = __webpack_require__("../../../../../src/app/main/content/apps/dashboards/project/project.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__fuse_fake_db_fuse_fake_db_service__ = __webpack_require__("../../../../../src/app/fuse-fake-db/fuse-fake-db.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__main_main_module__ = __webpack_require__("../../../../../src/app/main/main.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__main_content_pages_pages_module__ = __webpack_require__("../../../../../src/app/main/content/pages/pages.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__main_content_ui_ui_module__ = __webpack_require__("../../../../../src/app/main/content/ui/ui.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__main_content_components_components_module__ = __webpack_require__("../../../../../src/app/main/content/components/components.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__core_services_splash_screen_service__ = __webpack_require__("../../../../../src/app/core/services/splash-screen.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__core_services_config_service__ = __webpack_require__("../../../../../src/app/core/services/config.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__core_components_navigation_navigation_service__ = __webpack_require__("../../../../../src/app/core/components/navigation/navigation.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__main_content_components_third_party_components_third_party_module__ = __webpack_require__("../../../../../src/app/main/content/components-third-party/components-third-party.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__main_content_services_services_module__ = __webpack_require__("../../../../../src/app/main/content/services/services.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__main_content_components_angular_material_angular_material_module__ = __webpack_require__("../../../../../src/app/main/content/components/angular-material/angular-material.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular2_markdown__ = __webpack_require__("../../../../angular2-markdown/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__main_dialogs_some_thing_is_error_some_thing_is_error_component__ = __webpack_require__("../../../../../src/app/main/dialogs/some-thing-is-error/some-thing-is-error.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__core_services_dialog_service__ = __webpack_require__("../../../../../src/app/core/services/dialog.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__main_content_pages_location_locations_locations_component__ = __webpack_require__("../../../../../src/app/main/content/pages/location/locations/locations.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__main_content_pages_location_addLocation_addLocation_component__ = __webpack_require__("../../../../../src/app/main/content/pages/location/addLocation/addLocation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__main_content_pages_location_editLocation_editLocation_component__ = __webpack_require__("../../../../../src/app/main/content/pages/location/editLocation/editLocation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__main_content_pages_sublocation_addSubLocation_addSubLocation_component__ = __webpack_require__("../../../../../src/app/main/content/pages/sublocation/addSubLocation/addSubLocation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__main_content_pages_sublocation_editSubLocation_editSubLocation_component__ = __webpack_require__("../../../../../src/app/main/content/pages/sublocation/editSubLocation/editSubLocation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__main_content_pages_driver_drivers_drivers_component__ = __webpack_require__("../../../../../src/app/main/content/pages/driver/drivers/drivers.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__main_content_pages_driver_addDriver_addDriver_component__ = __webpack_require__("../../../../../src/app/main/content/pages/driver/addDriver/addDriver.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__main_content_pages_driver_editDriver_editDriver_component__ = __webpack_require__("../../../../../src/app/main/content/pages/driver/editDriver/editDriver.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__main_content_pages_brand_brands_brands_component__ = __webpack_require__("../../../../../src/app/main/content/pages/brand/brands/brands.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__main_content_pages_brand_addBrand_addBrand_component__ = __webpack_require__("../../../../../src/app/main/content/pages/brand/addBrand/addBrand.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__main_content_pages_brand_editBrand_editBrand_component__ = __webpack_require__("../../../../../src/app/main/content/pages/brand/editBrand/editBrand.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__main_content_pages_car_cars_cars_component__ = __webpack_require__("../../../../../src/app/main/content/pages/car/cars/cars.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__main_content_pages_car_addCar_addCar_component__ = __webpack_require__("../../../../../src/app/main/content/pages/car/addCar/addCar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__main_content_pages_car_editCar_editCar_component__ = __webpack_require__("../../../../../src/app/main/content/pages/car/editCar/editCar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__main_content_pages_user_users_users_component__ = __webpack_require__("../../../../../src/app/main/content/pages/user/users/users.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__main_content_pages_user_addUser_addUser_component__ = __webpack_require__("../../../../../src/app/main/content/pages/user/addUser/addUser.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__main_content_pages_user_editUser_editUser_component__ = __webpack_require__("../../../../../src/app/main/content/pages/user/editUser/editUser.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__main_dialogs_error_message_error_message_component__ = __webpack_require__("../../../../../src/app/main/dialogs/error-message/error-message.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__main_content_pages_trip_trips_trips_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/trips/trips.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__main_content_pages_trip_addTrip_addTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/addTrip/addTrip.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57_angular5_time_picker__ = __webpack_require__("../../../../angular5-time-picker/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__main_content_pages_trip_viewTrip_viewTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/viewTrip/viewTrip.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__main_content_pages_predefindTrip_predefindTrips_predefindTrips_component__ = __webpack_require__("../../../../../src/app/main/content/pages/predefindTrip/predefindTrips/predefindTrips.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__main_content_pages_predefindTrip_addPredefindTrip_addPredefindTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/predefindTrip/addPredefindTrip/addPredefindTrip.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__main_content_pages_predefindTrip_editPredefindTrip_editPredefindTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/predefindTrip/editPredefindTrip/editPredefindTrip.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__main_content_pages_trip_bill_bill_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/bill/bill.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__main_content_pages_admin_admin_admins_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/admin/admins.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__main_content_pages_admin_addAdmin_addAdmin_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/addAdmin/addAdmin.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__main_content_pages_trip_editTrip_editTrip_component__ = __webpack_require__("../../../../../src/app/main/content/pages/trip/editTrip/editTrip.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__main_dialogs_time_time_component__ = __webpack_require__("../../../../../src/app/main/dialogs/time/time.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__main_content_pages_admin_editAdmin_editAdmin_component__ = __webpack_require__("../../../../../src/app/main/content/pages/admin/editAdmin/editAdmin.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__main_content_pages_rate_rates_rates_component__ = __webpack_require__("../../../../../src/app/main/content/pages/rate/rates/rates.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__main_dialogs_make_rate_make_rate_component__ = __webpack_require__("../../../../../src/app/main/dialogs/make-rate/make-rate.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__main_content_pages_agency_agency_agencies_component__ = __webpack_require__("../../../../../src/app/main/content/pages/agency/agency/agencies.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__main_content_pages_agency_addAgency_addAgency_component__ = __webpack_require__("../../../../../src/app/main/content/pages/agency/addAgency/addAgency.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__main_content_pages_agency_editAgency_editAgency_component__ = __webpack_require__("../../../../../src/app/main/content/pages/agency/editAgency/editAgency.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -347,151 +351,170 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
 var appRoutes = [
     {
+        path: 'agency',
+        component: __WEBPACK_IMPORTED_MODULE_70__main_content_pages_agency_agency_agencies_component__["a" /* agenciesComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+    },
+    {
+        path: 'add-agency',
+        component: __WEBPACK_IMPORTED_MODULE_71__main_content_pages_agency_addAgency_addAgency_component__["a" /* addAgencyComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+    },
+    {
+        path: 'edit-agency/:id',
+        component: __WEBPACK_IMPORTED_MODULE_72__main_content_pages_agency_editAgency_editAgency_component__["a" /* editAgencyComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+    },
+    {
         path: 'rate',
-        component: __WEBPACK_IMPORTED_MODULE_67__main_content_pages_rate_rates_rates_component__["a" /* ratesComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_68__main_content_pages_rate_rates_rates_component__["a" /* ratesComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'predefineds',
-        component: __WEBPACK_IMPORTED_MODULE_58__main_content_pages_predefindTrip_predefindTrips_predefindTrips_component__["a" /* predefindTripsComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_59__main_content_pages_predefindTrip_predefindTrips_predefindTrips_component__["a" /* predefindTripsComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'add-predefined',
-        component: __WEBPACK_IMPORTED_MODULE_59__main_content_pages_predefindTrip_addPredefindTrip_addPredefindTrip_component__["a" /* addPredefindTripComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_60__main_content_pages_predefindTrip_addPredefindTrip_addPredefindTrip_component__["a" /* addPredefindTripComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'edit-predefined/:id',
-        component: __WEBPACK_IMPORTED_MODULE_60__main_content_pages_predefindTrip_editPredefindTrip_editPredefindTrip_component__["a" /* editPredefindTripComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_61__main_content_pages_predefindTrip_editPredefindTrip_editPredefindTrip_component__["a" /* editPredefindTripComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'trips',
-        component: __WEBPACK_IMPORTED_MODULE_54__main_content_pages_trip_trips_trips_component__["a" /* tripsComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_55__main_content_pages_trip_trips_trips_component__["a" /* tripsComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'bill/:id',
-        component: __WEBPACK_IMPORTED_MODULE_61__main_content_pages_trip_bill_bill_component__["a" /* billComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_62__main_content_pages_trip_bill_bill_component__["a" /* billComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'add-trip',
-        component: __WEBPACK_IMPORTED_MODULE_55__main_content_pages_trip_addTrip_addTrip_component__["a" /* addTripComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_56__main_content_pages_trip_addTrip_addTrip_component__["a" /* addTripComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'edit-trip/:id',
-        component: __WEBPACK_IMPORTED_MODULE_64__main_content_pages_trip_editTrip_editTrip_component__["a" /* editTripComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_65__main_content_pages_trip_editTrip_editTrip_component__["a" /* editTripComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'view-trip/:id',
-        component: __WEBPACK_IMPORTED_MODULE_57__main_content_pages_trip_viewTrip_viewTrip_component__["a" /* viewTripComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_58__main_content_pages_trip_viewTrip_viewTrip_component__["a" /* viewTripComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'cars',
-        component: __WEBPACK_IMPORTED_MODULE_47__main_content_pages_car_cars_cars_component__["a" /* carsComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_48__main_content_pages_car_cars_cars_component__["a" /* carsComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'add-car',
-        component: __WEBPACK_IMPORTED_MODULE_48__main_content_pages_car_addCar_addCar_component__["a" /* addCarComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_49__main_content_pages_car_addCar_addCar_component__["a" /* addCarComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'edit-car/:id',
-        component: __WEBPACK_IMPORTED_MODULE_49__main_content_pages_car_editCar_editCar_component__["a" /* editCarComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_50__main_content_pages_car_editCar_editCar_component__["a" /* editCarComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'admins',
-        component: __WEBPACK_IMPORTED_MODULE_62__main_content_pages_admin_admin_admins_component__["a" /* adminsComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_63__main_content_pages_admin_admin_admins_component__["a" /* adminsComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'add-admin',
-        component: __WEBPACK_IMPORTED_MODULE_63__main_content_pages_admin_addAdmin_addAdmin_component__["a" /* addAdminComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_64__main_content_pages_admin_addAdmin_addAdmin_component__["a" /* addAdminComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'edit-admin/:id',
-        component: __WEBPACK_IMPORTED_MODULE_66__main_content_pages_admin_editAdmin_editAdmin_component__["a" /* editAdminComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_67__main_content_pages_admin_editAdmin_editAdmin_component__["a" /* editAdminComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'drivers',
-        component: __WEBPACK_IMPORTED_MODULE_41__main_content_pages_driver_drivers_drivers_component__["a" /* driversComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_42__main_content_pages_driver_drivers_drivers_component__["a" /* driversComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'add-driver',
-        component: __WEBPACK_IMPORTED_MODULE_42__main_content_pages_driver_addDriver_addDriver_component__["a" /* addDriverComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_43__main_content_pages_driver_addDriver_addDriver_component__["a" /* addDriverComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'edit-driver/:id',
-        component: __WEBPACK_IMPORTED_MODULE_43__main_content_pages_driver_editDriver_editDriver_component__["a" /* editDriverComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_44__main_content_pages_driver_editDriver_editDriver_component__["a" /* editDriverComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'brands',
-        component: __WEBPACK_IMPORTED_MODULE_44__main_content_pages_brand_brands_brands_component__["a" /* brandsComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_45__main_content_pages_brand_brands_brands_component__["a" /* brandsComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'add-brand',
-        component: __WEBPACK_IMPORTED_MODULE_45__main_content_pages_brand_addBrand_addBrand_component__["a" /* addBrandComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_46__main_content_pages_brand_addBrand_addBrand_component__["a" /* addBrandComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'edit-brand/:id',
-        component: __WEBPACK_IMPORTED_MODULE_46__main_content_pages_brand_editBrand_editBrand_component__["a" /* editBrandComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_47__main_content_pages_brand_editBrand_editBrand_component__["a" /* editBrandComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'users',
-        component: __WEBPACK_IMPORTED_MODULE_50__main_content_pages_user_users_users_component__["a" /* usersComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_51__main_content_pages_user_users_users_component__["a" /* usersComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'add-user',
-        component: __WEBPACK_IMPORTED_MODULE_51__main_content_pages_user_addUser_addUser_component__["a" /* addUserComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_52__main_content_pages_user_addUser_addUser_component__["a" /* addUserComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'edit-user/:id',
-        component: __WEBPACK_IMPORTED_MODULE_52__main_content_pages_user_editUser_editUser_component__["a" /* editUserComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_53__main_content_pages_user_editUser_editUser_component__["a" /* editUserComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'locations',
-        component: __WEBPACK_IMPORTED_MODULE_36__main_content_pages_location_locations_locations_component__["a" /* locationsComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_37__main_content_pages_location_locations_locations_component__["a" /* locationsComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'add-location',
-        component: __WEBPACK_IMPORTED_MODULE_37__main_content_pages_location_addLocation_addLocation_component__["a" /* addLocationComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_38__main_content_pages_location_addLocation_addLocation_component__["a" /* addLocationComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'edit-location/:id',
-        component: __WEBPACK_IMPORTED_MODULE_38__main_content_pages_location_editLocation_editLocation_component__["a" /* editLocationComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_39__main_content_pages_location_editLocation_editLocation_component__["a" /* editLocationComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'add-sublocation/:id',
-        component: __WEBPACK_IMPORTED_MODULE_39__main_content_pages_sublocation_addSubLocation_addSubLocation_component__["a" /* addSubLocationComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_40__main_content_pages_sublocation_addSubLocation_addSubLocation_component__["a" /* addSubLocationComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'edit-sublocation/:id',
-        component: __WEBPACK_IMPORTED_MODULE_40__main_content_pages_sublocation_editSubLocation_editSubLocation_component__["a" /* editSubLocationComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
+        component: __WEBPACK_IMPORTED_MODULE_41__main_content_pages_sublocation_editSubLocation_editSubLocation_component__["a" /* editSubLocationComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */]]
     },
     {
         path: 'apps/mail',
@@ -534,73 +557,75 @@ var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_9__angular_core__["NgModule"])({
+        Object(__WEBPACK_IMPORTED_MODULE_10__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_18__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__app_component__["a" /* AppComponent */],
                 // pages
                 // // Location
-                __WEBPACK_IMPORTED_MODULE_36__main_content_pages_location_locations_locations_component__["a" /* locationsComponent */], __WEBPACK_IMPORTED_MODULE_37__main_content_pages_location_addLocation_addLocation_component__["a" /* addLocationComponent */], __WEBPACK_IMPORTED_MODULE_38__main_content_pages_location_editLocation_editLocation_component__["a" /* editLocationComponent */],
+                __WEBPACK_IMPORTED_MODULE_37__main_content_pages_location_locations_locations_component__["a" /* locationsComponent */], __WEBPACK_IMPORTED_MODULE_38__main_content_pages_location_addLocation_addLocation_component__["a" /* addLocationComponent */], __WEBPACK_IMPORTED_MODULE_39__main_content_pages_location_editLocation_editLocation_component__["a" /* editLocationComponent */],
                 // // Sub Location
-                __WEBPACK_IMPORTED_MODULE_39__main_content_pages_sublocation_addSubLocation_addSubLocation_component__["a" /* addSubLocationComponent */], __WEBPACK_IMPORTED_MODULE_40__main_content_pages_sublocation_editSubLocation_editSubLocation_component__["a" /* editSubLocationComponent */],
+                __WEBPACK_IMPORTED_MODULE_40__main_content_pages_sublocation_addSubLocation_addSubLocation_component__["a" /* addSubLocationComponent */], __WEBPACK_IMPORTED_MODULE_41__main_content_pages_sublocation_editSubLocation_editSubLocation_component__["a" /* editSubLocationComponent */],
                 // // Drivers
-                __WEBPACK_IMPORTED_MODULE_41__main_content_pages_driver_drivers_drivers_component__["a" /* driversComponent */], __WEBPACK_IMPORTED_MODULE_42__main_content_pages_driver_addDriver_addDriver_component__["a" /* addDriverComponent */], __WEBPACK_IMPORTED_MODULE_43__main_content_pages_driver_editDriver_editDriver_component__["a" /* editDriverComponent */],
+                __WEBPACK_IMPORTED_MODULE_42__main_content_pages_driver_drivers_drivers_component__["a" /* driversComponent */], __WEBPACK_IMPORTED_MODULE_43__main_content_pages_driver_addDriver_addDriver_component__["a" /* addDriverComponent */], __WEBPACK_IMPORTED_MODULE_44__main_content_pages_driver_editDriver_editDriver_component__["a" /* editDriverComponent */],
                 // // Brands
-                __WEBPACK_IMPORTED_MODULE_44__main_content_pages_brand_brands_brands_component__["a" /* brandsComponent */], __WEBPACK_IMPORTED_MODULE_45__main_content_pages_brand_addBrand_addBrand_component__["a" /* addBrandComponent */], __WEBPACK_IMPORTED_MODULE_46__main_content_pages_brand_editBrand_editBrand_component__["a" /* editBrandComponent */],
+                __WEBPACK_IMPORTED_MODULE_45__main_content_pages_brand_brands_brands_component__["a" /* brandsComponent */], __WEBPACK_IMPORTED_MODULE_46__main_content_pages_brand_addBrand_addBrand_component__["a" /* addBrandComponent */], __WEBPACK_IMPORTED_MODULE_47__main_content_pages_brand_editBrand_editBrand_component__["a" /* editBrandComponent */],
                 // // Cars
-                __WEBPACK_IMPORTED_MODULE_47__main_content_pages_car_cars_cars_component__["a" /* carsComponent */], __WEBPACK_IMPORTED_MODULE_48__main_content_pages_car_addCar_addCar_component__["a" /* addCarComponent */], __WEBPACK_IMPORTED_MODULE_49__main_content_pages_car_editCar_editCar_component__["a" /* editCarComponent */],
+                __WEBPACK_IMPORTED_MODULE_48__main_content_pages_car_cars_cars_component__["a" /* carsComponent */], __WEBPACK_IMPORTED_MODULE_49__main_content_pages_car_addCar_addCar_component__["a" /* addCarComponent */], __WEBPACK_IMPORTED_MODULE_50__main_content_pages_car_editCar_editCar_component__["a" /* editCarComponent */],
                 // // Users
-                __WEBPACK_IMPORTED_MODULE_50__main_content_pages_user_users_users_component__["a" /* usersComponent */], __WEBPACK_IMPORTED_MODULE_51__main_content_pages_user_addUser_addUser_component__["a" /* addUserComponent */], __WEBPACK_IMPORTED_MODULE_52__main_content_pages_user_editUser_editUser_component__["a" /* editUserComponent */],
+                __WEBPACK_IMPORTED_MODULE_51__main_content_pages_user_users_users_component__["a" /* usersComponent */], __WEBPACK_IMPORTED_MODULE_52__main_content_pages_user_addUser_addUser_component__["a" /* addUserComponent */], __WEBPACK_IMPORTED_MODULE_53__main_content_pages_user_editUser_editUser_component__["a" /* editUserComponent */],
                 // // Trips
-                __WEBPACK_IMPORTED_MODULE_54__main_content_pages_trip_trips_trips_component__["a" /* tripsComponent */], __WEBPACK_IMPORTED_MODULE_55__main_content_pages_trip_addTrip_addTrip_component__["a" /* addTripComponent */], __WEBPACK_IMPORTED_MODULE_57__main_content_pages_trip_viewTrip_viewTrip_component__["a" /* viewTripComponent */], __WEBPACK_IMPORTED_MODULE_61__main_content_pages_trip_bill_bill_component__["a" /* billComponent */], __WEBPACK_IMPORTED_MODULE_64__main_content_pages_trip_editTrip_editTrip_component__["a" /* editTripComponent */],
+                __WEBPACK_IMPORTED_MODULE_55__main_content_pages_trip_trips_trips_component__["a" /* tripsComponent */], __WEBPACK_IMPORTED_MODULE_56__main_content_pages_trip_addTrip_addTrip_component__["a" /* addTripComponent */], __WEBPACK_IMPORTED_MODULE_58__main_content_pages_trip_viewTrip_viewTrip_component__["a" /* viewTripComponent */], __WEBPACK_IMPORTED_MODULE_62__main_content_pages_trip_bill_bill_component__["a" /* billComponent */], __WEBPACK_IMPORTED_MODULE_65__main_content_pages_trip_editTrip_editTrip_component__["a" /* editTripComponent */],
                 // // Predefind Trips
-                __WEBPACK_IMPORTED_MODULE_58__main_content_pages_predefindTrip_predefindTrips_predefindTrips_component__["a" /* predefindTripsComponent */], __WEBPACK_IMPORTED_MODULE_59__main_content_pages_predefindTrip_addPredefindTrip_addPredefindTrip_component__["a" /* addPredefindTripComponent */], __WEBPACK_IMPORTED_MODULE_60__main_content_pages_predefindTrip_editPredefindTrip_editPredefindTrip_component__["a" /* editPredefindTripComponent */],
+                __WEBPACK_IMPORTED_MODULE_59__main_content_pages_predefindTrip_predefindTrips_predefindTrips_component__["a" /* predefindTripsComponent */], __WEBPACK_IMPORTED_MODULE_60__main_content_pages_predefindTrip_addPredefindTrip_addPredefindTrip_component__["a" /* addPredefindTripComponent */], __WEBPACK_IMPORTED_MODULE_61__main_content_pages_predefindTrip_editPredefindTrip_editPredefindTrip_component__["a" /* editPredefindTripComponent */],
                 // // Admins
-                __WEBPACK_IMPORTED_MODULE_62__main_content_pages_admin_admin_admins_component__["a" /* adminsComponent */], __WEBPACK_IMPORTED_MODULE_63__main_content_pages_admin_addAdmin_addAdmin_component__["a" /* addAdminComponent */], __WEBPACK_IMPORTED_MODULE_66__main_content_pages_admin_editAdmin_editAdmin_component__["a" /* editAdminComponent */],
+                __WEBPACK_IMPORTED_MODULE_63__main_content_pages_admin_admin_admins_component__["a" /* adminsComponent */], __WEBPACK_IMPORTED_MODULE_64__main_content_pages_admin_addAdmin_addAdmin_component__["a" /* addAdminComponent */], __WEBPACK_IMPORTED_MODULE_67__main_content_pages_admin_editAdmin_editAdmin_component__["a" /* editAdminComponent */],
                 // // Rates
-                __WEBPACK_IMPORTED_MODULE_67__main_content_pages_rate_rates_rates_component__["a" /* ratesComponent */],
+                __WEBPACK_IMPORTED_MODULE_68__main_content_pages_rate_rates_rates_component__["a" /* ratesComponent */],
+                // // Agency
+                __WEBPACK_IMPORTED_MODULE_70__main_content_pages_agency_agency_agencies_component__["a" /* agenciesComponent */], __WEBPACK_IMPORTED_MODULE_71__main_content_pages_agency_addAgency_addAgency_component__["a" /* addAgencyComponent */], __WEBPACK_IMPORTED_MODULE_72__main_content_pages_agency_editAgency_editAgency_component__["a" /* editAgencyComponent */],
                 // dialogs
-                __WEBPACK_IMPORTED_MODULE_33__main_dialogs_some_thing_is_error_some_thing_is_error_component__["a" /* SomeThingIsErrorComponent */], __WEBPACK_IMPORTED_MODULE_68__main_dialogs_make_rate_make_rate_component__["a" /* MakeRateComponent */], __WEBPACK_IMPORTED_MODULE_3__main_dialogs_confirm_message_confirm_message_component__["a" /* ConfirmMessageComponent */], __WEBPACK_IMPORTED_MODULE_53__main_dialogs_error_message_error_message_component__["a" /* ErrorMessageComponent */], __WEBPACK_IMPORTED_MODULE_1__main_dialogs_my_reset_password_my_reset_password_component__["a" /* MyResetPasswordComponent */], __WEBPACK_IMPORTED_MODULE_65__main_dialogs_time_time_component__["a" /* TimeComponent */]
+                __WEBPACK_IMPORTED_MODULE_34__main_dialogs_some_thing_is_error_some_thing_is_error_component__["a" /* SomeThingIsErrorComponent */], __WEBPACK_IMPORTED_MODULE_0__main_dialogs_add_vacation_add_vacation_component__["a" /* AddVacationComponent */], __WEBPACK_IMPORTED_MODULE_69__main_dialogs_make_rate_make_rate_component__["a" /* MakeRateComponent */], __WEBPACK_IMPORTED_MODULE_4__main_dialogs_confirm_message_confirm_message_component__["a" /* ConfirmMessageComponent */], __WEBPACK_IMPORTED_MODULE_54__main_dialogs_error_message_error_message_component__["a" /* ErrorMessageComponent */], __WEBPACK_IMPORTED_MODULE_2__main_dialogs_my_reset_password_my_reset_password_component__["a" /* MyResetPasswordComponent */], __WEBPACK_IMPORTED_MODULE_66__main_dialogs_time_time_component__["a" /* TimeComponent */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_10__angular_platform_browser__["BrowserModule"],
-                __WEBPACK_IMPORTED_MODULE_11__angular_http__["d" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_12__angular_common_http__["c" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_13__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-                __WEBPACK_IMPORTED_MODULE_14__angular_router__["e" /* RouterModule */].forRoot(appRoutes, { enableTracing: false, useHash: true }),
-                __WEBPACK_IMPORTED_MODULE_17__core_modules_shared_module__["a" /* SharedModule */],
-                __WEBPACK_IMPORTED_MODULE_31_angular2_markdown__["a" /* MarkdownModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_56_angular5_time_picker__["a" /* Angular5TimePickerModule */],
-                __WEBPACK_IMPORTED_MODULE_15_angular_in_memory_web_api__["a" /* InMemoryWebApiModule */].forRoot(__WEBPACK_IMPORTED_MODULE_20__fuse_fake_db_fuse_fake_db_service__["a" /* FuseFakeDbService */], {
+                __WEBPACK_IMPORTED_MODULE_11__angular_platform_browser__["BrowserModule"],
+                __WEBPACK_IMPORTED_MODULE_12__angular_http__["d" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_13__angular_common_http__["c" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_14__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_15__angular_router__["e" /* RouterModule */].forRoot(appRoutes, { enableTracing: false, useHash: true }),
+                __WEBPACK_IMPORTED_MODULE_18__core_modules_shared_module__["a" /* SharedModule */],
+                __WEBPACK_IMPORTED_MODULE_32_angular2_markdown__["a" /* MarkdownModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_57_angular5_time_picker__["a" /* Angular5TimePickerModule */],
+                __WEBPACK_IMPORTED_MODULE_16_angular_in_memory_web_api__["a" /* InMemoryWebApiModule */].forRoot(__WEBPACK_IMPORTED_MODULE_21__fuse_fake_db_fuse_fake_db_service__["a" /* FuseFakeDbService */], {
                     delay: 0,
                     passThruUnknownUrl: true
                 }),
-                __WEBPACK_IMPORTED_MODULE_21__main_main_module__["a" /* FuseMainModule */],
-                __WEBPACK_IMPORTED_MODULE_19__main_content_apps_dashboards_project_project_module__["a" /* ProjectModule */],
-                __WEBPACK_IMPORTED_MODULE_22__main_content_pages_pages_module__["a" /* PagesModule */],
-                __WEBPACK_IMPORTED_MODULE_23__main_content_ui_ui_module__["a" /* UIModule */],
-                __WEBPACK_IMPORTED_MODULE_29__main_content_services_services_module__["a" /* ServicesModule */],
-                __WEBPACK_IMPORTED_MODULE_24__main_content_components_components_module__["a" /* ComponentsModule */],
-                __WEBPACK_IMPORTED_MODULE_30__main_content_components_angular_material_angular_material_module__["a" /* FuseAngularMaterialModule */],
-                __WEBPACK_IMPORTED_MODULE_28__main_content_components_third_party_components_third_party_module__["a" /* ComponentsThirdPartyModule */],
-                __WEBPACK_IMPORTED_MODULE_32__ngx_translate_core__["a" /* TranslateModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_35__angular_material__["n" /* MatDialogModule */]
+                __WEBPACK_IMPORTED_MODULE_22__main_main_module__["a" /* FuseMainModule */],
+                __WEBPACK_IMPORTED_MODULE_20__main_content_apps_dashboards_project_project_module__["a" /* ProjectModule */],
+                __WEBPACK_IMPORTED_MODULE_23__main_content_pages_pages_module__["a" /* PagesModule */],
+                __WEBPACK_IMPORTED_MODULE_24__main_content_ui_ui_module__["a" /* UIModule */],
+                __WEBPACK_IMPORTED_MODULE_30__main_content_services_services_module__["a" /* ServicesModule */],
+                __WEBPACK_IMPORTED_MODULE_25__main_content_components_components_module__["a" /* ComponentsModule */],
+                __WEBPACK_IMPORTED_MODULE_31__main_content_components_angular_material_angular_material_module__["a" /* FuseAngularMaterialModule */],
+                __WEBPACK_IMPORTED_MODULE_29__main_content_components_third_party_components_third_party_module__["a" /* ComponentsThirdPartyModule */],
+                __WEBPACK_IMPORTED_MODULE_33__ngx_translate_core__["a" /* TranslateModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_36__angular_material__["n" /* MatDialogModule */]
             ],
-            entryComponents: [__WEBPACK_IMPORTED_MODULE_33__main_dialogs_some_thing_is_error_some_thing_is_error_component__["a" /* SomeThingIsErrorComponent */], __WEBPACK_IMPORTED_MODULE_68__main_dialogs_make_rate_make_rate_component__["a" /* MakeRateComponent */], __WEBPACK_IMPORTED_MODULE_65__main_dialogs_time_time_component__["a" /* TimeComponent */], __WEBPACK_IMPORTED_MODULE_3__main_dialogs_confirm_message_confirm_message_component__["a" /* ConfirmMessageComponent */], __WEBPACK_IMPORTED_MODULE_53__main_dialogs_error_message_error_message_component__["a" /* ErrorMessageComponent */], __WEBPACK_IMPORTED_MODULE_1__main_dialogs_my_reset_password_my_reset_password_component__["a" /* MyResetPasswordComponent */]],
+            entryComponents: [__WEBPACK_IMPORTED_MODULE_34__main_dialogs_some_thing_is_error_some_thing_is_error_component__["a" /* SomeThingIsErrorComponent */], __WEBPACK_IMPORTED_MODULE_0__main_dialogs_add_vacation_add_vacation_component__["a" /* AddVacationComponent */], __WEBPACK_IMPORTED_MODULE_69__main_dialogs_make_rate_make_rate_component__["a" /* MakeRateComponent */], __WEBPACK_IMPORTED_MODULE_66__main_dialogs_time_time_component__["a" /* TimeComponent */], __WEBPACK_IMPORTED_MODULE_4__main_dialogs_confirm_message_confirm_message_component__["a" /* ConfirmMessageComponent */], __WEBPACK_IMPORTED_MODULE_54__main_dialogs_error_message_error_message_component__["a" /* ErrorMessageComponent */], __WEBPACK_IMPORTED_MODULE_2__main_dialogs_my_reset_password_my_reset_password_component__["a" /* MyResetPasswordComponent */]],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_25__core_services_splash_screen_service__["a" /* FuseSplashScreenService */],
-                __WEBPACK_IMPORTED_MODULE_26__core_services_config_service__["a" /* FuseConfigService */],
-                __WEBPACK_IMPORTED_MODULE_27__core_components_navigation_navigation_service__["a" /* FuseNavigationService */],
-                __WEBPACK_IMPORTED_MODULE_8__core_services_main_service__["a" /* MainService */],
-                __WEBPACK_IMPORTED_MODULE_0__app_direction_service__["a" /* AppDirectionService */],
-                __WEBPACK_IMPORTED_MODULE_4__core_services_loader_services_service__["a" /* LoaderServicesService */],
-                __WEBPACK_IMPORTED_MODULE_7__core_services_call_api_service__["a" /* CallApiService */],
-                __WEBPACK_IMPORTED_MODULE_6__core_services_login_service__["a" /* LoginService */],
-                __WEBPACK_IMPORTED_MODULE_5__core_services_global_service__["a" /* GlobalService */],
-                __WEBPACK_IMPORTED_MODULE_2__core_services_auth_guard_service_service__["a" /* AuthGuardService */],
-                __WEBPACK_IMPORTED_MODULE_34__core_services_dialog_service__["a" /* DialogService */]
+                __WEBPACK_IMPORTED_MODULE_26__core_services_splash_screen_service__["a" /* FuseSplashScreenService */],
+                __WEBPACK_IMPORTED_MODULE_27__core_services_config_service__["a" /* FuseConfigService */],
+                __WEBPACK_IMPORTED_MODULE_28__core_components_navigation_navigation_service__["a" /* FuseNavigationService */],
+                __WEBPACK_IMPORTED_MODULE_9__core_services_main_service__["a" /* MainService */],
+                __WEBPACK_IMPORTED_MODULE_1__app_direction_service__["a" /* AppDirectionService */],
+                __WEBPACK_IMPORTED_MODULE_5__core_services_loader_services_service__["a" /* LoaderServicesService */],
+                __WEBPACK_IMPORTED_MODULE_8__core_services_call_api_service__["a" /* CallApiService */],
+                __WEBPACK_IMPORTED_MODULE_7__core_services_login_service__["a" /* LoginService */],
+                __WEBPACK_IMPORTED_MODULE_6__core_services_global_service__["a" /* GlobalService */],
+                __WEBPACK_IMPORTED_MODULE_3__core_services_auth_guard_service_service__["a" /* AuthGuardService */],
+                __WEBPACK_IMPORTED_MODULE_35__core_services_dialog_service__["a" /* DialogService */]
             ],
             bootstrap: [
-                __WEBPACK_IMPORTED_MODULE_18__app_component__["a" /* AppComponent */]
+                __WEBPACK_IMPORTED_MODULE_19__app_component__["a" /* AppComponent */]
             ]
         })
     ], AppModule);
@@ -5108,14 +5133,15 @@ var FuseConfigService = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DialogService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_dialogs_make_rate_make_rate_component__ = __webpack_require__("../../../../../src/app/main/dialogs/make-rate/make-rate.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__main_dialogs_some_thing_is_error_some_thing_is_error_component__ = __webpack_require__("../../../../../src/app/main/dialogs/some-thing-is-error/some-thing-is-error.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__main_dialogs_confirm_message_confirm_message_component__ = __webpack_require__("../../../../../src/app/main/dialogs/confirm-message/confirm-message.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__main_dialogs_error_message_error_message_component__ = __webpack_require__("../../../../../src/app/main/dialogs/error-message/error-message.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__main_dialogs_time_time_component__ = __webpack_require__("../../../../../src/app/main/dialogs/time/time.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_dialogs_add_vacation_add_vacation_component__ = __webpack_require__("../../../../../src/app/main/dialogs/add-vacation/add-vacation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__main_dialogs_make_rate_make_rate_component__ = __webpack_require__("../../../../../src/app/main/dialogs/make-rate/make-rate.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__main_dialogs_some_thing_is_error_some_thing_is_error_component__ = __webpack_require__("../../../../../src/app/main/dialogs/some-thing-is-error/some-thing-is-error.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__main_dialogs_confirm_message_confirm_message_component__ = __webpack_require__("../../../../../src/app/main/dialogs/confirm-message/confirm-message.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__main_dialogs_error_message_error_message_component__ = __webpack_require__("../../../../../src/app/main/dialogs/error-message/error-message.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__main_dialogs_time_time_component__ = __webpack_require__("../../../../../src/app/main/dialogs/time/time.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5125,6 +5151,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -5143,7 +5170,7 @@ var DialogService = (function () {
         if (type === void 0) { type = "patch"; }
         if (token === void 0) { token = "patch"; }
         // console.log(message + url + data + withReload, type)
-        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_5__main_dialogs_confirm_message_confirm_message_component__["a" /* ConfirmMessageComponent */], {
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_6__main_dialogs_confirm_message_confirm_message_component__["a" /* ConfirmMessageComponent */], {
             width: '350px',
             data: { message: message, url: url, sendData: data, type: type, withReload: withReload, token: token }
         });
@@ -5157,7 +5184,7 @@ var DialogService = (function () {
         });
     };
     DialogService.prototype.someThingIsError = function () {
-        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_4__main_dialogs_some_thing_is_error_some_thing_is_error_component__["a" /* SomeThingIsErrorComponent */], {
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_5__main_dialogs_some_thing_is_error_some_thing_is_error_component__["a" /* SomeThingIsErrorComponent */], {
             width: '350px',
         });
         dialogRef.afterClosed().subscribe(function (result) {
@@ -5172,7 +5199,7 @@ var DialogService = (function () {
         this.mainServ.APIServ.get("trips/" + tripId + "?filter=" + JSON.stringify(filter)).subscribe(function (data) {
             _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
-                var dialogRef = _this.dialog.open(__WEBPACK_IMPORTED_MODULE_0__main_dialogs_make_rate_make_rate_component__["a" /* MakeRateComponent */], {
+                var dialogRef = _this.dialog.open(__WEBPACK_IMPORTED_MODULE_1__main_dialogs_make_rate_make_rate_component__["a" /* MakeRateComponent */], {
                     width: '350px',
                     data: { "trip": data }
                 });
@@ -5186,8 +5213,19 @@ var DialogService = (function () {
             }
         });
     };
+    DialogService.prototype.addVacation = function (carId, callback) {
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_0__main_dialogs_add_vacation_add_vacation_component__["a" /* AddVacationComponent */], {
+            width: '550px',
+            data: { "carId": carId }
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+            if (result) {
+                callback();
+            }
+        });
+    };
     DialogService.prototype.errorMessage = function (errorCode) {
-        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_6__main_dialogs_error_message_error_message_component__["a" /* ErrorMessageComponent */], {
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_7__main_dialogs_error_message_error_message_component__["a" /* ErrorMessageComponent */], {
             width: '350px',
             data: { "errorCode": errorCode }
         });
@@ -5197,7 +5235,7 @@ var DialogService = (function () {
         });
     };
     DialogService.prototype.openTimeDialog = function (callback) {
-        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_7__main_dialogs_time_time_component__["a" /* TimeComponent */], {
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_8__main_dialogs_time_time_component__["a" /* TimeComponent */], {
             width: '350px',
         });
         dialogRef.afterClosed().subscribe(function (result) {
@@ -5209,8 +5247,8 @@ var DialogService = (function () {
         });
     };
     DialogService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_material__["m" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_1__main_service__["a" /* MainService */]])
+        Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_material__["m" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_2__main_service__["a" /* MainService */]])
     ], DialogService);
     return DialogService;
 }());
@@ -19454,6 +19492,9 @@ var addAdminComponent = (function () {
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.back();
             }
+            else if (_this.mainServ.APIServ.getErrorCode() == 422) {
+                _this.dialogServ.errorMessage(422);
+            }
             else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                 _this.mainServ.APIServ.setErrorCode(0);
                 _this.dialogServ.someThingIsError();
@@ -19749,6 +19790,9 @@ var editAdminComponent = (function () {
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.back();
             }
+            else if (_this.mainServ.APIServ.getErrorCode() == 422) {
+                _this.dialogServ.errorMessage(422);
+            }
             else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                 _this.mainServ.APIServ.setErrorCode(0);
                 _this.dialogServ.someThingIsError();
@@ -19772,6 +19816,621 @@ var editAdminComponent = (function () {
             __WEBPACK_IMPORTED_MODULE_2__core_services_translation_loader_service__["a" /* FuseTranslationLoaderService */]])
     ], editAdminComponent);
     return editAdminComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/agency/addAgency/addAgency.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back mirror\">arrow_back_ios</mat-icon>\r\n        {{'AGENCY.ADDAGENCY.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"addAgencyForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'AGENCY.NAMEEN' | translate }}\" formControlName=\"nameEn\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'AGENCY.NAMEAR' | translate }}\" formControlName=\"nameAr\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'AGENCY.PHONENUMBER' | translate }}\" formControlName=\"phoneNumber\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'AGENCY.EMAIL' | translate }}\" formControlName=\"email\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error *ngIf=\"addAgencyForm.hasError('email','email') && !addAgencyForm.hasError('required','email')\">{{'Global.ERRORVALIDEMAIL'\r\n              | translate }}</mat-error>\r\n            <mat-error *ngIf=\"addAgencyForm.hasError('required','email')\">{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'AGENCY.PASSWORD' | translate }}\" formControlName=\"password\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'AGENCY.ISOCODE' | translate }}\" formControlName=\"ISOCode\">\r\n              <mat-option *ngFor=\"let oneCode of isoCode\" [value]=\"oneCode.isoCode\">\r\n                {{oneCode.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <div fxFlex=\"40\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                  <!-- <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div> -->\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <div fxFlex=\"60\">\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button (click)=\"add()\" class=\"addButton\" cdkFocusInitial [disabled]=\"addAgencyForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/agency/addAgency/addAgency.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".divImage {\n  height: 220px;\n  position: relative;\n  width: 100%;\n  text-align: center; }\n  .divImage .imgCustim {\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px auto; }\n  .divImage .imgCustimLoader {\n    position: absolute;\n    opacity: 0.5;\n    top: 0px;\n    /* height: 100%; */\n    left: 0px;\n    /* width: 100%; */\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px auto;\n    margin-left: calc(50% - 100px); }\n\n.divButton {\n  height: 40px;\n  border-radius: 10px;\n  width: 150px;\n  margin: 5px auto;\n  text-align: center;\n  padding: 10px 0px;\n  background-color: #00897B;\n  color: white; }\n  .divButton:hover {\n    background-color: #00695C;\n    cursor: pointer; }\n\n.listOfImgs {\n  width: 1050px;\n  padding: 20px 0px;\n  white-space: nowrap;\n  overflow-x: auto;\n  overflow-y: hidden; }\n  .listOfImgs .listDiv {\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px 10px;\n    position: relative; }\n    .listOfImgs .listDiv .deleteImge {\n      background-color: rgba(204, 204, 204, 0.329412);\n      width: 25px;\n      height: 25px;\n      border-radius: 50%;\n      position: absolute;\n      right: 5px;\n      top: 5px;\n      padding: 2px; }\n      .listOfImgs .listDiv .deleteImge mat-icon {\n        font-size: 21px;\n        font-weight: bold; }\n      .listOfImgs .listDiv .deleteImge:hover {\n        cursor: pointer;\n        background-color: rgba(204, 204, 204, 0.729412); }\n    .listOfImgs .listDiv .listImgCustim {\n      width: 200px;\n      height: 200px;\n      border-radius: 10px; }\n    .listOfImgs .listDiv .listImgCustimLoader {\n      position: absolute;\n      opacity: 0.5;\n      top: 0px;\n      /* height: 100%; */\n      left: 0px;\n      /* width: 100%; */\n      width: 200px;\n      height: 200px;\n      border-radius: 10px;\n      margin-left: calc(50% - 100px); }\n\nul.listOfImgs li {\n  display: inline-block; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/agency/addAgency/addAgency.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return addAgencyComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__core_services_dialog_service__ = __webpack_require__("../../../../../src/app/core/services/dialog.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_services_translation_loader_service__ = __webpack_require__("../../../../../src/app/core/services/translation-loader.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_services_main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__languageFiles_en__ = __webpack_require__("../../../../../src/app/main/languageFiles/en.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var addAgencyComponent = (function () {
+    function addAgencyComponent(mainServ, _formBuilder, translate, dialogServ, translationLoader) {
+        this.mainServ = mainServ;
+        this._formBuilder = _formBuilder;
+        this.translate = translate;
+        this.dialogServ = dialogServ;
+        this.translationLoader = translationLoader;
+        this.imageOnLoad = [];
+        this.isoCode = [];
+        this.imaageUrl = this.mainServ.getDefultImage();
+        this.images = [];
+        this.listLanguages = [];
+        this.primaryColor = "#127bdc";
+        this.secondryColor = "#127bdc";
+        this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_6__languageFiles_en__["a" /* locale */]);
+    }
+    addAgencyComponent.prototype.openSelectImage = function () {
+        document.getElementById('files').click();
+    };
+    addAgencyComponent.prototype.openSelectListImage = function () {
+        document.getElementById('listFiles').click();
+    };
+    addAgencyComponent.prototype.releadImage = function (innerIndex, file) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var id = 'uploadImage' + innerIndex;
+            document.getElementById(id).setAttribute('src', reader.result);
+            // this.text = reader.result;
+        };
+        reader.readAsDataURL(file);
+    };
+    addAgencyComponent.prototype.onChange = function (event) {
+        var _this = this;
+        var files = [].slice.call(event.target.files);
+        var allFilles = event.target.files;
+        var images = [];
+        this.images = [];
+        this.imageOnLoad = Array(files.length);
+        var innerIndex = 0;
+        for (var i = 0; i < allFilles.length; i++) {
+            var file = allFilles[i];
+            var x;
+            console.log("fromOut");
+            console.log(i);
+            this.releadImage(i, file);
+        }
+        var files2 = Array.from(event.target.files);
+        files.forEach(function (fileElement, index) {
+            var countDelete = 0;
+            // this.ng2ImgMaxService.compress([fileElement], 0.5, true, true).subscribe((result) => {
+            _this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).subscribe(function (data) {
+                _this.imageOnLoad = [];
+                countDelete++;
+                if (_this.mainServ.APIServ.getErrorCode() == 0)
+                    data.forEach(function (element) {
+                        _this.images[0] = element;
+                        _this.media = element;
+                    });
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                    _this.mainServ.APIServ.setErrorCode(0);
+                    _this.dialogServ.someThingIsError();
+                }
+            });
+        });
+        // });
+    };
+    addAgencyComponent.prototype.ngOnInit = function () {
+        this.isoCode = this.mainServ.globalServ.getIsoCode();
+        this.addAgencyForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormGroup */]({
+            nameEn: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+            nameAr: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+            nameTr: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */](''),
+            phoneNumber: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+            email: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].email]),
+            password: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+            ISOCode: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required)
+        });
+    };
+    addAgencyComponent.prototype.add = function () {
+        var _this = this;
+        var data = this.addAgencyForm.value;
+        data['mediaId'] = this.media.id;
+        this.mainServ.loaderSer.display(true);
+        this.mainServ.APIServ.post("agencies", data).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.back();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() == 422) {
+                _this.dialogServ.errorMessage(422);
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
+            }
+        });
+    };
+    addAgencyComponent.prototype.back = function () {
+        this.mainServ.globalServ.goTo('agency');
+    };
+    addAgencyComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
+            selector: 'app-addAgency',
+            template: __webpack_require__("../../../../../src/app/main/content/pages/agency/addAgency/addAgency.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/main/content/pages/agency/addAgency/addAgency.component.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__core_services_main_service__["a" /* MainService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["b" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_0__core_services_dialog_service__["a" /* DialogService */],
+            __WEBPACK_IMPORTED_MODULE_1__core_services_translation_loader_service__["a" /* FuseTranslationLoaderService */]])
+    ], addAgencyComponent);
+    return addAgencyComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/agency/agency/agencies.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n    <!-- APP TITLE -->\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n      <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n        fxHide.gt-md>\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n\r\n      <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <mat-icon class=\"logo-icon mr-16\">domain</mat-icon>\r\n        <span class=\"logo-text h1\">{{'AGENCY.ALLAGENCY.TITLE' | translate}}</span>\r\n      </div>\r\n\r\n    </div>\r\n    <!-- / APP TITLE -->\r\n\r\n    <!-- SEARCH -->\r\n    <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n      <label for=\"search\" class=\"mr-8\">\r\n        <mat-icon>search</mat-icon>\r\n      </label>\r\n      <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n        <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'AGENCY.ALLAGENCY.SEARCH'| translate}}\">\r\n      </mat-form-field>\r\n      <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addUser()\">{{'AGENCY.ALLAGENCY.ADDAGENCY'\r\n        | translate}}</button>\r\n\r\n    </div>\r\n    <!-- / SEARCH -->\r\n\r\n\r\n  </div>\r\n  <div class=\"content\">\r\n\r\n    <ngx-datatable class=\"material vertical-scroll\" [rows]=\"filterRows\" [columnMode]=\"'force'\" [headerHeight]=\"50\"\r\n      [rowHeight]=\"50\" [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\">\r\n\r\n      <ngx-datatable-column [flexGrow]=\"1\"  [width]=\"150\" prop=\"\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span></span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <img style=\"width:45px;height: 45px;border-radius: 50%;\" src=\"{{row.media.thumb}}\">\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"nameEn\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'AGENCY.NAMEEN' | translate }}</span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"nameAr\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'AGENCY.NAMEAR' | translate }}</span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"phoneNumber\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'AGENCY.PHONENUMBER' | translate }}</span>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"email\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'AGENCY.EMAIL' | translate }}</span>\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n\r\n\r\n      <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n          <span>{{ 'AGENCY.STATUS' | translate }}</span>\r\n        </ng-template>\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <mat-chip-list *ngIf=\"row.status=='active'\">\r\n            <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n          </mat-chip-list>\r\n          <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n            <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n          </mat-chip-list>\r\n        </ng-template>\r\n      </ngx-datatable-column>\r\n\r\n      <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n        <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n          <div class=\"table-header-font\">\r\n\r\n          </div>\r\n        </ng-template>\r\n\r\n        <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n          <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n            <mat-icon style=\"color : white;\">edit</mat-icon>\r\n          </button>\r\n          <button mat-mini-fab class=\"mr-16\" (click)=\"reset(row['id'])\" style=\"background-color: rgb(45, 50, 62)\">\r\n            <mat-icon style=\"color : white;\">lock</mat-icon>\r\n          </button>\r\n\r\n          <!-- <button mat-mini-fab *ngIf=\"row.status=='active'\" class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">delete</mat-icon>\r\n        </button>\r\n        <button mat-mini-fab *ngIf=\"row.status=='deactive'\" class=\"mr-16\" (click)=\"activate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n          <mat-icon style=\"color : white;\">replay</mat-icon>\r\n        </button> -->\r\n          <!-- <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"view(row['id'])\">\r\n          <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n        </button> -->\r\n        </ng-template>\r\n\r\n      </ngx-datatable-column>\r\n\r\n    </ngx-datatable>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/agency/agency/agencies.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/agency/agency/agencies.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return agenciesComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dialogs_my_reset_password_my_reset_password_component__ = __webpack_require__("../../../../../src/app/main/dialogs/my-reset-password/my-reset-password.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_services_translation_loader_service__ = __webpack_require__("../../../../../src/app/core/services/translation-loader.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__languageFiles_en__ = __webpack_require__("../../../../../src/app/main/languageFiles/en.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_services_main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__core_services_dialog_service__ = __webpack_require__("../../../../../src/app/core/services/dialog.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var agenciesComponent = (function () {
+    function agenciesComponent(translationLoader, translateService, mainServ, dialogServ, dialog) {
+        this.translationLoader = translationLoader;
+        this.translateService = translateService;
+        this.mainServ = mainServ;
+        this.dialogServ = dialogServ;
+        this.dialog = dialog;
+        this.allRows = [];
+        this.filterRows = [];
+        this.filterValue = "";
+        this.columns = ["email", "phoneNumber", "nameAr", "nameEn", 'status'];
+        this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_5__languageFiles_en__["a" /* locale */]);
+        this.inisilaize();
+    }
+    agenciesComponent.prototype.inisilaize = function () {
+        var _this = this;
+        this.mainServ.loaderSer.display(true);
+        this.mainServ.APIServ.get("agencies").subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.allRows = data;
+                _this.filterDatatable();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() == 400) {
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
+            }
+        });
+    };
+    agenciesComponent.prototype.ngOnInit = function () {
+    };
+    agenciesComponent.prototype.goTo = function (pageName, id) {
+        var url = "";
+        if (pageName == 'view') {
+            url = 'show-form/' + id;
+        }
+        else if (pageName == 'edit') {
+            url = 'edit-agency/' + id;
+        }
+        this.mainServ.globalServ.goTo(url);
+    };
+    agenciesComponent.prototype.addUser = function () {
+        this.mainServ.globalServ.goTo("add-agency");
+    };
+    agenciesComponent.prototype.reset = function (userId) {
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_0__dialogs_my_reset_password_my_reset_password_component__["a" /* MyResetPasswordComponent */], {
+            width: '350px',
+            data: { userId: userId, type: "agencies" }
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+        });
+    };
+    agenciesComponent.prototype.deactivate = function (id) {
+        var _this = this;
+        var mainThis = this;
+        this.translateService.get('MESSAGES.DEACTIVELOCATION').subscribe(function (res) {
+            _this.dialogServ.confirmationMessage(res, "agencies/deactivate/" + id, {}, false, function () {
+                mainThis.inisilaize();
+            }, "delete");
+        });
+    };
+    agenciesComponent.prototype.activate = function (id, name) {
+        var _this = this;
+        var mainThis = this;
+        this.translateService.get('MESSAGES.ACTIVELOCATION').subscribe(function (res) {
+            _this.dialogServ.confirmationMessage(res, "agencies/activate/" + id, {}, false, function () {
+                mainThis.inisilaize();
+            }, "put");
+        });
+    };
+    agenciesComponent.prototype.filterDatatable = function () {
+        if (this.filterValue == null)
+            this.filterRows = this.allRows;
+        else {
+            var val_1 = this.filterValue.toLowerCase();
+            var keys_1 = this.columns;
+            var colsAmt_1 = this.columns.length;
+            this.filterRows = this.allRows.filter(function (item) {
+                for (var i = 0; i < colsAmt_1; i++) {
+                    if (keys_1[i] == "country.name") {
+                        if (item["country"]["name"].toString().toLowerCase().indexOf(val_1) !== -1 || !val_1)
+                            return true;
+                    }
+                    else if (item[keys_1[i]].toString().toLowerCase().indexOf(val_1) !== -1 || !val_1) {
+                        return true;
+                    }
+                }
+            });
+        }
+    };
+    agenciesComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
+            selector: 'app-agencies',
+            template: __webpack_require__("../../../../../src/app/main/content/pages/agency/agency/agencies.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/main/content/pages/agency/agency/agencies.component.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__core_services_translation_loader_service__["a" /* FuseTranslationLoaderService */],
+            __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["b" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_6__core_services_main_service__["a" /* MainService */],
+            __WEBPACK_IMPORTED_MODULE_7__core_services_dialog_service__["a" /* DialogService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["m" /* MatDialog */]])
+    ], agenciesComponent);
+    return agenciesComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/agency/editAgency/editAgency.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back mirror\">arrow_back_ios</mat-icon>\r\n        {{'AGENCY.EDITAGENCY.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editAgencyForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'AGENCY.NAMEEN' | translate }}\" formControlName=\"nameEn\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'AGENCY.NAMEAR' | translate }}\" formControlName=\"nameAr\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'AGENCY.PHONENUMBER' | translate }}\" formControlName=\"phoneNumber\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'AGENCY.EMAIL' | translate }}\" formControlName=\"email\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error *ngIf=\"editAgencyForm.hasError('email','email') && !editAgencyForm.hasError('required','email')\">{{'Global.ERRORVALIDEMAIL'\r\n              | translate }}</mat-error>\r\n            <mat-error *ngIf=\"editAgencyForm.hasError('required','email')\">{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'AGENCY.ISOCODE' | translate }}\" formControlName=\"ISOCode\">\r\n              <mat-option *ngFor=\"let oneCode of isoCode\" [value]=\"oneCode.isoCode\">\r\n                {{oneCode.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <div fxFlex=\"30\"></div>\r\n          <div fxFlex=\"40\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                  <!-- <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div> -->\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <div fxFlex=\"60\">\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editAgencyForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n\r\n  <!-- <div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n    <div class=\"header mat-accent-bg p-16 whiteCustomHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\"\r\n      fxLayout.gt-xs=\"row\" fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n      <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n        <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n          fxHide.gt-md>\r\n          <mat-icon>menu</mat-icon>\r\n        </button>\r\n\r\n        <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n          <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n          <span class=\"logo-text h1\">{{'TRIP.ALLTRIP.TITLE' | translate}}</span>\r\n\r\n        </div>\r\n\r\n      </div>\r\n      <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <label for=\"search\" class=\"mr-8\">\r\n          <mat-icon>search</mat-icon>\r\n        </label>\r\n        <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n          <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'SUBLOCATION.ALLSUBLOCATION.SEARCH'| translate}}\">\r\n        </mat-form-field>\r\n\r\n      </div>\r\n\r\n\r\n    </div>\r\n    <div class=\"contentAr\">\r\n\r\n      <ngx-datatable class=\"material vertical-scroll\" [rows]=\"filterRows\" [headerHeight]=\"50\" [rowHeight]=\"50\"\r\n        [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"isEnLang()\">\r\n        <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"owner.name\">\r\n          <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n            <span>{{ 'TRIP.USER' | translate }}</span>\r\n          </ng-template>\r\n\r\n        </ngx-datatable-column>\r\n        <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"location.nameEn\">\r\n          <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n            <span>{{ 'TRIP.LOCATION' | translate }}</span>\r\n          </ng-template>\r\n\r\n        </ngx-datatable-column>\r\n\r\n        <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"car.name\">\r\n          <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n            <span>{{ 'TRIP.CAR' | translate }}</span>\r\n          </ng-template>\r\n        </ngx-datatable-column>\r\n\r\n        <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"cost\">\r\n          <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n            <span>{{ 'TRIP.PRICE' | translate }}</span>\r\n          </ng-template>\r\n        </ngx-datatable-column>\r\n\r\n        <ngx-datatable-column [canAutoResize]=\"true\" [width]=\"20\" [flexGrow]=\"1\" prop=\"\">\r\n          <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n            <mat-icon style=\"color: rgba(66, 66, 66, 0.51)\">flight_land</mat-icon>\r\n\r\n\r\n          </ng-template>\r\n          <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n            <mat-icon style=\"color: #13c43f\" *ngIf=\"row.fromAirport==true\">check_circle_outline</mat-icon>\r\n            <mat-icon style=\"color: #c22048\" *ngIf=\"row.fromAirport==false\">highlight_off</mat-icon>\r\n          </ng-template>\r\n        </ngx-datatable-column>\r\n\r\n\r\n        <ngx-datatable-column [canAutoResize]=\"true\" [width]=\"20\" [flexGrow]=\"1\" prop=\"\">\r\n          <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n            <mat-icon style=\"color: rgba(66, 66, 66, 0.51)\">directions_car</mat-icon>\r\n\r\n\r\n          </ng-template>\r\n          <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n            <mat-icon style=\"color: #13c43f\" *ngIf=\"row.inCity==true\">check_circle_outline</mat-icon>\r\n            <mat-icon style=\"color: #c22048\" *ngIf=\"row.inCity==false\">highlight_off</mat-icon>\r\n          </ng-template>\r\n        </ngx-datatable-column>\r\n\r\n\r\n        <ngx-datatable-column [canAutoResize]=\"true\" [width]=\"20\" [flexGrow]=\"1\" prop=\"\">\r\n          <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n            <mat-icon style=\"color: rgba(66, 66, 66, 0.51)\">flight_takeoff</mat-icon>\r\n\r\n\r\n          </ng-template>\r\n          <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n            <mat-icon style=\"color: #13c43f\" *ngIf=\"row.toAirport==true\">check_circle_outline</mat-icon>\r\n            <mat-icon style=\"color: #c22048\" *ngIf=\"row.toAirport==false\">highlight_off</mat-icon>\r\n          </ng-template>\r\n        </ngx-datatable-column>\r\n\r\n        <ngx-datatable-column [canAutoResize]=\"false\" [flexGrow]=\"1\" prop=\"rate\">\r\n          <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n            <span>{{ 'TRIP.RATE' | translate }}</span>\r\n          </ng-template>\r\n          <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n            <span>{{row['rate']!=null ? row['rate']['value'] : '-'}}</span>\r\n          </ng-template>\r\n        </ngx-datatable-column>\r\n\r\n\r\n        <ngx-datatable-column [canAutoResize]=\"true\" [flexGrow]=\"1\" prop=\"Status\">\r\n          <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n            <span>{{ 'TRIP.STATUS' | translate }}</span>\r\n          </ng-template>\r\n          <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n            <mat-chip-list *ngIf=\"row.status=='active'\">\r\n              <mat-chip style=\"background-color:green\" selected=\"true\">{{row.status}}</mat-chip>\r\n            </mat-chip-list>\r\n            <mat-chip-list *ngIf=\"row.status=='deactive'\">\r\n              <mat-chip style=\"background-color:#ff6363\" selected=\"true\">{{row.status}}</mat-chip>\r\n            </mat-chip-list>\r\n            <mat-chip-list *ngIf=\"row.status!='deactive' && row.status!='active'\">\r\n              <mat-chip style=\"background-color:#3b6fff\" selected=\"true\">{{row.status}}</mat-chip>\r\n            </mat-chip-list>\r\n          </ng-template>\r\n        </ngx-datatable-column>\r\n\r\n\r\n        <ngx-datatable-column [canAutoResize]=\"true\" [width]=\"190\" [flexGrow]=\"1\" prop=\"start\">\r\n          <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n            <span>{{ 'TRIP.START' | translate }}</span>\r\n          </ng-template>\r\n          <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n            <span>\r\n              {{row[\"start\"] | date: 'dd-MM-yyyy HH:mm'}}\r\n            </span>\r\n          </ng-template>\r\n        </ngx-datatable-column>\r\n\r\n        <ngx-datatable-column [canAutoResize]=\"true\" [width]=\"190\" [flexGrow]=\"1\" prop=\"end\">\r\n          <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n            <span>{{ 'TRIP.END' | translate }}</span>\r\n          </ng-template>\r\n          <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n            <span>\r\n              {{row[\"end\"] | date: 'dd-MM-yyyy HH:mm'}}\r\n            </span>\r\n          </ng-template>\r\n        </ngx-datatable-column>\r\n\r\n\r\n\r\n\r\n        <ngx-datatable-column [width]=\"260\" name=\"id\">\r\n          <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n            <div class=\"table-header-font\">\r\n\r\n            </div>\r\n          </ng-template>\r\n\r\n          <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n            <button mat-mini-fab *ngIf=\"row.status=='finished'\" class=\"mr-16\" style=\"background-color: #8a8a8a;\"\r\n              (click)=\"goTo('bills',row['id'])\">\r\n              <mat-icon style=\"color : white;\">subtitles</mat-icon>\r\n            </button>\r\n\r\n            <button mat-mini-fab class=\"mr-16\" (click)=\"goTo('edit',row['id'])\" style=\"background-color: rgba(20, 160, 202, 0.911);\">\r\n              <mat-icon style=\"color : white;\">edit</mat-icon>\r\n            </button>\r\n            <button mat-mini-fab class=\"mr-16\" style=\"background-color: rgba(7, 112, 7, 0.849);\" (click)=\"goTo('view',row['id'])\">\r\n              <mat-icon style=\"color : white;\">visibility</mat-icon>\r\n            </button>\r\n\r\n            <button mat-mini-fab class=\"mr-16\" style=\"background-color: darkgoldenrod;\" (click)=\"rate(row['id'])\">\r\n              <mat-icon style=\"color : white;\">star</mat-icon>\r\n            </button>\r\n\r\n            <button mat-icon-button [matMenuTriggerFor]=\"menu\">\r\n              <mat-icon>more_vert</mat-icon>\r\n            </button>\r\n            <mat-menu #menu=\"matMenu\">\r\n              <button mat-menu-item *ngIf=\"row.status!='deactive'\" (click)=\"changeStatus('deactive',row.id)\">\r\n                <mat-icon>cancel</mat-icon>\r\n                <span>{{'TRIP.DEACTIVE' | translate}}</span>\r\n              </button>\r\n              <button mat-menu-item *ngIf=\"row.status!='approved'\" (click)=\"changeStatus('approved',row.id)\">\r\n                <mat-icon>more_horiz</mat-icon>\r\n                <span>{{'TRIP.APPROVED' | translate}}</span>\r\n              </button>\r\n              <button mat-menu-item *ngIf=\"row.status!='pending'\" (click)=\"changeStatus('pending',row.id)\">\r\n                <mat-icon>group</mat-icon>\r\n                <span>{{'TRIP.PENDING' | translate}}</span>\r\n              </button>\r\n              <button mat-menu-item *ngIf=\"row.status!='active'\" (click)=\"changeStatus('active',row.id)\">\r\n                <mat-icon>check</mat-icon>\r\n                <span>{{'TRIP.ACTIVE' | translate}}</span>\r\n              </button>\r\n              <button mat-menu-item *ngIf=\"row.status!='finished'\" (click)=\"changeStatus('finished',row.id)\">\r\n                <mat-icon>check</mat-icon>\r\n                <span>{{'TRIP.FINISHED' | translate}}</span>\r\n              </button>\r\n            </mat-menu>\r\n          </ng-template>\r\n\r\n        </ngx-datatable-column>\r\n\r\n\r\n\r\n      </ngx-datatable>\r\n    </div>\r\n  </div> -->\r\n\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/agency/editAgency/editAgency.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".divImage {\n  height: 220px;\n  position: relative;\n  width: 100%;\n  text-align: center; }\n  .divImage .imgCustim {\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px auto; }\n  .divImage .imgCustimLoader {\n    position: absolute;\n    opacity: 0.5;\n    top: 0px;\n    /* height: 100%; */\n    left: 0px;\n    /* width: 100%; */\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px auto;\n    margin-left: calc(50% - 100px); }\n\n.divButton {\n  height: 40px;\n  border-radius: 10px;\n  width: 150px;\n  margin: 5px auto;\n  text-align: center;\n  padding: 10px 0px;\n  background-color: #00897B;\n  color: white; }\n  .divButton:hover {\n    background-color: #00695C;\n    cursor: pointer; }\n\n.listOfImgs {\n  width: 1050px;\n  padding: 20px 0px;\n  white-space: nowrap;\n  overflow-x: auto;\n  overflow-y: hidden; }\n  .listOfImgs .listDiv {\n    width: 200px;\n    height: 200px;\n    border-radius: 10px;\n    margin: 10px 10px;\n    position: relative; }\n    .listOfImgs .listDiv .deleteImge {\n      background-color: rgba(204, 204, 204, 0.329412);\n      width: 25px;\n      height: 25px;\n      border-radius: 50%;\n      position: absolute;\n      right: 5px;\n      top: 5px;\n      padding: 2px; }\n      .listOfImgs .listDiv .deleteImge mat-icon {\n        font-size: 21px;\n        font-weight: bold; }\n      .listOfImgs .listDiv .deleteImge:hover {\n        cursor: pointer;\n        background-color: rgba(204, 204, 204, 0.729412); }\n    .listOfImgs .listDiv .listImgCustim {\n      width: 200px;\n      height: 200px;\n      border-radius: 10px; }\n    .listOfImgs .listDiv .listImgCustimLoader {\n      position: absolute;\n      opacity: 0.5;\n      top: 0px;\n      /* height: 100%; */\n      left: 0px;\n      /* width: 100%; */\n      width: 200px;\n      height: 200px;\n      border-radius: 10px;\n      margin-left: calc(50% - 100px); }\n\nul.listOfImgs li {\n  display: inline-block; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/content/pages/agency/editAgency/editAgency.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return editAgencyComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_services_dialog_service__ = __webpack_require__("../../../../../src/app/core/services/dialog.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_services_translation_loader_service__ = __webpack_require__("../../../../../src/app/core/services/translation-loader.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_services_main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__languageFiles_en__ = __webpack_require__("../../../../../src/app/main/languageFiles/en.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var editAgencyComponent = (function () {
+    function editAgencyComponent(mainServ, _formBuilder, translate, dialogServ, route, translationLoader) {
+        this.mainServ = mainServ;
+        this._formBuilder = _formBuilder;
+        this.translate = translate;
+        this.dialogServ = dialogServ;
+        this.route = route;
+        this.translationLoader = translationLoader;
+        this.imageOnLoad = [];
+        this.imaageUrl = this.mainServ.getDefultImage();
+        this.images = [];
+        this.isoCode = [];
+        // trip
+        this.filterValue = "";
+        this.allRows = [];
+        this.filterRows = [];
+        this.columns = ["cost", "status", "owner.name", "location.nameEn", "car.name"];
+        this.translationLoader.loadTranslations(__WEBPACK_IMPORTED_MODULE_7__languageFiles_en__["a" /* locale */]);
+    }
+    editAgencyComponent.prototype.getParams = function (name, callback) {
+        this.route.paramMap.subscribe(function (params) {
+            callback(params.get(name));
+        });
+    };
+    editAgencyComponent.prototype.openSelectImage = function () {
+        document.getElementById('files').click();
+    };
+    editAgencyComponent.prototype.openSelectListImage = function () {
+        document.getElementById('listFiles').click();
+    };
+    editAgencyComponent.prototype.releadImage = function (innerIndex, file) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var id = 'uploadImage' + innerIndex;
+            document.getElementById(id).setAttribute('src', reader.result);
+        };
+        reader.readAsDataURL(file);
+    };
+    editAgencyComponent.prototype.onChange = function (event) {
+        var _this = this;
+        var files = [].slice.call(event.target.files);
+        var allFilles = event.target.files;
+        var images = [];
+        this.images = [];
+        this.imageOnLoad = Array(files.length);
+        var innerIndex = 0;
+        for (var i = 0; i < allFilles.length; i++) {
+            var file = allFilles[i];
+            var x;
+            console.log("fromOut");
+            console.log(i);
+            this.releadImage(i, file);
+        }
+        var files2 = Array.from(event.target.files);
+        files.forEach(function (fileElement, index) {
+            var countDelete = 0;
+            // this.ng2ImgMaxService.compress([fileElement], 0.5, true, true).subscribe((result) => {
+            _this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).subscribe(function (data) {
+                _this.imageOnLoad = [];
+                countDelete++;
+                if (_this.mainServ.APIServ.getErrorCode() == 0)
+                    data.forEach(function (element) {
+                        _this.images[0] = element;
+                        _this.media = element;
+                    });
+                else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                    _this.mainServ.APIServ.setErrorCode(0);
+                    _this.dialogServ.someThingIsError();
+                }
+            });
+        });
+        // });
+    };
+    editAgencyComponent.prototype.ngOnInit = function () {
+        this.isoCode = this.mainServ.globalServ.getIsoCode();
+        this.editAgencyForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+            nameEn: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+            nameAr: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+            nameTr: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](''),
+            phoneNumber: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+            email: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].email]),
+            ISOCode: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
+        });
+        var mainthis = this;
+        this.getParams("id", function (id) {
+            mainthis.agencyId = id;
+            mainthis.mainServ.loaderSer.display(true);
+            mainthis.mainServ.APIServ.get("agencies/" + mainthis.agencyId).subscribe(function (data) {
+                mainthis.mainServ.loaderSer.display(false);
+                if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
+                    mainthis.agency = data;
+                    var langId = [];
+                    mainthis.media = data.media;
+                    mainthis.images[0] = data.media;
+                    mainthis.editAgencyForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
+                        nameEn: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.nameEn, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+                        nameAr: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.nameAr, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+                        nameTr: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.nameTr),
+                        phoneNumber: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.phoneNumber, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+                        email: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.email, [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].email]),
+                        ISOCode: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.ISOCode, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
+                    });
+                    // mainthis.inisilaize();
+                }
+                else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+                    mainthis.mainServ.APIServ.setErrorCode(0);
+                    mainthis.dialogServ.someThingIsError();
+                }
+            });
+        });
+    };
+    editAgencyComponent.prototype.addHours = function (h, start) {
+        console.log(start.toString());
+        var date = new Date(start.toString());
+        date.setHours(date.getHours() + h);
+        console.log(date);
+        return date;
+    };
+    editAgencyComponent.prototype.calcStartDateAndEnd = function () {
+        for (var index = 0; index < this.allRows.length; index++) {
+            var element = this.allRows[index];
+            if (element.type == "fromAirport") {
+                element.start = element.fromAirportDate;
+                element.end = this.addHours(2, element.fromAirportDate);
+            }
+            else if (element.type == "city") {
+                element.start = element.startInCityDate;
+                element.end = element.endInCityDate;
+            }
+            else if (element.type == "toAirport") {
+                element.start = element.toAirportDate;
+                element.end = this.addHours(2, element.toAirportDate);
+            }
+            else if (element.type == "fromAirportAndCity") {
+                element.start = element.fromAirportDate;
+                element.end = element.endInCityDate;
+            }
+            else if (element.type == "fromAirportAndToAirport") {
+                element.start = element.fromAirportDate;
+                element.end = element.toAirportDate;
+            }
+            else if (element.type == "cityAndToAirport") {
+                element.start = element.startInCityDate;
+                element.end = this.addHours(2, element.toAirportDate);
+            }
+            else if (element.type == "fromAirportAndCityAndToAirport") {
+                element.start = element.fromAirportDate;
+                element.end = this.addHours(2, element.toAirportDate);
+            }
+        }
+    };
+    // inisilaize() {
+    //   this.mainServ.loaderSer.display(true);
+    //   var filter = { "where": { "driverId": this.driverId }, "include": ['rate'] };
+    //   // var filter = {}
+    //   this.mainServ.APIServ.get("trips?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+    //     this.mainServ.loaderSer.display(false);
+    //     if (this.mainServ.APIServ.getErrorCode() == 0) {
+    //       this.allRows = data;
+    //       this.calcStartDateAndEnd();
+    //       this.filterDatatable();
+    //     }
+    //     else if (this.mainServ.APIServ.getErrorCode() != 401) {
+    //       this.mainServ.APIServ.setErrorCode(0);
+    //       this.dialogServ.someThingIsError();
+    //     }
+    //   });
+    // }
+    // isEnLang() {
+    //   if (this.mainServ.loginServ.getLang() == "ar")
+    //     return false
+    //   else
+    //     return true
+    // }
+    // rate(tripId) {
+    //   var mainThis = this
+    //   this.dialogServ.makeRate(tripId, function () {
+    //     mainThis.inisilaize()
+    //   });
+    // }
+    editAgencyComponent.prototype.edit = function () {
+        var _this = this;
+        var data = this.editAgencyForm.value;
+        data['mediaId'] = this.media.id;
+        this.mainServ.loaderSer.display(true);
+        this.mainServ.APIServ.put("agencies/" + this.agencyId, data).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.back();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() == 422) {
+                _this.dialogServ.errorMessage(422);
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
+            }
+        });
+    };
+    editAgencyComponent.prototype.back = function () {
+        this.mainServ.globalServ.goTo('agency');
+    };
+    editAgencyComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
+            selector: 'app-editAgency',
+            template: __webpack_require__("../../../../../src/app/main/content/pages/agency/editAgency/editAgency.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/main/content/pages/agency/editAgency/editAgency.component.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6__core_services_main_service__["a" /* MainService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__["b" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_1__core_services_dialog_service__["a" /* DialogService */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__core_services_translation_loader_service__["a" /* FuseTranslationLoaderService */]])
+    ], editAgencyComponent);
+    return editAgencyComponent;
 }());
 
 
@@ -21762,6 +22421,7 @@ var addCarComponent = (function () {
     addCarComponent.prototype.changeLocation = function (event) {
         var _this = this;
         console.log(event);
+        this.carSublocations = [];
         this.subLocation = this.locations.find(function (x) { return x.id === event.value; }).subLocations;
         console.log(this.subLocation);
         this.subLocation.forEach(function (element) {
@@ -21965,7 +22625,7 @@ var carsComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/car/editCar/editCar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back mirror\">arrow_back_ios</mat-icon>\r\n        {{'CAR.EDITCAR.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editCarForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.BRAND' | translate }}\" formControlName=\"brandId\">\r\n              <mat-option *ngFor=\"let oneBrand of brands\" [value]=\"oneBrand.id\">\r\n                {{oneBrand.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'CAR.NAME' | translate }}\" formControlName=\"name\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.NUMBEROFSEAT' | translate }}\" formControlName=\"numOfSeat\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.PRODUCTIONDATE' | translate }}\" formControlName=\"productionDate\">\r\n              <mat-option *ngFor=\"let oneYear of years\" [value]=\"oneYear\">\r\n                {{oneYear}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.DRIVER' | translate }}\" formControlName=\"driverId\">\r\n              <mat-option *ngFor=\"let onedriver of drivers\" [value]=\"onedriver.id\">\r\n                {{onedriver.firstName}} {{onedriver.lastName}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.LOCATION' | translate }}\" (selectionChange)=\"changeLocation($event)\"\r\n              formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let onelocation of locations\" [value]=\"onelocation.id\">\r\n                {{onelocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <!-- <mat-form-field fxFlex=\"30\" *ngFor=\"let oneSublocation of carSublocations;let i=index\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}\"\r\n              [(ngModel)]=\"carSublocations[i].cost\" [ngModelOptions]=\"{standalone: true}\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field> -->\r\n\r\n\r\n          <!-- <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.ENGINTYPE' | translate }}\" formControlName=\"engineType\">\r\n              <mat-option *ngFor=\"let oneEngineType of engineType\" [value]=\"oneEngineType\">\r\n                {{oneEngineType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.TYPE' | translate }}\" formControlName=\"type\">\r\n              <mat-option *ngFor=\"let oneType of type\" [value]=\"oneType\">\r\n                {{oneType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field> -->\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEPERDAY' | translate }}\" formControlName=\"pricePerDay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEONEWAY' | translate }}\" formControlName=\"priceOneWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICETOWWAY' | translate }}\" formControlName=\"priceTowWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <section class=\"example-section\" fxFlex=\"96\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isVip\">{{\r\n              'CAR.ISVIP' | translate }}</mat-checkbox>\r\n            <!-- <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isAirportCar\">{{\r\n              'CAR.ISAIRPORTCAR' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isCityCar\">{{\r\n              'CAR.ISCITYCAR' | translate }}</mat-checkbox> -->\r\n          </section>\r\n\r\n\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <div fxFlex=\"40\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <div fxFlex=\"60\">\r\n\r\n            <div class=\"p-24  colorDiv\">\r\n              <span > {{ 'CAR.FIRSTCOLOR' | translate }}</span>\r\n              <div  [style.background-color]=\"primaryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"primaryColor\"></div>\r\n            </div>\r\n\r\n            <div class=\"p-24  colorDiv\">\r\n              <span > {{ 'CAR.SECONDCOLOR' | translate }}</span>\r\n              <div  [style.background-color]=\"secondryColor\"\r\n                [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\" [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"secondryColor\"></div>\r\n            </div>\r\n          </div>\r\n\r\n          <ul class=\"listOfImgs\">\r\n            <li (click)=\"openSelectListImage()\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" src=\"{{imaageUrl}}\" />\r\n                <input type=\"file\" style=\"display:none\" multiple id=\"listFiles\" accept=\"image/*\" (change)=\"onChangeList($event)\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let value of listImages;let i=index\" class=\"\">\r\n              <div class=\"listDiv\">\r\n                <div class=\"deleteImge\" (click)=\"deleteImage(i)\">\r\n                  <mat-icon style=\"color : white;\">close</mat-icon>\r\n                </div>\r\n                <img class=\"listImgCustim\" src=\"{{value.url}}\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let image of listImageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                <img class=\"listImgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n              </div>\r\n            </li>\r\n          </ul>\r\n\r\n          <div fxFlex=\"100\" *ngIf=\"carSublocations.length!=0\">\r\n            <h2 fxFlex=\"100\" style=\"margin: 0px 1.5%;\">{{ 'CAR.SUBLOCATIONS' | translate }}</h2>\r\n          </div>\r\n          <div style=\"padding-top:10px;\" *ngIf=\"carSublocations.length!=0\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\"\r\n            fxFlex>\r\n            <mat-form-field style=\"margin: 0px 1.5%;\" fxFlex=\"30\" *ngFor=\"let oneSublocation of carSublocations;let i=index\">\r\n              <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}\"\r\n                [(ngModel)]=\"carSublocations[i].cost\" [ngModelOptions]=\"{standalone: true}\" required>\r\n              <mat-icon matSuffix>people</mat-icon>\r\n              <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editCarForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"back()\" class=\"back mirror\">arrow_back_ios</mat-icon>\r\n        {{'CAR.EDITCAR.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n    <form [formGroup]=\"editCarForm\">\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.BRAND' | translate }}\" formControlName=\"brandId\">\r\n              <mat-option *ngFor=\"let oneBrand of brands\" [value]=\"oneBrand.id\">\r\n                {{oneBrand.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput placeholder=\"{{ 'CAR.NAME' | translate }}\" formControlName=\"name\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.NUMBEROFSEAT' | translate }}\" formControlName=\"numOfSeat\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.PRODUCTIONDATE' | translate }}\" formControlName=\"productionDate\">\r\n              <mat-option *ngFor=\"let oneYear of years\" [value]=\"oneYear\">\r\n                {{oneYear}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.DRIVER' | translate }}\" formControlName=\"driverId\">\r\n              <mat-option *ngFor=\"let onedriver of drivers\" [value]=\"onedriver.id\">\r\n                {{onedriver.firstName}} {{onedriver.lastName}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.LOCATION' | translate }}\" (selectionChange)=\"changeLocation($event)\"\r\n              formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let onelocation of locations\" [value]=\"onelocation.id\">\r\n                {{onelocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <!-- <mat-form-field fxFlex=\"30\" *ngFor=\"let oneSublocation of carSublocations;let i=index\">\r\n            <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}\"\r\n              [(ngModel)]=\"carSublocations[i].cost\" [ngModelOptions]=\"{standalone: true}\" required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field> -->\r\n\r\n\r\n          <!-- <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.ENGINTYPE' | translate }}\" formControlName=\"engineType\">\r\n              <mat-option *ngFor=\"let oneEngineType of engineType\" [value]=\"oneEngineType\">\r\n                {{oneEngineType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <mat-select placeholder=\"{{ 'CAR.TYPE' | translate }}\" formControlName=\"type\">\r\n              <mat-option *ngFor=\"let oneType of type\" [value]=\"oneType\">\r\n                {{oneType}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field> -->\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEPERDAY' | translate }}\" formControlName=\"pricePerDay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICEONEWAY' | translate }}\" formControlName=\"priceOneWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"30\">\r\n            <input matInput type=\"number\" placeholder=\"{{ 'CAR.PRICETOWWAY' | translate }}\" formControlName=\"priceTowWay\"\r\n              required>\r\n            <mat-icon matSuffix>people</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <section class=\"example-section\" fxFlex=\"96\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isVip\">{{\r\n              'CAR.ISVIP' | translate }}</mat-checkbox>\r\n            <!-- <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isAirportCar\">{{\r\n              'CAR.ISAIRPORTCAR' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isCityCar\">{{\r\n              'CAR.ISCITYCAR' | translate }}</mat-checkbox> -->\r\n          </section>\r\n\r\n\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <div fxFlex=\"40\">\r\n            <div class=\"divImage\">\r\n              <div>\r\n                <div *ngIf=\"images.length==0 && imageOnLoad.length==0\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{imaageUrl}}\" />\r\n                </div>\r\n\r\n                <div *ngFor=\"let value of images;let i=index\" class=\"\">\r\n                  <img class=\"imgCustim\" src=\"{{value.url}}\" />\r\n                  <div class=\"imgCustimLoader\" [style.background-image]=\"'linear-gradient(-45deg, '+primaryColor+', '+secondryColor+')'\"></div>\r\n                </div>\r\n                <div *ngFor=\"let image of imageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\"\r\n                  style=\"    position: relative;\">\r\n                  <img class=\"imgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                  <img class=\"imgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"divButton\" (click)=\"openSelectImage()\">\r\n              <input type=\"file\" style=\"display:none\" id=\"files\" accept=\"image/*\" (change)=\"onChange($event)\" />\r\n\r\n              <span>\r\n                {{ 'Global.UPLOADIMAGE' | translate }}\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <div fxFlex=\"60\">\r\n\r\n            <div class=\"p-24  colorDiv\">\r\n              <span> {{ 'CAR.FIRSTCOLOR' | translate }}</span>\r\n              <div [style.background-color]=\"primaryColor\" [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\"\r\n                [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"primaryColor\"></div>\r\n            </div>\r\n\r\n            <div class=\"p-24  colorDiv\">\r\n              <span> {{ 'CAR.SECONDCOLOR' | translate }}</span>\r\n              <div [style.background-color]=\"secondryColor\" [cpPosition]=\"'bottom'\" [cpPositionOffset]=\"'50%'\"\r\n                [cpPositionRelativeToArrow]=\"true\" [(colorPicker)]=\"secondryColor\"></div>\r\n            </div>\r\n          </div>\r\n\r\n          <ul class=\"listOfImgs\">\r\n            <li (click)=\"openSelectListImage()\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" src=\"{{imaageUrl}}\" />\r\n                <input type=\"file\" style=\"display:none\" multiple id=\"listFiles\" accept=\"image/*\" (change)=\"onChangeList($event)\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let value of listImages;let i=index\" class=\"\">\r\n              <div class=\"listDiv\">\r\n                <div class=\"deleteImge\" (click)=\"deleteImage(i)\">\r\n                  <mat-icon style=\"color : white;\">close</mat-icon>\r\n                </div>\r\n                <img class=\"listImgCustim\" src=\"{{value.url}}\" />\r\n              </div>\r\n            </li>\r\n            <li *ngFor=\"let image of listImageOnLoad;let i = index\" class=\"AddNewForm-imagescontainer-smallimage\">\r\n              <div class=\"listDiv\">\r\n                <img class=\"listImgCustim\" id=\"{{'uploadImage'+i}}\" />\r\n                <img class=\"listImgCustimLoader\" src=\"assets/images/madar/infinity_loader_by_volorf.gif\" />\r\n              </div>\r\n            </li>\r\n          </ul>\r\n\r\n          <div fxFlex=\"100\" *ngIf=\"carSublocations.length!=0\">\r\n            <h2 fxFlex=\"100\" style=\"margin: 0px 1.5%;\">{{ 'CAR.SUBLOCATIONS' | translate }}</h2>\r\n          </div>\r\n          <div style=\"padding-top:10px;\" *ngIf=\"carSublocations.length!=0\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\"\r\n            fxFlex>\r\n            <mat-form-field style=\"margin: 0px 1.5%;\" fxFlex=\"30\" *ngFor=\"let oneSublocation of carSublocations;let i=index\">\r\n              <input matInput type=\"number\" min=\"0\" placeholder=\"{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}\"\r\n                [(ngModel)]=\"carSublocations[i].cost\" [ngModelOptions]=\"{standalone: true}\" required>\r\n              <mat-icon matSuffix>people</mat-icon>\r\n              <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button (click)=\"edit()\" class=\"editButton\" cdkFocusInitial [disabled]=\"editCarForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n  <div id=\"contacts\" class=\"page-layout simple left-sidenav inner-sidenav\">\r\n\r\n    <div class=\"header mat-accent-bg p-16 whiteCustomHeader\" fxLayout=\"column\" fxLayoutAlign=\"start start\"\r\n      fxLayout.gt-xs=\"row\" fxLayoutAlign.gt-xs=\"space-between center\">\r\n\r\n      <!-- APP TITLE -->\r\n      <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n\r\n        <button mat-button class=\"mat-icon-button sidenav-toggle mr-12\" fuseMatSidenavToggler=\"contacts-main-sidenav\"\r\n          fxHide.gt-md>\r\n          <mat-icon>menu</mat-icon>\r\n        </button>\r\n\r\n        <div class=\"logo\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n          <mat-icon class=\"logo-icon mr-16\">account_box</mat-icon>\r\n          <span class=\"logo-text h1\">{{'TRIP.ALLTRIP.TITLE' | translate}}</span>\r\n\r\n        </div>\r\n\r\n      </div>\r\n      <!-- / APP TITLE -->\r\n\r\n      <!-- SEARCH -->\r\n      <div class=\"search-input-wrapper mt-16 ml-8 m-sm-0\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\r\n        <label for=\"search\" class=\"mr-8\">\r\n          <mat-icon>search</mat-icon>\r\n        </label>\r\n        <!-- <mat-form-field mat-no-float class=\"m-0\" floatPlaceholder=\"never\">\r\n          <input matInput id=\"search\" [(ngModel)]=\"filterValue\" (ngModelChange)=\"filterDatatable()\" placeholder=\"{{'SUBLOCATION.ALLSUBLOCATION.SEARCH'| translate}}\">\r\n        </mat-form-field> -->\r\n        <button mat-button class=\"customButtom\" color=\"primary\" type=\"button\" (click)=\"addVacation()\">{{'CAR.ADDVACATION'\r\n          | translate}}</button>\r\n\r\n      </div>\r\n      <!-- / SEARCH -->\r\n\r\n\r\n    </div>\r\n\r\n    <div class=\"content\">\r\n\r\n      <ngx-datatable class=\"material vertical-scroll\" [rows]=\"allRows\" [headerHeight]=\"50\" [rowHeight]=\"50\"\r\n        [footerHeight]=\"50\" [scrollbarV]=\"false\" [scrollbarH]=\"true\">\r\n\r\n\r\n        <ngx-datatable-column [canAutoResize]=\"true\" [width]=\"300\" [flexGrow]=\"1\" prop=\"start\">\r\n          <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n            <span>{{ 'TRIP.START' | translate }}</span>\r\n          </ng-template>\r\n          <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n            <span>\r\n              {{row[\"start\"] | date: 'dd-MM-yyyy HH:mm'}}\r\n            </span>\r\n          </ng-template>\r\n        </ngx-datatable-column>\r\n\r\n        <ngx-datatable-column [canAutoResize]=\"true\" [width]=\"300\" [flexGrow]=\"1\" prop=\"end\">\r\n          <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n            <span>{{ 'TRIP.END' | translate }}</span>\r\n          </ng-template>\r\n          <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n            <span>\r\n              {{row[\"end\"] | date: 'dd-MM-yyyy HH:mm'}}\r\n            </span>\r\n          </ng-template>\r\n        </ngx-datatable-column>\r\n\r\n        <ngx-datatable-column [canAutoResize]=\"true\" [width]=\"300\" [flexGrow]=\"1\" prop=\"craterdAt\">\r\n          <ng-template let-column=\"column\" ngx-datatable-header-template let-sort=\"sortFn\">\r\n            <span>{{ 'Global.CREATEDAT' | translate }}</span>\r\n          </ng-template>\r\n          <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n            <span>\r\n              {{row[\"createdAt\"] | date: 'dd-MM-yyyy HH:mm'}}\r\n            </span>\r\n          </ng-template>\r\n        </ngx-datatable-column>\r\n\r\n\r\n\r\n\r\n        <ngx-datatable-column [width]=\"200\" name=\"id\">\r\n          <ng-template let-column=\"column\" ngx-datatable-header-template>\r\n            <div class=\"table-header-font\">\r\n\r\n            </div>\r\n          </ng-template>\r\n\r\n          <ng-template let-row=\"row\" let-value=\"value\" ngx-datatable-cell-template>\r\n\r\n            <button mat-mini-fab class=\"mr-16\" (click)=\"deactivate(row['id'])\" style=\"background-color: rgba(219, 18, 18, 0.808);\">\r\n              <mat-icon style=\"color : white;\">delete</mat-icon>\r\n            </button>\r\n\r\n          </ng-template>\r\n\r\n        </ngx-datatable-column>\r\n\r\n\r\n\r\n      </ngx-datatable>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -22137,6 +22797,7 @@ var editCarComponent = (function () {
     };
     editCarComponent.prototype.changeLocation = function (event) {
         var _this = this;
+        this.carSublocations = [];
         console.log(event);
         this.subLocation = this.locations.find(function (x) { return x.id === event.value; }).subLocations;
         console.log(this.subLocation);
@@ -22210,6 +22871,7 @@ var editCarComponent = (function () {
                                             mainthis.isAirportCar = data['isAirportCar'];
                                             mainthis.isCityCar = data['isCityCar'];
                                             mainthis.isVip = data['isVip'];
+                                            mainthis.inisilaize();
                                             mainthis.editCarForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
                                                 brandId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.brandId, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
                                                 name: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.name, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
@@ -22247,6 +22909,21 @@ var editCarComponent = (function () {
             }
         });
     };
+    editCarComponent.prototype.addVacation = function () {
+        var mainthis = this;
+        this.dialogServ.addVacation(this.carId, function () {
+            mainthis.inisilaize();
+        });
+    };
+    editCarComponent.prototype.deactivate = function (id) {
+        var _this = this;
+        var mainThis = this;
+        this.translate.get('MESSAGES.DEACTIVECAR').subscribe(function (res) {
+            _this.dialogServ.confirmationMessage(res, "bookingCars/" + id, {}, false, function () {
+                mainThis.inisilaize();
+            }, "delete");
+        });
+    };
     editCarComponent.prototype.edit = function () {
         var _this = this;
         var data = this.editCarForm.value;
@@ -22282,6 +22959,22 @@ var editCarComponent = (function () {
     editCarComponent.prototype.deleteImage = function (i) {
         this.listImages.splice(i);
         console.log(this.listImages);
+    };
+    editCarComponent.prototype.inisilaize = function () {
+        var _this = this;
+        this.mainServ.loaderSer.display(true);
+        var filter = { "where": { "carId": this.carId, "type": "vacation" } };
+        // var filter = {}
+        this.mainServ.APIServ.get("/bookingCars?filter=" + JSON.stringify(filter)).subscribe(function (data) {
+            _this.mainServ.loaderSer.display(false);
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.allRows = data;
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+                _this.dialogServ.someThingIsError();
+            }
+        });
     };
     editCarComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
@@ -22603,6 +23296,9 @@ var addDriverComponent = (function () {
             _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.back();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() == 422) {
+                _this.dialogServ.errorMessage(422);
             }
             else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                 _this.mainServ.APIServ.setErrorCode(0);
@@ -23047,6 +23743,9 @@ var editDriverComponent = (function () {
             _this.mainServ.loaderSer.display(false);
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.back();
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() == 422) {
+                _this.dialogServ.errorMessage(422);
             }
             else if (_this.mainServ.APIServ.getErrorCode() != 401) {
                 _this.mainServ.APIServ.setErrorCode(0);
@@ -27667,7 +28366,7 @@ var editSubLocationComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/trip/addTrip/addTrip.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"backToTrips()\" class=\"back mirror\">arrow_back_ios</mat-icon>\r\n        {{'TRIP.ADDTRIP.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n    <div style=\"font-size: 20px\">{{'TRIP.PRICE' | translate}} : {{totalPrice+subLocaationPrice+airportPrice}}</div>\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n\r\n    <nav mat-tab-nav-bar [backgroundColor]=\"background\">\r\n      <a mat-tab-link disabled *ngFor=\"let link of links\" [active]=\"activeLink == link.name\">\r\n        {{link.view | translate}}\r\n      </a>\r\n    </nav>\r\n    <form [formGroup]=\"stepOneForm\" *ngIf=\"activeLink=='step1'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.USER' | translate }}\" formControlName=\"ownerId\">\r\n              <mat-option *ngFor=\"let oneUser of users\" [value]=\"oneUser.id\">\r\n                {{oneUser.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.LOCATION' | translate }}\" formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let oneLocation of locations\" [value]=\"oneLocation.id\">\r\n                {{oneLocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <section class=\"example-section\" style=\"padding-bottom: 10px;\" fxFlex=\"95\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isFromAirport\">{{\r\n              'TRIP.FROMAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isToAirport\">{{\r\n              'TRIP.TOAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isInCity\">{{\r\n              'TRIP.INCITY' | translate }}</mat-checkbox>\r\n          </section>\r\n\r\n          <!-- <mat-form-field fxFlex=\"40\">\r\n            <input matInput [matTimepicker]=\"startPicker\" (userTimeChange)=\"emituserTimeChange()\" placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #startPicker color=\"primary\"></mat-timepicker>\r\n          </mat-form-field> -->\r\n          <!-- <w-mat-timepicker color=\"primary\" [(userTime)]=\"exportTime\"></w-mat-timepicker> -->\r\n\r\n\r\n        </div>\r\n      </div>\r\n\r\n      \r\n      <div style=\"float: rightt;\">\r\n        <button mat-button class=\"addButton\" (click)=\"next(2,null,null)\" cdkFocusInitial [disabled]=\"stepOneForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n    <form [formGroup]=\"stepSecForm\" *ngIf=\"activeLink=='step2'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"40\">\r\n            <input matInput (focus)=\"firstpicker.open()\" [matDatepicker]=\"firstpicker\" formControlName=\"first\"\r\n              placeholder=\"{{ 'TRIP.FROM' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"firstpicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #firstpicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"true\">\r\n              <input matInput [matTimepicker]=\"startPicker\" placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n              <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n              <mat-timepicker #startPicker id=\"startPickerId\" color=\"primary\"></mat-timepicker>\r\n            </mat-form-field>\r\n  \r\n  \r\n            <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='fromAirport' \r\n            && tripType!='fromAirportAndCity' \r\n            && tripType!='toAirport' \r\n            && tripType!='fromAirportAndToAirport' \r\n            && tripType!='fromAirportAndCityAndToAirport'\">\r\n              <input matInput readonly=\"readonly\" placeholder=\"{{ 'TRIP.TIME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n                [ngModel]=\"formatStartTime(startPicker['userTime'])\">\r\n              <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n            </mat-form-field>\r\n  \r\n          <mat-form-field fxFlex=\"40\" *ngIf=\"tripType!='fromAirport' && tripType!='toAirport'\">\r\n            <input matInput (focus)=\"secondepicker.open()\" [matDatepicker]=\"secondepicker\" formControlName=\"seconde\"\r\n              placeholder=\"{{ 'TRIP.TO' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"secondepicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #secondepicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"true\">\r\n            <input matInput [matTimepicker]=\"endPicker\" required placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #endPicker color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='cityAndToAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput readonly=\"readonly\" placeholder=\"{{ 'TRIP.TIME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n              [ngModel]=\"formatEndTime(endPicker['userTime'])\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n          </mat-form-field>\r\n\r\n          <div fxFlex=\"40\" *ngIf=\"tripType=='fromAirport' || tripType=='toAirport'\"></div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button class=\"addButton\" (click)=\"next(3,startPicker,endPicker)\" cdkFocusInitial>{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: leftt;\">\r\n        <button mat-button class=\"backButton\" (click)=\"back(1)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n    <form [formGroup]=\"stepthreeForm\" *ngIf=\"activeLink=='step3'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"90\">\r\n            <mat-select placeholder=\"{{ 'TRIP.CAR' | translate }}\" (change)=\"doSomething($event)\" formControlName=\"carId\">\r\n              <mat-option *ngFor=\"let oneCar of carAvailable\" [value]=\"oneCar.id\">\r\n                {{oneCar.name}} - {{oneCar.driver.username}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button *ngIf=\"links[3]!=null\" class=\"addButton\" (click)=\"next(4,null,null)\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button *ngIf=\"links[3]==null\" (click)=\"add()\" class=\"addButton\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: leftt;\">\r\n        <button mat-button class=\"backButton\" (click)=\"back(2)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n\r\n    </form>\r\n\r\n\r\n    <form *ngIf=\"activeLink=='step4'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <div fxFlex=\"90\" class=\"step4\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{location.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{pricePerDay}} $</label>\r\n            <div fxFlex=\"40\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus disabled\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{tripdays}}</label>\r\n                <div class=\"circle add disabled\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <!-- <mat-form-field fxFlex=\"30\">\r\n              <input disabled matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                [(ngModel)]=\"tripdays\" required>\r\n              <mat-icon matSuffix>people</mat-icon>\r\n              <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n            </mat-form-field>\r\n          </div> -->\r\n\r\n\r\n          <div fxFlex=\"90\" class=\"step4\" *ngFor=\"let element of tripSublocations;let i=index\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{carsSublocations[i].subLocation.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{carsSublocations[i].cost}} $</label>\r\n            <div fxFlex=\"40\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus\" [ngClass]=\"{'disabled': tripSublocations[i].duration==0}\" (click)=\"minDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{tripSublocations[i].duration}}</label>\r\n                <div class=\"circle add\" (click)=\"addDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <!-- <mat-form-field fxFlex=\"30\">\r\n              <input (input)=\"onSearchChange()\" matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                [(ngModel)]=\"tripSublocations[i].duration\" required>\r\n              <mat-icon matSuffix>people</mat-icon>\r\n              <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n            </mat-form-field> -->\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button (click)=\"add()\" class=\"addButton\" [disabled]=\"tripdays<0\" cdkFocusInitial>{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: leftt;\">\r\n        <button mat-button class=\"backButton\" (click)=\"back(3,null,null)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"backToTrips()\" class=\"back mirror\">arrow_back_ios</mat-icon>\r\n        {{'TRIP.ADDTRIP.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n    <div style=\"font-size: 20px\">{{'TRIP.PRICE' | translate}} : {{totalPrice+subLocaationPrice+airportPrice}}</div>\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n\r\n    <nav mat-tab-nav-bar [backgroundColor]=\"background\">\r\n      <a mat-tab-link disabled *ngFor=\"let link of links\" [active]=\"activeLink == link.name\">\r\n        {{link.view | translate}}\r\n      </a>\r\n    </nav>\r\n\r\n    <form [formGroup]=\"stepOneForm\" *ngIf=\"activeLink=='step1'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.USER' | translate }}\" formControlName=\"ownerId\">\r\n              <mat-option *ngFor=\"let oneUser of users\" [value]=\"oneUser.id\">\r\n                {{oneUser.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.LOCATION' | translate }}\" formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let oneLocation of locations\" [value]=\"oneLocation.id\">\r\n                {{oneLocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <section class=\"example-section\" style=\"padding-bottom: 10px;\" fxFlex=\"95\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isFromAirport\">{{\r\n              'TRIP.FROMAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isToAirport\">{{\r\n              'TRIP.TOAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isInCity\">{{\r\n              'TRIP.INCITY' | translate }}</mat-checkbox>\r\n          </section>\r\n\r\n          <mat-form-field fxFlex=\"95\">\r\n            <textarea matInput placeholder=\"{{ 'TRIP.NOTE' | translate }}\" formControlName=\"note\"></textarea>\r\n            <mat-icon matSuffix>map</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n        </div>\r\n      </div>\r\n\r\n\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button class=\"addButton\" (click)=\"next(2,null,null)\" cdkFocusInitial [disabled]=\"stepOneForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n    <form [formGroup]=\"stepSecForm\" *ngIf=\"activeLink=='step2'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"40\">\r\n            <input matInput (focus)=\"firstpicker.open()\" [matDatepicker]=\"firstpicker\" formControlName=\"first\"\r\n              placeholder=\"{{ 'TRIP.FROM' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"firstpicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #firstpicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"true\">\r\n            <input matInput [matTimepicker]=\"startPicker\" placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #startPicker id=\"startPickerId\" color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='fromAirport' \r\n            && tripType!='fromAirportAndCity' \r\n            && tripType!='toAirport' \r\n            && tripType!='fromAirportAndToAirport' \r\n            && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput readonly=\"readonly\" placeholder=\"{{ 'TRIP.TIME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n              [ngModel]=\"formatStartTime(startPicker['userTime'])\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"40\" *ngIf=\"tripType!='fromAirport' && tripType!='toAirport'\">\r\n            <input matInput (focus)=\"secondepicker.open()\" [matDatepicker]=\"secondepicker\" formControlName=\"seconde\"\r\n              placeholder=\"{{ 'TRIP.TO' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"secondepicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #secondepicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"true\">\r\n            <input matInput [matTimepicker]=\"endPicker\" required placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #endPicker color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='cityAndToAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput readonly=\"readonly\" placeholder=\"{{ 'TRIP.TIME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n              [ngModel]=\"formatEndTime(endPicker['userTime'])\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n          </mat-form-field>\r\n\r\n          <div fxFlex=\"40\" *ngIf=\"tripType=='fromAirport' || tripType=='toAirport'\"></div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button class=\"addButton\" (click)=\"next(3,startPicker,endPicker)\" cdkFocusInitial>{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: leftt;\">\r\n        <button mat-button class=\"backButton\" (click)=\"back(1)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n    <form [formGroup]=\"stepthreeForm\" *ngIf=\"activeLink=='step3'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"90\">\r\n            <mat-select placeholder=\"{{ 'TRIP.CAR' | translate }}\" (change)=\"doSomething($event)\" formControlName=\"carId\">\r\n              <mat-option *ngFor=\"let oneCar of carAvailable\" [value]=\"oneCar.id\">\r\n                {{oneCar.name}} - {{oneCar.driver.username}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button *ngIf=\"links[3]!=null\" class=\"addButton\" (click)=\"next(4,null,null)\" cdkFocusInitial\r\n          [disabled]=\"stepthreeForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button *ngIf=\"links[3]==null\" (click)=\"add()\" class=\"addButton\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: leftt;\">\r\n        <button mat-button class=\"backButton\" (click)=\"back(2)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n\r\n    </form>\r\n\r\n\r\n    <form *ngIf=\"activeLink=='step4'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <div fxFlex=\"90\" class=\"step4\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{location.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{pricePerDay}} $</label>\r\n            <div fxFlex=\"40\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus disabled\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{tripdays}}</label>\r\n                <div class=\"circle add disabled\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <!-- <mat-form-field fxFlex=\"30\">\r\n              <input disabled matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                [(ngModel)]=\"tripdays\" required>\r\n              <mat-icon matSuffix>people</mat-icon>\r\n              <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n            </mat-form-field>\r\n          </div> -->\r\n\r\n          <div fxFlex=\"90\" class=\"step4\" *ngFor=\"let element of tripSublocations;let i=index\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{carsSublocations[i].subLocation.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{carsSublocations[i].cost}} $</label>\r\n            <div fxFlex=\"40\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus\" [ngClass]=\"{'disabled': tripSublocations[i].duration==0}\" (click)=\"minDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{tripSublocations[i].duration}}</label>\r\n                <div class=\"circle add\" (click)=\"addDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button (click)=\"add()\" class=\"addButton\" [disabled]=\"tripdays<0\" cdkFocusInitial>{{'Global.ADD'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: leftt;\">\r\n        <button mat-button class=\"backButton\" (click)=\"back(3,null,null)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -27842,7 +28541,8 @@ var addTripComponent = (function () {
         this.stepOneForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormGroup */]({
             locationId: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
             ownerId: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
-            testTime: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('')
+            testTime: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */](''),
+            note: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('')
         });
         this.stepSecForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormGroup */]({
             first: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */](''),
@@ -28010,6 +28710,10 @@ var addTripComponent = (function () {
             this.airportPrice = 0;
             this.subLocaationPrice = 0;
         }
+        if (stepNum == 3) {
+            this.carsSublocations = [];
+            this.tripSublocations = [];
+        }
     };
     addTripComponent.prototype.next = function (stepNum) {
         var _this = this;
@@ -28018,6 +28722,7 @@ var addTripComponent = (function () {
             this.activeLink = this.links[stepNum - 1].name;
             this.allData['locationId'] = this.stepOneForm.value.locationId;
             this.allData['ownerId'] = this.stepOneForm.value.ownerId;
+            this.allData['note'] = this.stepOneForm.value.note;
             this.allData['fromAirport'] = this.isFromAirport;
             this.allData['toAirport'] = this.isToAirport;
             this.allData['inCity'] = this.isInCity;
@@ -28119,13 +28824,13 @@ var addTripComponent = (function () {
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.backToTrips();
             }
-            else if (_this.mainServ.APIServ.getErrorCode() != 455) {
+            else if (_this.mainServ.APIServ.getErrorCode() == 455) {
                 _this.dialogServ.errorMessage(455);
             }
-            else if (_this.mainServ.APIServ.getErrorCode() != 456) {
+            else if (_this.mainServ.APIServ.getErrorCode() == 456) {
                 _this.dialogServ.errorMessage(456);
             }
-            else if (_this.mainServ.APIServ.getErrorCode() != 457) {
+            else if (_this.mainServ.APIServ.getErrorCode() == 457) {
                 _this.dialogServ.errorMessage(457);
             }
             else if (_this.mainServ.APIServ.getErrorCode() != 401) {
@@ -28699,7 +29404,7 @@ var billComponent = (function () {
 /***/ "../../../../../src/app/main/content/pages/trip/editTrip/editTrip.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"backToTrips()\" class=\"back mirror\">arrow_back_ios</mat-icon>\r\n        {{'TRIP.EDITTRIP.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n    <div style=\"font-size: 20px\">{{'TRIP.PRICE' | translate}} : {{totalPrice+subLocaationPrice+airportPrice}}</div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n\r\n    <nav mat-tab-nav-bar [backgroundColor]=\"background\">\r\n      <a mat-tab-link disabled *ngFor=\"let link of links\" [active]=\"activeLink == link.name\">\r\n        {{link.view | translate}}\r\n      </a>\r\n    </nav>\r\n    <form [formGroup]=\"stepOneForm\" *ngIf=\"activeLink=='step1'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.USER' | translate }}\" formControlName=\"ownerId\">\r\n              <mat-option *ngFor=\"let oneUser of users\" [value]=\"oneUser.id\">\r\n                {{oneUser.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.LOCATION' | translate }}\" formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let oneLocation of locations\" [value]=\"oneLocation.id\">\r\n                {{oneLocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <section class=\"example-section\" style=\"padding-bottom: 10px;\" fxFlex=\"95\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isFromAirport\">{{\r\n              'TRIP.FROMAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isToAirport\">{{\r\n              'TRIP.TOAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isInCity\">{{\r\n              'TRIP.INCITY' | translate }}</mat-checkbox>\r\n          </section>\r\n\r\n          <!-- <mat-form-field fxFlex=\"40\">\r\n              <input matInput [matTimepicker]=\"startPicker\" (userTimeChange)=\"emituserTimeChange()\" placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n              <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n              <mat-timepicker #startPicker color=\"primary\"></mat-timepicker>\r\n            </mat-form-field> -->\r\n          <!-- <w-mat-timepicker color=\"primary\" [(userTime)]=\"exportTime\"></w-mat-timepicker> -->\r\n\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button class=\"addButton\" (click)=\"next(2,null,null)\" cdkFocusInitial [disabled]=\"stepOneForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n    <form [formGroup]=\"stepSecForm\" *ngIf=\"activeLink=='step2'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"40\">\r\n            <input matInput (focus)=\"firstpicker.open()\" [matDatepicker]=\"firstpicker\" formControlName=\"first\"\r\n              placeholder=\"{{ 'TRIP.FROM' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"firstpicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #firstpicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"true\">\r\n            <input matInput [matTimepicker]=\"startPicker\" placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #startPicker id=\"startPickerId\" color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='fromAirport' \r\n          && tripType!='fromAirportAndCity' \r\n          && tripType!='toAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput readonly=\"readonly\" placeholder=\"{{ 'TRIP.TIME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n              [ngModel]=\"formatStartTime(startPicker['userTime'])\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n          </mat-form-field>\r\n\r\n\r\n\r\n\r\n          <mat-form-field fxFlex=\"40\" *ngIf=\"tripType!='fromAirport' && tripType!='toAirport'\">\r\n            <input matInput (focus)=\"secondepicker.open()\" [matDatepicker]=\"secondepicker\" formControlName=\"seconde\"\r\n              placeholder=\"{{ 'TRIP.TO' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"secondepicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #secondepicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"true\">\r\n            <input matInput [matTimepicker]=\"endPicker\" required placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #endPicker color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='cityAndToAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput readonly=\"readonly\" placeholder=\"{{ 'TRIP.TIME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n              [ngModel]=\"formatEndTime(endPicker['userTime'])\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n          </mat-form-field>\r\n\r\n\r\n\r\n          <div fxFlex=\"40\" *ngIf=\"tripType=='fromAirport' || tripType=='toAirport'\"></div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button class=\"addButton\" (click)=\"next(3,startPicker,endPicker)\" cdkFocusInitial>{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: leftt;\">\r\n        <button mat-button class=\"backButton\" (click)=\"back(1)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n    <form [formGroup]=\"stepthreeForm\" *ngIf=\"activeLink=='step3'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"90\">\r\n            <mat-select placeholder=\"{{ 'TRIP.CAR' | translate }}\" (change)=\"doSomething($event)\" formControlName=\"carId\">\r\n              <mat-option *ngFor=\"let oneCar of carAvailable\" [value]=\"oneCar.id\">\r\n                {{oneCar.name}} - {{oneCar.driver.username}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button *ngIf=\"links[3]!=null\" class=\"addButton\" (click)=\"next(4,null,null)\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button *ngIf=\"links[3]==null\" (click)=\"edit()\" class=\"addButton\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: leftt;\">\r\n        <button mat-button class=\"backButton\" (click)=\"back(2)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n\r\n    </form>\r\n\r\n\r\n    <form *ngIf=\"activeLink=='step4'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <div fxFlex=\"90\" class=\"step4\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{location.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{pricePerDay}} $</label>\r\n            <div fxFlex=\"40\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus disabled\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{tripdays}}</label>\r\n                <div class=\"circle add disabled\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <!-- <mat-form-field fxFlex=\"30\">\r\n                <input disabled matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"tripdays\" required>\r\n                <mat-icon matSuffix>people</mat-icon>\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n            </div> -->\r\n\r\n\r\n          <div fxFlex=\"90\" class=\"step4\" *ngFor=\"let element of tripSublocations;let i=index\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{carsSublocations[i].subLocation.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{carsSublocations[i].cost}} $</label>\r\n            <div fxFlex=\"40\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus\" [ngClass]=\"{'disabled': tripSublocations[i].duration==0}\" (click)=\"minDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{tripSublocations[i].duration}}</label>\r\n                <div class=\"circle add\" (click)=\"addDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <!-- <mat-form-field fxFlex=\"30\">\r\n                <input (input)=\"onSearchChange()\" matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"tripSublocations[i].duration\" required>\r\n                <mat-icon matSuffix>people</mat-icon>\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field> -->\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button (click)=\"edit()\" class=\"addButton\" [disabled]=\"tripdays<0\" cdkFocusInitial>{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: leftt;\">\r\n        <button mat-button class=\"backButton\" (click)=\"back(3,null,null)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div id=\"ngx-datatable\" class=\"page-layout simple fullwidth\" fusePerfectScrollbar>\r\n\r\n  <!-- HEADER -->\r\n  <div class=\"header mat-accent-bg p-16 customHeader\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"row\"\r\n    fxLayoutAlign.gt-xs=\"space-between center\">\r\n    <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayout.gt-xs=\"column\" fxLayoutAlign.gt-xs=\"center start\">\r\n      <!-- <button style=\"background-color: rgba(7, 112, 7, 0.849);\" mat-mini-fab class=\"mr-16\"> -->\r\n      <!-- </button> -->\r\n      <span class=\"logo-text h1\">\r\n        <mat-icon style=\"color : white;\" (click)=\"backToTrips()\" class=\"back mirror\">arrow_back_ios</mat-icon>\r\n        {{'TRIP.EDITTRIP.TITLE' | translate}}\r\n      </span>\r\n    </div>\r\n    <div style=\"font-size: 20px\">{{'TRIP.PRICE' | translate}} : {{totalPrice+subLocaationPrice+airportPrice}}</div>\r\n\r\n\r\n  </div>\r\n  <!-- / HEADER -->\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"content p-24\">\r\n\r\n    <nav mat-tab-nav-bar [backgroundColor]=\"background\">\r\n      <a mat-tab-link disabled *ngFor=\"let link of links\" [active]=\"activeLink == link.name\">\r\n        {{link.view | translate}}\r\n      </a>\r\n    </nav>\r\n    <form [formGroup]=\"stepOneForm\" *ngIf=\"activeLink=='step1'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.USER' | translate }}\" formControlName=\"ownerId\">\r\n              <mat-option *ngFor=\"let oneUser of users\" [value]=\"oneUser.id\">\r\n                {{oneUser.name}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"45\">\r\n            <mat-select placeholder=\"{{ 'TRIP.LOCATION' | translate }}\" formControlName=\"locationId\">\r\n              <mat-option *ngFor=\"let oneLocation of locations\" [value]=\"oneLocation.id\">\r\n                {{oneLocation.nameEn}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n          <section class=\"example-section\" style=\"padding-bottom: 10px;\" fxFlex=\"95\">\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" [(ngModel)]=\"isFromAirport\">{{\r\n              'TRIP.FROMAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 12px;\"\r\n              [(ngModel)]=\"isToAirport\">{{\r\n              'TRIP.TOAIRPORT' | translate }}</mat-checkbox>\r\n            <mat-checkbox fxFlex=\"33\" [ngModelOptions]=\"{standalone: true}\" class=\"example-margin\" style=\"padding-left: 30px;\"\r\n              [(ngModel)]=\"isInCity\">{{\r\n              'TRIP.INCITY' | translate }}</mat-checkbox>\r\n          </section>\r\n\r\n          <mat-form-field fxFlex=\"95\">\r\n            <textarea matInput placeholder=\"{{ 'TRIP.NOTE' | translate }}\" formControlName=\"note\"></textarea>\r\n            <mat-icon matSuffix>map</mat-icon>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button class=\"addButton\" (click)=\"next(2,null,null)\" cdkFocusInitial [disabled]=\"stepOneForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n    <form [formGroup]=\"stepSecForm\" *ngIf=\"activeLink=='step2'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"40\">\r\n            <input matInput (focus)=\"firstpicker.open()\" [matDatepicker]=\"firstpicker\" formControlName=\"first\"\r\n              placeholder=\"{{ 'TRIP.FROM' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"firstpicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #firstpicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"true\">\r\n            <input matInput [matTimepicker]=\"startPicker\" placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #startPicker id=\"startPickerId\" color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='fromAirport' \r\n          && tripType!='fromAirportAndCity' \r\n          && tripType!='toAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput readonly=\"readonly\" placeholder=\"{{ 'TRIP.TIME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n              [ngModel]=\"formatStartTime(startPicker['userTime'])\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\r\n          </mat-form-field>\r\n\r\n\r\n\r\n\r\n          <mat-form-field fxFlex=\"40\" *ngIf=\"tripType!='fromAirport' && tripType!='toAirport'\">\r\n            <input matInput (focus)=\"secondepicker.open()\" [matDatepicker]=\"secondepicker\" formControlName=\"seconde\"\r\n              placeholder=\"{{ 'TRIP.TO' | translate }}\" required>\r\n            <mat-datepicker-toggle matSuffix [for]=\"secondepicker\"></mat-datepicker-toggle>\r\n            <mat-datepicker #secondepicker></mat-datepicker>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"true\">\r\n            <input matInput [matTimepicker]=\"endPicker\" required placeholder=\"{{ 'TRIP.TIME' | translate }}\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n            <mat-timepicker #endPicker color=\"primary\"></mat-timepicker>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field fxFlex=\"40\" [class.hide]=\"tripType!='cityAndToAirport' \r\n          && tripType!='fromAirportAndToAirport' \r\n          && tripType!='fromAirportAndCityAndToAirport'\">\r\n            <input matInput readonly=\"readonly\" placeholder=\"{{ 'TRIP.TIME' | translate }}\" [ngModelOptions]=\"{standalone: true}\"\r\n              [ngModel]=\"formatEndTime(endPicker['userTime'])\">\r\n            <mat-timepicker-toggle matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\r\n          </mat-form-field>\r\n\r\n\r\n\r\n          <div fxFlex=\"40\" *ngIf=\"tripType=='fromAirport' || tripType=='toAirport'\"></div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button class=\"addButton\" (click)=\"next(3,startPicker,endPicker)\" cdkFocusInitial>{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: leftt;\">\r\n        <button mat-button class=\"backButton\" (click)=\"back(1)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n    <form [formGroup]=\"stepthreeForm\" *ngIf=\"activeLink=='step3'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n          <mat-form-field fxFlex=\"90\">\r\n            <mat-select placeholder=\"{{ 'TRIP.CAR' | translate }}\" (change)=\"doSomething($event)\" formControlName=\"carId\">\r\n              <mat-option *ngFor=\"let oneCar of carAvailable\" [value]=\"oneCar.id\">\r\n                {{oneCar.name}} - {{oneCar.driver.username}}\r\n              </mat-option>\r\n            </mat-select>\r\n            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n          </mat-form-field>\r\n\r\n        </div>\r\n      </div>\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button *ngIf=\"links[3]!=null\" class=\"addButton\" (click)=\"next(4,null,null)\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.NEXT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button *ngIf=\"links[3]==null\" (click)=\"edit()\" class=\"addButton\" cdkFocusInitial [disabled]=\"stepthreeForm.invalid\">{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: leftt;\">\r\n        <button mat-button class=\"backButton\" (click)=\"back(2)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n\r\n    </form>\r\n\r\n\r\n    <form *ngIf=\"activeLink=='step4'\">\r\n\r\n      <div style=\"width: 100%;\">\r\n        <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\"\r\n          fxFlex>\r\n\r\n          <div fxFlex=\"90\" class=\"step4\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{location.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{pricePerDay}} $</label>\r\n            <div fxFlex=\"40\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus disabled\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{tripdays}}</label>\r\n                <div class=\"circle add disabled\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <!-- <mat-form-field fxFlex=\"30\">\r\n                <input disabled matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"tripdays\" required>\r\n                <mat-icon matSuffix>people</mat-icon>\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field>\r\n            </div> -->\r\n\r\n\r\n          <div fxFlex=\"90\" class=\"step4\" *ngFor=\"let element of tripSublocations;let i=index\">\r\n            <label fxFlex=\"30\" class=\"sublocationName\">{{carsSublocations[i].subLocation.nameEn}}</label>\r\n            <label fxFlex=\"30\" class=\"sublocationPrice\">{{carsSublocations[i].cost}} $</label>\r\n            <div fxFlex=\"40\">\r\n              <div class=\"durationDiv\">\r\n                <div class=\"circle minus\" [ngClass]=\"{'disabled': tripSublocations[i].duration==0}\" (click)=\"minDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    remove\r\n                  </i>\r\n                </div>\r\n                <label class=\"duration\">{{tripSublocations[i].duration}}</label>\r\n                <div class=\"circle add\" (click)=\"addDuration(i)\">\r\n                  <i class=\"material-icons\">\r\n                    add\r\n                  </i>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <!-- <mat-form-field fxFlex=\"30\">\r\n                <input (input)=\"onSearchChange()\" matInput type=\"number\" min=\"0\" max=\"100\" [ngModelOptions]=\"{standalone: true}\"\r\n                  [(ngModel)]=\"tripSublocations[i].duration\" required>\r\n                <mat-icon matSuffix>people</mat-icon>\r\n                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\r\n              </mat-form-field> -->\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: rightt;\">\r\n        <button mat-button (click)=\"edit()\" class=\"addButton\" [disabled]=\"tripdays<0\" cdkFocusInitial>{{'Global.EDIT'\r\n          | translate}}</button>\r\n      </div>\r\n      <div style=\"float: leftt;\">\r\n        <button mat-button class=\"backButton\" (click)=\"back(3,null,null)\" cdkFocusInitial>{{'Global.BACK'\r\n          | translate}}</button>\r\n      </div>\r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -28850,7 +29555,8 @@ var editTripComponent = (function () {
         var _this = this;
         this.stepOneForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
             locationId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
-            ownerId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
+            ownerId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+            note: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */]('')
         });
         this.stepSecForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
             first: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](''),
@@ -28920,7 +29626,8 @@ var editTripComponent = (function () {
         // firstStep
         this.stepOneForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormGroup */]({
             locationId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.locationId, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
-            ownerId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.ownerId, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required)
+            ownerId: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.ownerId, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required),
+            note: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormControl */](data.note)
         });
         this.isFromAirport = data.fromAirport;
         this.isInCity = data.inCity;
@@ -28931,6 +29638,7 @@ var editTripComponent = (function () {
         this.getTypeTrip();
         this.allData['locationId'] = this.stepOneForm.value.locationId;
         this.allData['ownerId'] = this.stepOneForm.value.ownerId;
+        this.allData['note'] = this.stepOneForm.value.note;
         this.allData['fromAirport'] = this.isFromAirport;
         this.allData['toAirport'] = this.isToAirport;
         this.allData['inCity'] = this.isInCity;
@@ -29271,6 +29979,10 @@ var editTripComponent = (function () {
             this.airportPrice = 0;
             this.subLocaationPrice = 0;
         }
+        if (stepNum == 3) {
+            this.carsSublocations = [];
+            this.tripSublocations = [];
+        }
     };
     editTripComponent.prototype.next = function (stepNum) {
         var _this = this;
@@ -29287,6 +29999,7 @@ var editTripComponent = (function () {
                 this.activeLink = this.links[stepNum - 1].name;
                 this.allData['locationId'] = this.stepOneForm.value.locationId;
                 this.allData['ownerId'] = this.stepOneForm.value.ownerId;
+                this.allData['note'] = this.stepOneForm.value.note;
                 this.allData['fromAirport'] = this.isFromAirport;
                 this.allData['toAirport'] = this.isToAirport;
                 this.allData['inCity'] = this.isInCity;
@@ -29411,13 +30124,13 @@ var editTripComponent = (function () {
             if (_this.mainServ.APIServ.getErrorCode() == 0) {
                 _this.backToTrips();
             }
-            else if (_this.mainServ.APIServ.getErrorCode() != 455) {
+            else if (_this.mainServ.APIServ.getErrorCode() == 455) {
                 _this.dialogServ.errorMessage(455);
             }
-            else if (_this.mainServ.APIServ.getErrorCode() != 456) {
+            else if (_this.mainServ.APIServ.getErrorCode() == 456) {
                 _this.dialogServ.errorMessage(456);
             }
-            else if (_this.mainServ.APIServ.getErrorCode() != 457) {
+            else if (_this.mainServ.APIServ.getErrorCode() == 457) {
                 _this.dialogServ.errorMessage(457);
             }
             else if (_this.mainServ.APIServ.getErrorCode() != 401) {
@@ -33109,6 +33822,148 @@ var UIModule = (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/main/dialogs/add-vacation/add-vacation.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"dialog-content-wrapper\">\n  <mat-toolbar matDialogTitle class=\"mat-accent m-0\">\n    <div style=\"padding-top: 7px;\" fxFlex fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\n      <span class=\"title dialog-title\">{{ 'ADDVACATION.TITLE' | translate }}</span>\n      <button style=\"float: right;\" mat-button class=\"mat-icon-button\" (click)=\"dialogRef.close()\" aria-label=\"Close dialog\">\n                <mat-icon>close</mat-icon>\n            </button>\n    </div>\n  </mat-toolbar>\n\n  <div mat-dialog-content class=\"p-24 m-0\" fusePerfectScrollbar>\n    <form name=\"eventForm\" [formGroup]=\"eventForm\" class=\"event-form\">\n\n      <div style=\"padding-top:10px;\" fxLayout=\"column\" fxLayout.gt-md=\"row wrap\" fxLayoutAlign.gt-md=\"space-around center\" fxFlex>\n        <mat-form-field fxFlex=\"45\">\n          <input matInput [matDatepicker]=\"startDatePicker\" (focus)=\"startDatePicker.open()\" placeholder=\"{{ 'ADDVACATION.STARTDATE' | translate }}\" name=\"end\" formControlName=\"start\">\n          <mat-datepicker-toggle matSuffix [for]=\"startDatePicker\"></mat-datepicker-toggle>\n          <mat-datepicker #startDatePicker ></mat-datepicker>\n          <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\n        </mat-form-field>\n        <mat-form-field fxFlex=\"45\">\n          <input matInput [matTimepicker]=\"startPicker\" placeholder=\"{{ 'ADDVACATION.STARTTIME' | translate }}\">\n          <mat-timepicker-toggle matSuffix [for]=\"startPicker\"></mat-timepicker-toggle>\n          <mat-timepicker #startPicker color=\"primary\"></mat-timepicker>\n        </mat-form-field>\n        <mat-form-field fxFlex=\"45\">\n          <input matInput [matDatepicker]=\"endDatePicker\" (focus)=\"endDatePicker.open()\" placeholder=\"{{ 'ADDVACATION.ENDDATE' | translate }}\" name=\"end\" formControlName=\"end\">\n          <mat-datepicker-toggle matSuffix [for]=\"endDatePicker\"></mat-datepicker-toggle>\n          <mat-datepicker #endDatePicker ></mat-datepicker>\n          <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>\n        </mat-form-field>\n\n        <mat-form-field fxFlex=\"45\">\n          <input matInput [matTimepicker]=\"endPicker\" placeholder=\"{{ 'ADDVACATION.ENDTIME' | translate }}\">\n          <mat-timepicker-toggle  matSuffix [for]=\"endPicker\"></mat-timepicker-toggle>\n          <mat-timepicker #endPicker color=\"primary\"></mat-timepicker>\n        </mat-form-field>\n\n      </div>\n    </form>\n\n  </div>\n\n  <div mat-dialog-actions class=\"m-0 p-16\" fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\n\n    <button mat-raised-button class=\"save-button mat-accent\" (click)=\"save(startPicker,endPicker)\" [disabled]=\"eventForm.invalid\" aria-label=\"SAVE\">\n            {{ 'Global.ADD' | translate }}\n        </button>\n    <!-- <button mat-raised-button class=\"save-button mat-accent\" (click)=\"save(false,startPicker,endPicker)\" [disabled]=\"eventForm.invalid\" aria-label=\"SAVE\">\n            {{ 'Dialog.Add_Slotes.SAVE' | translate }}\n        </button> -->\n\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/dialogs/add-vacation/add-vacation.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/main/dialogs/add-vacation/add-vacation.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddVacationComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__core_services_translation_loader_service__ = __webpack_require__("../../../../../src/app/core/services/translation-loader.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_services_main_service__ = __webpack_require__("../../../../../src/app/core/services/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_services_dialog_service__ = __webpack_require__("../../../../../src/app/core/services/dialog.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+
+
+
+var AddVacationComponent = (function () {
+    function AddVacationComponent(dialogRef, data, mainServ, _formBuilder, translate, dialogServ, translationLoader) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.mainServ = mainServ;
+        this._formBuilder = _formBuilder;
+        this.translate = translate;
+        this.dialogServ = dialogServ;
+        this.translationLoader = translationLoader;
+        this.eventForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormGroup */]({
+            start: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+            end: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required),
+            carId: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */](data['carId'], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["l" /* Validators */].required)
+        });
+    }
+    AddVacationComponent.prototype.convertTo24 = function (str) {
+        str = String(str).toLowerCase().replace(/\s/g, '');
+        var has_am = str.indexOf('am') >= 0;
+        var has_pm = str.indexOf('pm') >= 0;
+        // first strip off the am/pm, leave it either hour or hour:minute
+        str = str.replace('am', '').replace('pm', '');
+        // if hour, convert to hour:00
+        if (str.indexOf(':') < 0)
+            str = str + ':00';
+        // now it's hour:minute
+        // we add am/pm back if striped out before 
+        if (has_am)
+            str += ' am';
+        if (has_pm)
+            str += ' pm';
+        // now its either hour:minute, or hour:minute am/pm
+        // put it in a date object, it will convert to 24 hours format for us 
+        var d = new Date("1/1/2011 " + str);
+        // make hours and minutes double digits
+        var doubleDigits = function (n) {
+            return (parseInt(n) < 10) ? "0" + n : String(n);
+        };
+        return { 'hours': doubleDigits(d.getHours()), 'minutes': doubleDigits(d.getMinutes()) };
+    };
+    AddVacationComponent.prototype.ngOnInit = function () {
+    };
+    AddVacationComponent.prototype.save = function (startPicker, endPicker) {
+        var _this = this;
+        var data = this.eventForm.value;
+        var startDateString = this.convertTo24(startPicker['userTime']['hour'] + ":" + startPicker['userTime']['minute'] + startPicker['userTime']['meriden']);
+        var endPickerString = this.convertTo24(endPicker['userTime']['hour'] + ":" + endPicker['userTime']['minute'] + endPicker['userTime']['meriden']);
+        data['start'].setHours(startPicker['userTime']['hour']);
+        data['start'].setMinutes(startPicker['userTime']['minute']);
+        data['end'].setHours(endPicker['userTime']['hour']);
+        data['end'].setMinutes(endPicker['userTime']['minute']);
+        console.log(data);
+        this.mainServ.APIServ.post("/bookingCars/addVacation", data).subscribe(function (data) {
+            if (_this.mainServ.APIServ.getErrorCode() == 0) {
+                _this.dialogRef.close(true);
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() == 456) {
+                _this.dialogServ.errorMessage(456);
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() == 457) {
+                _this.dialogServ.errorMessage(457);
+            }
+            else if (_this.mainServ.APIServ.getErrorCode() != 401) {
+                _this.mainServ.APIServ.setErrorCode(0);
+            }
+        });
+    };
+    AddVacationComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
+            selector: 'add-vacation',
+            template: __webpack_require__("../../../../../src/app/main/dialogs/add-vacation/add-vacation.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/main/dialogs/add-vacation/add-vacation.component.scss")]
+        }),
+        __param(1, Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Inject"])(__WEBPACK_IMPORTED_MODULE_3__angular_material__["e" /* MAT_DIALOG_DATA */])),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_material__["o" /* MatDialogRef */], Object, __WEBPACK_IMPORTED_MODULE_5__core_services_main_service__["a" /* MainService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_6__core_services_dialog_service__["a" /* DialogService */],
+            __WEBPACK_IMPORTED_MODULE_0__core_services_translation_loader_service__["a" /* FuseTranslationLoaderService */]])
+    ], AddVacationComponent);
+    return AddVacationComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/main/dialogs/confirm-message/confirm-message.component.html":
 /***/ (function(module, exports) {
 
@@ -33912,6 +34767,7 @@ var locale = {
             "NAME": "اسم",
             "RATE": "تقييم",
             "STATUS": "الحالة",
+            "ADDVACATION": "إضافة عطلة",
             "NUMBEROFSEAT": "عدد المقاعد",
             "ISVIP": "هل VIP",
             "PRICEPERDAY": "جولة بالمدينة ليوم واحد",
@@ -33992,6 +34848,7 @@ var locale = {
             "TOAIRPORT": "إلى المطار",
             "TOAIRPORTDATE": "تاريخ إلى المطار",
             "RATE": "التقييم",
+            "NOTE": "ملاحظات",
             "INCITY": "في المدينة",
             "STARTINCITYDATE": "تاريخ بداية الرحلة في المدينة",
             "ENDINCITYDATE": "تاريخ نهاية الرحلة في المدينة",
@@ -34133,6 +34990,7 @@ var locale = {
         },
         "ERROR": {
             "LOGINFAILED": "البريد الإلكتروني او كلمة السر خطا",
+            "422": "البريد الإلكتروني مستخدم مسبقا",
             "451": "اسم المستخدم او الرقم مستخدمين",
             "452": "غير متوفر",
             "453": "هو فعلاً معطل",
@@ -34251,11 +35109,19 @@ var locale = {
                 "TITLE": "Edit Brand"
             }
         },
+        "ADDVACATION": {
+            "STARTDATE": "Start Date",
+            "ENDDATE": "End Date",
+            "STARTTIME": "Start Time",
+            "ENDTIME": "End Time",
+            "TITLE": "Add Vacation"
+        },
         "CAR": {
             "BRAND": "Brand",
             "NAME": "Name",
             "RATE": "Rate",
             "STATUS": "Status",
+            "ADDVACATION": "Add Vacation",
             "NUMBEROFSEAT": "Number Of Seats",
             "ISVIP": "Is Vip",
             "PRICEPERDAY": "City Tour Per Day",
@@ -34284,6 +35150,27 @@ var locale = {
             },
             "EDITCAR": {
                 "TITLE": "Edit Car"
+            }
+        },
+        "AGENCY": {
+            "STATUS": "Status",
+            "NAMEEN": "English Name",
+            "NAMEAR": "Arabic Name",
+            "NAMETR": "Turkish Name",
+            "EMAIL": "Email",
+            "PHONENUMBER": "Phone Number",
+            "ISOCODE": "Nationality",
+            'PASSWORD': 'Password',
+            "ALLAGENCY": {
+                "TITLE": "Agency",
+                "ADDAGENCY": "Add Agency",
+                "SEARCH": "Search for Agency"
+            },
+            "ADDAGENCY": {
+                "TITLE": "Add Agency",
+            },
+            "EDITAGENCY": {
+                "TITLE": "Edit Agency"
             }
         },
         "SUBLOCATION": {
@@ -34349,6 +35236,7 @@ var locale = {
             "SUBLOCATIONS": "Nearby Citys",
             "FROM": "From",
             "TO": "To",
+            "NOTE": "Note",
             "DRIVER": "Driver",
             "DRIVERNAME": "Driver Name",
             "DRIVERGENDER": "Driver Gender",
@@ -34451,6 +35339,7 @@ var locale = {
             'ERRORFIELDREQUIRED': 'this field is required',
             'ERRORVALIDEMAIL': 'Please enter a valid email address',
             'OK': "Ok",
+            "CREATEDAT": "Create At",
             "ERROR": 'Error Message',
             "CONFIRM": 'Confirm Message',
             "UPLOADIMAGE": "Upload Image",
@@ -34477,6 +35366,7 @@ var locale = {
         },
         "ERROR": {
             "LOGINFAILED": "Email or Password is wrong",
+            "422": "Email is used",
             "451": "Username or Phonenumber is used",
             "452": "Not Found",
             "453": "Already is deactive",
@@ -35517,6 +36407,13 @@ var NavigationModel = (function () {
                 'type': 'item',
                 'icon': 'star',
                 'url': '/rate'
+            },
+            {
+                'id': 'agency',
+                'title': 'AGENCY.ALLAGENCY.TITLE',
+                'type': 'item',
+                'icon': 'domain',
+                'url': '/agency'
             },
             {
                 'id': 'admin',
