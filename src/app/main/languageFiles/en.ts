@@ -97,19 +97,19 @@ export const locale = {
                 "TITLE": "Edit Brand"
             }
         },
-        "ADDVACATION":{
-            "STARTDATE":"Start Date",
-            "ENDDATE":"End Date",
-            "STARTTIME":"Start Time",
-            "ENDTIME":"End Time",
-            "TITLE":"Add Vacation"
+        "ADDVACATION": {
+            "STARTDATE": "Start Date",
+            "ENDDATE": "End Date",
+            "STARTTIME": "Start Time",
+            "ENDTIME": "End Time",
+            "TITLE": "Add Vacation"
         },
         "CAR": {
             "BRAND": "Brand",
             "NAME": "Name",
             "RATE": "Rate",
             "STATUS": "Status",
-            "ADDVACATION":"Add Vacation",
+            "ADDVACATION": "Add Vacation",
             "NUMBEROFSEAT": "Number Of Seats",
             "ISVIP": "Is Vip",
             "PRICEPERDAY": "City Tour Per Day",
@@ -206,6 +206,20 @@ export const locale = {
             "RESET": "Reset",
             "NEWPASSWORD": "New Password"
         },
+        "FILTER": {
+            "CARNAME": "Car Name",
+            "USERNAME": "User Name",
+            "DRIVERNAME": "Driver Name",
+            "MAXRATE": "Max Rate",
+            "MINRATE": "Min Rate",
+            "ISOCODE": "Nationality",
+            "NAME": "Name",
+            "STATUS": "Status",
+            "LOCATION": "Location",
+            "INCITY": "In City",
+            "FROMAIRPORT": "From Airport",
+            "TOAIRPORT": "TO Airport",
+        },
         "TRIP": {
             "FROMAIRPORT": "From Airport",
             "FROMAIRPORTDATE": "From Airport Date",
@@ -281,7 +295,6 @@ export const locale = {
                 "PRICEPERUNIT": "price"
             }
         },
-
         "PREDEFINEDTRIP": {
             "DURATION": "Duration",
             "LOCATION": "Location",
@@ -329,12 +342,14 @@ export const locale = {
             'ERRORFIELDREQUIRED': 'this field is required',
             'ERRORVALIDEMAIL': 'Please enter a valid email address',
             'OK': "Ok",
-            "CREATEDAT":"Create At",
+            'FILTER': "Filter",
+            "CREATEDAT": "Create At",
             "ERROR": 'Error Message',
             "CONFIRM": 'Confirm Message',
             "UPLOADIMAGE": "Upload Image",
             "ADD": "Add",
             "EDIT": "Save",
+            "CLEAR": "Clear",
             "NEXT": "Next",
             "BACK": "Back",
             "CANCEL": "Cancel"

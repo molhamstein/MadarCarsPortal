@@ -21,9 +21,13 @@
 
     <!-- SEARCH -->
     <div class="search-input-wrapper mt-16 ml-8 m-sm-0" fxLayout="row" fxLayoutAlign="start center">
+      <button mat-button class="customButtom" color="primary" type="button" *ngIf="viewClear==true" style="background-color: #2d323e"
+        (click)="clearFilter()">{{'Global.CLEAR'
+        | translate}}</button>
 
-      <!-- <button mat-button class="customButtom" color="primary" type="button" (click)="addUser()">{{'RATE.ALLRATE.ADDRATE'
-        | translate}}</button> -->
+      <button mat-button class="customButtom" color="primary" type="button" (click)="openFilter()">{{'Global.FILTER'
+        | translate}}</button>
+
 
     </div>
     <!-- / SEARCH -->
@@ -51,7 +55,7 @@
 
       </ngx-datatable-column>
 
-      <ngx-datatable-column [canAutoResize]="false" [width]="120"  [flexGrow]="1" prop="trip.location.nameEn">
+      <ngx-datatable-column [canAutoResize]="false" [width]="120" [flexGrow]="1" prop="trip.location.nameEn">
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
           <span>{{ 'RATE.LOCATION' | translate }}</span>
         </ng-template>

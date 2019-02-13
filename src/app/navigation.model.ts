@@ -16,12 +16,13 @@ export class NavigationModel {
                 'type': 'item',
                 'url': '/drivers'
             },
-            // {
-            //     'id': 'brand',
-            //     'title': 'BRAND.ALLBRAND.TITLE',
-            //     'type': 'item',
-            //     'url': '/brands'
-            // },
+            {
+                'id': 'brand',
+                'icon':"local_offer",
+                'title': 'BRAND.ALLBRAND.TITLE',
+                'type': 'item',
+                'url': '/brands'
+            },
             {
                 'id': 'car',
                 'title': 'CAR.ALLCAR.TITLE',

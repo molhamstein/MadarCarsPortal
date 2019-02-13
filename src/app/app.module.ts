@@ -71,6 +71,7 @@ import { MakeRateComponent } from './main/dialogs/make-rate/make-rate.component'
 import { agenciesComponent } from './main/content/pages/agency/agency/agencies.component';
 import { addAgencyComponent } from './main/content/pages/agency/addAgency/addAgency.component';
 import { editAgencyComponent } from './main/content/pages/agency/editAgency/editAgency.component';
+import { FilterComponent } from './main/dialogs/filter/filter.component';
 
 
 
@@ -339,7 +340,7 @@ const appRoutes: Routes = [
         agenciesComponent, addAgencyComponent, editAgencyComponent,
 
         // dialogs
-        SomeThingIsErrorComponent, AddVacationComponent, MakeRateComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent, TimeComponent
+        SomeThingIsErrorComponent, FilterComponent, AddVacationComponent, MakeRateComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent, TimeComponent
     ],
     imports: [
         BrowserModule,
@@ -367,7 +368,7 @@ const appRoutes: Routes = [
 
 
     ],
-    entryComponents: [SomeThingIsErrorComponent, AddVacationComponent, MakeRateComponent, TimeComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent],
+    entryComponents: [SomeThingIsErrorComponent, FilterComponent, AddVacationComponent, MakeRateComponent, TimeComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent],
     providers: [
         FuseSplashScreenService,
         FuseConfigService,

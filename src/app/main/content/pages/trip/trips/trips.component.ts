@@ -20,6 +20,8 @@ export class tripsComponent implements OnInit {
   count: number = 0;
   offset: number = 0;
   limit: number = 10;
+  viewClear = false;
+  filter = { "isInCity": null, "isFromAirport": null, "isToAirport": null, "status": "", "user.name": "", "car.name": "", "driver.username": "", "locationId": "" }
 
 
   disableObject = { "next": false, "prev": true, "first": true, "end": false }
@@ -32,6 +34,16 @@ export class tripsComponent implements OnInit {
     this.inisilaize();
   }
 
+  openFilter() {
+    var mainThis = this
+    this.dialogServ.openFilter("trip", this.filter, function (data) {
+      mainThis.filter = data
+      mainThis.viewClear = true;
+      console.log(mainThis.filter)
+      mainThis.offset = 0;
+      mainThis.inisilaize()
+    })
+  }
 
   next() {
     console.log("next")
@@ -108,7 +120,32 @@ export class tripsComponent implements OnInit {
   end() {
     console.log("end")
     this.mainServ.loaderSer.display(true);
-    this.mainServ.APIServ.get("trips/getEnd?limit=" + this.limit).subscribe((data: any) => {
+    var and = []
+    if (this.filter['isFromAirport'] != null) {
+      and.push({ "fromAirport": this.filter['isFromAirport'] })
+    }
+    if (this.filter['isToAirport'] != null) {
+      and.push({ "toAirport": this.filter['isToAirport'] })
+    }
+    if (this.filter['isInCity'] != null) {
+      and.push({ "inCity": this.filter['isInCity'] })
+    }
+    if (this.filter['locationId'] != "") {
+      and.push({ "locationId": this.filter['locationId'] })
+    }
+
+    and.push(
+      { "status": { "$regex": this.filter['status'] } },
+      { "owner.name": { "$regex": this.filter['user.name'] } },
+      { "car.name": { "$regex": this.filter['car.name'] } },
+      { "driver.username": { "$regex": this.filter['driver.username'] } }
+    )
+
+    var filter = {
+      "limit": this.limit,
+      "$and": and
+    }
+    this.mainServ.APIServ.get("trips/getEnd?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
       this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.rows = data.data;
@@ -132,12 +169,37 @@ export class tripsComponent implements OnInit {
 
   setPage(offset, limit, type: string = "defult", numRows: number = 0) {
     this.mainServ.loaderSer.display(true);
-    var filter = { "limit": limit, "skip": offset , "include": ['rate']}
-    this.mainServ.APIServ.get("trips?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+    // filter ={ "isFromAirport": "", "isToAirport": "" "car.name": "", "driver.username": "", "locationId": "" }
+    var and = []
+    if (this.filter['isFromAirport'] != null) {
+      and.push({ "fromAirport": this.filter['isFromAirport'] })
+    }
+    if (this.filter['isToAirport'] != null) {
+      and.push({ "toAirport": this.filter['isToAirport'] })
+    }
+    if (this.filter['isInCity'] != null) {
+      and.push({ "inCity": this.filter['isInCity'] })
+    }
+    if (this.filter['locationId'] != "") {
+      and.push({ "locationId": this.filter['locationId'] })
+    }
+
+    and.push(
+      { "status": { "$regex": this.filter['status'] } },
+      { "owner.name": { "$regex": this.filter['user.name'] } },
+      { "car.name": { "$regex": this.filter['car.name'] } },
+      { "driver.username": { "$regex": this.filter['driver.username'] } }
+    )
+
+    var filter = {
+      "limit": limit, "skip": offset,
+      "$and": and
+    }
+    this.mainServ.APIServ.get("trips/getTripByFilter?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
       this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
-        if (data.length > 0)
-          this.rows = data;
+        // if (data.length > 0)
+        this.rows = data;
         console.log(this.rows);
         this.calcStartDateAndEnd();
 
@@ -187,6 +249,12 @@ export class tripsComponent implements OnInit {
   }
 
 
+  clearFilter() {
+    this.viewClear = false;
+    this.filter = { "isInCity": "", "isFromAirport": "", "isToAirport": "", "status": "", "user.name": "", "car.name": "", "driver.username": "", "locationId": "" }
+    this.offset = 0;
+    this.inisilaize();
+  }
 
 
 

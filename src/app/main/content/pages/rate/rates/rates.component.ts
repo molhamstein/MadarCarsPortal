@@ -20,7 +20,8 @@ export class ratesComponent implements OnInit {
   count: number = 0;
   offset: number = 0;
   limit: number = 10;
-
+  viewClear = false;
+  filter = { "user.name": "", "car.name": "", "trip.driver.username": "", "max-value": 5, "min-value": 0 }
 
   disableObject = { "next": false, "prev": true, "first": true, "end": false }
   constructor(private translationLoader: FuseTranslationLoaderService
@@ -29,6 +30,7 @@ export class ratesComponent implements OnInit {
     private dialogServ: DialogService,
     public dialog: MatDialog) {
     this.translationLoader.loadTranslations(english);
+    this.offset = 0
     this.inisilaize();
   }
 
@@ -38,6 +40,15 @@ export class ratesComponent implements OnInit {
     this.setPage(this.offset, this.limit, "next");
   }
 
+  openFilter() {
+    var mainThis = this
+    this.dialogServ.openFilter("rate", this.filter, function (data) {
+      mainThis.filter = data
+      mainThis.viewClear = true;
+      mainThis.offset = 0;
+      mainThis.inisilaize()
+    })
+  }
   prev() {
     console.log("prev")
     if (this.offset - (this.limit * 2) >= 0)
@@ -99,7 +110,18 @@ export class ratesComponent implements OnInit {
   end() {
     console.log("end")
     this.mainServ.loaderSer.display(true);
-    this.mainServ.APIServ.get("rates/getEnd?limit=" + this.limit).subscribe((data: any) => {
+    var filter =
+    {
+      "limit": this.limit,
+      "$and": [
+        { "user.name": { "$regex": this.filter['user.name'], "$options": "i" } },
+        { "car.name": { "$regex": this.filter['car.name'], "$options": "i" } },
+        { "trip.driver.username": { "$regex": this.filter['trip.driver.username'], "$options": "i" } },
+        { "value": { "$gte": this.filter['min-value'] } },
+        { "value": { "$lte": this.filter['max-value'] } },
+      ]
+    }
+    this.mainServ.APIServ.get("rates/getEndByFilter?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
       this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.rows = data.data;
@@ -128,15 +150,48 @@ export class ratesComponent implements OnInit {
     });
 
   }
+  preperFilter(limit, offset) {
+    var filter = {}
+    if (limit != 0) {
+      filter['limit'] = limit;
+    }
+    if (offset != 0) {
+      filter['offset'] = offset;
+    }
+    filter['$and'] = [];
+    filter['$and'].push({ "value": { "$gte": this.filter['min-value'] } })
+    filter['$and'].push({ "value": { "$lte": this.filter['max-value'] } })
+    if (this.filter['user.name'] != "") {
+      filter['$and'].push({ "user.name": { "$regex": this.filter['user.name'] } })
+    }
+    if (this.filter['car.name'] != "") {
+      filter['$and'].push({ "car.name": { "$regex": this.filter['car.name'] } })
+    }
+    if (this.filter['user.name'] != "") {
+      filter['$and'].push({ "user.name": { "$regex": this.filter['user.name'] } })
+    }
+  }
 
   setPage(offset, limit, type: string = "defult", numRows: number = 0) {
     this.mainServ.loaderSer.display(true);
-    var filter = { "limit": limit, "skip": offset }
-    this.mainServ.APIServ.get("rates?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+
+    var filter =
+    {
+      "skip": offset,
+      "limit": limit,
+      "$and": [
+        { "user.name": { "$regex": this.filter['user.name'], "$options": "i" } },
+        { "car.name": { "$regex": this.filter['car.name'], "$options": "i" } },
+        { "trip.driver.username": { "$regex": this.filter['trip.driver.username'], "$options": "i" } },
+        { "value": { "$gte": this.filter['min-value'] } },
+        { "value": { "$lte": this.filter['max-value'] } },
+      ]
+    }
+    console.log(filter);
+    this.mainServ.APIServ.get("rates/getByFilter?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
       this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
-        if (data.length > 0)
-          this.rows = data;
+        this.rows = data;
         console.log(this.rows);
         this.calcStartDateAndEnd();
 
@@ -187,7 +242,12 @@ export class ratesComponent implements OnInit {
 
 
 
-
+  clearFilter() {
+    this.viewClear = false;
+    this.filter = { "user.name": "", "car.name": "", "trip.driver.username": "", "max-value": 5, "min-value": 0 }
+    this.offset = 0;
+    this.inisilaize();
+  }
 
   inisilaize() {
     if (this.offset == 0)

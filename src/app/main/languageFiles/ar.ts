@@ -97,12 +97,19 @@ export const locale = {
                 "TITLE": "تعديل ماركة"
             }
         },
+        "ADDVACATION": {
+            "STARTDATE": "تاريخ البداية",
+            "ENDDATE": "تاريخ النهاية",
+            "STARTTIME": "توقيت البداية",
+            "ENDTIME": "توقيت النهاية",
+            "TITLE": "إضافة رحلة"
+        },
         "CAR": {
             "BRAND": "ماركة",
             "NAME": "اسم",
             "RATE": "تقييم",
             "STATUS": "الحالة",
-            "ADDVACATION":"إضافة عطلة",
+            "ADDVACATION": "إضافة عطلة",
             "NUMBEROFSEAT": "عدد المقاعد",
             "ISVIP": "هل VIP",
             "PRICEPERDAY": "جولة بالمدينة ليوم واحد",
@@ -132,6 +139,27 @@ export const locale = {
             },
             "EDITCAR": {
                 "TITLE": "تعديل السيارة"
+            }
+        },
+        "AGENCY": {
+            "STATUS": "الحالة",
+            "NAMEEN": "اسم انكليزي",
+            "NAMEAR": "اسم عربي",
+            "NAMETR": "اسم تركي",
+            "EMAIL": "البريد الإلكتروني",
+            "PHONENUMBER": "رقم الهاتف",
+            "ISOCODE": "الجنسية",
+            "PASSWORD": "كلمة السر",
+            "ALLAGENCY": {
+                "TITLE": "وكالة",
+                "ADDAGENCY": "إضافة وكالة",
+                "SEARCH": "البحث عن وكالة"
+            },
+            "ADDAGENCY": {
+                "TITLE": "إضافة وكالة",
+            },
+            "EDITAGENCY": {
+                "TITLE": "تعديل وكالة"
             }
         },
         "SUBLOCATION": {
@@ -178,13 +206,27 @@ export const locale = {
             "RESET": "إعادة تعيين",
             "NEWPASSWORD": "كلمة السر الجديدة"
         },
+        "FILTER": {
+            "CARNAME": "اسم السيارة",
+            "USERNAME": "اسم الشخص",
+            "DRIVERNAME": "اسم السائق",
+            "MAXRATE": "أعلى تقييم",
+            "MINRATE": "أقل تقييم",
+            "ISOCODE": "الجنسية",
+            "NAME": "الأسم",
+            "STATUS": "الحالة",
+            "LOCATION": "المدينة",
+            "INCITY": "في المدينة",
+            "FROMAIRPORT": "من المطار",
+            "TOAIRPORT": "إلى المطار",
+        },
         "TRIP": {
             "FROMAIRPORT": "من المطار",
             "FROMAIRPORTDATE": "تاريخ من المطار",
             "TOAIRPORT": "إلى المطار",
             "TOAIRPORTDATE": "تاريخ إلى المطار",
             "RATE": "التقييم",
-            "NOTE":"ملاحظات",
+            "NOTE": "ملاحظات",
             "INCITY": "في المدينة",
             "STARTINCITYDATE": "تاريخ بداية الرحلة في المدينة",
             "ENDINCITYDATE": "تاريخ نهاية الرحلة في المدينة",
@@ -253,7 +295,6 @@ export const locale = {
                 "PRICEPERUNIT": "سعر"
             }
         },
-
         "PREDEFINEDTRIP": {
             "DURATION": "المدة",
             "LOCATION": "المدينة",
@@ -287,14 +328,12 @@ export const locale = {
             "STATUS": "الحالة",
             "VALUE": "القيمة",
             "RATEDATE": "تاريخ التقييم"
-
         },
         "MAKERATE": {
             "RATE": "تقييم",
             "VALUE": "القيمة",
             "TITLE": "القيام بتقييم"
         },
-
         'Nav': {
             'CALENDAR': 'Calender',
             'USERS': 'Users'
@@ -304,9 +343,12 @@ export const locale = {
             'ERRORVALIDEMAIL': 'الرجاء إدخال بريد الكتروني فعال',
             'OK': "تم",
             "ERROR": 'رسالة خطا',
+            'FILTER': "فلتر",
+            "CREATEDAT": "تاريخ الإنشاء",
             "CONFIRM": 'رسالة تاكيد',
             "UPLOADIMAGE": "تحميل صورة",
             "ADD": "إضافة",
+            "CLEAR": "مسح",
             "EDIT": "حفظ",
             "NEXT": "التالي",
             "BACK": "السابق",
@@ -329,7 +371,7 @@ export const locale = {
         },
         "ERROR": {
             "LOGINFAILED": "البريد الإلكتروني او كلمة السر خطا",
-            "422":"البريد الإلكتروني مستخدم مسبقا",
+            "422": "البريد الإلكتروني مستخدم مسبقا",
             "451": "اسم المستخدم او الرقم مستخدمين",
             "452": "غير متوفر",
             "453": "هو فعلاً معطل",

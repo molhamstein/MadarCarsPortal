@@ -1,0 +1,136 @@
+<div class="dialog-content-wrapper">
+  <mat-toolbar matDialogTitle class="mat-accent m-0">
+    <div style="padding-top: 7px;" fxFlex fxLayout="row" fxLayoutAlign="space-between center">
+      <span class="title dialog-title">{{ 'Global.FILTER' | translate }}</span>
+      <button style="float: right;" mat-button class="mat-icon-button" (click)="dialogRef.close()" aria-label="Close dialog">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <div mat-dialog-content class="p-24 m-0" fusePerfectScrollbar>
+    <form name="rateFilterForm" *ngIf="type=='rate'" [formGroup]="rateFilterForm" class="event-form">
+      <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
+        fxFlex>
+        <mat-form-field fxFlex="30">
+          <input matInput placeholder="{{ 'FILTER.USERNAME' | translate }}" formControlName="userName">
+          
+        </mat-form-field>
+        <mat-form-field fxFlex="30">
+          <input matInput placeholder="{{ 'FILTER.CARNAME' | translate }}" formControlName="carNaem">
+          
+        </mat-form-field>
+        <mat-form-field fxFlex="30">
+          <input matInput placeholder="{{ 'FILTER.DRIVERNAME' | translate }}" formControlName="driverName">
+          
+        </mat-form-field>
+        <label fxFlex="96">{{'FILTER.MINRATE' | translate}}</label>
+        <mat-slider fxFlex="96" class="example-margin" [invert]="!isEnLang()" [max]="5" [min]="0" [step]="1"
+          [thumbLabel]="true" [tickInterval]="1" [ngModelOptions]="{standalone: true}" [(ngModel)]="minRate">
+        </mat-slider>
+
+        <label fxFlex="96">{{'FILTER.MAXRATE' | translate}}</label>
+        <mat-slider fxFlex="96" class="example-margin" [invert]="!isEnLang()" [max]="5" [min]="0" [step]="1"
+          [thumbLabel]="true" [tickInterval]="1" [ngModelOptions]="{standalone: true}" [(ngModel)]="maxRate">
+        </mat-slider>
+
+      </div>
+    </form>
+    <form name="userFilterForm" *ngIf="type=='user'" [formGroup]="userFilterForm" class="event-form">
+      <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
+        fxFlex>
+        <mat-form-field fxFlex="30">
+          <input matInput placeholder="{{ 'FILTER.NAME' | translate }}" formControlName="name">
+          
+        </mat-form-field>
+        <mat-form-field fxFlex="30">
+          <mat-select placeholder="{{ 'FILTER.ISOCODE' | translate }}" formControlName="ISOCode">
+            <mat-option *ngFor="let oneCode of isoCode" [value]="oneCode.isoCode">
+              {{oneCode.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="30">
+          <mat-select placeholder="{{ 'FILTER.STATUS' | translate }}" formControlName="status">
+            <mat-option *ngFor="let oneStat of statues" [value]="oneStat">
+              {{oneStat}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+    </form>
+
+    <form name="userFilterForm" *ngIf="type=='trip'" [formGroup]="tripFilterForm" class="event-form">
+      <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
+        fxFlex>
+        <mat-form-field fxFlex="23">
+          <input matInput placeholder="{{ 'FILTER.NAME' | translate }}" formControlName="userName">
+          
+        </mat-form-field>
+        <mat-form-field fxFlex="23">
+          <mat-select placeholder="{{ 'FILTER.LOCATION' | translate }}" formControlName="locationId">
+            <mat-option *ngFor="let oneLocation of locations" [value]="oneLocation.id">
+              {{oneLocation.nameEn}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field fxFlex="23">
+          <input matInput placeholder="{{ 'FILTER.DRIVERNAME' | translate }}" formControlName="driverUsername">
+          
+        </mat-form-field>
+
+        <mat-form-field fxFlex="23">
+          <input matInput placeholder="{{ 'FILTER.CARNAME' | translate }}" formControlName="carName">
+          
+        </mat-form-field>
+
+        <mat-form-field fxFlex="23">
+          <mat-select placeholder="{{ 'FILTER.STATUS' | translate }}" formControlName="status">
+            <mat-option *ngFor="let oneStat of tripStatues" [value]="oneStat">
+              {{oneStat}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="23">
+          <mat-select placeholder="{{ 'FILTER.TOAIRPORT' | translate }}" formControlName="isToAirport">
+            <mat-option *ngFor="let oneStat of booleanStatues" [value]="oneStat">
+              {{oneStat==null? "none" : oneStat}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="23">
+          <mat-select placeholder="{{ 'FILTER.FROMAIRPORT' | translate }}" formControlName="isFromAirport">
+            <mat-option *ngFor="let oneStat of booleanStatues" [value]="oneStat">
+              {{oneStat==null? "none" : oneStat}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="23">
+          <mat-select placeholder="{{ 'FILTER.INCITY' | translate }}" formControlName="isInCity">
+            <mat-option *ngFor="let oneStat of booleanStatues" [value]="oneStat">
+              {{oneStat==null? "none" : oneStat}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+    </form>
+
+  </div>
+
+  <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="space-between center">
+
+    <button mat-raised-button class="save-button mat-accent" (click)="saveFilter()" aria-label="SAVE">
+      {{ 'Global.FILTER' | translate }}
+    </button>
+    <!-- <button mat-raised-button class="save-button mat-accent" (click)="save(false,startPicker,endPicker)" [disabled]="eventForm.invalid" aria-label="SAVE">
+            {{ 'Dialog.Add_Slotes.SAVE' | translate }}
+        </button> -->
+
+  </div>
+</div>

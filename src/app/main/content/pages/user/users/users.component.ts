@@ -21,6 +21,8 @@ export class usersComponent implements OnInit {
   count: number = 0;
   offset: number = 0;
   limit: number = 10;
+  viewClear = false;
+  filter = { "name": "", "ISOCode": "", "status": "" }
 
 
   disableObject = { "next": false, "prev": true, "first": true, "end": false }
@@ -39,6 +41,22 @@ export class usersComponent implements OnInit {
     this.setPage(this.offset, this.limit, "next");
   }
 
+  openFilter() {
+    var mainThis = this
+    this.dialogServ.openFilter("user", this.filter, function (data) {
+      mainThis.filter = data
+      mainThis.viewClear = true;
+      mainThis.offset=0;
+      mainThis.inisilaize()
+    })
+  }
+
+  clearFilter() {
+    this.viewClear = false;
+    this.filter = { "name": "", "ISOCode": "", "status": "" }
+    this.offset = 0;
+    this.inisilaize();
+  }
   prev() {
     console.log("prev")
     if (this.offset - (this.limit * 2) >= 0)
@@ -57,7 +75,11 @@ export class usersComponent implements OnInit {
   end() {
     console.log("end")
     this.mainServ.loaderSer.display(true);
-    this.mainServ.APIServ.get("users/getEnd?limit=" + this.limit).subscribe((data: any) => {
+    var filter = {
+      "limit": this.limit,
+      "where": { "status": { "like": this.filter['status'] }, "name": { "like": this.filter['name'], "options": "i" }, "ISOCode": { "like": this.filter['ISOCode'] } }
+    }
+    this.mainServ.APIServ.get("users/getEnd?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
       this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.rows = data.data;
@@ -80,7 +102,11 @@ export class usersComponent implements OnInit {
 
   setPage(offset, limit, type: string = "defult", numRows: number = 0) {
     this.mainServ.loaderSer.display(true);
-    var filter = { "limit": limit, "skip": offset }
+
+    var filter = {
+      "limit": limit, "skip": offset,
+      "where": { "status": { "like": this.filter['status'] }, "name": { "like": this.filter['name'], "options": "i" }, "ISOCode": { "like": this.filter['ISOCode'] } }
+    }
     this.mainServ.APIServ.get("users?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
       this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {

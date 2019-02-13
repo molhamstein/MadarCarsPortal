@@ -11,6 +11,7 @@ import { SomeThingIsErrorComponent } from '../../main/dialogs/some-thing-is-erro
 import { ConfirmMessageComponent } from '../../main/dialogs/confirm-message/confirm-message.component';
 import { ErrorMessageComponent } from '../../main/dialogs/error-message/error-message.component';
 import { TimeComponent } from '../../main/dialogs/time/time.component';
+import { FilterComponent } from '../../main/dialogs/filter/filter.component';
 
 
 
@@ -82,6 +83,20 @@ export class DialogService {
         callback()
       }
     });
+  }
+
+  openFilter(type, filter, callback) {
+    let dialogRef = this.dialog.open(FilterComponent, {
+      width: '550px',
+      data: { "type": type, "filter": filter }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        callback(result)
+      }
+    });
+
   }
 
   errorMessage(errorCode) {
