@@ -21,7 +21,8 @@ export class tripsComponent implements OnInit {
   offset: number = 0;
   limit: number = 10;
   viewClear = false;
-  filter = { "isInCity": null, "isFromAirport": null, "isToAirport": null, "status": "", "user.name": "", "car.name": "", "driver.username": "", "locationId": "" }
+
+  filter = { "isInCity": null, "isFromAirport": null, "isToAirport": null, "status": "", "user.name": "", "car.name": "", "driver.username": "", "locationId": "", "from": new Date("2010/1/1"), "to": new Date("2020/1/1") }
 
 
   disableObject = { "next": false, "prev": true, "first": true, "end": false }
@@ -138,7 +139,9 @@ export class tripsComponent implements OnInit {
       { "status": { "$regex": this.filter['status'] } },
       { "owner.name": { "$regex": this.filter['user.name'] } },
       { "car.name": { "$regex": this.filter['car.name'] } },
-      { "driver.username": { "$regex": this.filter['driver.username'] } }
+      { "driver.username": { "$regex": this.filter['driver.username'] } },
+      { "startDate": { "$lt": this.filter['to'] } },
+      { "endDate": { "$gt": this.filter['from'] } },
     )
 
     var filter = {
@@ -188,7 +191,9 @@ export class tripsComponent implements OnInit {
       { "status": { "$regex": this.filter['status'] } },
       { "owner.name": { "$regex": this.filter['user.name'] } },
       { "car.name": { "$regex": this.filter['car.name'] } },
-      { "driver.username": { "$regex": this.filter['driver.username'] } }
+      { "driver.username": { "$regex": this.filter['driver.username'] } },
+      { "startDate": { "$lt": new Date(this.filter['to']) } },
+      { "endDate": { "$gt": new Date(this.filter['from']) } },
     )
 
     var filter = {
@@ -251,7 +256,7 @@ export class tripsComponent implements OnInit {
 
   clearFilter() {
     this.viewClear = false;
-    this.filter = { "isInCity": "", "isFromAirport": "", "isToAirport": "", "status": "", "user.name": "", "car.name": "", "driver.username": "", "locationId": "" }
+    this.filter = { "isInCity": null, "isFromAirport": null, "isToAirport": null, "status": "", "user.name": "", "car.name": "", "driver.username": "", "locationId": "", "from": new Date("2010/1/1"), "to": new Date("2020/1/1") }
     this.offset = 0;
     this.inisilaize();
   }

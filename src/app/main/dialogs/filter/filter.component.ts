@@ -39,6 +39,7 @@ export class FilterComponent {
     ) {
         this.type = data['type'];
         this.filter = data['filter'];
+        console.log(this.filter)
         if (this.type == "rate") {
             this.minRate = this.filter['min-value'];
             this.maxRate = this.filter['max-value'];
@@ -75,6 +76,8 @@ export class FilterComponent {
                 locationId: new FormControl(this.filter['locationId']),
                 carName: new FormControl(this.filter['car.name']),
                 driverUsername: new FormControl(this.filter['driver.username']),
+                from: new FormControl(this.filter['from']),
+                to: new FormControl(this.filter['to'])
             });
         }
 
@@ -112,7 +115,9 @@ export class FilterComponent {
                 "user.name": data.userName,
                 "car.name": data.carName,
                 "driver.username": data.driverUsername,
-                "locationId": data.locationId
+                "locationId": data.locationId,
+                "from": data.from,
+                "to": data.to,
             }
             this.dialogRef.close(this.filter);
         }

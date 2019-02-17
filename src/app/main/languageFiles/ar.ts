@@ -214,6 +214,8 @@ export const locale = {
             "MINRATE": "أقل تقييم",
             "ISOCODE": "الجنسية",
             "NAME": "الأسم",
+            "FROM":"من",
+            "To":"إلى",
             "STATUS": "الحالة",
             "LOCATION": "المدينة",
             "INCITY": "في المدينة",

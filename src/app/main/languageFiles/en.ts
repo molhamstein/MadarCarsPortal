@@ -215,6 +215,8 @@ export const locale = {
             "ISOCODE": "Nationality",
             "NAME": "Name",
             "STATUS": "Status",
+            "FROM":"From",
+            "TO":"To",
             "LOCATION": "Location",
             "INCITY": "In City",
             "FROMAIRPORT": "From Airport",
