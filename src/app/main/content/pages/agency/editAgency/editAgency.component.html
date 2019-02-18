@@ -37,13 +37,13 @@
 
           <mat-form-field fxFlex="30">
             <input matInput placeholder="{{ 'AGENCY.PHONENUMBER' | translate }}" formControlName="phoneNumber" required>
-            <mat-icon matSuffix>people</mat-icon>
+            <mat-icon matSuffix>phone_iphone</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
           <mat-form-field fxFlex="30">
             <input matInput placeholder="{{ 'AGENCY.EMAIL' | translate }}" formControlName="email" required>
-            <mat-icon matSuffix>people</mat-icon>
+            <mat-icon matSuffix>email</mat-icon>
             <mat-error *ngIf="editAgencyForm.hasError('email','email') && !editAgencyForm.hasError('required','email')">{{'Global.ERRORVALIDEMAIL'
               | translate }}</mat-error>
             <mat-error *ngIf="editAgencyForm.hasError('required','email')">{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>

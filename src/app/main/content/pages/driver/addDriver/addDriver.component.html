@@ -37,13 +37,13 @@
 
           <mat-form-field fxFlex="24">
             <input matInput placeholder="{{ 'DRIVER.PHONENUMBER' | translate }}" formControlName="phoneNumber" required>
-            <mat-icon matSuffix>people</mat-icon>
+            <mat-icon matSuffix>phone_iphone</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
           <mat-form-field fxFlex="24">
             <input matInput placeholder="{{ 'DRIVER.EMAIL' | translate }}" formControlName="email" required>
-            <mat-icon matSuffix>people</mat-icon>
+            <mat-icon matSuffix>email</mat-icon>
             <mat-error *ngIf="addDriverForm.hasError('email','email') && !addDriverForm.hasError('required','email')">{{'Global.ERRORVALIDEMAIL'
               | translate }}</mat-error>
             <mat-error *ngIf="addDriverForm.hasError('required','email')">{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
@@ -57,7 +57,7 @@
 
           <mat-form-field fxFlex="24">
             <input matInput placeholder="{{ 'DRIVER.PASSWORD' | translate }}" formControlName="password" required>
-            <mat-icon matSuffix>people</mat-icon>
+            <mat-icon matSuffix>lock</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 

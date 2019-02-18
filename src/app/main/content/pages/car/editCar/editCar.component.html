@@ -41,38 +41,10 @@
           <mat-form-field fxFlex="30">
             <input matInput type="number" min="0" placeholder="{{ 'CAR.NUMBEROFSEAT' | translate }}" formControlName="numOfSeat"
               required>
-            <mat-icon matSuffix>people</mat-icon>
+            <mat-icon matSuffix>event_seat</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
-          <mat-form-field fxFlex="30">
-            <mat-select placeholder="{{ 'CAR.PRODUCTIONDATE' | translate }}" formControlName="productionDate">
-              <mat-option *ngFor="let oneYear of years" [value]="oneYear">
-                {{oneYear}}
-              </mat-option>
-            </mat-select>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
-
-          <mat-form-field fxFlex="30">
-            <mat-select placeholder="{{ 'CAR.DRIVER' | translate }}" formControlName="driverId">
-              <mat-option *ngFor="let onedriver of drivers" [value]="onedriver.id">
-                {{onedriver.firstName}} {{onedriver.lastName}}
-              </mat-option>
-            </mat-select>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
-
-
-          <mat-form-field fxFlex="30">
-            <mat-select placeholder="{{ 'CAR.LOCATION' | translate }}" (selectionChange)="changeLocation($event)"
-              formControlName="locationId">
-              <mat-option *ngFor="let onelocation of locations" [value]="onelocation.id">
-                {{onelocation.nameEn}}
-              </mat-option>
-            </mat-select>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
 
           <!-- <mat-form-field fxFlex="30" *ngFor="let oneSublocation of carSublocations;let i=index">
             <input matInput type="number" min="0" placeholder="{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}"
@@ -103,7 +75,7 @@
           <mat-form-field fxFlex="30">
             <input matInput type="number" placeholder="{{ 'CAR.PRICEPERDAY' | translate }}" formControlName="pricePerDay"
               required>
-            <mat-icon matSuffix>people</mat-icon>
+            <mat-icon matSuffix>attach_money</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
@@ -111,7 +83,7 @@
           <mat-form-field fxFlex="30">
             <input matInput type="number" placeholder="{{ 'CAR.PRICEONEWAY' | translate }}" formControlName="priceOneWay"
               required>
-            <mat-icon matSuffix>people</mat-icon>
+            <mat-icon matSuffix>attach_money</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
@@ -119,9 +91,40 @@
           <mat-form-field fxFlex="30">
             <input matInput type="number" placeholder="{{ 'CAR.PRICETOWWAY' | translate }}" formControlName="priceTowWay"
               required>
-            <mat-icon matSuffix>people</mat-icon>
+            <mat-icon matSuffix>attach_money</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
+
+
+          <mat-form-field fxFlex="30">
+            <mat-select placeholder="{{ 'CAR.PRODUCTIONDATE' | translate }}" formControlName="productionDate">
+              <mat-option *ngFor="let oneYear of years" [value]="oneYear">
+                {{oneYear}}
+              </mat-option>
+            </mat-select>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="30">
+            <mat-select placeholder="{{ 'CAR.DRIVER' | translate }}" formControlName="driverId">
+              <mat-option *ngFor="let onedriver of drivers" [value]="onedriver.id">
+                {{onedriver.firstName}} {{onedriver.lastName}}
+              </mat-option>
+            </mat-select>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field fxFlex="30">
+            <mat-select placeholder="{{ 'CAR.LOCATION' | translate }}" (selectionChange)="changeLocation($event)"
+              formControlName="locationId">
+              <mat-option *ngFor="let onelocation of locations" [value]="onelocation.id">
+                {{onelocation.nameEn}}
+              </mat-option>
+            </mat-select>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
 
           <section class="example-section" fxFlex="96">
             <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" [(ngModel)]="isVip">{{
@@ -214,7 +217,7 @@
             <mat-form-field style="margin: 0px 1.5%;" fxFlex="30" *ngFor="let oneSublocation of carSublocations;let i=index">
               <input matInput type="number" min="0" placeholder="{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}"
                 [(ngModel)]="carSublocations[i].cost" [ngModelOptions]="{standalone: true}" required>
-              <mat-icon matSuffix>people</mat-icon>
+              <mat-icon matSuffix>attach_money</mat-icon>
               <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
             </mat-form-field>
           </div>

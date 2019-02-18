@@ -41,7 +41,7 @@
           <mat-form-field fxFlex="30">
             <input matInput type="number" min="0" placeholder="{{ 'CAR.NUMBEROFSEAT' | translate }}" formControlName="numOfSeat"
               required>
-            <mat-icon matSuffix>people</mat-icon>
+            <mat-icon matSuffix>event_seat</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
@@ -67,7 +67,7 @@
           <mat-form-field fxFlex="30">
             <input matInput type="number" placeholder="{{ 'CAR.PRICEPERDAY' | translate }}" formControlName="pricePerDay"
               required>
-            <mat-icon matSuffix>people</mat-icon>
+            <mat-icon matSuffix>attach_money</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
@@ -75,7 +75,7 @@
           <mat-form-field fxFlex="30">
             <input matInput type="number" placeholder="{{ 'CAR.PRICEONEWAY' | translate }}" formControlName="priceOneWay"
               required>
-            <mat-icon matSuffix>people</mat-icon>
+            <mat-icon matSuffix>attach_money</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
@@ -83,7 +83,7 @@
           <mat-form-field fxFlex="30">
             <input matInput type="number" placeholder="{{ 'CAR.PRICETOWWAY' | translate }}" formControlName="priceTowWay"
               required>
-            <mat-icon matSuffix>people</mat-icon>
+            <mat-icon matSuffix>attach_money</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
@@ -215,7 +215,7 @@
             <mat-form-field style="margin: 0px 1.5%;" fxFlex="30" *ngFor="let oneSublocation of carSublocations;let i=index">
               <input matInput type="number" min="0" placeholder="{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}"
                 [(ngModel)]="carSublocations[i].cost" [ngModelOptions]="{standalone: true}" required>
-              <mat-icon matSuffix>people</mat-icon>
+              <mat-icon matSuffix>attach_money</mat-icon>
               <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
             </mat-form-field>
           </div>
