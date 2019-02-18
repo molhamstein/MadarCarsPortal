@@ -4864,8 +4864,8 @@ var CallApiService = (function () {
         this.http = http;
         this.loginSer = loginSer;
         // readonly baseUrl = "http://104.217.253.15:3006/api/"
-        // readonly baseUrl = "https://jawlatcom.com:3000/api/"
-        this.baseUrl = "http://localhost:3000/api/";
+        this.baseUrl = "https://jawlatcom.com:3000/api/";
+        // readonly baseUrl = "http://localhost:3000/api/"
         this.errorCode = 0;
         this.code = "";
     }
