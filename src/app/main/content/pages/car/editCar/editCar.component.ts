@@ -48,6 +48,13 @@ export class editCarComponent implements OnInit {
   filterRows = [];
   columns = ["nameAr", "nameEn", "nameTr", "status"]
 
+  // trip
+  filterTripValue = ""
+  allTripRows = [];
+  filterTripRows = [];
+  tripColumns = ["cost", "status", "owner.name", "location.nameEn", "car.name"]
+
+
   private primaryColor: string = "#127bdc";
   private secondryColor: string = "#127bdc";
   constructor(
@@ -93,19 +100,20 @@ export class editCarComponent implements OnInit {
     let files2 = Array.from(event.target.files);
     files.forEach((fileElement, index) => {
       let countDelete = 0
-      this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).subscribe((data: any) => {
-        this.listImageOnLoad = [];
-        countDelete++;
-        if (this.mainServ.APIServ.getErrorCode() == 0)
-          data.forEach(element => {
-            this.listImages.push(element);
-          });
-        else if (this.mainServ.APIServ.getErrorCode() != 401) {
-          this.mainServ.APIServ.setErrorCode(0);
-          this.dialogServ.someThingIsError();
-        }
+      this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1)
+        .then((data: any) => {
+          this.listImageOnLoad = [];
+          countDelete++;
+          if (this.mainServ.APIServ.getErrorCode() == 0)
+            data.forEach(element => {
+              this.listImages.push(element);
+            });
+          else if (this.mainServ.APIServ.getErrorCode() != 401) {
+            this.mainServ.APIServ.setErrorCode(0);
+            this.dialogServ.someThingIsError();
+          }
 
-      });
+        });
     });
   }
 
@@ -127,7 +135,7 @@ export class editCarComponent implements OnInit {
     files.forEach((fileElement, index) => {
       let countDelete = 0
       // this.ng2ImgMaxService.compress([fileElement], 0.5, true, true).subscribe((result) => {
-      this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).subscribe((data: any) => {
+      this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).then((data: any) => {
         this.imageOnLoad = [];
         countDelete++;
         if (this.mainServ.APIServ.getErrorCode() == 0)
@@ -168,7 +176,7 @@ export class editCarComponent implements OnInit {
 
 
   ngOnInit() {
-    for (let index = 2010; index < 2021; index++) {
+    for (let index = 2000; index < 2021; index++) {
       this.years.push(index);
     }
     this.editCarForm = new FormGroup({
@@ -325,7 +333,7 @@ export class editCarComponent implements OnInit {
   }
 
   deleteImage(i) {
-    this.listImages.splice(i);
+    this.listImages.splice(i, 1);
     console.log(this.listImages);
   }
 
@@ -338,6 +346,24 @@ export class editCarComponent implements OnInit {
       if (this.mainServ.APIServ.getErrorCode() == 0) {
 
         this.allRows = data;
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
+      }
+
+    });
+
+    this.mainServ.loaderSer.display(true);
+    var tripFilter = { "where": { "carId": this.carId }, "include": ['rate'] };
+    // var filter = {}
+    this.mainServ.APIServ.get("trips?filter=" + JSON.stringify(tripFilter)).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
+      if (this.mainServ.APIServ.getErrorCode() == 0) {
+
+        this.allTripRows = data;
+        this.calcStartDateAndEnd();
+        this.filterTripDatatable();
       }
       else if (this.mainServ.APIServ.getErrorCode() != 401) {
         this.mainServ.APIServ.setErrorCode(0);
@@ -420,5 +446,110 @@ export class editCarComponent implements OnInit {
   //     }, "put")
   //   })
   // }
+
+  addHours(h, start) {
+    console.log(start.toString())
+    var date = new Date(start.toString());
+    date.setHours(date.getHours() + h);
+    console.log(date)
+    return date
+  }
+
+  calcStartDateAndEnd() {
+    for (let index = 0; index < this.allTripRows.length; index++) {
+      const element = this.allTripRows[index];
+      if (element.type == "fromAirport") {
+        element.start = element.fromAirportDate;
+        element.end = this.addHours(2, element.fromAirportDate);
+      } else if (element.type == "city") {
+        element.start = element.startInCityDate;
+        element.end = element.endInCityDate;
+      } else if (element.type == "toAirport") {
+        element.start = element.toAirportDate;
+        element.end = this.addHours(2, element.toAirportDate);
+      } else if (element.type == "fromAirportAndCity") {
+        element.start = element.fromAirportDate;
+        element.end = element.endInCityDate;
+      } else if (element.type == "fromAirportAndToAirport") {
+        element.start = element.fromAirportDate;
+        element.end = element.toAirportDate;
+      } else if (element.type == "cityAndToAirport") {
+        element.start = element.startInCityDate;
+        element.end = this.addHours(2, element.toAirportDate);
+      } else if (element.type == "fromAirportAndCityAndToAirport") {
+        element.start = element.fromAirportDate;
+        element.end = this.addHours(2, element.toAirportDate);
+      }
+    }
+  }
+
+
+  filterTripDatatable() {
+    if (this.filterTripValue == null)
+      this.filterTripRows = this.allTripRows
+    else {
+      let val = this.filterTripValue.toLowerCase();
+      let keys = this.tripColumns;
+
+      let colsAmt = this.tripColumns.length;
+      this.filterTripRows = this.allTripRows.filter(function (item) {
+        for (let i = 0; i < colsAmt; i++) {
+          if (keys[i] == "owner.name") {
+            if (item["owner"]["name"].toString().toLowerCase().indexOf(val) !== -1 || !val)
+              return true;
+          }
+          else if (keys[i] == "location.nameEn") {
+            if (item["location"]["nameEn"].toString().toLowerCase().indexOf(val) !== -1 || !val)
+              return true;
+          }
+          else if (keys[i] == "car.name") {
+            if (item["car"]["name"].toString().toLowerCase().indexOf(val) !== -1 || !val)
+              return true;
+          }
+          else if (item[keys[i]].toString().toLowerCase().indexOf(val) !== -1 || !val) {
+            return true;
+          }
+        }
+      });
+    }
+  }
+
+
+  isEnLang() {
+    if (this.mainServ.loginServ.getLang() == "ar")
+      return false
+    else
+      return true
+  }
+
+  goTo(pageName, id) {
+    let url = ""
+    if (pageName == 'view') {
+      url = 'view-trip/' + id
+    } else if (pageName == 'edit') {
+      url = 'edit-user/' + id
+    } else if (pageName == 'bills') {
+      url = 'bill/' + id
+    }
+    this.mainServ.globalServ.goTo(url)
+
+  }
+
+  changeStatus(newStatus, id) {
+    var mainThis = this;
+    this.translate.get('MESSAGES.CHANGESTATUS').subscribe((res: string) => {
+      this.dialogServ.confirmationMessage(res, "trips/changeStatus/" + id, { "newStatus": newStatus }, false, function () {
+        mainThis.inisilaize()
+      }, "put")
+    })
+  }
+
+  rate(tripId) {
+    var mainThis = this
+    this.dialogServ.makeRate(tripId, function () {
+      mainThis.inisilaize()
+    });
+
+  }
 
 }

@@ -82,7 +82,7 @@ export class addCarComponent implements OnInit {
     let files2 = Array.from(event.target.files);
     files.forEach((fileElement, index) => {
       let countDelete = 0
-      this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).subscribe((data: any) => {
+      this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).then((data: any) => {
         this.listImageOnLoad = [];
         countDelete++;
         if (this.mainServ.APIServ.getErrorCode() == 0)
@@ -118,7 +118,7 @@ export class addCarComponent implements OnInit {
     files.forEach((fileElement, index) => {
       let countDelete = 0
       // this.ng2ImgMaxService.compress([fileElement], 0.5, true, true).subscribe((result) => {
-      this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).subscribe((data: any) => {
+      this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).then((data: any) => {
         this.imageOnLoad = [];
         countDelete++;
         if (this.mainServ.APIServ.getErrorCode() == 0)
@@ -137,7 +137,7 @@ export class addCarComponent implements OnInit {
 
 
   ngOnInit() {
-    for (let index = 2010; index < 2021; index++) {
+    for (let index = 2000; index < 2021; index++) {
       this.years.push(index);
     }
     this.addCarForm = new FormGroup({
@@ -268,7 +268,7 @@ export class addCarComponent implements OnInit {
   }
 
   deleteImage(i) {
-    this.listImages.splice(i);
+    this.listImages.splice(i,1);
   }
 
 }

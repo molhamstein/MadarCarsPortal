@@ -17,11 +17,19 @@ import { DialogService } from '../../../../../core/services/dialog.service';
 })
 export class tripsComponent implements OnInit {
   rows = [];
+  sortValue = "createdAt";
+  sortArray = [
+    { "view": "Global.CREATEDAT", "value": "createdAt" },
+    { "view": "TRIP.FROM", "value": "startDate" },
+    { "view": "TRIP.TO", "value": "endDate" },
+    { "view": "TRIP.LOCATIONNAME", "value": "location.nameEn" },
+    { "view": "TRIP.USER", "value": "owner.name" },
+    { "view": "TRIP.STATUS", "value": "status" }]
   count: number = 0;
   offset: number = 0;
   limit: number = 10;
   viewClear = false;
-
+  total = 0;
   filter = { "isInCity": null, "isFromAirport": null, "isToAirport": null, "status": "", "user.name": "", "car.name": "", "driver.username": "", "locationId": "", "from": new Date("2010/1/1"), "to": new Date("2020/1/1") }
 
 
@@ -34,6 +42,8 @@ export class tripsComponent implements OnInit {
     this.translationLoader.loadTranslations(english);
     this.inisilaize();
   }
+
+
 
   openFilter() {
     var mainThis = this
@@ -148,7 +158,7 @@ export class tripsComponent implements OnInit {
       "limit": this.limit,
       "$and": and
     }
-    this.mainServ.APIServ.get("trips/getEnd?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+    this.mainServ.APIServ.get("trips/getEndByFilter?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
       this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
         this.rows = data.data;
@@ -169,6 +179,10 @@ export class tripsComponent implements OnInit {
     });
   }
 
+  changeSort() {
+    this.offset = 0;
+    this.inisilaize()
+  }
 
   setPage(offset, limit, type: string = "defult", numRows: number = 0) {
     this.mainServ.loaderSer.display(true);
@@ -197,13 +211,14 @@ export class tripsComponent implements OnInit {
     )
 
     var filter = {
-      "limit": limit, "skip": offset,
+      "limit": limit, "skip": offset, "sort": this.sortValue,
       "$and": and
     }
-    this.mainServ.APIServ.get("trips/getTripByFilter?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+    this.mainServ.APIServ.get("trips/getTripByFilter?filter=" + JSON.stringify(filter)).subscribe((allData: any) => {
       this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
-        // if (data.length > 0)
+        var data = allData.data;
+        this.total = allData.count
         this.rows = data;
         console.log(this.rows);
         this.calcStartDateAndEnd();

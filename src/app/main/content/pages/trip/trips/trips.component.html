@@ -14,6 +14,8 @@
       <div class="logo" fxLayout="row" fxLayoutAlign="start center">
         <mat-icon class="logo-icon mr-16">airplanemode_active</mat-icon>
         <span class="logo-text h1">{{'TRIP.ALLTRIP.TITLE' | translate}}</span>
+        <span class="logo-text h1 total"> {{'Global.TOTAL' | translate}} : {{total}}</span>
+
       </div>
 
     </div>
@@ -21,6 +23,14 @@
 
     <!-- SEARCH -->
     <div class="search-input-wrapper mt-16 ml-8 m-sm-0" fxLayout="row" fxLayoutAlign="start center">
+      <mat-form-field>
+        <mat-select (change)="changeSort($event)" placeholder="{{ 'Global.SORTON' | translate }}" [ngModelOptions]="{standalone: true}" [(ngModel)]="sortValue">
+          <mat-option *ngFor="let element of sortArray" [value]="element.value">
+            {{element.view | translate}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
 
       <button mat-button class="customButtom" color="primary" type="button" *ngIf="viewClear==true" style="background-color: #2d323e"
         (click)="clearFilter()">{{'Global.CLEAR'

@@ -127,6 +127,7 @@ export const locale = {
             "COSTIN": "Cost In ",
             "DRIVERPHONENUMBER": "Driver Phonenumber",
             "DRIVERUSERNAME": "Driver Username",
+            "DRIVERNAME": "Driver Name",
             "SUBLOCATIONS": "Nearby Citys",
             "ALLCAR": {
                 "TITLE": "Car",
@@ -215,8 +216,8 @@ export const locale = {
             "ISOCODE": "Nationality",
             "NAME": "Name",
             "STATUS": "Status",
-            "FROM":"From",
-            "TO":"To",
+            "FROM": "From",
+            "TO": "To",
             "LOCATION": "Location",
             "INCITY": "In City",
             "FROMAIRPORT": "From Airport",
@@ -276,6 +277,8 @@ export const locale = {
             "ALLTRIP": {
                 "TITLE": "Trip",
                 "ADDTRIP": "Add Trip",
+                "SEARCH": "Search for Trip"
+
             },
             "ADDTRIP": {
                 "TITLE": "Add Trip",
@@ -354,7 +357,9 @@ export const locale = {
             "CLEAR": "Clear",
             "NEXT": "Next",
             "BACK": "Back",
-            "CANCEL": "Cancel"
+            "CANCEL": "Cancel",
+            "TOTAL": "total",
+            "SORTON": "Sort On"
         },
         "MESSAGES": {
             "DEACTIVELOCATION": "Do you want to deactivate this location",

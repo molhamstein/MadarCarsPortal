@@ -21,6 +21,13 @@ export class usersComponent implements OnInit {
   count: number = 0;
   offset: number = 0;
   limit: number = 10;
+  total = 0;
+  sortValue = "createdAt";
+  sortArray = [
+    { "view": "Global.CREATEDAT", "value": "createdAt" },
+    { "view": "USER.ISOCODE", "value": "ISOCode" },
+    { "view": "USER.STATUS", "value": "status" }]
+
   viewClear = false;
   filter = { "name": "", "ISOCode": "", "status": "" }
 
@@ -46,7 +53,7 @@ export class usersComponent implements OnInit {
     this.dialogServ.openFilter("user", this.filter, function (data) {
       mainThis.filter = data
       mainThis.viewClear = true;
-      mainThis.offset=0;
+      mainThis.offset = 0;
       mainThis.inisilaize()
     })
   }
@@ -77,6 +84,7 @@ export class usersComponent implements OnInit {
     this.mainServ.loaderSer.display(true);
     var filter = {
       "limit": this.limit,
+      "sort": this.sortValue,
       "where": { "status": { "like": this.filter['status'] }, "name": { "like": this.filter['name'], "options": "i" }, "ISOCode": { "like": this.filter['ISOCode'] } }
     }
     this.mainServ.APIServ.get("users/getEnd?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
@@ -99,12 +107,28 @@ export class usersComponent implements OnInit {
     });
   }
 
+  getCount() {
+    var where = { "status": { "like": this.filter['status'] }, "name": { "like": this.filter['name'], "options": "i" }, "ISOCode": { "like": this.filter['ISOCode'] } }
+
+    this.mainServ.APIServ.get("users/count?where=" + JSON.stringify(where)).subscribe((data: any) => {
+      if (this.mainServ.APIServ.getErrorCode() == 0) {
+        this.total = data.count;
+      }
+    })
+  }
+
+  changeSort() {
+    this.offset = 0;
+    this.inisilaize()
+  }
+
 
   setPage(offset, limit, type: string = "defult", numRows: number = 0) {
     this.mainServ.loaderSer.display(true);
 
     var filter = {
       "limit": limit, "skip": offset,
+      "order": this.sortValue + ' DESC',
       "where": { "status": { "like": this.filter['status'] }, "name": { "like": this.filter['name'], "options": "i" }, "ISOCode": { "like": this.filter['ISOCode'] } }
     }
     this.mainServ.APIServ.get("users?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
@@ -163,8 +187,10 @@ export class usersComponent implements OnInit {
 
 
   inisilaize() {
-    if (this.offset == 0)
+    if (this.offset == 0) {
+      this.getCount();
       this.setPage(this.offset, this.limit);
+    }
     else
       this.setPage(this.offset - this.rows.length, this.limit, "refresh", this.rows.length);
   }

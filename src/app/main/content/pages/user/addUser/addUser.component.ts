@@ -53,7 +53,7 @@ export class addUserComponent implements OnInit {
     data['mediaId'] = this.media.id;
     this.mainServ.APIServ.post("users", data).subscribe((data: any) => {
       if (this.mainServ.APIServ.getErrorCode() == 0) {
-        this.back();
+        // this.back();
       }
       else if (this.mainServ.APIServ.getErrorCode() == 451) {
         this.dialogServ.errorMessage(451);
@@ -89,7 +89,7 @@ export class addUserComponent implements OnInit {
     files.forEach((fileElement, index) => {
       let countDelete = 0
       // this.ng2ImgMaxService.compress([fileElement], 0.5, true, true).subscribe((result) => {
-      this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).subscribe((data: any) => {
+      this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).then((data: any) => {
         this.imageOnLoad = [];
         countDelete++;
         if (this.mainServ.APIServ.getErrorCode() == 0)

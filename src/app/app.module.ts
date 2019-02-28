@@ -72,6 +72,7 @@ import { agenciesComponent } from './main/content/pages/agency/agency/agencies.c
 import { addAgencyComponent } from './main/content/pages/agency/addAgency/addAgency.component';
 import { editAgencyComponent } from './main/content/pages/agency/editAgency/editAgency.component';
 import { FilterComponent } from './main/dialogs/filter/filter.component';
+import { Ng2ImgMaxModule } from 'ng2-img-max'; // <-- import the module
 
 
 
@@ -364,9 +365,8 @@ const appRoutes: Routes = [
         FuseAngularMaterialModule,
         ComponentsThirdPartyModule,
         TranslateModule.forRoot(),
-        MatDialogModule
-
-
+        MatDialogModule,
+        Ng2ImgMaxModule 
     ],
     entryComponents: [SomeThingIsErrorComponent, FilterComponent, AddVacationComponent, MakeRateComponent, TimeComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent],
     providers: [

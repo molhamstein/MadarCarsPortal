@@ -32,6 +32,15 @@ export class editDriverComponent implements OnInit {
   filterRows = [];
   columns = ["cost", "status", "owner.name", "location.nameEn", "car.name"]
 
+
+  // car
+  filterCarValue = ""
+  allCarRows = [];
+  filterCarsRows = [];
+  carColumns = ["name", "rate", "numOfSeat", "status", "brand.nameEn", "driver.phoneNumber", "driver.username"]
+
+
+
   constructor(
     private mainServ: MainService,
     private _formBuilder: FormBuilder,
@@ -86,7 +95,7 @@ export class editDriverComponent implements OnInit {
     files.forEach((fileElement, index) => {
       let countDelete = 0
       // this.ng2ImgMaxService.compress([fileElement], 0.5, true, true).subscribe((result) => {
-      this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).subscribe((data: any) => {
+      this.mainServ.APIServ.uploadImage("uploadFiles/image/upload", [fileElement], 1).then((data: any) => {
         this.imageOnLoad = [];
         countDelete++;
         if (this.mainServ.APIServ.getErrorCode() == 0)
@@ -221,6 +230,23 @@ export class editDriverComponent implements OnInit {
       }
 
     });
+    var carFilter = { "where": { "driverId": this.driverId } };
+    // var filter = {}
+    this.mainServ.APIServ.get("cars?filter=" + JSON.stringify(carFilter)).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
+      if (this.mainServ.APIServ.getErrorCode() == 0) {
+        this.allCarRows = data;
+        console.log("this.allCarRows")
+        console.log(this.allCarRows)
+        this.filterCarDatatable();
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
+      }
+
+    });
+
   }
 
   isEnLang() {
@@ -261,6 +287,36 @@ export class editDriverComponent implements OnInit {
 
   back() {
     this.mainServ.globalServ.goTo('drivers')
+  }
+
+
+
+  filterCarDatatable() {
+    if (this.filterCarValue == null)
+      this.filterCarsRows = this.allCarRows
+    else {
+      let val = this.filterCarValue.toLowerCase();
+      let keys = this.carColumns;
+      let colsAmt = this.carColumns.length;
+      this.filterCarsRows = this.allCarRows.filter(function (item) {
+        for (let i = 0; i < colsAmt; i++) {
+          if (keys[i] == "brand.nameEn") {
+            if (item["brand"]["nameEn"].toString().toLowerCase().indexOf(val) !== -1 || !val)
+              return true;
+          } else if (keys[i] == "driver.phoneNumber") {
+            if (item["driver"]["phoneNumber"].toString().toLowerCase().indexOf(val) !== -1 || !val)
+              return true;
+          } else if (keys[i] == "driver.username") {
+            if (item["driver"]["username"].toString().toLowerCase().indexOf(val) !== -1 || !val)
+              return true;
+          }
+          else if (item[keys[i]].toString().toLowerCase().indexOf(val) !== -1 || !val) {
+            return true;
+          }
+        }
+      });
+    }
+
   }
 
 

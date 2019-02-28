@@ -126,6 +126,7 @@ export const locale = {
             "SECONDCOLOR": "اللون الثاني",
             "COSTIN": "التكلفة في",
             "DRIVERPHONENUMBER": "رقم السائق",
+            "DRIVERNAME": "اسم السائق",
             "DRIVERUSERNAME": "اسم السائق",
             "SUBLOCATIONS": "المدن المجاورة",
             "ALLCAR": {
@@ -214,8 +215,8 @@ export const locale = {
             "MINRATE": "أقل تقييم",
             "ISOCODE": "الجنسية",
             "NAME": "الأسم",
-            "FROM":"من",
-            "To":"إلى",
+            "FROM": "من",
+            "To": "إلى",
             "STATUS": "الحالة",
             "LOCATION": "المدينة",
             "INCITY": "في المدينة",
@@ -276,6 +277,7 @@ export const locale = {
             "ALLTRIP": {
                 "TITLE": "الرحلات",
                 "ADDTRIP": "إضافة رحلة",
+                "SEARCH": "البحث عن رحلة"
             },
             "ADDTRIP": {
                 "TITLE": "إضافة رحلة",
@@ -352,8 +354,10 @@ export const locale = {
             "ADD": "إضافة",
             "CLEAR": "مسح",
             "EDIT": "حفظ",
+            "TOTAL": "المجموع",
             "NEXT": "التالي",
             "BACK": "السابق",
+            "SORTON": "ترتيب حسب",
             "CANCEL": "إلفاء"
         },
         "MESSAGES": {

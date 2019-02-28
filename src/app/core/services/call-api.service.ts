@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Rx';
 import { Response } from '@angular/http';
 import 'rxjs/add/operator/Map';
 import 'rxjs/Rx';
+import { Ng2ImgMaxService } from 'ng2-img-max';
 
 @Injectable()
 export class CallApiService {
@@ -12,7 +13,7 @@ export class CallApiService {
 
 
 
-  constructor(public http: HttpClient, private loginSer: LoginService) {
+  constructor(public http: HttpClient, private loginSer: LoginService, private ng2ImgMaxService: Ng2ImgMaxService) {
   }
   // readonly baseUrl = "http://104.217.253.15:3006/api/"
   readonly baseUrl = "https://jawlatcom.com:3000/api/"
@@ -54,10 +55,10 @@ export class CallApiService {
       this.code = response['error']['error'].code
       console.log("response");
       console.log(response);
-      if (this.errorCode == 401){
+      if (this.errorCode == 401) {
         this.loginSer.logout()
       }
-        return "E";
+      return "E";
     });
   }
 
@@ -184,20 +185,37 @@ export class CallApiService {
 
   uploadImage(url, data, length, token: string = "") {
     let fd = new FormData();
-    for (var index = 0; index < length; index++) {
-      fd.append("file", data[index], data[index].name)
-    }
+    var mainImg = [];
+    var mainthis = this;
+    return new Promise((resolve, reject) => {
+      this.ng2ImgMaxService.compress(data, 0.5, true, true).subscribe((result) => {
+        console.log(result);
+        for (var index = 0; index < length; index++) {
+          fd.append("file", result, result.name)
+        }
+
+        // setTimeout(() => {
+        mainthis.uploadImg(fd, url, token).subscribe((data: any) => {
+          resolve(data);
+        })
+        // })
+        // }, 2000)
+      })
+    });
+  }
+
+  uploadImg(fd, url, token, ) {
     let auth = "";
     if (token != "")
       auth = token
     else if (this.loginSer.getToken() != null) {
       auth = this.loginSer.getToken();
     }
-
     let _options = { headers: new HttpHeaders({ "Authorization": auth }) };
 
+
     return this.http.post(this.baseUrl + url, fd, _options).timeout(90000).map((Response: Response) => {
-      return Response;
+      return (Response);
     }).catch((Response: Response) => {
       this.errorCode = Response.status;
       this.code = Response['error'].error.code;
@@ -205,6 +223,5 @@ export class CallApiService {
       return "E";
     });
   }
-
 
 }

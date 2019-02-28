@@ -14,6 +14,8 @@
       <div class="logo" fxLayout="row" fxLayoutAlign="start center">
         <mat-icon class="logo-icon mr-16">directions_car</mat-icon>
         <span class="logo-text h1">{{'CAR.ALLCAR.TITLE' | translate}}</span>
+        <span class="logo-text h1 total"> {{'Global.TOTAL' | translate}} : {{filterRows.length}}</span>
+
       </div>
 
     </div>
@@ -47,16 +49,20 @@
       </ngx-datatable-column>
 
 
-      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="driver.phoneNumber">
+      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="location.nameEn">
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-          <span>{{ 'CAR.DRIVERPHONENUMBER' | translate }}</span>
+          <span>{{ 'CAR.LOCATION' | translate }}</span>
         </ng-template>
       </ngx-datatable-column>
 
       <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="driver.username">
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-          <span>{{ 'CAR.DRIVERUSERNAME' | translate }}</span>
+          <span>{{ 'CAR.DRIVERNAME' | translate }}</span>
         </ng-template>
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          {{row.driver.firstName}} {{row.driver.lastName}}
+        </ng-template>
+
       </ngx-datatable-column>
 
 

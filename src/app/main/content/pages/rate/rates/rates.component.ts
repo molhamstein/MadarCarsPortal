@@ -20,6 +20,7 @@ export class ratesComponent implements OnInit {
   count: number = 0;
   offset: number = 0;
   limit: number = 10;
+  total=0;
   viewClear = false;
   filter = { "user.name": "", "car.name": "", "trip.driver.username": "", "max-value": 5, "min-value": 0 }
 
@@ -188,9 +189,11 @@ export class ratesComponent implements OnInit {
       ]
     }
     console.log(filter);
-    this.mainServ.APIServ.get("rates/getByFilter?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+    this.mainServ.APIServ.get("rates/getByFilter?filter=" + JSON.stringify(filter)).subscribe((allData: any) => {
       this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {
+        var data=allData.data;
+        this.total=allData.count;
         this.rows = data;
         console.log(this.rows);
         this.calcStartDateAndEnd();
