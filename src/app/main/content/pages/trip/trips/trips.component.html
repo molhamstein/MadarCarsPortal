@@ -24,7 +24,8 @@
     <!-- SEARCH -->
     <div class="search-input-wrapper mt-16 ml-8 m-sm-0" fxLayout="row" fxLayoutAlign="start center">
       <mat-form-field>
-        <mat-select (change)="changeSort($event)" placeholder="{{ 'Global.SORTON' | translate }}" [ngModelOptions]="{standalone: true}" [(ngModel)]="sortValue">
+        <mat-select (change)="changeSort($event)" placeholder="{{ 'Global.SORTON' | translate }}" [ngModelOptions]="{standalone: true}"
+          [(ngModel)]="sortValue">
           <mat-option *ngFor="let element of sortArray" [value]="element.value">
             {{element.view | translate}}
           </mat-option>
@@ -88,6 +89,25 @@
         </ng-template>
       </ngx-datatable-column>
 
+      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <!-- <span>{{ 'DRIVER.GENDER' | translate }}</span> -->
+          <span>{{ 'TRIP.COUPON' | translate }}</span>
+
+
+        </ng-template>
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          <mat-chip-list *ngIf="row.coupon" >
+            <mat-chip (click)="openTripCoupon(row)" style="background-color:#ff6363" selected="true">{{row.coupon['code']}}</mat-chip>
+          </mat-chip-list>
+          <mat-chip-list *ngIf="row.coupon==null">
+            <mat-chip style="background-color:#3b6fff" (click)="openTripCoupon(row)" selected="true">{{ 'TRIP.NOCOUPON' | translate }}</mat-chip>
+          </mat-chip-list>
+
+        </ng-template>
+      </ngx-datatable-column>
+
+
       <ngx-datatable-column [canAutoResize]="true" [width]="20" [flexGrow]="1" prop="">
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
           <!-- <span>{{ 'DRIVER.GENDER' | translate }}</span> -->
@@ -100,6 +120,8 @@
           <mat-icon style="color: #c22048" *ngIf="row.fromAirport==false">highlight_off</mat-icon>
         </ng-template>
       </ngx-datatable-column>
+
+
 
 
       <ngx-datatable-column [canAutoResize]="true" [width]="20" [flexGrow]="1" prop="">

@@ -8,7 +8,7 @@
       <!-- </button> -->
       <span class="logo-text h1">
         <mat-icon style="color : white;" (click)="back()" class="back mirror">arrow_back_ios</mat-icon>
-        {{'DRIVER.EDITDRIVER.TITLE' | translate}}
+        {{'TRAVEL.EDITTRAVEL.TITLE' | translate}}
       </span>
     </div>
 
@@ -18,71 +18,48 @@
 
   <!-- CONTENT -->
   <div class="content p-24">
-    <form [formGroup]="editDriverForm">
+    <form [formGroup]="editTravelAgenciesForm">
       <div style="width: 100%;">
         <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
           fxFlex>
 
-          <mat-form-field fxFlex="24">
-            <input matInput placeholder="{{ 'DRIVER.FIRSTNAME' | translate }}" formControlName="firstName" required>
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'TRAVEL.NAMEEN' | translate }}" formControlName="nameEn" required>
             <mat-icon matSuffix>people</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
-          <mat-form-field fxFlex="24">
-            <input matInput placeholder="{{ 'DRIVER.LASTNAME' | translate }}" formControlName="lastName" required>
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'TRAVEL.NAMEAR' | translate }}" formControlName="nameAr" required>
             <mat-icon matSuffix>people</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
-          <mat-form-field fxFlex="24">
-            <input matInput placeholder="{{ 'DRIVER.PHONENUMBER' | translate }}" formControlName="phoneNumber" required>
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'TRAVEL.PHONENUMBER' | translate }}" formControlName="phoneNumber" required>
             <mat-icon matSuffix>phone_iphone</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
-          <mat-form-field fxFlex="24">
-            <input matInput placeholder="{{ 'DRIVER.EMAIL' | translate }}" formControlName="email" required>
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'TRAVEL.EMAIL' | translate }}" formControlName="email" required>
             <mat-icon matSuffix>email</mat-icon>
-            <mat-error *ngIf="editDriverForm.hasError('email','email') && !editDriverForm.hasError('required','email')">{{'Global.ERRORVALIDEMAIL'
+            <mat-error *ngIf="editTravelAgenciesForm.hasError('email','email') && !editTravelAgenciesForm.hasError('required','email')">{{'Global.ERRORVALIDEMAIL'
               | translate }}</mat-error>
-            <mat-error *ngIf="editDriverForm.hasError('required','email')">{{ 'Global.ERRORFIELDREQUIRED' | translate
-              }}</mat-error>
+            <mat-error *ngIf="editTravelAgenciesForm.hasError('required','email')">{{ 'Global.ERRORFIELDREQUIRED' |
+              translate }}</mat-error>
           </mat-form-field>
 
-          <mat-form-field fxFlex="24">
-            <input matInput placeholder="{{ 'DRIVER.USERNAME' | translate }}" formControlName="username" required>
-            <mat-icon matSuffix>people</mat-icon>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
 
-          <mat-form-field fxFlex="24">
-            <mat-select formControlName="gender" placeholder="{{ 'DRIVER.GENDER' | translate }}">
-              <mat-option [value]="'male'">
-                {{ 'DRIVER.MALE' | translate }}
-              </mat-option>
-              <mat-option [value]="'female'">
-                {{ 'DRIVER.FEMALE' | translate }}
+          <mat-form-field fxFlex="30">
+            <mat-select placeholder="{{ 'TRAVEL.ISOCODE' | translate }}" formControlName="ISOCode">
+              <mat-option *ngFor="let oneCode of isoCode" [value]="oneCode.isoCode">
+                {{oneCode.name}}
               </mat-option>
             </mat-select>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-
           </mat-form-field>
-          <mat-form-field fxFlex="24">
-            <mat-select placeholder="{{ 'DRIVER.LANGUAGES' | translate }}" formControlName="driverLangs" multiple>
-              <mat-option *ngFor="let oneLang of listLanguages" [value]="oneLang.id">{{oneLang.name}}</mat-option>
-            </mat-select>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
-
-          <mat-form-field fxFlex="24">
-            <input matInput (focus)="firstpicker.open()" [matDatepicker]="firstpicker" formControlName="birthdate"
-              placeholder="{{ 'DRIVER.BIRTHDATE' | translate }}" required>
-            <mat-datepicker-toggle matSuffix [for]="firstpicker"></mat-datepicker-toggle>
-            <mat-datepicker #firstpicker></mat-datepicker>
-            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
-
+          <div fxFlex="30"></div>
           <div fxFlex="40">
             <div class="divImage">
               <div>
@@ -111,27 +88,29 @@
               </span>
             </div>
           </div>
-          <div fxFlex="60"></div>
+          <div fxFlex="60">
+          </div>
 
         </div>
       </div>
 
       <div style="float: rightt;">
-        <button mat-button (click)="edit()" class="editButton" cdkFocusInitial [disabled]="editDriverForm.invalid">{{'Global.EDIT'
+        <button mat-button (click)="edit()" class="editButton" cdkFocusInitial [disabled]="editTravelAgenciesForm.invalid">{{'Global.EDIT'
           | translate}}</button>
       </div>
     </form>
   </div>
+
   <div id="contacts" class="page-layout simple left-sidenav inner-sidenav">
 
     <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
-      <mat-tab label="{{'TRIP.ALLTRIP.TITLE' | translate}}">
+      <mat-tab label="{{'COUPON.ALLCOUPON.TITLE' | translate}}">
+
         <div id="contacts" class="page-layout simple left-sidenav inner-sidenav">
 
           <div class="header mat-accent-bg p-16 whiteCustomHeader" fxLayout="column" fxLayoutAlign="start start"
             fxLayout.gt-xs="row" fxLayoutAlign.gt-xs="space-between center">
 
-            <!-- APP TITLE -->
             <div fxLayout="row" fxLayoutAlign="start center">
 
               <button mat-button class="mat-icon-button sidenav-toggle mr-12" fuseMatSidenavToggler="contacts-main-sidenav"
@@ -140,27 +119,154 @@
               </button>
 
               <div class="logo" fxLayout="row" fxLayoutAlign="start center">
-                <mat-icon class="logo-icon mr-16">airplanemode_active</mat-icon>
-                <span class="logo-text h1">{{'TRIP.ALLTRIP.TITLE' | translate}}</span>
+                <mat-icon class="logo-icon mr-16">account_box</mat-icon>
+                <span class="logo-text h1">{{'COUPON.ALLCOUPON.TITLE' | translate}}</span>
 
               </div>
 
             </div>
-            <!-- / APP TITLE -->
-
-            <!-- SEARCH -->
             <div class="search-input-wrapper mt-16 ml-8 m-sm-0" fxLayout="row" fxLayoutAlign="start center">
               <label for="search" class="mr-8">
                 <mat-icon>search</mat-icon>
               </label>
               <mat-form-field mat-no-float class="m-0" floatPlaceholder="never">
-                <input matInput id="search" [(ngModel)]="filterValue" (ngModelChange)="filterDatatable()" placeholder="{{'TRIP.ALLTRIP.SEARCH'| translate}}">
+                <input matInput id="search" [(ngModel)]="filterCouponValue" (ngModelChange)="filterCouponDatatable()"
+                  placeholder="{{'COUPON.ALLCOUPON.SEARCH'| translate}}">
               </mat-form-field>
-              <!-- <button mat-button class="customButtom" color="primary" type="button" (click)="addSublocation()">{{'SUBLOCATION.ALLSUBLOCATION.ADDSUBLOCATION'
-                | translate}}</button> -->
+
+              <button mat-button class="customButtom" color="primary" type="button" (click)="openCoupon()">{{'COUPON.ALLCOUPON.ADDCOUPON'
+                | translate}}</button>
+
 
             </div>
-            <!-- / SEARCH -->
+
+
+          </div>
+          <div class="contentAr">
+
+            <ngx-datatable class="material vertical-scroll" [rows]="filterCouponRows" [headerHeight]="50" [rowHeight]="50"
+              [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="isEnLang()">
+              <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="code">
+                <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+                  <span>{{ 'COUPON.CODE' | translate }}</span>
+                </ng-template>
+
+              </ngx-datatable-column>
+              <ngx-datatable-column [canAutoResize]="true" [width]="100" [flexGrow]="1" prop="type">
+                <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+                  <span>{{ 'COUPON.TYPE' | translate }}</span>
+                </ng-template>
+
+              </ngx-datatable-column>
+              <ngx-datatable-column [canAutoResize]="true" [width]="75" [flexGrow]="1" prop="value">
+                <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+                  <span>{{ 'COUPON.VALUE' | translate }}</span>
+                </ng-template>
+
+              </ngx-datatable-column>
+              <ngx-datatable-column [canAutoResize]="true"  [flexGrow]="1" prop="numberOfUses">
+                <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+                  <span>{{ 'COUPON.NUMBEROFUSES' | translate }}</span>
+                </ng-template>
+
+              </ngx-datatable-column>
+
+              <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="numberOfUsed">
+                <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+                  <span>{{ 'COUPON.NUMBEROFUSED' | translate }}</span>
+                </ng-template>
+              </ngx-datatable-column>
+
+
+              <ngx-datatable-column [canAutoResize]="true" [width]="100" [flexGrow]="1" prop="from">
+                <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+                  <span>{{ 'TRIP.FROM' | translate }}</span>
+                </ng-template>
+                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                  <span>
+                    {{row["from"] | date: 'dd-MM-yyyy'}}
+                  </span>
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column [canAutoResize]="true" [width]="100" [flexGrow]="1" prop="to">
+                <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+                  <span>{{ 'TRIP.TO' | translate }}</span>
+                </ng-template>
+                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                  <span>
+                    {{row["to"] | date: 'dd-MM-yyyy'}}
+                  </span>
+                </ng-template>
+              </ngx-datatable-column>
+
+
+              <ngx-datatable-column [canAutoResize]="true" [width]="130" [flexGrow]="1" prop="Status">
+                <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+                  <span>{{ 'TRIP.STATUS' | translate }}</span>
+                </ng-template>
+                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                  <mat-chip-list *ngIf="row.status=='active'">
+                    <mat-chip style="background-color:green" selected="true">{{row.status}}</mat-chip>
+                  </mat-chip-list>
+                  <mat-chip-list *ngIf="row.status=='deactive'">
+                    <mat-chip style="background-color:#ff6363" selected="true">{{row.status}}</mat-chip>
+                  </mat-chip-list>
+                  <mat-chip-list *ngIf="row.status!='deactive' && row.status!='active'">
+                    <mat-chip style="background-color:#3b6fff" selected="true">{{row.status}}</mat-chip>
+                  </mat-chip-list>
+                </ng-template>
+              </ngx-datatable-column>
+
+
+
+              <ngx-datatable-column [canAutoResize]="true"  [flexGrow]="1" prop="createdAt">
+                <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+                  <span>{{ 'Global.CREATEDAT' | translate }}</span>
+                </ng-template>
+                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                  <span>
+                    {{row["createdAt"] | date: 'dd-MM-yyyy'}}
+                  </span>
+                </ng-template>
+              </ngx-datatable-column>
+
+
+            </ngx-datatable>
+          </div>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="{{'TRIP.ALLTRIP.TITLE' | translate}}">
+
+        <div id="contacts" class="page-layout simple left-sidenav inner-sidenav">
+
+          <div class="header mat-accent-bg p-16 whiteCustomHeader" fxLayout="column" fxLayoutAlign="start start"
+            fxLayout.gt-xs="row" fxLayoutAlign.gt-xs="space-between center">
+
+            <div fxLayout="row" fxLayoutAlign="start center">
+
+              <button mat-button class="mat-icon-button sidenav-toggle mr-12" fuseMatSidenavToggler="contacts-main-sidenav"
+                fxHide.gt-md>
+                <mat-icon>menu</mat-icon>
+              </button>
+
+              <div class="logo" fxLayout="row" fxLayoutAlign="start center">
+                <mat-icon class="logo-icon mr-16">account_box</mat-icon>
+                <span class="logo-text h1">{{'TRIP.ALLTRIP.TITLE' | translate}}</span>
+
+              </div>
+
+            </div>
+            <div class="search-input-wrapper mt-16 ml-8 m-sm-0" fxLayout="row" fxLayoutAlign="start center">
+              <label for="search" class="mr-8">
+                <mat-icon>search</mat-icon>
+              </label>
+              <mat-form-field mat-no-float class="m-0" floatPlaceholder="never">
+                <input matInput id="search" [(ngModel)]="filterValue" (ngModelChange)="filterDatatable()" placeholder="{{'SUBLOCATION.ALLSUBLOCATION.SEARCH'| translate}}">
+              </mat-form-field>
+
+            </div>
 
 
           </div>
@@ -193,28 +299,8 @@
                 </ng-template>
               </ngx-datatable-column>
 
-              <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="">
-                <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-                  <!-- <span>{{ 'DRIVER.GENDER' | translate }}</span> -->
-                  <span>{{ 'TRIP.COUPON' | translate }}</span>
-        
-        
-                </ng-template>
-                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-                  <mat-chip-list *ngIf="row.coupon" >
-                    <mat-chip  style="background-color:#ff6363" selected="true">{{row.coupon['code']}}</mat-chip>
-                  </mat-chip-list>
-                  <mat-chip-list *ngIf="row.coupon==null">
-                    <mat-chip style="background-color:#3b6fff" selected="true">{{ 'TRIP.NOCOUPON' | translate }}</mat-chip>
-                  </mat-chip-list>
-        
-                </ng-template>
-              </ngx-datatable-column>
-
-              
               <ngx-datatable-column [canAutoResize]="true" [width]="20" [flexGrow]="1" prop="">
                 <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-                  <!-- <span>{{ 'DRIVER.GENDER' | translate }}</span> -->
                   <mat-icon style="color: rgba(66, 66, 66, 0.51)">flight_land</mat-icon>
 
 
@@ -228,7 +314,6 @@
 
               <ngx-datatable-column [canAutoResize]="true" [width]="20" [flexGrow]="1" prop="">
                 <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-                  <!-- <span>{{ 'DRIVER.GENDER' | translate }}</span> -->
                   <mat-icon style="color: rgba(66, 66, 66, 0.51)">directions_car</mat-icon>
 
 
@@ -242,7 +327,6 @@
 
               <ngx-datatable-column [canAutoResize]="true" [width]="20" [flexGrow]="1" prop="">
                 <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-                  <!-- <span>{{ 'DRIVER.GENDER' | translate }}</span> -->
                   <mat-icon style="color: rgba(66, 66, 66, 0.51)">flight_takeoff</mat-icon>
 
 
@@ -322,12 +406,6 @@
                   <button mat-mini-fab class="mr-16" (click)="goTo('edit',row['id'])" style="background-color: rgba(20, 160, 202, 0.911);">
                     <mat-icon style="color : white;">edit</mat-icon>
                   </button>
-                  <!-- <button mat-mini-fab *ngIf="row.status=='active'" class="mr-16" (click)="deactivate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
-                    <mat-icon style="color : white;">delete</mat-icon>
-                  </button>
-                  <button mat-mini-fab *ngIf="row.status=='deactive'" class="mr-16" (click)="activate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
-                    <mat-icon style="color : white;">replay</mat-icon>
-                  </button> -->
                   <button mat-mini-fab class="mr-16" style="background-color: rgba(7, 112, 7, 0.849);" (click)="goTo('view',row['id'])">
                     <mat-icon style="color : white;">visibility</mat-icon>
                   </button>
@@ -370,156 +448,7 @@
             </ngx-datatable>
           </div>
         </div>
-
       </mat-tab>
-      <mat-tab label="{{'CAR.ALLCAR.TITLE' | translate}}">
-        <div id="contacts" class="page-layout simple left-sidenav inner-sidenav">
-
-          <div class="header mat-accent-bg p-16 whiteCustomHeader" fxLayout="column" fxLayoutAlign="start start"
-            fxLayout.gt-xs="row" fxLayoutAlign.gt-xs="space-between center">
-
-            <!-- APP TITLE -->
-            <div fxLayout="row" fxLayoutAlign="start center">
-
-              <button mat-button class="mat-icon-button sidenav-toggle mr-12" fuseMatSidenavToggler="contacts-main-sidenav"
-                fxHide.gt-md>
-                <mat-icon>menu</mat-icon>
-              </button>
-
-              <div class="logo" fxLayout="row" fxLayoutAlign="start center">
-                <mat-icon class="logo-icon mr-16">directions_car</mat-icon>
-                <span class="logo-text h1">{{'CAR.ALLCAR.TITLE' | translate}}</span>
-
-              </div>
-
-            </div>
-            <!-- / APP TITLE -->
-
-            <!-- SEARCH -->
-            <div class="search-input-wrapper mt-16 ml-8 m-sm-0" fxLayout="row" fxLayoutAlign="start center">
-              <label for="search" class="mr-8">
-                <mat-icon>search</mat-icon>
-              </label>
-              <mat-form-field mat-no-float class="m-0" floatPlaceholder="never">
-                <input matInput id="search" [(ngModel)]="filterCarValue" (ngModelChange)="filterCarDatatable()"
-                  placeholder="{{'CAR.ALLCAR.SEARCH'| translate}}">
-              </mat-form-field>
-
-
-              <!-- <button mat-button class="customButtom" color="primary" type="button" (click)="addSublocation()">{{'SUBLOCATION.ALLSUBLOCATION.ADDSUBLOCATION'
-                    | translate}}</button> -->
-
-            </div>
-            <!-- / SEARCH -->
-
-
-          </div>
-          <div class="content">
-            <ngx-datatable class="material vertical-scroll" [rows]="filterCarsRows" [columnMode]="'force'" [headerHeight]="50"
-              [rowHeight]="50" [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="true">
-
-              <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="name">
-                <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-                  <span>{{ 'CAR.NAME' | translate }}</span>
-                </ng-template>
-              </ngx-datatable-column>
-
-
-              <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="location.nameEn">
-                <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-                  <span>{{ 'CAR.LOCATION' | translate }}</span>
-                </ng-template>
-              </ngx-datatable-column>
-
-              <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="driver.username">
-                <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-                  <span>{{ 'CAR.DRIVERNAME' | translate }}</span>
-                </ng-template>
-                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-                  {{row.driver.firstName}} {{row.driver.lastName}}
-                </ng-template>
-
-              </ngx-datatable-column>
-
-
-              <ngx-datatable-column [canAutoResize]="true" [width]="70" [flexGrow]="1" prop="rate">
-                <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-                  <span>{{ 'CAR.RATE' | translate }}</span>
-                </ng-template>
-
-              </ngx-datatable-column>
-              <ngx-datatable-column [canAutoResize]="true" [width]="120" [flexGrow]="1" prop="numOfSeat">
-                <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-                  <span>{{ 'CAR.NUMBEROFSEAT' | translate }}</span>
-                </ng-template>
-
-              </ngx-datatable-column>
-
-              <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="brand.nameEn">
-                <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-                  <span>{{ 'CAR.BRAND' | translate }}</span>
-                </ng-template>
-
-              </ngx-datatable-column>
-
-              <!-- <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="type">
-              <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-                <span>{{ 'CAR.TYPE' | translate }}</span>
-              </ng-template>
-            </ngx-datatable-column>
-        
-            <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="engineType">
-              <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-                <span>{{ 'CAR.ENGINTYPE' | translate }}</span>
-              </ng-template>
-            </ngx-datatable-column> -->
-
-
-              <ngx-datatable-column [canAutoResize]="true" [width]="120" [flexGrow]="1" prop="Status">
-                <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-                  <span>{{ 'CAR.STATUS' | translate }}</span>
-                </ng-template>
-                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-                  <mat-chip-list *ngIf="row.status=='active'">
-                    <mat-chip style="background-color:green" selected="true">{{row.status}}</mat-chip>
-                  </mat-chip-list>
-                  <mat-chip-list *ngIf="row.status=='deactive'">
-                    <mat-chip style="background-color:#ff6363" selected="true">{{row.status}}</mat-chip>
-                  </mat-chip-list>
-                </ng-template>
-              </ngx-datatable-column>
-
-              <!-- <ngx-datatable-column [width]="140" name="id">
-                <ng-template let-column="column" ngx-datatable-header-template>
-                  <div class="table-header-font">
-
-                  </div>
-                </ng-template>
-
-                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-                  <button mat-mini-fab class="mr-16" (click)="goTo('edit',row['id'])" style="background-color: rgba(20, 160, 202, 0.911);">
-                    <mat-icon style="color : white;">edit</mat-icon>
-                  </button>
-                  <button mat-mini-fab *ngIf="row.status=='active'" class="mr-16" (click)="deactivate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
-                    <mat-icon style="color : white;">delete</mat-icon>
-                  </button>
-                  <button mat-mini-fab *ngIf="row.status=='deactive'" class="mr-16" (click)="activate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
-                    <mat-icon style="color : white;">replay</mat-icon>
-                  </button>
-                  <button mat-mini-fab class="mr-16" style="background-color: rgba(7, 112, 7, 0.849);" (click)="view(row['id'])">
-                  <mat-icon style="color : white;">visibility</mat-icon>
-                </button>
-                </ng-template>
-
-              </ngx-datatable-column> -->
-
-            </ngx-datatable>
-
-          </div>
-        </div>
-
-      </mat-tab>
-
     </mat-tab-group>
   </div>
 

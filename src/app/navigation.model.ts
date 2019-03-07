@@ -66,6 +66,13 @@ export class NavigationModel {
                 'url': '/agency'
             },
             {
+                'id': 'travel',
+                'title': 'TRAVEL.ALLTRAVEL.TITLE',
+                'type': 'item',
+                'icon': 'domain',
+                'url': '/travel-agencies'
+            },
+            {
                 'id': 'admin',
                 'title': 'ADMIN.ALLADMIN.TITLE',
                 'type': 'item',

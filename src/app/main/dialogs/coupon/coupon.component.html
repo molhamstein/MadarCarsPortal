@@ -1,0 +1,75 @@
+<div class="dialog-content-wrapper">
+  <mat-toolbar matDialogTitle class="mat-accent m-0">
+    <div style="padding-top: 7px;" fxFlex fxLayout="row" fxLayoutAlign="space-between center">
+      <span class="title dialog-title">{{ 'COUPON.ALLCOUPON.TITLE' | translate }}</span>
+      <button style="float: right;" mat-button class="mat-icon-button" (click)="dialogRef.close()" aria-label="Close dialog">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <div mat-dialog-content class="p-24 m-0" fusePerfectScrollbar>
+    <form name="couponForm" [formGroup]="couponForm" class="event-form">
+
+      <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
+        fxFlex>
+        <mat-form-field fxFlex="30">
+          <input matInput placeholder="{{ 'COUPON.CODE' | translate }}" formControlName="code" required>
+          <mat-icon matSuffix>people</mat-icon>
+          <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+        </mat-form-field>
+        <mat-form-field fxFlex="30">
+
+          <mat-select placeholder="{{ 'COUPON.TYPE' | translate }}" formControlName="type">
+            <mat-option *ngFor="let oneType of typeCoupon" [value]="oneType.value">
+              {{oneType.view | translate}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field fxFlex="30">
+          <input matInput placeholder="{{ 'COUPON.VALUE' | translate }}" formControlName="value" required>
+          <mat-icon matSuffix>people</mat-icon>
+          <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+        </mat-form-field>
+        <mat-form-field fxFlex="45">
+          <input type="number" matInput placeholder="{{ 'COUPON.NUMBEROFUSES' | translate }}" formControlName="numberOfUses" required>
+          <mat-icon matSuffix>people</mat-icon>
+          <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+        </mat-form-field>
+        <mat-form-field fxFlex="45">
+          <input type="number" matInput placeholder="{{ 'COUPON.NUMBEROFUSED' | translate }}" formControlName="numberOfUsed" required>
+          <mat-icon matSuffix>people</mat-icon>
+          <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="45">
+          <input matInput [matDatepicker]="startDatePicker" (focus)="startDatePicker.open()" placeholder="{{ 'COUPON.FROM' | translate }}"
+            name="end" formControlName="from">
+          <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #startDatePicker></mat-datepicker>
+          <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+        </mat-form-field>
+        <mat-form-field fxFlex="45">
+          <input matInput [matDatepicker]="endDatePicker" (focus)="endDatePicker.open()" placeholder="{{ 'COUPON.TO' | translate }}"
+            name="end" formControlName="to">
+          <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #endDatePicker></mat-datepicker>
+          <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+
+  </div>
+
+  <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="space-between center">
+
+    <button mat-raised-button class="save-button mat-accent" (click)="save()" [disabled]="couponForm.invalid"
+      aria-label="SAVE">
+      {{ 'Global.ADD' | translate }}
+    </button>
+    <!-- <button mat-raised-button class="save-button mat-accent" (click)="save(false,startPicker,endPicker)" [disabled]="couponForm.invalid" aria-label="SAVE">
+            {{ 'Dialog.Add_Slotes.SAVE' | translate }}
+        </button> -->
+
+  </div>
+</div>

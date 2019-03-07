@@ -9,7 +9,8 @@
         {{'TRIP.ADDTRIP.TITLE' | translate}}
       </span>
     </div>
-    <div style="font-size: 20px">{{'TRIP.PRICE' | translate}} : {{totalPrice+subLocaationPrice+airportPrice}}</div>
+    <div style="font-size: 20px">{{'TRIP.PRICE' | translate}} :
+      {{calcPrice(totalPrice+subLocaationPrice+airportPrice)}}</div>
 
   </div>
   <!-- / HEADER -->
@@ -151,7 +152,18 @@
             </mat-select>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
-
+          <div fxFlex="90" *ngIf="!stepthreeForm.invalid">
+            <mat-form-field fxFlex="70">
+              <input matInput placeholder="{{ 'TRIP.COUPON' | translate }}" [(ngModel)]="couponCode" [ngModelOptions]="{standalone: true}">
+              <mat-icon matSuffix *ngIf="verifyCoupon==null">map</mat-icon>
+              <mat-icon matSuffix *ngIf="verifyCoupon==true" style="color: rgba(18, 218, 0, 0.733)">done</mat-icon>
+              <mat-icon matSuffix *ngIf="verifyCoupon==false" style="color: rgba(218, 0, 0, 0.733)">clear</mat-icon>
+            </mat-form-field>
+            <div fxFlex="20">
+              <button mat-button  class="addButton" (click)="checkCoupon()">{{'TRIP.CHECKCOUPON'
+                | translate}}</button>
+            </div>
+          </div>
         </div>
       </div>
       <div style="float: rightt;">

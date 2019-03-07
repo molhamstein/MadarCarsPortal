@@ -7,6 +7,7 @@ import { locale as english } from '../../../../languageFiles/en';
 
 import { MainService } from '../../../../../core/services/main.service';
 import { DialogService } from '../../../../../core/services/dialog.service';
+import { tripCouponComponent } from '../../../../dialogs/trip-coupon/trip-coupon.component';
 
 
 
@@ -120,6 +121,18 @@ export class tripsComponent implements OnInit {
       return true
   }
 
+  openTripCoupon(row) {
+    let dialogRef = this.dialog.open(tripCouponComponent, {
+      width: '550px',
+      data: { "trip": row }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.inisilaize()
+      }
+    });
+  }
 
   rate(tripId) {
     var mainThis = this

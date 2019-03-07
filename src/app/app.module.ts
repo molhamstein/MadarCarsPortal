@@ -73,6 +73,11 @@ import { addAgencyComponent } from './main/content/pages/agency/addAgency/addAge
 import { editAgencyComponent } from './main/content/pages/agency/editAgency/editAgency.component';
 import { FilterComponent } from './main/dialogs/filter/filter.component';
 import { Ng2ImgMaxModule } from 'ng2-img-max'; // <-- import the module
+import { travelAgenciesComponent } from './main/content/pages/travel-agencies/travel-agency/travel-agencies.component';
+import { addTravelAgenciesComponent } from './main/content/pages/travel-agencies/addTravelAgency/addTravel-agencies.component';
+import { editTravelAgenciesComponent } from './main/content/pages/travel-agencies/editAgency/editTravel-agencies.component';
+import { CouponComponent } from './main/dialogs/coupon/coupon.component';
+import { tripCouponComponent } from './main/dialogs/trip-coupon/trip-coupon.component';
 
 
 
@@ -273,6 +278,23 @@ const appRoutes: Routes = [
         canActivate: [AuthGuardService]
 
     },
+    {
+        path: 'travel-agencies',
+        component: travelAgenciesComponent,
+        canActivate: [AuthGuardService]
+
+    },
+    {
+        path: 'add-travel-agencies',
+        component: addTravelAgenciesComponent,
+        canActivate: [AuthGuardService]
+    },
+    {
+        path: 'edit-travel-agencies/:id',
+        component: editTravelAgenciesComponent,
+        canActivate: [AuthGuardService]
+
+    },
 
     {
         path: 'apps/mail',
@@ -340,8 +362,10 @@ const appRoutes: Routes = [
         // // Agency
         agenciesComponent, addAgencyComponent, editAgencyComponent,
 
+        // // Travel Agencies
+        travelAgenciesComponent, addTravelAgenciesComponent, editTravelAgenciesComponent,
         // dialogs
-        SomeThingIsErrorComponent, FilterComponent, AddVacationComponent, MakeRateComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent, TimeComponent
+        SomeThingIsErrorComponent, FilterComponent, tripCouponComponent, CouponComponent, AddVacationComponent, MakeRateComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent, TimeComponent
     ],
     imports: [
         BrowserModule,
@@ -366,9 +390,9 @@ const appRoutes: Routes = [
         ComponentsThirdPartyModule,
         TranslateModule.forRoot(),
         MatDialogModule,
-        Ng2ImgMaxModule 
+        Ng2ImgMaxModule
     ],
-    entryComponents: [SomeThingIsErrorComponent, FilterComponent, AddVacationComponent, MakeRateComponent, TimeComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent],
+    entryComponents: [SomeThingIsErrorComponent, FilterComponent, CouponComponent, tripCouponComponent, AddVacationComponent, MakeRateComponent, TimeComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent],
     providers: [
         FuseSplashScreenService,
         FuseConfigService,

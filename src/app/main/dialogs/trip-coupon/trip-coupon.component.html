@@ -1,0 +1,42 @@
+<div class="dialog-content-wrapper">
+  <mat-toolbar matDialogTitle class="mat-accent m-0">
+    <div style="padding-top: 7px;" fxFlex fxLayout="row" fxLayoutAlign="space-between center">
+      <span class="title dialog-title">{{ 'TRIPCOUPON.TITLE' | translate }}</span>
+      <button style="float: right;" mat-button class="mat-icon-button" (click)="dialogRef.close()" aria-label="Close dialog">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <div mat-dialog-content class="p-24 m-0" fusePerfectScrollbar>
+    <form name="tripCouponForm" [formGroup]="tripCouponForm" class="event-form">
+
+      <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
+        fxFlex>
+        <mat-form-field fxFlex="60">
+          <input matInput placeholder="{{ 'COUPON.CODE' | translate }}" formControlName="code">
+          <mat-icon matSuffix *ngIf="verifyCoupon==null">map</mat-icon>
+          <mat-icon matSuffix *ngIf="verifyCoupon==true" style="color: rgba(18, 218, 0, 0.733)">done</mat-icon>
+          <mat-icon matSuffix *ngIf="verifyCoupon==false" style="color: rgba(218, 0, 0, 0.733)">clear</mat-icon>
+        </mat-form-field>
+        <div fxFlex="20">
+          <button mat-button class="addButton" [disabled]="mainCode==tripCouponForm.value['code'] || tripCouponForm.value['code']==''"
+            (click)="checkCoupon()">{{'TRIP.CHECKCOUPON'
+            | translate}}</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+  <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="space-between center">
+
+    <button mat-raised-button class="save-button mat-accent" (click)="save()" aria-label="SAVE">
+      {{ 'Global.EDIT' | translate }}
+    </button>
+    <!-- <button mat-raised-button class="save-button mat-accent" (click)="save(false,startPicker,endPicker)" [disabled]="tripCouponForm.invalid" aria-label="SAVE">
+            {{ 'Dialog.Add_Slotes.SAVE' | translate }}
+        </button> -->
+
+  </div>
+</div>

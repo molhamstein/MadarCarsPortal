@@ -163,6 +163,48 @@ export const locale = {
                 "TITLE": "Edit Agency"
             }
         },
+        "TRAVEL": {
+            "STATUS": "Status",
+            "NAMEEN": "English Name",
+            "NAMEAR": "Arabic Name",
+            "NAMETR": "Turkish Name",
+            "EMAIL": "Email",
+            "PHONENUMBER": "Phone Number",
+            "ISOCODE": "Nationality",
+            'PASSWORD': 'Password',
+            "ALLTRAVEL": {
+                "TITLE": "Travel Agency",
+                "ADDTRAVEL": "Add Travel Agency",
+                "SEARCH": "Search for Travel"
+            },
+            "ADDTRAVEL": {
+                "TITLE": "Add Travel Agency",
+            },
+            "EDITTRAVEL": {
+                "TITLE": "Edit Travel Agency"
+            }
+        },
+        "TRIPCOUPON": {
+            "TITLE": "Trip Coupon",
+        },
+        "COUPON": {
+            "CODE": "code",
+            "FROM": "from",
+            "TO": "To",
+            "STATUS": "Status",
+            "FIXED": "Fixed",
+            "VALUE": "Value",
+            "TYPE": "Type",
+            "PERCENTAGE": "Percentage",
+            "NUMBEROFUSES": "Number Of Uses",
+            "NUMBEROFUSED": "Number Of Used",
+            "ALLCOUPON": {
+                "TITLE": "Coupon",
+                "ADDCOUPON": "Add Coupon",
+                "SEARCH": "Search for Coupon"
+            },
+
+        },
         "SUBLOCATION": {
             "NAMEEN": "English Name",
             "NAMEAR": "Arabic Name",
@@ -224,6 +266,7 @@ export const locale = {
             "TOAIRPORT": "TO Airport",
         },
         "TRIP": {
+            "CHECKCOUPON": "Check Coupon",
             "FROMAIRPORT": "From Airport",
             "FROMAIRPORTDATE": "From Airport Date",
             "TOAIRPORT": "TO Airport",
@@ -233,6 +276,8 @@ export const locale = {
             "ENDINCITYDATE": "End In City Date",
             "CAR": "Car",
             "CARNAME": "Car Name",
+            "COUPON": "Coupon",
+            "NOCOUPON": "No Coupon",
             "CARNUMBEROFSEAT": "Number Of Seat",
             "STATUS": "Status",
             "USER": "Customer",
@@ -278,7 +323,6 @@ export const locale = {
                 "TITLE": "Trip",
                 "ADDTRIP": "Add Trip",
                 "SEARCH": "Search for Trip"
-
             },
             "ADDTRIP": {
                 "TITLE": "Add Trip",
@@ -385,7 +429,9 @@ export const locale = {
             "454": "Already is active",
             "455": "Location Not Found",
             "456": "Car Not Found",
-            "457": "Car Not Available"
+            "457": "Car Not Available",
+            "461": "This Code is Duplicate",
+            "462": "This Code is not valid",
         },
         "TEXTNOTIFICATION": {
             "HELP": "need help to choose trip"

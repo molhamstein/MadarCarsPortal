@@ -163,6 +163,48 @@ export const locale = {
                 "TITLE": "تعديل وكالة"
             }
         },
+        "TRAVEL": {
+            "STATUS": "الحالة",
+            "NAMEEN": "اسم انكليزي",
+            "NAMEAR": "اسم عربي",
+            "NAMETR": "اسم تركي",
+            "EMAIL": "البريد الإلكتروني",
+            "PHONENUMBER": "رقم هاتف",
+            "ISOCODE": "الجنسية",
+            'PASSWORD': 'كلمة السر',
+            "ALLTRAVEL": {
+                "TITLE": "وكالات السفريات",
+                "ADDTRAVEL": "إضافة وكالة",
+                "SEARCH": "البحث عن وكالة"
+            },
+            "ADDTRAVEL": {
+                "TITLE": "إضافة وكالة سفريات",
+            },
+            "EDITTRAVEL": {
+                "TITLE": "تعديل وكالة سفريات"
+            }
+        },
+        "TRIPCOUPON": {
+            "TITLE": "قسائم الرحلات",
+        },
+        "COUPON": {
+            "CODE": "الشيفرة",
+            "FROM": "من",
+            "TO": "إلى",
+            "STATUS": "الحالة",
+            "FIXED": "ثابت",
+            "VALUE": "القيمة",
+            "TYPE": "النوع",
+            "PERCENTAGE": "نسبة مئوية",
+            "NUMBEROFUSES": "عدد الاستخدامات الاجمالية",
+            "NUMBEROFUSED": "عدد مرات الإستخدام",
+            "ALLCOUPON": {
+                "TITLE": "قسيمة",
+                "ADDCOUPON": "إضافة قسيمة",
+                "SEARCH": "البحث عن قسيمة"
+            },
+
+        },
         "SUBLOCATION": {
             "NAMEEN": "اسم انكليزي",
             "NAMEAR": "اسم عربي",
@@ -224,6 +266,7 @@ export const locale = {
             "TOAIRPORT": "إلى المطار",
         },
         "TRIP": {
+            "CHECKCOUPON": "التاكد من القسيمة",
             "FROMAIRPORT": "من المطار",
             "FROMAIRPORTDATE": "تاريخ من المطار",
             "TOAIRPORT": "إلى المطار",
@@ -235,6 +278,8 @@ export const locale = {
             "ENDINCITYDATE": "تاريخ نهاية الرحلة في المدينة",
             "CAR": "السيارة",
             "CARNAME": "اسم السيارة",
+            "COUPON": "القسيمة",
+            "NOCOUPON": "لا يوجد",
             "CARNUMBEROFSEAT": "عدد المقاعد",
             "STATUS": "الحالة",
             "USER": "الزبون",
@@ -384,7 +429,9 @@ export const locale = {
             "454": "هو فعلاً فعال",
             "455": "المدينة غير موجودة",
             "456": "السيارة غير موجودة",
-            "457": "السيارة غير متوفرة"
+            "457": "السيارة غير متوفرة",
+            "461": "هذه الشيفرة مكررة",
+            "462": "هذه الشيفرة غير صالحة",
         },
         "TEXTNOTIFICATION": {
             "HELP": "يحتاج مساعدة لختيار رحلة"

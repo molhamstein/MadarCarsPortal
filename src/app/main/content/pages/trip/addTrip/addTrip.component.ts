@@ -24,6 +24,9 @@ export class addTripComponent implements OnInit {
   locations = [];
   allData = {};
   users = [];
+  coupon = {};
+  verifyCoupon;
+  couponCode = null
   totalPrice = 0;
   subLocaationPrice = 0;
   links = [
@@ -164,7 +167,7 @@ export class addTripComponent implements OnInit {
       locationId: new FormControl('', Validators.required),
       ownerId: new FormControl('', Validators.required),
       testTime: new FormControl(''),
-      note: new FormControl('')
+      note: new FormControl(''),
     });
     this.stepSecForm = new FormGroup({
       first: new FormControl(''),
@@ -358,6 +361,28 @@ export class addTripComponent implements OnInit {
   }
   private config = { hour: 7, minute: 15, meriden: 'PM', format: 12 };
 
+  checkCoupon() {
+    this.coupon = {}
+    this.mainServ.loaderSer.display(true);
+    this.mainServ.APIServ.get("coupons/" + this.couponCode + "/checkCoupon").subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
+      if (this.mainServ.APIServ.getErrorCode() == 0) {
+        this.coupon = data;
+        this.verifyCoupon = true;
+      }
+      else if (this.mainServ.APIServ.getErrorCode() == 462) {
+        this.dialogServ.errorMessage(462);
+        this.verifyCoupon = false;
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
+      }
+
+    })
+
+  }
+
   next(stepNum) {
     if (stepNum == 2) {
       this.tripType = this.getTypeTrip()
@@ -378,7 +403,6 @@ export class addTripComponent implements OnInit {
         if (element.status == "active")
           this.subLocationId.push(element.id)
       });
-      console.log(this.subLocationId);
     }
     else if (stepNum == 3) {
       this.stepthreeForm = new FormGroup({
@@ -463,8 +487,14 @@ export class addTripComponent implements OnInit {
   add() {
     if (this.activeLink == "step4")
       this.allData['tripSublocations'] = this.tripSublocations
+    if (this.coupon['value'] != undefined) {
+      this.allData['travelAgencyId'] = this.coupon['travelAgencyId']
+      this.allData['couponId'] = this.coupon['id']
+    }
     this.allData['carId'] = this.stepthreeForm.value['carId']
-    this.allData['cost'] = this.totalPrice + this.subLocaationPrice + this.airportPrice
+
+    this.allData['costBeforCoupon'] = this.totalPrice + this.subLocaationPrice + this.airportPrice
+    this.allData['cost'] = this.calcPrice(this.totalPrice + this.subLocaationPrice + this.airportPrice)
     this.allData['daysInCity'] = this.tripdays;
     this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.post("trips", this.allData).subscribe((data: any) => {
@@ -493,6 +523,15 @@ export class addTripComponent implements OnInit {
     this.mainServ.globalServ.goTo('trips')
   }
 
+  calcPrice(price) {
+    if (this.coupon['value'] == null)
+      return price;
+    if (this.coupon['type'] == "fixed")
+      return price - this.coupon['value']
+    else if (this.coupon['type'] == "percentage")
+      return price - (price * this.coupon['value'] / 100)
+
+  }
   startTime
   endTime;
   formatStartTime(object) {

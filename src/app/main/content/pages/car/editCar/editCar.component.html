@@ -300,6 +300,24 @@
                 </ng-template>
               </ngx-datatable-column>
 
+              <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="">
+                <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+                  <!-- <span>{{ 'DRIVER.GENDER' | translate }}</span> -->
+                  <span>{{ 'TRIP.COUPON' | translate }}</span>
+        
+        
+                </ng-template>
+                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                  <mat-chip-list *ngIf="row.coupon" >
+                    <mat-chip  style="background-color:#ff6363" selected="true">{{row.coupon['code']}}</mat-chip>
+                  </mat-chip-list>
+                  <mat-chip-list *ngIf="row.coupon==null">
+                    <mat-chip style="background-color:#3b6fff" selected="true">{{ 'TRIP.NOCOUPON' | translate }}</mat-chip>
+                  </mat-chip-list>
+        
+                </ng-template>
+              </ngx-datatable-column>
+
               <ngx-datatable-column [canAutoResize]="true" [width]="20" [flexGrow]="1" prop="">
                 <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
                   <!-- <span>{{ 'DRIVER.GENDER' | translate }}</span> -->
@@ -460,7 +478,7 @@
         </div>
 
       </mat-tab>
-      <!-- <mat-tab label="{{'CAR.ALLCAR.TITLE' | translate}}">
+      <mat-tab label="{{'CAR.ALLCAR.TITLE' | translate}}">
         <div id="contacts" class="page-layout simple left-sidenav inner-sidenav">
 
           <div class="header mat-accent-bg p-16 whiteCustomHeader" fxLayout="column" fxLayoutAlign="start start"
@@ -556,7 +574,7 @@
             </ngx-datatable>
           </div>
         </div>
-      </mat-tab> -->
+      </mat-tab>
 
     </mat-tab-group>
   </div>
