@@ -102,14 +102,15 @@ export const locale = {
             "ENDDATE": "تاريخ النهاية",
             "STARTTIME": "توقيت البداية",
             "ENDTIME": "توقيت النهاية",
-            "TITLE": "إضافة رحلة"
+            "TITLE": "إضافة إجازة"
         },
         "CAR": {
             "BRAND": "ماركة",
             "NAME": "اسم",
             "RATE": "تقييم",
             "STATUS": "الحالة",
-            "ADDVACATION": "إضافة عطلة",
+            "VACATION":"الإجازات",
+            "ADDVACATION": "إضافة إجازة",
             "NUMBEROFSEAT": "عدد المقاعد",
             "ISVIP": "هل VIP",
             "PRICEPERDAY": "جولة بالمدينة ليوم واحد",

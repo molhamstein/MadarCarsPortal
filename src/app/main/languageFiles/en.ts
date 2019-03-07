@@ -109,6 +109,7 @@ export const locale = {
             "NAME": "Name",
             "RATE": "Rate",
             "STATUS": "Status",
+            "VACATION":"Vacation",
             "ADDVACATION": "Add Vacation",
             "NUMBEROFSEAT": "Number Of Seats",
             "ISVIP": "Is Vip",

@@ -526,10 +526,16 @@ export class addTripComponent implements OnInit {
   calcPrice(price) {
     if (this.coupon['value'] == null)
       return price;
-    if (this.coupon['type'] == "fixed")
+    if (this.coupon['type'] == "fixed") {
+      if ((price - this.coupon['value']) < 0)
+        return 0
       return price - this.coupon['value']
+    }
     else if (this.coupon['type'] == "percentage")
-      return price - (price * this.coupon['value'] / 100)
+      if ((price - (price * this.coupon['value'] / 100)) < 0)
+        return 0
+
+    return price - (price * this.coupon['value'] / 100)
 
   }
   startTime
