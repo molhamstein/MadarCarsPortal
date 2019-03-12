@@ -80,7 +80,7 @@
           </mat-form-field>
 
 
-          <mat-form-field fxFlex="30">
+          <!-- <mat-form-field fxFlex="30">
             <input matInput type="number" placeholder="{{ 'CAR.PRICEONEWAY' | translate }}" formControlName="priceOneWay"
               required>
             <mat-icon matSuffix>attach_money</mat-icon>
@@ -93,7 +93,7 @@
               required>
             <mat-icon matSuffix>attach_money</mat-icon>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-          </mat-form-field>
+          </mat-form-field> -->
 
 
           <mat-form-field fxFlex="30">
@@ -126,16 +126,18 @@
           </mat-form-field>
 
 
-          <section class="example-section" fxFlex="96">
-            <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" [(ngModel)]="isVip">{{
-              'CAR.ISVIP' | translate }}</mat-checkbox>
-            <!-- <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" style="padding-left: 12px;"
+          <!-- <section class="example-section" fxFlex="96"> -->
+          <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" [(ngModel)]="isVip">{{
+            'CAR.ISVIP' | translate }}</mat-checkbox>
+          <div fxFlex="26"></div>
+
+          <!-- <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" style="padding-left: 12px;"
               [(ngModel)]="isAirportCar">{{
               'CAR.ISAIRPORTCAR' | translate }}</mat-checkbox>
             <mat-checkbox fxFlex="33" [ngModelOptions]="{standalone: true}" class="example-margin" style="padding-left: 30px;"
               [(ngModel)]="isCityCar">{{
               'CAR.ISCITYCAR' | translate }}</mat-checkbox> -->
-          </section>
+          <!-- </section> -->
 
 
 
@@ -214,12 +216,33 @@
           </div>
           <div style="padding-top:10px;" *ngIf="carSublocations.length!=0" fxLayout="column" fxLayout.gt-md="row wrap"
             fxFlex>
-            <mat-form-field style="margin: 0px 1.5%;" fxFlex="30" *ngFor="let oneSublocation of carSublocations;let i=index">
+            <mat-form-field style="margin: 0px 1.5%;" fxFlex="48%" *ngFor="let oneSublocation of carSublocations;let i=index">
               <input matInput type="number" min="0" placeholder="{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}"
                 [(ngModel)]="carSublocations[i].cost" [ngModelOptions]="{standalone: true}" required>
               <mat-icon matSuffix>attach_money</mat-icon>
               <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
             </mat-form-field>
+          </div>
+          <div fxFlex="100" *ngIf="carAirport.length!=0">
+            <h2 fxFlex="100" style="margin: 0px 0px 0px 1.5%">{{ 'CAR.AIRPORT' | translate }}</h2>
+          </div>
+
+          <div style="padding-top:10px;" *ngIf="carAirport.length!=0" fxLayout="column" fxLayout.gt-md="row wrap"
+            fxFlex>
+            <div fxFlex="100" *ngFor="let oneCarAirport of carAirport;let i=index">
+              <mat-form-field style="margin: 0px 0px 0px 1.5%" fxFlex="48%">
+                <input matInput type="number" min="0" placeholder="{{ 'CAR.ONEWAYIN' | translate }} {{oneCarAirport.name}}"
+                  [(ngModel)]="carAirport[i].priceOneWay" [ngModelOptions]="{standalone: true}" required>
+                <mat-icon matSuffix>attach_money</mat-icon>
+                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+              </mat-form-field>
+              <mat-form-field style="margin: 0px 0px 0px 1.5%" fxFlex="48%">
+                <input matInput type="number" min="0" placeholder="{{ 'CAR.TOWWAYIN' | translate }} {{oneCarAirport.name}}"
+                  [(ngModel)]="carAirport[i].priceTowWay" [ngModelOptions]="{standalone: true}" required>
+                <mat-icon matSuffix>attach_money</mat-icon>
+                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+              </mat-form-field>
+            </div>
           </div>
         </div>
       </div>
@@ -261,7 +284,8 @@
                 <mat-icon>search</mat-icon>
               </label>
               <mat-form-field mat-no-float class="m-0" floatPlaceholder="never">
-                <input matInput id="search" [(ngModel)]="filterTripValue" (ngModelChange)="filterTripDatatable()" placeholder="{{'TRIP.ALLTRIP.SEARCH'| translate}}">
+                <input matInput id="search" [(ngModel)]="filterTripValue" (ngModelChange)="filterTripDatatable()"
+                  placeholder="{{'TRIP.ALLTRIP.SEARCH'| translate}}">
               </mat-form-field>
               <!-- <button mat-button class="customButtom" color="primary" type="button" (click)="addSublocation()">{{'SUBLOCATION.ALLSUBLOCATION.ADDSUBLOCATION'
                   | translate}}</button> -->
@@ -304,17 +328,17 @@
                 <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
                   <!-- <span>{{ 'DRIVER.GENDER' | translate }}</span> -->
                   <span>{{ 'TRIP.COUPON' | translate }}</span>
-        
-        
+
+
                 </ng-template>
                 <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-                  <mat-chip-list *ngIf="row.coupon" >
-                    <mat-chip  style="background-color:#ff6363" selected="true">{{row.coupon['code']}}</mat-chip>
+                  <mat-chip-list *ngIf="row.coupon">
+                    <mat-chip style="background-color:#ff6363" selected="true">{{row.coupon['code']}}</mat-chip>
                   </mat-chip-list>
                   <mat-chip-list *ngIf="row.coupon==null">
                     <mat-chip style="background-color:#3b6fff" selected="true">{{ 'TRIP.NOCOUPON' | translate }}</mat-chip>
                   </mat-chip-list>
-        
+
                 </ng-template>
               </ngx-datatable-column>
 

@@ -39,6 +39,7 @@ export class editCarComponent implements OnInit {
   isVip = false
   isAirportCar = false
   isCityCar = false
+  carAirport = [];
 
   years = [];
 
@@ -171,7 +172,26 @@ export class editCarComponent implements OnInit {
         "name": element.nameEn
       })
     });
-    console.log(this.carSublocations);
+    this.mainServ.loaderSer.display(true);
+    var filter = { "where": { "status": "active", "locationId": event.value } }
+    this.mainServ.APIServ.get("airports?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
+      if (this.mainServ.APIServ.getErrorCode() == 0) {
+        data.forEach(element => {
+          this.carAirport.push({
+            "priceOneWay": 0,
+            "priceTowWay": 0,
+            "airportId": element.id,
+            "name": element.nameEn
+          })
+        });
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
+      }
+    })
+
   }
 
 
@@ -187,8 +207,6 @@ export class editCarComponent implements OnInit {
       productionDate: new FormControl('', Validators.required),
 
       pricePerDay: new FormControl('', Validators.required),
-      priceOneWay: new FormControl('', Validators.required),
-      priceTowWay: new FormControl('', Validators.required),
 
       locationId: new FormControl('', Validators.required),
       driverId: new FormControl('', Validators.required),
@@ -219,6 +237,31 @@ export class editCarComponent implements OnInit {
                     mainthis.mainServ.loaderSer.display(false);
                     if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
                       mainthis.car = data;
+                      var filter = { "where": { "status": "active", "locationId": mainthis.car.locationId } }
+                      mainthis.mainServ.loaderSer.display(true);
+                      mainthis.mainServ.APIServ.get("airports?filter=" + JSON.stringify(filter)).subscribe((airports: any) => {
+                        mainthis.mainServ.loaderSer.display(false);
+                        if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
+                          airports.forEach(element => {
+                            var priceOneWay = 0
+                            var priceTowWay = 0
+                            var tempAirport = data['carsAirport'].find(x => x.airportId === element.id)
+                            if (tempAirport != null) {
+                              priceOneWay = tempAirport.priceOneWay
+                              priceTowWay = tempAirport.priceTowWay
+                            }
+                            mainthis.carAirport.push({
+                              "priceOneWay": priceOneWay,
+                              "priceTowWay": priceTowWay,
+                              "carId": mainthis.carId,
+                              "airportId": element.id,
+                              "name": element.nameEn
+                            })
+                          });
+
+                        }
+                      })
+
                       console.log(data);
                       mainthis.media = data.media;
                       mainthis.images[0] = data.media
@@ -250,8 +293,6 @@ export class editCarComponent implements OnInit {
                         productionDate: new FormControl(data.productionDate, Validators.required),
 
                         pricePerDay: new FormControl(data.pricePerDay, Validators.required),
-                        priceOneWay: new FormControl(data.priceOneWay, Validators.required),
-                        priceTowWay: new FormControl(data.priceTowWay, Validators.required),
 
                         locationId: new FormControl(data.locationId, Validators.required),
                         driverId: new FormControl(data.driverId, Validators.required),
@@ -320,6 +361,8 @@ export class editCarComponent implements OnInit {
     data['isVip'] = this.isVip;
     data['color1'] = this.primaryColor.substr(1);
     data['color2'] = this.secondryColor.substr(1);
+    data['carsAirport'] = this.carAirport;
+
     console.log(data);
     this.mainServ.APIServ.put("cars/" + this.carId, data).subscribe((data: any) => {
       if (this.mainServ.APIServ.getErrorCode() == 0) {

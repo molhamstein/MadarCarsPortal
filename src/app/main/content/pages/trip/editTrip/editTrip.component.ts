@@ -55,7 +55,9 @@ export class editTripComponent implements OnInit {
   carAvailable = [];
   tripSublocations = [];
   carsSublocations = [];
-
+  airports = []
+  carAirport = {}
+  coupon = {};
   mainTripdays = 0;
   tripdays = 0;
   subLocationDays = 0;
@@ -63,6 +65,9 @@ export class editTripComponent implements OnInit {
   airportPrice = 0;
   location;
   subLocationId
+  newData = false;
+  startTime;
+  endTime;
 
 
   constructor(
@@ -74,6 +79,22 @@ export class editTripComponent implements OnInit {
     private translationLoader: FuseTranslationLoaderService,
   ) {
     this.translationLoader.loadTranslations(english);
+  }
+
+  changeLocation(event) {
+    this.mainServ.loaderSer.display(true);
+    var filter = { "where": { "status": "active", "locationId": event.value } }
+    this.mainServ.APIServ.get("airports?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
+      if (this.mainServ.APIServ.getErrorCode() == 0) {
+        this.airports = data
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
+      }
+    })
+
   }
 
 
@@ -139,6 +160,7 @@ export class editTripComponent implements OnInit {
     this.stepOneForm = new FormGroup({
       locationId: new FormControl('', Validators.required),
       ownerId: new FormControl('', Validators.required),
+      airportId: new FormControl(''),
       note: new FormControl('')
     });
     this.stepSecForm = new FormGroup({
@@ -164,6 +186,25 @@ export class editTripComponent implements OnInit {
           this.mainServ.loaderSer.display(false);
           if (this.mainServ.APIServ.getErrorCode() == 0) {
             this.locations = data;
+            var mainthis = this;
+            this.getParams("id", function (id) {
+              mainthis.tripId = id;
+              mainthis.mainServ.loaderSer.display(true);
+              mainthis.mainServ.APIServ.get("trips/" + mainthis.tripId).subscribe((data: any) => {
+                mainthis.mainServ.loaderSer.display(false);
+                if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
+                  mainthis.trip = data;
+                  if (data.couponId)
+                    mainthis.coupon = data.coupon
+                  mainthis.prerperData(data);
+                  mainthis.changeLocation({ "value": data.locationId })
+                }
+                else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
+                  mainthis.mainServ.APIServ.setErrorCode(0);
+                  mainthis.dialogServ.someThingIsError();
+                }
+              })
+            })
           }
           else if (this.mainServ.APIServ.getErrorCode() != 401) {
             this.mainServ.APIServ.setErrorCode(0);
@@ -175,23 +216,6 @@ export class editTripComponent implements OnInit {
         this.mainServ.APIServ.setErrorCode(0);
         this.dialogServ.someThingIsError();
       }
-    })
-
-    var mainthis = this;
-    this.getParams("id", function (id) {
-      mainthis.tripId = id;
-      mainthis.mainServ.loaderSer.display(true);
-      mainthis.mainServ.APIServ.get("trips/" + mainthis.tripId).subscribe((data: any) => {
-        mainthis.mainServ.loaderSer.display(false);
-        if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
-          mainthis.trip = data;
-          mainthis.prerperData(data);
-        }
-        else if (mainthis.mainServ.APIServ.getErrorCode() != 401) {
-          mainthis.mainServ.APIServ.setErrorCode(0);
-          mainthis.dialogServ.someThingIsError();
-        }
-      })
     })
   }
 
@@ -217,6 +241,7 @@ export class editTripComponent implements OnInit {
     this.stepOneForm = new FormGroup({
       locationId: new FormControl(data.locationId, Validators.required),
       ownerId: new FormControl(data.ownerId, Validators.required),
+      airportId: new FormControl(data.airportId),
       note: new FormControl(data.note)
     });
 
@@ -229,6 +254,9 @@ export class editTripComponent implements OnInit {
     this.getTypeTrip()
 
     this.allData['locationId'] = this.stepOneForm.value.locationId
+    if (this.isFromAirport || this.isToAirport)
+      this.allData['airportId'] = this.stepOneForm.value.airportId
+
     this.allData['ownerId'] = this.stepOneForm.value.ownerId;
     this.allData['note'] = this.stepOneForm.value.note;
     this.allData['fromAirport'] = this.isFromAirport;
@@ -239,7 +267,8 @@ export class editTripComponent implements OnInit {
     this.location = this.locations.find(function (element) {
       return element.id.toString() == locationId.toString();
     });
-    console.log(this.location);
+    console.log("this.location");
+    console.log(this.locations);
     this.subLocationId = [];
     this.location.subLocations.forEach(element => {
       if (element.status == "active")
@@ -321,6 +350,13 @@ export class editTripComponent implements OnInit {
     var selectedCar = this.carAvailable.find(function (element) {
       return element.id.toString() == carId.toString();
     });
+    var airportId = this.allData['airportId']
+    var selectedCarAirport = selectedCar.carsAirport.find(function (element) {
+      return element.airportId.toString() == airportId
+    });
+    this.carAirport = selectedCarAirport;
+    console.log("selectedCarAirport")
+    console.log(selectedCarAirport)
     this.allData['driverId'] = selectedCar.driverId
     this.allData['pricePerDay'] = selectedCar.pricePerDay
     this.allData['priceOneWay'] = selectedCar.priceOneWay
@@ -333,21 +369,21 @@ export class editTripComponent implements OnInit {
       this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['startInCityDate'], this.allData['endInCityDate']) / 24);
     }
     else if (this.tripType == "toAirport") {
-      this.airportPrice = selectedCar.priceOneWay;
+      this.airportPrice = selectedCarAirport.priceOneWay;
     }
     else if (this.tripType == "fromAirportAndCity") {
-      this.airportPrice = selectedCar.priceOneWay;
+      this.airportPrice = selectedCarAirport.priceOneWay;
       this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['fromAirportDate'], this.allData['endInCityDate']) / 24);
     }
     else if (this.tripType == "fromAirportAndToAirport") {
-      this.airportPrice = selectedCar.priceTowWay;
+      this.airportPrice = selectedCarAirport.priceTowWay;
     }
     else if (this.tripType == "cityAndToAirport") {
-      this.airportPrice = selectedCar.priceOneWay;
+      this.airportPrice = selectedCarAirport.priceOneWay;
       this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['startInCityDate'], this.allData['toAirportDate']) / 24);
     }
     else if (this.tripType == "fromAirportAndCityAndToAirport") {
-      this.airportPrice = selectedCar.priceTowWay;
+      this.airportPrice = selectedCarAirport.priceTowWay;
       this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['fromAirportDate'], this.allData['toAirportDate']) / 24);
     }
 
@@ -568,6 +604,7 @@ export class editTripComponent implements OnInit {
   anyChange(stepNum) {
     if (stepNum == 1) {
       if (this.stepOneForm.value.locationId == this.trip['locationId'] &&
+        this.stepOneForm.value.airportId == this.trip['airportId'] &&
         this.isFromAirport == this.trip['fromAirport'] &&
         this.isToAirport == this.trip['toAirport'] &&
         this.isInCity == this.trip['inCity']
@@ -592,7 +629,6 @@ export class editTripComponent implements OnInit {
     }
   }
 
-  newData = false;
 
   back(stepNum) {
     this.activeLink = this.links[stepNum - 1].name;
@@ -648,7 +684,7 @@ export class editTripComponent implements OnInit {
         this.stepthreeForm = new FormGroup({
           carId: new FormControl('', Validators.required)
         });
-        this.newData == true
+        this.newData = true
       }
       this.totalPrice = 0;
       var firstDate = this.stepSecForm.value['first']
@@ -662,6 +698,9 @@ export class editTripComponent implements OnInit {
             this.mainServ.APIServ.get("cars/getAvailable?flags=" + JSON.stringify(flags) + "&dates=" + JSON.stringify(this.carDate) + "&locationId=" + this.allData['locationId'] + "&tripId=" + this.tripId).subscribe((data: any) => {
               if (this.mainServ.APIServ.getErrorCode() == 0) {
                 this.carAvailable = data;
+                if (this.newData == false) {
+                  this.doSomething(this.trip['carId']);
+                }
                 this.activeLink = this.links[stepNum - 1].name;
                 if (data.length == 0)
                   this.mainServ.globalServ.openSnackBar(3);
@@ -725,7 +764,6 @@ export class editTripComponent implements OnInit {
 
         })
       } else {
-        this.doSomething(this.trip['carId']);
         var daysInSub = 0;
         for (let index = 0; index < this.tripSublocations.length; index++) {
           const element = this.tripSublocations[index];
@@ -740,12 +778,31 @@ export class editTripComponent implements OnInit {
     }
   }
 
+  calcPrice(price) {
+    if (this.coupon['value'] == null)
+      return price;
+    if (this.coupon['type'] == "fixed") {
+      if ((price - this.coupon['value']) < 0)
+        return 0
+      return price - this.coupon['value']
+    }
+    else if (this.coupon['type'] == "percentage")
+      if ((price - (price * this.coupon['value'] / 100)) < 0)
+        return 0
+
+    return price - (price * this.coupon['value'] / 100)
+
+  }
+
 
   edit() {
     if (this.activeLink == "step4")
       this.allData['tripSublocations'] = this.tripSublocations
     this.allData['carId'] = this.stepthreeForm.value['carId']
     this.allData['cost'] = this.totalPrice + this.subLocaationPrice + this.airportPrice
+    this.allData['costBeforCoupon'] = this.totalPrice + this.subLocaationPrice + this.airportPrice
+    this.allData['cost'] = this.calcPrice(this.totalPrice + this.subLocaationPrice + this.airportPrice)
+
     this.allData['daysInCity'] = this.tripdays;
     this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.put("trips/editMethod/" + this.tripId, { "data": this.allData }).subscribe((data: any) => {
@@ -774,8 +831,6 @@ export class editTripComponent implements OnInit {
     this.mainServ.globalServ.goTo('trips')
   }
 
-  startTime;
-  endTime;
   formatStartTime(object) {
     if (object == null) {
       if (this.startTime == null)

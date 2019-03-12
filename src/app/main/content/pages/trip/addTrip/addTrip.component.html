@@ -25,7 +25,6 @@
     </nav>
 
     <form [formGroup]="stepOneForm" *ngIf="activeLink=='step1'">
-
       <div style="width: 100%;">
         <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
           fxFlex>
@@ -38,7 +37,8 @@
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
           <mat-form-field fxFlex="45">
-            <mat-select placeholder="{{ 'TRIP.LOCATION' | translate }}" formControlName="locationId">
+            <mat-select (selectionChange)="changeLocation($event)" placeholder="{{ 'TRIP.LOCATION' | translate }}"
+              formControlName="locationId">
               <mat-option *ngFor="let oneLocation of locations" [value]="oneLocation.id">
                 {{oneLocation.nameEn}}
               </mat-option>
@@ -57,6 +57,13 @@
               [(ngModel)]="isInCity">{{
               'TRIP.INCITY' | translate }}</mat-checkbox>
           </section>
+          <mat-form-field *ngIf="isFromAirport || isToAirport" fxFlex="95">
+            <mat-select placeholder="{{ 'TRIP.AIRPORT' | translate }}" formControlName="airportId">
+              <mat-option *ngFor="let oneAirports of airports" [value]="oneAirports.id">
+                {{oneAirports.nameEn}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
 
           <mat-form-field fxFlex="95">
             <textarea matInput placeholder="{{ 'TRIP.NOTE' | translate }}" formControlName="note"></textarea>
@@ -155,12 +162,12 @@
           <div fxFlex="90" *ngIf="!stepthreeForm.invalid">
             <mat-form-field fxFlex="70">
               <input matInput placeholder="{{ 'TRIP.COUPON' | translate }}" [(ngModel)]="couponCode" [ngModelOptions]="{standalone: true}">
-              <mat-icon matSuffix *ngIf="verifyCoupon==null">map</mat-icon>
+              <mat-icon matSuffix *ngIf="verifyCoupon==null">local_offer</mat-icon>
               <mat-icon matSuffix *ngIf="verifyCoupon==true" style="color: rgba(18, 218, 0, 0.733)">done</mat-icon>
               <mat-icon matSuffix *ngIf="verifyCoupon==false" style="color: rgba(218, 0, 0, 0.733)">clear</mat-icon>
             </mat-form-field>
             <div fxFlex="20">
-              <button mat-button  class="addButton" (click)="checkCoupon()">{{'TRIP.CHECKCOUPON'
+              <button mat-button class="addButton" (click)="checkCoupon()">{{'TRIP.CHECKCOUPON'
                 | translate}}</button>
             </div>
           </div>

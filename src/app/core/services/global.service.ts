@@ -508,7 +508,6 @@ export class GlobalService {
 
   isActive(itemId) {
     let path = window.location.href
-    console.log(path.includes(itemId));
     if (path.indexOf(itemId) == -1)
       return false
     else

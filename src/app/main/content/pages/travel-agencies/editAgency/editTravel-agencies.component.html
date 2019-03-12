@@ -119,7 +119,7 @@
               </button>
 
               <div class="logo" fxLayout="row" fxLayoutAlign="start center">
-                <mat-icon class="logo-icon mr-16">account_box</mat-icon>
+                <mat-icon class="logo-icon mr-16">local_offer</mat-icon>
                 <span class="logo-text h1">{{'COUPON.ALLCOUPON.TITLE' | translate}}</span>
 
               </div>
@@ -142,10 +142,12 @@
 
 
           </div>
+
           <div class="contentAr">
 
             <ngx-datatable class="material vertical-scroll" [rows]="filterCouponRows" [headerHeight]="50" [rowHeight]="50"
               [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="isEnLang()">
+
               <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="code">
                 <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
                   <span>{{ 'COUPON.CODE' | translate }}</span>
@@ -164,7 +166,7 @@
                 </ng-template>
 
               </ngx-datatable-column>
-              <ngx-datatable-column [canAutoResize]="true"  [flexGrow]="1" prop="numberOfUses">
+              <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="numberOfUses">
                 <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
                   <span>{{ 'COUPON.NUMBEROFUSES' | translate }}</span>
                 </ng-template>
@@ -220,7 +222,7 @@
 
 
 
-              <ngx-datatable-column [canAutoResize]="true"  [flexGrow]="1" prop="createdAt">
+              <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="createdAt">
                 <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
                   <span>{{ 'Global.CREATEDAT' | translate }}</span>
                 </ng-template>
@@ -231,7 +233,13 @@
                 </ng-template>
               </ngx-datatable-column>
 
-
+              <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="">
+                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                  <button mat-mini-fab class="mr-16" (click)="openCoupon(row)" style="background-color: rgba(20, 160, 202, 0.911);">
+                    <mat-icon style="color : white;">edit</mat-icon>
+                  </button>
+                </ng-template>
+              </ngx-datatable-column>
             </ngx-datatable>
           </div>
         </div>
@@ -252,7 +260,7 @@
               </button>
 
               <div class="logo" fxLayout="row" fxLayoutAlign="start center">
-                <mat-icon class="logo-icon mr-16">account_box</mat-icon>
+                <mat-icon class="logo-icon mr-16">airplanemode_active</mat-icon>
                 <span class="logo-text h1">{{'TRIP.ALLTRIP.TITLE' | translate}}</span>
 
               </div>

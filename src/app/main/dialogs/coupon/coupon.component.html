@@ -14,8 +14,9 @@
       <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
         fxFlex>
         <mat-form-field fxFlex="30">
-          <input matInput placeholder="{{ 'COUPON.CODE' | translate }}" formControlName="code" required>
-          <mat-icon matSuffix>people</mat-icon>
+          <input matInput placeholder="{{ 'COUPON.CODE' | translate }}" formControlName="code"
+            required>
+          <mat-icon matSuffix>local_offer</mat-icon>
           <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
         </mat-form-field>
         <mat-form-field fxFlex="30">
@@ -28,17 +29,19 @@
         </mat-form-field>
         <mat-form-field fxFlex="30">
           <input matInput placeholder="{{ 'COUPON.VALUE' | translate }}" formControlName="value" required>
-          <mat-icon matSuffix>people</mat-icon>
+          <mat-icon matSuffix>local_atm</mat-icon>
           <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
         </mat-form-field>
         <mat-form-field fxFlex="45">
-          <input type="number" matInput placeholder="{{ 'COUPON.NUMBEROFUSES' | translate }}" formControlName="numberOfUses" required>
-          <mat-icon matSuffix>people</mat-icon>
+          <input type="number" matInput placeholder="{{ 'COUPON.NUMBEROFUSES' | translate }}" formControlName="numberOfUses"
+            required>
+          <mat-icon matSuffix>plus_one</mat-icon>
           <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
         </mat-form-field>
         <mat-form-field fxFlex="45">
-          <input type="number" matInput placeholder="{{ 'COUPON.NUMBEROFUSED' | translate }}" formControlName="numberOfUsed" required>
-          <mat-icon matSuffix>people</mat-icon>
+          <input type="number" matInput placeholder="{{ 'COUPON.NUMBEROFUSED' | translate }}" formControlName="numberOfUsed"
+            required>
+          <mat-icon matSuffix>plus_one</mat-icon>
           <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
         </mat-form-field>
 
@@ -63,10 +66,16 @@
 
   <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="space-between center">
 
-    <button mat-raised-button class="save-button mat-accent" (click)="save()" [disabled]="couponForm.invalid"
+    <button mat-raised-button class="save-button mat-accent" (click)="save()" *ngIf="isNew" [disabled]="couponForm.invalid"
       aria-label="SAVE">
       {{ 'Global.ADD' | translate }}
     </button>
+    <button mat-raised-button class="save-button mat-accent" (click)="save()" *ngIf="isNew==false" [disabled]="couponForm.invalid"
+      aria-label="SAVE">
+      {{ 'Global.EDIT' | translate }}
+    </button>
+
+
     <!-- <button mat-raised-button class="save-button mat-accent" (click)="save(false,startPicker,endPicker)" [disabled]="couponForm.invalid" aria-label="SAVE">
             {{ 'Dialog.Add_Slotes.SAVE' | translate }}
         </button> -->

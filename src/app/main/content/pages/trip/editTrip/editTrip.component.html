@@ -11,7 +11,7 @@
         {{'TRIP.EDITTRIP.TITLE' | translate}}
       </span>
     </div>
-    <div style="font-size: 20px">{{'TRIP.PRICE' | translate}} : {{totalPrice+subLocaationPrice+airportPrice}}</div>
+    <div style="font-size: 20px">{{'TRIP.PRICE' | translate}} : {{calcPrice(totalPrice+subLocaationPrice+airportPrice)}}</div>
 
 
   </div>
@@ -26,7 +26,7 @@
       </a>
     </nav>
     <form [formGroup]="stepOneForm" *ngIf="activeLink=='step1'">
-
+      {{stepOneForm.value | json}}
       <div style="width: 100%;">
         <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
           fxFlex>
@@ -58,6 +58,14 @@
               [(ngModel)]="isInCity">{{
               'TRIP.INCITY' | translate }}</mat-checkbox>
           </section>
+
+          <mat-form-field *ngIf="isFromAirport || isToAirport" fxFlex="95">
+            <mat-select placeholder="{{ 'TRIP.AIRPORT' | translate }}" formControlName="airportId">
+              <mat-option *ngFor="let oneAirports of airports" [value]="oneAirports.id">
+                {{oneAirports.nameEn}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
 
           <mat-form-field fxFlex="95">
             <textarea matInput placeholder="{{ 'TRIP.NOTE' | translate }}" formControlName="note"></textarea>
@@ -159,7 +167,8 @@
         </div>
       </div>
       <div style="float: rightt;">
-        <button mat-button *ngIf="links[3]!=null" class="addButton" (click)="next(4,null,null)" cdkFocusInitial [disabled]="stepthreeForm.invalid">{{'Global.NEXT'
+        <button mat-button *ngIf="links[3]!=null" class="addButton" (click)="next(4,null,null)" cdkFocusInitial
+          [disabled]="stepthreeForm.invalid">{{'Global.NEXT'
           | translate}}</button>
       </div>
       <div style="float: rightt;">

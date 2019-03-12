@@ -27,6 +27,7 @@ export class addTripComponent implements OnInit {
   coupon = {};
   verifyCoupon;
   couponCode = null
+  carAirport = {};
   totalPrice = 0;
   subLocaationPrice = 0;
   links = [
@@ -55,7 +56,7 @@ export class addTripComponent implements OnInit {
   carAvailable = [];
   tripSublocations = [];
   carsSublocations = [];
-
+  airports = [];
   mainTripdays = 0;
   tripdays = 0;
   subLocationDays = 0;
@@ -64,7 +65,22 @@ export class addTripComponent implements OnInit {
   location;
   subLocationId
 
-  private exportTime = { hour: 7, minute: 15, meriden: 'PM', format: 24 };
+
+  changeLocation(event) {
+    this.mainServ.loaderSer.display(true);
+    var filter = { "where": { "status": "active", "locationId": event.value } }
+    this.mainServ.APIServ.get("airports?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
+      if (this.mainServ.APIServ.getErrorCode() == 0) {
+        this.airports = data
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
+      }
+    })
+
+  }
 
 
   startPicker = { "userTimeChange": { "_isScalar": false, "observers": [], "closed": false, "isStopped": false, "hasError": false, "thrownError": null, "__isAsync": false }, "onRevert": { "_isScalar": false, "observers": [], "closed": false, "isStopped": false, "hasError": false, "thrownError": null, "__isAsync": false }, "onSubmit": { "_isScalar": false, "observers": [], "closed": false, "isStopped": false, "hasError": false, "thrownError": null, "__isAsync": false }, "VIEW_HOURS": 1, "VIEW_MINUTES": 2, "currentView": 1, "_inputSubscription": { "closed": true, "_parent": null, "_parents": null, "_subscriptions": null }, "color": "primary", "revertLabel": "Cancel", "submitLabel": "OK", "userTime": { "hour": 3, "minute": 15, "meriden": "PM", "format": 12 } };
@@ -117,33 +133,39 @@ export class addTripComponent implements OnInit {
     var selectedCar = this.carAvailable.find(function (element) {
       return element.id.toString() == event.value.toString();
     });
+    var airportId = this.allData['airportId']
+    var selectedCarAirport = selectedCar.carsAirport.find(function (element) {
+      return element.airportId.toString() == airportId
+    });
+    this.carAirport = selectedCarAirport;
     this.allData['driverId'] = selectedCar.driverId
     this.allData['pricePerDay'] = selectedCar.pricePerDay
-    this.allData['priceOneWay'] = selectedCar.priceOneWay
-    this.allData['priceTowWay'] = selectedCar.priceTowWay
+    this.allData['priceOneWay'] = selectedCarAirport.priceOneWay
+    this.allData['priceTowWay'] = selectedCarAirport.priceTowWay
     this.pricePerDay = selectedCar.pricePerDay;
     if (this.tripType == "fromAirport") {
-      this.airportPrice = selectedCar.priceOneWay;
+      this.airportPrice = selectedCarAirport['priceOneWay'];
     }
     else if (this.tripType == "city") {
       this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['startInCityDate'], this.allData['endInCityDate']) / 24);
     }
     else if (this.tripType == "toAirport") {
-      this.airportPrice = selectedCar.priceOneWay;
+      this.airportPrice = selectedCarAirport['priceOneWay'];
     }
     else if (this.tripType == "fromAirportAndCity") {
-      this.airportPrice = selectedCar.priceOneWay;
+      this.airportPrice = selectedCarAirport['priceOneWay'];
       this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['fromAirportDate'], this.allData['endInCityDate']) / 24);
     }
     else if (this.tripType == "fromAirportAndToAirport") {
-      this.airportPrice = selectedCar.priceTowWay;
+      this.airportPrice = selectedCarAirport['priceTowWay'];
+
     }
     else if (this.tripType == "cityAndToAirport") {
-      this.airportPrice = selectedCar.priceOneWay;
+      this.airportPrice = selectedCarAirport['priceOneWay'];
       this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['startInCityDate'], this.allData['toAirportDate']) / 24);
     }
     else if (this.tripType == "fromAirportAndCityAndToAirport") {
-      this.airportPrice = selectedCar.priceTowWay;
+      this.airportPrice = selectedCarAirport['priceTowWay'];
       this.totalPrice = selectedCar.pricePerDay * (this.differenceInHourse(this.allData['fromAirportDate'], this.allData['toAirportDate']) / 24);
     }
 
@@ -166,7 +188,7 @@ export class addTripComponent implements OnInit {
     this.stepOneForm = new FormGroup({
       locationId: new FormControl('', Validators.required),
       ownerId: new FormControl('', Validators.required),
-      testTime: new FormControl(''),
+      airportId: new FormControl(''),
       note: new FormControl(''),
     });
     this.stepSecForm = new FormGroup({
@@ -393,6 +415,9 @@ export class addTripComponent implements OnInit {
       this.allData['fromAirport'] = this.isFromAirport;
       this.allData['toAirport'] = this.isToAirport;
       this.allData['inCity'] = this.isInCity;
+      if (this.isToAirport || this.isFromAirport) {
+        this.allData['airportId'] = this.stepOneForm.value.airportId;
+      }
       var locationId = this.allData['locationId']
       this.location = this.locations.find(function (element) {
         return element.id.toString() == locationId.toString();
@@ -497,6 +522,13 @@ export class addTripComponent implements OnInit {
     this.allData['cost'] = this.calcPrice(this.totalPrice + this.subLocaationPrice + this.airportPrice)
     this.allData['daysInCity'] = this.tripdays;
     this.mainServ.loaderSer.display(true);
+    if (this.allData['fromAirport'] || this.allData['toAirport']) {
+      this.allData["priceOneWay"] = this.carAirport["priceOneWay"];
+      this.allData["priceTowWay"] = this.carAirport["priceTowWay"];
+    } else {
+      this.allData["priceOneWay"] = 0
+      this.allData["priceTowWay"] = 0
+    }
     this.mainServ.APIServ.post("trips", this.allData).subscribe((data: any) => {
       this.mainServ.loaderSer.display(false);
       if (this.mainServ.APIServ.getErrorCode() == 0) {

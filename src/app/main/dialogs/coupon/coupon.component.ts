@@ -32,7 +32,7 @@ export class CouponComponent {
 
     ) {
         this.isNew = data["isNew"];
-        if (this.isNew == false)
+        if (this.isNew == true)
             this.couponForm = new FormGroup({
                 from: new FormControl('', Validators.required),
                 to: new FormControl('', Validators.required),
@@ -43,6 +43,20 @@ export class CouponComponent {
                 numberOfUsed: new FormControl(0, Validators.required),
                 travelAgencyId: new FormControl(data['travelAgencyId'], Validators.required)
             });
+        else {
+            this.coupon = data['coupon']
+            this.couponForm = new FormGroup({
+                from: new FormControl(new Date(this.coupon.from), Validators.required),
+                to: new FormControl(new Date(this.coupon.to), Validators.required),
+                value: new FormControl(this.coupon.value, Validators.required),
+                type: new FormControl(this.coupon.type, Validators.required),
+                code: new FormControl({ value: this.coupon.code, disabled: true }, Validators.required),
+                numberOfUses: new FormControl(this.coupon.numberOfUses, Validators.required),
+                numberOfUsed: new FormControl(this.coupon.numberOfUsed, Validators.required),
+                travelAgencyId: new FormControl(data['travelAgencyId'], Validators.required)
+            });
+
+        }
     }
 
     convertTo24(str) {
@@ -78,20 +92,29 @@ export class CouponComponent {
 
         data['to'].setHours(23);
         data['to'].setMinutes(59);
+        if (this.isNew)
+            this.mainServ.APIServ.post("coupons", data).subscribe((data: any) => {
+                if (this.mainServ.APIServ.getErrorCode() == 0) {
+                    this.dialogRef.close(true);
+                }
+                else if (this.mainServ.APIServ.getErrorCode() == 461) {
+                    this.dialogServ.errorMessage(461);
+                }
+                else if (this.mainServ.APIServ.getErrorCode() != 401) {
+                    this.mainServ.APIServ.setErrorCode(0);
+                }
+            });
+        else {
+            this.mainServ.APIServ.put("coupons/" + this.coupon.id, data).subscribe((data: any) => {
+                if (this.mainServ.APIServ.getErrorCode() == 0) {
+                    this.dialogRef.close(true);
+                }
+                else if (this.mainServ.APIServ.getErrorCode() != 401) {
+                    this.mainServ.APIServ.setErrorCode(0);
+                }
+            });
 
-
-        console.log(data);
-        this.mainServ.APIServ.post("coupons", data).subscribe((data: any) => {
-            if (this.mainServ.APIServ.getErrorCode() == 0) {
-                this.dialogRef.close(true);
-            }
-            else if (this.mainServ.APIServ.getErrorCode() == 461) {
-                this.dialogServ.errorMessage(461);
-            }
-            else if (this.mainServ.APIServ.getErrorCode() != 401) {
-                this.mainServ.APIServ.setErrorCode(0);
-            }
-        });
+        }
     }
 
 }

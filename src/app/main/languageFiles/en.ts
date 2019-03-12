@@ -109,13 +109,15 @@ export const locale = {
             "NAME": "Name",
             "RATE": "Rate",
             "STATUS": "Status",
-            "VACATION":"Vacation",
+            "VACATION": "Vacation",
             "ADDVACATION": "Add Vacation",
             "NUMBEROFSEAT": "Number Of Seats",
             "ISVIP": "Is Vip",
             "PRICEPERDAY": "City Tour Per Day",
             "PRICEONEWAY": "Airport Transportation One Way",
             "PRICETOWWAY": "Airport Transportation Tow Way",
+            "ONEWAYIN": "Transportation One Way in",
+            "TOWWAYIN": "Transportation Tow Way in",
             "PRODUCTIONDATE": "Production Date",
             "ENGINTYPE": "Engine Type",
             "TYPE": "Type",
@@ -130,6 +132,7 @@ export const locale = {
             "DRIVERUSERNAME": "Driver Username",
             "DRIVERNAME": "Driver Name",
             "SUBLOCATIONS": "Nearby Citys",
+            "AIRPORT": "Airport",
             "ALLCAR": {
                 "TITLE": "Car",
                 "ADDCAR": "Add Car",
@@ -276,6 +279,7 @@ export const locale = {
             "STARTINCITYDATE": "Start In City Date",
             "ENDINCITYDATE": "End In City Date",
             "CAR": "Car",
+            "AIRPORT": "Airport",
             "CARNAME": "Car Name",
             "COUPON": "Coupon",
             "NOCOUPON": "No Coupon",
@@ -369,6 +373,24 @@ export const locale = {
                 "TITLE": "Edit Predefined Trip"
             }
         },
+        "AIRPORT": {
+            "NAMEEN": "English Name",
+            "NAMEAR": "Arabic Name",
+            "NAMETR": "Turkish Name",
+            "LOCATION": "Location",
+            "STATUS": "Status",
+            "ALLAIRPORT": {
+                "TITLE": "Airport",
+                "ADDAIRPORT": "Add Airport",
+                "SEARCH": "Search for airport"
+            },
+            "ADDAIRPORT": {
+                "TITLE": "Add Airport"
+            },
+            "EDITAIRPORT": {
+                "TITLE": "Edit Airport"
+            }
+        },
         "RATE": {
             "TITLE": "Rate",
             "USER": "User",
@@ -409,6 +431,8 @@ export const locale = {
         "MESSAGES": {
             "DEACTIVELOCATION": "Do you want to deactivate this location",
             "ACTIVELOCATION": "Do you want to activate this location",
+            "DEACTIVEAIRPORT": "Do you want to deactivate this airport",
+            "ACTIVEAIRPORT": "Do you want to activate this airport",
             "DEACTIVESUBLOCATION": "Do you want to deactivate this nearby city",
             "ACTIVESUBLOCATION": "Do you want to activate this nearby city",
             "DEACTIVECAR": "Do you want to deactivate this car",

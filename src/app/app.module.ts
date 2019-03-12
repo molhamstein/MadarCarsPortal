@@ -78,6 +78,9 @@ import { addTravelAgenciesComponent } from './main/content/pages/travel-agencies
 import { editTravelAgenciesComponent } from './main/content/pages/travel-agencies/editAgency/editTravel-agencies.component';
 import { CouponComponent } from './main/dialogs/coupon/coupon.component';
 import { tripCouponComponent } from './main/dialogs/trip-coupon/trip-coupon.component';
+import { addAirportComponent } from './main/content/pages/airport/addAirport/addAirport.component';
+import { airportsComponent } from './main/content/pages/airport/airports/airports.component';
+import { editAirportComponent } from './main/content/pages/airport/editAirport/editAirport.component';
 
 
 
@@ -279,6 +282,22 @@ const appRoutes: Routes = [
 
     },
     {
+        path: 'airports',
+        component: airportsComponent,
+        canActivate: [AuthGuardService]
+    },
+    {
+        path: 'add-airport',
+        component: addAirportComponent,
+        canActivate: [AuthGuardService]
+    },
+    {
+        path: 'edit-airport/:id',
+        component: editAirportComponent,
+        canActivate: [AuthGuardService]
+
+    },
+    {
         path: 'travel-agencies',
         component: travelAgenciesComponent,
         canActivate: [AuthGuardService]
@@ -361,9 +380,10 @@ const appRoutes: Routes = [
         ratesComponent,
         // // Agency
         agenciesComponent, addAgencyComponent, editAgencyComponent,
-
         // // Travel Agencies
         travelAgenciesComponent, addTravelAgenciesComponent, editTravelAgenciesComponent,
+        // // Airport
+        addAirportComponent, airportsComponent, editAirportComponent,
         // dialogs
         SomeThingIsErrorComponent, FilterComponent, tripCouponComponent, CouponComponent, AddVacationComponent, MakeRateComponent, ConfirmMessageComponent, ErrorMessageComponent, MyResetPasswordComponent, TimeComponent
     ],

@@ -116,6 +116,8 @@ export const locale = {
             "PRICEPERDAY": "جولة بالمدينة ليوم واحد",
             "PRICEONEWAY": "انتقال من المطار بتجاه واحد",
             "PRICETOWWAY": "انتقال من المطار بتجاهين",
+            "ONEWAYIN": "انتقال بتجاه واحد في ",
+            "TOWWAYIN": "انتقال بتجاهين في ",
             "PRODUCTIONDATE": "تاريخ التصنيع",
             "ENGINTYPE": "نوع المحرك",
             "TYPE": "نوع",
@@ -130,6 +132,7 @@ export const locale = {
             "DRIVERNAME": "اسم السائق",
             "DRIVERUSERNAME": "اسم السائق",
             "SUBLOCATIONS": "المدن المجاورة",
+            "AIRPORT": "مطار",
             "ALLCAR": {
                 "TITLE": "السيارات",
                 "ADDCAR": "إضافة سيارة",
@@ -278,6 +281,7 @@ export const locale = {
             "STARTINCITYDATE": "تاريخ بداية الرحلة في المدينة",
             "ENDINCITYDATE": "تاريخ نهاية الرحلة في المدينة",
             "CAR": "السيارة",
+            "AIRPORT": "مطار",
             "CARNAME": "اسم السيارة",
             "COUPON": "القسيمة",
             "NOCOUPON": "لا يوجد",
@@ -369,6 +373,24 @@ export const locale = {
                 "TITLE": "تعديل رحلة مجهزة"
             }
         },
+        "AIRPORT": {
+            "NAMEEN": "اسم انكليزي",
+            "NAMEAR": "اسم عربي",
+            "NAMETR": "اسم تركي",
+            "LOCATION": "المدينة",
+            "STATUS": "الحالة",
+            "ALLAIRPORT": {
+                "TITLE": "المطارات",
+                "ADDAIRPORT": "اضافة مطار",
+                "SEARCH": "بحث عن مطار"
+            },
+            "ADDAIRPORT": {
+                "TITLE": "إضافة مطار"
+            },
+            "EDITAIRPORT": {
+                "TITLE": "تعديل مطار"
+            }
+        },
         "RATE": {
             "TITLE": "التقييمات",
             "USER": "الزبون",
@@ -409,6 +431,8 @@ export const locale = {
         "MESSAGES": {
             "DEACTIVELOCATION": "هل تريد تعطيل هذه المدينة ؟",
             "ACTIVELOCATION": "هل تريد تفعيل هذه المدينة ؟",
+            "DEACTIVEAIRPORT": "هل تريد تعطيل هذا المطار ؟",
+            "ACTIVEAIRPORT": "هل تريد تفعيل هذا المطار ؟",
             "DEACTIVESUBLOCATION": "هل تريد تعطيل هذه المدينة المجاورة ؟",
             "ACTIVESUBLOCATION": "هل تريد تفعيل هذه المدينة المجاورة ؟",
             "DEACTIVECAR": "هل تريد تعطيل هذه السيارة ؟",

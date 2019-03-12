@@ -321,9 +321,9 @@ export class editTravelAgenciesComponent implements OnInit {
   }
 
   openCoupon(coupon: any = {}) {
-    var isNew = true
+    var isNew = false
     if (coupon["id"] == null)
-      isNew = false
+      isNew = true
     console.log(coupon)
     let dialogRef = this.dialog.open(CouponComponent, {
       width: '550px',

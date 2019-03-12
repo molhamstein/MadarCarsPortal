@@ -31,6 +31,7 @@ export class addCarComponent implements OnInit {
 
   subLocation = [];
   carSublocations = [];
+  carAirport = [];
   isVip = false
   isAirportCar = true
   isCityCar = true
@@ -148,8 +149,8 @@ export class addCarComponent implements OnInit {
       productionDate: new FormControl('', Validators.required),
 
       pricePerDay: new FormControl('', Validators.required),
-      priceOneWay: new FormControl('', Validators.required),
-      priceTowWay: new FormControl('', Validators.required),
+      // priceOneWay: new FormControl('', Validators.required),
+      // priceTowWay: new FormControl('', Validators.required),
 
       locationId: new FormControl('', Validators.required),
       driverId: new FormControl('', Validators.required),
@@ -172,8 +173,8 @@ export class addCarComponent implements OnInit {
           productionDate: new FormControl('', Validators.required),
 
           pricePerDay: new FormControl('', Validators.required),
-          priceOneWay: new FormControl('', Validators.required),
-          priceTowWay: new FormControl('', Validators.required),
+          // priceOneWay: new FormControl('', Validators.required),
+          // priceTowWay: new FormControl('', Validators.required),
 
           locationId: new FormControl('', Validators.required),
           driverId: new FormControl('', Validators.required),
@@ -234,6 +235,7 @@ export class addCarComponent implements OnInit {
     data['isVip'] = this.isVip;
     data['color1'] = this.primaryColor.substr(1);
     data['color2'] = this.secondryColor.substr(1);
+    data['carsAirport'] = this.carAirport;
     this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.post("cars", data).subscribe((data: any) => {
       this.mainServ.loaderSer.display(false);
@@ -260,7 +262,27 @@ export class addCarComponent implements OnInit {
         "name": element.nameEn
       })
     });
-    console.log(this.carSublocations);
+
+    this.mainServ.loaderSer.display(true);
+    var filter = { "where": { "status": "active", "locationId": event.value } }
+    this.mainServ.APIServ.get("airports?filter=" + JSON.stringify(filter)).subscribe((data: any) => {
+      this.mainServ.loaderSer.display(false);
+      if (this.mainServ.APIServ.getErrorCode() == 0) {
+        data.forEach(element => {
+          this.carAirport.push({
+            "priceOneWay": 0,
+            "priceTowWay": 0,
+            "airportId": element.id,
+            "name": element.nameEn
+          })
+        });
+      }
+      else if (this.mainServ.APIServ.getErrorCode() != 401) {
+        this.mainServ.APIServ.setErrorCode(0);
+        this.dialogServ.someThingIsError();
+      }
+    })
+
   }
 
   back() {
@@ -268,7 +290,7 @@ export class addCarComponent implements OnInit {
   }
 
   deleteImage(i) {
-    this.listImages.splice(i,1);
+    this.listImages.splice(i, 1);
   }
 
 }

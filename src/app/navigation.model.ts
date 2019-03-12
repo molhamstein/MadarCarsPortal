@@ -10,6 +10,13 @@ export class NavigationModel {
                 'url': '/locations'
             },
             {
+                'id': 'airport',
+                'title': 'AIRPORT.ALLAIRPORT.TITLE',
+                'type': 'item',
+                'icon': 'location_city',
+                'url': '/airports'
+            },
+            {
                 'id': 'driver',
                 'title': 'DRIVER.ALLDRIVER.TITLE',
                 'icon': 'insert_emoticon',
