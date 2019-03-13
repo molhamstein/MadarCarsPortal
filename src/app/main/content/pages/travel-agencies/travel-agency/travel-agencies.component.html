@@ -42,12 +42,12 @@
     <ngx-datatable class="material vertical-scroll" [rows]="filterRows" [columnMode]="'force'" [headerHeight]="50"
       [rowHeight]="50" [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="true">
 
-      <ngx-datatable-column [flexGrow]="1"  [width]="150" prop="">
+      <ngx-datatable-column [flexGrow]="1" [width]="150" prop="">
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
           <span></span>
         </ng-template>
         <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-          <img style="width:45px;height: 45px;border-radius: 50%;" src="{{row.media.thumb}}">
+          <img *ngIf="row.media" style="width:45px;height: 45px;border-radius: 50%;" src="{{row.media.thumb}}">
         </ng-template>
       </ngx-datatable-column>
 
@@ -104,7 +104,8 @@
         </ng-template>
 
         <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-          <button mat-mini-fab class="mr-16" (click)="goTo('edit',row['id'])" style="background-color: rgba(20, 160, 202, 0.911);">
+          <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.GOTOEDIT' | translate }}" (click)="goTo('edit',row['id'])"
+            style="background-color: rgba(20, 160, 202, 0.911);">
             <mat-icon style="color : white;">edit</mat-icon>
           </button>
           <button mat-mini-fab class="mr-16" (click)="reset(row['id'])" style="background-color: rgb(45, 50, 62)">

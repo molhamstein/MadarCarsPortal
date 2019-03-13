@@ -131,8 +131,9 @@ export class addLocationComponent implements OnInit {
     });
   }
 
-
   add() {
+    if (this.addLocationForm.invalid) 
+      return
     var data = this.addLocationForm.value;
     data['mediaId'] = this.media.id;
     data['slideMedia'] = [];

@@ -147,6 +147,8 @@ export class addAirportComponent implements OnInit {
 
 
   add() {
+    if (this.addAirportForm.invalid)
+      return
     var data = this.addAirportForm.value;
     this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.post("airports", data).subscribe((data: any) => {

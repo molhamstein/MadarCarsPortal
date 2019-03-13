@@ -105,8 +105,12 @@ export class addTravelAgenciesComponent implements OnInit {
 
 
   add() {
+    if (this.addTravelAgenciesForm.invalid)
+    return
+
     var data = this.addTravelAgenciesForm.value;
-    data['mediaId'] = this.media.id;
+    if (this.media != null)
+      data['mediaId'] = this.media.id;
     this.mainServ.loaderSer.display(true);
 
     this.mainServ.APIServ.post("travelAgencies", data).subscribe((data: any) => {

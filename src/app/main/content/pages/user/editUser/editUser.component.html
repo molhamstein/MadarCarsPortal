@@ -82,7 +82,7 @@
         </div>
       </div>
       <div style="float: rightt;">
-        <button mat-button (click)="edit()" class="editButton" cdkFocusInitial [disabled]="editUserForm.invalid">{{'Global.EDIT'
+        <button mat-button (click)="edit()" class="editButton" cdkFocusInitial >{{'Global.EDIT'
           | translate}}</button>
       </div>
     </form>
@@ -255,7 +255,7 @@
 
 
 
-        <ngx-datatable-column [width]="260" name="id">
+        <ngx-datatable-column [width]="310" name="id">
           <ng-template let-column="column" ngx-datatable-header-template>
             <div class="table-header-font">
 
@@ -263,12 +263,12 @@
           </ng-template>
 
           <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-            <button mat-mini-fab *ngIf="row.status=='finished'" class="mr-16" style="background-color: #8a8a8a;"
+            <button mat-mini-fab *ngIf="row.status=='finished'" matTooltip="{{ 'TOOLTIP.VIEWBILLS' | translate }}" class="mr-16" style="background-color: #8a8a8a;"
               (click)="goTo('bills',row['id'])">
               <mat-icon style="color : white;">subtitles</mat-icon>
             </button>
 
-            <button mat-mini-fab class="mr-16" (click)="goTo('edit',row['id'])" style="background-color: rgba(20, 160, 202, 0.911);">
+            <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.GOTOEDIT' | translate }}" (click)="goTo('edit',row['id'])" style="background-color: rgba(20, 160, 202, 0.911);">
               <mat-icon style="color : white;">edit</mat-icon>
             </button>
             <!-- <button mat-mini-fab *ngIf="row.status=='active'" class="mr-16" (click)="deactivate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
@@ -277,15 +277,15 @@
             <button mat-mini-fab *ngIf="row.status=='deactive'" class="mr-16" (click)="activate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">
               <mat-icon style="color : white;">replay</mat-icon>
             </button> -->
-            <button mat-mini-fab class="mr-16" style="background-color: rgba(7, 112, 7, 0.849);" (click)="goTo('view',row['id'])">
+            <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.GOTOVIEW' | translate }}" style="background-color: rgba(7, 112, 7, 0.849);" (click)="goTo('view',row['id'])">
               <mat-icon style="color : white;">visibility</mat-icon>
             </button>
 
-            <button mat-mini-fab class="mr-16" style="background-color: darkgoldenrod;" (click)="rate(row['id'])">
+            <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.RATE' | translate }}" style="background-color: darkgoldenrod;" (click)="rate(row['id'])">
               <mat-icon style="color : white;">star</mat-icon>
             </button>
 
-            <button mat-icon-button [matMenuTriggerFor]="menu">
+            <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="{{ 'TOOLTIP.CHANGESTATUS' | translate }}" >
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu">

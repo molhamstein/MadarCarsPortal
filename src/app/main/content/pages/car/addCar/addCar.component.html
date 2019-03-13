@@ -212,7 +212,7 @@
           </div>
           <div style="padding-top:10px;" *ngIf="carSublocations.length!=0" fxLayout="column" fxLayout.gt-md="row wrap"
             fxFlex>
-            <mat-form-field style="margin: 0px 0px 0px 1.5%" fxFlex="48%" *ngFor="let oneSublocation of carSublocations;let i=index">
+            <mat-form-field style="margin: 0px 0px 0px 1.5%" fxFlex="47%" *ngFor="let oneSublocation of carSublocations;let i=index">
               <input matInput type="number" min="0" placeholder="{{ 'CAR.COSTIN' | translate }} {{oneSublocation.name}}"
                 [(ngModel)]="carSublocations[i].cost" [ngModelOptions]="{standalone: true}" required>
               <mat-icon matSuffix>attach_money</mat-icon>
@@ -226,13 +226,13 @@
           <div style="padding-top:10px;" *ngIf="carAirport.length!=0" fxLayout="column" fxLayout.gt-md="row wrap"
             fxFlex>
             <div fxFlex="100" *ngFor="let oneCarAirport of carAirport;let i=index">
-              <mat-form-field style="margin: 0px 0px 0px 1.5%" fxFlex="48%">
+              <mat-form-field style="margin: 0px 0px 0px 1.5%" fxFlex="47%">
                 <input matInput type="number" min="0" placeholder="{{ 'CAR.ONEWAYIN' | translate }} {{oneCarAirport.name}}"
                   [(ngModel)]="carAirport[i].priceOneWay" [ngModelOptions]="{standalone: true}" required>
                 <mat-icon matSuffix>attach_money</mat-icon>
                 <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
               </mat-form-field>
-              <mat-form-field style="margin: 0px 0px 0px 1.5%" fxFlex="48%">
+              <mat-form-field style="margin: 0px 0px 0px 1.5%" fxFlex="47%">
                 <input matInput type="number" min="0" placeholder="{{ 'CAR.TOWWAYIN' | translate }} {{oneCarAirport.name}}"
                   [(ngModel)]="carAirport[i].priceTowWay" [ngModelOptions]="{standalone: true}" required>
                 <mat-icon matSuffix>attach_money</mat-icon>
@@ -245,7 +245,7 @@
 
       </div>
       <div style="float: rightt;">
-        <button mat-button (click)="add()" class="addButton" cdkFocusInitial [disabled]="addCarForm.invalid">{{'Global.ADD'
+        <button mat-button (click)="add()" class="addButton" cdkFocusInitial>{{'Global.ADD'
           | translate}}</button>
       </div>
     </form>

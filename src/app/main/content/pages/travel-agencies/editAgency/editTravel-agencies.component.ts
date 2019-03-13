@@ -249,8 +249,11 @@ export class editTravelAgenciesComponent implements OnInit {
 
 
   edit() {
+    if (this.editTravelAgenciesForm.invalid)
+      return
     var data = this.editTravelAgenciesForm.value;
-    data['mediaId'] = this.media.id;
+    if (this.media != null)
+      data['mediaId'] = this.media.id;
     this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.put("travelAgencies/" + this.travelAgencyId, data).subscribe((data: any) => {
       this.mainServ.loaderSer.display(false);

@@ -184,6 +184,9 @@ export class editLocationComponent implements OnInit {
 
 
   edit() {
+    if (this.editLocationForm.invalid) 
+    return
+
     var data = this.editLocationForm.value;
     data['mediaId'] = this.media.id;
     data['slideMedia'] = [];

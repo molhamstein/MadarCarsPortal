@@ -113,6 +113,8 @@ export class addSubLocationComponent implements OnInit {
 
 
   add() {
+    if (this.addSubLocationForm.invalid)
+      return
     var data = this.addSubLocationForm.value;
     data['mediaId'] = this.media.id;
     data['locationId'] = this.locationId;

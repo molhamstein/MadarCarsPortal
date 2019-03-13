@@ -71,6 +71,8 @@ export class editBrandComponent implements OnInit {
 
 
   edit() {
+    if (this.editBrandForm.invalid)
+      return
     var data = this.editBrandForm.value;
     this.mainServ.loaderSer.display(false);
     this.mainServ.APIServ.put("brands/" + this.brandId, data).subscribe((data: any) => {

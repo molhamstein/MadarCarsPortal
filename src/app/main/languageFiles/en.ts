@@ -342,6 +342,8 @@ export const locale = {
                 "ITEMS": "Items",
                 "TYPE": "Type",
                 "NAME": "Title",
+                "TOTAL":"Total",
+                "DISCOUNT":"Discount",
                 "TITLEEN": "English Title",
                 "TITLEAR": "Arabic Title",
                 "TITLETR": "Turkish Title",
@@ -457,6 +459,15 @@ export const locale = {
             "457": "Car Not Available",
             "461": "This Code is Duplicate",
             "462": "This Code is not valid",
+        },
+        "TOOLTIP": {
+            "GOTOEDIT": "Edit",
+            "GOTOVIEW":"View",
+            "RATE":"Rate",
+            "DEACTIVE":"Deactive",
+            "ACTIVE":"Active",
+            "VIEWBILLS":"Bills",
+            "CHANGESTATUS":"Change Status"
         },
         "TEXTNOTIFICATION": {
             "HELP": "need help to choose trip"

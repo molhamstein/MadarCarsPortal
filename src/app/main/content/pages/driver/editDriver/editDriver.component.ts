@@ -267,6 +267,8 @@ export class editDriverComponent implements OnInit {
 
 
   edit() {
+    if (this.editDriverForm.invalid)
+      return
     var data = this.editDriverForm.value;
     data['mediaId'] = this.media.id;
     this.mainServ.loaderSer.display(true);

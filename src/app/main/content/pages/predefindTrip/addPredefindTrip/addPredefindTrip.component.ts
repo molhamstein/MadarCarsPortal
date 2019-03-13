@@ -189,6 +189,8 @@ export class addPredefindTripComponent implements OnInit {
 
 
   add() {
+    if (this.addPredefindTripForm.invalid)
+      return
     var data = this.addPredefindTripForm.value;
     data['mediaId'] = this.media.id;
     data['predefinedTripsMedias'] = [];

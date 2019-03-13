@@ -215,6 +215,8 @@ export class addCarComponent implements OnInit {
 
 
   add() {
+    if (this.addCarForm.invalid)
+      return
     var data = this.addCarForm.value;
     data['mediaId'] = this.media.id;
     data['carMedia'] = [];

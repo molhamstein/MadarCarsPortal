@@ -119,6 +119,8 @@ export class addDriverComponent implements OnInit {
 
 
   add() {
+    if (this.addDriverForm.invalid)
+      return
     var data = this.addDriverForm.value;
     data['mediaId'] = this.media.id;
     this.mainServ.loaderSer.display(true);

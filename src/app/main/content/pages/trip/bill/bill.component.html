@@ -58,18 +58,6 @@
 
                 <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
               </mat-form-field>
-              <!-- <mat-form-field class="Bill30">
-                <input matInput placeholder="{{ 'TRIP.BILL.TITLEAR' | translate }}" [ngModelOptions]="{standalone: true}"
-                  [(ngModel)]="tripdays" required>
-                
-                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-              </mat-form-field>
-              <mat-form-field class="Bill30">
-                <input matInput placeholder="{{ 'TRIP.BILL.TITLETR' | translate }}" [ngModelOptions]="{standalone: true}"
-                  [(ngModel)]="tripdays" required>
-                
-                <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-              </mat-form-field> -->
 
               <mat-form-field class="Bill15">
                 <input matInput placeholder="{{ 'TRIP.BILL.QUENTITY' | translate }}" [ngModelOptions]="{standalone: true}"
@@ -216,6 +204,30 @@
         </div>
       </div>
 
+    </div>
+
+    <div class="totalBill">
+      <div class="half">
+        <div class="item">
+          <h3> {{'TRIP.BILL.TOTAL' | translate}}</h3>
+          <span>{{calcPric(outerBill)}}</span>
+        </div>
+        <div class="item">
+          <h3> {{'TRIP.BILL.DISCOUNT' | translate}}</h3>
+          <span>{{calcPric(outerBill,true)}}</span>
+        </div>
+        <div class="hr"></div>
+        <div class="item">
+          <h3> {{'TRIP.BILL.TOTAL' | translate}}</h3>
+          <span>{{calcPric(outerBill,false,true)}}</span>
+        </div>
+      </div>
+      <div class="half">
+        <div class="item">
+          <h3> {{'TRIP.BILL.TOTAL' | translate}}</h3>
+          <span>{{calcPric(innerBill)}}</span>
+        </div>
+      </div>
     </div>
 
   </div>

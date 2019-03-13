@@ -6,6 +6,7 @@ import { Platform } from '@angular/cdk/platform';
 import { DOCUMENT } from '@angular/common';
 import { locale as english } from './languageFiles/en';
 import { locale as arabic } from './languageFiles/ar';
+import { MainService } from '../core/services/main.service';
 
 @Component({
     selector: 'fuse-main',
@@ -22,6 +23,7 @@ export class FuseMainComponent implements OnInit, OnDestroy {
         private _renderer: Renderer2,
         private _elementRef: ElementRef,
         private fuseConfig: FuseConfigService,
+        private mainServ:MainService,
         private platform: Platform,
         private translationLoader: FuseTranslationLoaderService,
 
@@ -45,6 +47,13 @@ export class FuseMainComponent implements OnInit, OnDestroy {
     ngOnInit() {
     }
 
+    isEnLang() {
+        if (this.mainServ.loginServ.getLang() == "ar")
+          return false
+        else
+          return true
+      }
+    
     ngOnDestroy() {
         this.onSettingsChanged.unsubscribe();
     }

@@ -105,8 +105,12 @@ export class addAgencyComponent implements OnInit {
 
 
   add() {
+    if (this.addAgencyForm.invalid)
+    return
+
     var data = this.addAgencyForm.value;
-    data['mediaId'] = this.media.id;
+    if (this.media != null)
+      data['mediaId'] = this.media.id;
     this.mainServ.loaderSer.display(true);
 
     this.mainServ.APIServ.post("agencies", data).subscribe((data: any) => {

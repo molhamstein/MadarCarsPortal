@@ -228,7 +228,7 @@
 
         <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
 
-          <button mat-mini-fab class="mr-16" style="background-color: darkgoldenrod;" (click)="rate(row['tripId'])">
+          <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.RATE' | translate }}" style="background-color: darkgoldenrod;" (click)="rate(row['tripId'])">
             <mat-icon style="color : white;">star</mat-icon>
           </button>
 

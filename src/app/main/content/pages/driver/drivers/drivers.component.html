@@ -52,11 +52,13 @@
         </ng-template>
 
       </ngx-datatable-column>
-      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="username">
+      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="">
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
           <span>{{ 'DRIVER.USERNAME' | translate }}</span>
         </ng-template>
-
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          {{row.firstName}} {{row.lastName}}
+        </ng-template>
       </ngx-datatable-column>
       <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="gender">
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
@@ -99,7 +101,8 @@
         </ng-template>
 
         <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-          <button mat-mini-fab class="mr-16" (click)="goTo('edit',row['id'])" style="background-color: rgba(20, 160, 202, 0.911);">
+          <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.GOTOEDIT' | translate }}" (click)="goTo('edit',row['id'])"
+            style="background-color: rgba(20, 160, 202, 0.911);">
             <mat-icon style="color : white;">edit</mat-icon>
           </button>
           <!-- <button mat-mini-fab *ngIf="row.status=='active'" class="mr-16" (click)="deactivate(row['id'])" style="background-color: rgba(219, 18, 18, 0.808);">

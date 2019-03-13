@@ -100,6 +100,35 @@
   }
 }
 
+[dir=rtl] .listNotification {
+  left: 12% !important;
+  right: auto !important;
+
+  .oneNotification .img {
+    float: right !important;
+  }
+
+  .oneNotification .containt .text {
+    text-align: right !important;
+    direction: rtl !important;
+  }
+}
+
+[dir=rtl] fuse-navbar-vertical.folded.left-navbar {
+  right: 0;
+  left: auto !important
+}
+
+// .content-wrapper-ar {
+//   background-color: red !important;
+// }
+
+fuse-main.fuse-nav-bar-folded:not(.fuse-nav-bar-horizontal) .content-wrapper.content-wrapper-ar:last-child {
+  padding-right: 64px;
+  padding-left: 0px !important;
+}
+
+
 .hover {
   cursor: pointer;
 }

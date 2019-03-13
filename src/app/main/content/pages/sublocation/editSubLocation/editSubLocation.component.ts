@@ -140,6 +140,8 @@ export class editSubLocationComponent implements OnInit {
 
 
   edit() {
+    if (this.editSubLocationForm.invalid)
+      return
     var data = this.editSubLocationForm.value;
     data['mediaId'] = this.media.id;
     data['locationId'] = this.locationId;

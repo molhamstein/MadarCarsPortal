@@ -96,15 +96,15 @@
           <div fxFlex="60">
 
             <div class="p-24  colorDiv">
-              <span > {{ 'LOCATION.FIRSTCOLOR' | translate }}</span>
-              <div  [style.background-color]="primaryColor"
-                [cpPosition]="'bottom'" [cpPositionOffset]="'50%'" [cpPositionRelativeToArrow]="true" [(colorPicker)]="primaryColor"></div>
+              <span> {{ 'LOCATION.FIRSTCOLOR' | translate }}</span>
+              <div [style.background-color]="primaryColor" [cpPosition]="'bottom'" [cpPositionOffset]="'50%'"
+                [cpPositionRelativeToArrow]="true" [(colorPicker)]="primaryColor"></div>
             </div>
 
             <div class="p-24  colorDiv">
-              <span > {{ 'LOCATION.SECONDCOLOR' | translate }}</span>
-              <div  [style.background-color]="secondryColor"
-                [cpPosition]="'bottom'" [cpPositionOffset]="'50%'" [cpPositionRelativeToArrow]="true" [(colorPicker)]="secondryColor"></div>
+              <span> {{ 'LOCATION.SECONDCOLOR' | translate }}</span>
+              <div [style.background-color]="secondryColor" [cpPosition]="'bottom'" [cpPositionOffset]="'50%'"
+                [cpPositionRelativeToArrow]="true" [(colorPicker)]="secondryColor"></div>
             </div>
           </div>
 
@@ -134,7 +134,7 @@
       </div>
 
       <div style="float: rightt;">
-        <button mat-button (click)="add()" class="addButton" cdkFocusInitial [disabled]="addLocationForm.invalid">{{'Global.ADD'
+        <button mat-button (click)="add()" class="addButton" cdkFocusInitial>{{'Global.ADD'
           | translate}}</button>
       </div>
     </form>

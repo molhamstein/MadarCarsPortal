@@ -19,7 +19,7 @@ export class driversComponent implements OnInit {
   allRows = [];
   filterRows = [];
   filterValue = "";
-  columns = ["email", "phoneNumber", "gender", "username", 'status']
+  columns = ["email", "phoneNumber", "gender", "firstName","lastName", 'status']
 
   constructor(private translationLoader: FuseTranslationLoaderService
     , private translateService: TranslateService

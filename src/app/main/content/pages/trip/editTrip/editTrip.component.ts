@@ -283,8 +283,6 @@ export class editTripComponent implements OnInit {
         first: new FormControl(data.fromAirportDate)
       });
       this.startTime = this.converdateToObject(data.fromAirportDate)
-      console.log("startTime")
-      console.log(this.startTime)
     } else if (this.tripType == this.type[1]) {
       this.stepSecForm = new FormGroup({
         first: new FormControl(data.startInCityDate),
@@ -647,6 +645,9 @@ export class editTripComponent implements OnInit {
 
   next(stepNum) {
     if (stepNum == 2) {
+      if (this.stepOneForm.invalid || (this.isFromAirport == false && this.isToAirport == false && this.isInCity == false))
+        return
+
       if (this.anyChange(1) == true) {
         this.newData = true;
         this.tripType = this.getTypeTrip()
@@ -739,6 +740,8 @@ export class editTripComponent implements OnInit {
 
     }
     else if (stepNum == 4) {
+      if (this.stepthreeForm.invalid)
+        return
       if (this.newData == true || this.anyChange(3) == true) {
         this.allData['carId'] = this.stepthreeForm.value['carId']
         var filter = { "where": { "and": [{ "carId": this.allData['carId'] }, { "subLocationId": { "inq": this.subLocationId } }] } }
@@ -796,6 +799,9 @@ export class editTripComponent implements OnInit {
 
 
   edit() {
+    if (this.stepthreeForm.invalid)
+      return
+
     if (this.activeLink == "step4")
       this.allData['tripSublocations'] = this.tripSublocations
     this.allData['carId'] = this.stepthreeForm.value['carId']
@@ -835,6 +841,7 @@ export class editTripComponent implements OnInit {
     if (object == null) {
       if (this.startTime == null)
         return "";
+      console.log("SSS");
       var minute = this.startTime.minute;
       var hour = this.startTime.hour;
       if (this.startTime.hour < 10)

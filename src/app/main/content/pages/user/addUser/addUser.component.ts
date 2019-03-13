@@ -49,6 +49,8 @@ export class addUserComponent implements OnInit {
 
 
   add() {
+    if (this.addUserForm.invalid)
+      return
     var data = this.addUserForm.value;
     data['mediaId'] = this.media.id;
     this.mainServ.APIServ.post("users", data).subscribe((data: any) => {

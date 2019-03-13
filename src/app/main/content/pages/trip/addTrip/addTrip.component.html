@@ -77,7 +77,7 @@
 
 
       <div style="float: rightt;">
-        <button mat-button class="addButton" (click)="next(2,null,null)" cdkFocusInitial [disabled]="stepOneForm.invalid">{{'Global.NEXT'
+        <button mat-button class="addButton" (click)="next(2,null,null)" cdkFocusInitial>{{'Global.NEXT'
           | translate}}</button>
       </div>
     </form>
@@ -175,11 +175,11 @@
       </div>
       <div style="float: rightt;">
         <button mat-button *ngIf="links[3]!=null" class="addButton" (click)="next(4,null,null)" cdkFocusInitial
-          [disabled]="stepthreeForm.invalid">{{'Global.NEXT'
+         >{{'Global.NEXT'
           | translate}}</button>
       </div>
       <div style="float: rightt;">
-        <button mat-button *ngIf="links[3]==null" (click)="add()" class="addButton" cdkFocusInitial [disabled]="stepthreeForm.invalid">{{'Global.ADD'
+        <button mat-button *ngIf="links[3]==null" (click)="add()" class="addButton" cdkFocusInitial>{{'Global.ADD'
           | translate}}</button>
       </div>
       <div style="float: leftt;">

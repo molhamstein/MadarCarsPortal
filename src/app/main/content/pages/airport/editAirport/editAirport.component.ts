@@ -189,6 +189,8 @@ export class editAirportComponent implements OnInit {
 
 
   edit() {
+    if (this.editAirportForm.invalid)
+      return
     var data = this.editAirportForm.value;
     this.mainServ.loaderSer.display(true);
     this.mainServ.APIServ.put("airports/" + this.airportId, data).subscribe((data: any) => {

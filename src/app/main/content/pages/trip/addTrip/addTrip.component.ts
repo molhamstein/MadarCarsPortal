@@ -407,6 +407,8 @@ export class addTripComponent implements OnInit {
 
   next(stepNum) {
     if (stepNum == 2) {
+      if (this.stepOneForm.invalid || (this.isFromAirport == false && this.isToAirport == false && this.isInCity == false))
+        return
       this.tripType = this.getTypeTrip()
       this.activeLink = this.links[stepNum - 1].name;
       this.allData['locationId'] = this.stepOneForm.value.locationId
@@ -481,6 +483,8 @@ export class addTripComponent implements OnInit {
       }
     }
     else if (stepNum == 4) {
+      if (this.stepthreeForm.invalid)
+        return
 
       this.allData['carId'] = this.stepthreeForm.value['carId']
       var filter = { "where": { "and": [{ "carId": this.allData['carId'] }, { "subLocationId": { "inq": this.subLocationId } }] } }
@@ -510,6 +514,8 @@ export class addTripComponent implements OnInit {
   }
 
   add() {
+    if (this.stepthreeForm.invalid)
+      return
     if (this.activeLink == "step4")
       this.allData['tripSublocations'] = this.tripSublocations
     if (this.coupon['value'] != undefined) {

@@ -161,6 +161,8 @@ export class editUserComponent implements OnInit {
 
 
   edit() {
+    if (this.editUserForm.invalid)
+      return
     var data = this.editUserForm.value;
     data['mediaId'] = this.media.id;
     this.mainServ.APIServ.put("users/" + this.userId, data).subscribe((data: any) => {

@@ -65,7 +65,31 @@ export class billComponent implements OnInit {
     this.translationLoader.loadTranslations(english);
 
   }
+  calcPric(bills, isDiscount: boolean = false, lastTotal: boolean = false) {
+    var price = 0;
+    bills.forEach(element => {
+      price += element.pricePerUnit * element.quantity
+    });
+    if (isDiscount == false && lastTotal == false)
+      return price;
+    if (isDiscount == true) {
+      if (this.trip == null || this.trip.couponId == null)
+        return 0;
+      if (this.trip.coupon['type'] == "fixed")
+        return this.trip.coupon['value']
+      if (this.trip.coupon['type'] == "percentage")
+        return price * this.trip.coupon['value'] / 100
+    }
+    if (lastTotal == true) {
+      if (this.trip == null || this.trip.couponId == null)
+        return price;
+      if (this.trip.coupon['type'] == "fixed")
+        return price - this.trip.coupon['value']
+      if (this.trip.coupon['type'] == "percentage")
+        return price - (price * this.trip.coupon['value'] / 100)
+    }
 
+  }
   ngOnInit() {
     var mainthis = this
     this.getParams("id", function (id) {

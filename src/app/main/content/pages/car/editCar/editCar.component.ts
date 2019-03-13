@@ -341,6 +341,8 @@ export class editCarComponent implements OnInit {
   }
 
   edit() {
+    if (this.editCarForm.invalid)
+      return
     var data = this.editCarForm.value;
     data['mediaId'] = this.media.id;
     data['carMedia'] = [];
