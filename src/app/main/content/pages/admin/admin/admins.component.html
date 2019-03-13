@@ -81,7 +81,7 @@
           <button mat-mini-fab class="mr-16" (click)="goTo('edit',row['id'])" style="background-color: rgba(20, 160, 202, 0.911);">
             <mat-icon style="color : white;">edit</mat-icon>
           </button>
-          <button mat-mini-fab class="mr-16" *ngIf="isSuperAdmin()" (click)="reset(row['id'])" style="background-color: rgb(45, 50, 62)">
+          <button mat-mini-fab class="mr-16" *ngIf="isSuperAdmin()" matTooltip="{{ 'TOOLTIP.CHANGEPASSWORD' | translate }}" (click)="reset(row['id'])" style="background-color: rgb(45, 50, 62)">
             <mat-icon style="color : white;">lock</mat-icon>
           </button>
 

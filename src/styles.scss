@@ -78,6 +78,15 @@
   }
 }
 
+[dir=rtl] .date {
+  float: left !important;
+}
+
+[dir=rtl] .totalBill .half .item h3 {
+  float: right !important;
+}
+
+
 [dir=rtl] .mirror {
   transform: rotate(180deg);
 }

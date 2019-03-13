@@ -467,7 +467,8 @@ export const locale = {
             "DEACTIVE":"Deactive",
             "ACTIVE":"Active",
             "VIEWBILLS":"Bills",
-            "CHANGESTATUS":"Change Status"
+            "CHANGESTATUS":"Change Status",
+            "CHANGEPASSWORD":"Change Password"
         },
         "TEXTNOTIFICATION": {
             "HELP": "need help to choose trip"

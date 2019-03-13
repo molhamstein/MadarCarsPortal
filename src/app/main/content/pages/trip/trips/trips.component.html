@@ -89,24 +89,7 @@
         </ng-template>
       </ngx-datatable-column>
 
-      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="">
-        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
-          <!-- <span>{{ 'DRIVER.GENDER' | translate }}</span> -->
-          <span>{{ 'TRIP.COUPON' | translate }}</span>
 
-
-        </ng-template>
-        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-          <mat-chip-list *ngIf="row.coupon">
-            <mat-chip (click)="openTripCoupon(row)" style="background-color:#ff6363" selected="true">{{row.coupon['code']}}</mat-chip>
-          </mat-chip-list>
-          <mat-chip-list *ngIf="row.coupon==null">
-            <mat-chip style="background-color:#3b6fff" (click)="openTripCoupon(row)" selected="true">{{ 'TRIP.NOCOUPON'
-              | translate }}</mat-chip>
-          </mat-chip-list>
-
-        </ng-template>
-      </ngx-datatable-column>
 
 
       <ngx-datatable-column [canAutoResize]="true" [width]="20" [flexGrow]="1" prop="">
@@ -161,6 +144,21 @@
         </ng-template>
       </ngx-datatable-column>
 
+      <ngx-datatable-column [canAutoResize]="false" [flexGrow]="1" prop="Status">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <span>{{ 'TRIP.COUPON' | translate }}</span>
+        </ng-template>
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          <mat-chip-list *ngIf="row.coupon">
+            <mat-chip (click)="openTripCoupon(row)" style="background-color:#ff6363" selected="true">{{row.coupon['code']}}</mat-chip>
+          </mat-chip-list>
+          <mat-chip-list *ngIf="row.coupon==null">
+            <mat-chip style="background-color:#3b6fff" (click)="openTripCoupon(row)" selected="true">{{ 'TRIP.NOCOUPON'
+              | translate }}</mat-chip>
+          </mat-chip-list>
+
+        </ng-template>
+      </ngx-datatable-column>
 
       <ngx-datatable-column [canAutoResize]="false" [flexGrow]="1" prop="Status">
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
@@ -180,7 +178,7 @@
       </ngx-datatable-column>
 
 
-      <ngx-datatable-column [canAutoResize]="false" [width]="190" [flexGrow]="1" prop="start">
+      <ngx-datatable-column [canAutoResize]="false" [width]="220" [flexGrow]="1" prop="start">
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
           <span>{{ 'TRIP.START' | translate }}</span>
         </ng-template>
@@ -211,7 +209,8 @@
         </ng-template>
 
         <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-          <button mat-mini-fab *ngIf="row.status=='finished'" matTooltip="{{ 'TOOLTIP.VIEWBILLS' | translate }}" class="mr-16" style="background-color: #8a8a8a;" (click)="goTo('bills',row['id'])">
+          <button mat-mini-fab *ngIf="row.status=='finished'" matTooltip="{{ 'TOOLTIP.VIEWBILLS' | translate }}" class="mr-16"
+            style="background-color: #8a8a8a;" (click)="goTo('bills',row['id'])">
             <mat-icon style="color : white;">subtitles</mat-icon>
           </button>
 
@@ -219,11 +218,13 @@
             style="background-color: rgba(20, 160, 202, 0.911);">
             <mat-icon style="color : white;">edit</mat-icon>
           </button>
-          <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.GOTOVIEW' | translate }}" style="background-color: rgba(7, 112, 7, 0.849);" (click)="goTo('view',row['id'])">
+          <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.GOTOVIEW' | translate }}" style="background-color: rgba(7, 112, 7, 0.849);"
+            (click)="goTo('view',row['id'])">
             <mat-icon style="color : white;">visibility</mat-icon>
           </button>
 
-          <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.RATE' | translate }}" style="background-color: darkgoldenrod;" (click)="rate(row['id'])">
+          <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.RATE' | translate }}" style="background-color: darkgoldenrod;"
+            (click)="rate(row['id'])">
             <mat-icon style="color : white;">star</mat-icon>
           </button>
 

@@ -147,6 +147,10 @@ export class billComponent implements OnInit {
 
   }
 
+  backToTrips() {
+    this.mainServ.globalServ.goTo('trips')
+  }
+
   initInnerBill(hasInnerBill) {
     if (hasInnerBill == false) {
       if (this.trip.inCity) {

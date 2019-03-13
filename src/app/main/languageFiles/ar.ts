@@ -109,7 +109,7 @@ export const locale = {
             "NAME": "اسم",
             "RATE": "تقييم",
             "STATUS": "الحالة",
-            "VACATION":"الإجازات",
+            "VACATION": "الإجازات",
             "ADDVACATION": "إضافة إجازة",
             "NUMBEROFSEAT": "عدد المقاعد",
             "ISVIP": "هل VIP",
@@ -342,6 +342,8 @@ export const locale = {
                 "ITEMS": "العناصر",
                 "TYPE": "نوع",
                 "NAME": "عنوان",
+                "TOTAL":"الإجمالي",
+                "DISCOUNT":"الحسم",
                 "TITLEEN": "العنوان الإنكليزي",
                 "TITLEAR": "العنوان العربي",
                 "TITLETR": "العنوان التركي",
@@ -457,6 +459,16 @@ export const locale = {
             "457": "السيارة غير متوفرة",
             "461": "هذه الشيفرة مكررة",
             "462": "هذه الشيفرة غير صالحة",
+        },
+        "TOOLTIP": {
+            "GOTOEDIT": "تعديل",
+            "GOTOVIEW": "عرض",
+            "RATE": "تقييم",
+            "DEACTIVE": "تعطيل",
+            "ACTIVE": "تفعيل",
+            "VIEWBILLS": "فوتير",
+            "CHANGESTATUS": "تغيير الحالة",
+            "CHANGEPASSWORD": "تغيير كلمة السر"
         },
         "TEXTNOTIFICATION": {
             "HELP": "يحتاج مساعدة لختيار رحلة"
