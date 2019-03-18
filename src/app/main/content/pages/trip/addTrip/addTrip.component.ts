@@ -140,8 +140,14 @@ export class addTripComponent implements OnInit {
     this.carAirport = selectedCarAirport;
     this.allData['driverId'] = selectedCar.driverId
     this.allData['pricePerDay'] = selectedCar.pricePerDay
-    this.allData['priceOneWay'] = selectedCarAirport.priceOneWay
-    this.allData['priceTowWay'] = selectedCarAirport.priceTowWay
+    if (selectedCarAirport) {
+      this.allData['priceOneWay'] = selectedCarAirport.priceOneWay
+      this.allData['priceTowWay'] = selectedCarAirport.priceTowWay
+    }
+    else {
+      this.allData['priceOneWay'] = 0
+      this.allData['priceTowWay'] = 0
+    }
     this.pricePerDay = selectedCar.pricePerDay;
     if (this.tripType == "fromAirport") {
       this.airportPrice = selectedCarAirport['priceOneWay'];
@@ -574,6 +580,14 @@ export class addTripComponent implements OnInit {
         return 0
 
     return price - (price * this.coupon['value'] / 100)
+  }
+
+  getDiscountValue(price) {
+    if (this.coupon['type'] == "fixed") {
+      return this.coupon['value']
+    }
+    else if (this.coupon['type'] == "percentage")
+      return (price * this.coupon['value'] / 100)
 
   }
   startTime

@@ -270,6 +270,7 @@ export const locale = {
             "TOAIRPORT": "إلى المطار",
         },
         "TRIP": {
+            "DISCOUNTVALUE":"فيمة الخصم",
             "CHECKCOUPON": "التاكد من القسيمة",
             "FROMAIRPORT": "من المطار",
             "FROMAIRPORTDATE": "تاريخ من المطار",

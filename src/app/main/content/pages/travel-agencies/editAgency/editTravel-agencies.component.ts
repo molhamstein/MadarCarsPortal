@@ -134,8 +134,10 @@ export class editTravelAgenciesComponent implements OnInit {
         if (mainthis.mainServ.APIServ.getErrorCode() == 0) {
           mainthis.travelAgency = data;
           var langId = [];
-          mainthis.media = data.media;
-          mainthis.images[0] = data.media
+          if (data.media) {
+            mainthis.media = data.media;
+            mainthis.images[0] = data.media
+          }
           mainthis.editTravelAgenciesForm = new FormGroup({
             nameEn: new FormControl(data.nameEn, Validators.required),
             nameAr: new FormControl(data.nameAr, Validators.required),

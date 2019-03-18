@@ -171,11 +171,15 @@
                 | translate}}</button>
             </div>
           </div>
+          <div fxFlex="90" *ngIf="verifyCoupon" style="margin-bottom: 20px;">
+            <b>{{'TRIP.DISCOUNTVALUE'
+              | translate}} : {{getDiscountValue(totalPrice+subLocaationPrice+airportPrice)}}</b>
+
+          </div>
         </div>
       </div>
       <div style="float: rightt;">
-        <button mat-button *ngIf="links[3]!=null" class="addButton" (click)="next(4,null,null)" cdkFocusInitial
-         >{{'Global.NEXT'
+        <button mat-button *ngIf="links[3]!=null" class="addButton" (click)="next(4,null,null)" cdkFocusInitial>{{'Global.NEXT'
           | translate}}</button>
       </div>
       <div style="float: rightt;">

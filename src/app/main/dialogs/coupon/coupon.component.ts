@@ -39,7 +39,7 @@ export class CouponComponent {
                 value: new FormControl('', Validators.required),
                 type: new FormControl('', Validators.required),
                 code: new FormControl('', Validators.required),
-                numberOfUses: new FormControl(1, Validators.required),
+                numberOfUses: new FormControl(Number.MAX_VALUE, Validators.required),
                 numberOfUsed: new FormControl(0, Validators.required),
                 travelAgencyId: new FormControl(data['travelAgencyId'], Validators.required)
             });

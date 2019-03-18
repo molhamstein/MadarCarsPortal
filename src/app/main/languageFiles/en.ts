@@ -271,6 +271,7 @@ export const locale = {
         },
         "TRIP": {
             "CHECKCOUPON": "Check Coupon",
+            "DISCOUNTVALUE":"Discount Value",
             "FROMAIRPORT": "From Airport",
             "FROMAIRPORTDATE": "From Airport Date",
             "TOAIRPORT": "TO Airport",
