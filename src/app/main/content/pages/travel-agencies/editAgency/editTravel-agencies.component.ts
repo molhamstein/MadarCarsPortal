@@ -25,6 +25,7 @@ export class editTravelAgenciesComponent implements OnInit {
   images = [];
   travelAgencyId;
   travelAgency;
+  typeCoupon = [{ "view": "TRAVEL.FIXED", "value": "fixed" }, { "view": "TRAVEL.PERCENTAGE", "value": "percentage" }]
   isoCode = [];
   // trip
   filterValue = ""
@@ -120,6 +121,8 @@ export class editTravelAgenciesComponent implements OnInit {
       nameAr: new FormControl('', Validators.required),
       nameTr: new FormControl(''),
       phoneNumber: new FormControl('', Validators.required),
+      type: new FormControl('', Validators.required),
+      value: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       ISOCode: new FormControl('', Validators.required)
     });
@@ -143,6 +146,8 @@ export class editTravelAgenciesComponent implements OnInit {
             nameAr: new FormControl(data.nameAr, Validators.required),
             nameTr: new FormControl(data.nameTr),
             phoneNumber: new FormControl(data.phoneNumber, Validators.required),
+            type: new FormControl(data.type, Validators.required),
+            value: new FormControl(data.value, Validators.required),      
             email: new FormControl(data.email, [Validators.required, Validators.email]),
             ISOCode: new FormControl(data.ISOCode, Validators.required)
           });
@@ -332,7 +337,7 @@ export class editTravelAgenciesComponent implements OnInit {
     console.log(coupon)
     let dialogRef = this.dialog.open(CouponComponent, {
       width: '550px',
-      data: { "isNew": isNew, "coupon": coupon, "travelAgencyId": this.travelAgencyId }
+      data: { "isNew": isNew, "coupon": coupon, type:this.travelAgency.type,value:this.travelAgency.value,"travelAgencyId": this.travelAgencyId }
     });
 
     dialogRef.afterClosed().subscribe(result => {

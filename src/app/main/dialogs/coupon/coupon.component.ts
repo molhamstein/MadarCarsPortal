@@ -36,8 +36,8 @@ export class CouponComponent {
             this.couponForm = new FormGroup({
                 from: new FormControl('', Validators.required),
                 to: new FormControl('', Validators.required),
-                value: new FormControl('', Validators.required),
-                type: new FormControl('', Validators.required),
+                value: new FormControl(data.value, Validators.required),
+                type: new FormControl(data.type, Validators.required),
                 code: new FormControl('', Validators.required),
                 numberOfUses: new FormControl(Number.MAX_VALUE, Validators.required),
                 numberOfUsed: new FormControl(0, Validators.required),
@@ -48,8 +48,8 @@ export class CouponComponent {
             this.couponForm = new FormGroup({
                 from: new FormControl(new Date(this.coupon.from), Validators.required),
                 to: new FormControl(new Date(this.coupon.to), Validators.required),
-                value: new FormControl(this.coupon.value, Validators.required),
-                type: new FormControl(this.coupon.type, Validators.required),
+                value: new FormControl(data.value, Validators.required),
+                type: new FormControl(data.type, Validators.required),
                 code: new FormControl({ value: this.coupon.code, disabled: true }, Validators.required),
                 numberOfUses: new FormControl(this.coupon.numberOfUses, Validators.required),
                 numberOfUsed: new FormControl(this.coupon.numberOfUsed, Validators.required),

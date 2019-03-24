@@ -174,6 +174,10 @@ export const locale = {
             "NAMETR": "اسم تركي",
             "EMAIL": "البريد الإلكتروني",
             "PHONENUMBER": "رقم هاتف",
+            "FIXED": "ثابت",
+            "VALUE": "القيمة",
+            "TYPE": "النوع",
+            "PERCENTAGE": "نسبة مئوية",
             "ISOCODE": "الجنسية",
             'PASSWORD': 'كلمة السر',
             "ALLTRAVEL": {

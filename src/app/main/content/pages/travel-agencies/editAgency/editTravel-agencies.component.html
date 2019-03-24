@@ -1,8 +1,8 @@
 <div id="ngx-datatable" class="page-layout simple fullwidth" fusePerfectScrollbar>
 
   <!-- HEADER -->
-  <div class="header mat-accent-bg p-16 customHeader" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="row"
-    fxLayoutAlign.gt-xs="space-between center">
+  <div class="header mat-accent-bg p-16 customHeader" fxLayout="column" fxLayoutAlign="center center"
+    fxLayout.gt-xs="row" fxLayoutAlign.gt-xs="space-between center">
     <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="column" fxLayoutAlign.gt-xs="center start">
       <!-- <button style="background-color: rgba(7, 112, 7, 0.849);" mat-mini-fab class="mr-16"> -->
       <!-- </button> -->
@@ -20,8 +20,8 @@
   <div class="content p-24">
     <form [formGroup]="editTravelAgenciesForm">
       <div style="width: 100%;">
-        <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
-          fxFlex>
+        <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap"
+          fxLayoutAlign.gt-md="space-around center" fxFlex>
 
           <mat-form-field fxFlex="30">
             <input matInput placeholder="{{ 'TRAVEL.NAMEEN' | translate }}" formControlName="nameEn" required>
@@ -44,7 +44,8 @@
           <mat-form-field fxFlex="30">
             <input matInput placeholder="{{ 'TRAVEL.EMAIL' | translate }}" formControlName="email" required>
             <mat-icon matSuffix>email</mat-icon>
-            <mat-error *ngIf="editTravelAgenciesForm.hasError('email','email') && !editTravelAgenciesForm.hasError('required','email')">{{'Global.ERRORVALIDEMAIL'
+            <mat-error
+              *ngIf="editTravelAgenciesForm.hasError('email','email') && !editTravelAgenciesForm.hasError('required','email')">{{'Global.ERRORVALIDEMAIL'
               | translate }}</mat-error>
             <mat-error *ngIf="editTravelAgenciesForm.hasError('required','email')">{{ 'Global.ERRORFIELDREQUIRED' |
               translate }}</mat-error>
@@ -59,6 +60,22 @@
             </mat-select>
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
+
+          <mat-form-field fxFlex="30">
+
+            <mat-select placeholder="{{ 'TRAVEL.TYPE' | translate }}" formControlName="type">
+              <mat-option *ngFor="let oneType of typeCoupon" [value]="oneType.value">
+                {{oneType.view | translate}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'TRAVEL.VALUE' | translate }}" formControlName="value" required>
+            <mat-icon matSuffix>local_atm</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+
+          <div fxFlex="30"></div>
           <div fxFlex="30"></div>
           <div fxFlex="40">
             <div class="divImage">
@@ -113,8 +130,8 @@
 
             <div fxLayout="row" fxLayoutAlign="start center">
 
-              <button mat-button class="mat-icon-button sidenav-toggle mr-12" fuseMatSidenavToggler="contacts-main-sidenav"
-                fxHide.gt-md>
+              <button mat-button class="mat-icon-button sidenav-toggle mr-12"
+                fuseMatSidenavToggler="contacts-main-sidenav" fxHide.gt-md>
                 <mat-icon>menu</mat-icon>
               </button>
 
@@ -145,8 +162,8 @@
 
           <div class="contentAr">
 
-            <ngx-datatable class="material vertical-scroll" [rows]="filterCouponRows" [headerHeight]="50" [rowHeight]="50"
-              [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="isEnLang()">
+            <ngx-datatable class="material vertical-scroll" [rows]="filterCouponRows" [headerHeight]="50"
+              [rowHeight]="50" [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="isEnLang()">
 
               <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="code">
                 <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
@@ -235,7 +252,8 @@
 
               <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="">
                 <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-                  <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.GOTOEDIT' | translate }}" (click)="openCoupon(row)" style="background-color: rgba(20, 160, 202, 0.911);">
+                  <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.GOTOEDIT' | translate }}"
+                    (click)="openCoupon(row)" style="background-color: rgba(20, 160, 202, 0.911);">
                     <mat-icon style="color : white;">edit</mat-icon>
                   </button>
                 </ng-template>
@@ -254,8 +272,8 @@
 
             <div fxLayout="row" fxLayoutAlign="start center">
 
-              <button mat-button class="mat-icon-button sidenav-toggle mr-12" fuseMatSidenavToggler="contacts-main-sidenav"
-                fxHide.gt-md>
+              <button mat-button class="mat-icon-button sidenav-toggle mr-12"
+                fuseMatSidenavToggler="contacts-main-sidenav" fxHide.gt-md>
                 <mat-icon>menu</mat-icon>
               </button>
 
@@ -271,7 +289,8 @@
                 <mat-icon>search</mat-icon>
               </label>
               <mat-form-field mat-no-float class="m-0" floatPlaceholder="never">
-                <input matInput id="search" [(ngModel)]="filterValue" (ngModelChange)="filterDatatable()" placeholder="{{'SUBLOCATION.ALLSUBLOCATION.SEARCH'| translate}}">
+                <input matInput id="search" [(ngModel)]="filterValue" (ngModelChange)="filterDatatable()"
+                  placeholder="{{'SUBLOCATION.ALLSUBLOCATION.SEARCH'| translate}}">
               </mat-form-field>
 
             </div>
@@ -406,23 +425,27 @@
                 </ng-template>
 
                 <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-                  <button mat-mini-fab *ngIf="row.status=='finished'" matTooltip="{{ 'TOOLTIP.VIEWBILLS' | translate }}" class="mr-16" style="background-color: #8a8a8a;"
-                    (click)="goTo('bills',row['id'])">
+                  <button mat-mini-fab *ngIf="row.status=='finished'" matTooltip="{{ 'TOOLTIP.VIEWBILLS' | translate }}"
+                    class="mr-16" style="background-color: #8a8a8a;" (click)="goTo('bills',row['id'])">
                     <mat-icon style="color : white;">subtitles</mat-icon>
                   </button>
 
-                  <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.GOTOEDIT' | translate }}" (click)="goTo('edit',row['id'])" style="background-color: rgba(20, 160, 202, 0.911);">
+                  <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.GOTOEDIT' | translate }}"
+                    (click)="goTo('edit',row['id'])" style="background-color: rgba(20, 160, 202, 0.911);">
                     <mat-icon style="color : white;">edit</mat-icon>
                   </button>
-                  <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.GOTOVIEW' | translate }}" style="background-color: rgba(7, 112, 7, 0.849);" (click)="goTo('view',row['id'])">
+                  <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.GOTOVIEW' | translate }}"
+                    style="background-color: rgba(7, 112, 7, 0.849);" (click)="goTo('view',row['id'])">
                     <mat-icon style="color : white;">visibility</mat-icon>
                   </button>
 
-                  <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.RATE' | translate }}" style="background-color: darkgoldenrod;" (click)="rate(row['id'])">
+                  <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.RATE' | translate }}"
+                    style="background-color: darkgoldenrod;" (click)="rate(row['id'])">
                     <mat-icon style="color : white;">star</mat-icon>
                   </button>
 
-                  <button mat-icon-button matTooltip="{{ 'TOOLTIP.CHANGESTATUS' | translate }}" [matMenuTriggerFor]="menu">
+                  <button mat-icon-button matTooltip="{{ 'TOOLTIP.CHANGESTATUS' | translate }}"
+                    [matMenuTriggerFor]="menu">
                     <mat-icon>more_vert</mat-icon>
                   </button>
                   <mat-menu #menu="matMenu">

@@ -23,6 +23,8 @@ export class addTravelAgenciesComponent implements OnInit {
   imaageUrl = this.mainServ.getDefultImage();
   images = [];
   listLanguages = [];
+  typeCoupon = [{ "view": "TRAVEL.FIXED", "value": "fixed" }, { "view": "TRAVEL.PERCENTAGE", "value": "percentage" }]
+
   private primaryColor: string = "#127bdc";
   private secondryColor: string = "#127bdc";
   constructor(
@@ -99,6 +101,8 @@ export class addTravelAgenciesComponent implements OnInit {
       phoneNumber: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', Validators.required),
+      type: new FormControl('', Validators.required),
+      value: new FormControl('', Validators.required),
       ISOCode: new FormControl('', Validators.required)
     });
   }

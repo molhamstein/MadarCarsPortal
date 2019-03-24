@@ -57,6 +57,13 @@ export class travelAgenciesComponent implements OnInit {
   ngOnInit() {
   }
 
+  isEnLang() {
+    if (this.mainServ.loginServ.getLang() == "ar")
+      return false
+    else
+      return true
+  }
+
 
   goTo(pageName, id) {
     let url = ""
@@ -75,7 +82,7 @@ export class travelAgenciesComponent implements OnInit {
   reset(userId) {
     let dialogRef = this.dialog.open(MyResetPasswordComponent, {
       width: '350px',
-    data: { userId: userId, type: "travelAgencies" }
+      data: { userId: userId, type: "travelAgencies" }
     });
 
     dialogRef.afterClosed().subscribe(result => {

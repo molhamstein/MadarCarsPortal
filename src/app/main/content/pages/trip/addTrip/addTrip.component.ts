@@ -530,8 +530,7 @@ export class addTripComponent implements OnInit {
     }
     this.allData['carId'] = this.stepthreeForm.value['carId']
 
-    this.allData['costBeforCoupon'] = this.totalPrice + this.subLocaationPrice + this.airportPrice
-    this.allData['cost'] = this.calcPrice(this.totalPrice + this.subLocaationPrice + this.airportPrice)
+    this.allData['cost'] = this.totalPrice + this.subLocaationPrice + this.airportPrice
     this.allData['daysInCity'] = this.tripdays;
     this.mainServ.loaderSer.display(true);
     if (this.allData['fromAirport'] || this.allData['toAirport']) {

@@ -1,8 +1,8 @@
 <div id="ngx-datatable" class="page-layout simple fullwidth" fusePerfectScrollbar>
 
   <!-- HEADER -->
-  <div class="header mat-accent-bg p-16 customHeader" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="row"
-    fxLayoutAlign.gt-xs="space-between center">
+  <div class="header mat-accent-bg p-16 customHeader" fxLayout="column" fxLayoutAlign="center center"
+    fxLayout.gt-xs="row" fxLayoutAlign.gt-xs="space-between center">
     <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="column" fxLayoutAlign.gt-xs="center start">
       <!-- <button style="background-color: rgba(7, 112, 7, 0.849);" mat-mini-fab class="mr-16"> -->
       <!-- </button> -->
@@ -20,8 +20,8 @@
   <div class="content p-24">
     <form [formGroup]="addTravelAgenciesForm">
       <div style="width: 100%;">
-        <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="space-around center"
-          fxFlex>
+        <div style="padding-top:10px;" fxLayout="column" fxLayout.gt-md="row wrap"
+          fxLayoutAlign.gt-md="space-around center" fxFlex>
 
           <mat-form-field fxFlex="30">
             <input matInput placeholder="{{ 'TRAVEL.NAMEEN' | translate }}" formControlName="nameEn" required>
@@ -44,14 +44,18 @@
           <mat-form-field fxFlex="30">
             <input matInput placeholder="{{ 'TRAVEL.EMAIL' | translate }}" formControlName="email" required>
             <mat-icon matSuffix>email</mat-icon>
-            <mat-error *ngIf="addTravelAgenciesForm.hasError('email','email') && !addTravelAgenciesForm.hasError('required','email')">{{'Global.ERRORVALIDEMAIL'
+            <mat-error
+              *ngIf="addTravelAgenciesForm.hasError('email','email') && !addTravelAgenciesForm.hasError('required','email')">{{'Global.ERRORVALIDEMAIL'
               | translate }}</mat-error>
-            <mat-error *ngIf="addTravelAgenciesForm.hasError('required','email')">{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+            <mat-error *ngIf="addTravelAgenciesForm.hasError('required','email')">
+              {{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
           <mat-form-field fxFlex="30">
-            <input matInput [type]="hide ? 'password' : 'text'" placeholder="{{ 'TRAVEL.PASSWORD' | translate }}" formControlName="password" required>
-                    <mat-icon class="hover" matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+            <input matInput [type]="hide ? 'password' : 'text'" placeholder="{{ 'TRAVEL.PASSWORD' | translate }}"
+              formControlName="password" required>
+            <mat-icon class="hover" matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}
+            </mat-icon>
 
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
@@ -66,6 +70,22 @@
             <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
           </mat-form-field>
 
+
+          <mat-form-field fxFlex="30">
+
+            <mat-select placeholder="{{ 'TRAVEL.TYPE' | translate }}" formControlName="type">
+              <mat-option *ngFor="let oneType of typeCoupon" [value]="oneType.value">
+                {{oneType.view | translate}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field fxFlex="30">
+            <input matInput placeholder="{{ 'TRAVEL.VALUE' | translate }}" formControlName="value" required>
+            <mat-icon matSuffix>local_atm</mat-icon>
+            <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
+          </mat-form-field>
+  
+          <div fxFlex="30"></div>
           <div fxFlex="40">
             <div class="divImage">
               <div>

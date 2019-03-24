@@ -37,12 +37,11 @@
 
 
   </div>
-  <div class="content">
+  <div class="content contentAr">
+      <ngx-datatable class="material vertical-scroll" [rows]="filterRows" [columnMode]="'force'" [headerHeight]="50"
+      [rowHeight]="50" [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="isEnLang()">
 
-    <ngx-datatable class="material vertical-scroll" [rows]="filterRows" [columnMode]="'force'" [headerHeight]="50"
-      [rowHeight]="50" [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="true">
-
-      <ngx-datatable-column [flexGrow]="1" [width]="150" prop="">
+      <ngx-datatable-column [flexGrow]="1"prop="">
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
           <span></span>
         </ng-template>
@@ -95,6 +94,19 @@
           </mat-chip-list>
         </ng-template>
       </ngx-datatable-column>
+
+      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="type">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <span>{{ 'TRAVEL.TYPE' | translate }}</span>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column [canAutoResize]="true" [flexGrow]="1" prop="value">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <span>{{ 'TRAVEL.VALUE' | translate }}</span>
+        </ng-template>
+      </ngx-datatable-column>
+
 
       <ngx-datatable-column [width]="200" name="id">
         <ng-template let-column="column" ngx-datatable-header-template>

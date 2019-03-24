@@ -175,6 +175,10 @@ export const locale = {
             "EMAIL": "Email",
             "PHONENUMBER": "Phone Number",
             "ISOCODE": "Nationality",
+            "FIXED": "Fixed",
+            "VALUE": "Value",
+            "TYPE": "Type",
+            "PERCENTAGE": "Percentage",
             'PASSWORD': 'Password',
             "ALLTRAVEL": {
                 "TITLE": "Travel Agency",
@@ -196,6 +200,7 @@ export const locale = {
             "FROM": "from",
             "TO": "To",
             "STATUS": "Status",
+            "ISOCODE": "Nationality",
             "FIXED": "Fixed",
             "VALUE": "Value",
             "TYPE": "Type",
