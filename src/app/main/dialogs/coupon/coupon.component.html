@@ -19,19 +19,19 @@
           <mat-icon matSuffix>local_offer</mat-icon>
           <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
         </mat-form-field>
-        <!-- <mat-form-field fxFlex="30">
+        <mat-form-field fxFlex="45">
 
           <mat-select placeholder="{{ 'COUPON.TYPE' | translate }}" formControlName="type">
             <mat-option *ngFor="let oneType of typeCoupon" [value]="oneType.value">
               {{oneType.view | translate}}
             </mat-option>
           </mat-select>
-        </mat-form-field> -->
-        <!-- <mat-form-field fxFlex="30">
+        </mat-form-field>
+        <mat-form-field fxFlex="45">
           <input matInput placeholder="{{ 'COUPON.VALUE' | translate }}" formControlName="value" required>
           <mat-icon matSuffix>local_atm</mat-icon>
           <mat-error>{{ 'Global.ERRORFIELDREQUIRED' | translate }}</mat-error>
-        </mat-form-field> -->
+        </mat-form-field>
         <!-- <mat-form-field fxFlex="45">
           <input type="number" matInput placeholder="{{ 'COUPON.NUMBEROFUSES' | translate }}" formControlName="numberOfUses"
             required>
