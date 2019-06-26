@@ -33,6 +33,7 @@ export class travelAgenciesComponent implements OnInit {
 
 
 
+  
 
 
   inisilaize() {
@@ -63,6 +64,7 @@ export class travelAgenciesComponent implements OnInit {
     else
       return true
   }
+
 
 
   goTo(pageName, id) {

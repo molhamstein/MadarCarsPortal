@@ -13,6 +13,8 @@ import { MainService } from '../../../core/services/main.service';
 export class MyResetPasswordComponent {
     userId = "";
     type = "";
+  public hide=true;
+
     resetPassForm
     constructor(
         public dialogRef: MatDialogRef<MyResetPasswordComponent>,

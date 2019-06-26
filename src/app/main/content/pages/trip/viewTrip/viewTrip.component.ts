@@ -19,7 +19,7 @@ import { DialogService } from '../../../../../core/services/dialog.service';
 export class viewTripComponent implements OnInit {
 
   tripId = "";
-  trip = {};
+  trip = {"status":"","fromAirport":false,"inCity":false,"toAirport":false,"cost":0};
 
   locationName;
 

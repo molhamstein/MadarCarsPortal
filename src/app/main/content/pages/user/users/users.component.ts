@@ -117,7 +117,7 @@ export class usersComponent implements OnInit {
     })
   }
 
-  changeSort() {
+  changeSort(event) {
     this.offset = 0;
     this.inisilaize()
   }

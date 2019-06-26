@@ -276,7 +276,7 @@ export const locale = {
         },
         "TRIP": {
             "CHECKCOUPON": "Check Coupon",
-            "DISCOUNTVALUE":"Discount Value",
+            "DISCOUNTVALUE": "Discount Value",
             "FROMAIRPORT": "From Airport",
             "FROMAIRPORTDATE": "From Airport Date",
             "TOAIRPORT": "TO Airport",
@@ -298,6 +298,19 @@ export const locale = {
             "SUBLOCATIONS": "Nearby Citys",
             "FROM": "From",
             "TO": "To",
+            "paymentType": "Payment Type",
+            "paymentStatus": "Payment Status",
+            "paymentStatuses": {
+                "notPaid": "Not Paid",
+                "problemInPayment": "Problem In Payment",
+                "paid": "Paid"
+            },
+            "paymentTypes": {
+                "none": "none",
+                "cash": "Cash",
+                "electronicPayment": "Plectronic Payment"
+            },
+
             "NOTE": "Note",
             "DRIVER": "Driver",
             "DRIVERNAME": "Driver Name",
@@ -348,8 +361,8 @@ export const locale = {
                 "ITEMS": "Items",
                 "TYPE": "Type",
                 "NAME": "Title",
-                "TOTAL":"Total",
-                "DISCOUNT":"Discount",
+                "TOTAL": "Total",
+                "DISCOUNT": "Discount",
                 "TITLEEN": "English Title",
                 "TITLEAR": "Arabic Title",
                 "TITLETR": "Turkish Title",
@@ -468,13 +481,13 @@ export const locale = {
         },
         "TOOLTIP": {
             "GOTOEDIT": "Edit",
-            "GOTOVIEW":"View",
-            "RATE":"Rate",
-            "DEACTIVE":"Deactive",
-            "ACTIVE":"Active",
-            "VIEWBILLS":"Bills",
-            "CHANGESTATUS":"Change Status",
-            "CHANGEPASSWORD":"Change Password"
+            "GOTOVIEW": "View",
+            "RATE": "Rate",
+            "DEACTIVE": "Deactive",
+            "ACTIVE": "Active",
+            "VIEWBILLS": "Bills",
+            "CHANGESTATUS": "Change Status",
+            "CHANGEPASSWORD": "Change Password"
         },
         "TEXTNOTIFICATION": {
             "HELP": "need help to choose trip"

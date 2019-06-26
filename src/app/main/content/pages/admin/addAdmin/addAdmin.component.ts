@@ -17,6 +17,7 @@ import { locale as english } from '../../../../languageFiles/en';
 })
 export class addAdminComponent implements OnInit {
   addAdminForm;
+  public hide=true;
   constructor(
     private mainServ: MainService,
     private _formBuilder: FormBuilder,

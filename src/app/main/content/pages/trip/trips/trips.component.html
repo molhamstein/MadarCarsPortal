@@ -24,8 +24,8 @@
     <!-- SEARCH -->
     <div class="search-input-wrapper mt-16 ml-8 m-sm-0" fxLayout="row" fxLayoutAlign="start center">
       <mat-form-field>
-        <mat-select (change)="changeSort($event)" placeholder="{{ 'Global.SORTON' | translate }}" [ngModelOptions]="{standalone: true}"
-          [(ngModel)]="sortValue">
+        <mat-select (change)="changeSort($event)" placeholder="{{ 'Global.SORTON' | translate }}"
+          [ngModelOptions]="{standalone: true}" [(ngModel)]="sortValue">
           <mat-option *ngFor="let element of sortArray" [value]="element.value">
             {{element.view | translate}}
           </mat-option>
@@ -33,8 +33,8 @@
       </mat-form-field>
 
 
-      <button mat-button class="customButtom" color="primary" type="button" *ngIf="viewClear==true" style="background-color: #2d323e"
-        (click)="clearFilter()">{{'Global.CLEAR'
+      <button mat-button class="customButtom" color="primary" type="button" *ngIf="viewClear==true"
+        style="background-color: #2d323e" (click)="clearFilter()">{{'Global.CLEAR'
         | translate}}</button>
 
       <button mat-button class="customButtom" color="primary" type="button" (click)="openFilter()">{{'Global.FILTER'
@@ -53,8 +53,8 @@
 
   <div class="content contentAr">
     <ngx-datatable class="material vertical-scroll" [rows]="rows" [columnMode]="'force'" [headerHeight]="50"
-      [rowHeight]="50" [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="isEnLang()" [count]="count" [offset]="offset"
-      [limit]="limit">
+      [rowHeight]="50" [footerHeight]="50" [scrollbarV]="false" [scrollbarH]="isEnLang()" [count]="count"
+      [offset]="offset" [limit]="limit">
 
       <ngx-datatable-column [canAutoResize]="false" [flexGrow]="1" prop="owner.name">
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
@@ -144,13 +144,46 @@
         </ng-template>
       </ngx-datatable-column>
 
+      <ngx-datatable-column [canAutoResize]="false" [flexGrow]="1" prop="rate">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <span>{{ 'TRIP.paymentType' | translate }}</span>
+        </ng-template>
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          <mat-chip-list>
+            <mat-chip *ngIf="row.paymentType" style="background-color:#3b6fff" selected="true">{{ 'TRIP.paymentTypes.'+row.paymentType
+                  | translate }}</mat-chip>
+            <mat-chip *ngIf="row.paymentType==null" style="background-color:#3b6fff" selected="true">{{ 'TRIP.paymentTypes.none'
+                      | translate }}</mat-chip>
+          </mat-chip-list>
+
+        </ng-template>
+      </ngx-datatable-column>
+
+
+      <ngx-datatable-column [canAutoResize]="false" [flexGrow]="1" prop="rate">
+        <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+          <span>{{ 'TRIP.paymentStatus' | translate }}</span>
+        </ng-template>
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          <mat-chip-list>
+            <mat-chip *ngIf="row.paymentStatus" style="background-color:#07acf8" selected="true">{{ 'TRIP.paymentStatuses.'+row.paymentStatus
+                    | translate }}</mat-chip>
+            <mat-chip *ngIf="row.paymentStatus==null" style="background-color:#07acf8" selected="true">
+              {{ 'TRIP.paymentStatuses.notPaid'| translate }}</mat-chip>
+          </mat-chip-list>
+
+        </ng-template>
+      </ngx-datatable-column>
+
+
       <ngx-datatable-column [canAutoResize]="false" [flexGrow]="1" prop="Status">
         <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
           <span>{{ 'TRIP.COUPON' | translate }}</span>
         </ng-template>
         <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
           <mat-chip-list *ngIf="row.coupon">
-            <mat-chip (click)="openTripCoupon(row)" style="background-color:#ff6363" selected="true">{{row.coupon['code']}}</mat-chip>
+            <mat-chip (click)="openTripCoupon(row)" style="background-color:#ff6363" selected="true">
+              {{row.coupon['code']}}</mat-chip>
           </mat-chip-list>
           <mat-chip-list *ngIf="row.coupon==null">
             <mat-chip style="background-color:#3b6fff" (click)="openTripCoupon(row)" selected="true">{{ 'TRIP.NOCOUPON'
@@ -209,22 +242,22 @@
         </ng-template>
 
         <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-          <button mat-mini-fab *ngIf="row.status=='finished'" matTooltip="{{ 'TOOLTIP.VIEWBILLS' | translate }}" class="mr-16"
-            style="background-color: #8a8a8a;" (click)="goTo('bills',row['id'])">
+          <button mat-mini-fab *ngIf="row.status=='finished'" matTooltip="{{ 'TOOLTIP.VIEWBILLS' | translate }}"
+            class="mr-16" style="background-color: #8a8a8a;" (click)="goTo('bills',row['id'])">
             <mat-icon style="color : white;">subtitles</mat-icon>
           </button>
 
-          <button mat-mini-fab matTooltip="{{ 'TOOLTIP.GOTOEDIT' | translate }}" class="mr-16" (click)="goTo('edit',row['id'])"
-            style="background-color: rgba(20, 160, 202, 0.911);">
+          <button mat-mini-fab matTooltip="{{ 'TOOLTIP.GOTOEDIT' | translate }}" class="mr-16"
+            (click)="goTo('edit',row['id'])" style="background-color: rgba(20, 160, 202, 0.911);">
             <mat-icon style="color : white;">edit</mat-icon>
           </button>
-          <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.GOTOVIEW' | translate }}" style="background-color: rgba(7, 112, 7, 0.849);"
-            (click)="goTo('view',row['id'])">
+          <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.GOTOVIEW' | translate }}"
+            style="background-color: rgba(7, 112, 7, 0.849);" (click)="goTo('view',row['id'])">
             <mat-icon style="color : white;">visibility</mat-icon>
           </button>
 
-          <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.RATE' | translate }}" style="background-color: darkgoldenrod;"
-            (click)="rate(row['id'])">
+          <button mat-mini-fab class="mr-16" matTooltip="{{ 'TOOLTIP.RATE' | translate }}"
+            style="background-color: darkgoldenrod;" (click)="rate(row['id'])">
             <mat-icon style="color : white;">star</mat-icon>
           </button>
 
@@ -261,28 +294,32 @@
 
 
       <ngx-datatable-footer>
-        <ng-template ngx-datatable-footer-template let-rowCount="rowCount" let-pageSize="pageSize" let-selectedCount="selectedCount"
-          , let-curPage="curPage" let-offset="offset">
+        <ng-template ngx-datatable-footer-template let-rowCount="rowCount" let-pageSize="pageSize"
+          let-selectedCount="selectedCount" , let-curPage="curPage" let-offset="offset">
           <div style="padding: 5px 10px">
             <div class="pagination">
-              <button [ngClass]="{'disabled':disableObject.first == true}" [disabled]="disableObject['first']" (click)="first()">
+              <button [ngClass]="{'disabled':disableObject.first == true}" [disabled]="disableObject['first']"
+                (click)="first()">
                 <i class="material-icons">
                   fast_rewind
                 </i>
               </button>
-              <button [ngClass]="{'disabled':disableObject.prev == true}" [disabled]="disableObject['prev']" (click)="prev()">
+              <button [ngClass]="{'disabled':disableObject.prev == true}" [disabled]="disableObject['prev']"
+                (click)="prev()">
 
                 <i class="material-icons" style="transform: rotate(180deg);">
                   play_arrow
                 </i>
               </button>
-              <button [ngClass]="{'disabled':disableObject.next == true}" [disabled]="disableObject['next']" (click)="next()">
+              <button [ngClass]="{'disabled':disableObject.next == true}" [disabled]="disableObject['next']"
+                (click)="next()">
 
                 <i class="material-icons">
                   play_arrow
                 </i>
               </button>
-              <button [ngClass]="{'disabled':disableObject.end == true}" [disabled]="disableObject['end']" (click)="end()">
+              <button [ngClass]="{'disabled':disableObject.end == true}" [disabled]="disableObject['end']"
+                (click)="end()">
 
                 <i class="material-icons">
                   fast_forward

@@ -24,6 +24,7 @@ export class addDriverComponent implements OnInit {
   listLanguages = [];
   private primaryColor: string = "#127bdc";
   private secondryColor: string = "#127bdc";
+  public hide=true;
   constructor(
     private mainServ: MainService,
     private _formBuilder: FormBuilder,

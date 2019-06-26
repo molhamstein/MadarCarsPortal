@@ -23,8 +23,10 @@ export class addAgencyComponent implements OnInit {
   imaageUrl = this.mainServ.getDefultImage();
   images = [];
   listLanguages = [];
-  private primaryColor: string = "#127bdc";
-  private secondryColor: string = "#127bdc";
+  public hide=true;
+
+  public primaryColor: string = "#127bdc";
+  public secondryColor: string = "#127bdc";
   constructor(
     private mainServ: MainService,
     private _formBuilder: FormBuilder,

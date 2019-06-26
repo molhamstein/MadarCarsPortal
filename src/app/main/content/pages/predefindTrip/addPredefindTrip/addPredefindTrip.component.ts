@@ -30,8 +30,8 @@ export class addPredefindTripComponent implements OnInit {
   predefinedTripsSublocations = [];
   sublocationDuration = 0;
   location;
-  private primaryColor: string = "#127bdc";
-  private secondryColor: string = "#127bdc";
+  public primaryColor: string = "#127bdc";
+  public secondryColor: string = "#127bdc";
   constructor(
     private mainServ: MainService,
     private _formBuilder: FormBuilder,

@@ -20,7 +20,7 @@
   <!-- CONTENT -->
   <div class="content p-24">
 
-    <nav mat-tab-nav-bar [backgroundColor]="background">
+    <nav mat-tab-nav-bar [backgroundColor]="">
       <a mat-tab-link disabled *ngFor="let link of links" [active]="activeLink == link.name">
         {{link.view | translate}}
       </a>

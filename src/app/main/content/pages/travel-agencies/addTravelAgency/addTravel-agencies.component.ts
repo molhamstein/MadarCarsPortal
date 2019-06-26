@@ -24,9 +24,9 @@ export class addTravelAgenciesComponent implements OnInit {
   images = [];
   listLanguages = [];
   typeCoupon = [{ "view": "TRAVEL.FIXED", "value": "fixed" }, { "view": "TRAVEL.PERCENTAGE", "value": "percentage" }]
-
-  private primaryColor: string = "#127bdc";
-  private secondryColor: string = "#127bdc";
+  public hide=true;
+  public primaryColor: string = "#127bdc";
+  public secondryColor: string = "#127bdc";
   constructor(
     private mainServ: MainService,
     private _formBuilder: FormBuilder,

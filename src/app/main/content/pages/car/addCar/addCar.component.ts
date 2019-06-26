@@ -39,8 +39,8 @@ export class addCarComponent implements OnInit {
 
 
   years = [];
-  private primaryColor: string = "#127bdc";
-  private secondryColor: string = "#127bdc";
+  public primaryColor: string = "#127bdc";
+  public secondryColor: string = "#127bdc";
   constructor(
     private mainServ: MainService,
     private _formBuilder: FormBuilder,
@@ -255,6 +255,7 @@ export class addCarComponent implements OnInit {
   changeLocation(event) {
     console.log(event);
     this.carSublocations = []
+    this.carAirport = []
     this.subLocation = this.locations.find(x => x.id === event.value).subLocations;
     console.log(this.subLocation);
     this.subLocation.forEach(element => {

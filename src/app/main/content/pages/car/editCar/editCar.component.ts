@@ -56,8 +56,8 @@ export class editCarComponent implements OnInit {
   tripColumns = ["cost", "status", "owner.name", "location.nameEn", "car.name"]
 
 
-  private primaryColor: string = "#127bdc";
-  private secondryColor: string = "#127bdc";
+  public primaryColor: string = "#127bdc";
+  public secondryColor: string = "#127bdc";
   constructor(
     private mainServ: MainService,
     private _formBuilder: FormBuilder,
@@ -162,6 +162,7 @@ export class editCarComponent implements OnInit {
 
   changeLocation(event) {
     this.carSublocations = []
+    this.carAirport = []
     console.log(event);
     this.subLocation = this.locations.find(x => x.id === event.value).subLocations;
     console.log(this.subLocation);

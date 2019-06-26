@@ -22,7 +22,7 @@ export class addUserComponent implements OnInit {
   images = [];
   media;
   imaageUrl = this.mainServ.getDefultImage();
-
+  public hide=true;
   constructor(
     private mainServ: MainService,
     private _formBuilder: FormBuilder,
